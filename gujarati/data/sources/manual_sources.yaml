@@ -1,0 +1,292 @@
+# =====================================================================
+# Gujarati MANUAL sources (Model H, Phase 1)
+#
+# These are the sources we collect ourselves, and only these count toward
+# the ">=20% of final training tokens from manual collection" requirement.
+# The other ~80% comes from a public dataset listed in public_sources.yaml
+# and is labelled public_hf, which can never count as manual.
+#
+#   method: wp_rest  -> WordPress REST API, 100 articles per request
+#   method: sitemap  -> sitemap.xml, then one request per article page
+#   method: pdf      -> PyMuPDF text layer from books on disk
+# =====================================================================
+#
+# HOW THESE SOURCES WERE CHOSEN (probed 2026-08-12)
+#
+# 63 candidate Gujarati domains were checked for: robots.txt verdict,
+# whether text could be extracted at all, how much text exists, and how
+# fast it comes out. Results:
+#
+#   wp_rest candidates            posts   chars/post   gu    available
+#     abtakmedia.com            168,095       3,905   0.79      656M
+#     mantavyanews.com          196,167       2,674   0.77      525M
+#     westerntimesnews.in       115,156       2,032   0.81      234M
+#     gujarativishwakosh.org     26,475       3,397   0.78       90M
+#     gujaratmirror.in           43,822       1,957   0.81       86M
+#                                                    total   1,591M chars
+#     robots.txt ALLOWS /wp-json on all five; no Crawl-delay declared.
+#
+#   sitemap candidates
+#     gstv.in            13/15 pages kept, 1,551 chars avg, gu 0.79
+#     sandesh.com        11/15 pages kept, 1,315 chars avg, gu 0.81
+#     divyabhaskar.co.in kept 100%, but only recent articles are listed
+#                        in its sitemaps, so volume is capped by the site
+#
+#   REJECTED, with the reason (kept here because "we checked and it does
+#   not work" is a Phase 1 deliverable)
+#     loksatta.com         WP API open, 992,573 posts - but MARATHI
+#                          (Gujarati ratio 0.00). Wrong language.
+#     deshgujarat.com      WP API open, 78,394 posts - but ENGLISH
+#                          (ratio 0.01). The name is not the language.
+#     matrubharti.com      296,146 sitemap URLs but JS-rendered: 0/15
+#                          probed pages yielded any text.
+#     gujaratsamachar.com  JS-rendered, 1/15 pages yielded text.
+#     readgujarati.com     robots.txt DISALLOW. Not crawled.
+#     oneindia.com         robots.txt DISALLOW. Not crawled.
+#     gu.wikisource.org    Wikimedia text is already inside the public
+#                          Sangraha dataset; it would be deduplicated out.
+#
+# MEASURED SPEED, which is why the mix looks like this
+#     wp_rest                     ~570 K chars/s   (100 articles/request)
+#     sitemap                       ~7 K chars/s   (1 article/request)
+#     the earlier serial crawler    ~0.9 K chars/s (replaced)
+#
+#   The sitemap sources cost roughly 80x more time per character, so they
+#   are capped low. They are kept for register diversity, not volume: a
+#   corpus built from five WordPress newsrooms is five house styles.
+#
+# BUDGET (at 4.0 chars/token, deliberately pessimistic)
+#     abtakmedia          160M chars   40.0M tok    regional news
+#     mantavyanews        140M chars   35.0M tok    general news
+#     westerntimesnews     95M chars   23.8M tok    city + lifestyle
+#     gujarativishwakosh   85M chars   21.2M tok    ENCYCLOPEDIA
+#     gujaratmirror        55M chars   13.8M tok    civic reporting
+#     gstv                 12M chars    3.0M tok    broadcast copy
+#     sandesh              12M chars    3.0M tok    2nd paper group
+#     divya_bhaskar        15M chars    3.8M tok    national daily
+#     ia_books_pdf          6M chars    1.5M tok    books (manual_ocr)
+#     ---------------------------------------------------------------
+#     total               580M chars  145.0M tok
+#     required floor                  100.0M tok  -> 1.45x headroom
+#
+#   The headroom exists because dedup and the strict preprocessing filter
+#   both remove text after collection. Collecting exactly 100M tokens'
+#   worth would finish below the floor.
+# =====================================================================
+
+defaults:
+  type: manual
+  # Concurrent requests to one host. Politeness is this ceiling, not a
+  # sleep between requests - which is what made the old crawler slow.
+  concurrency: 8
+
+sources:
+
+  # ---- WordPress REST API: almost all of the corpus ----------------- #
+
+  - name: abtakmedia
+    method: wp_rest
+    url: "https://www.abtakmedia.com/"
+    category: news_regional
+    license: >
+      Article text retrieved from the site's own public WordPress REST
+      API; robots.txt permits /wp-json for our agent. Collected for
+      non-commercial academic research (Indian Copyright Act s.52(1)(a)).
+      The text itself is not redistributed - only derived statistics,
+      the tokenizer and the trained model are published.
+    description: >
+      Abtak Media, a Rajkot news group covering Saurashtra. The largest
+      single reservoir found and the fastest to read, so it is the
+      primary volume source.
+    max_chars: 160_000_000
+    enabled: true
+
+  - name: mantavyanews
+    method: wp_rest
+    url: "https://mantavyanews.com/"
+    category: news_general
+    license: >
+      Public WordPress REST API, robots.txt allows /wp-json. Academic
+      research use as above; text is not redistributed.
+    description: >
+      Mantavya News, a Gujarat-wide desk covering politics, national and
+      international news and science. The broadest topical spread of the
+      five, which matters for tokenizer coverage of non-local vocabulary.
+    max_chars: 140_000_000
+    enabled: true
+
+  - name: westerntimesnews
+    method: wp_rest
+    url: "https://westerntimesnews.in/"
+    category: news_general
+    license: >
+      Public WordPress REST API, robots.txt allows /wp-json. Academic
+      research use as above; text is not redistributed.
+    description: >
+      Western Times, an Ahmedabad daily: city news plus entertainment and
+      lifestyle copy. Shorter articles and a lighter register than the
+      Rajkot papers.
+    max_chars: 95_000_000
+    enabled: true
+
+  - name: gujarativishwakosh
+    method: wp_rest
+    url: "https://gujarativishwakosh.org/"
+    category: encyclopedia
+    license: >
+      Gujarati Vishwakosh Trust, public WordPress REST API; robots.txt
+      allows /wp-json. Academic research use as above; not redistributed.
+    description: >
+      The Gujarati-language encyclopedia: 26,475 signed scholarly entries
+      on science, history, geography, art and biography. The most
+      valuable source here for a reason other than size - it is the only
+      formal, technical, expository register in the corpus. News prose
+      alone would leave the tokenizer poorly fitted to academic and
+      scientific vocabulary. Its entries are dated from 2009 and older,
+      so it also widens the corpus in time.
+    concurrency: 5
+    max_chars: 85_000_000
+    enabled: true
+
+  - name: gujaratmirror
+    method: wp_rest
+    url: "https://gujaratmirror.in/"
+    category: news_regional
+    license: >
+      Public WordPress REST API, robots.txt allows /wp-json. Academic
+      research use as above; text is not redistributed.
+    description: >
+      Gujarat Mirror, a Rajkot daily focused on civic administration,
+      health and local governance. The slowest of the five, still far
+      faster than any page-by-page source.
+    concurrency: 6
+    max_chars: 55_000_000
+    enabled: true
+
+  # ---- Sitemap + HTML: register diversity, deliberately capped ------ #
+
+  - name: gstv
+    method: sitemap
+    url: "https://www.gstv.in/"
+    hosts: ["gstv.in"]
+    category: news_broadcast
+    license: >
+      Pages we fetched and extracted ourselves, robots.txt permitting.
+      Academic research use as above; text is not redistributed.
+    description: >
+      GSTV, a Gujarati television broadcaster. Broadcast copy is written
+      to be read aloud, so its sentence structure differs systematically
+      from print - which is the reason to pay the slower crawl for it.
+    sitemaps:
+      - "https://www.gstv.in/sitemap-news-1.xml"
+      - "https://www.gstv.in/sitemap.xml"
+    deny:
+      # "web-stor", not "webstory": the real path is /web-stories/, and
+      # those URLs return HTTP 500 on this host.
+      - "/web-stor"
+      - "/video"
+      - "/photo"
+      - "/gallery"
+      - "/live-"
+      - "/tag/"
+      - "/author/"
+      - "/category/"
+      - "\\?"
+    max_pages: 20000
+    max_chars: 12_000_000
+    enabled: true
+
+  - name: sandesh
+    method: sitemap
+    url: "https://sandesh.com/"
+    hosts: ["sandesh.com"]
+    category: news_general
+    license: >
+      Pages we fetched and extracted ourselves. Academic research use as
+      above; text is not redistributed.
+    description: >
+      Sandesh, a major Gujarati daily from a different newspaper group
+      than every other source here.
+      NOTE: an early probe recorded robots.txt DISALLOW and this source
+      was disabled; re-probing found ALLOW. Because that can change back,
+      the collector re-checks robots.txt at every run and skips the
+      source if the verdict changes - the answer is not trusted to this
+      comment.
+    sitemaps:
+      - "https://sandesh.com/sitemap-index.xml"
+      - "https://sandesh.com/sitemap.xml"
+    deny:
+      - "/video"
+      - "/photo"
+      - "/gallery"
+      - "/web-stor"
+      - "/live-"
+      - "/tag/"
+      - "/author/"
+      - "/topic/"
+      - "\\?"
+    max_pages: 20000
+    max_chars: 12_000_000
+    enabled: true
+
+  - name: divya_bhaskar
+    method: sitemap
+    url: "https://www.divyabhaskar.co.in/"
+    hosts: ["divyabhaskar.co.in"]
+    category: news_national
+    license: >
+      Pages we fetched and extracted ourselves, robots.txt permitting.
+      Academic research use as above; text is not redistributed.
+    description: >
+      Divya Bhaskar, the highest-circulation Gujarati daily. 10.3M chars
+      were already collected by the first version of this collector and
+      are kept - the data is valid and re-collecting it would be waste.
+      The budget is small because only the google-news sitemap is
+      published, so no amount of crawling reaches the older archive.
+    sitemaps:
+      - "https://www.divyabhaskar.co.in/sitemaps-v1--sitemap-google-news-index.xml"
+    deny:
+      - "/video"
+      - "/photo"
+      - "/epaper"
+      - "/gallery"
+      - "/cricket-score"
+      - "/live-score"
+      - "/live-blog"
+      - "/web-stor"
+      - "/shorts"
+      - "/author/"
+      - "/tag/"
+      - "\\?"
+    concurrency: 6
+    max_pages: 15000
+    max_chars: 15_000_000
+    enabled: true
+
+  # ---- Local PDFs: the manual_ocr component ------------------------- #
+
+  - name: ia_books_pdf
+    method: pdf
+    url: "https://archive.org/details/booksbylanguage_gujarati"
+    local_dir: data/raw/manual/pdfs
+    category: books
+    license: >
+      Mixed, per item. Per-item rights are recorded in
+      data/raw/pdfs/books/manifest.csv by fetch_ia_pdfs.py, which skips
+      lending-restricted items, so everything on disk is openly
+      downloadable.
+    description: >
+      Gujarati books from the Internet Archive, downloaded by us, with
+      text extracted by our own code. Book-length literary and religious
+      prose that no news source supplies.
+      The budget is small for measured reasons: archive.org served these
+      PDFs at 10-300 KB/s (the logged ETA for the originally planned
+      12 GB was 341 hours), and Tesseract on this machine has no 'guj'
+      model, so image-only scans cannot be read at all. Install it with
+      'brew install tesseract-lang' or 'apt install tesseract-ocr-guj'.
+      About a third of the PDFs also return a text layer with Gujarati
+      ratio 0.00 - a broken embedded font encoding producing mojibake -
+      and the script-ratio filter correctly rejects those.
+    split_chars: 300_000
+    max_chars: 6_000_000
+    enabled: true
