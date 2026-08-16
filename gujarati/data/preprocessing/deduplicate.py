@@ -6,10 +6,10 @@ numbers are meaningless.
 
 Two passes over the cleaned corpus:
 
-1. **Exact** - SHA1 of the whitespace-collapsed text. Public web corpora overlap
+1. Exact - SHA1 of the whitespace-collapsed text. Public web corpora overlap
    heavily (CulturaX, OSCAR and CC-100 all re-derive from Common Crawl), so this
    removes the bulk cheaply.
-2. **Near-duplicate** - MinHash + LSH over 5-word shingles at Jaccard ~0.8,
+2. Near-duplicate - MinHash + LSH over 5-word shingles at Jaccard ~0.8,
    which catches syndicated news reprinted with a changed headline.
 
 Manual documents are streamed first, so when a manual and a public document
@@ -129,7 +129,7 @@ def main() -> None:
         "minhash": None if args.no_minhash else {"threshold": args.threshold,
                                                  "num_perm": args.num_perm, "shingle_k": 5},
     }
-    path = CFG["paths"]["reports"] / f"dedup_{CFG['language']}.json"
+    path = CFG["paths"]["reports"] / "dedup.json"
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(summary, indent=2), encoding="utf-8")
 

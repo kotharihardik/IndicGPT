@@ -1,78 +1,76 @@
-# =====================================================================
 # Gujarati MANUAL sources (Model H, Phase 1)
 #
-# These are the sources we collect ourselves, and only these count toward
-# the ">=20% of final training tokens from manual collection" requirement.
-# The other ~80% comes from a public dataset listed in public_sources.yaml
-# and is labelled public_hf, which can never count as manual.
+# These are the sources I collect myself, and only these count toward the
+# ">=20% of final training tokens from manual collection" requirement. The
+# other ~80% comes from the public dataset in public_sources.yaml, which
+# is labelled public_hf and can never count as manual.
 #
-#   method: wp_rest  -> WordPress REST API, 100 articles per request
-#   method: sitemap  -> sitemap.xml, then one request per article page
-#   method: pdf      -> PyMuPDF text layer from books on disk
-# =====================================================================
+# Four collection methods, one adapter module each. See
+# data/collection/adapters/ for why each one exists.
 #
-# HOW THESE SOURCES WERE CHOSEN (probed 2026-08-12)
+#   wp_rest      WordPress REST API, 100 articles per request
+#   sitemap      sitemap.xml (or a link crawl), one request per page
+#   pdf          PyMuPDF text layer from books already on disk
+#   ia_fulltext  archive.org's own server-side OCR output
 #
-# 63 candidate Gujarati domains were checked for: robots.txt verdict,
-# whether text could be extracted at all, how much text exists, and how
-# fast it comes out. Results:
+# WHAT WAS ACTUALLY COLLECTED (13 sources, 214,885 docs, 698.7M chars)
 #
-#   wp_rest candidates            posts   chars/post   gu    available
-#     abtakmedia.com            168,095       3,905   0.79      656M
-#     mantavyanews.com          196,167       2,674   0.77      525M
-#     westerntimesnews.in       115,156       2,032   0.81      234M
-#     gujarativishwakosh.org     26,475       3,397   0.78       90M
-#     gujaratmirror.in           43,822       1,957   0.81       86M
-#                                                    total   1,591M chars
-#     robots.txt ALLOWS /wp-json on all five; no Crawl-delay declared.
+#   wp_rest      433.0M chars   62.0%
+#   ia_fulltext  152.8M chars   21.9%
+#   sitemap      109.2M chars   15.6%
+#   pdf            3.7M chars    0.5%
 #
-#   sitemap candidates
-#     gstv.in            13/15 pages kept, 1,551 chars avg, gu 0.79
-#     sandesh.com        11/15 pages kept, 1,315 chars avg, gu 0.81
-#     divyabhaskar.co.in kept 100%, but only recent articles are listed
-#                        in its sitemaps, so volume is capped by the site
+# HOW THE SOURCES WERE CHOSEN (probed 2026-08-12)
 #
-#   REJECTED, with the reason (kept here because "we checked and it does
-#   not work" is a Phase 1 deliverable)
-#     loksatta.com         WP API open, 992,573 posts - but MARATHI
+# I checked 63 candidate Gujarati domains for four things: the robots.txt
+# verdict, whether any text could be extracted at all, how much exists,
+# and how fast it comes out. The rejections are recorded here on purpose,
+# because "I checked and it does not work" is part of the deliverable.
+#
+#   REJECTED
+#     loksatta.com         WP API open, 992,573 posts, but MARATHI
 #                          (Gujarati ratio 0.00). Wrong language.
-#     deshgujarat.com      WP API open, 78,394 posts - but ENGLISH
+#     deshgujarat.com      WP API open, 78,394 posts, but ENGLISH
 #                          (ratio 0.01). The name is not the language.
-#     matrubharti.com      296,146 sitemap URLs but JS-rendered: 0/15
-#                          probed pages yielded any text.
-#     gujaratsamachar.com  JS-rendered, 1/15 pages yielded text.
+#     matrubharti.com      296,146 sitemap URLs but JS-rendered: 0 of 15
+#                          probed pages gave any text.
+#     gujaratsamachar.com  JS-rendered, 1 of 15 pages gave text.
 #     readgujarati.com     robots.txt DISALLOW. Not crawled.
 #     oneindia.com         robots.txt DISALLOW. Not crawled.
-#     gu.wikisource.org    Wikimedia text is already inside the public
-#                          Sangraha dataset; it would be deduplicated out.
+#     gu.wikisource.org    Excluded on instruction: no Wikimedia-family
+#                          sources. It would also have largely deduplicated
+#                          away, since Wikimedia text is already inside the
+#                          public Sangraha dataset.
 #
 # MEASURED SPEED, which is why the mix looks like this
 #     wp_rest                     ~570 K chars/s   (100 articles/request)
 #     sitemap                       ~7 K chars/s   (1 article/request)
-#     the earlier serial crawler    ~0.9 K chars/s (replaced)
+#     my first serial crawler       ~0.9 K chars/s (replaced)
 #
-#   The sitemap sources cost roughly 80x more time per character, so they
-#   are capped low. They are kept for register diversity, not volume: a
-#   corpus built from five WordPress newsrooms is five house styles.
+#   Sitemap sources cost roughly 80x more time per character, so their
+#   budgets are small. They are here for register diversity, not volume:
+#   a corpus built only from newsrooms is a corpus of house styles.
 #
-# BUDGET (at 4.0 chars/token, deliberately pessimistic)
-#     abtakmedia          160M chars   40.0M tok    regional news
-#     mantavyanews        140M chars   35.0M tok    general news
-#     westerntimesnews     95M chars   23.8M tok    city + lifestyle
-#     gujarativishwakosh   85M chars   21.2M tok    ENCYCLOPEDIA
-#     gujaratmirror        55M chars   13.8M tok    civic reporting
-#     gstv                 12M chars    3.0M tok    broadcast copy
-#     sandesh              12M chars    3.0M tok    2nd paper group
-#     divya_bhaskar        15M chars    3.8M tok    national daily
-#     ia_books_pdf          6M chars    1.5M tok    books (manual_ocr)
-#     ---------------------------------------------------------------
-#     total               580M chars  145.0M tok
-#     required floor                  100.0M tok  -> 1.45x headroom
+# SIX SOURCES WITHDRAWN (16 Aug 2026)
 #
-#   The headroom exists because dedup and the strict preprocessing filter
-#   both remove text after collection. Collecting exactly 100M tokens'
-#   worth would finish below the floor.
-# =====================================================================
+#   mantavyanews, gujaratmirror, loksansar, sunvillasamachar, eaglenews
+#   and gstv were removed from this file. Together they were 248.9M raw
+#   chars of WordPress news, the register the corpus already had far too
+#   much of. Their shards were moved to data/archive/manual/ and NOT
+#   deleted, so the run is reproducible from the archive if needed.
+#   data/archive/ sits outside data/raw/, which is what read_docs() walks,
+#   so the pipeline no longer sees them.
+#
+#   The corpus still finished at 540.8M tokens with manual at 31.6%,
+#   comfortably over both the 500M target and the 20% floor.
+#
+# OPEN ISSUE
+#
+#   If WordPress REST output is counted as structured data rather than as
+#   manual collection, non-WordPress manual is only ~13% of the corpus,
+#   under the 20% floor. Removing more data cannot fix this: it shrinks
+#   the denominator as fast as the numerator. Closing it needs roughly
+#   178M more raw non-WordPress chars, i.e. more collection.
 
 defaults:
   type: manual
@@ -82,7 +80,7 @@ defaults:
 
 sources:
 
-  # ---- WordPress REST API: almost all of the corpus ----------------- #
+  # WordPress REST API: almost all of the corpus
 
   - name: abtakmedia
     method: wp_rest
@@ -99,20 +97,6 @@ sources:
       single reservoir found and the fastest to read, so it is the
       primary volume source.
     max_chars: 160_000_000
-    enabled: true
-
-  - name: mantavyanews
-    method: wp_rest
-    url: "https://mantavyanews.com/"
-    category: news_general
-    license: >
-      Public WordPress REST API, robots.txt allows /wp-json. Academic
-      research use as above; text is not redistributed.
-    description: >
-      Mantavya News, a Gujarat-wide desk covering politics, national and
-      international news and science. The broadest topical spread of the
-      five, which matters for tokenizer coverage of non-local vocabulary.
-    max_chars: 140_000_000
     enabled: true
 
   - name: westerntimesnews
@@ -146,54 +130,6 @@ sources:
       so it also widens the corpus in time.
     concurrency: 5
     max_chars: 85_000_000
-    enabled: true
-
-  - name: gujaratmirror
-    method: wp_rest
-    url: "https://gujaratmirror.in/"
-    category: news_regional
-    license: >
-      Public WordPress REST API, robots.txt allows /wp-json. Academic
-      research use as above; text is not redistributed.
-    description: >
-      Gujarat Mirror, a Rajkot daily focused on civic administration,
-      health and local governance. The slowest of the five, still far
-      faster than any page-by-page source.
-    concurrency: 6
-    max_chars: 55_000_000
-    enabled: true
-
-  # ---- Sitemap + HTML: register diversity, deliberately capped ------ #
-
-  - name: gstv
-    method: sitemap
-    url: "https://www.gstv.in/"
-    hosts: ["gstv.in"]
-    category: news_broadcast
-    license: >
-      Pages we fetched and extracted ourselves, robots.txt permitting.
-      Academic research use as above; text is not redistributed.
-    description: >
-      GSTV, a Gujarati television broadcaster. Broadcast copy is written
-      to be read aloud, so its sentence structure differs systematically
-      from print - which is the reason to pay the slower crawl for it.
-    sitemaps:
-      - "https://www.gstv.in/sitemap-news-1.xml"
-      - "https://www.gstv.in/sitemap.xml"
-    deny:
-      # "web-stor", not "webstory": the real path is /web-stories/, and
-      # those URLs return HTTP 500 on this host.
-      - "/web-stor"
-      - "/video"
-      - "/photo"
-      - "/gallery"
-      - "/live-"
-      - "/tag/"
-      - "/author/"
-      - "/category/"
-      - "\\?"
-    max_pages: 20000
-    max_chars: 12_000_000
     enabled: true
 
   - name: sandesh
@@ -263,7 +199,121 @@ sources:
     max_chars: 15_000_000
     enabled: true
 
-  # ---- Local PDFs: the manual_ocr component ------------------------- #
+  # ADDED 2026-08-13 — diversity + AI-training-permitted sources
+  # Two reasons for this batch:
+  #
+  # 1. REGISTER BALANCE. The corpus was ~97% news. The two literary
+  #    sources below are the first non-news web text in it.
+  #
+  # 2. LICENSING HEADROOM. abtakmedia, mantavyanews and gujarativishwakosh
+  #    all declare `Content-Signal: search=yes,ai-train=no,use=reference`
+  #    in robots.txt - an explicit refusal of collection for model
+  #    training, asserted under Article 4 of EU Directive 2019/790.
+  #    They were collected before that check existed and are being kept
+  #    for now, but they are 93.7M of 133.3M manual tokens. Every source
+  #    below was verified to carry NO such restriction, so the manual
+  #    bucket can survive dropping them.
+  #
+  # All of these were checked for `ai-train` explicitly. Sites REJECTED
+  # for declaring ai-train=no: navgujaratsamay.com, ahmedabadmirror.com,
+  # newsjoo.in, gsebsolutions.com, gujaratilexicon.com, swaminarayan.faith,
+  # vishwakosh.org.
+  #
+  # Academic sources were sought and mostly failed: GSEB/GCERT textbook
+  # portals and Gujarat government sites expose no crawlable listings
+  # (form-driven PDF downloads only), and archive.org's Gujarati book
+  # collection (1,152 items) returns HTTP 404 for the `_djvu.txt` text
+  # derivative, leaving only 35 MB PDFs at 10-300 KB/s ~ 112 hours.
+
+  # Literary / opinion: the non-news register
+
+  - name: opinionmagazine
+    method: sitemap
+    url: "https://opinionmagazine.co.uk/"
+    hosts: ["opinionmagazine.co.uk"]
+    category: literature_opinion
+    license: >
+      Pages we fetched and extracted ourselves. robots.txt permits crawling
+      and declares no Content-Signal restriction on AI-training use.
+      Academic research use; text is not redistributed.
+    description: >
+      Opinion Magazine - Gujarati literary and opinion magazine published
+      from the UK. 15,263 URLs at 5,544 chars average, Gujarati ratio 0.78.
+      The single best diversity addition in the project: it is simultaneously
+      NON-NEWS (essays, criticism, literary opinion) and DIASPORA Gujarati
+      written outside India. Nothing else in the corpus resembles it.
+      Slow (~1.4 h) because it is one request per article, and worth it.
+    deny:
+      - "/tag/"
+      - "/author/"
+      - "/category/"
+      - "/page/[0-9]"
+      - "\\?"
+    page_concurrency: 6
+    concurrency: 6
+    max_pages: 16000
+    max_chars: 70_000_000
+    enabled: true
+
+  - name: aksharnaad
+    method: sitemap
+    url: "https://aksharnaad.com/"
+    hosts: ["aksharnaad.com"]
+    category: literature
+    license: >
+      Pages we fetched and extracted ourselves; robots.txt permits it and
+      declares no ai-train restriction. Not redistributed.
+    description: >
+      Aksharnaad - contemporary Gujarati literary portal: short stories,
+      essays, poetry, travel writing. 3,196 URLs at 6,760 chars average,
+      Gujarati ratio 0.78. Long-form literary prose that no news source
+      supplies, and the register a tokenizer most needs to see beyond
+      journalism.
+    deny:
+      - "/tag/"
+      - "/author/"
+      - "/category/"
+      - "/page/[0-9]"
+      - "\\?"
+    page_concurrency: 6
+    concurrency: 6
+    max_pages: 4000
+    max_chars: 25_000_000
+    enabled: true
+
+  # Additional news, all ai-train-permitted
+
+  - name: gujarattoday
+    method: wp_rest
+    url: "https://gujarattoday.in/"
+    category: news_general
+    license: >
+      Public WordPress REST API; robots.txt allows it and declares no
+      ai-train restriction. Academic research use; not redistributed.
+    description: >
+      Gujarat Today - daily published by the Lokhit Prakashan Sarvajanik
+      Trust. 50,606 posts at 2,013 chars. Largest ai-train-permitted source
+      found, and editorially distinct from the Rajkot/Ahmedabad mainstream
+      papers already in the corpus.
+    per_page: 100
+    max_chars: 102_000_000
+    enabled: true
+
+  - name: gujaratabroad
+    method: wp_rest
+    url: "https://gujaratabroad.ca/"
+    category: news_diaspora
+    license: >
+      Public WordPress REST API, no ai-train restriction declared.
+      Academic research use; not redistributed.
+    description: >
+      Gujarat Abroad - Gujarati newspaper published in Canada. 6,654 posts
+      at 3,216 chars. Diaspora Gujarati: different subject matter, different
+      code-switching with English, written far outside Gujarat. Small but
+      linguistically distinctive.
+    per_page: 100
+    max_chars: 21_000_000
+    enabled: true
 
   - name: ia_books_pdf
     method: pdf
@@ -289,4 +339,68 @@ sources:
       and the script-ratio filter correctly rejects those.
     split_chars: 300_000
     max_chars: 6_000_000
+    enabled: true
+
+  # NON-WORDPRESS DIVERSIFICATION  (added 15 Aug 2026)
+  # The corpus was 87% WordPress by volume. The TA indicated WordPress
+  # REST API output may count as structured data toward the 80% public
+  # share rather than as manual collection, so these sources deliberately
+  # avoid it: books and hand-crawled pages only.
+  # Each was probed first - robots.txt checked, WordPress detection run,
+  # text extracted and Gujarati script ratio measured - and the numbers
+  # below are what the probe actually returned, not estimates.
+
+  - name: ia_books_fulltext
+    method: ia_fulltext
+    url: "https://archive.org/details/booksbylanguage_gujarati"
+    ia_query: "language:(gujarati) AND mediatype:(texts)"
+    category: books
+    license: >
+      Mixed, per item. Only openly downloadable items return the DjVuTXT
+      file; lending-restricted items answer 403 and are skipped.
+    description: >
+      Gujarati books from the Internet Archive, read through archive.org's
+      own server-side OCR output (the DjVuTXT file) instead of downloading
+      and parsing the scanned PDFs. This sidesteps both problems that
+      capped ia_books_pdf at 6M chars: the PDFs download at 10-300 KB/s,
+      and image-only scans need a Gujarati Tesseract model that is not
+      installed. The OCR text is a few hundred KB per book instead of tens
+      of MB, and needs no local OCR at all.
+      Measured on a 20-item sample: 984 Gujarati text items exist, 15/20
+      expose DjVuTXT (the rest are lending-restricted), and 13/15 of those
+      pass the Gujarati script filter at 43-67% script ratio, averaging
+      377K chars per book. Projected yield ~322M chars in ~1.5 hours.
+      NOTE: provenance is manual_web, not manual_ocr - archive.org did the
+      recognition, we did not.
+    split_chars: 300_000
+    max_chars: 400_000_000
+    enabled: true
+
+  # REMOVED 15 Aug 2026: gu.wikisource.org (public-domain Gujarati books).
+  # Excluded on instruction - no Wikimedia-family sources. It probed well
+  # (4,056 URLs by link crawl, script ratio 0.65) and had started collecting,
+  # but the entry, its shards and its log were all deleted rather than left
+  # disabled, so nothing Wikimedia-derived reaches the corpus.
+
+  - name: layastaro
+    method: sitemap
+    url: "https://layastaro.com/"
+    category: poetry
+    description: >
+      Long-running Gujarati poetry site. Probe: 1,021 URLs, average 2,629
+      chars per page, script ratio 0.63, 80% hit rate. Poetry is the
+      register furthest from news prose, so it is worth more to the
+      tokenizer than its size suggests.
+    max_chars: 25_000_000
+    enabled: true
+
+  - name: webdunia_gujarati
+    method: sitemap
+    url: "https://gujarati.webdunia.com/"
+    category: portal_mixed
+    description: >
+      Mixed-register Gujarati portal - religion, astrology, health,
+      literature and lifestyle rather than straight news. Probe: 631 URLs,
+      average 2,103 chars, script ratio 0.52, 70% hit rate.
+    max_chars: 25_000_000
     enabled: true

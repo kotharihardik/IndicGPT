@@ -1,6 +1,4 @@
-# =====================================================================
 # Gujarati PUBLIC sources  (source_type: public, label: public_hf)
-# =====================================================================
 # These are downloaded datasets. They NEVER count towards the >=20% manual
 # requirement, no matter how much cleaning we apply to them.
 #
@@ -14,9 +12,9 @@
 # All other entries are DISABLED and marked NEEDS_DECISION: enable one only
 # after verifying its path on huggingface.co with:
 #   python data/collection/collect_public.py --dry-run --only <name>
-# =====================================================================
 
 sources:
+
   - name: ai4bharat_sangraha
     hf_path: ai4bharat/sangraha
     config_name: verified           # exact Hugging Face builder config name
@@ -32,7 +30,8 @@ sources:
     min_chars: 300
     enabled: true
 
-  # --------- NEEDS_DECISION: enable only after you verify each one ---------
+  # NEEDS_DECISION: enable only after you verify each one
+
   - name: sangraha_unverified_guj
     hf_path: ai4bharat/sangraha
     data_dir: unverified/guj

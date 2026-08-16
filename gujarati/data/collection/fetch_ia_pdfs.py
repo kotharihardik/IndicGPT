@@ -1,26 +1,23 @@
-"""Download openly-available Gujarati book PDFs from archive.org.
+"""Download Gujarati book PDFs from archive.org into data/raw/pdfs/books/.
 
-Populates ``data/raw/pdfs/<set>/`` so ``collect_manual.py --method ocr`` has
-something to work on. It downloads PDFs only and extracts no text: the OCR is
-deliberately still our job, which is what makes the ``manual_ocr`` label
-honest.
+This is a downloader, not a collector: it only puts files on disk. The `pdf`
+adapter in adapters/pdf.py is what turns them into corpus documents, and the
+`ia_books_pdf` source in manual_sources.yaml is what points at this directory.
 
-Two presets, matching the two OCR sources in manual_sources.yaml::
+    python data/collection/fetch_ia_pdfs.py --dry-run
+    python data/collection/fetch_ia_pdfs.py --max-items 700 --max-gb 20
 
-    python3 data/collection/fetch_ia_pdfs.py --preset books --dry-run
-    python3 data/collection/fetch_ia_pdfs.py --preset books --max-items 700 --max-gb 20
-    python3 data/collection/fetch_ia_pdfs.py --preset dli   --max-items 500 --max-gb 15
+It writes manifest.csv alongside the PDFs, recording identifier, title,
+creator, date, licenceurl and rights for every item. That file is the
+provenance table for this source. Rerunning reads the manifest first and skips
+whatever it already has, so an interrupted download resumes.
 
-``books`` = Books-by-Language: Gujarati (mixed eras, many with a text layer).
-``dli``   = Digital Library of India Gujarati holdings (older scans, mostly
-            image-only, so Tesseract does real work). Different register and
-            different decades - that is the point of running both.
-
-Skips lending-restricted items. Writes ``manifest.csv`` per set recording
-identifier, title, creator, date, licenceurl and rights for every item: that
-file is your Phase 1 provenance table.
-
-Resumable - rerun after an interruption and it picks up from the manifest.
+Worth knowing before using this: it was largely superseded by the
+`ia_fulltext` method (adapters/archive_org.py), which pulls archive.org's own
+OCR text instead of the PDFs. Downloads here run at 10-300 KB/s and most of
+the scans have no text layer to read, so this route produced 3.7M characters
+against ia_fulltext's 152.8M from the same provider. It is kept because its
+output is in the corpus and the run should stay reproducible.
 """
 
 from __future__ import annotations
@@ -44,17 +41,10 @@ FIELDS = ["identifier", "title", "creator", "date", "year",
 TEXT_FIRST = ["Text PDF", "Additional Text PDF", "Image Container PDF"]
 IMAGE_FIRST = ["Image Container PDF", "Additional Text PDF", "Text PDF"]
 
-PRESETS = {
-    "books": {
-        "query": "collection:booksbylanguage_gujarati AND mediatype:texts AND format:PDF",
-        "out": "data/raw/pdfs/books",
-    },
-    "dli": {
-        "query": ("collection:digitallibraryindia AND language:(Gujarati) "
-                  "AND mediatype:texts AND format:PDF"),
-        "out": "data/raw/pdfs/dli",
-    },
-}
+#: The archive.org collection this source draws from.
+BOOKS_QUERY = ("collection:booksbylanguage_gujarati AND mediatype:texts "
+               "AND format:PDF")
+DEFAULT_OUT = "data/raw/pdfs/books"
 
 
 def human_bytes(n: float) -> str:
@@ -198,16 +188,17 @@ def load_manifest(path: Path) -> dict:
 
 def main() -> None:
     ap = argparse.ArgumentParser(
-        description="Fetch Gujarati book PDFs from archive.org for OCR.")
-    ap.add_argument("--preset", choices=sorted(PRESETS), default="books")
-    ap.add_argument("--out", help="override the preset output directory")
-    ap.add_argument("--query", help="override the preset query")
+        description="Download Gujarati book PDFs from archive.org.")
+    ap.add_argument("--out", default=DEFAULT_OUT, help="output directory")
+    ap.add_argument("--query", default=BOOKS_QUERY,
+                    help="override the archive.org search query")
     ap.add_argument("--max-items", type=int, default=700)
     ap.add_argument("--max-gb", type=float, default=20.0)
     ap.add_argument("--max-file-mb", type=float, default=400.0)
     ap.add_argument("--prefer", choices=["text", "image"], default="text",
-                    help="'text' prefers PDFs with a text layer (fast); "
-                         "'image' prefers raw scans so Tesseract does the work")
+                    help="which PDF derivative to take. 'text' prefers one "
+                         "with an embedded text layer, which is the only kind "
+                         "the pdf adapter can read")
     ap.add_argument("--open-only", action="store_true",
                     help="keep only items with an explicit licenseurl")
     ap.add_argument("--delay", type=float, default=1.0)
@@ -215,9 +206,8 @@ def main() -> None:
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 
-    preset = PRESETS[args.preset]
-    query = args.query or preset["query"]
-    out_dir = Path(args.out or preset["out"])
+    query = args.query
+    out_dir = Path(args.out)
 
     if "example.com" in args.contact:
         print("Pass a real --contact address.")
@@ -227,7 +217,6 @@ def main() -> None:
     manifest_path = out_dir / "manifest.csv"
     seen = load_manifest(manifest_path)
 
-    print(f"preset   : {args.preset}")
     print(f"query    : {query}")
     print(f"out      : {out_dir}")
     print(f"manifest : {len(seen):,} items already processed\n")
@@ -330,12 +319,10 @@ def main() -> None:
                 w.writeheader()
             w.writerows(new_rows)
 
-    print(f"\n==== {args.preset}: downloaded {kept:,} PDFs / {human_bytes(total)} "
-          f"({skipped:,} skipped) in {fmt_dur(time.time() - t0)} ====")
-    print(f"provenance table: {manifest_path}   <- cite this in report/")
-    src = "ia_books_ocr" if args.preset == "books" else "dli_books_ocr"
-    print(f"\nnext:  python3 data/collection/collect_manual.py --method ocr "
-          f"--only {src} --workers 8")
+    print(f"\ndownloaded {kept:,} PDFs / {human_bytes(total)} "
+          f"({skipped:,} skipped) in {fmt_dur(time.time() - t0)}")
+    print(f"provenance table: {manifest_path}")
+    print("\nnext:  python3 data/collection/collect_manual.py --only ia_books_pdf")
 
 
 if __name__ == "__main__":

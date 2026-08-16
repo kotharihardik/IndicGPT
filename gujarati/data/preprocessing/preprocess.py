@@ -1,27 +1,27 @@
 """Gujarati preprocessing: Unicode normalisation, filtering, boilerplate removal.
 
-Reads every raw shard under ``data/raw/`` (public and manual alike, provenance
-preserved) and writes cleaned documents to ``data/clean/``.
+Reads every raw shard under `data/raw/` (public and manual alike, provenance
+preserved) and writes cleaned documents to `data/clean/`.
 
-Gujarati-specific decisions made here, all defensible in evaluation:
+The Gujarati-specific choices made here, and why:
 
-* **NFC**, not NFKC. NFC composes the nukta letters (જ઼ ડ઼ ઢ઼) into single code
+* NFC, not NFKC. NFC composes the nukta letters (જ઼ ડ઼ ઢ઼) into single code
   points so the tokenizer sees one spelling; NFKC would additionally destroy
   distinctions we want to keep.
-* **ZWJ (U+200D) removed, ZWNJ (U+200C) kept.** Gujarati never needs an explicit
+* ZWJ (U+200D) removed, ZWNJ (U+200C) kept. Gujarati never needs an explicit
   joiner to render correctly, so stray ZWJ only creates duplicate spellings of
   identical words. ZWNJ can be orthographically meaningful (it blocks a
   conjunct), so it is preserved.
-* **Gujarati digits ૦-૯ folded to ASCII.** They are rare in modern prose and
+* Gujarati digits ૦-૯ folded to ASCII. They are rare in modern prose and
   would otherwise occupy vocabulary slots as a high-variance token class.
-* **Danda ।/॥ kept.** They are shared punctuation used in Gujarati and are the
+* Danda ।/॥ kept. They are shared punctuation used in Gujarati and are the
   main sentence terminator in literary text.
-* **Script filter on the Gujarati block (U+0A80-U+0AFF)** over *letter*
+* Script filter on the Gujarati block (U+0A80-U+0AFF) over *letter*
   characters only. Gujarati and Devanagari are different Unicode blocks, so this
   cleanly rejects Hindi/Marathi pages that leak into a Gujarati crawl - no
   pretrained language-ID model needed.
 
-Run::
+Run:
 
     python data/preprocessing/preprocess.py
     python data/preprocessing/preprocess.py --limit 5000     # smoke test
@@ -45,9 +45,7 @@ CFG = load_config(ROOT)
 Q = CFG["quality"]
 N = CFG["normalize"]
 
-# --------------------------------------------------------------------------- #
 # Normalisation
-# --------------------------------------------------------------------------- #
 
 GUJARATI_BLOCK = (0x0A80, 0x0AFF)
 DEVANAGARI_BLOCK = (0x0900, 0x097F)
@@ -101,9 +99,7 @@ def normalize(text: str) -> str:
     return MULTI_NL.sub("\n\n", text).strip()
 
 
-# --------------------------------------------------------------------------- #
 # Filtering
-# --------------------------------------------------------------------------- #
 
 
 def _ratio(text: str, blocks) -> float:
@@ -137,7 +133,7 @@ def _top_ngram_fraction(words: list, n: int) -> float:
 
 
 def check(text: str):
-    """Return ``(keep, reason)``; `reason` is None when the document is kept.
+    """Return `(keep, reason)`; `reason` is None when the document is kept.
 
     Filters are ordered cheap-first so most junk is rejected before the
     expensive n-gram statistics run.
@@ -174,9 +170,6 @@ def check(text: str):
         if _top_ngram_fraction(words, n) > Q[key]:
             return False, f"repetitive_{n}gram"
     return True, None
-
-
-# --------------------------------------------------------------------------- #
 
 
 def main() -> None:
@@ -270,7 +263,7 @@ def main() -> None:
     }
     rep = CFG["paths"]["reports"]
     rep.mkdir(parents=True, exist_ok=True)
-    (rep / f"cleaning_{CFG['language']}.json").write_text(
+    (rep / "cleaning.json").write_text(
         json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
 
     print(f"\n==== CLEAN [{CFG['language']}] ====")
@@ -278,7 +271,7 @@ def main() -> None:
           f"{human(writer.chars)} chars)")
     for r, c in reasons.most_common():
         print(f"    {r:<28} {c:>10,}")
-    print(f"  summary -> {rep / f'cleaning_{CFG['language']}.json'}")
+    print(f"  summary -> {rep / 'cleaning.json'}")
 
 
 if __name__ == "__main__":
