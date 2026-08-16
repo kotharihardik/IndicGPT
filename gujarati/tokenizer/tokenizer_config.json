@@ -1,0 +1,47 @@
+{
+  "language": "guj",
+  "algorithm": "sentencepiece_unigram",
+  "vocab_size": 16000,
+  "trained_on": "train split only (validation/test never seen)",
+  "training_chars": 99660254,
+  "training_composition_by_source": {
+    "abtakmedia": 7203149,
+    "aksharnaad": 603840,
+    "divya_bhaskar": 473857,
+    "gujaratabroad": 870670,
+    "gujarativishwakosh": 3516148,
+    "gujarattoday": 3391154,
+    "ia_books_fulltext": 5480331,
+    "ia_books_pdf": 6613,
+    "layastaro": 243236,
+    "opinionmagazine": 3098044,
+    "webdunia_gujarati": 173710,
+    "westerntimesnews": 4133205,
+    "ai4bharat_sangraha": 70466297
+  },
+  "pretrained_tokenizer_used": false,
+  "shared_with_other_language": false,
+  "script": "Gujarati (U+0A80-U+0AFF)",
+  "required_chars_count": 91,
+  "settings": {
+    "normalization_rule_name": "identity",
+    "byte_fallback": true,
+    "split_by_unicode_script": true,
+    "split_by_whitespace": true,
+    "split_digits": true,
+    "character_coverage": 0.9995,
+    "max_sentencepiece_length": 16
+  },
+  "special_tokens": {
+    "<pad>": 0,
+    "<unk>": 1,
+    "<s>": 2,
+    "</s>": 3
+  },
+  "phase2_cost": {
+    "model_dim": 384,
+    "embedding_parameters": 6144000,
+    "share_of_target_budget": 0.2458,
+    "note": "input and output embeddings are tied, so counted once"
+  }
+}
