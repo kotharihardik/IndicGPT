@@ -1,0 +1,55 @@
+=== PREPROCESS FINISHED ===
+  200,000 seen | 191,734 kept (95.9%)
+  250,000 seen | 239,957 kept (96.0%)
+  300,000 seen | 287,318 kept (95.8%)
+  350,000 seen | 334,571 kept (95.6%)
+  400,000 seen | 381,855 kept (95.5%)
+  450,000 seen | 429,148 kept (95.4%)
+  500,000 seen | 476,404 kept (95.3%)
+  550,000 seen | 523,779 kept (95.2%)
+  600,000 seen | 571,148 kept (95.2%)
+  650,000 seen | 618,386 kept (95.1%)
+  700,000 seen | 665,730 kept (95.1%)
+  750,000 seen | 712,939 kept (95.1%)
+  800,000 seen | 760,295 kept (95.0%)
+  850,000 seen | 807,660 kept (95.0%)
+
+==== CLEAN [gu] ====
+  889,150 in -> 844,741 kept (95.0% of docs, 2.03B chars)
+    not_gujarati                     32,483
+    devanagari_leakage                5,765
+    repetitive_4gram                  2,368
+    too_short                         1,654
+    repetitive_3gram                    806
+    repeated_lines                      772
+    repetitive_2gram                    209
+    no_stopwords                        208
+    digit_heavy                         118
+    bad_word_length                      16
+    boilerplate                           7
+    too_few_words                         3
+  summary -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/../report/cleaning_gu.json
+
+=== DEDUPLICATE ===
+  50,000 in | 49,568 kept | exact=2 near=430
+  100,000 in | 99,402 kept | exact=29 near=569
+Traceback (most recent call last):
+  File "/Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/data/preprocessing/deduplicate.py", line 129, in <module>
+    main()
+  File "/Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/data/preprocessing/deduplicate.py", line 101, in main
+    lsh.insert(doc.id, sig)
+  File "/Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/.venv/lib/python3.12/site-packages/datasketch/lsh.py", line 235, in insert
+    self._insert(key, minhash, check_duplication=check_duplication, buffer=False)
+  File "/Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/.venv/lib/python3.12/site-packages/datasketch/lsh.py", line 348, in _insert
+    raise ValueError("The given key already exists")
+ValueError: The given key already exists
+
+=== SPLITS ===
+
+==== SPLITS [gu] ====
+  train         119,523 docs |  295.75M chars | manual 100.0%
+  validation        474 docs |    1.08M chars | manual 100.0%
+  test              470 docs |    1.23M chars | manual 100.0%
+  summary -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/../report/splits_gu.json
+
+=== ALL DONE ===

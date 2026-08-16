@@ -1,0 +1,32 @@
+========================================================================================
+GUJARATI MANUAL COLLECTION   2026-08-15 12:24:43
+  sources: gu_wikisource, layastaro, webdunia_gujarati
+  target : 130.00M manual tokens (~520.00M chars)
+  already: 0 chars collected
+========================================================================================
+
+--- gu_wikisource  (sitemap)  budget 60.00M chars ---
+  gu_wikisource: 0 new article URLs from sitemap
+  [gu_wikisource]  |  0 docs  |  0 ch  |  ~0 tok  |  0 ch/s  |  2 req  |  0% of budget  |  ETA 0s  |  0s  |  DONE
+  shard: gu_wikisource.part-1786776883-21219.jsonl.gz (0 docs / 0 chars)
+
+--- layastaro  (sitemap)  budget 25.00M chars ---
+  layastaro: 0 new article URLs from sitemap
+  [layastaro]  |  0 docs  |  0 ch  |  ~0 tok  |  0 ch/s  |  1 req  |  0% of budget  |  ETA 0s  |  3s  |  DONE
+  shard: layastaro.part-1786776883-21219.jsonl.gz (0 docs / 0 chars)
+
+--- webdunia_gujarati  (sitemap)  budget 25.00M chars ---
+  webdunia_gujarati: 3,933 new article URLs from sitemap
+  [webdunia_gujarati]  |  1 docs  |  2.03K ch  |  ~506 tok  |  490 ch/s  |  10 req  |  0% of budget  |  ETA 294h44m  |  4s
+  [webdunia_gujarati]  |  99 docs  |  183.54K ch  |  ~45.89K tok  |  12.91K ch/s  |  167 req  |  1% of budget  |  ETA 11h11m  |  14s
+  [webdunia_gujarati]  |  113 docs  |  194.06K ch  |  ~48.52K tok  |  7.78K ch/s  |  282 req  |  1% of budget  |  ETA 18h33m  |  24s
+  [webdunia_gujarati]  |  116 docs  |  196.32K ch  |  ~49.08K tok  |  5.49K ch/s  |  330 req  |  1% of budget  |  ETA 26h17m  |  35s
+  [webdunia_gujarati]  |  129 docs  |  206.11K ch  |  ~51.53K tok  |  4.42K ch/s  |  437 req  |  1% of budget  |  ETA 32h39m  |  46s
+  [webdunia_gujarati]  |  153 docs  |  217.13K ch  |  ~54.28K tok  |  3.78K ch/s  |  556 req  |  1% of budget  |  ETA 38h12m  |  57s
+  [webdunia_gujarati]  |  163 docs  |  222.28K ch  |  ~55.57K tok  |  3.27K ch/s  |  677 req  |  1% of budget  |  ETA 44h11m  |  1m08s
+  [webdunia_gujarati]  |  183 docs  |  229.17K ch  |  ~57.29K tok  |  2.94K ch/s  |  774 req  |  1% of budget  |  ETA 49h10m  |  1m18s
+  [webdunia_gujarati]  |  203 docs  |  238.95K ch  |  ~59.74K tok  |  2.71K ch/s  |  890 req  |  1% of budget  |  ETA 53h13m  |  1m28s
+  [webdunia_gujarati]  |  232 docs  |  252.59K ch  |  ~63.15K tok  |  2.57K ch/s  |  1,003 req  |  1% of budget  |  ETA 56h07m  |  1m38s
+  [webdunia_gujarati]  |  246 docs  |  261.43K ch  |  ~65.36K tok  |  2.41K ch/s  |  1,115 req  |  1% of budget  |  ETA 59h47m  |  1m48s
+  [webdunia_gujarati]  |  278 docs  |  279.10K ch  |  ~69.78K tok  |  2.35K ch/s  |  1,232 req  |  1% of budget  |  ETA 61h18m  |  1m58s
+  [webdunia_gujarati]  |  288 docs  |  283.46K ch  |  ~70.86K tok  |  2.20K ch/s  |  1,344 req  |  1% of budget  |  ETA 65h29m  |  2m08s

@@ -1,0 +1,116 @@
+========================================================================================
+GUJARATI MANUAL COLLECTION   2026-08-13 22:27:05
+  sources: gujarattoday, gujaratabroad, loksansar, sunvillasamachar, eaglenews
+  target : 130.00M manual tokens (~520.00M chars)
+  already: 0 chars collected
+========================================================================================
+
+--- gujarattoday  (wp_rest)  budget 102.00M chars ---
+  [gujarattoday]  |  1 docs  |  1.65K ch  |  ~412 tok  |  359 ch/s  |  4 req  |  0% of budget  |  ETA 401h46m  |  4s
+  [gujarattoday]  |  1,442 docs  |  3.07M ch  |  ~767.52K tok  |  180.02K ch/s  |  20 req  |  3% of budget  |  ETA 47m51s  |  17s
+  [gujarattoday]  |  2,865 docs  |  5.49M ch  |  ~1.37M tok  |  192.08K ch/s  |  36 req  |  5% of budget  |  ETA 44m38s  |  28s
+  [gujarattoday]  |  4,025 docs  |  7.40M ch  |  ~1.85M tok  |  191.50K ch/s  |  48 req  |  7% of budget  |  ETA 44m36s  |  38s
+  [gujarattoday]  |  5,205 docs  |  9.55M ch  |  ~2.39M tok  |  196.31K ch/s  |  60 req  |  9% of budget  |  ETA 43m20s  |  48s
+  [gujarattoday]  |  6,210 docs  |  11.33M ch  |  ~2.83M tok  |  190.23K ch/s  |  72 req  |  11% of budget  |  ETA 44m33s  |  59s
+  [gujarattoday]  |  7,412 docs  |  14.01M ch  |  ~3.50M tok  |  196.08K ch/s  |  88 req  |  14% of budget  |  ETA 43m00s  |  1m11s
+  [gujarattoday]  |  7,939 docs  |  15.35M ch  |  ~3.84M tok  |  184.65K ch/s  |  104 req  |  15% of budget  |  ETA 45m33s  |  1m23s
+  [gujarattoday]  |  9,188 docs  |  17.33M ch  |  ~4.33M tok  |  181.16K ch/s  |  120 req  |  17% of budget  |  ETA 46m14s  |  1m35s
+  [gujarattoday]  |  10,338 docs  |  19.08M ch  |  ~4.77M tok  |  180.24K ch/s  |  132 req  |  19% of budget  |  ETA 46m19s  |  1m45s
+  [gujarattoday]  |  11,885 docs  |  21.48M ch  |  ~5.37M tok  |  182.33K ch/s  |  148 req  |  21% of budget  |  ETA 45m34s  |  1m57s
+  [gujarattoday]  |  13,037 docs  |  23.35M ch  |  ~5.84M tok  |  181.73K ch/s  |  160 req  |  23% of budget  |  ETA 45m32s  |  2m08s
+  [gujarattoday]  |  14,586 docs  |  25.62M ch  |  ~6.41M tok  |  181.80K ch/s  |  176 req  |  25% of budget  |  ETA 45m19s  |  2m20s
+  [gujarattoday]  |  15,741 docs  |  27.39M ch  |  ~6.85M tok  |  181.01K ch/s  |  188 req  |  27% of budget  |  ETA 45m21s  |  2m31s
+  [gujarattoday]  |  17,283 docs  |  29.75M ch  |  ~7.44M tok  |  182.10K ch/s  |  204 req  |  29% of budget  |  ETA 44m52s  |  2m43s
+  [gujarattoday]  |  18,493 docs  |  31.48M ch  |  ~7.87M tok  |  181.60K ch/s  |  216 req  |  31% of budget  |  ETA 44m50s  |  2m53s
+  [gujarattoday]  |  19,939 docs  |  33.65M ch  |  ~8.41M tok  |  181.47K ch/s  |  232 req  |  33% of budget  |  ETA 44m40s  |  3m05s
+  [gujarattoday]  |  21,074 docs  |  35.31M ch  |  ~8.83M tok  |  174.21K ch/s  |  244 req  |  35% of budget  |  ETA 46m22s  |  3m22s
+  [gujarattoday]  |  22,194 docs  |  36.97M ch  |  ~9.24M tok  |  172.97K ch/s  |  256 req  |  36% of budget  |  ETA 46m32s  |  3m33s
+  [gujarattoday]  |  23,589 docs  |  38.94M ch  |  ~9.74M tok  |  174.05K ch/s  |  268 req  |  38% of budget  |  ETA 46m03s  |  3m43s
+  [gujarattoday]  |  24,699 docs  |  40.56M ch  |  ~10.14M tok  |  173.50K ch/s  |  280 req  |  40% of budget  |  ETA 46m03s  |  3m53s
+  [gujarattoday]  |  26,018 docs  |  42.38M ch  |  ~10.60M tok  |  172.28K ch/s  |  296 req  |  42% of budget  |  ETA 46m12s  |  4m06s
+  [gujarattoday]  |  27,188 docs  |  44.02M ch  |  ~11.00M tok  |  171.38K ch/s  |  308 req  |  43% of budget  |  ETA 46m17s  |  4m16s
+  [gujarattoday]  |  28,721 docs  |  46.11M ch  |  ~11.53M tok  |  171.42K ch/s  |  324 req  |  45% of budget  |  ETA 46m04s  |  4m28s
+  [gujarattoday]  |  30,233 docs  |  48.15M ch  |  ~12.04M tok  |  171.23K ch/s  |  340 req  |  47% of budget  |  ETA 45m55s  |  4m41s
+  [gujarattoday]  |  31,364 docs  |  49.71M ch  |  ~12.43M tok  |  169.84K ch/s  |  352 req  |  49% of budget  |  ETA 46m08s  |  4m52s
+  [gujarattoday]  |  32,904 docs  |  51.91M ch  |  ~12.98M tok  |  170.43K ch/s  |  368 req  |  51% of budget  |  ETA 45m46s  |  5m04s
+  [gujarattoday]  |  34,144 docs  |  53.75M ch  |  ~13.44M tok  |  170.87K ch/s  |  380 req  |  53% of budget  |  ETA 45m28s  |  5m14s
+  [gujarattoday]  |  35,226 docs  |  55.44M ch  |  ~13.86M tok  |  170.39K ch/s  |  392 req  |  54% of budget  |  ETA 45m26s  |  5m25s
+  [gujarattoday]  |  36,783 docs  |  57.81M ch  |  ~14.45M tok  |  170.79K ch/s  |  408 req  |  57% of budget  |  ETA 45m06s  |  5m38s
+  [gujarattoday]  |  37,951 docs  |  59.55M ch  |  ~14.89M tok  |  170.70K ch/s  |  420 req  |  58% of budget  |  ETA 44m57s  |  5m48s
+  [gujarattoday]  |  39,195 docs  |  61.45M ch  |  ~15.36M tok  |  171.22K ch/s  |  432 req  |  60% of budget  |  ETA 44m38s  |  5m58s
+  [gujarattoday]  |  40,406 docs  |  63.39M ch  |  ~15.85M tok  |  171.85K ch/s  |  444 req  |  62% of budget  |  ETA 44m17s  |  6m08s
+  [gujarattoday]  |  41,449 docs  |  65.03M ch  |  ~16.26M tok  |  171.18K ch/s  |  456 req  |  64% of budget  |  ETA 44m17s  |  6m19s
+  [gujarattoday]  |  43,013 docs  |  67.44M ch  |  ~16.86M tok  |  172.29K ch/s  |  472 req  |  66% of budget  |  ETA 43m46s  |  6m31s
+  [gujarattoday]  |  44,578 docs  |  69.96M ch  |  ~17.49M tok  |  173.18K ch/s  |  488 req  |  69% of budget  |  ETA 43m18s  |  6m43s
+  [gujarattoday]  |  45,740 docs  |  71.79M ch  |  ~17.95M tok  |  173.15K ch/s  |  500 req  |  70% of budget  |  ETA 43m08s  |  6m54s
+  [gujarattoday]  |  46,410 docs  |  73.10M ch  |  ~18.28M tok  |  171.68K ch/s  |  512 req  |  72% of budget  |  ETA 43m23s  |  7m05s  |  DONE
+       rejected: too-short x3,943, too-few-words x144, no-stopwords x9
+  shard: gujarattoday.part-1786640225-36373.jsonl.gz (46,410 docs / 73.10M chars)
+
+--- gujaratabroad  (wp_rest)  budget 21.00M chars ---
+  [gujaratabroad]  |  1 docs  |  2.54K ch  |  ~636 tok  |  91 ch/s  |  4 req  |  0% of budget  |  ETA 1352h21m  |  27s
+  [gujaratabroad]  |  400 docs  |  1.17M ch  |  ~292.85K tok  |  23.66K ch/s  |  8 req  |  6% of budget  |  ETA 5h13m  |  49s
+  [gujaratabroad]  |  799 docs  |  2.43M ch  |  ~608.56K tok  |  34.37K ch/s  |  12 req  |  12% of budget  |  ETA 3h35m  |  1m10s
+  [gujaratabroad]  |  1,196 docs  |  3.72M ch  |  ~931.05K tok  |  41.20K ch/s  |  16 req  |  18% of budget  |  ETA 2h59m  |  1m30s
+  [gujaratabroad]  |  1,596 docs  |  5.00M ch  |  ~1.25M tok  |  39.39K ch/s  |  20 req  |  24% of budget  |  ETA 3h06m  |  2m06s
+  [gujaratabroad]  |  1,996 docs  |  6.31M ch  |  ~1.58M tok  |  41.57K ch/s  |  24 req  |  30% of budget  |  ETA 2h56m  |  2m31s
+  [gujaratabroad]  |  2,393 docs  |  7.56M ch  |  ~1.89M tok  |  42.35K ch/s  |  28 req  |  36% of budget  |  ETA 2h52m  |  2m58s
+  [gujaratabroad]  |  2,779 docs  |  8.94M ch  |  ~2.23M tok  |  44.14K ch/s  |  32 req  |  43% of budget  |  ETA 2h45m  |  3m22s
+  [gujaratabroad]  |  3,152 docs  |  10.08M ch  |  ~2.52M tok  |  44.74K ch/s  |  36 req  |  48% of budget  |  ETA 2h42m  |  3m45s
+  [gujaratabroad]  |  3,500 docs  |  11.10M ch  |  ~2.77M tok  |  44.13K ch/s  |  40 req  |  53% of budget  |  ETA 2h44m  |  4m11s
+  [gujaratabroad]  |  3,848 docs  |  12.07M ch  |  ~3.02M tok  |  43.53K ch/s  |  44 req  |  57% of budget  |  ETA 2h46m  |  4m37s
+  [gujaratabroad]  |  4,232 docs  |  13.18M ch  |  ~3.29M tok  |  42.39K ch/s  |  48 req  |  63% of budget  |  ETA 2h50m  |  5m10s
+  [gujaratabroad]  |  4,631 docs  |  14.34M ch  |  ~3.58M tok  |  41.84K ch/s  |  52 req  |  68% of budget  |  ETA 2h52m  |  5m42s
+  [gujaratabroad]  |  5,031 docs  |  15.60M ch  |  ~3.90M tok  |  42.57K ch/s  |  56 req  |  74% of budget  |  ETA 2h48m  |  6m06s
+  [gujaratabroad]  |  5,430 docs  |  16.76M ch  |  ~4.19M tok  |  43.37K ch/s  |  60 req  |  80% of budget  |  ETA 2h45m  |  6m26s
+  [gujaratabroad]  |  5,830 docs  |  17.90M ch  |  ~4.48M tok  |  43.85K ch/s  |  64 req  |  85% of budget  |  ETA 2h43m  |  6m48s
+  [gujaratabroad]  |  6,230 docs  |  19.05M ch  |  ~4.76M tok  |  44.97K ch/s  |  68 req  |  91% of budget  |  ETA 2h38m  |  7m03s
+  [gujaratabroad]  |  6,483 docs  |  19.76M ch  |  ~4.94M tok  |  46.51K ch/s  |  72 req  |  94% of budget  |  ETA 2h33m  |  7m04s  |  DONE
+       rejected: too-short x167, not-gujarati x6
+  shard: gujaratabroad.part-1786640650-36373.jsonl.gz (6,483 docs / 19.76M chars)
+
+--- loksansar  (wp_rest)  budget 35.00M chars ---
+  [loksansar]  |  1 docs  |  598 ch  |  ~149 tok  |  201 ch/s  |  4 req  |  0% of budget  |  ETA 587h37m  |  2s
+  [loksansar]  |  2,789 docs  |  4.75M ch  |  ~1.19M tok  |  352.63K ch/s  |  32 req  |  14% of budget  |  ETA 19m57s  |  13s
+  [loksansar]  |  5,751 docs  |  9.44M ch  |  ~2.36M tok  |  401.88K ch/s  |  60 req  |  27% of budget  |  ETA 17m19s  |  23s
+  [loksansar]  |  8,777 docs  |  13.88M ch  |  ~3.47M tok  |  407.13K ch/s  |  92 req  |  40% of budget  |  ETA 16m55s  |  34s
+  [loksansar]  |  11,298 docs  |  17.59M ch  |  ~4.40M tok  |  398.80K ch/s  |  116 req  |  50% of budget  |  ETA 17m06s  |  44s
+  [loksansar]  |  14,242 docs  |  21.75M ch  |  ~5.44M tok  |  398.03K ch/s  |  148 req  |  62% of budget  |  ETA 16m58s  |  54s
+  [loksansar]  |  16,971 docs  |  25.65M ch  |  ~6.41M tok  |  391.42K ch/s  |  176 req  |  73% of budget  |  ETA 17m05s  |  1m05s
+  [loksansar]  |  19,699 docs  |  29.57M ch  |  ~7.39M tok  |  388.41K ch/s  |  204 req  |  84% of budget  |  ETA 17m03s  |  1m16s
+  [loksansar]  |  22,420 docs  |  33.01M ch  |  ~8.25M tok  |  378.80K ch/s  |  232 req  |  94% of budget  |  ETA 17m20s  |  1m27s
+  [loksansar]  |  23,937 docs  |  35.00M ch  |  ~8.75M tok  |  382.67K ch/s  |  244 req  |  100% of budget  |  ETA 17m04s  |  1m31s  |  DONE (source budget reached)
+       rejected: too-short x397, no-stopwords x11, latin-heavy x10, not-gujarati x3
+  shard: loksansar.part-1786641075-36373.jsonl.gz (23,937 docs / 35.00M chars)
+
+--- sunvillasamachar  (wp_rest)  budget 27.00M chars ---
+  [sunvillasamachar]  |  1 docs  |  2.07K ch  |  ~517 tok  |  347 ch/s  |  4 req  |  0% of budget  |  ETA 313h35m  |  5s
+  [sunvillasamachar]  |  1,595 docs  |  3.43M ch  |  ~858.60K tok  |  211.01K ch/s  |  20 req  |  13% of budget  |  ETA 30m42s  |  16s
+  [sunvillasamachar]  |  3,154 docs  |  6.17M ch  |  ~1.54M tok  |  213.89K ch/s  |  36 req  |  23% of budget  |  ETA 30m04s  |  28s
+  [sunvillasamachar]  |  4,743 docs  |  8.84M ch  |  ~2.21M tok  |  222.46K ch/s  |  52 req  |  33% of budget  |  ETA 28m42s  |  39s
+  [sunvillasamachar]  |  6,467 docs  |  11.59M ch  |  ~2.90M tok  |  230.10K ch/s  |  72 req  |  43% of budget  |  ETA 27m33s  |  50s
+  [sunvillasamachar]  |  8,004 docs  |  14.18M ch  |  ~3.54M tok  |  237.36K ch/s  |  88 req  |  53% of budget  |  ETA 26m32s  |  59s  |  DONE
+       rejected: not-gujarati x380, latin-heavy x32, devanagari-leak x16, too-short x6
+  shard: sunvillasamachar.part-1786641167-36373.jsonl.gz (8,004 docs / 14.18M chars)
+
+--- eaglenews  (wp_rest)  budget 3.50M chars ---
+  [eaglenews]  |  1 docs  |  1.03K ch  |  ~257 tok  |  24 ch/s  |  4 req  |  0% of budget  |  ETA 4286h48m  |  41s
+  [eaglenews]  |  283 docs  |  285.92K ch  |  ~71.48K tok  |  4.49K ch/s  |  8 req  |  8% of budget  |  ETA 23h22m  |  1m03s
+  [eaglenews]  |  587 docs  |  569.72K ch  |  ~142.43K tok  |  5.54K ch/s  |  12 req  |  16% of budget  |  ETA 18h55m  |  1m42s
+  [eaglenews]  |  909 docs  |  858.67K ch  |  ~214.67K tok  |  5.30K ch/s  |  16 req  |  25% of budget  |  ETA 19h46m  |  2m42s
+  [eaglenews]  |  1,231 docs  |  1.19M ch  |  ~297.75K tok  |  6.24K ch/s  |  20 req  |  34% of budget  |  ETA 16h46m  |  3m10s
+  [eaglenews]  |  1,544 docs  |  1.56M ch  |  ~388.76K tok  |  7.33K ch/s  |  24 req  |  44% of budget  |  ETA 14h15m  |  3m32s
+  [eaglenews]  |  1,851 docs  |  1.88M ch  |  ~469.54K tok  |  7.99K ch/s  |  28 req  |  54% of budget  |  ETA 13h04m  |  3m55s
+  [eaglenews]  |  2,098 docs  |  2.18M ch  |  ~545.42K tok  |  8.49K ch/s  |  32 req  |  62% of budget  |  ETA 12h17m  |  4m17s
+  [eaglenews]  |  2,354 docs  |  2.45M ch  |  ~613.71K tok  |  8.88K ch/s  |  36 req  |  70% of budget  |  ETA 11h45m  |  4m36s
+  [eaglenews]  |  2,726 docs  |  2.76M ch  |  ~690.18K tok  |  9.25K ch/s  |  40 req  |  79% of budget  |  ETA 11h15m  |  4m58s
+  [eaglenews]  |  3,059 docs  |  3.09M ch  |  ~773.16K tok  |  9.41K ch/s  |  44 req  |  88% of budget  |  ETA 11h03m  |  5m28s
+  [eaglenews]  |  3,218 docs  |  3.23M ch  |  ~807.85K tok  |  9.21K ch/s  |  48 req  |  92% of budget  |  ETA 11h18m  |  5m51s  |  DONE
+       rejected: too-short x941, not-gujarati x62, latin-heavy x5, devanagari-leak x2
+  shard: eaglenews.part-1786641227-36373.jsonl.gz (3,218 docs / 3.23M chars)
+
+========================================================================================
+TOTAL 145.27M chars  ~36.32M tokens (27.9% of target) in 22m32s
+========================================================================================
+
+progress: python3 data/collection/collect_manual.py --status

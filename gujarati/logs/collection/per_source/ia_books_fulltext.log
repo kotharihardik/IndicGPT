@@ -1,0 +1,132 @@
+========================================================================================
+GUJARATI MANUAL COLLECTION   2026-08-15 12:17:47
+  sources: ia_books_fulltext
+  target : 130.00M manual tokens (~520.00M chars)
+  already: 2.38M chars collected
+========================================================================================
+
+--- ia_books_fulltext  (ia_fulltext)  budget 400.00M chars ---
+  resuming: 13 docs / 2.38M chars already collected, 10 URLs known
+  [ia_books_fulltext]  |  1 docs  |  2.68M ch  |  ~669.84K tok  |  1.31K ch/s  |  0 req  |  1% of budget  |  ETA 109h37m  |  3m48s
+  [ia_books_fulltext]  |  7 docs  |  3.61M ch  |  ~902.73K tok  |  4.60K ch/s  |  0 req  |  1% of budget  |  ETA 31h09m  |  4m27s
+  [ia_books_fulltext]  |  12 docs  |  4.46M ch  |  ~1.11M tok  |  5.41K ch/s  |  0 req  |  1% of budget  |  ETA 26h27m  |  6m24s
+  [ia_books_fulltext]  |  21 docs  |  6.39M ch  |  ~1.60M tok  |  8.51K ch/s  |  0 req  |  2% of budget  |  ETA 16h46m  |  7m52s
+  [ia_books_fulltext]  |  34 docs  |  8.96M ch  |  ~2.24M tok  |  12.21K ch/s  |  0 req  |  2% of budget  |  ETA 11h37m  |  8m58s
+  [ia_books_fulltext]  |  43 docs  |  10.65M ch  |  ~2.66M tok  |  12.05K ch/s  |  0 req  |  3% of budget  |  ETA 11h44m  |  11m26s
+  [ia_books_fulltext]  |  54 docs  |  12.93M ch  |  ~3.23M tok  |  13.71K ch/s  |  0 req  |  3% of budget  |  ETA 10h16m  |  12m49s
+  [ia_books_fulltext]  |  67 docs  |  15.66M ch  |  ~3.91M tok  |  15.89K ch/s  |  0 req  |  4% of budget  |  ETA 8h48m  |  13m55s
+  [ia_books_fulltext]  |  76 docs  |  17.57M ch  |  ~4.39M tok  |  15.66K ch/s  |  0 req  |  4% of budget  |  ETA 8h54m  |  16m10s
+  [ia_books_fulltext]  |  93 docs  |  21.52M ch  |  ~5.38M tok  |  18.72K ch/s  |  0 req  |  5% of budget  |  ETA 7h23m  |  17m02s
+  [ia_books_fulltext]  |  100 docs  |  22.79M ch  |  ~5.70M tok  |  19.00K ch/s  |  0 req  |  6% of budget  |  ETA 7h16m  |  17m54s
+  [ia_books_fulltext]  |  107 docs  |  24.33M ch  |  ~6.08M tok  |  19.01K ch/s  |  0 req  |  6% of budget  |  ETA 7h14m  |  19m15s
+  [ia_books_fulltext]  |  112 docs  |  25.35M ch  |  ~6.34M tok  |  19.32K ch/s  |  0 req  |  6% of budget  |  ETA 7h06m  |  19m48s
+  [ia_books_fulltext]  |  116 docs  |  25.89M ch  |  ~6.47M tok  |  18.81K ch/s  |  0 req  |  6% of budget  |  ETA 7h17m  |  20m49s
+  [ia_books_fulltext]  |  121 docs  |  26.80M ch  |  ~6.70M tok  |  18.80K ch/s  |  0 req  |  7% of budget  |  ETA 7h17m  |  21m38s
+  [ia_books_fulltext]  |  127 docs  |  27.55M ch  |  ~6.89M tok  |  19.06K ch/s  |  0 req  |  7% of budget  |  ETA 7h10m  |  22m00s
+  [ia_books_fulltext]  |  128 docs  |  27.77M ch  |  ~6.94M tok  |  18.75K ch/s  |  0 req  |  7% of budget  |  ETA 7h17m  |  22m34s
+  [ia_books_fulltext]  |  134 docs  |  28.28M ch  |  ~7.07M tok  |  17.35K ch/s  |  0 req  |  7% of budget  |  ETA 7h52m  |  24m52s
+  [ia_books_fulltext]  |  146 docs  |  30.88M ch  |  ~7.72M tok  |  17.10K ch/s  |  0 req  |  8% of budget  |  ETA 7h56m  |  27m46s
+  [ia_books_fulltext]  |  158 docs  |  33.62M ch  |  ~8.40M tok  |  18.63K ch/s  |  0 req  |  8% of budget  |  ETA 7h15m  |  27m56s
+  [ia_books_fulltext]  |  161 docs  |  33.73M ch  |  ~8.43M tok  |  17.96K ch/s  |  0 req  |  8% of budget  |  ETA 7h31m  |  29m05s
+  [ia_books_fulltext]  |  167 docs  |  34.43M ch  |  ~8.61M tok  |  18.24K ch/s  |  0 req  |  9% of budget  |  ETA 7h23m  |  29m17s
+  [ia_books_fulltext]  |  171 docs  |  34.56M ch  |  ~8.64M tok  |  18.14K ch/s  |  0 req  |  9% of budget  |  ETA 7h25m  |  29m34s
+  [ia_books_fulltext]  |  177 docs  |  35.11M ch  |  ~8.78M tok  |  17.87K ch/s  |  0 req  |  9% of budget  |  ETA 7h32m  |  30m31s
+  [ia_books_fulltext]  |  181 docs  |  35.51M ch  |  ~8.88M tok  |  16.71K ch/s  |  0 req  |  9% of budget  |  ETA 8h03m  |  33m02s
+  [ia_books_fulltext]  |  188 docs  |  36.53M ch  |  ~9.13M tok  |  17.04K ch/s  |  0 req  |  9% of budget  |  ETA 7h52m  |  33m23s
+  [ia_books_fulltext]  |  196 docs  |  38.09M ch  |  ~9.52M tok  |  16.02K ch/s  |  0 req  |  10% of budget  |  ETA 8h21m  |  37m08s
+  [ia_books_fulltext]  |  208 docs  |  41.04M ch  |  ~10.26M tok  |  15.66K ch/s  |  0 req  |  10% of budget  |  ETA 8h29m  |  41m07s
+  [ia_books_fulltext]  |  215 docs  |  42.71M ch  |  ~10.68M tok  |  16.24K ch/s  |  0 req  |  11% of budget  |  ETA 8h09m  |  41m22s
+  [ia_books_fulltext]  |  219 docs  |  42.81M ch  |  ~10.70M tok  |  16.13K ch/s  |  0 req  |  11% of budget  |  ETA 8h13m  |  41m47s
+  [ia_books_fulltext]  |  221 docs  |  43.10M ch  |  ~10.77M tok  |  15.96K ch/s  |  0 req  |  11% of budget  |  ETA 8h18m  |  42m31s
+  [ia_books_fulltext]  |  226 docs  |  43.74M ch  |  ~10.94M tok  |  16.00K ch/s  |  0 req  |  11% of budget  |  ETA 8h15m  |  43m04s
+  [ia_books_fulltext]  |  229 docs  |  44.20M ch  |  ~11.05M tok  |  15.90K ch/s  |  0 req  |  11% of budget  |  ETA 8h18m  |  43m50s
+  [ia_books_fulltext]  |  233 docs  |  44.87M ch  |  ~11.22M tok  |  15.81K ch/s  |  0 req  |  11% of budget  |  ETA 8h21m  |  44m48s
+  [ia_books_fulltext]  |  243 docs  |  46.86M ch  |  ~11.71M tok  |  16.27K ch/s  |  0 req  |  12% of budget  |  ETA 8h04m  |  45m34s
+  [ia_books_fulltext]  |  249 docs  |  47.26M ch  |  ~11.82M tok  |  16.29K ch/s  |  0 req  |  12% of budget  |  ETA 8h03m  |  45m54s
+  [ia_books_fulltext]  |  251 docs  |  47.51M ch  |  ~11.88M tok  |  16.16K ch/s  |  0 req  |  12% of budget  |  ETA 8h07m  |  46m33s
+  [ia_books_fulltext]  |  257 docs  |  48.31M ch  |  ~12.08M tok  |  15.32K ch/s  |  0 req  |  12% of budget  |  ETA 8h33m  |  49m58s
+  [ia_books_fulltext]  |  268 docs  |  50.44M ch  |  ~12.61M tok  |  15.89K ch/s  |  0 req  |  13% of budget  |  ETA 8h12m  |  50m25s
+  [ia_books_fulltext]  |  275 docs  |  51.04M ch  |  ~12.76M tok  |  15.54K ch/s  |  0 req  |  13% of budget  |  ETA 8h23m  |  52m12s
+  [ia_books_fulltext]  |  284 docs  |  52.47M ch  |  ~13.12M tok  |  15.93K ch/s  |  0 req  |  13% of budget  |  ETA 8h09m  |  52m23s
+  [ia_books_fulltext]  |  288 docs  |  52.83M ch  |  ~13.21M tok  |  15.99K ch/s  |  0 req  |  13% of budget  |  ETA 8h07m  |  52m35s
+  [ia_books_fulltext]  |  293 docs  |  53.28M ch  |  ~13.32M tok  |  15.21K ch/s  |  0 req  |  13% of budget  |  ETA 8h31m  |  55m46s
+  [ia_books_fulltext]  |  304 docs  |  55.46M ch  |  ~13.86M tok  |  15.80K ch/s  |  0 req  |  14% of budget  |  ETA 8h09m  |  55m58s
+  [ia_books_fulltext]  |  309 docs  |  55.81M ch  |  ~13.95M tok  |  15.84K ch/s  |  0 req  |  14% of budget  |  ETA 8h08m  |  56m12s
+  [ia_books_fulltext]  |  314 docs  |  56.09M ch  |  ~14.02M tok  |  15.41K ch/s  |  0 req  |  14% of budget  |  ETA 8h21m  |  58m06s
+  [ia_books_fulltext]  |  321 docs  |  56.78M ch  |  ~14.20M tok  |  15.08K ch/s  |  0 req  |  14% of budget  |  ETA 8h32m  |  1h00m
+  [ia_books_fulltext]  |  330 docs  |  58.12M ch  |  ~14.53M tok  |  15.35K ch/s  |  0 req  |  15% of budget  |  ETA 8h21m  |  1h00m
+  [ia_books_fulltext]  |  337 docs  |  58.49M ch  |  ~14.62M tok  |  15.30K ch/s  |  0 req  |  15% of budget  |  ETA 8h22m  |  1h01m
+  [ia_books_fulltext]  |  342 docs  |  59.07M ch  |  ~14.77M tok  |  14.96K ch/s  |  0 req  |  15% of budget  |  ETA 8h33m  |  1h03m
+  [ia_books_fulltext]  |  359 docs  |  63.46M ch  |  ~15.86M tok  |  15.19K ch/s  |  0 req  |  16% of budget  |  ETA 8h20m  |  1h07m
+  [ia_books_fulltext]  |  375 docs  |  66.74M ch  |  ~16.69M tok  |  15.46K ch/s  |  0 req  |  17% of budget  |  ETA 8h08m  |  1h09m
+  [ia_books_fulltext]  |  389 docs  |  69.90M ch  |  ~17.47M tok  |  15.88K ch/s  |  0 req  |  17% of budget  |  ETA 7h52m  |  1h10m
+  [ia_books_fulltext]  |  394 docs  |  70.99M ch  |  ~17.75M tok  |  15.95K ch/s  |  0 req  |  18% of budget  |  ETA 7h49m  |  1h11m
+  [ia_books_fulltext]  |  405 docs  |  73.39M ch  |  ~18.35M tok  |  16.09K ch/s  |  0 req  |  18% of budget  |  ETA 7h42m  |  1h13m
+  [ia_books_fulltext]  |  427 docs  |  78.51M ch  |  ~19.63M tok  |  16.87K ch/s  |  0 req  |  20% of budget  |  ETA 7h16m  |  1h15m
+  [ia_books_fulltext]  |  453 docs  |  84.86M ch  |  ~21.21M tok  |  17.66K ch/s  |  0 req  |  21% of budget  |  ETA 6h50m  |  1h17m
+  [ia_books_fulltext]  |  468 docs  |  88.65M ch  |  ~22.16M tok  |  18.07K ch/s  |  0 req  |  22% of budget  |  ETA 6h37m  |  1h19m
+  [ia_books_fulltext]  |  488 docs  |  93.51M ch  |  ~23.38M tok  |  18.20K ch/s  |  0 req  |  23% of budget  |  ETA 6h30m  |  1h23m
+  [ia_books_fulltext]  |  500 docs  |  96.21M ch  |  ~24.05M tok  |  18.65K ch/s  |  0 req  |  24% of budget  |  ETA 6h18m  |  1h23m
+  [ia_books_fulltext]  |  513 docs  |  96.89M ch  |  ~24.22M tok  |  18.72K ch/s  |  0 req  |  24% of budget  |  ETA 6h16m  |  1h24m
+  [ia_books_fulltext]  |  516 docs  |  96.96M ch  |  ~24.24M tok  |  18.70K ch/s  |  0 req  |  24% of budget  |  ETA 6h17m  |  1h24m
+  [ia_books_fulltext]  |  521 docs  |  97.13M ch  |  ~24.28M tok  |  18.69K ch/s  |  0 req  |  24% of budget  |  ETA 6h17m  |  1h24m
+  [ia_books_fulltext]  |  527 docs  |  97.28M ch  |  ~24.32M tok  |  18.57K ch/s  |  0 req  |  24% of budget  |  ETA 6h19m  |  1h25m
+  [ia_books_fulltext]  |  533 docs  |  98.01M ch  |  ~24.50M tok  |  18.31K ch/s  |  0 req  |  25% of budget  |  ETA 6h24m  |  1h27m
+  [ia_books_fulltext]  |  545 docs  |  100.98M ch  |  ~25.25M tok  |  18.82K ch/s  |  0 req  |  25% of budget  |  ETA 6h11m  |  1h27m
+  [ia_books_fulltext]  |  550 docs  |  101.11M ch  |  ~25.28M tok  |  18.77K ch/s  |  0 req  |  25% of budget  |  ETA 6h11m  |  1h27m
+  [ia_books_fulltext]  |  558 docs  |  101.57M ch  |  ~25.39M tok  |  18.80K ch/s  |  0 req  |  25% of budget  |  ETA 6h10m  |  1h27m
+  [ia_books_fulltext]  |  565 docs  |  102.01M ch  |  ~25.50M tok  |  18.79K ch/s  |  0 req  |  26% of budget  |  ETA 6h10m  |  1h28m
+  [ia_books_fulltext]  |  568 docs  |  102.72M ch  |  ~25.68M tok  |  18.69K ch/s  |  0 req  |  26% of budget  |  ETA 6h12m  |  1h29m
+  [ia_books_fulltext]  |  572 docs  |  103.52M ch  |  ~25.88M tok  |  18.74K ch/s  |  0 req  |  26% of budget  |  ETA 6h10m  |  1h29m
+  [ia_books_fulltext]  |  574 docs  |  103.84M ch  |  ~25.96M tok  |  18.66K ch/s  |  0 req  |  26% of budget  |  ETA 6h11m  |  1h30m
+  [ia_books_fulltext]  |  576 docs  |  104.32M ch  |  ~26.08M tok  |  18.37K ch/s  |  0 req  |  26% of budget  |  ETA 6h17m  |  1h32m
+  [ia_books_fulltext]  |  594 docs  |  108.48M ch  |  ~27.12M tok  |  19.06K ch/s  |  0 req  |  27% of budget  |  ETA 5h59m  |  1h32m
+  [ia_books_fulltext]  |  602 docs  |  109.34M ch  |  ~27.33M tok  |  19.16K ch/s  |  0 req  |  27% of budget  |  ETA 5h57m  |  1h33m
+  [ia_books_fulltext]  |  610 docs  |  109.92M ch  |  ~27.48M tok  |  18.87K ch/s  |  0 req  |  27% of budget  |  ETA 6h02m  |  1h34m
+  [ia_books_fulltext]  |  625 docs  |  114.01M ch  |  ~28.50M tok  |  19.18K ch/s  |  0 req  |  29% of budget  |  ETA 5h52m  |  1h36m
+  [ia_books_fulltext]  |  637 docs  |  116.60M ch  |  ~29.15M tok  |  19.06K ch/s  |  0 req  |  29% of budget  |  ETA 5h52m  |  1h39m
+  [ia_books_fulltext]  |  647 docs  |  118.89M ch  |  ~29.72M tok  |  19.24K ch/s  |  0 req  |  30% of budget  |  ETA 5h47m  |  1h40m
+  [ia_books_fulltext]  |  653 docs  |  119.62M ch  |  ~29.90M tok  |  19.26K ch/s  |  0 req  |  30% of budget  |  ETA 5h46m  |  1h41m
+  [ia_books_fulltext]  |  656 docs  |  119.72M ch  |  ~29.93M tok  |  19.08K ch/s  |  0 req  |  30% of budget  |  ETA 5h49m  |  1h42m
+  [ia_books_fulltext]  |  664 docs  |  120.39M ch  |  ~30.10M tok  |  19.13K ch/s  |  0 req  |  30% of budget  |  ETA 5h48m  |  1h42m
+  [ia_books_fulltext]  |  671 docs  |  120.83M ch  |  ~30.21M tok  |  18.99K ch/s  |  0 req  |  30% of budget  |  ETA 5h50m  |  1h43m
+  [ia_books_fulltext]  |  685 docs  |  123.40M ch  |  ~30.85M tok  |  19.30K ch/s  |  0 req  |  31% of budget  |  ETA 5h42m  |  1h44m
+  [ia_books_fulltext]  |  692 docs  |  123.99M ch  |  ~31.00M tok  |  19.33K ch/s  |  0 req  |  31% of budget  |  ETA 5h41m  |  1h44m
+  [ia_books_fulltext]  |  700 docs  |  124.52M ch  |  ~31.13M tok  |  18.69K ch/s  |  0 req  |  31% of budget  |  ETA 5h52m  |  1h48m
+  [ia_books_fulltext]  |  713 docs  |  127.03M ch  |  ~31.76M tok  |  18.99K ch/s  |  0 req  |  32% of budget  |  ETA 5h44m  |  1h49m
+  [ia_books_fulltext]  |  720 docs  |  127.53M ch  |  ~31.88M tok  |  19.03K ch/s  |  0 req  |  32% of budget  |  ETA 5h43m  |  1h49m
+  [ia_books_fulltext]  |  728 docs  |  128.18M ch  |  ~32.04M tok  |  18.46K ch/s  |  0 req  |  32% of budget  |  ETA 5h53m  |  1h53m
+  [ia_books_fulltext]  |  737 docs  |  130.34M ch  |  ~32.59M tok  |  18.23K ch/s  |  0 req  |  33% of budget  |  ETA 5h56m  |  1h56m
+  [ia_books_fulltext]  |  759 docs  |  136.28M ch  |  ~34.07M tok  |  19.00K ch/s  |  0 req  |  34% of budget  |  ETA 5h36m  |  1h57m
+  [ia_books_fulltext]  |  768 docs  |  137.60M ch  |  ~34.40M tok  |  19.08K ch/s  |  0 req  |  34% of budget  |  ETA 5h34m  |  1h58m
+  [ia_books_fulltext]  |  773 docs  |  138.57M ch  |  ~34.64M tok  |  19.12K ch/s  |  0 req  |  35% of budget  |  ETA 5h32m  |  1h58m
+  [ia_books_fulltext]  |  779 docs  |  139.35M ch  |  ~34.84M tok  |  19.19K ch/s  |  0 req  |  35% of budget  |  ETA 5h30m  |  1h58m
+  [ia_books_fulltext]  |  783 docs  |  139.48M ch  |  ~34.87M tok  |  19.06K ch/s  |  0 req  |  35% of budget  |  ETA 5h32m  |  1h59m
+  [ia_books_fulltext]  |  791 docs  |  140.47M ch  |  ~35.12M tok  |  19.08K ch/s  |  0 req  |  35% of budget  |  ETA 5h31m  |  2h00m
+  [ia_books_fulltext]  |  798 docs  |  141.37M ch  |  ~35.34M tok  |  18.94K ch/s  |  0 req  |  35% of budget  |  ETA 5h33m  |  2h02m
+  [ia_books_fulltext]  |  806 docs  |  142.72M ch  |  ~35.68M tok  |  19.01K ch/s  |  0 req  |  36% of budget  |  ETA 5h30m  |  2h03m
+  [ia_books_fulltext]  |  812 docs  |  142.99M ch  |  ~35.75M tok  |  19.02K ch/s  |  0 req  |  36% of budget  |  ETA 5h30m  |  2h03m
+  [ia_books_fulltext]  |  816 docs  |  143.11M ch  |  ~35.78M tok  |  19.00K ch/s  |  0 req  |  36% of budget  |  ETA 5h30m  |  2h03m
+  [ia_books_fulltext]  |  821 docs  |  143.34M ch  |  ~35.84M tok  |  18.87K ch/s  |  0 req  |  36% of budget  |  ETA 5h32m  |  2h04m
+  [ia_books_fulltext]  |  828 docs  |  144.02M ch  |  ~36.00M tok  |  18.88K ch/s  |  0 req  |  36% of budget  |  ETA 5h31m  |  2h05m
+  [ia_books_fulltext]  |  834 docs  |  144.72M ch  |  ~36.18M tok  |  18.79K ch/s  |  0 req  |  36% of budget  |  ETA 5h32m  |  2h06m
+  [ia_books_fulltext]  |  835 docs  |  144.88M ch  |  ~36.22M tok  |  18.73K ch/s  |  0 req  |  36% of budget  |  ETA 5h33m  |  2h06m
+  [ia_books_fulltext]  |  842 docs  |  145.45M ch  |  ~36.36M tok  |  18.68K ch/s  |  0 req  |  36% of budget  |  ETA 5h34m  |  2h07m
+  [ia_books_fulltext]  |  846 docs  |  145.94M ch  |  ~36.49M tok  |  18.03K ch/s  |  0 req  |  36% of budget  |  ETA 5h45m  |  2h12m
+  [ia_books_fulltext]  |  851 docs  |  146.84M ch  |  ~36.71M tok  |  18.03K ch/s  |  0 req  |  37% of budget  |  ETA 5h44m  |  2h13m
+  [ia_books_fulltext]  |  855 docs  |  147.23M ch  |  ~36.81M tok  |  18.02K ch/s  |  0 req  |  37% of budget  |  ETA 5h44m  |  2h13m
+  [ia_books_fulltext]  |  856 docs  |  147.53M ch  |  ~36.88M tok  |  17.99K ch/s  |  0 req  |  37% of budget  |  ETA 5h44m  |  2h14m
+  [ia_books_fulltext]  |  858 docs  |  147.98M ch  |  ~37.00M tok  |  17.82K ch/s  |  0 req  |  37% of budget  |  ETA 5h48m  |  2h16m
+  [ia_books_fulltext]  |  868 docs  |  150.14M ch  |  ~37.53M tok  |  17.69K ch/s  |  0 req  |  38% of budget  |  ETA 5h48m  |  2h19m
+  [ia_books_fulltext]  |  879 docs  |  152.25M ch  |  ~38.06M tok  |  17.91K ch/s  |  0 req  |  38% of budget  |  ETA 5h42m  |  2h19m
+  [ia_books_fulltext]  |  880 docs  |  152.55M ch  |  ~38.14M tok  |  17.78K ch/s  |  0 req  |  38% of budget  |  ETA 5h44m  |  2h20m
+  ia_books_fulltext: scanned 984 archive.org items
+  [ia_books_fulltext]  |  881 docs  |  152.75M ch  |  ~38.19M tok  |  17.79K ch/s  |  0 req  |  38% of budget  |  ETA 5h44m  |  2h20m  |  DONE
+       rejected: latin-heavy x182, not-gujarati x175, ia-no-ocr-text x69, ia-http-500 x5, ia-http-401 x2
+  shard: ia_books_fulltext.part-1786776467-16536.jsonl.gz (881 docs / 150.37M chars)
+
+========================================================================================
+TOTAL 152.75M chars  ~38.19M tokens (29.4% of target) in 2h20m
+========================================================================================
+
+progress: python3 data/collection/collect_manual.py --status

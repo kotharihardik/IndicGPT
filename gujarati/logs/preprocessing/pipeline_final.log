@@ -1,0 +1,575 @@
+### STAGE 1/9 preprocess              18:41:52
+pass A: counting repeated lines ...
+  100,000 documents | tracking 12,091 repeated lines (pruned 512,605 singletons)
+  200,000 documents | tracking 150,742 repeated lines (pruned 3,091,886 singletons)
+  300,000 documents | tracking 154,811 repeated lines (pruned 377,551 singletons)
+  400,000 documents | tracking 157,904 repeated lines (pruned 400,361 singletons)
+  500,000 documents | tracking 160,675 repeated lines (pruned 405,076 singletons)
+  600,000 documents | tracking 163,021 repeated lines (pruned 403,856 singletons)
+  700,000 documents | tracking 165,489 repeated lines (pruned 407,443 singletons)
+  800,000 documents | tracking 167,617 repeated lines (pruned 400,317 singletons)
+  blocked 815 boilerplate line patterns
+pass B: normalising and filtering ...
+  50,000 seen | 48,404 kept (96.8%)
+  100,000 seen | 96,316 kept (96.3%)
+  150,000 seen | 145,466 kept (97.0%)
+  200,000 seen | 193,479 kept (96.7%)
+  250,000 seen | 241,035 kept (96.4%)
+  300,000 seen | 288,347 kept (96.1%)
+  350,000 seen | 335,643 kept (95.9%)
+  400,000 seen | 382,925 kept (95.7%)
+  450,000 seen | 430,180 kept (95.6%)
+  500,000 seen | 477,451 kept (95.5%)
+  550,000 seen | 524,863 kept (95.4%)
+  600,000 seen | 572,149 kept (95.4%)
+  650,000 seen | 619,435 kept (95.3%)
+  700,000 seen | 666,728 kept (95.2%)
+  750,000 seen | 714,028 kept (95.2%)
+  800,000 seen | 761,392 kept (95.2%)
+  850,000 seen | 808,740 kept (95.1%)
+
+==== CLEAN [guj] ====
+  864,122 in -> 822,113 kept (95.1% of docs, 2.16B chars)
+    not_gujarati                     28,867
+    devanagari_leakage                5,725
+    repetitive_4gram                  2,537
+    too_short                         1,880
+    repetitive_3gram                  1,115
+    repeated_lines                      769
+    repetitive_2gram                    363
+    bad_word_length                     307
+    no_stopwords                        220
+    digit_heavy                         114
+    too_few_words                       105
+    boilerplate                           7
+  summary -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/../report/gujarati/phase1/cleaning.json
+### STAGE 2/9 deduplicate             19:41:42
+  50,000 in | 49,531 kept | exact=3 near=466
+  100,000 in | 99,222 kept | exact=25 near=753
+  150,000 in | 147,266 kept | exact=1,871 near=863
+  200,000 in | 196,717 kept | exact=1,893 near=1,390
+  250,000 in | 245,940 kept | exact=1,957 near=2,103
+  300,000 in | 295,176 kept | exact=2,038 near=2,786
+  350,000 in | 344,384 kept | exact=2,129 near=3,487
+  400,000 in | 393,594 kept | exact=2,207 near=4,199
+  450,000 in | 442,847 kept | exact=2,285 near=4,868
+  500,000 in | 492,080 kept | exact=2,365 near=5,555
+  550,000 in | 541,334 kept | exact=2,424 near=6,242
+  600,000 in | 590,553 kept | exact=2,498 near=6,949
+  650,000 in | 639,823 kept | exact=2,558 near=7,619
+  700,000 in | 689,046 kept | exact=2,643 near=8,311
+  750,000 in | 738,294 kept | exact=2,715 near=8,991
+  800,000 in | 787,518 kept | exact=2,804 near=9,678
+
+==== DEDUP [guj] ====
+  in=822,113 out=809,290 | exact=2,841 | near=9,982 | removed 1.6% | 2.13B chars kept
+  summary -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/../report/gujarati/phase1/dedup.json
+### STAGE 3/9 build_splits            20:41:28
+
+==== SPLITS [guj] ====
+  train         803,151 docs |    2.11B chars | manual  30.3%
+  validation      3,156 docs |    8.00M chars | manual  26.7%
+  test            2,983 docs |    8.00M chars | manual  34.3%
+  summary -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/../report/gujarati/phase1/splits.json
+### STAGE 4/9 tokenizer sweep         21:05:20
+exporting training text ...
+  subsampling documents at p=0.0473 so all sources stay proportionally represented
+  training text: 99.66M characters from 38,024 documents in 22s -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/tokenizer/spm_input.txt
+  composition by source:
+    ai4bharat_sangraha          70.47M chars ( 70.7%)
+    abtakmedia                   7.20M chars (  7.2%)
+    ia_books_fulltext            5.48M chars (  5.5%)
+    westerntimesnews             4.13M chars (  4.1%)
+    gujarativishwakosh           3.52M chars (  3.5%)
+    gujarattoday                 3.39M chars (  3.4%)
+    opinionmagazine              3.10M chars (  3.1%)
+    gujaratabroad              870.67K chars (  0.9%)
+    aksharnaad                 603.84K chars (  0.6%)
+    divya_bhaskar              473.86K chars (  0.5%)
+    layastaro                  243.24K chars (  0.2%)
+    webdunia_gujarati          173.71K chars (  0.2%)
+    ia_books_pdf                 6.61K chars (  0.0%)
+
+sweeping 5 vocabulary sizes: 8,000, 16,000, 24,000, 32,000, 48,000
+
+--- vocab_size=8,000  (embedding 3.07M params, 12% of the 25.00M budget) ---
+I0000 00:00:1786894543.486127 24384121 sentencepiece_trainer.cc:105] Starts training with : 
+trainer_spec {
+  input: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/tokenizer/spm_input.txt
+  input_format: 
+  model_prefix: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/tokenizer/_staging/8k_unigram_guj
+  model_type: UNIGRAM
+  vocab_size: 8000
+  self_test_sample_size: 0
+  character_coverage: 0.9995
+  input_sentence_size: 400000
+  shuffle_input_sentence: 1
+  seed_sentencepiece_size: 1000000
+  shrinking_factor: 0.75
+  max_sentence_length: 4192
+  num_threads: 8
+  num_sub_iterations: 2
+  max_sentencepiece_length: 16
+  split_by_unicode_script: 1
+  split_by_number: 1
+  split_by_whitespace: 1
+  split_digits: 1
+  pretokenization_delimiter: 
+  treat_whitespace_as_suffix: 0
+  allow_whitespace_only_pieces: 1
+  required_chars: ઁંઃઅઆઇઈઉઊઋઌઍએઐઑઓઔકખગઘઙચછજઝઞટઠડઢણતથદધનપફબભમયરલળવશષસહ઼ઽાિીુૂૃૄૅેૈૉોૌ્ૐૠૡૢૣ૦૧૨૩૪૫૬૭૮૯૰૱ૹૺૻૼ૽૾૿
+  byte_fallback: 1
+  vocabulary_output_piece_score: 1
+  train_extremely_large_corpus: 1
+  seed_sentencepieces_file: 
+  hard_vocab_limit: 1
+  use_all_vocab: 0
+  unk_id: 1
+  bos_id: 2
+  eos_id: 3
+  pad_id: 0
+  unk_piece: <unk>
+  bos_piece: <s>
+  eos_piece: </s>
+  pad_piece: <pad>
+  unk_surface:  ⁇ 
+  enable_differential_privacy: 0
+  differential_privacy_noise_level: 0
+  differential_privacy_clipping_threshold: 0
+}
+normalizer_spec {
+  name: identity
+  add_dummy_prefix: 1
+  remove_extra_whitespaces: 0
+  escape_whitespaces: 1
+  normalization_rule_tsv: 
+}
+denormalizer_spec {}
+
+--- vocab_size=16,000  (embedding 6.14M params, 25% of the 25.00M budget) ---
+I0000 00:00:1786894679.698999 24384121 sentencepiece_trainer.cc:105] Starts training with : 
+trainer_spec {
+  input: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/tokenizer/spm_input.txt
+  input_format: 
+  model_prefix: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/tokenizer/_staging/16k_unigram_guj
+  model_type: UNIGRAM
+  vocab_size: 16000
+  self_test_sample_size: 0
+  character_coverage: 0.9995
+  input_sentence_size: 400000
+  shuffle_input_sentence: 1
+  seed_sentencepiece_size: 1000000
+  shrinking_factor: 0.75
+  max_sentence_length: 4192
+  num_threads: 8
+  num_sub_iterations: 2
+  max_sentencepiece_length: 16
+  split_by_unicode_script: 1
+  split_by_number: 1
+  split_by_whitespace: 1
+  split_digits: 1
+  pretokenization_delimiter: 
+  treat_whitespace_as_suffix: 0
+  allow_whitespace_only_pieces: 1
+  required_chars: ઁંઃઅઆઇઈઉઊઋઌઍએઐઑઓઔકખગઘઙચછજઝઞટઠડઢણતથદધનપફબભમયરલળવશષસહ઼ઽાિીુૂૃૄૅેૈૉોૌ્ૐૠૡૢૣ૦૧૨૩૪૫૬૭૮૯૰૱ૹૺૻૼ૽૾૿
+  byte_fallback: 1
+  vocabulary_output_piece_score: 1
+  train_extremely_large_corpus: 1
+  seed_sentencepieces_file: 
+  hard_vocab_limit: 1
+  use_all_vocab: 0
+  unk_id: 1
+  bos_id: 2
+  eos_id: 3
+  pad_id: 0
+  unk_piece: <unk>
+  bos_piece: <s>
+  eos_piece: </s>
+  pad_piece: <pad>
+  unk_surface:  ⁇ 
+  enable_differential_privacy: 0
+  differential_privacy_noise_level: 0
+  differential_privacy_clipping_threshold: 0
+}
+normalizer_spec {
+  name: identity
+  add_dummy_prefix: 1
+  remove_extra_whitespaces: 0
+  escape_whitespaces: 1
+  normalization_rule_tsv: 
+}
+denormalizer_spec {}
+
+--- vocab_size=24,000  (embedding 9.22M params, 37% of the 25.00M budget) ---
+I0000 00:00:1786894814.055721 24384121 sentencepiece_trainer.cc:105] Starts training with : 
+trainer_spec {
+  input: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/tokenizer/spm_input.txt
+  input_format: 
+  model_prefix: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/tokenizer/_staging/24k_unigram_guj
+  model_type: UNIGRAM
+  vocab_size: 24000
+  self_test_sample_size: 0
+  character_coverage: 0.9995
+  input_sentence_size: 400000
+  shuffle_input_sentence: 1
+  seed_sentencepiece_size: 1000000
+  shrinking_factor: 0.75
+  max_sentence_length: 4192
+  num_threads: 8
+  num_sub_iterations: 2
+  max_sentencepiece_length: 16
+  split_by_unicode_script: 1
+  split_by_number: 1
+  split_by_whitespace: 1
+  split_digits: 1
+  pretokenization_delimiter: 
+  treat_whitespace_as_suffix: 0
+  allow_whitespace_only_pieces: 1
+  required_chars: ઁંઃઅઆઇઈઉઊઋઌઍએઐઑઓઔકખગઘઙચછજઝઞટઠડઢણતથદધનપફબભમયરલળવશષસહ઼ઽાિીુૂૃૄૅેૈૉોૌ્ૐૠૡૢૣ૦૧૨૩૪૫૬૭૮૯૰૱ૹૺૻૼ૽૾૿
+  byte_fallback: 1
+  vocabulary_output_piece_score: 1
+  train_extremely_large_corpus: 1
+  seed_sentencepieces_file: 
+  hard_vocab_limit: 1
+  use_all_vocab: 0
+  unk_id: 1
+  bos_id: 2
+  eos_id: 3
+  pad_id: 0
+  unk_piece: <unk>
+  bos_piece: <s>
+  eos_piece: </s>
+  pad_piece: <pad>
+  unk_surface:  ⁇ 
+  enable_differential_privacy: 0
+  differential_privacy_noise_level: 0
+  differential_privacy_clipping_threshold: 0
+}
+normalizer_spec {
+  name: identity
+  add_dummy_prefix: 1
+  remove_extra_whitespaces: 0
+  escape_whitespaces: 1
+  normalization_rule_tsv: 
+}
+denormalizer_spec {}
+
+--- vocab_size=32,000  (embedding 12.29M params, 49% of the 25.00M budget) ---
+I0000 00:00:1786894955.841253 24384121 sentencepiece_trainer.cc:105] Starts training with : 
+trainer_spec {
+  input: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/tokenizer/spm_input.txt
+  input_format: 
+  model_prefix: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/tokenizer/_staging/32k_unigram_guj
+  model_type: UNIGRAM
+  vocab_size: 32000
+  self_test_sample_size: 0
+  character_coverage: 0.9995
+  input_sentence_size: 400000
+  shuffle_input_sentence: 1
+  seed_sentencepiece_size: 1000000
+  shrinking_factor: 0.75
+  max_sentence_length: 4192
+  num_threads: 8
+  num_sub_iterations: 2
+  max_sentencepiece_length: 16
+  split_by_unicode_script: 1
+  split_by_number: 1
+  split_by_whitespace: 1
+  split_digits: 1
+  pretokenization_delimiter: 
+  treat_whitespace_as_suffix: 0
+  allow_whitespace_only_pieces: 1
+  required_chars: ઁંઃઅઆઇઈઉઊઋઌઍએઐઑઓઔકખગઘઙચછજઝઞટઠડઢણતથદધનપફબભમયરલળવશષસહ઼ઽાિીુૂૃૄૅેૈૉોૌ્ૐૠૡૢૣ૦૧૨૩૪૫૬૭૮૯૰૱ૹૺૻૼ૽૾૿
+  byte_fallback: 1
+  vocabulary_output_piece_score: 1
+  train_extremely_large_corpus: 1
+  seed_sentencepieces_file: 
+  hard_vocab_limit: 1
+  use_all_vocab: 0
+  unk_id: 1
+  bos_id: 2
+  eos_id: 3
+  pad_id: 0
+  unk_piece: <unk>
+  bos_piece: <s>
+  eos_piece: </s>
+  pad_piece: <pad>
+  unk_surface:  ⁇ 
+  enable_differential_privacy: 0
+  differential_privacy_noise_level: 0
+  differential_privacy_clipping_threshold: 0
+}
+normalizer_spec {
+  name: identity
+  add_dummy_prefix: 1
+  remove_extra_whitespaces: 0
+  escape_whitespaces: 1
+  normalization_rule_tsv: 
+}
+denormalizer_spec {}
+
+--- vocab_size=48,000  (embedding 18.43M params, 74% of the 25.00M budget) ---
+I0000 00:00:1786895084.687462 24384121 sentencepiece_trainer.cc:105] Starts training with : 
+trainer_spec {
+  input: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/tokenizer/spm_input.txt
+  input_format: 
+  model_prefix: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/tokenizer/_staging/48k_unigram_guj
+  model_type: UNIGRAM
+  vocab_size: 48000
+  self_test_sample_size: 0
+  character_coverage: 0.9995
+  input_sentence_size: 400000
+  shuffle_input_sentence: 1
+  seed_sentencepiece_size: 1000000
+  shrinking_factor: 0.75
+  max_sentence_length: 4192
+  num_threads: 8
+  num_sub_iterations: 2
+  max_sentencepiece_length: 16
+  split_by_unicode_script: 1
+  split_by_number: 1
+  split_by_whitespace: 1
+  split_digits: 1
+  pretokenization_delimiter: 
+  treat_whitespace_as_suffix: 0
+  allow_whitespace_only_pieces: 1
+  required_chars: ઁંઃઅઆઇઈઉઊઋઌઍએઐઑઓઔકખગઘઙચછજઝઞટઠડઢણતથદધનપફબભમયરલળવશષસહ઼ઽાિીુૂૃૄૅેૈૉોૌ્ૐૠૡૢૣ૦૧૨૩૪૫૬૭૮૯૰૱ૹૺૻૼ૽૾૿
+  byte_fallback: 1
+  vocabulary_output_piece_score: 1
+  train_extremely_large_corpus: 1
+  seed_sentencepieces_file: 
+  hard_vocab_limit: 1
+  use_all_vocab: 0
+  unk_id: 1
+  bos_id: 2
+  eos_id: 3
+  pad_id: 0
+  unk_piece: <unk>
+  bos_piece: <s>
+  eos_piece: </s>
+  pad_piece: <pad>
+  unk_surface:  ⁇ 
+  enable_differential_privacy: 0
+  differential_privacy_noise_level: 0
+  differential_privacy_clipping_threshold: 0
+}
+normalizer_spec {
+  name: identity
+  add_dummy_prefix: 1
+  remove_extra_whitespaces: 0
+  escape_whitespaces: 1
+  normalization_rule_tsv: 
+}
+denormalizer_spec {}
+
+sweep done. Compare and get a recommendation with:
+  python tokenizer/tokenizer_stats.py --compare-sweep
+### STAGE 5/9 compare sweep           21:16:52
+evaluating on 3,000 held-out documents (7,634,430 characters, 78.7% Gujarati script)
+
+   vocab  chars/tok  fertility    byte-fb       unk  vocab used   emb params  % budget
+------------------------------------------------------------------------------------
+   8,000      3.346      1.749   0.021310  0.000000       97.7%        3.07M       12%
+  16,000      3.668      1.595   0.023361  0.000000       98.6%        6.14M       25%
+  24,000      3.830      1.528   0.024388  0.000000       98.2%        9.22M       37%
+  32,000      3.933      1.488   0.025049  0.000000       96.8%       12.29M       49%
+  48,000      4.067      1.439   0.025898  0.000000       92.4%       18.43M       74%
+
+marginal cost of each step up in vocabulary:
+  step                  +chars/tok    +params   params per 1% gain
+  8,000 -> 16,000             9.6%      3.07M              319.22K
+  16,000 -> 24,000            4.4%      3.07M              695.56K
+  24,000 -> 32,000            2.7%      3.07M                1.14M
+  32,000 -> 48,000            3.4%      6.14M                1.80M
+
+RECOMMENDED vocab_size = 16,000
+  largest vocabulary whose embedding stays within 34% of the parameter budget
+  leaves 18.86M for Transformer blocks = ~10.7 layers at d_model=384
+  rejected - embedding would exceed 34% of the budget: [24000, 32000]
+  rejected - under 95% of the vocabulary is used on held-out text: [48000]
+  set tokenizer.vocab_size in configs/pipeline.yaml, then rerun train_tokenizer.py without --sweep
+
+Compression by source register (chars/token):
+  gujarattoday              4.521
+  divya_bhaskar             4.436
+  abtakmedia                4.399
+  westerntimesnews          4.331
+  opinionmagazine           4.161
+  webdunia_gujarati         4.124
+  ai4bharat_sangraha        4.119
+  gujaratabroad             3.996
+  aksharnaad                3.960
+  gujarativishwakosh        3.837
+  layastaro                 3.401
+  ia_books_fulltext         2.649
+
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/../report/gujarati/phase1/tokenizer_stats.json
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/../report/gujarati/phase1/tokenizer_stats.md
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/../report/gujarati/phase1/figures/tokenizer_vocab_sweep.png
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/../report/gujarati/phase1/figures/tokenizer_frequency.png
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/../report/gujarati/phase1/figures/tokenizer_piece_length.png
+### STAGE 6/9 final tokenizer         21:17:05
+exporting training text ...
+  subsampling documents at p=0.0473 so all sources stay proportionally represented
+  training text: 99.66M characters from 38,024 documents in 26s -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/tokenizer/spm_input.txt
+  composition by source:
+    ai4bharat_sangraha          70.47M chars ( 70.7%)
+    abtakmedia                   7.20M chars (  7.2%)
+    ia_books_fulltext            5.48M chars (  5.5%)
+    westerntimesnews             4.13M chars (  4.1%)
+    gujarativishwakosh           3.52M chars (  3.5%)
+    gujarattoday                 3.39M chars (  3.4%)
+    opinionmagazine              3.10M chars (  3.1%)
+    gujaratabroad              870.67K chars (  0.9%)
+    aksharnaad                 603.84K chars (  0.6%)
+    divya_bhaskar              473.86K chars (  0.5%)
+    layastaro                  243.24K chars (  0.2%)
+    webdunia_gujarati          173.71K chars (  0.2%)
+    ia_books_pdf                 6.61K chars (  0.0%)
+
+training final Gujarati Unigram model, vocab_size=16,000
+  embedding cost: 6.14M parameters (25% of the target budget)
+I0000 00:00:1786895252.337493 24409757 sentencepiece_trainer.cc:105] Starts training with : 
+trainer_spec {
+  input: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/tokenizer/spm_input.txt
+  input_format: 
+  model_prefix: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/tokenizer/_staging/16k_unigram_guj
+  model_type: UNIGRAM
+  vocab_size: 16000
+  self_test_sample_size: 0
+  character_coverage: 0.9995
+  input_sentence_size: 400000
+  shuffle_input_sentence: 1
+  seed_sentencepiece_size: 1000000
+  shrinking_factor: 0.75
+  max_sentence_length: 4192
+  num_threads: 8
+  num_sub_iterations: 2
+  max_sentencepiece_length: 16
+  split_by_unicode_script: 1
+  split_by_number: 1
+  split_by_whitespace: 1
+  split_digits: 1
+  pretokenization_delimiter: 
+  treat_whitespace_as_suffix: 0
+  allow_whitespace_only_pieces: 1
+  required_chars: ઁંઃઅઆઇઈઉઊઋઌઍએઐઑઓઔકખગઘઙચછજઝઞટઠડઢણતથદધનપફબભમયરલળવશષસહ઼ઽાિીુૂૃૄૅેૈૉોૌ્ૐૠૡૢૣ૦૧૨૩૪૫૬૭૮૯૰૱ૹૺૻૼ૽૾૿
+  byte_fallback: 1
+  vocabulary_output_piece_score: 1
+  train_extremely_large_corpus: 1
+  seed_sentencepieces_file: 
+  hard_vocab_limit: 1
+  use_all_vocab: 0
+  unk_id: 1
+  bos_id: 2
+  eos_id: 3
+  pad_id: 0
+  unk_piece: <unk>
+  bos_piece: <s>
+  eos_piece: </s>
+  pad_piece: <pad>
+  unk_surface:  ⁇ 
+  enable_differential_privacy: 0
+  differential_privacy_noise_level: 0
+  differential_privacy_clipping_threshold: 0
+}
+normalizer_spec {
+  name: identity
+  add_dummy_prefix: 1
+  remove_extra_whitespaces: 0
+  escape_whitespaces: 1
+  normalization_rule_tsv: 
+}
+denormalizer_spec {}
+
+  model  -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/tokenizer/model/16k_unigram_guj.model
+  vocab  -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/tokenizer/vocab/16k_unigram_guj.vocab
+  config -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/tokenizer/tokenizer_config.json
+
+Next:  python tokenizer/tokenizer_stats.py
+### STAGE 7/9 tokenizer stats         21:20:05
+evaluating on 3,000 held-out documents (7,634,430 characters, 78.7% Gujarati script)
+
+   vocab  chars/tok  fertility    byte-fb       unk  vocab used   emb params  % budget
+------------------------------------------------------------------------------------
+  16,000      3.668      1.595   0.023359  0.000000       98.6%        6.14M       25%
+
+Example tokenizations:
+
+  ગુજરાત રાજ્યની રાજધાની ગાંધીનગર છે.
+  -> 6 tokens, 5.83 chars/token
+  -> ▁ગુજરાત | ▁રાજ્યની | ▁રાજધાની | ▁ગાંધીનગર | ▁છે | .
+
+  તેમણે 2024માં અમદાવાદથી મુંબઈ સુધીની મુસાફરી કરી હતી.
+  -> 15 tokens, 3.53 chars/token
+  -> ▁તેમણે | ▁ | 2 | 0 | 2 | 4 | માં | ▁અમદાવાદ | થી | ▁મુંબઈ | ▁સુધીની | ▁મુસાફરી | ▁કરી | ▁હતી | .
+
+  શાળાના વિદ્યાર્થીઓએ પુસ્તકાલયમાંથી પુસ્તકો લીધાં.
+  -> 7 tokens, 7.0 chars/token
+  -> ▁શાળાના | ▁વિદ્યાર્થીઓએ | ▁પુસ્તકાલય | માંથી | ▁પુસ્તકો | ▁લીધાં | .
+
+  આ સંશોધનપત્રમાં ભાષાશાસ્ત્રીય વિશ્લેષણ રજૂ કરવામાં આવ્યું છે.
+  -> 13 tokens, 4.69 chars/token
+  -> ▁આ | ▁સંશોધન | પત્ર | માં | ▁ભાષા | શાસ્ત્ર | ીય | ▁વિશ્લેષણ | ▁રજૂ | ▁કરવામાં | ▁આવ્યું | ▁છે | .
+
+  ઘર, ઘરમાં, ઘરોમાં, ઘરોમાંથી - એક જ મૂળના જુદા જુદા રૂપો.
+  -> 18 tokens, 3.11 chars/token
+  -> ▁ઘર | , | ▁ઘરમાં | , | ▁ઘરોમાં | , | ▁ઘરોમાં | થી | ▁- | ▁એક | ▁જ | ▁મૂળ | ના | ▁જુદા | ▁જુદા | ▁રૂપ | ો | .
+
+Compression by source register (chars/token):
+  gujarattoday              4.085
+  abtakmedia                3.962
+  divya_bhaskar             3.925
+  westerntimesnews          3.906
+  opinionmagazine           3.745
+  webdunia_gujarati         3.735
+  ai4bharat_sangraha        3.715
+  gujaratabroad             3.639
+  aksharnaad                3.576
+  gujarativishwakosh        3.425
+  layastaro                 3.054
+  ia_books_fulltext         2.411
+
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/../report/gujarati/phase1/tokenizer_stats.json
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/../report/gujarati/phase1/tokenizer_stats.md
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/../report/gujarati/phase1/figures/tokenizer_frequency.png
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/../report/gujarati/phase1/figures/tokenizer_piece_length.png
+### STAGE 8/9 corpus stats            21:20:08
+scanning train ...
+scanning validation ...
+scanning test ...
+
+==== Gujarati train ====
+  Manual documents:  202,746
+  Manual tokens:     183,415,487
+  Public documents:  600,405
+  Public tokens:     397,048,259
+  Total tokens:      580,463,746
+  Manual percentage: 31.60%  (measured by tokens)
+  500M target:       116.09%
+  report -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/../report/gujarati/phase1/corpus_stats.md
+### STAGE 9/9 stage stats             21:23:04
+
+stage                   bucket      documents     characters         words
+--------------------------------------------------------------------------
+raw (collected)         manual        214,898    698,677,286   114,127,862
+                        public        649,224  1,600,000,435   274,565,313
+                        TOTAL         864,122  2,298,677,721   388,693,175   manual 29.4% of words
+--------------------------------------------------------------------------
+clean (preprocessed)    manual        207,805    656,699,641   108,596,005
+                        public        614,308  1,505,062,993   259,058,749
+                        TOTAL         822,113  2,161,762,634   367,654,754   manual 29.5% of words   (kept 94.6% of words)
+--------------------------------------------------------------------------
+dedup (deduplicated)    manual        204,358    646,071,023   106,772,726
+                        public        604,932  1,482,605,819   255,477,735
+                        TOTAL         809,290  2,128,676,842   362,250,461   manual 29.5% of words   (kept 98.5% of words)
+--------------------------------------------------------------------------
+train split             manual        202,746    641,185,183   105,969,896
+                        public        600,405  1,471,489,603   253,559,047
+                        TOTAL         803,151  2,112,674,786   359,528,943   manual 29.5% of words   (kept 99.2% of words)
+--------------------------------------------------------------------------
+
+Note: 'words' are whitespace-separated and are NOT the tokens the
+500M target is measured in. Subword tokenization raises the count by
+roughly 50%; run corpus_stats.py --tokenizer for the real figure.
+### ALL DONE                          21:25:28

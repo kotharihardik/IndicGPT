@@ -1,0 +1,23 @@
+
+stage                   bucket      documents     characters         words
+--------------------------------------------------------------------------
+raw (collected)         manual        214,898    698,677,286   114,127,862
+                        public        649,224  1,600,000,435   274,565,313
+                        TOTAL         864,122  2,298,677,721   388,693,175   manual 29.4% of words
+--------------------------------------------------------------------------
+clean (preprocessed)    manual        207,805    656,699,641   108,596,005
+                        public        614,308  1,505,062,993   259,058,749
+                        TOTAL         822,113  2,161,762,634   367,654,754   manual 29.5% of words   (kept 94.6% of words)
+--------------------------------------------------------------------------
+dedup (deduplicated)    manual        204,358    646,071,023   106,772,726
+                        public        604,932  1,482,605,819   255,477,735
+                        TOTAL         809,290  2,128,676,842   362,250,461   manual 29.5% of words   (kept 98.5% of words)
+--------------------------------------------------------------------------
+train split             manual        202,746    641,185,183   105,969,896
+                        public        600,405  1,471,489,603   253,559,047
+                        TOTAL         803,151  2,112,674,786   359,528,943   manual 29.5% of words   (kept 99.2% of words)
+--------------------------------------------------------------------------
+
+Note: 'words' are whitespace-separated and are NOT the tokens the
+500M target is measured in. Subword tokenization raises the count by
+roughly 50%; run corpus_stats.py --tokenizer for the real figure.
