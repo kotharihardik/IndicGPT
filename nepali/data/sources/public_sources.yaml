@@ -1,0 +1,49 @@
+# Nepali PUBLIC sources (source_type: public, label: public_hf)
+# Downloaded datasets. These NEVER count toward the >=20% manual
+# requirement, no matter how much cleaning is applied.
+#
+# Unlike Sindhi, Nepali is NOT manual-constrained: ~3,563M chars of
+# ai-train-permitted manual text is reachable, so the public bucket can
+# be sized to the corpus target rather than to the manual bucket. Capped
+# at 4x the manual budget so the 20% floor holds with margin.
+
+sources:
+
+  - name: ai4bharat_sangraha
+    hf_path: ai4bharat/sangraha
+    config_name: verified
+    split: nep                      # verified Nepali subset: 964,000 rows
+    text_field: text
+    type: public
+    category: web_corpus
+    collection_method: public_download
+    url: https://huggingface.co/datasets/ai4bharat/sangraha
+    license: "see dataset card"
+    # Raised from 1.5B: that cap stopped the download at 80.6% of the
+    # subset, leaving public at 316M tokens against the ~400M the 500M
+    # corpus target needs. 1.95B takes the whole verified/nep subset
+    # (964,000 rows). Manual is no longer the binding constraint - it now
+    # stands at ~842M chars - so the public bucket can be sized to the
+    # corpus target rather than to the manual bucket.
+    # Raised again 16 Aug 2026: 1.95B did NOT take the whole subset - the
+    # download stopped exactly on the cap (1,950,002,571 chars), so more
+    # rows remain. The corpus reaches 528.7M tokens at vocab 16,000 but
+    # only 492.9M at vocab 32,000, short of the 500M target. Sizing the
+    # corpus against the LARGEST candidate vocabulary (which compresses
+    # best and so yields the fewest tokens) means every smaller vocabulary
+    # clears 500M automatically - the same rule used for Gujarati.
+    #
+    #   measured: public 93.6% raw->train char retention, 4.792 chars/token
+    #   at 32k; manual contributes a fixed 112.3M tokens.
+    #     1.986B raw -> 500M tokens @32k (manual 22.3%)
+    #     2.100B raw -> ~520M tokens @32k (manual 21.5%)   <- chosen
+    #     2.284B raw -> manual falls below the 20% floor    <- hard ceiling
+    #
+    # Manual is NOT the binding constraint: at 120.4M tokens it already
+    # exceeds the ~100M floor, so the top-up comes from public.
+    max_chars: 2_100_000_000
+    description: >
+      AI4Bharat Sangraha verified Nepali subset (964,000 rows / 1.89 GB
+      parquet - more rows than the Gujarati subset). Capped so manual
+      stays above 20% of the final corpus.
+    enabled: true

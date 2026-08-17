@@ -1,9 +1,9 @@
-"""Collect PUBLIC datasets listed in ``data/sources/public_sources.yaml``.
+"""Collect PUBLIC datasets listed in `data/sources/public_sources.yaml`.
 
-Everything written here is labelled ``public_hf`` and therefore does NOT count
+Everything written here is labelled `public_hf` and therefore does NOT count
 towards the >=20% manual-collection requirement.
 
-Only the configured subset is pulled (e.g. ``data_dir: verified/guj`` for
+Only the configured subset is pulled (e.g. `data_dir: verified/nep` for
 Sangraha) and streaming is used, so the whole multi-language dataset is never
 downloaded. Each source keeps its own resume state, so an interrupted run
 continues where it stopped.
@@ -38,7 +38,7 @@ def open_stream(src: dict):
 
     # Hugging Face builder configs for ai4bharat/sangraha are like: verified,
     # unverified, synthetic. Do not pass the project-local registry key as the
-    # config name. Also, the verified subset uses the `guj` split, not `train`.
+    # config name. Also, the verified subset uses the `nep` split, not `train`.
     known_configs = {"verified", "unverified", "synthetic"}
     if config_name in known_configs:
         kw["name"] = config_name
@@ -52,7 +52,7 @@ def open_stream(src: dict):
 
 
 def collect(src: dict, dry_run: bool = False) -> dict:
-    """Stream one public source into ``data/raw/public/<name>.jsonl.gz``."""
+    """Stream one public source into `data/raw/public/<name>.jsonl.gz`."""
     name = src["name"]
     field = src.get("text_field", "text")
     budget = int(float(src.get("max_chars", 0) or 0))     # 0 = uncapped
