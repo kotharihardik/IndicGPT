@@ -1,0 +1,576 @@
+### collection finished  15:25:56
+### STAGE 1/3 preprocess   15:25:57
+pass A: counting repeated lines ...
+  100,000 documents | tracking 10,290 repeated lines (pruned 432,919 singletons)
+  200,000 documents | tracking 20,628 repeated lines (pruned 600,533 singletons)
+  300,000 documents | tracking 42,723 repeated lines (pruned 850,066 singletons)
+  400,000 documents | tracking 45,014 repeated lines (pruned 343,311 singletons)
+  500,000 documents | tracking 46,595 repeated lines (pruned 339,044 singletons)
+  600,000 documents | tracking 48,107 repeated lines (pruned 344,598 singletons)
+  700,000 documents | tracking 49,459 repeated lines (pruned 346,841 singletons)
+  800,000 documents | tracking 50,764 repeated lines (pruned 340,756 singletons)
+  900,000 documents | tracking 51,955 repeated lines (pruned 341,531 singletons)
+  1,000,000 documents | tracking 53,259 repeated lines (pruned 339,464 singletons)
+  1,100,000 documents | tracking 54,482 repeated lines (pruned 342,615 singletons)
+  1,200,000 documents | tracking 55,711 repeated lines (pruned 342,642 singletons)
+  1,300,000 documents | tracking 56,874 repeated lines (pruned 341,112 singletons)
+  blocked 403 boilerplate line patterns
+pass B: normalising and filtering ...
+  50,000 seen | 44,396 kept (88.8%)
+  100,000 seen | 89,912 kept (89.9%)
+  150,000 seen | 135,307 kept (90.2%)
+  200,000 seen | 179,966 kept (90.0%)
+  250,000 seen | 225,901 kept (90.4%)
+  300,000 seen | 270,416 kept (90.1%)
+  350,000 seen | 315,812 kept (90.2%)
+  400,000 seen | 361,205 kept (90.3%)
+  450,000 seen | 406,595 kept (90.4%)
+  500,000 seen | 451,941 kept (90.4%)
+  550,000 seen | 497,201 kept (90.4%)
+  600,000 seen | 542,495 kept (90.4%)
+  650,000 seen | 587,784 kept (90.4%)
+  700,000 seen | 633,199 kept (90.5%)
+  750,000 seen | 678,534 kept (90.5%)
+  800,000 seen | 723,919 kept (90.5%)
+  850,000 seen | 769,283 kept (90.5%)
+  900,000 seen | 814,727 kept (90.5%)
+  950,000 seen | 860,006 kept (90.5%)
+  1,000,000 seen | 905,309 kept (90.5%)
+  1,050,000 seen | 950,761 kept (90.5%)
+  1,100,000 seen | 996,118 kept (90.6%)
+  1,150,000 seen | 1,041,540 kept (90.6%)
+  1,200,000 seen | 1,086,871 kept (90.6%)
+  1,250,000 seen | 1,132,301 kept (90.6%)
+  1,300,000 seen | 1,177,636 kept (90.6%)
+  1,350,000 seen | 1,223,046 kept (90.6%)
+
+==== CLEAN [nep] ====
+  1,378,885 in -> 1,249,329 kept (90.6% of docs, 2.54B chars)
+    not_nepali                      102,027
+    repetitive_4gram                  9,935
+    repetitive_3gram                  4,635
+    too_short                         4,477
+    not_devanagari                    3,901
+    too_much_latin                    3,111
+    repetitive_2gram                    877
+    repeated_lines                      530
+    hindi_not_nepali                     37
+    digit_heavy                          16
+    boilerplate                           6
+    too_few_words                         3
+    bad_word_length                       1
+  summary -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/cleaning_nep.json
+### STAGE 2/3 deduplicate  16:27:38
+  50,000 in | 49,705 kept | exact=65 near=230
+  100,000 in | 98,786 kept | exact=114 near=1,100
+  150,000 in | 148,198 kept | exact=127 near=1,675
+  200,000 in | 198,116 kept | exact=145 near=1,739
+  250,000 in | 246,941 kept | exact=259 near=2,800
+  300,000 in | 295,767 kept | exact=449 near=3,784
+  350,000 in | 345,171 kept | exact=680 near=4,149
+  400,000 in | 394,572 kept | exact=926 near=4,502
+  450,000 in | 443,960 kept | exact=1,172 near=4,868
+  500,000 in | 493,393 kept | exact=1,419 near=5,188
+  550,000 in | 542,841 kept | exact=1,634 near=5,525
+  600,000 in | 592,239 kept | exact=1,885 near=5,876
+  650,000 in | 641,647 kept | exact=2,122 near=6,231
+  700,000 in | 691,053 kept | exact=2,348 near=6,599
+  750,000 in | 740,441 kept | exact=2,600 near=6,959
+  800,000 in | 789,810 kept | exact=2,849 near=7,341
+  850,000 in | 839,225 kept | exact=3,095 near=7,680
+  900,000 in | 888,626 kept | exact=3,338 near=8,036
+  950,000 in | 938,073 kept | exact=3,556 near=8,371
+  1,000,000 in | 987,452 kept | exact=3,817 near=8,731
+  1,050,000 in | 1,036,878 kept | exact=4,062 near=9,060
+  1,100,000 in | 1,086,297 kept | exact=4,308 near=9,395
+  1,150,000 in | 1,135,673 kept | exact=4,560 near=9,767
+  1,200,000 in | 1,185,099 kept | exact=4,799 near=10,102
+
+==== DEDUP [nep] ====
+  in=1,249,329 out=1,233,830 | exact=5,038 | near=10,461 | removed 1.2% | 2.52B chars kept
+  summary -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/dedup_nep.json
+### STAGE 3/3 splits       17:35:05
+
+==== SPLITS [nep] ====
+  train       1,226,107 docs |    2.50B chars | manual  21.4%
+  validation      3,883 docs |    8.00M chars | manual  25.8%
+  test            3,840 docs |    8.00M chars | manual  29.7%
+  summary -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/splits_nep.json
+### STAGE 4 vocab sweep    18:01:23
+exporting training text ...
+  subsampling documents at p=0.0400 so all sources stay proportionally represented
+  training text: 99.49M characters from 49,023 documents in 26s -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/spm_input.txt
+  composition by source:
+    ai4bharat_sangraha          78.62M chars ( 79.0%)
+    onlinekhabar                 5.88M chars (  5.9%)
+    nepalpress_html              2.79M chars (  2.8%)
+    reportersnepal_html          2.65M chars (  2.7%)
+    khabarhub_html               2.32M chars (  2.3%)
+    sahityasangraha_html         2.27M chars (  2.3%)
+    clickmandu_html              1.38M chars (  1.4%)
+    nepalilink                 807.26K chars (  0.8%)
+    bizmandu                   656.61K chars (  0.7%)
+    arthasarokar               605.06K chars (  0.6%)
+    nepalkhoj                  521.49K chars (  0.5%)
+    sancharkendra              232.79K chars (  0.2%)
+    swasthyakhabar             203.75K chars (  0.2%)
+    nepalisahityaghar          149.19K chars (  0.1%)
+    annapurnapost              148.63K chars (  0.1%)
+    nkp_legal                   79.73K chars (  0.1%)
+    aakarpost                   62.82K chars (  0.1%)
+    edukhabar                   33.98K chars (  0.0%)
+    offlinethinker              24.34K chars (  0.0%)
+    nagariknetwork              23.11K chars (  0.0%)
+    hamrakura                   15.39K chars (  0.0%)
+    filmykhabar                 14.35K chars (  0.0%)
+    krishisanjal                 7.55K chars (  0.0%)
+
+sweeping 5 vocabulary sizes: 8,000, 12,000, 16,000, 24,000, 32,000
+
+--- vocab_size=8,000  (embedding 3.07M params, 12% of the 25.00M budget) ---
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786883509.191166 24064921 sentencepiece_trainer.cc:105] Starts training with : 
+trainer_spec {
+  input: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/spm_input.txt
+  input_format: 
+  model_prefix: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/_staging/nep_unigram_sweep_8000
+  model_type: UNIGRAM
+  vocab_size: 8000
+  self_test_sample_size: 0
+  character_coverage: 0.9995
+  input_sentence_size: 400000
+  shuffle_input_sentence: 1
+  seed_sentencepiece_size: 1000000
+  shrinking_factor: 0.75
+  max_sentence_length: 4192
+  num_threads: 8
+  num_sub_iterations: 2
+  max_sentencepiece_length: 16
+  split_by_unicode_script: 1
+  split_by_number: 1
+  split_by_whitespace: 1
+  split_digits: 1
+  pretokenization_delimiter: 
+  treat_whitespace_as_suffix: 0
+  allow_whitespace_only_pieces: 1
+  required_chars: ऀँंःऄअआइईउऊऋऌऍऎएऐऑऒओऔकखगघङचछजझञटठडढणतथदधनऩपफबभमयरऱलळऴवशषसहऺऻ़ऽािीुूृॄॅॆेैॉॊोौ्ॎॏॐ॒॑॓॔ॕॖॗक़ख़ग़ज़ड़ढ़फ़य़ॠॡॢॣ।॥०१२३४५६७८९॰ॱॲॳॴॵॶॷॸॹॺॻॼॽॾॿ
+  byte_fallback: 1
+  vocabulary_output_piece_score: 1
+  train_extremely_large_corpus: 1
+  seed_sentencepieces_file: 
+  hard_vocab_limit: 1
+  use_all_vocab: 0
+  unk_id: 1
+  bos_id: 2
+  eos_id: 3
+  pad_id: 0
+  unk_piece: <unk>
+  bos_piece: <s>
+  eos_piece: </s>
+  pad_piece: <pad>
+  unk_surface:  ⁇ 
+  enable_differential_privacy: 0
+  differential_privacy_noise_level: 0
+  differential_privacy_clipping_threshold: 0
+}
+normalizer_spec {
+  name: identity
+  add_dummy_prefix: 1
+  remove_extra_whitespaces: 0
+  escape_whitespaces: 1
+  normalization_rule_tsv: 
+}
+denormalizer_spec {}
+
+--- vocab_size=12,000  (embedding 4.61M params, 18% of the 25.00M budget) ---
+I0000 00:00:1786883567.968460 24064921 sentencepiece_trainer.cc:105] Starts training with : 
+trainer_spec {
+  input: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/spm_input.txt
+  input_format: 
+  model_prefix: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/_staging/nep_unigram_sweep_12000
+  model_type: UNIGRAM
+  vocab_size: 12000
+  self_test_sample_size: 0
+  character_coverage: 0.9995
+  input_sentence_size: 400000
+  shuffle_input_sentence: 1
+  seed_sentencepiece_size: 1000000
+  shrinking_factor: 0.75
+  max_sentence_length: 4192
+  num_threads: 8
+  num_sub_iterations: 2
+  max_sentencepiece_length: 16
+  split_by_unicode_script: 1
+  split_by_number: 1
+  split_by_whitespace: 1
+  split_digits: 1
+  pretokenization_delimiter: 
+  treat_whitespace_as_suffix: 0
+  allow_whitespace_only_pieces: 1
+  required_chars: ऀँंःऄअआइईउऊऋऌऍऎएऐऑऒओऔकखगघङचछजझञटठडढणतथदधनऩपफबभमयरऱलळऴवशषसहऺऻ़ऽािीुूृॄॅॆेैॉॊोौ्ॎॏॐ॒॑॓॔ॕॖॗक़ख़ग़ज़ड़ढ़फ़य़ॠॡॢॣ।॥०१२३४५६७८९॰ॱॲॳॴॵॶॷॸॹॺॻॼॽॾॿ
+  byte_fallback: 1
+  vocabulary_output_piece_score: 1
+  train_extremely_large_corpus: 1
+  seed_sentencepieces_file: 
+  hard_vocab_limit: 1
+  use_all_vocab: 0
+  unk_id: 1
+  bos_id: 2
+  eos_id: 3
+  pad_id: 0
+  unk_piece: <unk>
+  bos_piece: <s>
+  eos_piece: </s>
+  pad_piece: <pad>
+  unk_surface:  ⁇ 
+  enable_differential_privacy: 0
+  differential_privacy_noise_level: 0
+  differential_privacy_clipping_threshold: 0
+}
+normalizer_spec {
+  name: identity
+  add_dummy_prefix: 1
+  remove_extra_whitespaces: 0
+  escape_whitespaces: 1
+  normalization_rule_tsv: 
+}
+denormalizer_spec {}
+
+--- vocab_size=16,000  (embedding 6.14M params, 25% of the 25.00M budget) ---
+I0000 00:00:1786883635.734450 24064921 sentencepiece_trainer.cc:105] Starts training with : 
+trainer_spec {
+  input: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/spm_input.txt
+  input_format: 
+  model_prefix: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/_staging/nep_unigram_sweep_16000
+  model_type: UNIGRAM
+  vocab_size: 16000
+  self_test_sample_size: 0
+  character_coverage: 0.9995
+  input_sentence_size: 400000
+  shuffle_input_sentence: 1
+  seed_sentencepiece_size: 1000000
+  shrinking_factor: 0.75
+  max_sentence_length: 4192
+  num_threads: 8
+  num_sub_iterations: 2
+  max_sentencepiece_length: 16
+  split_by_unicode_script: 1
+  split_by_number: 1
+  split_by_whitespace: 1
+  split_digits: 1
+  pretokenization_delimiter: 
+  treat_whitespace_as_suffix: 0
+  allow_whitespace_only_pieces: 1
+  required_chars: ऀँंःऄअआइईउऊऋऌऍऎएऐऑऒओऔकखगघङचछजझञटठडढणतथदधनऩपफबभमयरऱलळऴवशषसहऺऻ़ऽािीुूृॄॅॆेैॉॊोौ्ॎॏॐ॒॑॓॔ॕॖॗक़ख़ग़ज़ड़ढ़फ़य़ॠॡॢॣ।॥०१२३४५६७८९॰ॱॲॳॴॵॶॷॸॹॺॻॼॽॾॿ
+  byte_fallback: 1
+  vocabulary_output_piece_score: 1
+  train_extremely_large_corpus: 1
+  seed_sentencepieces_file: 
+  hard_vocab_limit: 1
+  use_all_vocab: 0
+  unk_id: 1
+  bos_id: 2
+  eos_id: 3
+  pad_id: 0
+  unk_piece: <unk>
+  bos_piece: <s>
+  eos_piece: </s>
+  pad_piece: <pad>
+  unk_surface:  ⁇ 
+  enable_differential_privacy: 0
+  differential_privacy_noise_level: 0
+  differential_privacy_clipping_threshold: 0
+}
+normalizer_spec {
+  name: identity
+  add_dummy_prefix: 1
+  remove_extra_whitespaces: 0
+  escape_whitespaces: 1
+  normalization_rule_tsv: 
+}
+denormalizer_spec {}
+
+--- vocab_size=24,000  (embedding 9.22M params, 37% of the 25.00M budget) ---
+I0000 00:00:1786883693.232239 24064921 sentencepiece_trainer.cc:105] Starts training with : 
+trainer_spec {
+  input: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/spm_input.txt
+  input_format: 
+  model_prefix: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/_staging/nep_unigram_sweep_24000
+  model_type: UNIGRAM
+  vocab_size: 24000
+  self_test_sample_size: 0
+  character_coverage: 0.9995
+  input_sentence_size: 400000
+  shuffle_input_sentence: 1
+  seed_sentencepiece_size: 1000000
+  shrinking_factor: 0.75
+  max_sentence_length: 4192
+  num_threads: 8
+  num_sub_iterations: 2
+  max_sentencepiece_length: 16
+  split_by_unicode_script: 1
+  split_by_number: 1
+  split_by_whitespace: 1
+  split_digits: 1
+  pretokenization_delimiter: 
+  treat_whitespace_as_suffix: 0
+  allow_whitespace_only_pieces: 1
+  required_chars: ऀँंःऄअआइईउऊऋऌऍऎएऐऑऒओऔकखगघङचछजझञटठडढणतथदधनऩपफबभमयरऱलळऴवशषसहऺऻ़ऽािीुूृॄॅॆेैॉॊोौ्ॎॏॐ॒॑॓॔ॕॖॗक़ख़ग़ज़ड़ढ़फ़य़ॠॡॢॣ।॥०१२३४५६७८९॰ॱॲॳॴॵॶॷॸॹॺॻॼॽॾॿ
+  byte_fallback: 1
+  vocabulary_output_piece_score: 1
+  train_extremely_large_corpus: 1
+  seed_sentencepieces_file: 
+  hard_vocab_limit: 1
+  use_all_vocab: 0
+  unk_id: 1
+  bos_id: 2
+  eos_id: 3
+  pad_id: 0
+  unk_piece: <unk>
+  bos_piece: <s>
+  eos_piece: </s>
+  pad_piece: <pad>
+  unk_surface:  ⁇ 
+  enable_differential_privacy: 0
+  differential_privacy_noise_level: 0
+  differential_privacy_clipping_threshold: 0
+}
+normalizer_spec {
+  name: identity
+  add_dummy_prefix: 1
+  remove_extra_whitespaces: 0
+  escape_whitespaces: 1
+  normalization_rule_tsv: 
+}
+denormalizer_spec {}
+
+--- vocab_size=32,000  (embedding 12.29M params, 49% of the 25.00M budget) ---
+I0000 00:00:1786883747.445344 24064921 sentencepiece_trainer.cc:105] Starts training with : 
+trainer_spec {
+  input: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/spm_input.txt
+  input_format: 
+  model_prefix: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/_staging/nep_unigram_sweep_32000
+  model_type: UNIGRAM
+  vocab_size: 32000
+  self_test_sample_size: 0
+  character_coverage: 0.9995
+  input_sentence_size: 400000
+  shuffle_input_sentence: 1
+  seed_sentencepiece_size: 1000000
+  shrinking_factor: 0.75
+  max_sentence_length: 4192
+  num_threads: 8
+  num_sub_iterations: 2
+  max_sentencepiece_length: 16
+  split_by_unicode_script: 1
+  split_by_number: 1
+  split_by_whitespace: 1
+  split_digits: 1
+  pretokenization_delimiter: 
+  treat_whitespace_as_suffix: 0
+  allow_whitespace_only_pieces: 1
+  required_chars: ऀँंःऄअआइईउऊऋऌऍऎएऐऑऒओऔकखगघङचछजझञटठडढणतथदधनऩपफबभमयरऱलळऴवशषसहऺऻ़ऽािीुूृॄॅॆेैॉॊोौ्ॎॏॐ॒॑॓॔ॕॖॗक़ख़ग़ज़ड़ढ़फ़य़ॠॡॢॣ।॥०१२३४५६७८९॰ॱॲॳॴॵॶॷॸॹॺॻॼॽॾॿ
+  byte_fallback: 1
+  vocabulary_output_piece_score: 1
+  train_extremely_large_corpus: 1
+  seed_sentencepieces_file: 
+  hard_vocab_limit: 1
+  use_all_vocab: 0
+  unk_id: 1
+  bos_id: 2
+  eos_id: 3
+  pad_id: 0
+  unk_piece: <unk>
+  bos_piece: <s>
+  eos_piece: </s>
+  pad_piece: <pad>
+  unk_surface:  ⁇ 
+  enable_differential_privacy: 0
+  differential_privacy_noise_level: 0
+  differential_privacy_clipping_threshold: 0
+}
+normalizer_spec {
+  name: identity
+  add_dummy_prefix: 1
+  remove_extra_whitespaces: 0
+  escape_whitespaces: 1
+  normalization_rule_tsv: 
+}
+denormalizer_spec {}
+
+sweep done. Compare and get a recommendation with:
+  python tokenizer/tokenizer_stats.py --compare-sweep
+### STAGE 5 compare        18:06:40
+evaluating on 3,000 held-out documents (6,239,261 characters, 83.0% Devanagari script)
+
+   vocab  chars/tok  fertility    byte-fb       unk  vocab used   emb params  % budget
+------------------------------------------------------------------------------------
+   8,000      4.055      1.647   0.005825  0.000000       97.4%        3.07M       12%
+  12,000      4.321      1.546   0.006208  0.000000       98.1%        4.61M       18%
+  16,000      4.494      1.486   0.006457  0.000000       98.0%        6.14M       25%
+  24,000      4.698      1.422   0.006749  0.000000       96.1%        9.22M       37%
+  32,000      4.822      1.385   0.006928  0.000000       92.7%       12.29M       49%
+
+marginal cost of each step up in vocabulary:
+  step                  +chars/tok    +params   params per 1% gain
+  8,000 -> 12,000             6.6%      1.54M              234.15K
+  12,000 -> 16,000            4.0%      1.54M              383.64K
+  16,000 -> 24,000            4.5%      3.07M              676.74K
+  24,000 -> 32,000            2.6%      3.07M                1.16M
+
+RECOMMENDED vocab_size = 16,000
+  largest vocabulary whose embedding stays within 34% of the parameter budget
+  leaves 18.86M for Transformer blocks = ~10.7 layers at d_model=384
+  rejected - embedding would exceed 34% of the budget: [24000]
+  rejected - under 95% of the vocabulary is used on held-out text: [32000]
+  set tokenizer.vocab_size in configs/pipeline.yaml, then rerun train_tokenizer.py without --sweep
+
+Example tokenizations:
+
+  नेपालको राजधानी काठमाडौं हो।
+  -> 5 tokens, 5.6 chars/token
+  -> ▁नेपालको | ▁राजधानी | ▁काठमाडौं | ▁हो | ।
+
+  उनले 2024 मा पोखराबाट काठमाडौंसम्म यात्रा गरे।
+  -> 14 tokens, 3.29 chars/token
+  -> ▁उनले | ▁ | 2 | 0 | 2 | 4 | ▁मा | ▁पोखरा | बाट | ▁काठमाडौं | सम्म | ▁यात्रा | ▁गरे | ।
+
+  विद्यार्थीहरूले पुस्तकालयबाट किताब लिए।
+  -> 6 tokens, 6.5 chars/token
+  -> ▁विद्यार्थीहरूले | ▁पुस्तकालय | बाट | ▁किताब | ▁लिए | ।
+
+  यस अनुसन्धान पत्रमा भाषाशास्त्रीय विश्लेषण प्रस्तुत गरिएको छ।
+  -> 11 tokens, 5.55 chars/token
+  -> ▁यस | ▁अनुसन्धान | ▁पत्रमा | ▁भाषा | शास्त्र | ीय | ▁विश्लेषण | ▁प्रस्तुत | ▁गरिएको | ▁छ | ।
+
+  घर, घरमा, घरहरूमा, घरहरूबाट - एउटै मूल शब्दका विभिन्न रूप।
+  -> 17 tokens, 3.41 chars/token
+  -> ▁घर | , | ▁घरमा | , | ▁घर | हरूमा | , | ▁घर | हरूबाट | ▁- | ▁एउटै | ▁मूल | ▁शब्द | का | ▁विभिन्न | ▁रूप | ।
+
+Compression by source register (chars/token):
+  annapurnapost             5.778
+  swasthyakhabar            5.591
+  reportersnepal_html       5.089
+  nepalpress_html           5.045
+  khabarhub_html            4.977
+  sancharkendra             4.974
+  bizmandu                  4.891
+  nepalkhoj                 4.866
+  onlinekhabar              4.858
+  hamrakura                 4.842
+  clickmandu_html           4.830
+  ai4bharat_sangraha        4.824
+  nepalilink                4.821
+  arthasarokar              4.812
+  offlinethinker            4.062
+  nepalisahityaghar         4.030
+  sahityasangraha_html      3.918
+  aakarpost                 3.834
+
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/tokenizer_stats_nep.json
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/tokenizer_stats_nep.md
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/figures/tokenizer_vocab_sweep_nep.png
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/figures/tokenizer_frequency_nep.png
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/figures/tokenizer_piece_length_nep.png
+### STAGE 6 final tokenizer (vocab 16,000 per sweep)  18:06:48
+reusing /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/spm_input.txt (264.76M bytes)
+
+training final Nepali Unigram model, vocab_size=16,000
+  embedding cost: 6.14M parameters (25% of the target budget)
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786883808.197217 24076481 sentencepiece_trainer.cc:105] Starts training with : 
+trainer_spec {
+  input: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/spm_input.txt
+  input_format: 
+  model_prefix: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/_staging/nep_unigram
+  model_type: UNIGRAM
+  vocab_size: 16000
+  self_test_sample_size: 0
+  character_coverage: 0.9995
+  input_sentence_size: 400000
+  shuffle_input_sentence: 1
+  seed_sentencepiece_size: 1000000
+  shrinking_factor: 0.75
+  max_sentence_length: 4192
+  num_threads: 8
+  num_sub_iterations: 2
+  max_sentencepiece_length: 16
+  split_by_unicode_script: 1
+  split_by_number: 1
+  split_by_whitespace: 1
+  split_digits: 1
+  pretokenization_delimiter: 
+  treat_whitespace_as_suffix: 0
+  allow_whitespace_only_pieces: 1
+  required_chars: ऀँंःऄअआइईउऊऋऌऍऎएऐऑऒओऔकखगघङचछजझञटठडढणतथदधनऩपफबभमयरऱलळऴवशषसहऺऻ़ऽािीुूृॄॅॆेैॉॊोौ्ॎॏॐ॒॑॓॔ॕॖॗक़ख़ग़ज़ड़ढ़फ़य़ॠॡॢॣ।॥०१२३४५६७८९॰ॱॲॳॴॵॶॷॸॹॺॻॼॽॾॿ
+  byte_fallback: 1
+  vocabulary_output_piece_score: 1
+  train_extremely_large_corpus: 1
+  seed_sentencepieces_file: 
+  hard_vocab_limit: 1
+  use_all_vocab: 0
+  unk_id: 1
+  bos_id: 2
+  eos_id: 3
+  pad_id: 0
+  unk_piece: <unk>
+  bos_piece: <s>
+  eos_piece: </s>
+  pad_piece: <pad>
+  unk_surface:  ⁇ 
+  enable_differential_privacy: 0
+  differential_privacy_noise_level: 0
+  differential_privacy_clipping_threshold: 0
+}
+normalizer_spec {
+  name: identity
+  add_dummy_prefix: 1
+  remove_extra_whitespaces: 0
+  escape_whitespaces: 1
+  normalization_rule_tsv: 
+}
+denormalizer_spec {}
+
+  model  -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/model/nep_unigram.model
+  vocab  -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/vocab/nep_unigram.vocab
+  config -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/tokenizer_config.json
+
+Next:  python tokenizer/tokenizer_stats.py
+### STAGE 7 stats          18:07:46
+scanning train ...
+scanning validation ...
+scanning test ...
+
+==== Nepali train ====
+  Manual documents:  258,996
+  Manual tokens:     120,410,525
+  Public documents:  967,111
+  Public tokens:     439,681,031
+  Total tokens:      560,091,556
+  Manual percentage: 21.50%  (measured by tokens)
+  500M target:       112.02%
+  report -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/corpus_stats_nep.md
+
+stage                   bucket      documents     characters         words
+--------------------------------------------------------------------------
+raw (collected)         manual        293,849    575,370,138    90,020,199
+                        public      1,085,036  2,100,001,359   325,573,700
+                        TOTAL       1,378,885  2,675,371,497   415,593,899   manual 21.7% of words
+--------------------------------------------------------------------------
+clean (preprocessed)    manual        264,847    547,245,014    81,919,726
+                        public        984,482  1,996,259,783   299,737,745
+                        TOTAL       1,249,329  2,543,504,797   381,657,471   manual 21.5% of words   (kept 91.8% of words)
+--------------------------------------------------------------------------
+dedup (deduplicated)    manual        261,021    538,695,709    80,644,561
+                        public        972,809  1,977,018,437   296,867,462
+                        TOTAL       1,233,830  2,515,714,146   377,512,023   manual 21.4% of words   (kept 98.9% of words)
+--------------------------------------------------------------------------
+train split             manual        258,996    534,259,133    79,978,246
+                        public        967,111  1,965,453,989   295,131,302
+                        TOTAL       1,226,107  2,499,713,122   375,109,548   manual 21.3% of words   (kept 99.4% of words)
+--------------------------------------------------------------------------
+
+Note: 'words' are whitespace-separated and are NOT the tokens the
+500M target is measured in. Subword tokenization raises the count by
+roughly 50%; run corpus_stats.py --tokenizer for the real figure.
+### ALL DONE               18:14:27

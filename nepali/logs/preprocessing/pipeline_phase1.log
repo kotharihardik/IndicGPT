@@ -1,0 +1,96 @@
+### STAGE 1/3 preprocess   00:17:06
+pass A: counting repeated lines ...
+  100,000 documents | tracking 10,290 repeated lines (pruned 432,919 singletons)
+  200,000 documents | tracking 20,628 repeated lines (pruned 600,533 singletons)
+  300,000 documents | tracking 42,723 repeated lines (pruned 850,066 singletons)
+  400,000 documents | tracking 45,014 repeated lines (pruned 343,311 singletons)
+  500,000 documents | tracking 46,595 repeated lines (pruned 339,044 singletons)
+  600,000 documents | tracking 48,107 repeated lines (pruned 344,598 singletons)
+  700,000 documents | tracking 49,459 repeated lines (pruned 346,841 singletons)
+  800,000 documents | tracking 50,764 repeated lines (pruned 340,756 singletons)
+  900,000 documents | tracking 51,955 repeated lines (pruned 341,531 singletons)
+  1,000,000 documents | tracking 53,259 repeated lines (pruned 339,464 singletons)
+  1,100,000 documents | tracking 54,482 repeated lines (pruned 342,615 singletons)
+  1,200,000 documents | tracking 55,711 repeated lines (pruned 342,642 singletons)
+  1,300,000 documents | tracking 56,874 repeated lines (pruned 341,112 singletons)
+  blocked 392 boilerplate line patterns
+pass B: normalising and filtering ...
+  50,000 seen | 44,396 kept (88.8%)
+  100,000 seen | 89,912 kept (89.9%)
+  150,000 seen | 135,307 kept (90.2%)
+  200,000 seen | 179,966 kept (90.0%)
+  250,000 seen | 225,901 kept (90.4%)
+  300,000 seen | 270,416 kept (90.1%)
+  350,000 seen | 315,812 kept (90.2%)
+  400,000 seen | 361,205 kept (90.3%)
+  450,000 seen | 406,595 kept (90.4%)
+  500,000 seen | 451,941 kept (90.4%)
+  550,000 seen | 497,201 kept (90.4%)
+  600,000 seen | 542,495 kept (90.4%)
+  650,000 seen | 587,784 kept (90.4%)
+  700,000 seen | 633,199 kept (90.5%)
+  750,000 seen | 678,534 kept (90.5%)
+  800,000 seen | 723,919 kept (90.5%)
+  850,000 seen | 769,283 kept (90.5%)
+  900,000 seen | 814,727 kept (90.5%)
+  950,000 seen | 860,006 kept (90.5%)
+  1,000,000 seen | 905,309 kept (90.5%)
+  1,050,000 seen | 950,761 kept (90.5%)
+  1,100,000 seen | 996,117 kept (90.6%)
+  1,150,000 seen | 1,041,539 kept (90.6%)
+  1,200,000 seen | 1,086,870 kept (90.6%)
+  1,250,000 seen | 1,132,300 kept (90.6%)
+  1,300,000 seen | 1,177,635 kept (90.6%)
+
+==== CLEAN [nep] ====
+  1,301,666 in -> 1,179,151 kept (90.6% of docs, 2.40B chars)
+    not_nepali                       96,475
+    repetitive_4gram                  9,440
+    repetitive_3gram                  4,436
+    too_short                         4,217
+    not_devanagari                    3,652
+    too_much_latin                    2,894
+    repetitive_2gram                    838
+    repeated_lines                      502
+    hindi_not_nepali                     36
+    digit_heavy                          16
+    boilerplate                           6
+    too_few_words                         2
+    bad_word_length                       1
+  summary -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/cleaning_nep.json
+### STAGE 2/3 deduplicate  01:15:40
+  50,000 in | 49,705 kept | exact=65 near=230
+  100,000 in | 98,786 kept | exact=114 near=1,100
+  150,000 in | 148,198 kept | exact=127 near=1,675
+  200,000 in | 198,116 kept | exact=145 near=1,739
+  250,000 in | 246,941 kept | exact=259 near=2,800
+  300,000 in | 295,767 kept | exact=449 near=3,784
+  350,000 in | 345,171 kept | exact=680 near=4,149
+  400,000 in | 394,572 kept | exact=926 near=4,502
+  450,000 in | 443,960 kept | exact=1,172 near=4,868
+  500,000 in | 493,393 kept | exact=1,419 near=5,188
+  550,000 in | 542,841 kept | exact=1,634 near=5,525
+  600,000 in | 592,239 kept | exact=1,885 near=5,876
+  650,000 in | 641,647 kept | exact=2,122 near=6,231
+  700,000 in | 691,053 kept | exact=2,348 near=6,599
+  750,000 in | 740,441 kept | exact=2,600 near=6,959
+  800,000 in | 789,810 kept | exact=2,849 near=7,341
+  850,000 in | 839,225 kept | exact=3,095 near=7,680
+  900,000 in | 888,626 kept | exact=3,338 near=8,036
+  950,000 in | 938,073 kept | exact=3,556 near=8,371
+  1,000,000 in | 987,452 kept | exact=3,817 near=8,731
+  1,050,000 in | 1,036,878 kept | exact=4,062 near=9,060
+  1,100,000 in | 1,086,297 kept | exact=4,308 near=9,395
+  1,150,000 in | 1,135,673 kept | exact=4,560 near=9,767
+
+==== DEDUP [nep] ====
+  in=1,179,151 out=1,164,500 | exact=4,691 | near=9,960 | removed 1.2% | 2.37B chars kept
+  summary -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/dedup_nep.json
+### STAGE 3/3 splits       02:23:58
+
+==== SPLITS [nep] ====
+  train       1,156,777 docs |    2.36B chars | manual  22.7%
+  validation      3,883 docs |    8.00M chars | manual  25.8%
+  test            3,840 docs |    8.00M chars | manual  29.7%
+  summary -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/splits_nep.json
+### PIPELINE OK            02:48:15

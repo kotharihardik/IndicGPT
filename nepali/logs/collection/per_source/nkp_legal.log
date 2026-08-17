@@ -1,0 +1,20 @@
+========================================================================================
+NEPALI MANUAL COLLECTION   2026-08-14 20:43:23
+  sources: nkp_legal
+  target : 125.00M manual tokens (~500.00M chars)
+  already: 372.60K chars collected
+========================================================================================
+
+--- nkp_legal  (sitemap)  budget 5.00M chars ---
+  resuming: 11 docs / 372.60K chars already collected, 11 URLs known
+    nkp_legal: link-crawl found 0 URLs (frontier 18)
+  nkp_legal: 7 new article URLs from sitemap
+  [nkp_legal]  |  0 docs  |  372.60K ch  |  ~93.15K tok  |  0 ch/s  |  27 req  |  7% of budget  |  ETA 0s  |  3s  |  DONE
+       rejected: too-short x5, latin-heavy x1, no-text-extracted x1
+  shard: nkp_legal.part-1786720403-9655.jsonl.gz (0 docs / 0 chars)
+
+========================================================================================
+TOTAL 372.60K chars  ~93.15K tokens (0.1% of target) in 3s
+========================================================================================
+
+progress: python3 data/collection/collect_manual.py --status

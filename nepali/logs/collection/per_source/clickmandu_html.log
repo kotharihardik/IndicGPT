@@ -1,0 +1,189 @@
+========================================================================================
+NEPALI MANUAL COLLECTION   2026-08-14 17:12:02
+  sources: clickmandu_html
+  target : 125.00M manual tokens (~500.00M chars)
+  already: 0 chars collected
+========================================================================================
+
+--- clickmandu_html  (sitemap)  budget 45.00M chars ---
+  clickmandu_html: 20,000 new article URLs from sitemap
+  [clickmandu_html]  |  1 docs  |  1.21K ch  |  ~301 tok  |  111 ch/s  |  26 req  |  0% of budget  |  ETA 1250h13m  |  10s
+  [clickmandu_html]  |  180 docs  |  428.85K ch  |  ~107.21K tok  |  20.53K ch/s  |  205 req  |  1% of budget  |  ETA 6h45m  |  20s
+  [clickmandu_html]  |  295 docs  |  670.62K ch  |  ~167.65K tok  |  21.71K ch/s  |  332 req  |  1% of budget  |  ETA 6h23m  |  30s
+  [clickmandu_html]  |  417 docs  |  883.60K ch  |  ~220.90K tok  |  21.52K ch/s  |  454 req  |  2% of budget  |  ETA 6h26m  |  41s
+  [clickmandu_html]  |  527 docs  |  1.07M ch  |  ~268.74K tok  |  21.04K ch/s  |  564 req  |  2% of budget  |  ETA 6h35m  |  51s
+  [clickmandu_html]  |  636 docs  |  1.26M ch  |  ~313.84K tok  |  20.52K ch/s  |  674 req  |  3% of budget  |  ETA 6h45m  |  1m01s
+  [clickmandu_html]  |  744 docs  |  1.43M ch  |  ~358.54K tok  |  20.10K ch/s  |  785 req  |  3% of budget  |  ETA 6h53m  |  1m11s
+  [clickmandu_html]  |  877 docs  |  1.69M ch  |  ~421.90K tok  |  20.73K ch/s  |  919 req  |  4% of budget  |  ETA 6h40m  |  1m21s
+  [clickmandu_html]  |  1,002 docs  |  1.91M ch  |  ~478.36K tok  |  20.93K ch/s  |  1,044 req  |  4% of budget  |  ETA 6h36m  |  1m31s
+  [clickmandu_html]  |  1,126 docs  |  2.14M ch  |  ~534.08K tok  |  21.04K ch/s  |  1,169 req  |  5% of budget  |  ETA 6h34m  |  1m41s
+  [clickmandu_html]  |  1,263 docs  |  2.35M ch  |  ~588.49K tok  |  21.09K ch/s  |  1,306 req  |  5% of budget  |  ETA 6h33m  |  1m51s
+  [clickmandu_html]  |  1,388 docs  |  2.57M ch  |  ~643.41K tok  |  21.13K ch/s  |  1,431 req  |  6% of budget  |  ETA 6h32m  |  2m01s
+  [clickmandu_html]  |  1,512 docs  |  2.78M ch  |  ~695.02K tok  |  21.08K ch/s  |  1,555 req  |  6% of budget  |  ETA 6h33m  |  2m11s
+  [clickmandu_html]  |  1,645 docs  |  3.02M ch  |  ~754.14K tok  |  21.26K ch/s  |  1,689 req  |  7% of budget  |  ETA 6h29m  |  2m21s
+  [clickmandu_html]  |  1,763 docs  |  3.21M ch  |  ~801.51K tok  |  21.09K ch/s  |  1,807 req  |  7% of budget  |  ETA 6h32m  |  2m32s
+  [clickmandu_html]  |  1,887 docs  |  3.42M ch  |  ~854.31K tok  |  21.09K ch/s  |  1,932 req  |  8% of budget  |  ETA 6h32m  |  2m42s
+  [clickmandu_html]  |  2,021 docs  |  3.64M ch  |  ~908.77K tok  |  21.12K ch/s  |  2,066 req  |  8% of budget  |  ETA 6h31m  |  2m52s
+  [clickmandu_html]  |  2,146 docs  |  3.81M ch  |  ~952.57K tok  |  20.90K ch/s  |  2,192 req  |  8% of budget  |  ETA 6h35m  |  3m02s
+  [clickmandu_html]  |  2,268 docs  |  4.01M ch  |  ~1.00M tok  |  20.83K ch/s  |  2,314 req  |  9% of budget  |  ETA 6h36m  |  3m12s
+  [clickmandu_html]  |  2,403 docs  |  4.26M ch  |  ~1.07M tok  |  21.07K ch/s  |  2,449 req  |  9% of budget  |  ETA 6h32m  |  3m22s
+  [clickmandu_html]  |  2,531 docs  |  4.47M ch  |  ~1.12M tok  |  21.03K ch/s  |  2,578 req  |  10% of budget  |  ETA 6h32m  |  3m32s
+  [clickmandu_html]  |  2,647 docs  |  4.66M ch  |  ~1.16M tok  |  20.92K ch/s  |  2,694 req  |  10% of budget  |  ETA 6h34m  |  3m42s
+  [clickmandu_html]  |  2,748 docs  |  4.84M ch  |  ~1.21M tok  |  20.80K ch/s  |  2,795 req  |  11% of budget  |  ETA 6h36m  |  3m52s
+  [clickmandu_html]  |  2,821 docs  |  4.94M ch  |  ~1.24M tok  |  20.38K ch/s  |  2,868 req  |  11% of budget  |  ETA 6h44m  |  4m02s
+  [clickmandu_html]  |  2,923 docs  |  5.09M ch  |  ~1.27M tok  |  20.16K ch/s  |  2,970 req  |  11% of budget  |  ETA 6h49m  |  4m12s
+  [clickmandu_html]  |  3,011 docs  |  5.27M ch  |  ~1.32M tok  |  20.06K ch/s  |  3,059 req  |  12% of budget  |  ETA 6h51m  |  4m22s
+  [clickmandu_html]  |  3,143 docs  |  5.49M ch  |  ~1.37M tok  |  20.14K ch/s  |  3,191 req  |  12% of budget  |  ETA 6h49m  |  4m32s
+  [clickmandu_html]  |  3,282 docs  |  5.78M ch  |  ~1.44M tok  |  20.43K ch/s  |  3,330 req  |  13% of budget  |  ETA 6h43m  |  4m42s
+  [clickmandu_html]  |  3,421 docs  |  5.98M ch  |  ~1.50M tok  |  20.43K ch/s  |  3,469 req  |  13% of budget  |  ETA 6h43m  |  4m52s
+  [clickmandu_html]  |  3,540 docs  |  6.18M ch  |  ~1.55M tok  |  20.41K ch/s  |  3,588 req  |  14% of budget  |  ETA 6h43m  |  5m02s
+  [clickmandu_html]  |  3,656 docs  |  6.35M ch  |  ~1.59M tok  |  20.29K ch/s  |  3,706 req  |  14% of budget  |  ETA 6h45m  |  5m12s
+  [clickmandu_html]  |  3,787 docs  |  6.52M ch  |  ~1.63M tok  |  20.20K ch/s  |  3,837 req  |  14% of budget  |  ETA 6h47m  |  5m22s
+  [clickmandu_html]  |  3,914 docs  |  6.77M ch  |  ~1.69M tok  |  20.31K ch/s  |  3,964 req  |  15% of budget  |  ETA 6h44m  |  5m33s
+  [clickmandu_html]  |  4,048 docs  |  6.90M ch  |  ~1.73M tok  |  20.12K ch/s  |  4,099 req  |  15% of budget  |  ETA 6h48m  |  5m43s
+  [clickmandu_html]  |  4,173 docs  |  7.11M ch  |  ~1.78M tok  |  20.13K ch/s  |  4,225 req  |  16% of budget  |  ETA 6h47m  |  5m53s
+  [clickmandu_html]  |  4,279 docs  |  7.32M ch  |  ~1.83M tok  |  20.15K ch/s  |  4,332 req  |  16% of budget  |  ETA 6h47m  |  6m03s
+  [clickmandu_html]  |  4,387 docs  |  7.47M ch  |  ~1.87M tok  |  20.02K ch/s  |  4,440 req  |  17% of budget  |  ETA 6h50m  |  6m13s
+  [clickmandu_html]  |  4,513 docs  |  7.67M ch  |  ~1.92M tok  |  20.01K ch/s  |  4,566 req  |  17% of budget  |  ETA 6h50m  |  6m23s
+  [clickmandu_html]  |  4,631 docs  |  7.87M ch  |  ~1.97M tok  |  20.00K ch/s  |  4,684 req  |  17% of budget  |  ETA 6h50m  |  6m33s
+  [clickmandu_html]  |  4,758 docs  |  8.11M ch  |  ~2.03M tok  |  20.10K ch/s  |  4,813 req  |  18% of budget  |  ETA 6h47m  |  6m43s
+  [clickmandu_html]  |  4,884 docs  |  8.30M ch  |  ~2.07M tok  |  20.07K ch/s  |  4,940 req  |  18% of budget  |  ETA 6h48m  |  6m53s
+  [clickmandu_html]  |  4,996 docs  |  8.48M ch  |  ~2.12M tok  |  20.02K ch/s  |  5,052 req  |  19% of budget  |  ETA 6h49m  |  7m03s
+  [clickmandu_html]  |  5,119 docs  |  8.65M ch  |  ~2.16M tok  |  19.95K ch/s  |  5,177 req  |  19% of budget  |  ETA 6h50m  |  7m13s
+  [clickmandu_html]  |  5,248 docs  |  8.83M ch  |  ~2.21M tok  |  19.90K ch/s  |  5,306 req  |  20% of budget  |  ETA 6h51m  |  7m23s
+  [clickmandu_html]  |  5,378 docs  |  9.07M ch  |  ~2.27M tok  |  20.00K ch/s  |  5,437 req  |  20% of budget  |  ETA 6h49m  |  7m33s
+  [clickmandu_html]  |  5,502 docs  |  9.28M ch  |  ~2.32M tok  |  20.02K ch/s  |  5,561 req  |  21% of budget  |  ETA 6h48m  |  7m43s
+  [clickmandu_html]  |  5,633 docs  |  9.50M ch  |  ~2.38M tok  |  20.04K ch/s  |  5,692 req  |  21% of budget  |  ETA 6h47m  |  7m54s
+  [clickmandu_html]  |  5,744 docs  |  9.69M ch  |  ~2.42M tok  |  20.02K ch/s  |  5,803 req  |  22% of budget  |  ETA 6h48m  |  8m04s
+  [clickmandu_html]  |  5,878 docs  |  9.95M ch  |  ~2.49M tok  |  20.13K ch/s  |  5,937 req  |  22% of budget  |  ETA 6h45m  |  8m14s
+  [clickmandu_html]  |  6,009 docs  |  10.20M ch  |  ~2.55M tok  |  20.23K ch/s  |  6,068 req  |  23% of budget  |  ETA 6h43m  |  8m24s
+  [clickmandu_html]  |  6,140 docs  |  10.44M ch  |  ~2.61M tok  |  20.30K ch/s  |  6,199 req  |  23% of budget  |  ETA 6h41m  |  8m34s
+  [clickmandu_html]  |  6,259 docs  |  10.65M ch  |  ~2.66M tok  |  20.30K ch/s  |  6,318 req  |  24% of budget  |  ETA 6h41m  |  8m44s
+  [clickmandu_html]  |  6,378 docs  |  10.83M ch  |  ~2.71M tok  |  20.26K ch/s  |  6,437 req  |  24% of budget  |  ETA 6h42m  |  8m54s
+  [clickmandu_html]  |  6,486 docs  |  11.03M ch  |  ~2.76M tok  |  20.26K ch/s  |  6,545 req  |  25% of budget  |  ETA 6h42m  |  9m04s
+  [clickmandu_html]  |  6,602 docs  |  11.24M ch  |  ~2.81M tok  |  20.26K ch/s  |  6,661 req  |  25% of budget  |  ETA 6h41m  |  9m14s
+  [clickmandu_html]  |  6,731 docs  |  11.48M ch  |  ~2.87M tok  |  20.32K ch/s  |  6,790 req  |  26% of budget  |  ETA 6h40m  |  9m24s
+  [clickmandu_html]  |  6,863 docs  |  11.73M ch  |  ~2.93M tok  |  20.41K ch/s  |  6,923 req  |  26% of budget  |  ETA 6h38m  |  9m34s
+  [clickmandu_html]  |  6,997 docs  |  11.96M ch  |  ~2.99M tok  |  20.45K ch/s  |  7,057 req  |  27% of budget  |  ETA 6h37m  |  9m44s
+  [clickmandu_html]  |  7,125 docs  |  12.19M ch  |  ~3.05M tok  |  20.49K ch/s  |  7,186 req  |  27% of budget  |  ETA 6h36m  |  9m55s
+  [clickmandu_html]  |  7,238 docs  |  12.39M ch  |  ~3.10M tok  |  20.47K ch/s  |  7,299 req  |  28% of budget  |  ETA 6h36m  |  10m05s
+  [clickmandu_html]  |  7,363 docs  |  12.62M ch  |  ~3.15M tok  |  20.51K ch/s  |  7,424 req  |  28% of budget  |  ETA 6h36m  |  10m15s
+  [clickmandu_html]  |  7,492 docs  |  12.85M ch  |  ~3.21M tok  |  20.55K ch/s  |  7,554 req  |  29% of budget  |  ETA 6h35m  |  10m25s
+  [clickmandu_html]  |  7,631 docs  |  13.10M ch  |  ~3.27M tok  |  20.61K ch/s  |  7,693 req  |  29% of budget  |  ETA 6h33m  |  10m35s
+  [clickmandu_html]  |  7,760 docs  |  13.39M ch  |  ~3.35M tok  |  20.74K ch/s  |  7,822 req  |  30% of budget  |  ETA 6h30m  |  10m45s
+  [clickmandu_html]  |  7,889 docs  |  13.75M ch  |  ~3.44M tok  |  20.97K ch/s  |  7,952 req  |  31% of budget  |  ETA 6h26m  |  10m55s
+  [clickmandu_html]  |  8,002 docs  |  13.97M ch  |  ~3.49M tok  |  20.99K ch/s  |  8,065 req  |  31% of budget  |  ETA 6h25m  |  11m05s
+  [clickmandu_html]  |  8,130 docs  |  14.22M ch  |  ~3.55M tok  |  21.04K ch/s  |  8,193 req  |  32% of budget  |  ETA 6h24m  |  11m15s
+  [clickmandu_html]  |  8,258 docs  |  14.42M ch  |  ~3.60M tok  |  21.03K ch/s  |  8,321 req  |  32% of budget  |  ETA 6h24m  |  11m25s
+  [clickmandu_html]  |  8,383 docs  |  14.62M ch  |  ~3.65M tok  |  21.01K ch/s  |  8,446 req  |  32% of budget  |  ETA 6h25m  |  11m35s
+  [clickmandu_html]  |  8,515 docs  |  14.91M ch  |  ~3.73M tok  |  21.12K ch/s  |  8,578 req  |  33% of budget  |  ETA 6h22m  |  11m45s
+  [clickmandu_html]  |  8,633 docs  |  15.00M ch  |  ~3.75M tok  |  20.95K ch/s  |  8,699 req  |  33% of budget  |  ETA 6h25m  |  11m55s
+  [clickmandu_html]  |  8,730 docs  |  15.10M ch  |  ~3.77M tok  |  20.79K ch/s  |  8,796 req  |  34% of budget  |  ETA 6h28m  |  12m06s
+  [clickmandu_html]  |  8,849 docs  |  15.29M ch  |  ~3.82M tok  |  20.77K ch/s  |  8,915 req  |  34% of budget  |  ETA 6h29m  |  12m16s
+  [clickmandu_html]  |  8,968 docs  |  15.52M ch  |  ~3.88M tok  |  20.79K ch/s  |  9,034 req  |  34% of budget  |  ETA 6h28m  |  12m26s
+  [clickmandu_html]  |  9,089 docs  |  15.76M ch  |  ~3.94M tok  |  20.83K ch/s  |  9,155 req  |  35% of budget  |  ETA 6h27m  |  12m36s
+  [clickmandu_html]  |  9,202 docs  |  15.99M ch  |  ~4.00M tok  |  20.86K ch/s  |  9,268 req  |  36% of budget  |  ETA 6h26m  |  12m46s
+  [clickmandu_html]  |  9,320 docs  |  16.22M ch  |  ~4.05M tok  |  20.89K ch/s  |  9,386 req  |  36% of budget  |  ETA 6h26m  |  12m56s
+  [clickmandu_html]  |  9,417 docs  |  16.40M ch  |  ~4.10M tok  |  20.84K ch/s  |  9,484 req  |  36% of budget  |  ETA 6h26m  |  13m06s
+  [clickmandu_html]  |  9,535 docs  |  16.61M ch  |  ~4.15M tok  |  20.84K ch/s  |  9,602 req  |  37% of budget  |  ETA 6h26m  |  13m16s
+  [clickmandu_html]  |  9,655 docs  |  16.84M ch  |  ~4.21M tok  |  20.86K ch/s  |  9,722 req  |  37% of budget  |  ETA 6h25m  |  13m27s
+  [clickmandu_html]  |  9,782 docs  |  17.07M ch  |  ~4.27M tok  |  20.89K ch/s  |  9,849 req  |  38% of budget  |  ETA 6h25m  |  13m37s
+  [clickmandu_html]  |  9,911 docs  |  17.31M ch  |  ~4.33M tok  |  20.93K ch/s  |  9,978 req  |  38% of budget  |  ETA 6h24m  |  13m47s
+  [clickmandu_html]  |  10,033 docs  |  17.54M ch  |  ~4.38M tok  |  20.95K ch/s  |  10,100 req  |  39% of budget  |  ETA 6h23m  |  13m57s
+  [clickmandu_html]  |  10,133 docs  |  17.71M ch  |  ~4.43M tok  |  20.90K ch/s  |  10,200 req  |  39% of budget  |  ETA 6h24m  |  14m07s
+  [clickmandu_html]  |  10,251 docs  |  17.90M ch  |  ~4.47M tok  |  20.88K ch/s  |  10,318 req  |  40% of budget  |  ETA 6h24m  |  14m17s
+  [clickmandu_html]  |  10,360 docs  |  18.10M ch  |  ~4.52M tok  |  20.86K ch/s  |  10,428 req  |  40% of budget  |  ETA 6h25m  |  14m27s
+  [clickmandu_html]  |  10,485 docs  |  18.32M ch  |  ~4.58M tok  |  20.88K ch/s  |  10,553 req  |  41% of budget  |  ETA 6h24m  |  14m37s
+  [clickmandu_html]  |  10,609 docs  |  18.58M ch  |  ~4.64M tok  |  20.93K ch/s  |  10,677 req  |  41% of budget  |  ETA 6h23m  |  14m47s
+  [clickmandu_html]  |  10,733 docs  |  18.78M ch  |  ~4.69M tok  |  20.92K ch/s  |  10,801 req  |  42% of budget  |  ETA 6h23m  |  14m57s
+  [clickmandu_html]  |  10,825 docs  |  18.94M ch  |  ~4.73M tok  |  20.86K ch/s  |  10,893 req  |  42% of budget  |  ETA 6h24m  |  15m07s
+  [clickmandu_html]  |  10,927 docs  |  19.11M ch  |  ~4.78M tok  |  20.82K ch/s  |  10,995 req  |  42% of budget  |  ETA 6h24m  |  15m17s
+  [clickmandu_html]  |  11,037 docs  |  19.31M ch  |  ~4.83M tok  |  20.81K ch/s  |  11,106 req  |  43% of budget  |  ETA 6h24m  |  15m27s
+  [clickmandu_html]  |  11,157 docs  |  19.50M ch  |  ~4.88M tok  |  20.80K ch/s  |  11,227 req  |  43% of budget  |  ETA 6h25m  |  15m37s
+  [clickmandu_html]  |  11,270 docs  |  19.71M ch  |  ~4.93M tok  |  20.80K ch/s  |  11,341 req  |  44% of budget  |  ETA 6h24m  |  15m47s
+  [clickmandu_html]  |  11,395 docs  |  19.93M ch  |  ~4.98M tok  |  20.81K ch/s  |  11,466 req  |  44% of budget  |  ETA 6h24m  |  15m58s
+  [clickmandu_html]  |  11,493 docs  |  20.11M ch  |  ~5.03M tok  |  20.78K ch/s  |  11,565 req  |  45% of budget  |  ETA 6h24m  |  16m08s
+  [clickmandu_html]  |  11,616 docs  |  20.35M ch  |  ~5.09M tok  |  20.81K ch/s  |  11,688 req  |  45% of budget  |  ETA 6h24m  |  16m18s
+  [clickmandu_html]  |  11,740 docs  |  20.63M ch  |  ~5.16M tok  |  20.88K ch/s  |  11,812 req  |  46% of budget  |  ETA 6h22m  |  16m28s
+  [clickmandu_html]  |  11,861 docs  |  20.91M ch  |  ~5.23M tok  |  20.94K ch/s  |  11,933 req  |  46% of budget  |  ETA 6h21m  |  16m38s
+  [clickmandu_html]  |  11,972 docs  |  21.14M ch  |  ~5.28M tok  |  20.96K ch/s  |  12,044 req  |  47% of budget  |  ETA 6h20m  |  16m48s
+  [clickmandu_html]  |  12,099 docs  |  21.39M ch  |  ~5.35M tok  |  21.00K ch/s  |  12,174 req  |  48% of budget  |  ETA 6h19m  |  16m58s
+  [clickmandu_html]  |  12,197 docs  |  21.61M ch  |  ~5.40M tok  |  21.01K ch/s  |  12,272 req  |  48% of budget  |  ETA 6h19m  |  17m08s
+  [clickmandu_html]  |  12,305 docs  |  21.86M ch  |  ~5.46M tok  |  21.04K ch/s  |  12,380 req  |  49% of budget  |  ETA 6h18m  |  17m18s
+  [clickmandu_html]  |  12,408 docs  |  22.07M ch  |  ~5.52M tok  |  21.04K ch/s  |  12,484 req  |  49% of budget  |  ETA 6h18m  |  17m28s
+  [clickmandu_html]  |  12,520 docs  |  22.30M ch  |  ~5.57M tok  |  21.06K ch/s  |  12,596 req  |  50% of budget  |  ETA 6h18m  |  17m38s
+  [clickmandu_html]  |  12,640 docs  |  22.52M ch  |  ~5.63M tok  |  21.07K ch/s  |  12,716 req  |  50% of budget  |  ETA 6h17m  |  17m48s
+  [clickmandu_html]  |  12,761 docs  |  22.75M ch  |  ~5.69M tok  |  21.08K ch/s  |  12,837 req  |  51% of budget  |  ETA 6h17m  |  17m59s
+  [clickmandu_html]  |  12,844 docs  |  22.90M ch  |  ~5.73M tok  |  21.03K ch/s  |  12,920 req  |  51% of budget  |  ETA 6h18m  |  18m09s
+  [clickmandu_html]  |  12,961 docs  |  23.12M ch  |  ~5.78M tok  |  21.04K ch/s  |  13,037 req  |  51% of budget  |  ETA 6h17m  |  18m19s
+  [clickmandu_html]  |  13,079 docs  |  23.36M ch  |  ~5.84M tok  |  21.06K ch/s  |  13,155 req  |  52% of budget  |  ETA 6h17m  |  18m29s
+  [clickmandu_html]  |  13,189 docs  |  23.59M ch  |  ~5.90M tok  |  21.08K ch/s  |  13,265 req  |  52% of budget  |  ETA 6h16m  |  18m39s
+  [clickmandu_html]  |  13,309 docs  |  23.81M ch  |  ~5.95M tok  |  21.08K ch/s  |  13,385 req  |  53% of budget  |  ETA 6h16m  |  18m49s
+  [clickmandu_html]  |  13,426 docs  |  23.99M ch  |  ~6.00M tok  |  21.05K ch/s  |  13,502 req  |  53% of budget  |  ETA 6h16m  |  18m59s
+  [clickmandu_html]  |  13,525 docs  |  24.17M ch  |  ~6.04M tok  |  21.01K ch/s  |  13,602 req  |  54% of budget  |  ETA 6h17m  |  19m10s
+  [clickmandu_html]  |  13,638 docs  |  24.35M ch  |  ~6.09M tok  |  20.99K ch/s  |  13,715 req  |  54% of budget  |  ETA 6h17m  |  19m20s
+  [clickmandu_html]  |  13,744 docs  |  24.53M ch  |  ~6.13M tok  |  20.96K ch/s  |  13,821 req  |  55% of budget  |  ETA 6h18m  |  19m30s
+  [clickmandu_html]  |  13,864 docs  |  24.75M ch  |  ~6.19M tok  |  20.97K ch/s  |  13,941 req  |  55% of budget  |  ETA 6h17m  |  19m40s
+  [clickmandu_html]  |  13,986 docs  |  24.98M ch  |  ~6.25M tok  |  20.99K ch/s  |  14,064 req  |  56% of budget  |  ETA 6h17m  |  19m50s
+  [clickmandu_html]  |  14,100 docs  |  25.19M ch  |  ~6.30M tok  |  20.98K ch/s  |  14,178 req  |  56% of budget  |  ETA 6h17m  |  20m00s
+  [clickmandu_html]  |  14,204 docs  |  25.39M ch  |  ~6.35M tok  |  20.97K ch/s  |  14,283 req  |  56% of budget  |  ETA 6h17m  |  20m10s
+  [clickmandu_html]  |  14,332 docs  |  25.66M ch  |  ~6.42M tok  |  21.02K ch/s  |  14,411 req  |  57% of budget  |  ETA 6h16m  |  20m20s
+  [clickmandu_html]  |  14,459 docs  |  25.91M ch  |  ~6.48M tok  |  21.05K ch/s  |  14,538 req  |  58% of budget  |  ETA 6h15m  |  20m30s
+  [clickmandu_html]  |  14,574 docs  |  26.12M ch  |  ~6.53M tok  |  21.05K ch/s  |  14,653 req  |  58% of budget  |  ETA 6h15m  |  20m41s
+  [clickmandu_html]  |  14,676 docs  |  26.31M ch  |  ~6.58M tok  |  21.03K ch/s  |  14,756 req  |  58% of budget  |  ETA 6h15m  |  20m51s
+  [clickmandu_html]  |  14,788 docs  |  26.48M ch  |  ~6.62M tok  |  21.00K ch/s  |  14,868 req  |  59% of budget  |  ETA 6h15m  |  21m01s
+  [clickmandu_html]  |  14,894 docs  |  26.69M ch  |  ~6.67M tok  |  20.99K ch/s  |  14,976 req  |  59% of budget  |  ETA 6h15m  |  21m11s
+  [clickmandu_html]  |  15,021 docs  |  26.90M ch  |  ~6.73M tok  |  21.00K ch/s  |  15,101 req  |  60% of budget  |  ETA 6h15m  |  21m21s
+  [clickmandu_html]  |  15,139 docs  |  27.14M ch  |  ~6.79M tok  |  21.02K ch/s  |  15,219 req  |  60% of budget  |  ETA 6h14m  |  21m31s
+  [clickmandu_html]  |  15,262 docs  |  27.36M ch  |  ~6.84M tok  |  21.02K ch/s  |  15,342 req  |  61% of budget  |  ETA 6h14m  |  21m41s
+  [clickmandu_html]  |  15,363 docs  |  27.56M ch  |  ~6.89M tok  |  21.02K ch/s  |  15,444 req  |  61% of budget  |  ETA 6h14m  |  21m51s
+  [clickmandu_html]  |  15,465 docs  |  27.77M ch  |  ~6.94M tok  |  21.01K ch/s  |  15,546 req  |  62% of budget  |  ETA 6h14m  |  22m01s
+  [clickmandu_html]  |  15,578 docs  |  27.95M ch  |  ~6.99M tok  |  20.99K ch/s  |  15,659 req  |  62% of budget  |  ETA 6h14m  |  22m11s
+  [clickmandu_html]  |  15,690 docs  |  28.14M ch  |  ~7.04M tok  |  20.97K ch/s  |  15,771 req  |  63% of budget  |  ETA 6h14m  |  22m21s
+  [clickmandu_html]  |  15,809 docs  |  28.33M ch  |  ~7.08M tok  |  20.96K ch/s  |  15,890 req  |  63% of budget  |  ETA 6h15m  |  22m31s
+  [clickmandu_html]  |  15,930 docs  |  28.54M ch  |  ~7.14M tok  |  20.96K ch/s  |  16,012 req  |  63% of budget  |  ETA 6h14m  |  22m41s
+  [clickmandu_html]  |  16,035 docs  |  28.76M ch  |  ~7.19M tok  |  20.96K ch/s  |  16,117 req  |  64% of budget  |  ETA 6h14m  |  22m51s
+  [clickmandu_html]  |  16,145 docs  |  28.94M ch  |  ~7.24M tok  |  20.95K ch/s  |  16,228 req  |  64% of budget  |  ETA 6h14m  |  23m01s
+  [clickmandu_html]  |  16,255 docs  |  29.11M ch  |  ~7.28M tok  |  20.91K ch/s  |  16,339 req  |  65% of budget  |  ETA 6h15m  |  23m12s
+  [clickmandu_html]  |  16,367 docs  |  29.31M ch  |  ~7.33M tok  |  20.90K ch/s  |  16,454 req  |  65% of budget  |  ETA 6h15m  |  23m22s
+  [clickmandu_html]  |  16,489 docs  |  29.55M ch  |  ~7.39M tok  |  20.93K ch/s  |  16,577 req  |  66% of budget  |  ETA 6h14m  |  23m32s
+  [clickmandu_html]  |  16,598 docs  |  29.76M ch  |  ~7.44M tok  |  20.92K ch/s  |  16,688 req  |  66% of budget  |  ETA 6h14m  |  23m42s
+  [clickmandu_html]  |  16,724 docs  |  29.99M ch  |  ~7.50M tok  |  20.93K ch/s  |  16,814 req  |  67% of budget  |  ETA 6h14m  |  23m52s
+  [clickmandu_html]  |  16,820 docs  |  30.19M ch  |  ~7.55M tok  |  20.92K ch/s  |  16,910 req  |  67% of budget  |  ETA 6h14m  |  24m02s
+  [clickmandu_html]  |  16,928 docs  |  30.42M ch  |  ~7.61M tok  |  20.94K ch/s  |  17,019 req  |  68% of budget  |  ETA 6h13m  |  24m12s
+  [clickmandu_html]  |  17,038 docs  |  30.59M ch  |  ~7.65M tok  |  20.91K ch/s  |  17,129 req  |  68% of budget  |  ETA 6h14m  |  24m23s
+  [clickmandu_html]  |  17,152 docs  |  30.77M ch  |  ~7.69M tok  |  20.89K ch/s  |  17,244 req  |  68% of budget  |  ETA 6h14m  |  24m33s
+  [clickmandu_html]  |  17,249 docs  |  30.94M ch  |  ~7.73M tok  |  20.85K ch/s  |  17,342 req  |  69% of budget  |  ETA 6h14m  |  24m43s
+  [clickmandu_html]  |  17,366 docs  |  31.11M ch  |  ~7.78M tok  |  20.83K ch/s  |  17,459 req  |  69% of budget  |  ETA 6h15m  |  24m53s
+  [clickmandu_html]  |  17,459 docs  |  31.22M ch  |  ~7.81M tok  |  20.76K ch/s  |  17,552 req  |  69% of budget  |  ETA 6h16m  |  25m03s
+  [clickmandu_html]  |  17,561 docs  |  31.40M ch  |  ~7.85M tok  |  20.74K ch/s  |  17,654 req  |  70% of budget  |  ETA 6h16m  |  25m13s
+  [clickmandu_html]  |  17,670 docs  |  31.59M ch  |  ~7.90M tok  |  20.74K ch/s  |  17,763 req  |  70% of budget  |  ETA 6h16m  |  25m23s
+  [clickmandu_html]  |  17,784 docs  |  31.77M ch  |  ~7.94M tok  |  20.71K ch/s  |  17,877 req  |  71% of budget  |  ETA 6h16m  |  25m33s
+  [clickmandu_html]  |  17,881 docs  |  31.93M ch  |  ~7.98M tok  |  20.68K ch/s  |  17,976 req  |  71% of budget  |  ETA 6h17m  |  25m43s
+  [clickmandu_html]  |  17,980 docs  |  32.09M ch  |  ~8.02M tok  |  20.65K ch/s  |  18,075 req  |  71% of budget  |  ETA 6h17m  |  25m53s
+  [clickmandu_html]  |  18,095 docs  |  32.34M ch  |  ~8.09M tok  |  20.68K ch/s  |  18,190 req  |  72% of budget  |  ETA 6h16m  |  26m03s
+  [clickmandu_html]  |  18,209 docs  |  32.54M ch  |  ~8.13M tok  |  20.67K ch/s  |  18,304 req  |  72% of budget  |  ETA 6h16m  |  26m13s
+  [clickmandu_html]  |  18,327 docs  |  32.75M ch  |  ~8.19M tok  |  20.68K ch/s  |  18,422 req  |  73% of budget  |  ETA 6h16m  |  26m24s
+  [clickmandu_html]  |  18,445 docs  |  32.99M ch  |  ~8.25M tok  |  20.69K ch/s  |  18,540 req  |  73% of budget  |  ETA 6h16m  |  26m34s
+  [clickmandu_html]  |  18,566 docs  |  33.25M ch  |  ~8.31M tok  |  20.73K ch/s  |  18,661 req  |  74% of budget  |  ETA 6h15m  |  26m44s
+  [clickmandu_html]  |  18,692 docs  |  33.49M ch  |  ~8.37M tok  |  20.75K ch/s  |  18,789 req  |  74% of budget  |  ETA 6h14m  |  26m54s
+  [clickmandu_html]  |  18,796 docs  |  33.69M ch  |  ~8.42M tok  |  20.74K ch/s  |  18,893 req  |  75% of budget  |  ETA 6h14m  |  27m04s
+  [clickmandu_html]  |  18,904 docs  |  33.92M ch  |  ~8.48M tok  |  20.76K ch/s  |  19,002 req  |  75% of budget  |  ETA 6h14m  |  27m14s
+  [clickmandu_html]  |  19,010 docs  |  34.10M ch  |  ~8.52M tok  |  20.73K ch/s  |  19,109 req  |  76% of budget  |  ETA 6h14m  |  27m24s
+  [clickmandu_html]  |  19,121 docs  |  34.27M ch  |  ~8.57M tok  |  20.72K ch/s  |  19,220 req  |  76% of budget  |  ETA 6h14m  |  27m34s
+  [clickmandu_html]  |  19,245 docs  |  34.47M ch  |  ~8.62M tok  |  20.71K ch/s  |  19,345 req  |  77% of budget  |  ETA 6h14m  |  27m44s
+  [clickmandu_html]  |  19,372 docs  |  34.69M ch  |  ~8.67M tok  |  20.72K ch/s  |  19,474 req  |  77% of budget  |  ETA 6h14m  |  27m54s
+  [clickmandu_html]  |  19,460 docs  |  34.85M ch  |  ~8.71M tok  |  20.69K ch/s  |  19,561 req  |  77% of budget  |  ETA 6h14m  |  28m04s
+  [clickmandu_html]  |  19,573 docs  |  35.06M ch  |  ~8.77M tok  |  20.69K ch/s  |  19,674 req  |  78% of budget  |  ETA 6h14m  |  28m14s
+  [clickmandu_html]  |  19,686 docs  |  35.27M ch  |  ~8.82M tok  |  20.69K ch/s  |  19,788 req  |  78% of budget  |  ETA 6h14m  |  28m24s
+  [clickmandu_html]  |  19,806 docs  |  35.50M ch  |  ~8.87M tok  |  20.70K ch/s  |  19,908 req  |  79% of budget  |  ETA 6h13m  |  28m34s
+  [clickmandu_html]  |  19,923 docs  |  35.68M ch  |  ~8.92M tok  |  20.64K ch/s  |  20,025 req  |  79% of budget  |  ETA 6h14m  |  28m48s
+  [clickmandu_html]  |  19,923 docs  |  35.68M ch  |  ~8.92M tok  |  20.64K ch/s  |  20,025 req  |  79% of budget  |  ETA 6h14m  |  28m48s  |  DONE
+       rejected: too-short x58, not-nepali x18, latin-heavy x1
+  shard: clickmandu_html.part-1786707722-71515.jsonl.gz (19,923 docs / 35.68M chars)
+
+========================================================================================
+TOTAL 35.68M chars  ~8.92M tokens (7.1% of target) in 28m48s
+========================================================================================
+
+progress: python3 data/collection/collect_manual.py --status

@@ -1,0 +1,79 @@
+========================================================================================
+NEPALI MANUAL COLLECTION   2026-08-14 00:24:47
+  sources: sahityasangraha, offlinethinker, sancharkendra, nepalpress
+  target : 125.00M manual tokens (~500.00M chars)
+  already: 0 chars collected
+========================================================================================
+
+--- sahityasangraha  (wp_rest)  budget 47.00M chars ---
+  [sahityasangraha]  |  1 docs  |  1.65K ch  |  ~412 tok  |  12 ch/s  |  4 req  |  0% of budget  |  ETA 10815h31m  |  2m08s
+  [sahityasangraha]  |  311 docs  |  2.77M ch  |  ~692.26K tok  |  17.50K ch/s  |  8 req  |  6% of budget  |  ETA 7h53m  |  2m38s
+  [sahityasangraha]  |  595 docs  |  4.54M ch  |  ~1.13M tok  |  24.19K ch/s  |  12 req  |  10% of budget  |  ETA 5h41m  |  3m07s
+  [sahityasangraha]  |  891 docs  |  6.00M ch  |  ~1.50M tok  |  26.84K ch/s  |  16 req  |  13% of budget  |  ETA 5h06m  |  3m43s
+  [sahityasangraha]  |  1,176 docs  |  7.22M ch  |  ~1.81M tok  |  27.68K ch/s  |  20 req  |  15% of budget  |  ETA 4h56m  |  4m20s
+  [sahityasangraha]  |  1,462 docs  |  8.25M ch  |  ~2.06M tok  |  27.56K ch/s  |  24 req  |  18% of budget  |  ETA 4h57m  |  4m59s
+  [sahityasangraha]  |  1,751 docs  |  9.55M ch  |  ~2.39M tok  |  29.40K ch/s  |  28 req  |  20% of budget  |  ETA 4h38m  |  5m24s
+  [sahityasangraha]  |  2,039 docs  |  10.72M ch  |  ~2.68M tok  |  30.08K ch/s  |  32 req  |  23% of budget  |  ETA 4h31m  |  5m56s
+  [sahityasangraha]  |  2,325 docs  |  12.03M ch  |  ~3.01M tok  |  32.82K ch/s  |  36 req  |  26% of budget  |  ETA 4h07m  |  6m06s
+  [sahityasangraha]  |  2,618 docs  |  13.26M ch  |  ~3.31M tok  |  32.51K ch/s  |  40 req  |  28% of budget  |  ETA 4h09m  |  6m47s
+  [sahityasangraha]  |  2,823 docs  |  14.04M ch  |  ~3.51M tok  |  31.99K ch/s  |  44 req  |  30% of budget  |  ETA 4h13m  |  7m19s
+  [sahityasangraha]  |  3,121 docs  |  15.52M ch  |  ~3.88M tok  |  33.57K ch/s  |  48 req  |  33% of budget  |  ETA 4h00m  |  7m42s
+  [sahityasangraha]  |  3,409 docs  |  17.06M ch  |  ~4.27M tok  |  35.27K ch/s  |  52 req  |  36% of budget  |  ETA 3h48m  |  8m03s
+  [sahityasangraha]  |  3,714 docs  |  18.40M ch  |  ~4.60M tok  |  35.32K ch/s  |  56 req  |  39% of budget  |  ETA 3h47m  |  8m40s
+  [sahityasangraha]  |  4,019 docs  |  19.91M ch  |  ~4.98M tok  |  36.85K ch/s  |  60 req  |  42% of budget  |  ETA 3h37m  |  9m00s
+  [sahityasangraha]  |  4,329 docs  |  21.56M ch  |  ~5.39M tok  |  38.06K ch/s  |  64 req  |  46% of budget  |  ETA 3h29m  |  9m26s
+  [sahityasangraha]  |  4,617 docs  |  22.81M ch  |  ~5.70M tok  |  38.96K ch/s  |  68 req  |  49% of budget  |  ETA 3h24m  |  9m45s
+  [sahityasangraha]  |  4,907 docs  |  24.05M ch  |  ~6.01M tok  |  38.80K ch/s  |  72 req  |  51% of budget  |  ETA 3h24m  |  10m19s
+  [sahityasangraha]  |  5,209 docs  |  25.10M ch  |  ~6.28M tok  |  37.27K ch/s  |  76 req  |  53% of budget  |  ETA 3h32m  |  11m13s
+  [sahityasangraha]  |  5,514 docs  |  26.22M ch  |  ~6.56M tok  |  38.01K ch/s  |  80 req  |  56% of budget  |  ETA 3h27m  |  11m29s
+  [sahityasangraha]  |  5,809 docs  |  27.31M ch  |  ~6.83M tok  |  37.83K ch/s  |  84 req  |  58% of budget  |  ETA 3h28m  |  12m02s
+  [sahityasangraha]  |  6,110 docs  |  28.86M ch  |  ~7.21M tok  |  38.00K ch/s  |  88 req  |  61% of budget  |  ETA 3h26m  |  12m39s
+  [sahityasangraha]  |  6,413 docs  |  30.15M ch  |  ~7.54M tok  |  37.87K ch/s  |  92 req  |  64% of budget  |  ETA 3h26m  |  13m16s
+  [sahityasangraha]  |  6,709 docs  |  31.48M ch  |  ~7.87M tok  |  36.10K ch/s  |  96 req  |  67% of budget  |  ETA 3h36m  |  14m31s
+  [sahityasangraha]  |  6,996 docs  |  32.66M ch  |  ~8.16M tok  |  36.44K ch/s  |  100 req  |  69% of budget  |  ETA 3h33m  |  14m56s
+  [sahityasangraha]  |  7,287 docs  |  33.86M ch  |  ~8.47M tok  |  33.10K ch/s  |  104 req  |  72% of budget  |  ETA 3h54m  |  17m03s
+  [sahityasangraha]  |  7,586 docs  |  35.22M ch  |  ~8.81M tok  |  33.51K ch/s  |  108 req  |  75% of budget  |  ETA 3h51m  |  17m31s
+  [sahityasangraha]  |  7,878 docs  |  36.55M ch  |  ~9.14M tok  |  33.36K ch/s  |  112 req  |  78% of budget  |  ETA 3h51m  |  18m15s
+  [sahityasangraha]  |  8,164 docs  |  37.71M ch  |  ~9.43M tok  |  33.38K ch/s  |  116 req  |  80% of budget  |  ETA 3h50m  |  18m49s
+  [sahityasangraha]  |  8,451 docs  |  38.78M ch  |  ~9.69M tok  |  33.34K ch/s  |  120 req  |  83% of budget  |  ETA 3h50m  |  19m23s
+  [sahityasangraha]  |  8,740 docs  |  39.78M ch  |  ~9.94M tok  |  33.24K ch/s  |  124 req  |  85% of budget  |  ETA 3h50m  |  19m56s
+  [sahityasangraha]  |  9,019 docs  |  40.48M ch  |  ~10.12M tok  |  33.29K ch/s  |  128 req  |  86% of budget  |  ETA 3h50m  |  20m15s
+  [sahityasangraha]  |  9,295 docs  |  41.16M ch  |  ~10.29M tok  |  33.13K ch/s  |  132 req  |  88% of budget  |  ETA 3h50m  |  20m42s
+  [sahityasangraha]  |  9,559 docs  |  42.09M ch  |  ~10.52M tok  |  33.14K ch/s  |  136 req  |  90% of budget  |  ETA 3h50m  |  21m10s
+  [sahityasangraha]  |  9,832 docs  |  43.06M ch  |  ~10.76M tok  |  32.99K ch/s  |  140 req  |  92% of budget  |  ETA 3h50m  |  21m45s
+  [sahityasangraha]  |  10,125 docs  |  44.63M ch  |  ~11.16M tok  |  33.68K ch/s  |  144 req  |  95% of budget  |  ETA 3h45m  |  22m05s
+  [sahityasangraha]  |  10,427 docs  |  45.84M ch  |  ~11.46M tok  |  34.10K ch/s  |  148 req  |  98% of budget  |  ETA 3h41m  |  22m24s
+  [sahityasangraha]  |  10,694 docs  |  47.00M ch  |  ~11.75M tok  |  34.94K ch/s  |  148 req  |  100% of budget  |  ETA 3h36m  |  22m25s  |  DONE (source budget reached)
+       rejected: not-nepali x3,390, not-devanagari x427, too-short x139, hindi-not-nepali x14, latin-heavy x4
+  shard: sahityasangraha.part-1786647287-14882.jsonl.gz (10,694 docs / 47.00M chars)
+
+--- offlinethinker  (wp_rest)  budget 5.00M chars ---
+  [offlinethinker]  |  1 docs  |  10.05K ch  |  ~2.51K tok  |  1.43K ch/s  |  4 req  |  0% of budget  |  ETA 88h01m  |  7s
+  [offlinethinker]  |  255 docs  |  775.89K ch  |  ~193.97K tok  |  32.58K ch/s  |  12 req  |  16% of budget  |  ETA 3h51m  |  23s
+  [offlinethinker]  |  510 docs  |  1.38M ch  |  ~344.84K tok  |  44.34K ch/s  |  20 req  |  28% of budget  |  ETA 2h49m  |  31s  |  DONE
+       rejected: not-devanagari x700, not-nepali x164, latin-heavy x154, too-short x17
+  shard: offlinethinker.part-1786648632-14882.jsonl.gz (510 docs / 1.38M chars)
+
+--- sancharkendra  (wp_rest)  budget 7.50M chars ---
+  [sancharkendra]  |  1 docs  |  1.07K ch  |  ~268 tok  |  316 ch/s  |  4 req  |  0% of budget  |  ETA 395h56m  |  3s
+  [sancharkendra]  |  3,177 docs  |  4.31M ch  |  ~1.08M tok  |  319.39K ch/s  |  36 req  |  58% of budget  |  ETA 23m20s  |  13s
+  [sancharkendra]  |  5,829 docs  |  7.50M ch  |  ~1.88M tok  |  352.64K ch/s  |  60 req  |  100% of budget  |  ETA 20m59s  |  21s  |  DONE (source budget reached)
+       rejected: not-nepali x29, not-devanagari x4, too-short x1, latin-heavy x1
+  shard: sancharkendra.part-1786648663-14882.jsonl.gz (5,829 docs / 7.50M chars)
+
+--- nepalpress  (wp_rest)  budget 30.00M chars ---
+  [nepalpress]  |  1 docs  |  1.64K ch  |  ~410 tok  |  1.63K ch/s  |  4 req  |  0% of budget  |  ETA 75h42m  |  1s
+  [nepalpress]  |  2,409 docs  |  4.90M ch  |  ~1.22M tok  |  444.86K ch/s  |  28 req  |  16% of budget  |  ETA 16m27s  |  11s
+  [nepalpress]  |  5,497 docs  |  10.88M ch  |  ~2.72M tok  |  517.65K ch/s  |  56 req  |  36% of budget  |  ETA 13m56s  |  21s
+  [nepalpress]  |  8,349 docs  |  16.34M ch  |  ~4.08M tok  |  526.86K ch/s  |  88 req  |  54% of budget  |  ETA 13m31s  |  31s
+  [nepalpress]  |  11,012 docs  |  21.08M ch  |  ~5.27M tok  |  506.71K ch/s  |  116 req  |  70% of budget  |  ETA 13m54s  |  41s
+  [nepalpress]  |  14,382 docs  |  26.57M ch  |  ~6.64M tok  |  514.89K ch/s  |  148 req  |  89% of budget  |  ETA 13m30s  |  51s
+  [nepalpress]  |  16,288 docs  |  30.00M ch  |  ~7.50M tok  |  518.71K ch/s  |  168 req  |  100% of budget  |  ETA 13m18s  |  57s  |  DONE (source budget reached)
+       rejected: not-nepali x210, too-short x46, latin-heavy x9, not-devanagari x1
+  shard: nepalpress.part-1786648684-14882.jsonl.gz (16,288 docs / 30.00M chars)
+
+========================================================================================
+TOTAL 85.88M chars  ~21.47M tokens (17.2% of target) in 24m15s
+========================================================================================
+
+progress: python3 data/collection/collect_manual.py --status

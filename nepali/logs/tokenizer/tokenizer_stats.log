@@ -1,0 +1,71 @@
+evaluating on 3,000 held-out documents (6,239,261 characters, 83.0% Devanagari script)
+
+   vocab  chars/tok  fertility    byte-fb       unk  vocab used   emb params  % budget
+------------------------------------------------------------------------------------
+   8,000      4.061      1.644   0.005950  0.000000       97.4%        3.07M       12%
+  12,000      4.328      1.543   0.006340  0.000000       98.1%        4.61M       18%
+  16,000      4.494      1.486   0.006583  0.000000       98.0%        6.14M       25%
+  24,000      4.699      1.421   0.006884  0.000000       96.1%        9.22M       37%
+  32,000      4.820      1.386   0.007061  0.000000       92.7%       12.29M       49%
+
+marginal cost of each step up in vocabulary:
+  step                  +chars/tok    +params   params per 1% gain
+  8,000 -> 12,000             6.6%      1.54M              233.62K
+  12,000 -> 16,000            3.8%      1.54M              400.47K
+  16,000 -> 24,000            4.6%      3.07M              673.44K
+  24,000 -> 32,000            2.6%      3.07M                1.19M
+
+RECOMMENDED vocab_size = 16,000
+  largest vocabulary whose embedding stays within 34% of the parameter budget
+  leaves 18.86M for Transformer blocks = ~10.7 layers at d_model=384
+  rejected - embedding would exceed 34% of the budget: [24000]
+  rejected - under 95% of the vocabulary is used on held-out text: [32000]
+  set tokenizer.vocab_size in configs/pipeline.yaml, then rerun train_tokenizer.py without --sweep
+
+Example tokenizations:
+
+  नेपालको राजधानी काठमाडौं हो।
+  -> 5 tokens, 5.6 chars/token
+  -> ▁नेपालको | ▁राजधानी | ▁काठमाडौं | ▁हो | ।
+
+  उनले 2024 मा पोखराबाट काठमाडौंसम्म यात्रा गरे।
+  -> 14 tokens, 3.29 chars/token
+  -> ▁उनले | ▁ | 2 | 0 | 2 | 4 | ▁मा | ▁पोखरा | बाट | ▁काठमाडौं | सम्म | ▁यात्रा | ▁गरे | ।
+
+  विद्यार्थीहरूले पुस्तकालयबाट किताब लिए।
+  -> 6 tokens, 6.5 chars/token
+  -> ▁विद्यार्थीहरूले | ▁पुस्तकालय | बाट | ▁किताब | ▁लिए | ।
+
+  यस अनुसन्धान पत्रमा भाषाशास्त्रीय विश्लेषण प्रस्तुत गरिएको छ।
+  -> 11 tokens, 5.55 chars/token
+  -> ▁यस | ▁अनुसन्धान | ▁पत्रमा | ▁भाषा | शास्त्र | ीय | ▁विश्लेषण | ▁प्रस्तुत | ▁गरिएको | ▁छ | ।
+
+  घर, घरमा, घरहरूमा, घरहरूबाट - एउटै मूल शब्दका विभिन्न रूप।
+  -> 17 tokens, 3.41 chars/token
+  -> ▁घर | , | ▁घरमा | , | ▁घर | हरूमा | , | ▁घर | हरूबाट | ▁- | ▁एउटै | ▁मूल | ▁शब्द | का | ▁विभिन्न | ▁रूप | ।
+
+Compression by source register (chars/token):
+  annapurnapost             5.842
+  swasthyakhabar            5.597
+  reportersnepal_html       5.086
+  nepalpress_html           5.039
+  khabarhub_html            4.978
+  sancharkendra             4.975
+  bizmandu                  4.903
+  nepalkhoj                 4.862
+  onlinekhabar              4.857
+  clickmandu_html           4.824
+  ai4bharat_sangraha        4.822
+  arthasarokar              4.813
+  nepalilink                4.813
+  hamrakura                 4.797
+  offlinethinker            4.030
+  nepalisahityaghar         4.020
+  sahityasangraha_html      3.914
+  aakarpost                 3.834
+
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/tokenizer_stats_nep.json
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/tokenizer_stats_nep.md
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/figures/tokenizer_vocab_sweep_nep.png
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/figures/tokenizer_frequency_nep.png
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/figures/tokenizer_piece_length_nep.png

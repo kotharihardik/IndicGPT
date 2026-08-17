@@ -1,0 +1,1800 @@
+exporting training text ...
+  subsampling documents at p=0.0549 so all sources stay proportionally represented
+  training text: 99.48M characters from 48,316 documents in 18s -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/spm_input.txt
+  composition by source:
+    ai4bharat_sangraha          77.45M chars ( 77.9%)
+    onlinekhabar                 7.83M chars (  7.9%)
+    clickmandu                   3.18M chars (  3.2%)
+    reportersnepal               3.04M chars (  3.1%)
+    khabarhub                    2.84M chars (  2.9%)
+    sahityasangraha              2.18M chars (  2.2%)
+    nepalpress                   1.40M chars (  1.4%)
+    bizmandu                   751.62K chars (  0.8%)
+    sancharkendra              297.66K chars (  0.3%)
+    nepalisahityaghar          243.85K chars (  0.2%)
+    annapurnapost              195.19K chars (  0.2%)
+    offlinethinker              54.37K chars (  0.1%)
+    hamrakura                   14.85K chars (  0.0%)
+
+sweeping 5 vocabulary sizes: 8,000, 12,000, 16,000, 24,000, 32,000
+
+--- vocab_size=8,000  (embedding 3.07M params, 12% of the 25.00M budget) ---
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1786682177.981038 13231022 sentencepiece_trainer.cc:105] Starts training with : 
+trainer_spec {
+  input: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/spm_input.txt
+  input_format: 
+  model_prefix: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/_staging/nep_unigram_sweep_8000
+  model_type: UNIGRAM
+  vocab_size: 8000
+  self_test_sample_size: 0
+  character_coverage: 0.9995
+  input_sentence_size: 400000
+  shuffle_input_sentence: 1
+  seed_sentencepiece_size: 1000000
+  shrinking_factor: 0.75
+  max_sentence_length: 4192
+  num_threads: 8
+  num_sub_iterations: 2
+  max_sentencepiece_length: 16
+  split_by_unicode_script: 1
+  split_by_number: 1
+  split_by_whitespace: 1
+  split_digits: 1
+  pretokenization_delimiter: 
+  treat_whitespace_as_suffix: 0
+  allow_whitespace_only_pieces: 1
+  required_chars: ऀँंःऄअआइईउऊऋऌऍऎएऐऑऒओऔकखगघङचछजझञटठडढणतथदधनऩपफबभमयरऱलळऴवशषसहऺऻ़ऽािीुूृॄॅॆेैॉॊोौ्ॎॏॐ॒॑॓॔ॕॖॗक़ख़ग़ज़ड़ढ़फ़य़ॠॡॢॣ।॥०१२३४५६७८९॰ॱॲॳॴॵॶॷॸॹॺॻॼॽॾॿ
+  byte_fallback: 1
+  vocabulary_output_piece_score: 1
+  train_extremely_large_corpus: 1
+  seed_sentencepieces_file: 
+  hard_vocab_limit: 1
+  use_all_vocab: 0
+  unk_id: 1
+  bos_id: 2
+  eos_id: 3
+  pad_id: 0
+  unk_piece: <unk>
+  bos_piece: <s>
+  eos_piece: </s>
+  pad_piece: <pad>
+  unk_surface:  ⁇ 
+  enable_differential_privacy: 0
+  differential_privacy_noise_level: 0
+  differential_privacy_clipping_threshold: 0
+}
+normalizer_spec {
+  name: identity
+  add_dummy_prefix: 1
+  remove_extra_whitespaces: 0
+  escape_whitespaces: 1
+  normalization_rule_tsv: 
+}
+denormalizer_spec {}
+I0000 00:00:1786682177.981172 13231022 trainer_interface.cc:364] SentenceIterator is not specified. Using MultiFileSentenceIterator.
+I0000 00:00:1786682177.981408 13231022 trainer_interface.cc:193] Loading corpus: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/spm_input.txt
+W0000 00:00:1786682177.981470 13231022 trainer_interface.cc:393] Found too long line (4617 > 4192).
+W0000 00:00:1786682177.981481 13231022 trainer_interface.cc:395] Too long lines are skipped in the training.
+W0000 00:00:1786682177.981485 13231022 trainer_interface.cc:396] The maximum length can be changed with --max_sentence_length=<size> flag.
+I0000 00:00:1786682178.169850 13231022 trainer_interface.cc:422] Loaded all 78883 sentences
+I0000 00:00:1786682178.169886 13231022 trainer_interface.cc:429] Skipped 18394 too long sentences.
+I0000 00:00:1786682178.169894 13231022 trainer_interface.cc:440] Adding meta_piece: <pad>
+I0000 00:00:1786682178.169898 13231022 trainer_interface.cc:440] Adding meta_piece: <unk>
+I0000 00:00:1786682178.169911 13231022 trainer_interface.cc:440] Adding meta_piece: <s>
+I0000 00:00:1786682178.169913 13231022 trainer_interface.cc:440] Adding meta_piece: </s>
+I0000 00:00:1786682178.169917 13231022 trainer_interface.cc:440] Adding meta_piece: <0x00>
+I0000 00:00:1786682178.169921 13231022 trainer_interface.cc:440] Adding meta_piece: <0x01>
+I0000 00:00:1786682178.169923 13231022 trainer_interface.cc:440] Adding meta_piece: <0x02>
+I0000 00:00:1786682178.169925 13231022 trainer_interface.cc:440] Adding meta_piece: <0x03>
+I0000 00:00:1786682178.169927 13231022 trainer_interface.cc:440] Adding meta_piece: <0x04>
+I0000 00:00:1786682178.169930 13231022 trainer_interface.cc:440] Adding meta_piece: <0x05>
+I0000 00:00:1786682178.169932 13231022 trainer_interface.cc:440] Adding meta_piece: <0x06>
+I0000 00:00:1786682178.169934 13231022 trainer_interface.cc:440] Adding meta_piece: <0x07>
+I0000 00:00:1786682178.169936 13231022 trainer_interface.cc:440] Adding meta_piece: <0x08>
+I0000 00:00:1786682178.169938 13231022 trainer_interface.cc:440] Adding meta_piece: <0x09>
+I0000 00:00:1786682178.169940 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0A>
+I0000 00:00:1786682178.169941 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0B>
+I0000 00:00:1786682178.169944 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0C>
+I0000 00:00:1786682178.169946 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0D>
+I0000 00:00:1786682178.169948 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0E>
+I0000 00:00:1786682178.169950 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0F>
+I0000 00:00:1786682178.169952 13231022 trainer_interface.cc:440] Adding meta_piece: <0x10>
+I0000 00:00:1786682178.169954 13231022 trainer_interface.cc:440] Adding meta_piece: <0x11>
+I0000 00:00:1786682178.169956 13231022 trainer_interface.cc:440] Adding meta_piece: <0x12>
+I0000 00:00:1786682178.169958 13231022 trainer_interface.cc:440] Adding meta_piece: <0x13>
+I0000 00:00:1786682178.169960 13231022 trainer_interface.cc:440] Adding meta_piece: <0x14>
+I0000 00:00:1786682178.169962 13231022 trainer_interface.cc:440] Adding meta_piece: <0x15>
+I0000 00:00:1786682178.169963 13231022 trainer_interface.cc:440] Adding meta_piece: <0x16>
+I0000 00:00:1786682178.169966 13231022 trainer_interface.cc:440] Adding meta_piece: <0x17>
+I0000 00:00:1786682178.169968 13231022 trainer_interface.cc:440] Adding meta_piece: <0x18>
+I0000 00:00:1786682178.169970 13231022 trainer_interface.cc:440] Adding meta_piece: <0x19>
+I0000 00:00:1786682178.169972 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1A>
+I0000 00:00:1786682178.169974 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1B>
+I0000 00:00:1786682178.169976 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1C>
+I0000 00:00:1786682178.169981 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1D>
+I0000 00:00:1786682178.169983 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1E>
+I0000 00:00:1786682178.169985 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1F>
+I0000 00:00:1786682178.169987 13231022 trainer_interface.cc:440] Adding meta_piece: <0x20>
+I0000 00:00:1786682178.169989 13231022 trainer_interface.cc:440] Adding meta_piece: <0x21>
+I0000 00:00:1786682178.169991 13231022 trainer_interface.cc:440] Adding meta_piece: <0x22>
+I0000 00:00:1786682178.169993 13231022 trainer_interface.cc:440] Adding meta_piece: <0x23>
+I0000 00:00:1786682178.169995 13231022 trainer_interface.cc:440] Adding meta_piece: <0x24>
+I0000 00:00:1786682178.169997 13231022 trainer_interface.cc:440] Adding meta_piece: <0x25>
+I0000 00:00:1786682178.169999 13231022 trainer_interface.cc:440] Adding meta_piece: <0x26>
+I0000 00:00:1786682178.170002 13231022 trainer_interface.cc:440] Adding meta_piece: <0x27>
+I0000 00:00:1786682178.170004 13231022 trainer_interface.cc:440] Adding meta_piece: <0x28>
+I0000 00:00:1786682178.170005 13231022 trainer_interface.cc:440] Adding meta_piece: <0x29>
+I0000 00:00:1786682178.170007 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2A>
+I0000 00:00:1786682178.170012 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2B>
+I0000 00:00:1786682178.170015 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2C>
+I0000 00:00:1786682178.170016 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2D>
+I0000 00:00:1786682178.170018 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2E>
+I0000 00:00:1786682178.170021 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2F>
+I0000 00:00:1786682178.170023 13231022 trainer_interface.cc:440] Adding meta_piece: <0x30>
+I0000 00:00:1786682178.170025 13231022 trainer_interface.cc:440] Adding meta_piece: <0x31>
+I0000 00:00:1786682178.170027 13231022 trainer_interface.cc:440] Adding meta_piece: <0x32>
+I0000 00:00:1786682178.170030 13231022 trainer_interface.cc:440] Adding meta_piece: <0x33>
+I0000 00:00:1786682178.170032 13231022 trainer_interface.cc:440] Adding meta_piece: <0x34>
+I0000 00:00:1786682178.170033 13231022 trainer_interface.cc:440] Adding meta_piece: <0x35>
+I0000 00:00:1786682178.170035 13231022 trainer_interface.cc:440] Adding meta_piece: <0x36>
+I0000 00:00:1786682178.170037 13231022 trainer_interface.cc:440] Adding meta_piece: <0x37>
+I0000 00:00:1786682178.170040 13231022 trainer_interface.cc:440] Adding meta_piece: <0x38>
+I0000 00:00:1786682178.170042 13231022 trainer_interface.cc:440] Adding meta_piece: <0x39>
+I0000 00:00:1786682178.170044 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3A>
+I0000 00:00:1786682178.170045 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3B>
+I0000 00:00:1786682178.170047 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3C>
+I0000 00:00:1786682178.170049 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3D>
+I0000 00:00:1786682178.170051 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3E>
+I0000 00:00:1786682178.170054 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3F>
+I0000 00:00:1786682178.170057 13231022 trainer_interface.cc:440] Adding meta_piece: <0x40>
+I0000 00:00:1786682178.170060 13231022 trainer_interface.cc:440] Adding meta_piece: <0x41>
+I0000 00:00:1786682178.170062 13231022 trainer_interface.cc:440] Adding meta_piece: <0x42>
+I0000 00:00:1786682178.170065 13231022 trainer_interface.cc:440] Adding meta_piece: <0x43>
+I0000 00:00:1786682178.170067 13231022 trainer_interface.cc:440] Adding meta_piece: <0x44>
+I0000 00:00:1786682178.170070 13231022 trainer_interface.cc:440] Adding meta_piece: <0x45>
+I0000 00:00:1786682178.170073 13231022 trainer_interface.cc:440] Adding meta_piece: <0x46>
+I0000 00:00:1786682178.170076 13231022 trainer_interface.cc:440] Adding meta_piece: <0x47>
+I0000 00:00:1786682178.170078 13231022 trainer_interface.cc:440] Adding meta_piece: <0x48>
+I0000 00:00:1786682178.170080 13231022 trainer_interface.cc:440] Adding meta_piece: <0x49>
+I0000 00:00:1786682178.170082 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4A>
+I0000 00:00:1786682178.170084 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4B>
+I0000 00:00:1786682178.170086 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4C>
+I0000 00:00:1786682178.170088 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4D>
+I0000 00:00:1786682178.170090 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4E>
+I0000 00:00:1786682178.170092 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4F>
+I0000 00:00:1786682178.170094 13231022 trainer_interface.cc:440] Adding meta_piece: <0x50>
+I0000 00:00:1786682178.170096 13231022 trainer_interface.cc:440] Adding meta_piece: <0x51>
+I0000 00:00:1786682178.170098 13231022 trainer_interface.cc:440] Adding meta_piece: <0x52>
+I0000 00:00:1786682178.170099 13231022 trainer_interface.cc:440] Adding meta_piece: <0x53>
+I0000 00:00:1786682178.170101 13231022 trainer_interface.cc:440] Adding meta_piece: <0x54>
+I0000 00:00:1786682178.170103 13231022 trainer_interface.cc:440] Adding meta_piece: <0x55>
+I0000 00:00:1786682178.170106 13231022 trainer_interface.cc:440] Adding meta_piece: <0x56>
+I0000 00:00:1786682178.170108 13231022 trainer_interface.cc:440] Adding meta_piece: <0x57>
+I0000 00:00:1786682178.170112 13231022 trainer_interface.cc:440] Adding meta_piece: <0x58>
+I0000 00:00:1786682178.170114 13231022 trainer_interface.cc:440] Adding meta_piece: <0x59>
+I0000 00:00:1786682178.170116 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5A>
+I0000 00:00:1786682178.170119 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5B>
+I0000 00:00:1786682178.170120 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5C>
+I0000 00:00:1786682178.170123 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5D>
+I0000 00:00:1786682178.170125 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5E>
+I0000 00:00:1786682178.170126 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5F>
+I0000 00:00:1786682178.170128 13231022 trainer_interface.cc:440] Adding meta_piece: <0x60>
+I0000 00:00:1786682178.170130 13231022 trainer_interface.cc:440] Adding meta_piece: <0x61>
+I0000 00:00:1786682178.170132 13231022 trainer_interface.cc:440] Adding meta_piece: <0x62>
+I0000 00:00:1786682178.170134 13231022 trainer_interface.cc:440] Adding meta_piece: <0x63>
+I0000 00:00:1786682178.170136 13231022 trainer_interface.cc:440] Adding meta_piece: <0x64>
+I0000 00:00:1786682178.170138 13231022 trainer_interface.cc:440] Adding meta_piece: <0x65>
+I0000 00:00:1786682178.170140 13231022 trainer_interface.cc:440] Adding meta_piece: <0x66>
+I0000 00:00:1786682178.170142 13231022 trainer_interface.cc:440] Adding meta_piece: <0x67>
+I0000 00:00:1786682178.170144 13231022 trainer_interface.cc:440] Adding meta_piece: <0x68>
+I0000 00:00:1786682178.170147 13231022 trainer_interface.cc:440] Adding meta_piece: <0x69>
+I0000 00:00:1786682178.170150 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6A>
+I0000 00:00:1786682178.170153 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6B>
+I0000 00:00:1786682178.170155 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6C>
+I0000 00:00:1786682178.170158 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6D>
+I0000 00:00:1786682178.170161 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6E>
+I0000 00:00:1786682178.170163 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6F>
+I0000 00:00:1786682178.170165 13231022 trainer_interface.cc:440] Adding meta_piece: <0x70>
+I0000 00:00:1786682178.170167 13231022 trainer_interface.cc:440] Adding meta_piece: <0x71>
+I0000 00:00:1786682178.170169 13231022 trainer_interface.cc:440] Adding meta_piece: <0x72>
+I0000 00:00:1786682178.170171 13231022 trainer_interface.cc:440] Adding meta_piece: <0x73>
+I0000 00:00:1786682178.170173 13231022 trainer_interface.cc:440] Adding meta_piece: <0x74>
+I0000 00:00:1786682178.170175 13231022 trainer_interface.cc:440] Adding meta_piece: <0x75>
+I0000 00:00:1786682178.170177 13231022 trainer_interface.cc:440] Adding meta_piece: <0x76>
+I0000 00:00:1786682178.170179 13231022 trainer_interface.cc:440] Adding meta_piece: <0x77>
+I0000 00:00:1786682178.170182 13231022 trainer_interface.cc:440] Adding meta_piece: <0x78>
+I0000 00:00:1786682178.170195 13231022 trainer_interface.cc:440] Adding meta_piece: <0x79>
+I0000 00:00:1786682178.170200 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7A>
+I0000 00:00:1786682178.170203 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7B>
+I0000 00:00:1786682178.170206 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7C>
+I0000 00:00:1786682178.170208 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7D>
+I0000 00:00:1786682178.170210 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7E>
+I0000 00:00:1786682178.170213 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7F>
+I0000 00:00:1786682178.170215 13231022 trainer_interface.cc:440] Adding meta_piece: <0x80>
+I0000 00:00:1786682178.170218 13231022 trainer_interface.cc:440] Adding meta_piece: <0x81>
+I0000 00:00:1786682178.170220 13231022 trainer_interface.cc:440] Adding meta_piece: <0x82>
+I0000 00:00:1786682178.170222 13231022 trainer_interface.cc:440] Adding meta_piece: <0x83>
+I0000 00:00:1786682178.170223 13231022 trainer_interface.cc:440] Adding meta_piece: <0x84>
+I0000 00:00:1786682178.170232 13231022 trainer_interface.cc:440] Adding meta_piece: <0x85>
+I0000 00:00:1786682178.170234 13231022 trainer_interface.cc:440] Adding meta_piece: <0x86>
+I0000 00:00:1786682178.170236 13231022 trainer_interface.cc:440] Adding meta_piece: <0x87>
+I0000 00:00:1786682178.170238 13231022 trainer_interface.cc:440] Adding meta_piece: <0x88>
+I0000 00:00:1786682178.170240 13231022 trainer_interface.cc:440] Adding meta_piece: <0x89>
+I0000 00:00:1786682178.170242 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8A>
+I0000 00:00:1786682178.170245 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8B>
+I0000 00:00:1786682178.170246 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8C>
+I0000 00:00:1786682178.170249 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8D>
+I0000 00:00:1786682178.170250 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8E>
+I0000 00:00:1786682178.170252 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8F>
+I0000 00:00:1786682178.170254 13231022 trainer_interface.cc:440] Adding meta_piece: <0x90>
+I0000 00:00:1786682178.170256 13231022 trainer_interface.cc:440] Adding meta_piece: <0x91>
+I0000 00:00:1786682178.170258 13231022 trainer_interface.cc:440] Adding meta_piece: <0x92>
+I0000 00:00:1786682178.170260 13231022 trainer_interface.cc:440] Adding meta_piece: <0x93>
+I0000 00:00:1786682178.170262 13231022 trainer_interface.cc:440] Adding meta_piece: <0x94>
+I0000 00:00:1786682178.170264 13231022 trainer_interface.cc:440] Adding meta_piece: <0x95>
+I0000 00:00:1786682178.170266 13231022 trainer_interface.cc:440] Adding meta_piece: <0x96>
+I0000 00:00:1786682178.170268 13231022 trainer_interface.cc:440] Adding meta_piece: <0x97>
+I0000 00:00:1786682178.170270 13231022 trainer_interface.cc:440] Adding meta_piece: <0x98>
+I0000 00:00:1786682178.170272 13231022 trainer_interface.cc:440] Adding meta_piece: <0x99>
+I0000 00:00:1786682178.170274 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9A>
+I0000 00:00:1786682178.170275 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9B>
+I0000 00:00:1786682178.170277 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9C>
+I0000 00:00:1786682178.170279 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9D>
+I0000 00:00:1786682178.170281 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9E>
+I0000 00:00:1786682178.170283 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9F>
+I0000 00:00:1786682178.170285 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA0>
+I0000 00:00:1786682178.170287 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA1>
+I0000 00:00:1786682178.170289 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA2>
+I0000 00:00:1786682178.170290 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA3>
+I0000 00:00:1786682178.170292 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA4>
+I0000 00:00:1786682178.170294 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA5>
+I0000 00:00:1786682178.170296 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA6>
+I0000 00:00:1786682178.170298 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA7>
+I0000 00:00:1786682178.170300 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA8>
+I0000 00:00:1786682178.170302 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA9>
+I0000 00:00:1786682178.170303 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAA>
+I0000 00:00:1786682178.170305 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAB>
+I0000 00:00:1786682178.170307 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAC>
+I0000 00:00:1786682178.170309 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAD>
+I0000 00:00:1786682178.170311 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAE>
+I0000 00:00:1786682178.170312 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAF>
+I0000 00:00:1786682178.170314 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB0>
+I0000 00:00:1786682178.170316 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB1>
+I0000 00:00:1786682178.170321 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB2>
+I0000 00:00:1786682178.170323 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB3>
+I0000 00:00:1786682178.170324 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB4>
+I0000 00:00:1786682178.170326 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB5>
+I0000 00:00:1786682178.170328 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB6>
+I0000 00:00:1786682178.170330 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB7>
+I0000 00:00:1786682178.170332 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB8>
+I0000 00:00:1786682178.170334 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB9>
+I0000 00:00:1786682178.170335 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBA>
+I0000 00:00:1786682178.170337 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBB>
+I0000 00:00:1786682178.170339 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBC>
+I0000 00:00:1786682178.170341 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBD>
+I0000 00:00:1786682178.170343 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBE>
+I0000 00:00:1786682178.170344 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBF>
+I0000 00:00:1786682178.170346 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC0>
+I0000 00:00:1786682178.170348 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC1>
+I0000 00:00:1786682178.170350 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC2>
+I0000 00:00:1786682178.170352 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC3>
+I0000 00:00:1786682178.170353 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC4>
+I0000 00:00:1786682178.170355 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC5>
+I0000 00:00:1786682178.170357 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC6>
+I0000 00:00:1786682178.170359 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC7>
+I0000 00:00:1786682178.170361 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC8>
+I0000 00:00:1786682178.170362 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC9>
+I0000 00:00:1786682178.170364 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCA>
+I0000 00:00:1786682178.170366 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCB>
+I0000 00:00:1786682178.170368 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCC>
+I0000 00:00:1786682178.170370 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCD>
+I0000 00:00:1786682178.170371 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCE>
+I0000 00:00:1786682178.170373 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCF>
+I0000 00:00:1786682178.170375 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD0>
+I0000 00:00:1786682178.170377 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD1>
+I0000 00:00:1786682178.170379 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD2>
+I0000 00:00:1786682178.170381 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD3>
+I0000 00:00:1786682178.170383 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD4>
+I0000 00:00:1786682178.170384 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD5>
+I0000 00:00:1786682178.170386 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD6>
+I0000 00:00:1786682178.170388 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD7>
+I0000 00:00:1786682178.170390 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD8>
+I0000 00:00:1786682178.170392 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD9>
+I0000 00:00:1786682178.170393 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDA>
+I0000 00:00:1786682178.170395 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDB>
+I0000 00:00:1786682178.170397 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDC>
+I0000 00:00:1786682178.170399 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDD>
+I0000 00:00:1786682178.170401 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDE>
+I0000 00:00:1786682178.170405 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDF>
+I0000 00:00:1786682178.170407 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE0>
+I0000 00:00:1786682178.170408 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE1>
+I0000 00:00:1786682178.170410 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE2>
+I0000 00:00:1786682178.170412 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE3>
+I0000 00:00:1786682178.170414 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE4>
+I0000 00:00:1786682178.170416 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE5>
+I0000 00:00:1786682178.170418 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE6>
+I0000 00:00:1786682178.170419 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE7>
+I0000 00:00:1786682178.170421 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE8>
+I0000 00:00:1786682178.170423 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE9>
+I0000 00:00:1786682178.170425 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEA>
+I0000 00:00:1786682178.170427 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEB>
+I0000 00:00:1786682178.170428 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEC>
+I0000 00:00:1786682178.170430 13231022 trainer_interface.cc:440] Adding meta_piece: <0xED>
+I0000 00:00:1786682178.170432 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEE>
+I0000 00:00:1786682178.170434 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEF>
+I0000 00:00:1786682178.170435 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF0>
+I0000 00:00:1786682178.170437 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF1>
+I0000 00:00:1786682178.170439 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF2>
+I0000 00:00:1786682178.170441 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF3>
+I0000 00:00:1786682178.170443 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF4>
+I0000 00:00:1786682178.170444 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF5>
+I0000 00:00:1786682178.170446 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF6>
+I0000 00:00:1786682178.170448 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF7>
+I0000 00:00:1786682178.170450 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF8>
+I0000 00:00:1786682178.170452 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF9>
+I0000 00:00:1786682178.170453 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFA>
+I0000 00:00:1786682178.170455 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFB>
+I0000 00:00:1786682178.170457 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFC>
+I0000 00:00:1786682178.170459 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFD>
+I0000 00:00:1786682178.170461 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFE>
+I0000 00:00:1786682178.170462 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFF>
+I0000 00:00:1786682178.170494 13231022 trainer_interface.cc:445] Normalizing sentences...
+I0000 00:00:1786682178.692089 13231022 trainer_interface.cc:555] all chars count=43661207
+I0000 00:00:1786682178.692347 13231022 trainer_interface.cc:566] Done: 99.951% characters are covered.
+I0000 00:00:1786682178.692368 13231022 trainer_interface.cc:578] Alphabet size=170
+I0000 00:00:1786682178.692372 13231022 trainer_interface.cc:579] Final character coverage=0.99951
+I0000 00:00:1786682179.328791 13231022 trainer_interface.cc:609] Done! preprocessed 78883 sentences.
+I0000 00:00:1786682181.441297 13231022 unigram_model_trainer.cc:297] Making suffix array...
+I0000 00:00:1786682187.895922 13231022 unigram_model_trainer.cc:301] Extracting frequent sub strings... node_num=21969563
+I0000 00:00:1786682211.985147 13231022 unigram_model_trainer.cc:354] Initialized 959654 seed sentencepieces
+I0000 00:00:1786682212.950761 13231022 trainer_interface.cc:615] Tokenizing input sentences with whitespace: 78883
+I0000 00:00:1786682213.516523 13231022 trainer_interface.cc:626] Done! 429062
+I0000 00:00:1786682213.537064 13231022 unigram_model_trainer.cc:628] Using 429062 sentences for EM training
+I0000 00:00:1786682214.529281 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=245770 obj=13.0058 num_tokens=8072387 num_tokens/piece=32.8453
+I0000 00:00:1786682215.210416 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=221197 obj=10.3421 num_tokens=8071440 num_tokens/piece=36.4898
+I0000 00:00:1786682217.182374 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=165852 obj=10.3594 num_tokens=8145395 num_tokens/piece=49.1124
+I0000 00:00:1786682217.768870 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=165620 obj=10.3424 num_tokens=8146402 num_tokens/piece=49.1873
+I0000 00:00:1786682219.374393 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=124213 obj=10.4204 num_tokens=8249381 num_tokens/piece=66.4132
+I0000 00:00:1786682219.885753 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=124184 obj=10.3995 num_tokens=8250626 num_tokens/piece=66.4387
+I0000 00:00:1786682221.302857 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=93137 obj=10.4962 num_tokens=8366736 num_tokens/piece=89.8326
+I0000 00:00:1786682221.766671 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=93136 obj=10.4727 num_tokens=8367812 num_tokens/piece=89.8451
+I0000 00:00:1786682222.918487 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=69852 obj=10.5834 num_tokens=8500815 num_tokens/piece=121.698
+I0000 00:00:1786682223.343199 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=69852 obj=10.5599 num_tokens=8502224 num_tokens/piece=121.718
+I0000 00:00:1786682224.339087 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=52389 obj=10.691 num_tokens=8654263 num_tokens/piece=165.192
+I0000 00:00:1786682224.727291 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=52389 obj=10.6651 num_tokens=8655151 num_tokens/piece=165.209
+I0000 00:00:1786682225.581139 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=39291 obj=10.8161 num_tokens=8837821 num_tokens/piece=224.932
+I0000 00:00:1786682225.964614 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=39291 obj=10.7857 num_tokens=8838036 num_tokens/piece=224.938
+I0000 00:00:1786682226.725646 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=29468 obj=10.9604 num_tokens=9049577 num_tokens/piece=307.098
+I0000 00:00:1786682227.080286 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=29468 obj=10.9246 num_tokens=9049904 num_tokens/piece=307.11
+I0000 00:00:1786682227.772409 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=22101 obj=11.1297 num_tokens=9300652 num_tokens/piece=420.825
+I0000 00:00:1786682228.121014 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=22101 obj=11.0871 num_tokens=9301029 num_tokens/piece=420.842
+I0000 00:00:1786682228.751616 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=16575 obj=11.3262 num_tokens=9599924 num_tokens/piece=579.181
+I0000 00:00:1786682229.076050 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=16575 obj=11.2759 num_tokens=9600767 num_tokens/piece=579.232
+I0000 00:00:1786682229.680815 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=12431 obj=11.5548 num_tokens=9956330 num_tokens/piece=800.928
+I0000 00:00:1786682229.989929 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=12431 obj=11.4952 num_tokens=9959158 num_tokens/piece=801.155
+I0000 00:00:1786682230.570997 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=9323 obj=11.815 num_tokens=10375294 num_tokens/piece=1112.87
+I0000 00:00:1786682230.858386 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=9323 obj=11.746 num_tokens=10375485 num_tokens/piece=1112.89
+I0000 00:00:1786682231.408614 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=8800 obj=11.81 num_tokens=10463918 num_tokens/piece=1189.08
+I0000 00:00:1786682231.747457 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=8800 obj=11.7963 num_tokens=10463906 num_tokens/piece=1189.08
+I0000 00:00:1786682231.750684 13231022 trainer_interface.cc:702] Saving model: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/_staging/nep_unigram_sweep_8000.model
+I0000 00:00:1786682231.753381 13231022 trainer_interface.cc:714] Saving vocabs: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/_staging/nep_unigram_sweep_8000.vocab
+
+--- vocab_size=12,000  (embedding 4.61M params, 18% of the 25.00M budget) ---
+I0000 00:00:1786682231.915567 13231022 sentencepiece_trainer.cc:105] Starts training with : 
+trainer_spec {
+  input: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/spm_input.txt
+  input_format: 
+  model_prefix: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/_staging/nep_unigram_sweep_12000
+  model_type: UNIGRAM
+  vocab_size: 12000
+  self_test_sample_size: 0
+  character_coverage: 0.9995
+  input_sentence_size: 400000
+  shuffle_input_sentence: 1
+  seed_sentencepiece_size: 1000000
+  shrinking_factor: 0.75
+  max_sentence_length: 4192
+  num_threads: 8
+  num_sub_iterations: 2
+  max_sentencepiece_length: 16
+  split_by_unicode_script: 1
+  split_by_number: 1
+  split_by_whitespace: 1
+  split_digits: 1
+  pretokenization_delimiter: 
+  treat_whitespace_as_suffix: 0
+  allow_whitespace_only_pieces: 1
+  required_chars: ऀँंःऄअआइईउऊऋऌऍऎएऐऑऒओऔकखगघङचछजझञटठडढणतथदधनऩपफबभमयरऱलळऴवशषसहऺऻ़ऽािीुूृॄॅॆेैॉॊोौ्ॎॏॐ॒॑॓॔ॕॖॗक़ख़ग़ज़ड़ढ़फ़य़ॠॡॢॣ।॥०१२३४५६७८९॰ॱॲॳॴॵॶॷॸॹॺॻॼॽॾॿ
+  byte_fallback: 1
+  vocabulary_output_piece_score: 1
+  train_extremely_large_corpus: 1
+  seed_sentencepieces_file: 
+  hard_vocab_limit: 1
+  use_all_vocab: 0
+  unk_id: 1
+  bos_id: 2
+  eos_id: 3
+  pad_id: 0
+  unk_piece: <unk>
+  bos_piece: <s>
+  eos_piece: </s>
+  pad_piece: <pad>
+  unk_surface:  ⁇ 
+  enable_differential_privacy: 0
+  differential_privacy_noise_level: 0
+  differential_privacy_clipping_threshold: 0
+}
+normalizer_spec {
+  name: identity
+  add_dummy_prefix: 1
+  remove_extra_whitespaces: 0
+  escape_whitespaces: 1
+  normalization_rule_tsv: 
+}
+denormalizer_spec {}
+I0000 00:00:1786682231.915583 13231022 trainer_interface.cc:364] SentenceIterator is not specified. Using MultiFileSentenceIterator.
+I0000 00:00:1786682231.915782 13231022 trainer_interface.cc:193] Loading corpus: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/spm_input.txt
+W0000 00:00:1786682231.915799 13231022 trainer_interface.cc:393] Found too long line (4617 > 4192).
+W0000 00:00:1786682231.915804 13231022 trainer_interface.cc:395] Too long lines are skipped in the training.
+W0000 00:00:1786682231.915806 13231022 trainer_interface.cc:396] The maximum length can be changed with --max_sentence_length=<size> flag.
+I0000 00:00:1786682232.108494 13231022 trainer_interface.cc:422] Loaded all 78883 sentences
+I0000 00:00:1786682232.108515 13231022 trainer_interface.cc:429] Skipped 18394 too long sentences.
+I0000 00:00:1786682232.108520 13231022 trainer_interface.cc:440] Adding meta_piece: <pad>
+I0000 00:00:1786682232.108523 13231022 trainer_interface.cc:440] Adding meta_piece: <unk>
+I0000 00:00:1786682232.108525 13231022 trainer_interface.cc:440] Adding meta_piece: <s>
+I0000 00:00:1786682232.108527 13231022 trainer_interface.cc:440] Adding meta_piece: </s>
+I0000 00:00:1786682232.108529 13231022 trainer_interface.cc:440] Adding meta_piece: <0x00>
+I0000 00:00:1786682232.108531 13231022 trainer_interface.cc:440] Adding meta_piece: <0x01>
+I0000 00:00:1786682232.108533 13231022 trainer_interface.cc:440] Adding meta_piece: <0x02>
+I0000 00:00:1786682232.108534 13231022 trainer_interface.cc:440] Adding meta_piece: <0x03>
+I0000 00:00:1786682232.108536 13231022 trainer_interface.cc:440] Adding meta_piece: <0x04>
+I0000 00:00:1786682232.108538 13231022 trainer_interface.cc:440] Adding meta_piece: <0x05>
+I0000 00:00:1786682232.108548 13231022 trainer_interface.cc:440] Adding meta_piece: <0x06>
+I0000 00:00:1786682232.108550 13231022 trainer_interface.cc:440] Adding meta_piece: <0x07>
+I0000 00:00:1786682232.108551 13231022 trainer_interface.cc:440] Adding meta_piece: <0x08>
+I0000 00:00:1786682232.108553 13231022 trainer_interface.cc:440] Adding meta_piece: <0x09>
+I0000 00:00:1786682232.108555 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0A>
+I0000 00:00:1786682232.108557 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0B>
+I0000 00:00:1786682232.108559 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0C>
+I0000 00:00:1786682232.108561 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0D>
+I0000 00:00:1786682232.108562 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0E>
+I0000 00:00:1786682232.108564 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0F>
+I0000 00:00:1786682232.108566 13231022 trainer_interface.cc:440] Adding meta_piece: <0x10>
+I0000 00:00:1786682232.108568 13231022 trainer_interface.cc:440] Adding meta_piece: <0x11>
+I0000 00:00:1786682232.108570 13231022 trainer_interface.cc:440] Adding meta_piece: <0x12>
+I0000 00:00:1786682232.108572 13231022 trainer_interface.cc:440] Adding meta_piece: <0x13>
+I0000 00:00:1786682232.108573 13231022 trainer_interface.cc:440] Adding meta_piece: <0x14>
+I0000 00:00:1786682232.108575 13231022 trainer_interface.cc:440] Adding meta_piece: <0x15>
+I0000 00:00:1786682232.108577 13231022 trainer_interface.cc:440] Adding meta_piece: <0x16>
+I0000 00:00:1786682232.108579 13231022 trainer_interface.cc:440] Adding meta_piece: <0x17>
+I0000 00:00:1786682232.108581 13231022 trainer_interface.cc:440] Adding meta_piece: <0x18>
+I0000 00:00:1786682232.108582 13231022 trainer_interface.cc:440] Adding meta_piece: <0x19>
+I0000 00:00:1786682232.108584 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1A>
+I0000 00:00:1786682232.108586 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1B>
+I0000 00:00:1786682232.108588 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1C>
+I0000 00:00:1786682232.108590 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1D>
+I0000 00:00:1786682232.108591 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1E>
+I0000 00:00:1786682232.108593 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1F>
+I0000 00:00:1786682232.108595 13231022 trainer_interface.cc:440] Adding meta_piece: <0x20>
+I0000 00:00:1786682232.108597 13231022 trainer_interface.cc:440] Adding meta_piece: <0x21>
+I0000 00:00:1786682232.108599 13231022 trainer_interface.cc:440] Adding meta_piece: <0x22>
+I0000 00:00:1786682232.108600 13231022 trainer_interface.cc:440] Adding meta_piece: <0x23>
+I0000 00:00:1786682232.108602 13231022 trainer_interface.cc:440] Adding meta_piece: <0x24>
+I0000 00:00:1786682232.108604 13231022 trainer_interface.cc:440] Adding meta_piece: <0x25>
+I0000 00:00:1786682232.108606 13231022 trainer_interface.cc:440] Adding meta_piece: <0x26>
+I0000 00:00:1786682232.108607 13231022 trainer_interface.cc:440] Adding meta_piece: <0x27>
+I0000 00:00:1786682232.108609 13231022 trainer_interface.cc:440] Adding meta_piece: <0x28>
+I0000 00:00:1786682232.108611 13231022 trainer_interface.cc:440] Adding meta_piece: <0x29>
+I0000 00:00:1786682232.108613 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2A>
+I0000 00:00:1786682232.108614 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2B>
+I0000 00:00:1786682232.108616 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2C>
+I0000 00:00:1786682232.108618 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2D>
+I0000 00:00:1786682232.108620 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2E>
+I0000 00:00:1786682232.108621 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2F>
+I0000 00:00:1786682232.108623 13231022 trainer_interface.cc:440] Adding meta_piece: <0x30>
+I0000 00:00:1786682232.108625 13231022 trainer_interface.cc:440] Adding meta_piece: <0x31>
+I0000 00:00:1786682232.108627 13231022 trainer_interface.cc:440] Adding meta_piece: <0x32>
+I0000 00:00:1786682232.108631 13231022 trainer_interface.cc:440] Adding meta_piece: <0x33>
+I0000 00:00:1786682232.108633 13231022 trainer_interface.cc:440] Adding meta_piece: <0x34>
+I0000 00:00:1786682232.108635 13231022 trainer_interface.cc:440] Adding meta_piece: <0x35>
+I0000 00:00:1786682232.108636 13231022 trainer_interface.cc:440] Adding meta_piece: <0x36>
+I0000 00:00:1786682232.108638 13231022 trainer_interface.cc:440] Adding meta_piece: <0x37>
+I0000 00:00:1786682232.108640 13231022 trainer_interface.cc:440] Adding meta_piece: <0x38>
+I0000 00:00:1786682232.108642 13231022 trainer_interface.cc:440] Adding meta_piece: <0x39>
+I0000 00:00:1786682232.108643 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3A>
+I0000 00:00:1786682232.108645 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3B>
+I0000 00:00:1786682232.108647 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3C>
+I0000 00:00:1786682232.108649 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3D>
+I0000 00:00:1786682232.108650 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3E>
+I0000 00:00:1786682232.108652 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3F>
+I0000 00:00:1786682232.108654 13231022 trainer_interface.cc:440] Adding meta_piece: <0x40>
+I0000 00:00:1786682232.108656 13231022 trainer_interface.cc:440] Adding meta_piece: <0x41>
+I0000 00:00:1786682232.108657 13231022 trainer_interface.cc:440] Adding meta_piece: <0x42>
+I0000 00:00:1786682232.108659 13231022 trainer_interface.cc:440] Adding meta_piece: <0x43>
+I0000 00:00:1786682232.108661 13231022 trainer_interface.cc:440] Adding meta_piece: <0x44>
+I0000 00:00:1786682232.108663 13231022 trainer_interface.cc:440] Adding meta_piece: <0x45>
+I0000 00:00:1786682232.108664 13231022 trainer_interface.cc:440] Adding meta_piece: <0x46>
+I0000 00:00:1786682232.108666 13231022 trainer_interface.cc:440] Adding meta_piece: <0x47>
+I0000 00:00:1786682232.108668 13231022 trainer_interface.cc:440] Adding meta_piece: <0x48>
+I0000 00:00:1786682232.108670 13231022 trainer_interface.cc:440] Adding meta_piece: <0x49>
+I0000 00:00:1786682232.108671 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4A>
+I0000 00:00:1786682232.108673 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4B>
+I0000 00:00:1786682232.108675 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4C>
+I0000 00:00:1786682232.108676 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4D>
+I0000 00:00:1786682232.108678 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4E>
+I0000 00:00:1786682232.108680 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4F>
+I0000 00:00:1786682232.108681 13231022 trainer_interface.cc:440] Adding meta_piece: <0x50>
+I0000 00:00:1786682232.108683 13231022 trainer_interface.cc:440] Adding meta_piece: <0x51>
+I0000 00:00:1786682232.108685 13231022 trainer_interface.cc:440] Adding meta_piece: <0x52>
+I0000 00:00:1786682232.108687 13231022 trainer_interface.cc:440] Adding meta_piece: <0x53>
+I0000 00:00:1786682232.108688 13231022 trainer_interface.cc:440] Adding meta_piece: <0x54>
+I0000 00:00:1786682232.108690 13231022 trainer_interface.cc:440] Adding meta_piece: <0x55>
+I0000 00:00:1786682232.108692 13231022 trainer_interface.cc:440] Adding meta_piece: <0x56>
+I0000 00:00:1786682232.108694 13231022 trainer_interface.cc:440] Adding meta_piece: <0x57>
+I0000 00:00:1786682232.108695 13231022 trainer_interface.cc:440] Adding meta_piece: <0x58>
+I0000 00:00:1786682232.108697 13231022 trainer_interface.cc:440] Adding meta_piece: <0x59>
+I0000 00:00:1786682232.108699 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5A>
+I0000 00:00:1786682232.108701 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5B>
+I0000 00:00:1786682232.108702 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5C>
+I0000 00:00:1786682232.108704 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5D>
+I0000 00:00:1786682232.108706 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5E>
+I0000 00:00:1786682232.108707 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5F>
+I0000 00:00:1786682232.108712 13231022 trainer_interface.cc:440] Adding meta_piece: <0x60>
+I0000 00:00:1786682232.108714 13231022 trainer_interface.cc:440] Adding meta_piece: <0x61>
+I0000 00:00:1786682232.108715 13231022 trainer_interface.cc:440] Adding meta_piece: <0x62>
+I0000 00:00:1786682232.108717 13231022 trainer_interface.cc:440] Adding meta_piece: <0x63>
+I0000 00:00:1786682232.108719 13231022 trainer_interface.cc:440] Adding meta_piece: <0x64>
+I0000 00:00:1786682232.108720 13231022 trainer_interface.cc:440] Adding meta_piece: <0x65>
+I0000 00:00:1786682232.108722 13231022 trainer_interface.cc:440] Adding meta_piece: <0x66>
+I0000 00:00:1786682232.108724 13231022 trainer_interface.cc:440] Adding meta_piece: <0x67>
+I0000 00:00:1786682232.108726 13231022 trainer_interface.cc:440] Adding meta_piece: <0x68>
+I0000 00:00:1786682232.108728 13231022 trainer_interface.cc:440] Adding meta_piece: <0x69>
+I0000 00:00:1786682232.108729 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6A>
+I0000 00:00:1786682232.108731 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6B>
+I0000 00:00:1786682232.108733 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6C>
+I0000 00:00:1786682232.108735 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6D>
+I0000 00:00:1786682232.108736 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6E>
+I0000 00:00:1786682232.108738 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6F>
+I0000 00:00:1786682232.108740 13231022 trainer_interface.cc:440] Adding meta_piece: <0x70>
+I0000 00:00:1786682232.108742 13231022 trainer_interface.cc:440] Adding meta_piece: <0x71>
+I0000 00:00:1786682232.108743 13231022 trainer_interface.cc:440] Adding meta_piece: <0x72>
+I0000 00:00:1786682232.108745 13231022 trainer_interface.cc:440] Adding meta_piece: <0x73>
+I0000 00:00:1786682232.108747 13231022 trainer_interface.cc:440] Adding meta_piece: <0x74>
+I0000 00:00:1786682232.108748 13231022 trainer_interface.cc:440] Adding meta_piece: <0x75>
+I0000 00:00:1786682232.108750 13231022 trainer_interface.cc:440] Adding meta_piece: <0x76>
+I0000 00:00:1786682232.108752 13231022 trainer_interface.cc:440] Adding meta_piece: <0x77>
+I0000 00:00:1786682232.108754 13231022 trainer_interface.cc:440] Adding meta_piece: <0x78>
+I0000 00:00:1786682232.108755 13231022 trainer_interface.cc:440] Adding meta_piece: <0x79>
+I0000 00:00:1786682232.108757 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7A>
+I0000 00:00:1786682232.108759 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7B>
+I0000 00:00:1786682232.108761 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7C>
+I0000 00:00:1786682232.108763 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7D>
+I0000 00:00:1786682232.108764 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7E>
+I0000 00:00:1786682232.108766 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7F>
+I0000 00:00:1786682232.108768 13231022 trainer_interface.cc:440] Adding meta_piece: <0x80>
+I0000 00:00:1786682232.108770 13231022 trainer_interface.cc:440] Adding meta_piece: <0x81>
+I0000 00:00:1786682232.108771 13231022 trainer_interface.cc:440] Adding meta_piece: <0x82>
+I0000 00:00:1786682232.108773 13231022 trainer_interface.cc:440] Adding meta_piece: <0x83>
+I0000 00:00:1786682232.108775 13231022 trainer_interface.cc:440] Adding meta_piece: <0x84>
+I0000 00:00:1786682232.108776 13231022 trainer_interface.cc:440] Adding meta_piece: <0x85>
+I0000 00:00:1786682232.108778 13231022 trainer_interface.cc:440] Adding meta_piece: <0x86>
+I0000 00:00:1786682232.108780 13231022 trainer_interface.cc:440] Adding meta_piece: <0x87>
+I0000 00:00:1786682232.108782 13231022 trainer_interface.cc:440] Adding meta_piece: <0x88>
+I0000 00:00:1786682232.108783 13231022 trainer_interface.cc:440] Adding meta_piece: <0x89>
+I0000 00:00:1786682232.108785 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8A>
+I0000 00:00:1786682232.108787 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8B>
+I0000 00:00:1786682232.108788 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8C>
+I0000 00:00:1786682232.108794 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8D>
+I0000 00:00:1786682232.108796 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8E>
+I0000 00:00:1786682232.108798 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8F>
+I0000 00:00:1786682232.108800 13231022 trainer_interface.cc:440] Adding meta_piece: <0x90>
+I0000 00:00:1786682232.108801 13231022 trainer_interface.cc:440] Adding meta_piece: <0x91>
+I0000 00:00:1786682232.108803 13231022 trainer_interface.cc:440] Adding meta_piece: <0x92>
+I0000 00:00:1786682232.108805 13231022 trainer_interface.cc:440] Adding meta_piece: <0x93>
+I0000 00:00:1786682232.108807 13231022 trainer_interface.cc:440] Adding meta_piece: <0x94>
+I0000 00:00:1786682232.108808 13231022 trainer_interface.cc:440] Adding meta_piece: <0x95>
+I0000 00:00:1786682232.108810 13231022 trainer_interface.cc:440] Adding meta_piece: <0x96>
+I0000 00:00:1786682232.108812 13231022 trainer_interface.cc:440] Adding meta_piece: <0x97>
+I0000 00:00:1786682232.108814 13231022 trainer_interface.cc:440] Adding meta_piece: <0x98>
+I0000 00:00:1786682232.108815 13231022 trainer_interface.cc:440] Adding meta_piece: <0x99>
+I0000 00:00:1786682232.108817 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9A>
+I0000 00:00:1786682232.108819 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9B>
+I0000 00:00:1786682232.108821 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9C>
+I0000 00:00:1786682232.108822 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9D>
+I0000 00:00:1786682232.108824 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9E>
+I0000 00:00:1786682232.108826 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9F>
+I0000 00:00:1786682232.108828 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA0>
+I0000 00:00:1786682232.108829 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA1>
+I0000 00:00:1786682232.108831 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA2>
+I0000 00:00:1786682232.108833 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA3>
+I0000 00:00:1786682232.108834 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA4>
+I0000 00:00:1786682232.108836 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA5>
+I0000 00:00:1786682232.108838 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA6>
+I0000 00:00:1786682232.108840 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA7>
+I0000 00:00:1786682232.108841 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA8>
+I0000 00:00:1786682232.108843 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA9>
+I0000 00:00:1786682232.108845 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAA>
+I0000 00:00:1786682232.108847 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAB>
+I0000 00:00:1786682232.108848 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAC>
+I0000 00:00:1786682232.108850 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAD>
+I0000 00:00:1786682232.108852 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAE>
+I0000 00:00:1786682232.108853 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAF>
+I0000 00:00:1786682232.108855 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB0>
+I0000 00:00:1786682232.108857 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB1>
+I0000 00:00:1786682232.108859 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB2>
+I0000 00:00:1786682232.108860 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB3>
+I0000 00:00:1786682232.108862 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB4>
+I0000 00:00:1786682232.108864 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB5>
+I0000 00:00:1786682232.108866 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB6>
+I0000 00:00:1786682232.108867 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB7>
+I0000 00:00:1786682232.108869 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB8>
+I0000 00:00:1786682232.108871 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB9>
+I0000 00:00:1786682232.108875 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBA>
+I0000 00:00:1786682232.108877 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBB>
+I0000 00:00:1786682232.108878 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBC>
+I0000 00:00:1786682232.108880 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBD>
+I0000 00:00:1786682232.108882 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBE>
+I0000 00:00:1786682232.108884 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBF>
+I0000 00:00:1786682232.108885 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC0>
+I0000 00:00:1786682232.108887 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC1>
+I0000 00:00:1786682232.108889 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC2>
+I0000 00:00:1786682232.108890 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC3>
+I0000 00:00:1786682232.108892 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC4>
+I0000 00:00:1786682232.108894 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC5>
+I0000 00:00:1786682232.108896 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC6>
+I0000 00:00:1786682232.108897 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC7>
+I0000 00:00:1786682232.108899 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC8>
+I0000 00:00:1786682232.108901 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC9>
+I0000 00:00:1786682232.108903 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCA>
+I0000 00:00:1786682232.108904 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCB>
+I0000 00:00:1786682232.108906 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCC>
+I0000 00:00:1786682232.108908 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCD>
+I0000 00:00:1786682232.108909 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCE>
+I0000 00:00:1786682232.108911 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCF>
+I0000 00:00:1786682232.108913 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD0>
+I0000 00:00:1786682232.108915 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD1>
+I0000 00:00:1786682232.108916 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD2>
+I0000 00:00:1786682232.108918 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD3>
+I0000 00:00:1786682232.108920 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD4>
+I0000 00:00:1786682232.108921 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD5>
+I0000 00:00:1786682232.108923 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD6>
+I0000 00:00:1786682232.108925 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD7>
+I0000 00:00:1786682232.108927 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD8>
+I0000 00:00:1786682232.108928 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD9>
+I0000 00:00:1786682232.108930 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDA>
+I0000 00:00:1786682232.108932 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDB>
+I0000 00:00:1786682232.108934 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDC>
+I0000 00:00:1786682232.108935 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDD>
+I0000 00:00:1786682232.108937 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDE>
+I0000 00:00:1786682232.108939 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDF>
+I0000 00:00:1786682232.108941 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE0>
+I0000 00:00:1786682232.108942 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE1>
+I0000 00:00:1786682232.108944 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE2>
+I0000 00:00:1786682232.108946 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE3>
+I0000 00:00:1786682232.108947 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE4>
+I0000 00:00:1786682232.108949 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE5>
+I0000 00:00:1786682232.108951 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE6>
+I0000 00:00:1786682232.108955 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE7>
+I0000 00:00:1786682232.108957 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE8>
+I0000 00:00:1786682232.108958 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE9>
+I0000 00:00:1786682232.108960 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEA>
+I0000 00:00:1786682232.108962 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEB>
+I0000 00:00:1786682232.108964 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEC>
+I0000 00:00:1786682232.108965 13231022 trainer_interface.cc:440] Adding meta_piece: <0xED>
+I0000 00:00:1786682232.108967 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEE>
+I0000 00:00:1786682232.108969 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEF>
+I0000 00:00:1786682232.108970 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF0>
+I0000 00:00:1786682232.108972 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF1>
+I0000 00:00:1786682232.108974 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF2>
+I0000 00:00:1786682232.108976 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF3>
+I0000 00:00:1786682232.108977 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF4>
+I0000 00:00:1786682232.108979 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF5>
+I0000 00:00:1786682232.108981 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF6>
+I0000 00:00:1786682232.108982 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF7>
+I0000 00:00:1786682232.108984 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF8>
+I0000 00:00:1786682232.108986 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF9>
+I0000 00:00:1786682232.108988 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFA>
+I0000 00:00:1786682232.108989 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFB>
+I0000 00:00:1786682232.108991 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFC>
+I0000 00:00:1786682232.108993 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFD>
+I0000 00:00:1786682232.108995 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFE>
+I0000 00:00:1786682232.108996 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFF>
+I0000 00:00:1786682232.109025 13231022 trainer_interface.cc:445] Normalizing sentences...
+I0000 00:00:1786682232.623505 13231022 trainer_interface.cc:555] all chars count=43661207
+I0000 00:00:1786682232.623850 13231022 trainer_interface.cc:566] Done: 99.951% characters are covered.
+I0000 00:00:1786682232.623865 13231022 trainer_interface.cc:578] Alphabet size=170
+I0000 00:00:1786682232.623869 13231022 trainer_interface.cc:579] Final character coverage=0.99951
+I0000 00:00:1786682233.259783 13231022 trainer_interface.cc:609] Done! preprocessed 78883 sentences.
+I0000 00:00:1786682235.130986 13231022 unigram_model_trainer.cc:297] Making suffix array...
+I0000 00:00:1786682241.067907 13231022 unigram_model_trainer.cc:301] Extracting frequent sub strings... node_num=21969563
+I0000 00:00:1786682265.532485 13231022 unigram_model_trainer.cc:354] Initialized 959654 seed sentencepieces
+I0000 00:00:1786682266.544362 13231022 trainer_interface.cc:615] Tokenizing input sentences with whitespace: 78883
+I0000 00:00:1786682267.127387 13231022 trainer_interface.cc:626] Done! 429062
+I0000 00:00:1786682267.149306 13231022 unigram_model_trainer.cc:628] Using 429062 sentences for EM training
+I0000 00:00:1786682268.200926 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=245770 obj=13.0058 num_tokens=8072387 num_tokens/piece=32.8453
+I0000 00:00:1786682268.895280 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=221197 obj=10.3421 num_tokens=8071440 num_tokens/piece=36.4898
+I0000 00:00:1786682270.791579 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=165852 obj=10.3594 num_tokens=8145395 num_tokens/piece=49.1124
+I0000 00:00:1786682271.385848 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=165620 obj=10.3424 num_tokens=8146402 num_tokens/piece=49.1873
+I0000 00:00:1786682273.000915 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=124213 obj=10.4204 num_tokens=8249381 num_tokens/piece=66.4132
+I0000 00:00:1786682273.527858 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=124184 obj=10.3995 num_tokens=8250626 num_tokens/piece=66.4387
+I0000 00:00:1786682274.865036 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=93137 obj=10.4962 num_tokens=8366736 num_tokens/piece=89.8326
+I0000 00:00:1786682275.324096 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=93136 obj=10.4727 num_tokens=8367812 num_tokens/piece=89.8451
+I0000 00:00:1786682276.458275 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=69852 obj=10.5834 num_tokens=8500815 num_tokens/piece=121.698
+I0000 00:00:1786682276.893166 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=69852 obj=10.5599 num_tokens=8502224 num_tokens/piece=121.718
+I0000 00:00:1786682277.859385 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=52389 obj=10.691 num_tokens=8654263 num_tokens/piece=165.192
+I0000 00:00:1786682278.265602 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=52389 obj=10.6651 num_tokens=8655151 num_tokens/piece=165.209
+I0000 00:00:1786682279.128578 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=39291 obj=10.8161 num_tokens=8837821 num_tokens/piece=224.932
+I0000 00:00:1786682279.523776 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=39291 obj=10.7857 num_tokens=8838036 num_tokens/piece=224.938
+I0000 00:00:1786682280.323097 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=29468 obj=10.9604 num_tokens=9049577 num_tokens/piece=307.098
+I0000 00:00:1786682280.747043 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=29468 obj=10.9246 num_tokens=9049904 num_tokens/piece=307.11
+I0000 00:00:1786682281.494063 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=22101 obj=11.1297 num_tokens=9300652 num_tokens/piece=420.825
+I0000 00:00:1786682281.864445 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=22101 obj=11.0871 num_tokens=9301029 num_tokens/piece=420.842
+I0000 00:00:1786682282.570951 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=16575 obj=11.3262 num_tokens=9599924 num_tokens/piece=579.181
+I0000 00:00:1786682282.919274 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=16575 obj=11.2759 num_tokens=9600767 num_tokens/piece=579.232
+I0000 00:00:1786682283.580393 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=13200 obj=11.49 num_tokens=9875301 num_tokens/piece=748.129
+I0000 00:00:1786682283.931065 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=13200 obj=11.4452 num_tokens=9877970 num_tokens/piece=748.331
+I0000 00:00:1786682283.935645 13231022 trainer_interface.cc:702] Saving model: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/_staging/nep_unigram_sweep_12000.model
+I0000 00:00:1786682283.940409 13231022 trainer_interface.cc:714] Saving vocabs: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/_staging/nep_unigram_sweep_12000.vocab
+
+--- vocab_size=16,000  (embedding 6.14M params, 25% of the 25.00M budget) ---
+I0000 00:00:1786682284.132220 13231022 sentencepiece_trainer.cc:105] Starts training with : 
+trainer_spec {
+  input: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/spm_input.txt
+  input_format: 
+  model_prefix: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/_staging/nep_unigram_sweep_16000
+  model_type: UNIGRAM
+  vocab_size: 16000
+  self_test_sample_size: 0
+  character_coverage: 0.9995
+  input_sentence_size: 400000
+  shuffle_input_sentence: 1
+  seed_sentencepiece_size: 1000000
+  shrinking_factor: 0.75
+  max_sentence_length: 4192
+  num_threads: 8
+  num_sub_iterations: 2
+  max_sentencepiece_length: 16
+  split_by_unicode_script: 1
+  split_by_number: 1
+  split_by_whitespace: 1
+  split_digits: 1
+  pretokenization_delimiter: 
+  treat_whitespace_as_suffix: 0
+  allow_whitespace_only_pieces: 1
+  required_chars: ऀँंःऄअआइईउऊऋऌऍऎएऐऑऒओऔकखगघङचछजझञटठडढणतथदधनऩपफबभमयरऱलळऴवशषसहऺऻ़ऽािीुूृॄॅॆेैॉॊोौ्ॎॏॐ॒॑॓॔ॕॖॗक़ख़ग़ज़ड़ढ़फ़य़ॠॡॢॣ।॥०१२३४५६७८९॰ॱॲॳॴॵॶॷॸॹॺॻॼॽॾॿ
+  byte_fallback: 1
+  vocabulary_output_piece_score: 1
+  train_extremely_large_corpus: 1
+  seed_sentencepieces_file: 
+  hard_vocab_limit: 1
+  use_all_vocab: 0
+  unk_id: 1
+  bos_id: 2
+  eos_id: 3
+  pad_id: 0
+  unk_piece: <unk>
+  bos_piece: <s>
+  eos_piece: </s>
+  pad_piece: <pad>
+  unk_surface:  ⁇ 
+  enable_differential_privacy: 0
+  differential_privacy_noise_level: 0
+  differential_privacy_clipping_threshold: 0
+}
+normalizer_spec {
+  name: identity
+  add_dummy_prefix: 1
+  remove_extra_whitespaces: 0
+  escape_whitespaces: 1
+  normalization_rule_tsv: 
+}
+denormalizer_spec {}
+I0000 00:00:1786682284.132247 13231022 trainer_interface.cc:364] SentenceIterator is not specified. Using MultiFileSentenceIterator.
+I0000 00:00:1786682284.132532 13231022 trainer_interface.cc:193] Loading corpus: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/spm_input.txt
+W0000 00:00:1786682284.132556 13231022 trainer_interface.cc:393] Found too long line (4617 > 4192).
+W0000 00:00:1786682284.132562 13231022 trainer_interface.cc:395] Too long lines are skipped in the training.
+W0000 00:00:1786682284.132565 13231022 trainer_interface.cc:396] The maximum length can be changed with --max_sentence_length=<size> flag.
+I0000 00:00:1786682284.365388 13231022 trainer_interface.cc:422] Loaded all 78883 sentences
+I0000 00:00:1786682284.365420 13231022 trainer_interface.cc:429] Skipped 18394 too long sentences.
+I0000 00:00:1786682284.365425 13231022 trainer_interface.cc:440] Adding meta_piece: <pad>
+I0000 00:00:1786682284.365428 13231022 trainer_interface.cc:440] Adding meta_piece: <unk>
+I0000 00:00:1786682284.365430 13231022 trainer_interface.cc:440] Adding meta_piece: <s>
+I0000 00:00:1786682284.365433 13231022 trainer_interface.cc:440] Adding meta_piece: </s>
+I0000 00:00:1786682284.365440 13231022 trainer_interface.cc:440] Adding meta_piece: <0x00>
+I0000 00:00:1786682284.365442 13231022 trainer_interface.cc:440] Adding meta_piece: <0x01>
+I0000 00:00:1786682284.365444 13231022 trainer_interface.cc:440] Adding meta_piece: <0x02>
+I0000 00:00:1786682284.365446 13231022 trainer_interface.cc:440] Adding meta_piece: <0x03>
+I0000 00:00:1786682284.365447 13231022 trainer_interface.cc:440] Adding meta_piece: <0x04>
+I0000 00:00:1786682284.365449 13231022 trainer_interface.cc:440] Adding meta_piece: <0x05>
+I0000 00:00:1786682284.365451 13231022 trainer_interface.cc:440] Adding meta_piece: <0x06>
+I0000 00:00:1786682284.365453 13231022 trainer_interface.cc:440] Adding meta_piece: <0x07>
+I0000 00:00:1786682284.365455 13231022 trainer_interface.cc:440] Adding meta_piece: <0x08>
+I0000 00:00:1786682284.365457 13231022 trainer_interface.cc:440] Adding meta_piece: <0x09>
+I0000 00:00:1786682284.365461 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0A>
+I0000 00:00:1786682284.365463 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0B>
+I0000 00:00:1786682284.365465 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0C>
+I0000 00:00:1786682284.365466 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0D>
+I0000 00:00:1786682284.365468 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0E>
+I0000 00:00:1786682284.365470 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0F>
+I0000 00:00:1786682284.365472 13231022 trainer_interface.cc:440] Adding meta_piece: <0x10>
+I0000 00:00:1786682284.365474 13231022 trainer_interface.cc:440] Adding meta_piece: <0x11>
+I0000 00:00:1786682284.365475 13231022 trainer_interface.cc:440] Adding meta_piece: <0x12>
+I0000 00:00:1786682284.365479 13231022 trainer_interface.cc:440] Adding meta_piece: <0x13>
+I0000 00:00:1786682284.365481 13231022 trainer_interface.cc:440] Adding meta_piece: <0x14>
+I0000 00:00:1786682284.365491 13231022 trainer_interface.cc:440] Adding meta_piece: <0x15>
+I0000 00:00:1786682284.365493 13231022 trainer_interface.cc:440] Adding meta_piece: <0x16>
+I0000 00:00:1786682284.365495 13231022 trainer_interface.cc:440] Adding meta_piece: <0x17>
+I0000 00:00:1786682284.365496 13231022 trainer_interface.cc:440] Adding meta_piece: <0x18>
+I0000 00:00:1786682284.365500 13231022 trainer_interface.cc:440] Adding meta_piece: <0x19>
+I0000 00:00:1786682284.365502 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1A>
+I0000 00:00:1786682284.365504 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1B>
+I0000 00:00:1786682284.365505 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1C>
+I0000 00:00:1786682284.365507 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1D>
+I0000 00:00:1786682284.365514 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1E>
+I0000 00:00:1786682284.365516 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1F>
+I0000 00:00:1786682284.365517 13231022 trainer_interface.cc:440] Adding meta_piece: <0x20>
+I0000 00:00:1786682284.365519 13231022 trainer_interface.cc:440] Adding meta_piece: <0x21>
+I0000 00:00:1786682284.365521 13231022 trainer_interface.cc:440] Adding meta_piece: <0x22>
+I0000 00:00:1786682284.365523 13231022 trainer_interface.cc:440] Adding meta_piece: <0x23>
+I0000 00:00:1786682284.365527 13231022 trainer_interface.cc:440] Adding meta_piece: <0x24>
+I0000 00:00:1786682284.365528 13231022 trainer_interface.cc:440] Adding meta_piece: <0x25>
+I0000 00:00:1786682284.365530 13231022 trainer_interface.cc:440] Adding meta_piece: <0x26>
+I0000 00:00:1786682284.365532 13231022 trainer_interface.cc:440] Adding meta_piece: <0x27>
+I0000 00:00:1786682284.365534 13231022 trainer_interface.cc:440] Adding meta_piece: <0x28>
+I0000 00:00:1786682284.365535 13231022 trainer_interface.cc:440] Adding meta_piece: <0x29>
+I0000 00:00:1786682284.365544 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2A>
+I0000 00:00:1786682284.365546 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2B>
+I0000 00:00:1786682284.365548 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2C>
+I0000 00:00:1786682284.365550 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2D>
+I0000 00:00:1786682284.365552 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2E>
+I0000 00:00:1786682284.365553 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2F>
+I0000 00:00:1786682284.365557 13231022 trainer_interface.cc:440] Adding meta_piece: <0x30>
+I0000 00:00:1786682284.365559 13231022 trainer_interface.cc:440] Adding meta_piece: <0x31>
+I0000 00:00:1786682284.365561 13231022 trainer_interface.cc:440] Adding meta_piece: <0x32>
+I0000 00:00:1786682284.365562 13231022 trainer_interface.cc:440] Adding meta_piece: <0x33>
+I0000 00:00:1786682284.365568 13231022 trainer_interface.cc:440] Adding meta_piece: <0x34>
+I0000 00:00:1786682284.365570 13231022 trainer_interface.cc:440] Adding meta_piece: <0x35>
+I0000 00:00:1786682284.365571 13231022 trainer_interface.cc:440] Adding meta_piece: <0x36>
+I0000 00:00:1786682284.365575 13231022 trainer_interface.cc:440] Adding meta_piece: <0x37>
+I0000 00:00:1786682284.365577 13231022 trainer_interface.cc:440] Adding meta_piece: <0x38>
+I0000 00:00:1786682284.365579 13231022 trainer_interface.cc:440] Adding meta_piece: <0x39>
+I0000 00:00:1786682284.365580 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3A>
+I0000 00:00:1786682284.365584 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3B>
+I0000 00:00:1786682284.365586 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3C>
+I0000 00:00:1786682284.365588 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3D>
+I0000 00:00:1786682284.365590 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3E>
+I0000 00:00:1786682284.365595 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3F>
+I0000 00:00:1786682284.365597 13231022 trainer_interface.cc:440] Adding meta_piece: <0x40>
+I0000 00:00:1786682284.365598 13231022 trainer_interface.cc:440] Adding meta_piece: <0x41>
+I0000 00:00:1786682284.365600 13231022 trainer_interface.cc:440] Adding meta_piece: <0x42>
+I0000 00:00:1786682284.365602 13231022 trainer_interface.cc:440] Adding meta_piece: <0x43>
+I0000 00:00:1786682284.365604 13231022 trainer_interface.cc:440] Adding meta_piece: <0x44>
+I0000 00:00:1786682284.365605 13231022 trainer_interface.cc:440] Adding meta_piece: <0x45>
+I0000 00:00:1786682284.365610 13231022 trainer_interface.cc:440] Adding meta_piece: <0x46>
+I0000 00:00:1786682284.365611 13231022 trainer_interface.cc:440] Adding meta_piece: <0x47>
+I0000 00:00:1786682284.365613 13231022 trainer_interface.cc:440] Adding meta_piece: <0x48>
+I0000 00:00:1786682284.365615 13231022 trainer_interface.cc:440] Adding meta_piece: <0x49>
+I0000 00:00:1786682284.365616 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4A>
+I0000 00:00:1786682284.365618 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4B>
+I0000 00:00:1786682284.365620 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4C>
+I0000 00:00:1786682284.365622 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4D>
+I0000 00:00:1786682284.365623 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4E>
+I0000 00:00:1786682284.365625 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4F>
+I0000 00:00:1786682284.365627 13231022 trainer_interface.cc:440] Adding meta_piece: <0x50>
+I0000 00:00:1786682284.365628 13231022 trainer_interface.cc:440] Adding meta_piece: <0x51>
+I0000 00:00:1786682284.365630 13231022 trainer_interface.cc:440] Adding meta_piece: <0x52>
+I0000 00:00:1786682284.365634 13231022 trainer_interface.cc:440] Adding meta_piece: <0x53>
+I0000 00:00:1786682284.365636 13231022 trainer_interface.cc:440] Adding meta_piece: <0x54>
+I0000 00:00:1786682284.365638 13231022 trainer_interface.cc:440] Adding meta_piece: <0x55>
+I0000 00:00:1786682284.365639 13231022 trainer_interface.cc:440] Adding meta_piece: <0x56>
+I0000 00:00:1786682284.365641 13231022 trainer_interface.cc:440] Adding meta_piece: <0x57>
+I0000 00:00:1786682284.365643 13231022 trainer_interface.cc:440] Adding meta_piece: <0x58>
+I0000 00:00:1786682284.365644 13231022 trainer_interface.cc:440] Adding meta_piece: <0x59>
+I0000 00:00:1786682284.365646 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5A>
+I0000 00:00:1786682284.365648 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5B>
+I0000 00:00:1786682284.365650 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5C>
+I0000 00:00:1786682284.365651 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5D>
+I0000 00:00:1786682284.365653 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5E>
+I0000 00:00:1786682284.365655 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5F>
+I0000 00:00:1786682284.365658 13231022 trainer_interface.cc:440] Adding meta_piece: <0x60>
+I0000 00:00:1786682284.365664 13231022 trainer_interface.cc:440] Adding meta_piece: <0x61>
+I0000 00:00:1786682284.365666 13231022 trainer_interface.cc:440] Adding meta_piece: <0x62>
+I0000 00:00:1786682284.365667 13231022 trainer_interface.cc:440] Adding meta_piece: <0x63>
+I0000 00:00:1786682284.365669 13231022 trainer_interface.cc:440] Adding meta_piece: <0x64>
+I0000 00:00:1786682284.365671 13231022 trainer_interface.cc:440] Adding meta_piece: <0x65>
+I0000 00:00:1786682284.365672 13231022 trainer_interface.cc:440] Adding meta_piece: <0x66>
+I0000 00:00:1786682284.365674 13231022 trainer_interface.cc:440] Adding meta_piece: <0x67>
+I0000 00:00:1786682284.365677 13231022 trainer_interface.cc:440] Adding meta_piece: <0x68>
+I0000 00:00:1786682284.365679 13231022 trainer_interface.cc:440] Adding meta_piece: <0x69>
+I0000 00:00:1786682284.365681 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6A>
+I0000 00:00:1786682284.365684 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6B>
+I0000 00:00:1786682284.365686 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6C>
+I0000 00:00:1786682284.365688 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6D>
+I0000 00:00:1786682284.365690 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6E>
+I0000 00:00:1786682284.365691 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6F>
+I0000 00:00:1786682284.365693 13231022 trainer_interface.cc:440] Adding meta_piece: <0x70>
+I0000 00:00:1786682284.365695 13231022 trainer_interface.cc:440] Adding meta_piece: <0x71>
+I0000 00:00:1786682284.365696 13231022 trainer_interface.cc:440] Adding meta_piece: <0x72>
+I0000 00:00:1786682284.365698 13231022 trainer_interface.cc:440] Adding meta_piece: <0x73>
+I0000 00:00:1786682284.365700 13231022 trainer_interface.cc:440] Adding meta_piece: <0x74>
+I0000 00:00:1786682284.365705 13231022 trainer_interface.cc:440] Adding meta_piece: <0x75>
+I0000 00:00:1786682284.365707 13231022 trainer_interface.cc:440] Adding meta_piece: <0x76>
+I0000 00:00:1786682284.365708 13231022 trainer_interface.cc:440] Adding meta_piece: <0x77>
+I0000 00:00:1786682284.365712 13231022 trainer_interface.cc:440] Adding meta_piece: <0x78>
+I0000 00:00:1786682284.365716 13231022 trainer_interface.cc:440] Adding meta_piece: <0x79>
+I0000 00:00:1786682284.365724 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7A>
+I0000 00:00:1786682284.365728 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7B>
+I0000 00:00:1786682284.365730 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7C>
+I0000 00:00:1786682284.365734 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7D>
+I0000 00:00:1786682284.365736 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7E>
+I0000 00:00:1786682284.365737 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7F>
+I0000 00:00:1786682284.365739 13231022 trainer_interface.cc:440] Adding meta_piece: <0x80>
+I0000 00:00:1786682284.365744 13231022 trainer_interface.cc:440] Adding meta_piece: <0x81>
+I0000 00:00:1786682284.365746 13231022 trainer_interface.cc:440] Adding meta_piece: <0x82>
+I0000 00:00:1786682284.365748 13231022 trainer_interface.cc:440] Adding meta_piece: <0x83>
+I0000 00:00:1786682284.365750 13231022 trainer_interface.cc:440] Adding meta_piece: <0x84>
+I0000 00:00:1786682284.365753 13231022 trainer_interface.cc:440] Adding meta_piece: <0x85>
+I0000 00:00:1786682284.365754 13231022 trainer_interface.cc:440] Adding meta_piece: <0x86>
+I0000 00:00:1786682284.365759 13231022 trainer_interface.cc:440] Adding meta_piece: <0x87>
+I0000 00:00:1786682284.365763 13231022 trainer_interface.cc:440] Adding meta_piece: <0x88>
+I0000 00:00:1786682284.365765 13231022 trainer_interface.cc:440] Adding meta_piece: <0x89>
+I0000 00:00:1786682284.365770 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8A>
+I0000 00:00:1786682284.365772 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8B>
+I0000 00:00:1786682284.365774 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8C>
+I0000 00:00:1786682284.365776 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8D>
+I0000 00:00:1786682284.365780 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8E>
+I0000 00:00:1786682284.365783 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8F>
+I0000 00:00:1786682284.365785 13231022 trainer_interface.cc:440] Adding meta_piece: <0x90>
+I0000 00:00:1786682284.365787 13231022 trainer_interface.cc:440] Adding meta_piece: <0x91>
+I0000 00:00:1786682284.365789 13231022 trainer_interface.cc:440] Adding meta_piece: <0x92>
+I0000 00:00:1786682284.365793 13231022 trainer_interface.cc:440] Adding meta_piece: <0x93>
+I0000 00:00:1786682284.365798 13231022 trainer_interface.cc:440] Adding meta_piece: <0x94>
+I0000 00:00:1786682284.365802 13231022 trainer_interface.cc:440] Adding meta_piece: <0x95>
+I0000 00:00:1786682284.365806 13231022 trainer_interface.cc:440] Adding meta_piece: <0x96>
+I0000 00:00:1786682284.365808 13231022 trainer_interface.cc:440] Adding meta_piece: <0x97>
+I0000 00:00:1786682284.365810 13231022 trainer_interface.cc:440] Adding meta_piece: <0x98>
+I0000 00:00:1786682284.365815 13231022 trainer_interface.cc:440] Adding meta_piece: <0x99>
+I0000 00:00:1786682284.365817 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9A>
+I0000 00:00:1786682284.365819 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9B>
+I0000 00:00:1786682284.365822 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9C>
+I0000 00:00:1786682284.365824 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9D>
+I0000 00:00:1786682284.365826 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9E>
+I0000 00:00:1786682284.365830 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9F>
+I0000 00:00:1786682284.365832 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA0>
+I0000 00:00:1786682284.365837 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA1>
+I0000 00:00:1786682284.365839 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA2>
+I0000 00:00:1786682284.365841 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA3>
+I0000 00:00:1786682284.365843 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA4>
+I0000 00:00:1786682284.365844 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA5>
+I0000 00:00:1786682284.365846 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA6>
+I0000 00:00:1786682284.365848 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA7>
+I0000 00:00:1786682284.365852 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA8>
+I0000 00:00:1786682284.365854 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA9>
+I0000 00:00:1786682284.365857 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAA>
+I0000 00:00:1786682284.365859 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAB>
+I0000 00:00:1786682284.365861 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAC>
+I0000 00:00:1786682284.365862 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAD>
+I0000 00:00:1786682284.365864 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAE>
+I0000 00:00:1786682284.365866 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAF>
+I0000 00:00:1786682284.365867 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB0>
+I0000 00:00:1786682284.365872 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB1>
+I0000 00:00:1786682284.365873 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB2>
+I0000 00:00:1786682284.365875 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB3>
+I0000 00:00:1786682284.365877 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB4>
+I0000 00:00:1786682284.365881 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB5>
+I0000 00:00:1786682284.365889 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB6>
+I0000 00:00:1786682284.365891 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB7>
+I0000 00:00:1786682284.365892 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB8>
+I0000 00:00:1786682284.365894 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB9>
+I0000 00:00:1786682284.365896 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBA>
+I0000 00:00:1786682284.365901 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBB>
+I0000 00:00:1786682284.365907 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBC>
+I0000 00:00:1786682284.365909 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBD>
+I0000 00:00:1786682284.365911 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBE>
+I0000 00:00:1786682284.365912 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBF>
+I0000 00:00:1786682284.365914 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC0>
+I0000 00:00:1786682284.365922 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC1>
+I0000 00:00:1786682284.365924 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC2>
+I0000 00:00:1786682284.365926 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC3>
+I0000 00:00:1786682284.365928 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC4>
+I0000 00:00:1786682284.365929 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC5>
+I0000 00:00:1786682284.365931 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC6>
+I0000 00:00:1786682284.365935 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC7>
+I0000 00:00:1786682284.365937 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC8>
+I0000 00:00:1786682284.365939 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC9>
+I0000 00:00:1786682284.365941 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCA>
+I0000 00:00:1786682284.365943 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCB>
+I0000 00:00:1786682284.365949 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCC>
+I0000 00:00:1786682284.365951 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCD>
+I0000 00:00:1786682284.365952 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCE>
+I0000 00:00:1786682284.365954 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCF>
+I0000 00:00:1786682284.365956 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD0>
+I0000 00:00:1786682284.365957 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD1>
+I0000 00:00:1786682284.365959 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD2>
+I0000 00:00:1786682284.365961 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD3>
+I0000 00:00:1786682284.365962 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD4>
+I0000 00:00:1786682284.365964 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD5>
+I0000 00:00:1786682284.365966 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD6>
+I0000 00:00:1786682284.365969 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD7>
+I0000 00:00:1786682284.365971 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD8>
+I0000 00:00:1786682284.365973 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD9>
+I0000 00:00:1786682284.365975 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDA>
+I0000 00:00:1786682284.365977 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDB>
+I0000 00:00:1786682284.365983 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDC>
+I0000 00:00:1786682284.365985 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDD>
+I0000 00:00:1786682284.365988 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDE>
+I0000 00:00:1786682284.365992 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDF>
+I0000 00:00:1786682284.365993 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE0>
+I0000 00:00:1786682284.365995 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE1>
+I0000 00:00:1786682284.365997 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE2>
+I0000 00:00:1786682284.365999 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE3>
+I0000 00:00:1786682284.366000 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE4>
+I0000 00:00:1786682284.366002 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE5>
+I0000 00:00:1786682284.366004 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE6>
+I0000 00:00:1786682284.366005 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE7>
+I0000 00:00:1786682284.366007 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE8>
+I0000 00:00:1786682284.366011 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE9>
+I0000 00:00:1786682284.366013 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEA>
+I0000 00:00:1786682284.366015 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEB>
+I0000 00:00:1786682284.366016 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEC>
+I0000 00:00:1786682284.366018 13231022 trainer_interface.cc:440] Adding meta_piece: <0xED>
+I0000 00:00:1786682284.366020 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEE>
+I0000 00:00:1786682284.366021 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEF>
+I0000 00:00:1786682284.366028 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF0>
+I0000 00:00:1786682284.366030 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF1>
+I0000 00:00:1786682284.366032 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF2>
+I0000 00:00:1786682284.366033 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF3>
+I0000 00:00:1786682284.366035 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF4>
+I0000 00:00:1786682284.366037 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF5>
+I0000 00:00:1786682284.366041 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF6>
+I0000 00:00:1786682284.366043 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF7>
+I0000 00:00:1786682284.366045 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF8>
+I0000 00:00:1786682284.366047 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF9>
+I0000 00:00:1786682284.366048 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFA>
+I0000 00:00:1786682284.366050 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFB>
+I0000 00:00:1786682284.366052 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFC>
+I0000 00:00:1786682284.366056 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFD>
+I0000 00:00:1786682284.366057 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFE>
+I0000 00:00:1786682284.366059 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFF>
+I0000 00:00:1786682284.366091 13231022 trainer_interface.cc:445] Normalizing sentences...
+I0000 00:00:1786682284.885033 13231022 trainer_interface.cc:555] all chars count=43661207
+I0000 00:00:1786682284.885968 13231022 trainer_interface.cc:566] Done: 99.951% characters are covered.
+I0000 00:00:1786682284.885980 13231022 trainer_interface.cc:578] Alphabet size=170
+I0000 00:00:1786682284.885984 13231022 trainer_interface.cc:579] Final character coverage=0.99951
+I0000 00:00:1786682285.526379 13231022 trainer_interface.cc:609] Done! preprocessed 78883 sentences.
+I0000 00:00:1786682287.373800 13231022 unigram_model_trainer.cc:297] Making suffix array...
+I0000 00:00:1786682292.991118 13231022 unigram_model_trainer.cc:301] Extracting frequent sub strings... node_num=21969563
+I0000 00:00:1786682317.507586 13231022 unigram_model_trainer.cc:354] Initialized 959654 seed sentencepieces
+I0000 00:00:1786682318.456240 13231022 trainer_interface.cc:615] Tokenizing input sentences with whitespace: 78883
+I0000 00:00:1786682318.998875 13231022 trainer_interface.cc:626] Done! 429062
+I0000 00:00:1786682319.019351 13231022 unigram_model_trainer.cc:628] Using 429062 sentences for EM training
+I0000 00:00:1786682319.990180 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=245770 obj=13.0058 num_tokens=8072387 num_tokens/piece=32.8453
+I0000 00:00:1786682320.671238 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=221197 obj=10.3421 num_tokens=8071440 num_tokens/piece=36.4898
+I0000 00:00:1786682322.598479 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=165852 obj=10.3594 num_tokens=8145395 num_tokens/piece=49.1124
+I0000 00:00:1786682323.156406 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=165620 obj=10.3424 num_tokens=8146402 num_tokens/piece=49.1873
+I0000 00:00:1786682324.789905 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=124213 obj=10.4204 num_tokens=8249381 num_tokens/piece=66.4132
+I0000 00:00:1786682325.288672 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=124184 obj=10.3995 num_tokens=8250626 num_tokens/piece=66.4387
+I0000 00:00:1786682326.634642 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=93137 obj=10.4962 num_tokens=8366736 num_tokens/piece=89.8326
+I0000 00:00:1786682327.084214 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=93136 obj=10.4727 num_tokens=8367812 num_tokens/piece=89.8451
+I0000 00:00:1786682328.204112 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=69852 obj=10.5834 num_tokens=8500815 num_tokens/piece=121.698
+I0000 00:00:1786682328.647132 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=69852 obj=10.5599 num_tokens=8502224 num_tokens/piece=121.718
+I0000 00:00:1786682329.655142 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=52389 obj=10.691 num_tokens=8654263 num_tokens/piece=165.192
+I0000 00:00:1786682330.080700 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=52389 obj=10.6651 num_tokens=8655151 num_tokens/piece=165.209
+I0000 00:00:1786682330.965340 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=39291 obj=10.8161 num_tokens=8837821 num_tokens/piece=224.932
+I0000 00:00:1786682331.374880 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=39291 obj=10.7857 num_tokens=8838036 num_tokens/piece=224.938
+I0000 00:00:1786682332.200157 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=29468 obj=10.9604 num_tokens=9049577 num_tokens/piece=307.098
+I0000 00:00:1786682332.596419 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=29468 obj=10.9246 num_tokens=9049904 num_tokens/piece=307.11
+I0000 00:00:1786682333.394789 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=22101 obj=11.1297 num_tokens=9300652 num_tokens/piece=420.825
+I0000 00:00:1786682333.775356 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=22101 obj=11.0871 num_tokens=9301029 num_tokens/piece=420.842
+I0000 00:00:1786682334.513548 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=17600 obj=11.2703 num_tokens=9533432 num_tokens/piece=541.672
+I0000 00:00:1786682334.914876 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=17600 obj=11.2322 num_tokens=9534158 num_tokens/piece=541.714
+I0000 00:00:1786682334.921969 13231022 trainer_interface.cc:702] Saving model: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/_staging/nep_unigram_sweep_16000.model
+I0000 00:00:1786682334.928752 13231022 trainer_interface.cc:714] Saving vocabs: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/_staging/nep_unigram_sweep_16000.vocab
+
+--- vocab_size=24,000  (embedding 9.22M params, 37% of the 25.00M budget) ---
+I0000 00:00:1786682335.109910 13231022 sentencepiece_trainer.cc:105] Starts training with : 
+trainer_spec {
+  input: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/spm_input.txt
+  input_format: 
+  model_prefix: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/_staging/nep_unigram_sweep_24000
+  model_type: UNIGRAM
+  vocab_size: 24000
+  self_test_sample_size: 0
+  character_coverage: 0.9995
+  input_sentence_size: 400000
+  shuffle_input_sentence: 1
+  seed_sentencepiece_size: 1000000
+  shrinking_factor: 0.75
+  max_sentence_length: 4192
+  num_threads: 8
+  num_sub_iterations: 2
+  max_sentencepiece_length: 16
+  split_by_unicode_script: 1
+  split_by_number: 1
+  split_by_whitespace: 1
+  split_digits: 1
+  pretokenization_delimiter: 
+  treat_whitespace_as_suffix: 0
+  allow_whitespace_only_pieces: 1
+  required_chars: ऀँंःऄअआइईउऊऋऌऍऎएऐऑऒओऔकखगघङचछजझञटठडढणतथदधनऩपफबभमयरऱलळऴवशषसहऺऻ़ऽािीुूृॄॅॆेैॉॊोौ्ॎॏॐ॒॑॓॔ॕॖॗक़ख़ग़ज़ड़ढ़फ़य़ॠॡॢॣ।॥०१२३४५६७८९॰ॱॲॳॴॵॶॷॸॹॺॻॼॽॾॿ
+  byte_fallback: 1
+  vocabulary_output_piece_score: 1
+  train_extremely_large_corpus: 1
+  seed_sentencepieces_file: 
+  hard_vocab_limit: 1
+  use_all_vocab: 0
+  unk_id: 1
+  bos_id: 2
+  eos_id: 3
+  pad_id: 0
+  unk_piece: <unk>
+  bos_piece: <s>
+  eos_piece: </s>
+  pad_piece: <pad>
+  unk_surface:  ⁇ 
+  enable_differential_privacy: 0
+  differential_privacy_noise_level: 0
+  differential_privacy_clipping_threshold: 0
+}
+normalizer_spec {
+  name: identity
+  add_dummy_prefix: 1
+  remove_extra_whitespaces: 0
+  escape_whitespaces: 1
+  normalization_rule_tsv: 
+}
+denormalizer_spec {}
+I0000 00:00:1786682335.109928 13231022 trainer_interface.cc:364] SentenceIterator is not specified. Using MultiFileSentenceIterator.
+I0000 00:00:1786682335.110443 13231022 trainer_interface.cc:193] Loading corpus: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/spm_input.txt
+W0000 00:00:1786682335.110460 13231022 trainer_interface.cc:393] Found too long line (4617 > 4192).
+W0000 00:00:1786682335.110465 13231022 trainer_interface.cc:395] Too long lines are skipped in the training.
+W0000 00:00:1786682335.110469 13231022 trainer_interface.cc:396] The maximum length can be changed with --max_sentence_length=<size> flag.
+I0000 00:00:1786682335.295854 13231022 trainer_interface.cc:422] Loaded all 78883 sentences
+I0000 00:00:1786682335.295881 13231022 trainer_interface.cc:429] Skipped 18394 too long sentences.
+I0000 00:00:1786682335.295886 13231022 trainer_interface.cc:440] Adding meta_piece: <pad>
+I0000 00:00:1786682335.295890 13231022 trainer_interface.cc:440] Adding meta_piece: <unk>
+I0000 00:00:1786682335.295894 13231022 trainer_interface.cc:440] Adding meta_piece: <s>
+I0000 00:00:1786682335.295897 13231022 trainer_interface.cc:440] Adding meta_piece: </s>
+I0000 00:00:1786682335.295900 13231022 trainer_interface.cc:440] Adding meta_piece: <0x00>
+I0000 00:00:1786682335.295903 13231022 trainer_interface.cc:440] Adding meta_piece: <0x01>
+I0000 00:00:1786682335.295906 13231022 trainer_interface.cc:440] Adding meta_piece: <0x02>
+I0000 00:00:1786682335.295909 13231022 trainer_interface.cc:440] Adding meta_piece: <0x03>
+I0000 00:00:1786682335.295912 13231022 trainer_interface.cc:440] Adding meta_piece: <0x04>
+I0000 00:00:1786682335.295914 13231022 trainer_interface.cc:440] Adding meta_piece: <0x05>
+I0000 00:00:1786682335.295917 13231022 trainer_interface.cc:440] Adding meta_piece: <0x06>
+I0000 00:00:1786682335.295920 13231022 trainer_interface.cc:440] Adding meta_piece: <0x07>
+I0000 00:00:1786682335.295923 13231022 trainer_interface.cc:440] Adding meta_piece: <0x08>
+I0000 00:00:1786682335.295926 13231022 trainer_interface.cc:440] Adding meta_piece: <0x09>
+I0000 00:00:1786682335.295928 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0A>
+I0000 00:00:1786682335.295931 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0B>
+I0000 00:00:1786682335.295934 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0C>
+I0000 00:00:1786682335.295937 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0D>
+I0000 00:00:1786682335.295939 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0E>
+I0000 00:00:1786682335.295942 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0F>
+I0000 00:00:1786682335.295945 13231022 trainer_interface.cc:440] Adding meta_piece: <0x10>
+I0000 00:00:1786682335.295947 13231022 trainer_interface.cc:440] Adding meta_piece: <0x11>
+I0000 00:00:1786682335.295950 13231022 trainer_interface.cc:440] Adding meta_piece: <0x12>
+I0000 00:00:1786682335.295957 13231022 trainer_interface.cc:440] Adding meta_piece: <0x13>
+I0000 00:00:1786682335.295960 13231022 trainer_interface.cc:440] Adding meta_piece: <0x14>
+I0000 00:00:1786682335.295963 13231022 trainer_interface.cc:440] Adding meta_piece: <0x15>
+I0000 00:00:1786682335.295968 13231022 trainer_interface.cc:440] Adding meta_piece: <0x16>
+I0000 00:00:1786682335.295976 13231022 trainer_interface.cc:440] Adding meta_piece: <0x17>
+I0000 00:00:1786682335.295979 13231022 trainer_interface.cc:440] Adding meta_piece: <0x18>
+I0000 00:00:1786682335.295983 13231022 trainer_interface.cc:440] Adding meta_piece: <0x19>
+I0000 00:00:1786682335.295986 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1A>
+I0000 00:00:1786682335.295988 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1B>
+I0000 00:00:1786682335.295991 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1C>
+I0000 00:00:1786682335.295994 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1D>
+I0000 00:00:1786682335.295997 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1E>
+I0000 00:00:1786682335.296000 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1F>
+I0000 00:00:1786682335.296002 13231022 trainer_interface.cc:440] Adding meta_piece: <0x20>
+I0000 00:00:1786682335.296005 13231022 trainer_interface.cc:440] Adding meta_piece: <0x21>
+I0000 00:00:1786682335.296008 13231022 trainer_interface.cc:440] Adding meta_piece: <0x22>
+I0000 00:00:1786682335.296010 13231022 trainer_interface.cc:440] Adding meta_piece: <0x23>
+I0000 00:00:1786682335.296013 13231022 trainer_interface.cc:440] Adding meta_piece: <0x24>
+I0000 00:00:1786682335.296016 13231022 trainer_interface.cc:440] Adding meta_piece: <0x25>
+I0000 00:00:1786682335.296019 13231022 trainer_interface.cc:440] Adding meta_piece: <0x26>
+I0000 00:00:1786682335.296021 13231022 trainer_interface.cc:440] Adding meta_piece: <0x27>
+I0000 00:00:1786682335.296024 13231022 trainer_interface.cc:440] Adding meta_piece: <0x28>
+I0000 00:00:1786682335.296027 13231022 trainer_interface.cc:440] Adding meta_piece: <0x29>
+I0000 00:00:1786682335.296030 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2A>
+I0000 00:00:1786682335.296032 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2B>
+I0000 00:00:1786682335.296035 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2C>
+I0000 00:00:1786682335.296038 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2D>
+I0000 00:00:1786682335.296040 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2E>
+I0000 00:00:1786682335.296043 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2F>
+I0000 00:00:1786682335.296046 13231022 trainer_interface.cc:440] Adding meta_piece: <0x30>
+I0000 00:00:1786682335.296048 13231022 trainer_interface.cc:440] Adding meta_piece: <0x31>
+I0000 00:00:1786682335.296051 13231022 trainer_interface.cc:440] Adding meta_piece: <0x32>
+I0000 00:00:1786682335.296054 13231022 trainer_interface.cc:440] Adding meta_piece: <0x33>
+I0000 00:00:1786682335.296056 13231022 trainer_interface.cc:440] Adding meta_piece: <0x34>
+I0000 00:00:1786682335.296061 13231022 trainer_interface.cc:440] Adding meta_piece: <0x35>
+I0000 00:00:1786682335.296064 13231022 trainer_interface.cc:440] Adding meta_piece: <0x36>
+I0000 00:00:1786682335.296067 13231022 trainer_interface.cc:440] Adding meta_piece: <0x37>
+I0000 00:00:1786682335.296069 13231022 trainer_interface.cc:440] Adding meta_piece: <0x38>
+I0000 00:00:1786682335.296072 13231022 trainer_interface.cc:440] Adding meta_piece: <0x39>
+I0000 00:00:1786682335.296075 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3A>
+I0000 00:00:1786682335.296078 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3B>
+I0000 00:00:1786682335.296080 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3C>
+I0000 00:00:1786682335.296083 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3D>
+I0000 00:00:1786682335.296086 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3E>
+I0000 00:00:1786682335.296088 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3F>
+I0000 00:00:1786682335.296091 13231022 trainer_interface.cc:440] Adding meta_piece: <0x40>
+I0000 00:00:1786682335.296095 13231022 trainer_interface.cc:440] Adding meta_piece: <0x41>
+I0000 00:00:1786682335.296097 13231022 trainer_interface.cc:440] Adding meta_piece: <0x42>
+I0000 00:00:1786682335.296100 13231022 trainer_interface.cc:440] Adding meta_piece: <0x43>
+I0000 00:00:1786682335.296103 13231022 trainer_interface.cc:440] Adding meta_piece: <0x44>
+I0000 00:00:1786682335.296105 13231022 trainer_interface.cc:440] Adding meta_piece: <0x45>
+I0000 00:00:1786682335.296108 13231022 trainer_interface.cc:440] Adding meta_piece: <0x46>
+I0000 00:00:1786682335.296111 13231022 trainer_interface.cc:440] Adding meta_piece: <0x47>
+I0000 00:00:1786682335.296113 13231022 trainer_interface.cc:440] Adding meta_piece: <0x48>
+I0000 00:00:1786682335.296116 13231022 trainer_interface.cc:440] Adding meta_piece: <0x49>
+I0000 00:00:1786682335.296119 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4A>
+I0000 00:00:1786682335.296121 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4B>
+I0000 00:00:1786682335.296124 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4C>
+I0000 00:00:1786682335.296127 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4D>
+I0000 00:00:1786682335.296130 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4E>
+I0000 00:00:1786682335.296132 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4F>
+I0000 00:00:1786682335.296135 13231022 trainer_interface.cc:440] Adding meta_piece: <0x50>
+I0000 00:00:1786682335.296138 13231022 trainer_interface.cc:440] Adding meta_piece: <0x51>
+I0000 00:00:1786682335.296140 13231022 trainer_interface.cc:440] Adding meta_piece: <0x52>
+I0000 00:00:1786682335.296143 13231022 trainer_interface.cc:440] Adding meta_piece: <0x53>
+I0000 00:00:1786682335.296146 13231022 trainer_interface.cc:440] Adding meta_piece: <0x54>
+I0000 00:00:1786682335.296148 13231022 trainer_interface.cc:440] Adding meta_piece: <0x55>
+I0000 00:00:1786682335.296151 13231022 trainer_interface.cc:440] Adding meta_piece: <0x56>
+I0000 00:00:1786682335.296154 13231022 trainer_interface.cc:440] Adding meta_piece: <0x57>
+I0000 00:00:1786682335.296157 13231022 trainer_interface.cc:440] Adding meta_piece: <0x58>
+I0000 00:00:1786682335.296159 13231022 trainer_interface.cc:440] Adding meta_piece: <0x59>
+I0000 00:00:1786682335.296162 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5A>
+I0000 00:00:1786682335.296165 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5B>
+I0000 00:00:1786682335.296167 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5C>
+I0000 00:00:1786682335.296170 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5D>
+I0000 00:00:1786682335.296173 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5E>
+I0000 00:00:1786682335.296175 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5F>
+I0000 00:00:1786682335.296178 13231022 trainer_interface.cc:440] Adding meta_piece: <0x60>
+I0000 00:00:1786682335.296181 13231022 trainer_interface.cc:440] Adding meta_piece: <0x61>
+I0000 00:00:1786682335.296184 13231022 trainer_interface.cc:440] Adding meta_piece: <0x62>
+I0000 00:00:1786682335.296186 13231022 trainer_interface.cc:440] Adding meta_piece: <0x63>
+I0000 00:00:1786682335.296189 13231022 trainer_interface.cc:440] Adding meta_piece: <0x64>
+I0000 00:00:1786682335.296192 13231022 trainer_interface.cc:440] Adding meta_piece: <0x65>
+I0000 00:00:1786682335.296194 13231022 trainer_interface.cc:440] Adding meta_piece: <0x66>
+I0000 00:00:1786682335.296197 13231022 trainer_interface.cc:440] Adding meta_piece: <0x67>
+I0000 00:00:1786682335.296200 13231022 trainer_interface.cc:440] Adding meta_piece: <0x68>
+I0000 00:00:1786682335.296203 13231022 trainer_interface.cc:440] Adding meta_piece: <0x69>
+I0000 00:00:1786682335.296205 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6A>
+I0000 00:00:1786682335.296208 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6B>
+I0000 00:00:1786682335.296211 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6C>
+I0000 00:00:1786682335.296214 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6D>
+I0000 00:00:1786682335.296216 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6E>
+I0000 00:00:1786682335.296219 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6F>
+I0000 00:00:1786682335.296222 13231022 trainer_interface.cc:440] Adding meta_piece: <0x70>
+I0000 00:00:1786682335.296224 13231022 trainer_interface.cc:440] Adding meta_piece: <0x71>
+I0000 00:00:1786682335.296227 13231022 trainer_interface.cc:440] Adding meta_piece: <0x72>
+I0000 00:00:1786682335.296230 13231022 trainer_interface.cc:440] Adding meta_piece: <0x73>
+I0000 00:00:1786682335.296233 13231022 trainer_interface.cc:440] Adding meta_piece: <0x74>
+I0000 00:00:1786682335.296235 13231022 trainer_interface.cc:440] Adding meta_piece: <0x75>
+I0000 00:00:1786682335.296238 13231022 trainer_interface.cc:440] Adding meta_piece: <0x76>
+I0000 00:00:1786682335.296241 13231022 trainer_interface.cc:440] Adding meta_piece: <0x77>
+I0000 00:00:1786682335.296244 13231022 trainer_interface.cc:440] Adding meta_piece: <0x78>
+I0000 00:00:1786682335.296246 13231022 trainer_interface.cc:440] Adding meta_piece: <0x79>
+I0000 00:00:1786682335.296249 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7A>
+I0000 00:00:1786682335.296252 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7B>
+I0000 00:00:1786682335.296255 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7C>
+I0000 00:00:1786682335.296257 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7D>
+I0000 00:00:1786682335.296260 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7E>
+I0000 00:00:1786682335.296263 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7F>
+I0000 00:00:1786682335.296265 13231022 trainer_interface.cc:440] Adding meta_piece: <0x80>
+I0000 00:00:1786682335.296268 13231022 trainer_interface.cc:440] Adding meta_piece: <0x81>
+I0000 00:00:1786682335.296271 13231022 trainer_interface.cc:440] Adding meta_piece: <0x82>
+I0000 00:00:1786682335.296274 13231022 trainer_interface.cc:440] Adding meta_piece: <0x83>
+I0000 00:00:1786682335.296276 13231022 trainer_interface.cc:440] Adding meta_piece: <0x84>
+I0000 00:00:1786682335.296279 13231022 trainer_interface.cc:440] Adding meta_piece: <0x85>
+I0000 00:00:1786682335.296282 13231022 trainer_interface.cc:440] Adding meta_piece: <0x86>
+I0000 00:00:1786682335.296285 13231022 trainer_interface.cc:440] Adding meta_piece: <0x87>
+I0000 00:00:1786682335.296288 13231022 trainer_interface.cc:440] Adding meta_piece: <0x88>
+I0000 00:00:1786682335.296291 13231022 trainer_interface.cc:440] Adding meta_piece: <0x89>
+I0000 00:00:1786682335.296293 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8A>
+I0000 00:00:1786682335.296296 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8B>
+I0000 00:00:1786682335.296299 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8C>
+I0000 00:00:1786682335.296302 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8D>
+I0000 00:00:1786682335.296305 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8E>
+I0000 00:00:1786682335.296308 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8F>
+I0000 00:00:1786682335.296311 13231022 trainer_interface.cc:440] Adding meta_piece: <0x90>
+I0000 00:00:1786682335.296314 13231022 trainer_interface.cc:440] Adding meta_piece: <0x91>
+I0000 00:00:1786682335.296316 13231022 trainer_interface.cc:440] Adding meta_piece: <0x92>
+I0000 00:00:1786682335.296319 13231022 trainer_interface.cc:440] Adding meta_piece: <0x93>
+I0000 00:00:1786682335.296322 13231022 trainer_interface.cc:440] Adding meta_piece: <0x94>
+I0000 00:00:1786682335.296325 13231022 trainer_interface.cc:440] Adding meta_piece: <0x95>
+I0000 00:00:1786682335.296327 13231022 trainer_interface.cc:440] Adding meta_piece: <0x96>
+I0000 00:00:1786682335.296330 13231022 trainer_interface.cc:440] Adding meta_piece: <0x97>
+I0000 00:00:1786682335.296333 13231022 trainer_interface.cc:440] Adding meta_piece: <0x98>
+I0000 00:00:1786682335.296335 13231022 trainer_interface.cc:440] Adding meta_piece: <0x99>
+I0000 00:00:1786682335.296338 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9A>
+I0000 00:00:1786682335.296341 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9B>
+I0000 00:00:1786682335.296344 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9C>
+I0000 00:00:1786682335.296347 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9D>
+I0000 00:00:1786682335.296350 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9E>
+I0000 00:00:1786682335.296353 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9F>
+I0000 00:00:1786682335.296355 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA0>
+I0000 00:00:1786682335.296358 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA1>
+I0000 00:00:1786682335.296361 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA2>
+I0000 00:00:1786682335.296363 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA3>
+I0000 00:00:1786682335.296366 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA4>
+I0000 00:00:1786682335.296369 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA5>
+I0000 00:00:1786682335.296371 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA6>
+I0000 00:00:1786682335.296374 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA7>
+I0000 00:00:1786682335.296377 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA8>
+I0000 00:00:1786682335.296380 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA9>
+I0000 00:00:1786682335.296382 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAA>
+I0000 00:00:1786682335.296385 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAB>
+I0000 00:00:1786682335.296388 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAC>
+I0000 00:00:1786682335.296390 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAD>
+I0000 00:00:1786682335.296393 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAE>
+I0000 00:00:1786682335.296397 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAF>
+I0000 00:00:1786682335.296400 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB0>
+I0000 00:00:1786682335.296402 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB1>
+I0000 00:00:1786682335.296405 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB2>
+I0000 00:00:1786682335.296408 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB3>
+I0000 00:00:1786682335.296411 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB4>
+I0000 00:00:1786682335.296413 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB5>
+I0000 00:00:1786682335.296416 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB6>
+I0000 00:00:1786682335.296418 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB7>
+I0000 00:00:1786682335.296421 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB8>
+I0000 00:00:1786682335.296424 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB9>
+I0000 00:00:1786682335.296426 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBA>
+I0000 00:00:1786682335.296429 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBB>
+I0000 00:00:1786682335.296432 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBC>
+I0000 00:00:1786682335.296434 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBD>
+I0000 00:00:1786682335.296437 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBE>
+I0000 00:00:1786682335.296440 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBF>
+I0000 00:00:1786682335.296443 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC0>
+I0000 00:00:1786682335.296446 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC1>
+I0000 00:00:1786682335.296449 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC2>
+I0000 00:00:1786682335.296452 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC3>
+I0000 00:00:1786682335.296454 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC4>
+I0000 00:00:1786682335.296457 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC5>
+I0000 00:00:1786682335.296460 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC6>
+I0000 00:00:1786682335.296463 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC7>
+I0000 00:00:1786682335.296465 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC8>
+I0000 00:00:1786682335.296469 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC9>
+I0000 00:00:1786682335.296472 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCA>
+I0000 00:00:1786682335.296476 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCB>
+I0000 00:00:1786682335.296478 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCC>
+I0000 00:00:1786682335.296481 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCD>
+I0000 00:00:1786682335.296484 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCE>
+I0000 00:00:1786682335.296487 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCF>
+I0000 00:00:1786682335.296489 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD0>
+I0000 00:00:1786682335.296492 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD1>
+I0000 00:00:1786682335.296496 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD2>
+I0000 00:00:1786682335.296498 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD3>
+I0000 00:00:1786682335.296501 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD4>
+I0000 00:00:1786682335.296504 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD5>
+I0000 00:00:1786682335.296507 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD6>
+I0000 00:00:1786682335.296510 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD7>
+I0000 00:00:1786682335.296514 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD8>
+I0000 00:00:1786682335.296517 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD9>
+I0000 00:00:1786682335.296520 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDA>
+I0000 00:00:1786682335.296523 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDB>
+I0000 00:00:1786682335.296526 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDC>
+I0000 00:00:1786682335.296529 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDD>
+I0000 00:00:1786682335.296532 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDE>
+I0000 00:00:1786682335.296535 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDF>
+I0000 00:00:1786682335.296539 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE0>
+I0000 00:00:1786682335.296542 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE1>
+I0000 00:00:1786682335.296545 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE2>
+I0000 00:00:1786682335.296548 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE3>
+I0000 00:00:1786682335.296550 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE4>
+I0000 00:00:1786682335.296554 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE5>
+I0000 00:00:1786682335.296557 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE6>
+I0000 00:00:1786682335.296560 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE7>
+I0000 00:00:1786682335.296563 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE8>
+I0000 00:00:1786682335.296566 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE9>
+I0000 00:00:1786682335.296568 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEA>
+I0000 00:00:1786682335.296572 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEB>
+I0000 00:00:1786682335.296574 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEC>
+I0000 00:00:1786682335.296578 13231022 trainer_interface.cc:440] Adding meta_piece: <0xED>
+I0000 00:00:1786682335.296581 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEE>
+I0000 00:00:1786682335.296584 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEF>
+I0000 00:00:1786682335.296587 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF0>
+I0000 00:00:1786682335.296590 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF1>
+I0000 00:00:1786682335.296592 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF2>
+I0000 00:00:1786682335.296595 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF3>
+I0000 00:00:1786682335.296598 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF4>
+I0000 00:00:1786682335.296602 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF5>
+I0000 00:00:1786682335.296605 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF6>
+I0000 00:00:1786682335.296608 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF7>
+I0000 00:00:1786682335.296610 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF8>
+I0000 00:00:1786682335.296613 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF9>
+I0000 00:00:1786682335.296616 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFA>
+I0000 00:00:1786682335.296619 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFB>
+I0000 00:00:1786682335.296621 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFC>
+I0000 00:00:1786682335.296624 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFD>
+I0000 00:00:1786682335.296627 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFE>
+I0000 00:00:1786682335.296629 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFF>
+I0000 00:00:1786682335.296662 13231022 trainer_interface.cc:445] Normalizing sentences...
+I0000 00:00:1786682335.866860 13231022 trainer_interface.cc:555] all chars count=43661207
+I0000 00:00:1786682335.866926 13231022 trainer_interface.cc:566] Done: 99.951% characters are covered.
+I0000 00:00:1786682335.866937 13231022 trainer_interface.cc:578] Alphabet size=170
+I0000 00:00:1786682335.866941 13231022 trainer_interface.cc:579] Final character coverage=0.99951
+I0000 00:00:1786682336.530534 13231022 trainer_interface.cc:609] Done! preprocessed 78883 sentences.
+I0000 00:00:1786682338.364189 13231022 unigram_model_trainer.cc:297] Making suffix array...
+I0000 00:00:1786682344.265460 13231022 unigram_model_trainer.cc:301] Extracting frequent sub strings... node_num=21969563
+I0000 00:00:1786682371.413189 13231022 unigram_model_trainer.cc:354] Initialized 959654 seed sentencepieces
+I0000 00:00:1786682372.496222 13231022 trainer_interface.cc:615] Tokenizing input sentences with whitespace: 78883
+I0000 00:00:1786682373.099590 13231022 trainer_interface.cc:626] Done! 429062
+I0000 00:00:1786682373.119844 13231022 unigram_model_trainer.cc:628] Using 429062 sentences for EM training
+I0000 00:00:1786682374.590038 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=245770 obj=13.0058 num_tokens=8072387 num_tokens/piece=32.8453
+I0000 00:00:1786682375.715614 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=221197 obj=10.3421 num_tokens=8071440 num_tokens/piece=36.4898
+I0000 00:00:1786682378.677399 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=165852 obj=10.3594 num_tokens=8145395 num_tokens/piece=49.1124
+I0000 00:00:1786682379.598906 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=165620 obj=10.3424 num_tokens=8146402 num_tokens/piece=49.1873
+I0000 00:00:1786682381.934043 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=124213 obj=10.4204 num_tokens=8249381 num_tokens/piece=66.4132
+I0000 00:00:1786682382.786561 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=124184 obj=10.3995 num_tokens=8250626 num_tokens/piece=66.4387
+I0000 00:00:1786682384.742048 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=93137 obj=10.4962 num_tokens=8366736 num_tokens/piece=89.8326
+I0000 00:00:1786682385.477307 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=93136 obj=10.4727 num_tokens=8367812 num_tokens/piece=89.8451
+I0000 00:00:1786682387.260667 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=69852 obj=10.5834 num_tokens=8500815 num_tokens/piece=121.698
+I0000 00:00:1786682387.923501 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=69852 obj=10.5599 num_tokens=8502224 num_tokens/piece=121.718
+I0000 00:00:1786682389.465829 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=52389 obj=10.691 num_tokens=8654263 num_tokens/piece=165.192
+I0000 00:00:1786682390.124917 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=52389 obj=10.6651 num_tokens=8655151 num_tokens/piece=165.209
+I0000 00:00:1786682391.435112 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=39291 obj=10.8161 num_tokens=8837821 num_tokens/piece=224.932
+I0000 00:00:1786682392.083071 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=39291 obj=10.7857 num_tokens=8838036 num_tokens/piece=224.938
+I0000 00:00:1786682393.296854 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=29468 obj=10.9604 num_tokens=9049577 num_tokens/piece=307.098
+I0000 00:00:1786682393.933915 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=29468 obj=10.9246 num_tokens=9049904 num_tokens/piece=307.11
+I0000 00:00:1786682395.100469 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=26400 obj=10.9958 num_tokens=9142321 num_tokens/piece=346.3
+I0000 00:00:1786682395.692969 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=26400 obj=10.9813 num_tokens=9142509 num_tokens/piece=346.307
+I0000 00:00:1786682395.711798 13231022 trainer_interface.cc:702] Saving model: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/_staging/nep_unigram_sweep_24000.model
+I0000 00:00:1786682395.732260 13231022 trainer_interface.cc:714] Saving vocabs: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/_staging/nep_unigram_sweep_24000.vocab
+
+--- vocab_size=32,000  (embedding 12.29M params, 49% of the 25.00M budget) ---
+I0000 00:00:1786682396.061941 13231022 sentencepiece_trainer.cc:105] Starts training with : 
+trainer_spec {
+  input: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/spm_input.txt
+  input_format: 
+  model_prefix: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/_staging/nep_unigram_sweep_32000
+  model_type: UNIGRAM
+  vocab_size: 32000
+  self_test_sample_size: 0
+  character_coverage: 0.9995
+  input_sentence_size: 400000
+  shuffle_input_sentence: 1
+  seed_sentencepiece_size: 1000000
+  shrinking_factor: 0.75
+  max_sentence_length: 4192
+  num_threads: 8
+  num_sub_iterations: 2
+  max_sentencepiece_length: 16
+  split_by_unicode_script: 1
+  split_by_number: 1
+  split_by_whitespace: 1
+  split_digits: 1
+  pretokenization_delimiter: 
+  treat_whitespace_as_suffix: 0
+  allow_whitespace_only_pieces: 1
+  required_chars: ऀँंःऄअआइईउऊऋऌऍऎएऐऑऒओऔकखगघङचछजझञटठडढणतथदधनऩपफबभमयरऱलळऴवशषसहऺऻ़ऽािीुूृॄॅॆेैॉॊोौ्ॎॏॐ॒॑॓॔ॕॖॗक़ख़ग़ज़ड़ढ़फ़य़ॠॡॢॣ।॥०१२३४५६७८९॰ॱॲॳॴॵॶॷॸॹॺॻॼॽॾॿ
+  byte_fallback: 1
+  vocabulary_output_piece_score: 1
+  train_extremely_large_corpus: 1
+  seed_sentencepieces_file: 
+  hard_vocab_limit: 1
+  use_all_vocab: 0
+  unk_id: 1
+  bos_id: 2
+  eos_id: 3
+  pad_id: 0
+  unk_piece: <unk>
+  bos_piece: <s>
+  eos_piece: </s>
+  pad_piece: <pad>
+  unk_surface:  ⁇ 
+  enable_differential_privacy: 0
+  differential_privacy_noise_level: 0
+  differential_privacy_clipping_threshold: 0
+}
+normalizer_spec {
+  name: identity
+  add_dummy_prefix: 1
+  remove_extra_whitespaces: 0
+  escape_whitespaces: 1
+  normalization_rule_tsv: 
+}
+denormalizer_spec {}
+I0000 00:00:1786682396.061966 13231022 trainer_interface.cc:364] SentenceIterator is not specified. Using MultiFileSentenceIterator.
+I0000 00:00:1786682396.062338 13231022 trainer_interface.cc:193] Loading corpus: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/spm_input.txt
+W0000 00:00:1786682396.062374 13231022 trainer_interface.cc:393] Found too long line (4617 > 4192).
+W0000 00:00:1786682396.062387 13231022 trainer_interface.cc:395] Too long lines are skipped in the training.
+W0000 00:00:1786682396.062393 13231022 trainer_interface.cc:396] The maximum length can be changed with --max_sentence_length=<size> flag.
+I0000 00:00:1786682396.373745 13231022 trainer_interface.cc:422] Loaded all 78883 sentences
+I0000 00:00:1786682396.373778 13231022 trainer_interface.cc:429] Skipped 18394 too long sentences.
+I0000 00:00:1786682396.373787 13231022 trainer_interface.cc:440] Adding meta_piece: <pad>
+I0000 00:00:1786682396.373794 13231022 trainer_interface.cc:440] Adding meta_piece: <unk>
+I0000 00:00:1786682396.373800 13231022 trainer_interface.cc:440] Adding meta_piece: <s>
+I0000 00:00:1786682396.373805 13231022 trainer_interface.cc:440] Adding meta_piece: </s>
+I0000 00:00:1786682396.373809 13231022 trainer_interface.cc:440] Adding meta_piece: <0x00>
+I0000 00:00:1786682396.373814 13231022 trainer_interface.cc:440] Adding meta_piece: <0x01>
+I0000 00:00:1786682396.373819 13231022 trainer_interface.cc:440] Adding meta_piece: <0x02>
+I0000 00:00:1786682396.373823 13231022 trainer_interface.cc:440] Adding meta_piece: <0x03>
+I0000 00:00:1786682396.373828 13231022 trainer_interface.cc:440] Adding meta_piece: <0x04>
+I0000 00:00:1786682396.373832 13231022 trainer_interface.cc:440] Adding meta_piece: <0x05>
+I0000 00:00:1786682396.373836 13231022 trainer_interface.cc:440] Adding meta_piece: <0x06>
+I0000 00:00:1786682396.373841 13231022 trainer_interface.cc:440] Adding meta_piece: <0x07>
+I0000 00:00:1786682396.373845 13231022 trainer_interface.cc:440] Adding meta_piece: <0x08>
+I0000 00:00:1786682396.373850 13231022 trainer_interface.cc:440] Adding meta_piece: <0x09>
+I0000 00:00:1786682396.373854 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0A>
+I0000 00:00:1786682396.373859 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0B>
+I0000 00:00:1786682396.373863 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0C>
+I0000 00:00:1786682396.373867 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0D>
+I0000 00:00:1786682396.373872 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0E>
+I0000 00:00:1786682396.373876 13231022 trainer_interface.cc:440] Adding meta_piece: <0x0F>
+I0000 00:00:1786682396.373884 13231022 trainer_interface.cc:440] Adding meta_piece: <0x10>
+I0000 00:00:1786682396.373888 13231022 trainer_interface.cc:440] Adding meta_piece: <0x11>
+I0000 00:00:1786682396.373892 13231022 trainer_interface.cc:440] Adding meta_piece: <0x12>
+I0000 00:00:1786682396.373897 13231022 trainer_interface.cc:440] Adding meta_piece: <0x13>
+I0000 00:00:1786682396.373902 13231022 trainer_interface.cc:440] Adding meta_piece: <0x14>
+I0000 00:00:1786682396.373906 13231022 trainer_interface.cc:440] Adding meta_piece: <0x15>
+I0000 00:00:1786682396.373911 13231022 trainer_interface.cc:440] Adding meta_piece: <0x16>
+I0000 00:00:1786682396.373915 13231022 trainer_interface.cc:440] Adding meta_piece: <0x17>
+I0000 00:00:1786682396.373919 13231022 trainer_interface.cc:440] Adding meta_piece: <0x18>
+I0000 00:00:1786682396.373924 13231022 trainer_interface.cc:440] Adding meta_piece: <0x19>
+I0000 00:00:1786682396.373928 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1A>
+I0000 00:00:1786682396.373932 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1B>
+I0000 00:00:1786682396.373937 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1C>
+I0000 00:00:1786682396.373941 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1D>
+I0000 00:00:1786682396.373946 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1E>
+I0000 00:00:1786682396.373950 13231022 trainer_interface.cc:440] Adding meta_piece: <0x1F>
+I0000 00:00:1786682396.373954 13231022 trainer_interface.cc:440] Adding meta_piece: <0x20>
+I0000 00:00:1786682396.373958 13231022 trainer_interface.cc:440] Adding meta_piece: <0x21>
+I0000 00:00:1786682396.373963 13231022 trainer_interface.cc:440] Adding meta_piece: <0x22>
+I0000 00:00:1786682396.373967 13231022 trainer_interface.cc:440] Adding meta_piece: <0x23>
+I0000 00:00:1786682396.373971 13231022 trainer_interface.cc:440] Adding meta_piece: <0x24>
+I0000 00:00:1786682396.373975 13231022 trainer_interface.cc:440] Adding meta_piece: <0x25>
+I0000 00:00:1786682396.373980 13231022 trainer_interface.cc:440] Adding meta_piece: <0x26>
+I0000 00:00:1786682396.373984 13231022 trainer_interface.cc:440] Adding meta_piece: <0x27>
+I0000 00:00:1786682396.373988 13231022 trainer_interface.cc:440] Adding meta_piece: <0x28>
+I0000 00:00:1786682396.373992 13231022 trainer_interface.cc:440] Adding meta_piece: <0x29>
+I0000 00:00:1786682396.373997 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2A>
+I0000 00:00:1786682396.374001 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2B>
+I0000 00:00:1786682396.374005 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2C>
+I0000 00:00:1786682396.374009 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2D>
+I0000 00:00:1786682396.374014 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2E>
+I0000 00:00:1786682396.374019 13231022 trainer_interface.cc:440] Adding meta_piece: <0x2F>
+I0000 00:00:1786682396.374023 13231022 trainer_interface.cc:440] Adding meta_piece: <0x30>
+I0000 00:00:1786682396.374028 13231022 trainer_interface.cc:440] Adding meta_piece: <0x31>
+I0000 00:00:1786682396.374033 13231022 trainer_interface.cc:440] Adding meta_piece: <0x32>
+I0000 00:00:1786682396.374038 13231022 trainer_interface.cc:440] Adding meta_piece: <0x33>
+I0000 00:00:1786682396.374043 13231022 trainer_interface.cc:440] Adding meta_piece: <0x34>
+I0000 00:00:1786682396.374047 13231022 trainer_interface.cc:440] Adding meta_piece: <0x35>
+I0000 00:00:1786682396.374051 13231022 trainer_interface.cc:440] Adding meta_piece: <0x36>
+I0000 00:00:1786682396.374055 13231022 trainer_interface.cc:440] Adding meta_piece: <0x37>
+I0000 00:00:1786682396.374060 13231022 trainer_interface.cc:440] Adding meta_piece: <0x38>
+I0000 00:00:1786682396.374064 13231022 trainer_interface.cc:440] Adding meta_piece: <0x39>
+I0000 00:00:1786682396.374068 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3A>
+I0000 00:00:1786682396.374072 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3B>
+I0000 00:00:1786682396.374077 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3C>
+I0000 00:00:1786682396.374093 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3D>
+I0000 00:00:1786682396.374096 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3E>
+I0000 00:00:1786682396.374099 13231022 trainer_interface.cc:440] Adding meta_piece: <0x3F>
+I0000 00:00:1786682396.374103 13231022 trainer_interface.cc:440] Adding meta_piece: <0x40>
+I0000 00:00:1786682396.374107 13231022 trainer_interface.cc:440] Adding meta_piece: <0x41>
+I0000 00:00:1786682396.374110 13231022 trainer_interface.cc:440] Adding meta_piece: <0x42>
+I0000 00:00:1786682396.374113 13231022 trainer_interface.cc:440] Adding meta_piece: <0x43>
+I0000 00:00:1786682396.374117 13231022 trainer_interface.cc:440] Adding meta_piece: <0x44>
+I0000 00:00:1786682396.374120 13231022 trainer_interface.cc:440] Adding meta_piece: <0x45>
+I0000 00:00:1786682396.374123 13231022 trainer_interface.cc:440] Adding meta_piece: <0x46>
+I0000 00:00:1786682396.374127 13231022 trainer_interface.cc:440] Adding meta_piece: <0x47>
+I0000 00:00:1786682396.374130 13231022 trainer_interface.cc:440] Adding meta_piece: <0x48>
+I0000 00:00:1786682396.374133 13231022 trainer_interface.cc:440] Adding meta_piece: <0x49>
+I0000 00:00:1786682396.374137 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4A>
+I0000 00:00:1786682396.374140 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4B>
+I0000 00:00:1786682396.374143 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4C>
+I0000 00:00:1786682396.374146 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4D>
+I0000 00:00:1786682396.374149 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4E>
+I0000 00:00:1786682396.374153 13231022 trainer_interface.cc:440] Adding meta_piece: <0x4F>
+I0000 00:00:1786682396.374156 13231022 trainer_interface.cc:440] Adding meta_piece: <0x50>
+I0000 00:00:1786682396.374159 13231022 trainer_interface.cc:440] Adding meta_piece: <0x51>
+I0000 00:00:1786682396.374162 13231022 trainer_interface.cc:440] Adding meta_piece: <0x52>
+I0000 00:00:1786682396.374166 13231022 trainer_interface.cc:440] Adding meta_piece: <0x53>
+I0000 00:00:1786682396.374168 13231022 trainer_interface.cc:440] Adding meta_piece: <0x54>
+I0000 00:00:1786682396.374172 13231022 trainer_interface.cc:440] Adding meta_piece: <0x55>
+I0000 00:00:1786682396.374175 13231022 trainer_interface.cc:440] Adding meta_piece: <0x56>
+I0000 00:00:1786682396.374180 13231022 trainer_interface.cc:440] Adding meta_piece: <0x57>
+I0000 00:00:1786682396.374183 13231022 trainer_interface.cc:440] Adding meta_piece: <0x58>
+I0000 00:00:1786682396.374186 13231022 trainer_interface.cc:440] Adding meta_piece: <0x59>
+I0000 00:00:1786682396.374190 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5A>
+I0000 00:00:1786682396.374193 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5B>
+I0000 00:00:1786682396.374196 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5C>
+I0000 00:00:1786682396.374199 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5D>
+I0000 00:00:1786682396.374202 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5E>
+I0000 00:00:1786682396.374206 13231022 trainer_interface.cc:440] Adding meta_piece: <0x5F>
+I0000 00:00:1786682396.374209 13231022 trainer_interface.cc:440] Adding meta_piece: <0x60>
+I0000 00:00:1786682396.374212 13231022 trainer_interface.cc:440] Adding meta_piece: <0x61>
+I0000 00:00:1786682396.374215 13231022 trainer_interface.cc:440] Adding meta_piece: <0x62>
+I0000 00:00:1786682396.374218 13231022 trainer_interface.cc:440] Adding meta_piece: <0x63>
+I0000 00:00:1786682396.374221 13231022 trainer_interface.cc:440] Adding meta_piece: <0x64>
+I0000 00:00:1786682396.374225 13231022 trainer_interface.cc:440] Adding meta_piece: <0x65>
+I0000 00:00:1786682396.374228 13231022 trainer_interface.cc:440] Adding meta_piece: <0x66>
+I0000 00:00:1786682396.374232 13231022 trainer_interface.cc:440] Adding meta_piece: <0x67>
+I0000 00:00:1786682396.374236 13231022 trainer_interface.cc:440] Adding meta_piece: <0x68>
+I0000 00:00:1786682396.374239 13231022 trainer_interface.cc:440] Adding meta_piece: <0x69>
+I0000 00:00:1786682396.374242 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6A>
+I0000 00:00:1786682396.374245 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6B>
+I0000 00:00:1786682396.374249 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6C>
+I0000 00:00:1786682396.374251 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6D>
+I0000 00:00:1786682396.374255 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6E>
+I0000 00:00:1786682396.374258 13231022 trainer_interface.cc:440] Adding meta_piece: <0x6F>
+I0000 00:00:1786682396.374261 13231022 trainer_interface.cc:440] Adding meta_piece: <0x70>
+I0000 00:00:1786682396.374264 13231022 trainer_interface.cc:440] Adding meta_piece: <0x71>
+I0000 00:00:1786682396.374267 13231022 trainer_interface.cc:440] Adding meta_piece: <0x72>
+I0000 00:00:1786682396.374270 13231022 trainer_interface.cc:440] Adding meta_piece: <0x73>
+I0000 00:00:1786682396.374273 13231022 trainer_interface.cc:440] Adding meta_piece: <0x74>
+I0000 00:00:1786682396.374277 13231022 trainer_interface.cc:440] Adding meta_piece: <0x75>
+I0000 00:00:1786682396.374280 13231022 trainer_interface.cc:440] Adding meta_piece: <0x76>
+I0000 00:00:1786682396.374283 13231022 trainer_interface.cc:440] Adding meta_piece: <0x77>
+I0000 00:00:1786682396.374287 13231022 trainer_interface.cc:440] Adding meta_piece: <0x78>
+I0000 00:00:1786682396.374290 13231022 trainer_interface.cc:440] Adding meta_piece: <0x79>
+I0000 00:00:1786682396.374293 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7A>
+I0000 00:00:1786682396.374296 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7B>
+I0000 00:00:1786682396.374300 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7C>
+I0000 00:00:1786682396.374303 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7D>
+I0000 00:00:1786682396.374306 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7E>
+I0000 00:00:1786682396.374309 13231022 trainer_interface.cc:440] Adding meta_piece: <0x7F>
+I0000 00:00:1786682396.374312 13231022 trainer_interface.cc:440] Adding meta_piece: <0x80>
+I0000 00:00:1786682396.374315 13231022 trainer_interface.cc:440] Adding meta_piece: <0x81>
+I0000 00:00:1786682396.374319 13231022 trainer_interface.cc:440] Adding meta_piece: <0x82>
+I0000 00:00:1786682396.374322 13231022 trainer_interface.cc:440] Adding meta_piece: <0x83>
+I0000 00:00:1786682396.374325 13231022 trainer_interface.cc:440] Adding meta_piece: <0x84>
+I0000 00:00:1786682396.374328 13231022 trainer_interface.cc:440] Adding meta_piece: <0x85>
+I0000 00:00:1786682396.374331 13231022 trainer_interface.cc:440] Adding meta_piece: <0x86>
+I0000 00:00:1786682396.374334 13231022 trainer_interface.cc:440] Adding meta_piece: <0x87>
+I0000 00:00:1786682396.374337 13231022 trainer_interface.cc:440] Adding meta_piece: <0x88>
+I0000 00:00:1786682396.374340 13231022 trainer_interface.cc:440] Adding meta_piece: <0x89>
+I0000 00:00:1786682396.374343 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8A>
+I0000 00:00:1786682396.374346 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8B>
+I0000 00:00:1786682396.374350 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8C>
+I0000 00:00:1786682396.374353 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8D>
+I0000 00:00:1786682396.374356 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8E>
+I0000 00:00:1786682396.374359 13231022 trainer_interface.cc:440] Adding meta_piece: <0x8F>
+I0000 00:00:1786682396.374362 13231022 trainer_interface.cc:440] Adding meta_piece: <0x90>
+I0000 00:00:1786682396.374366 13231022 trainer_interface.cc:440] Adding meta_piece: <0x91>
+I0000 00:00:1786682396.374369 13231022 trainer_interface.cc:440] Adding meta_piece: <0x92>
+I0000 00:00:1786682396.374372 13231022 trainer_interface.cc:440] Adding meta_piece: <0x93>
+I0000 00:00:1786682396.374375 13231022 trainer_interface.cc:440] Adding meta_piece: <0x94>
+I0000 00:00:1786682396.374379 13231022 trainer_interface.cc:440] Adding meta_piece: <0x95>
+I0000 00:00:1786682396.374382 13231022 trainer_interface.cc:440] Adding meta_piece: <0x96>
+I0000 00:00:1786682396.374386 13231022 trainer_interface.cc:440] Adding meta_piece: <0x97>
+I0000 00:00:1786682396.374389 13231022 trainer_interface.cc:440] Adding meta_piece: <0x98>
+I0000 00:00:1786682396.374393 13231022 trainer_interface.cc:440] Adding meta_piece: <0x99>
+I0000 00:00:1786682396.374396 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9A>
+I0000 00:00:1786682396.374399 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9B>
+I0000 00:00:1786682396.374402 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9C>
+I0000 00:00:1786682396.374406 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9D>
+I0000 00:00:1786682396.374409 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9E>
+I0000 00:00:1786682396.374412 13231022 trainer_interface.cc:440] Adding meta_piece: <0x9F>
+I0000 00:00:1786682396.374415 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA0>
+I0000 00:00:1786682396.374418 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA1>
+I0000 00:00:1786682396.374421 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA2>
+I0000 00:00:1786682396.374425 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA3>
+I0000 00:00:1786682396.374428 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA4>
+I0000 00:00:1786682396.374431 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA5>
+I0000 00:00:1786682396.374434 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA6>
+I0000 00:00:1786682396.374437 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA7>
+I0000 00:00:1786682396.374440 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA8>
+I0000 00:00:1786682396.374443 13231022 trainer_interface.cc:440] Adding meta_piece: <0xA9>
+I0000 00:00:1786682396.374446 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAA>
+I0000 00:00:1786682396.374449 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAB>
+I0000 00:00:1786682396.374452 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAC>
+I0000 00:00:1786682396.374455 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAD>
+I0000 00:00:1786682396.374459 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAE>
+I0000 00:00:1786682396.374462 13231022 trainer_interface.cc:440] Adding meta_piece: <0xAF>
+I0000 00:00:1786682396.374465 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB0>
+I0000 00:00:1786682396.374468 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB1>
+I0000 00:00:1786682396.374471 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB2>
+I0000 00:00:1786682396.374474 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB3>
+I0000 00:00:1786682396.374477 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB4>
+I0000 00:00:1786682396.374480 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB5>
+I0000 00:00:1786682396.374483 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB6>
+I0000 00:00:1786682396.374485 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB7>
+I0000 00:00:1786682396.374488 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB8>
+I0000 00:00:1786682396.374492 13231022 trainer_interface.cc:440] Adding meta_piece: <0xB9>
+I0000 00:00:1786682396.374495 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBA>
+I0000 00:00:1786682396.374498 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBB>
+I0000 00:00:1786682396.374501 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBC>
+I0000 00:00:1786682396.374505 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBD>
+I0000 00:00:1786682396.374508 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBE>
+I0000 00:00:1786682396.374511 13231022 trainer_interface.cc:440] Adding meta_piece: <0xBF>
+I0000 00:00:1786682396.374515 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC0>
+I0000 00:00:1786682396.374518 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC1>
+I0000 00:00:1786682396.374521 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC2>
+I0000 00:00:1786682396.374524 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC3>
+I0000 00:00:1786682396.374529 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC4>
+I0000 00:00:1786682396.374532 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC5>
+I0000 00:00:1786682396.374535 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC6>
+I0000 00:00:1786682396.374538 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC7>
+I0000 00:00:1786682396.374542 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC8>
+I0000 00:00:1786682396.374545 13231022 trainer_interface.cc:440] Adding meta_piece: <0xC9>
+I0000 00:00:1786682396.374548 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCA>
+I0000 00:00:1786682396.374551 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCB>
+I0000 00:00:1786682396.374554 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCC>
+I0000 00:00:1786682396.374557 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCD>
+I0000 00:00:1786682396.374560 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCE>
+I0000 00:00:1786682396.374563 13231022 trainer_interface.cc:440] Adding meta_piece: <0xCF>
+I0000 00:00:1786682396.374567 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD0>
+I0000 00:00:1786682396.374569 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD1>
+I0000 00:00:1786682396.374573 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD2>
+I0000 00:00:1786682396.374576 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD3>
+I0000 00:00:1786682396.374579 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD4>
+I0000 00:00:1786682396.374582 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD5>
+I0000 00:00:1786682396.374585 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD6>
+I0000 00:00:1786682396.374588 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD7>
+I0000 00:00:1786682396.374592 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD8>
+I0000 00:00:1786682396.374595 13231022 trainer_interface.cc:440] Adding meta_piece: <0xD9>
+I0000 00:00:1786682396.374598 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDA>
+I0000 00:00:1786682396.374601 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDB>
+I0000 00:00:1786682396.374604 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDC>
+I0000 00:00:1786682396.374608 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDD>
+I0000 00:00:1786682396.374611 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDE>
+I0000 00:00:1786682396.374614 13231022 trainer_interface.cc:440] Adding meta_piece: <0xDF>
+I0000 00:00:1786682396.374617 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE0>
+I0000 00:00:1786682396.374620 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE1>
+I0000 00:00:1786682396.374624 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE2>
+I0000 00:00:1786682396.374627 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE3>
+I0000 00:00:1786682396.374630 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE4>
+I0000 00:00:1786682396.374633 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE5>
+I0000 00:00:1786682396.374636 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE6>
+I0000 00:00:1786682396.374641 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE7>
+I0000 00:00:1786682396.374645 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE8>
+I0000 00:00:1786682396.374648 13231022 trainer_interface.cc:440] Adding meta_piece: <0xE9>
+I0000 00:00:1786682396.374651 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEA>
+I0000 00:00:1786682396.374654 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEB>
+I0000 00:00:1786682396.374657 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEC>
+I0000 00:00:1786682396.374660 13231022 trainer_interface.cc:440] Adding meta_piece: <0xED>
+I0000 00:00:1786682396.374663 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEE>
+I0000 00:00:1786682396.374666 13231022 trainer_interface.cc:440] Adding meta_piece: <0xEF>
+I0000 00:00:1786682396.374669 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF0>
+I0000 00:00:1786682396.374672 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF1>
+I0000 00:00:1786682396.374675 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF2>
+I0000 00:00:1786682396.374678 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF3>
+I0000 00:00:1786682396.374681 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF4>
+I0000 00:00:1786682396.374685 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF5>
+I0000 00:00:1786682396.374688 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF6>
+I0000 00:00:1786682396.374691 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF7>
+I0000 00:00:1786682396.374694 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF8>
+I0000 00:00:1786682396.374697 13231022 trainer_interface.cc:440] Adding meta_piece: <0xF9>
+I0000 00:00:1786682396.374700 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFA>
+I0000 00:00:1786682396.374703 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFB>
+I0000 00:00:1786682396.374706 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFC>
+I0000 00:00:1786682396.374709 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFD>
+I0000 00:00:1786682396.374712 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFE>
+I0000 00:00:1786682396.374716 13231022 trainer_interface.cc:440] Adding meta_piece: <0xFF>
+I0000 00:00:1786682396.374766 13231022 trainer_interface.cc:445] Normalizing sentences...
+I0000 00:00:1786682397.315551 13231022 trainer_interface.cc:555] all chars count=43661207
+I0000 00:00:1786682397.316500 13231022 trainer_interface.cc:566] Done: 99.951% characters are covered.
+I0000 00:00:1786682397.316520 13231022 trainer_interface.cc:578] Alphabet size=170
+I0000 00:00:1786682397.316527 13231022 trainer_interface.cc:579] Final character coverage=0.99951
+I0000 00:00:1786682398.156339 13231022 trainer_interface.cc:609] Done! preprocessed 78883 sentences.
+I0000 00:00:1786682400.379081 13231022 unigram_model_trainer.cc:297] Making suffix array...
+I0000 00:00:1786682406.385187 13231022 unigram_model_trainer.cc:301] Extracting frequent sub strings... node_num=21969563
+I0000 00:00:1786682434.386061 13231022 unigram_model_trainer.cc:354] Initialized 959654 seed sentencepieces
+I0000 00:00:1786682435.427087 13231022 trainer_interface.cc:615] Tokenizing input sentences with whitespace: 78883
+I0000 00:00:1786682436.044858 13231022 trainer_interface.cc:626] Done! 429062
+I0000 00:00:1786682436.067013 13231022 unigram_model_trainer.cc:628] Using 429062 sentences for EM training
+I0000 00:00:1786682437.300098 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=245770 obj=13.0058 num_tokens=8072387 num_tokens/piece=32.8453
+I0000 00:00:1786682438.295312 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=221197 obj=10.3421 num_tokens=8071440 num_tokens/piece=36.4898
+I0000 00:00:1786682440.691867 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=165852 obj=10.3594 num_tokens=8145395 num_tokens/piece=49.1124
+I0000 00:00:1786682441.476847 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=165620 obj=10.3424 num_tokens=8146402 num_tokens/piece=49.1873
+I0000 00:00:1786682443.450501 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=124213 obj=10.4204 num_tokens=8249381 num_tokens/piece=66.4132
+I0000 00:00:1786682444.159685 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=124184 obj=10.3995 num_tokens=8250626 num_tokens/piece=66.4387
+I0000 00:00:1786682445.840472 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=93137 obj=10.4962 num_tokens=8366736 num_tokens/piece=89.8326
+I0000 00:00:1786682446.465826 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=93136 obj=10.4727 num_tokens=8367812 num_tokens/piece=89.8451
+I0000 00:00:1786682447.898409 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=69852 obj=10.5834 num_tokens=8500815 num_tokens/piece=121.698
+I0000 00:00:1786682448.518696 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=69852 obj=10.5599 num_tokens=8502224 num_tokens/piece=121.718
+I0000 00:00:1786682449.768617 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=52389 obj=10.691 num_tokens=8654263 num_tokens/piece=165.192
+I0000 00:00:1786682450.323853 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=52389 obj=10.6651 num_tokens=8655151 num_tokens/piece=165.209
+I0000 00:00:1786682451.436306 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=39291 obj=10.8161 num_tokens=8837821 num_tokens/piece=224.932
+I0000 00:00:1786682451.982466 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=39291 obj=10.7857 num_tokens=8838036 num_tokens/piece=224.938
+I0000 00:00:1786682453.098658 13231022 unigram_model_trainer.cc:644] EM sub_iter=0 size=35200 obj=10.8457 num_tokens=8914396 num_tokens/piece=253.25
+I0000 00:00:1786682453.618038 13231022 unigram_model_trainer.cc:644] EM sub_iter=1 size=35200 obj=10.8338 num_tokens=8914662 num_tokens/piece=253.257
+I0000 00:00:1786682453.637819 13231022 trainer_interface.cc:702] Saving model: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/_staging/nep_unigram_sweep_32000.model
+I0000 00:00:1786682453.657657 13231022 trainer_interface.cc:714] Saving vocabs: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/tokenizer/_staging/nep_unigram_sweep_32000.vocab
+
+sweep done. Compare and get a recommendation with:
+  python tokenizer/tokenizer_stats.py --compare-sweep

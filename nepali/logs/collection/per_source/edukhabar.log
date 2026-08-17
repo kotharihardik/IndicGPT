@@ -1,0 +1,22 @@
+========================================================================================
+NEPALI MANUAL COLLECTION   2026-08-14 20:43:23
+  sources: edukhabar
+  target : 125.00M manual tokens (~500.00M chars)
+  already: 805.14K chars collected
+========================================================================================
+
+--- edukhabar  (sitemap)  budget 10.00M chars ---
+  resuming: 152 docs / 805.14K chars already collected, 152 URLs known
+    edukhabar: link-crawl found 0 URLs (frontier 51)
+    edukhabar: link-crawl found 206 URLs (frontier 37)
+  edukhabar: 109 new article URLs from sitemap
+  [edukhabar]  |  1 docs  |  809.50K ch  |  ~202.38K tok  |  235 ch/s  |  280 req  |  8% of budget  |  ETA 589h15m  |  18s
+  [edukhabar]  |  95 docs  |  1.17M ch  |  ~292.21K tok  |  16.60K ch/s  |  375 req  |  12% of budget  |  ETA 8h20m  |  21s  |  DONE
+       rejected: not-devanagari x11, no-text-extracted x2, too-short x1
+  shard: edukhabar.part-1786720403-9654.jsonl.gz (95 docs / 363.70K chars)
+
+========================================================================================
+TOTAL 1.17M chars  ~292.21K tokens (0.2% of target) in 21s
+========================================================================================
+
+progress: python3 data/collection/collect_manual.py --status

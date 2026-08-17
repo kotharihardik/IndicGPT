@@ -1,0 +1,26 @@
+========================================================================================
+NEPALI MANUAL COLLECTION   2026-08-14 20:40:40
+  sources: swasthyakhabar
+  target : 125.00M manual tokens (~500.00M chars)
+  already: 0 chars collected
+========================================================================================
+
+--- swasthyakhabar  (sitemap)  budget 15.00M chars ---
+    swasthyakhabar: link-crawl found 0 URLs (frontier 188)
+    swasthyakhabar: link-crawl found 207 URLs (frontier 691)
+    swasthyakhabar: link-crawl found 407 URLs (frontier 500)
+    swasthyakhabar: link-crawl found 607 URLs (frontier 308)
+    swasthyakhabar: link-crawl found 807 URLs (frontier 118)
+  swasthyakhabar: 920 new article URLs from sitemap
+  [swasthyakhabar]  |  1 docs  |  1.15K ch  |  ~286 tok  |  16 ch/s  |  959 req  |  0% of budget  |  ETA 8191h14m  |  1m07s
+  [swasthyakhabar]  |  339 docs  |  1.46M ch  |  ~365.88K tok  |  18.87K ch/s  |  1,317 req  |  10% of budget  |  ETA 7h20m  |  1m17s
+  [swasthyakhabar]  |  661 docs  |  3.00M ch  |  ~750.52K tok  |  34.27K ch/s  |  1,678 req  |  20% of budget  |  ETA 4h01m  |  1m27s
+  [swasthyakhabar]  |  821 docs  |  3.66M ch  |  ~914.32K tok  |  39.51K ch/s  |  1,848 req  |  24% of budget  |  ETA 3h29m  |  1m32s  |  DONE
+       rejected: no-text-extracted x55, not-devanagari x30, not-nepali x14
+  shard: swasthyakhabar.part-1786720240-7751.jsonl.gz (821 docs / 3.66M chars)
+
+========================================================================================
+TOTAL 3.66M chars  ~914.32K tokens (0.7% of target) in 1m32s
+========================================================================================
+
+progress: python3 data/collection/collect_manual.py --status

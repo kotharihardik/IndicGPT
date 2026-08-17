@@ -1,0 +1,29 @@
+========================================================================================
+NEPALI MANUAL COLLECTION   2026-08-14 16:19:03
+  sources: aakarpost
+  target : 125.00M manual tokens (~500.00M chars)
+  already: 0 chars collected
+========================================================================================
+
+--- aakarpost  (sitemap)  budget 4.00M chars ---
+  aakarpost: 1,100 new article URLs from sitemap
+  [aakarpost]  |  1 docs  |  11.77K ch  |  ~2.94K tok  |  1.26K ch/s  |  5 req  |  0% of budget  |  ETA 110h38m  |  9s
+  [aakarpost]  |  95 docs  |  334.52K ch  |  ~83.63K tok  |  17.20K ch/s  |  103 req  |  8% of budget  |  ETA 8h04m  |  19s
+  [aakarpost]  |  179 docs  |  643.70K ch  |  ~160.92K tok  |  21.71K ch/s  |  207 req  |  16% of budget  |  ETA 6h23m  |  29s
+  [aakarpost]  |  263 docs  |  943.74K ch  |  ~235.94K tok  |  23.79K ch/s  |  307 req  |  24% of budget  |  ETA 5h49m  |  39s
+  [aakarpost]  |  349 docs  |  1.19M ch  |  ~297.34K tok  |  23.82K ch/s  |  413 req  |  30% of budget  |  ETA 5h48m  |  49s
+  [aakarpost]  |  418 docs  |  1.47M ch  |  ~367.82K tok  |  24.54K ch/s  |  524 req  |  37% of budget  |  ETA 5h38m  |  59s
+  [aakarpost]  |  486 docs  |  1.66M ch  |  ~416.11K tok  |  23.73K ch/s  |  639 req  |  42% of budget  |  ETA 5h49m  |  1m10s
+  [aakarpost]  |  545 docs  |  1.82M ch  |  ~454.78K tok  |  22.62K ch/s  |  747 req  |  45% of budget  |  ETA 6h07m  |  1m20s
+  [aakarpost]  |  601 docs  |  1.99M ch  |  ~497.63K tok  |  21.98K ch/s  |  853 req  |  50% of budget  |  ETA 6h17m  |  1m30s
+  [aakarpost]  |  671 docs  |  2.24M ch  |  ~558.84K tok  |  22.22K ch/s  |  957 req  |  56% of budget  |  ETA 6h13m  |  1m40s
+  [aakarpost]  |  737 docs  |  2.51M ch  |  ~628.02K tok  |  22.69K ch/s  |  1,051 req  |  63% of budget  |  ETA 6h05m  |  1m50s
+  [aakarpost]  |  773 docs  |  2.67M ch  |  ~668.26K tok  |  23.10K ch/s  |  1,104 req  |  67% of budget  |  ETA 5h58m  |  1m55s  |  DONE
+       rejected: not-devanagari x279, latin-heavy x40, not-nepali x8
+  shard: aakarpost.part-1786704543-36792.jsonl.gz (773 docs / 2.67M chars)
+
+========================================================================================
+TOTAL 2.67M chars  ~668.26K tokens (0.5% of target) in 1m55s
+========================================================================================
+
+progress: python3 data/collection/collect_manual.py --status

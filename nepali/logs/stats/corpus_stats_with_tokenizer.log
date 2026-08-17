@@ -1,0 +1,13 @@
+scanning train ...
+scanning validation ...
+scanning test ...
+
+==== Nepali train ====
+  Manual documents:  258,996
+  Manual tokens:     120,417,042
+  Public documents:  897,781
+  Public tokens:     408,294,598
+  Total tokens:      528,711,640
+  Manual percentage: 22.78%  (measured by tokens)
+  500M target:       105.74%
+  report -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/corpus_stats_nep.md
