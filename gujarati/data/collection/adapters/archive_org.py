@@ -1,22 +1,24 @@
-"""Method `ia_fulltext`: take archive.org's own OCR output instead of the PDFs.
+"""Collection method `ia_fulltext`: retrieve archive.org's own OCR output.
 
-This adapter exists because the `pdf` method hit two walls at once. Archive.org
-serves the scanned PDFs at 10-300 KB/s, so the logged ETA for the 12 GB I
-wanted was 341 hours; and most of those scans are image-only, which needs the
-Gujarati Tesseract model that is not installed.
+This adapter replaces the `pdf` route for archive.org material, which was
+blocked by two independent problems. Scanned PDFs are served at 10-300 KB/s,
+giving a logged ETA of 341 hours for the 12 GB required, and most of those
+scans are image-only, which would require the Gujarati Tesseract model that is
+not installed on this machine.
 
-Archive.org has already run OCR on these books server-side and publishes the
-result as a plain DjVuTXT file. Fetching that skips both problems: it is a few
-hundred KB instead of tens of MB, and no local OCR is involved. On a 20-item
-sample, 15 items exposed a DjVuTXT file (the rest are lending-restricted and
-answer 403) and 13 of those 15 passed the Gujarati script filter, averaging
-377K characters each.
+Archive.org performs OCR server-side and publishes the result as a plain
+DjVuTXT file. Retrieving that file avoids both problems: the transfer is a few
+hundred KB rather than tens of MB, and no local recognition is required. On a
+20-item sample, 15 items exposed a DjVuTXT file (the remainder are
+lending-restricted and return 403), and 13 of those 15 passed the Gujarati
+script filter, averaging 377K characters each.
 
-This turned into the main non-news source: 152.75M characters, about 41x what
-the PDF method managed.
+This became the principal non-news source at 152.75M characters, approximately
+41x the yield of the PDF method.
 
-One warning for the report: these documents are labelled `manual_web`, not
-`manual_ocr`. Archive.org did the recognition, not me.
+Provenance note: documents from this adapter are labelled `manual_web`, not
+`manual_ocr`. The recognition was performed by archive.org; this pipeline
+retrieves and cleans the result.
 """
 
 from __future__ import annotations
@@ -46,7 +48,7 @@ async def collect_ia_fulltext(session, src: dict, seen: set, prog: Progress):
     # Each book is one slow, mostly-idle download (measured: 44s average for a
     # few hundred KB). One at a time put the ETA at 39 hours. Fetching 8 at
     # once brought it under two, because almost all of that time is waiting on
-    # the network rather than doing any work of our own.
+    # network latency rather than local processing.
     batch_size = int(src.get("batch", 8))
     cursor, n_items = None, 0
 

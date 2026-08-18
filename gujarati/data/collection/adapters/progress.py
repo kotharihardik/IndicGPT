@@ -1,14 +1,14 @@
-"""Live progress display and the run log.
+"""Progress reporting and the run log.
 
-Kept apart from the adapters so the reporting code and the collection code do
-not tangle. The adapters call `prog.keep()` / `prog.reject()` and never format
-anything themselves.
+Separated from the adapters so that reporting and collection logic remain
+independent: adapters call `prog.keep()` and `prog.reject()` and perform no
+formatting themselves.
 
-This is not just decoration. A collector that is stuck and a collector that is
-merely slow look identical from outside, and I hit that repeatedly: the
-archive.org adapter sat at 3.7 K chars/s for an hour before the rate line made
-it obvious it was fetching books one at a time. The reject counters are also
-where the cleaning-funnel numbers in the Phase 1 report come from.
+The reporting is functional rather than cosmetic. A stalled collector and a
+merely slow one are indistinguishable without a reported rate; the archive.org
+adapter ran at 3.7 K chars/s for an hour before the rate line revealed that it
+was fetching books sequentially rather than in batches. The reject counters
+are also the source of the cleaning-funnel figures reported in Phase 1.
 """
 
 from __future__ import annotations

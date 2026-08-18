@@ -1,15 +1,14 @@
-"""Shared pieces every collection adapter needs.
+"""Shared components required by every collection adapter.
 
-Config, text cleaning, the quality gate, the Document record, and the resume
-scan all live here so the four adapter modules only contain the logic that is
-actually specific to their source type.
+Configuration, text cleaning, the quality gate, the Document record and the
+resume scan are defined here so that the adapter modules contain only the
+logic specific to their source type.
 
-Cleaning happens in two stages in this project, and this file is the first
-one. It is deliberately the looser of the two: `reject_reason` below throws a
-document away for good, but the strict thresholds in
-`data/preprocessing/preprocess.py` only skip it when building the clean
-corpus, which I can re-run any time. So collect a bit wide here and filter
-hard later.
+Cleaning is performed in two stages, of which this file is the first and the
+more permissive. `reject_reason` below discards a document irrecoverably,
+whereas the stricter thresholds in `data/preprocessing/preprocess.py` only
+exclude it from the cleaned corpus and can be re-applied at any time.
+Collection is therefore deliberately permissive and preprocessing strict.
 """
 
 from __future__ import annotations
@@ -32,9 +31,10 @@ LANG = CFG["language"]
 UA = CFG.get("crawl", {})["user_agent"]
 
 #: Characters per token, used only for the progress display. The tokenizer
-#: does not exist yet while collecting, so this is a guess, and I kept it high
-#: on purpose: over-collecting is cheap, finding a shortfall at the deadline is
-#: not. `data/splits/corpus_stats.py --tokenizer` prints the real counts later.
+#: does not exist during collection, so this is an estimate. It is set high
+#: deliberately: over-collection is inexpensive, whereas discovering a
+#: shortfall after collection is not. Exact counts are produced later by
+#: `data/splits/corpus_stats.py --tokenizer`.
 CHARS_PER_TOKEN = CFG.get("tokens", {}).get("chars_per_token", 4.0)
 
 #: Read from configs/pipeline.yaml rather than hardcoded, so the requirement
@@ -180,7 +180,7 @@ def split_long_text(text: str, limit: int) -> list:
             parts.append("\n\n".join(buf))
             buf, size = [], 0
         buf.append(para)
-        size += len(para) + 2      # +2 for the blank line we join back on
+        size += len(para) + 2      # +2 accounts for the rejoined blank line
     if buf:
         parts.append("\n\n".join(buf))
     return parts
@@ -197,9 +197,9 @@ def make_doc(src: dict, text: str, url: str, title: str = "",
       (the Gujarati Tesseract model is not installed), so those are
       `manual_pdf` / `pdf_text_layer`, never `manual_ocr`.
     - `ia_fulltext` is `manual_web`. Archive.org ran that OCR on its own
-      servers; I only downloaded and cleaned the result, so calling it
-      `manual_ocr` would claim work I did not do. The real origin goes in
-      `extra` instead.
+      servers; this pipeline downloads and cleans the result but performs no
+      recognition, so `manual_ocr` would overstate the work done. The true
+      origin is recorded in `extra` instead.
 
     Both still count toward the >=20% manual requirement.
     """

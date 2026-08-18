@@ -6,7 +6,7 @@ plus the numbers that actually drive the decision:
 
     byte-fallback rate  The tokenizer uses byte_fallback=True, so an unknown
         character comes out as <0xNN> pieces instead of <unk>. That makes the
-        literal UNK rate ~0 by construction and dishonest to quote on its own.
+        literal UNK rate 0 by construction and dishonest to quote on its own.
         Byte fallback is what really measures script coverage.
     fertility           Tokens per whitespace word. The standard comparison
         metric for Indic tokenizers and the main input to the vocab choice.
@@ -98,6 +98,10 @@ def evaluate(model_path: Path, docs: list) -> dict:
     import sentencepiece as spm
 
     sp = spm.SentencePieceProcessor(model_file=str(model_path))
+    # Filenames are <size>_<algo>_<lang>, so the algorithm is recoverable from
+    # the stem. A sweep now contains both unigram and bpe models.
+    parts = model_path.stem.split("_")
+    algo = parts[1] if len(parts) >= 3 else ALGO
     freq: Counter = Counter()
     per_source: dict = defaultdict(lambda: {"chars": 0, "tokens": 0})
     n_tokens = n_chars = n_words = n_unk = n_byte = 0
@@ -131,6 +135,7 @@ def evaluate(model_path: Path, docs: list) -> dict:
 
     return {
         "model": model_path.name,
+        "algorithm": algo,
         "vocab_size": vocab,
         "vocab_used_on_heldout": len(freq),
         "vocab_utilisation": round(len(freq) / vocab, 4),
@@ -381,13 +386,79 @@ def plot_piece_lengths(result: dict, path: Path) -> None:
     plt.close(fig)
 
 
+def compare_algorithms(results: list) -> dict:
+    """Compare algorithms at each shared vocabulary size.
+
+    The sweep trains Unigram and BPE over the same sizes on identical training
+    text, so the pairs are directly comparable. Compression is reported as the
+    Unigram advantage in characters per token, since that is the axis on which
+    the two algorithms are usually claimed to differ.
+
+    Returns:
+        A dict keyed by vocabulary size, plus a `summary` entry giving the mean
+        Unigram advantage. Empty when only one algorithm is present.
+    """
+    by_algo: dict = {}
+    for r in results:
+        by_algo.setdefault(r.get("algorithm", "?"), {})[r["vocab_size"]] = r
+    if len(by_algo) < 2:
+        return {}
+
+    uni, bpe = by_algo.get("unigram", {}), by_algo.get("bpe", {})
+    shared = sorted(set(uni) & set(bpe))
+    rows, gains = {}, []
+    for v in shared:
+        u, b = uni[v], bpe[v]
+        gain = 100 * (u["chars_per_token"] - b["chars_per_token"]) / b["chars_per_token"]
+        gains.append(gain)
+        rows[v] = {
+            "unigram_chars_per_token": u["chars_per_token"],
+            "bpe_chars_per_token": b["chars_per_token"],
+            "unigram_advantage_pct": round(gain, 2),
+            "unigram_fertility": u["fertility_tokens_per_word"],
+            "bpe_fertility": b["fertility_tokens_per_word"],
+            "unigram_vocab_utilisation": u["vocab_utilisation"],
+            "bpe_vocab_utilisation": b["vocab_utilisation"],
+            "unigram_byte_fallback": u["byte_fallback_rate"],
+            "bpe_byte_fallback": b["byte_fallback_rate"],
+        }
+    rows["summary"] = {
+        "sizes_compared": shared,
+        "mean_unigram_advantage_pct": round(sum(gains) / len(gains), 2) if gains else 0.0,
+    }
+    return rows
+
+
+def print_algorithm_comparison(comparison: dict) -> None:
+    """Print the Unigram vs BPE table. Presentation only."""
+    if not comparison:
+        return
+    print("\nUnigram vs BPE at matched vocabulary sizes:")
+    print(f"  {'vocab':>7}{'uni ch/tok':>12}{'bpe ch/tok':>12}{'uni adv':>9}"
+          f"{'uni fert':>10}{'bpe fert':>10}{'uni used':>10}{'bpe used':>10}")
+    for v, r in comparison.items():
+        if v == "summary":
+            continue
+        print(f"  {v:>7,}{r['unigram_chars_per_token']:>12.3f}"
+              f"{r['bpe_chars_per_token']:>12.3f}"
+              f"{r['unigram_advantage_pct']:>8.1f}%"
+              f"{r['unigram_fertility']:>10.3f}{r['bpe_fertility']:>10.3f}"
+              f"{r['unigram_vocab_utilisation'] * 100:>9.1f}%"
+              f"{r['bpe_vocab_utilisation'] * 100:>9.1f}%")
+    s = comparison["summary"]
+    print(f"  mean Unigram compression advantage: "
+          f"{s['mean_unigram_advantage_pct']:+.1f}%")
+
+
 def print_table(results: list) -> None:
     """Print the sweep comparison table."""
-    print(f"{'vocab':>8} {'chars/tok':>10} {'fertility':>10} {'byte-fb':>10} "
-          f"{'unk':>9} {'vocab used':>11} {'emb params':>12} {'% budget':>9}")
-    print("-" * 84)
+    print(f"{'algo':<9}{'vocab':>8} {'chars/tok':>10} {'fertility':>10} "
+          f"{'byte-fb':>10} {'unk':>9} {'vocab used':>11} {'emb params':>12} "
+          f"{'% budget':>9}")
+    print("-" * 93)
     for r in results:
-        print(f"{r['vocab_size']:>8,} {r['chars_per_token']:>10.3f} "
+        print(f"{r.get('algorithm', '?'):<9}"
+              f"{r['vocab_size']:>8,} {r['chars_per_token']:>10.3f} "
               f"{r['fertility_tokens_per_word']:>10.3f} "
               f"{r['byte_fallback_rate']:>10.6f} {r['unk_rate']:>9.6f} "
               f"{r['vocab_utilisation'] * 100:>10.1f}% "
@@ -481,10 +552,28 @@ def main() -> None:
         models = [model]
 
     results = sorted((evaluate(m, docs) for m in models),
-                     key=lambda r: r["vocab_size"])
+                     key=lambda r: (r.get("algorithm", ""),
+                                    r["vocab_size"]))
     print_table(results)
 
-    recommendation = recommend_vocab(results) if len(results) > 1 else {}
+    # Recommend a size WITHIN each algorithm: comparing a Unigram model against
+    # a BPE model of a different size would conflate the two decisions.
+    by_algo: dict = {}
+    for r in results:
+        by_algo.setdefault(r.get("algorithm", "?"), []).append(r)
+    per_algo_reco = {a: recommend_vocab(rs) for a, rs in by_algo.items()
+                     if len(rs) > 1}
+    comparison = compare_algorithms(results)
+    print_algorithm_comparison(comparison)
+    for a, reco in sorted(per_algo_reco.items()):
+        if reco.get("recommended"):
+            print(f"\n  [{a}] recommended vocab_size = {reco['recommended']:,}"
+                  f"  ({reco['reason']})")
+
+    # The headline recommendation stays with the configured algorithm, so the
+    # existing single-algorithm output and report format are unchanged.
+    recommendation = (per_algo_reco.get(ALGO)
+                      or (recommend_vocab(results) if len(results) > 1 else {}))
     if recommendation.get("recommended"):
         # Show what each extra step of vocabulary actually costs, because the
         # raw fertility column always favours the largest candidate and hides
@@ -546,6 +635,8 @@ def main() -> None:
         "heldout_gujarati_script_share": round(gu_share, 4),
         "results": results,
         "recommendation": recommendation,
+        "per_algorithm_recommendation": per_algo_reco,
+        "algorithm_comparison": comparison,
         "examples": samples,
         "note": ("byte_fallback=True means characters outside the vocabulary "
                  "become <0xNN> pieces rather than <unk>, so unk_rate is ~0 by "

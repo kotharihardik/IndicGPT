@@ -1,19 +1,20 @@
-"""Method `pdf`: read the text layer of Gujarati books already on disk.
+"""Collection method `pdf`: extract the text layer of local PDF files.
 
-`fetch_ia_pdfs.py` downloads the PDFs first; this only reads them.
+The files are downloaded separately by `fetch_ia_pdfs.py`; this adapter only
+reads them.
 
-Worth being precise about what this does, because the assignment counts OCR as
-manual collection: it performs no OCR. PyMuPDF pulls out the text layer that
-is already embedded in the file. Real OCR of an image-only scan needs the
-Gujarati Tesseract model, which is not installed here (`brew install
-tesseract-lang`, or `apt install tesseract-ocr-guj`). Documents from this
-adapter are therefore labelled `pdf_text_layer`, never `manual_ocr`.
+The distinction matters for the provenance labelling, because the assignment
+counts OCR as manual collection: this adapter performs no OCR. PyMuPDF
+extracts the text layer already embedded in the file. Recognition of an
+image-only scan would require the Gujarati Tesseract model, which is not
+installed (`brew install tesseract-lang`, or `apt install tesseract-ocr-guj`).
+Documents are therefore labelled `pdf_text_layer` rather than `manual_ocr`.
 
-This method contributed the least of the four, about 1.0M characters. Most
-books are image-only scans with no text layer at all, and several of the ones
-that do have a layer use a broken font encoding that comes out as mojibake and
-gets caught by the script filter. Finding a way around this is what led to the
-archive.org adapter.
+This method contributed the least of the four, approximately 3.7M characters.
+Most archive.org books are image-only scans carrying no text layer, and
+several of those that do have one use a broken font encoding that produces
+mojibake and is rejected by the script filter. Those limitations motivated the
+`ia_fulltext` adapter.
 """
 
 from __future__ import annotations

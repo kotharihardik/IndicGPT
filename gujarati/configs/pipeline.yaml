@@ -1,0 +1,196 @@
+# Gujarati (Model H) — Phase 1 pipeline configuration
+language: guj
+language_name: Gujarati
+
+paths:
+  raw:              data/raw       # all collected documents (public + manual)
+  raw_public:       data/raw/public
+  raw_manual:       data/raw/manual
+  clean:            data/clean
+  dedup:            data/dedup
+  splits:           data/splits/out
+  tokenizer:        tokenizer            # working dir for tokenizer builds
+  tokenizer_model:  tokenizer/model      # .model files (Phase 2 loads these)
+  tokenizer_vocab:  tokenizer/vocab      # .vocab files (human-readable)
+  logs:             logs
+  reports:          ../report/gujarati/phase1   # this phase's tables and figures
+
+# A line appearing in >= this many documents is treated as site boilerplate.
+repeated_line_df: 50
+
+# Corpus targets
+# The requirement is stated in TOKENS AFTER TOKENIZATION, not characters:
+# >=20% of ~500M training tokens must be manually collected. That is a
+# 100M-token hard floor.
+#
+# collection_headroom exists because characters collected are not
+# characters kept: fuzzy dedup and the strict preprocessing filter both
+# remove text after collection. Collecting exactly 100M tokens' worth
+# guarantees finishing below the floor, so we aim 30% over it.
+targets:
+  corpus_tokens: 500.0e6        # ~500M training tokens for Model H
+  manual_fraction: 0.20         # the >=20% manual requirement
+  collection_headroom: 1.30     # over-collect to survive dedup/cleaning
+
+tokens:
+  # Estimated chars/token used for all progress reporting until the
+  # tokenizer exists. Deliberately pessimistic (high) so we over-collect.
+  # Replaced by a MEASURED value once you run:
+  #     python3 data/collection/harvest.py --calibrate
+  # which writes data/state/token_ratio.json and takes precedence.
+  chars_per_token: 4.0
+
+# Crawl politeness
+# Throughput here comes from CONCURRENCY, not from short sleeps. Each
+# host gets its own semaphore (host_concurrency) plus a floor on the gap
+# between request starts (host_spacing), so parallelism can never turn
+# into a burst against one server. A robots.txt Crawl-delay always wins
+# when it is stricter. Per-source overrides live in the source YAML.
+crawl:
+  user_agent: "LMA-Monsoon2026-StudentCrawler/0.2 (academic corpus collection; contact: hardikkothari300@gmail.com)"
+  host_concurrency: 5     # in-flight requests per host
+  host_spacing: 0.2       # min seconds between request STARTS per host
+  timeout: 45             # per-request timeout, seconds
+  max_retries: 4          # exponential backoff + jitter, obeys Retry-After
+  min_chars: 400          # sitemap adapter: discard shorter extractions
+
+# Collection-time quality gate, applied by reject_reason() in
+# data/collection/adapters/base.py. Deliberately looser than the strict
+# `quality:` block below: rejecting a document at collection time is
+# irreversible (the page would have to be re-crawled), whereas rejecting it
+# in preprocessing is a config edit and a rerun of a local stage.
+# Collect wide, filter strictly later.
+collect_quality:
+  min_chars: 200
+  min_words: 20
+  min_script_ratio: 0.60
+  max_devanagari_ratio: 0.20
+  max_latin_ratio: 0.35
+  max_digit_ratio: 0.30
+  min_stopword_hits: 2
+
+ocr:
+  # NOTE: the Gujarati model is NOT installed by default. Without it,
+  # image-only scans cannot be read at all and pdf_text falls back to
+  # text-layer extraction only (it detects this and says so).
+  #   macOS:  brew install tesseract-lang
+  #   Debian: sudo apt install tesseract-ocr-guj
+  tesseract_lang: guj
+  dpi: 300
+
+normalize:
+  strip_zwj: true            # U+200D is never needed for Gujarati rendering
+  keep_zwnj: true            # U+200C can block a conjunct -> keep it
+  map_digits_to_ascii: true  # ૦-૯ -> 0-9
+  strip_urls: true
+  strip_emails: true
+
+# Gujarati is resource-rich, so filters are STRICT: false rejections are cheap.
+quality:
+  min_chars: 250
+  max_chars: 800000
+  min_words: 30
+  min_mean_word_len: 2.0
+  max_mean_word_len: 15.0
+  min_script_ratio: 0.85        # >=85% of letters must be Gujarati
+  max_devanagari_ratio: 0.05    # Hindi/Marathi leakage
+  max_latin_ratio: 0.15
+  min_stopword_hits: 3
+  max_digit_ratio: 0.15
+  max_duplicate_line_fraction: 0.30
+  max_top_2gram: 0.18
+  max_top_3gram: 0.16
+  max_top_4gram: 0.14
+
+splits:
+  seed: 1337
+  val_fraction: 0.004
+  test_fraction: 0.004
+  val_max_chars: 8.0e6
+  test_max_chars: 8.0e6
+  heldout_sources: []     # e.g. ["ia_books_fulltext"] as a domain-shift test set
+
+# Tokenizer (SentencePiece Unigram, trained from scratch on Gujarati)
+tokenizer:
+  algorithm: sentencepiece_unigram
+  # Artifact names are derived, not configured: <size>_<algo>_<lang>,
+  # e.g. 32k_unigram_guj.model. Sweep candidates go in model/sweep/.
+
+  # CHOSEN FROM THE SWEEP, not from habit. Measured on 3,000 held-out docs
+  # (embedding = vocab x d_model 384, against a ~25M parameter budget):
+  #
+  #   vocab   chars/tok  vocab used  embedding  % of budget  layers left
+  #    8,000    3.346       97.7%       3.07M       12%         ~12.4
+  #   16,000    3.668       98.7%       6.14M       25%         ~10.7   <- chosen
+  #   24,000    3.829       98.2%       9.22M       37%          ~8.9
+  #   32,000    3.934       96.7%      12.29M       49%          ~7.2
+  #   48,000    4.066       92.0%      18.43M       74%          ~3.7
+  #
+  # Fertility improves at every step up, so a fertility-only rule would pick
+  # 48,000. That is wrong at 25M parameters: the embedding table competes
+  # directly with Transformer blocks. Going 16k -> 32k buys 7% compression for
+  # double the embedding, costing ~3.5 layers, and uses less of its own
+  # vocabulary on held-out text (96.7% vs 98.7%).
+  #
+  # This was 32,000 during collection, purely as a corpus-sizing floor: a
+  # larger vocabulary yields fewer tokens, so sizing against it guaranteed
+  # every smaller size clears the 500M target. The corpus reached 540.8M at
+  # 32,000, so that job is done and the choice now rests on model quality.
+  vocab_size: 16000
+  sweep_vocab_sizes: [8000, 12000, 16000, 24000, 32000]
+
+  character_coverage: 0.9995
+  max_piece_length: 16          # Gujarati words are short; 16 is generous
+
+  # Sample size for FITTING the tokenizer, ~20% of the train split.
+  #
+  # Peak memory was measured directly rather than assumed (vocab 8k, this
+  # machine, 8 GB RAM):
+  #
+  #     share  chars   unigram peak RSS   wall
+  #       5%   106M        1.2 GB         44s
+  #      10%   211M        1.5 GB         88s
+  #      15%   317M        1.6 GB        135s
+  #      20%   422M        1.7 GB        190s
+  #      20%   422M        1.0 GB         14s   (bpe)
+  #
+  # An earlier cap of 100M characters was set after the trainer reached ~18 GB
+  # RSS on 470M characters. That measurement was taken at SentencePiece's
+  # default seed_sentencepiece_size of 1,000,000; lowering it to 200,000 cut
+  # peak memory roughly tenfold, because the seed lattice rather than the text
+  # dominates. Memory scales very weakly with sample size, so this cap is set
+  # by diminishing returns, not by RAM.
+  #
+  # This caps the tokenizer FITTING only. Corpus statistics and the 20% token
+  # accounting still cover 100% of the data.
+  train_text_max_chars: 4.2e8   # ~20% of the train split
+  input_sentence_size: 12000000  # lines SentencePiece loads. Above
+                                # the full train split's line count
+                                # (~8.8M guj, ~10.4M nep) so the
+                                # whole sample is used, never sampled.
+
+  num_threads: 8
+  large_corpus: true            # memory-efficient suffix array
+  seed_sentencepiece_size: 200000  # down from SentencePiece's
+                                # 1,000,000 default. This is the
+                                # dominant Unigram memory term;
+                                # BPE ignores it.
+  seed: 1337                    # reproducible training-text subsampling
+
+  # Phase 2 model shape, used ONLY to price each candidate vocabulary.
+  # Embedding + tied output head costs vocab_size x model_dim parameters,
+  # which at 32k x 384 is 12.3M of a ~25M budget - i.e. half the model
+  # spent before a single Transformer block. Vocabulary size is therefore
+  # a model-architecture decision, not just a compression decision.
+  model_dim: 384
+  target_params: 25.0e6
+
+  # Held out for qualitative inspection in the report. Chosen to exercise
+  # the cases where a Gujarati tokenizer usually fails: a long postpositional
+  # chain, Gujarati digits, a conjunct-heavy loanword, and academic register.
+  eval_examples:
+    - "ગુજરાત રાજ્યની રાજધાની ગાંધીનગર છે."
+    - "તેમણે ૨૦૨૪માં અમદાવાદથી મુંબઈ સુધીની મુસાફરી કરી હતી."
+    - "શાળાના વિદ્યાર્થીઓએ પુસ્તકાલયમાંથી પુસ્તકો લીધાં."
+    - "આ સંશોધનપત્રમાં ભાષાશાસ્ત્રીય વિશ્લેષણ રજૂ કરવામાં આવ્યું છે."
+    - "ઘર, ઘરમાં, ઘરોમાં, ઘરોમાંથી — એક જ મૂળના જુદા જુદા રૂપો."

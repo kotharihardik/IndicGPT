@@ -1,23 +1,25 @@
-"""Method `wp_rest`: read articles from a site's own WordPress REST API.
+"""Collection method `wp_rest`: read articles from a site's WordPress REST API.
 
-Most of the Gujarati manual corpus comes from here, and the reason is
-throughput. One request to /wp-json/wp/v2/posts?per_page=100 returns 100
-complete article bodies as JSON, with no navigation, adverts or scripts to
-strip afterwards.
+This method supplies most of the Gujarati manual corpus, for reasons of
+throughput. A single request to /wp-json/wp/v2/posts?per_page=100 returns 100
+complete article bodies as JSON, containing no navigation, advertising or
+scripts to remove afterwards.
 
-What I measured on these sites:
+Measured throughput on the sources used here:
 
-    wp_rest                         ~570 K chars/s
-    sitemap (one request per page)    ~7 K chars/s
-    my first serial crawler           ~0.9 K chars/s
+    wp_rest                          ~570 K chars/s
+    sitemap (one request per page)     ~7 K chars/s
+    serial crawler (superseded)        ~0.9 K chars/s
 
-My first version was that serial crawler, with a 2 second sleep and two
-requests per page (one for the text, one for its links). It managed 10.3M
-chars in 3h16m and then stalled, because you cannot reach a news archive by
-following links from the homepage. The API is faster for a structural reason,
-not because it hammers the server: it amortises one request over 100 documents
-and sends no markup. The per-host request rate here is lower than a browser
-loading the same pages.
+The serial crawler this method replaced used a 2 second delay and issued two
+requests per page, one for the article text and one to harvest its links. It
+produced 10.3M characters in 3h16m before stalling, because link discovery
+from a homepage cannot reach a news archive.
+
+The speed difference is structural rather than a matter of request rate: one
+request is amortised over 100 documents and no markup is transferred. The
+resulting per-host request rate is lower than that of a browser loading the
+same pages.
 """
 
 from __future__ import annotations
@@ -29,7 +31,8 @@ from .base import clean_text, make_doc, reject_reason
 from .http import fetch, robots_ok
 from .progress import Progress, log
 
-#: Only ask for the fields we use. The default payload is several times bigger.
+#: Restrict the response to the fields actually used. The default payload is
+#: several times larger.
 WP_FIELDS = "id,date,link,title,content"
 
 
@@ -49,11 +52,11 @@ async def collect_wp(session, src: dict, seen: set, prog: Progress):
     per_page = int(src.get("per_page", 100))
     batch = int(src.get("batch", 4))
 
-    # We always read newest-first and take every post, so whatever is already
-    # stored is a prefix of the archive. On resume, jump most of the way past
-    # it rather than re-requesting hundreds of pages only to throw them away.
-    # The 5-page margin covers articles published since the last run, and the
-    # URL check below still catches anything already stored.
+    # Posts are always read newest-first and taken in full, so the stored
+    # data is a prefix of the archive. On resume, skip most of that prefix
+    # rather than re-requesting hundreds of pages and discarding them. The
+    # 5-page margin covers articles published since the previous run; the URL
+    # check below still catches anything already stored.
     page = max(1, len(seen) // per_page - 5)
     if page > 1:
         log(f"  {src['name']}: {len(seen):,} posts already stored, "
@@ -76,10 +79,10 @@ async def collect_wp(session, src: dict, seen: set, prog: Progress):
             for post in payload:
                 link = post.get("link") or ""
                 if link in seen:
-                    # Resuming re-walks pages we already have, because the
-                    # resume state is the stored data and not a saved page
-                    # number. Tick anyway so a long skip looks like progress
-                    # instead of a hang.
+                    # Resume re-walks already-collected pages, because the
+                    # resume state is the stored data rather than a saved page
+                    # number. The progress tick keeps a long skip visible as
+                    # activity rather than appearing to hang.
                     prog.reject("already-collected")
                     prog.tick()
                     continue
@@ -97,8 +100,8 @@ async def collect_wp(session, src: dict, seen: set, prog: Progress):
                                {"wp_id": post.get("id"),
                                 "published": post.get("date")})
 
-        # A short page means we hit the end of the archive, or the host's page
-        # ceiling. Either way there is nothing more to ask for.
+        # A short page indicates the end of the archive or the host's page
+        # ceiling. In either case no further pages are available.
         if not got_full_page:
             return
         page += batch

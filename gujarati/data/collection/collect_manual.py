@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Collect the Gujarati MANUAL corpus (Phase 1, Model H).
+"""Collect the Gujarati MANUAL corpus.
 
 Phase 1 requires at least 20% of the final training tokens to be manually
 collected. The corpus target is ~500M tokens, so the floor is ~100M manual
@@ -9,23 +9,19 @@ This file only drives the run. The actual collection logic lives in
 `adapters/`, one module per source type, picked by the `method:` field in
 `data/sources/manual_sources.yaml`:
 
-    wp_rest      adapters/wordpress.py    the site's own WordPress REST API
+    wp_rest   adapters/wordpress.py    the site's own WordPress REST API
     sitemap      adapters/sitemap.py      sitemap.xml, or a link crawl
-    pdf          adapters/pdf.py          text layer of local PDF books
+    pdf         adapters/pdf.py          text layer of local PDF books
     ia_fulltext  adapters/archive_org.py  archive.org's server-side OCR text
 
 Each adapter module explains why that method exists and what it measured.
 
 Usage:
     python data/collection/collect_manual.py --check     # robots + reachability
-    python data/collection/collect_manual.py             # collect to target
+    python data/collection/collect_manual.py           # collect to target
     python data/collection/collect_manual.py --status    # progress vs the 20% floor
     python data/collection/collect_manual.py --only aksharnaad --limit-chars 1000000
 
-Safe to Ctrl-C and rerun. The resume state is the collected data itself: at
-startup each source's shards are scanned for the URLs already stored and those
-are skipped, so there is no separate state file that can drift out of sync
-with the corpus.
 """
 
 from __future__ import annotations
@@ -187,8 +183,8 @@ def report_status(sources: list) -> None:
 async def report_check(sources: list) -> None:
     """Pre-flight: check robots.txt and reachability for every source.
 
-    Worth running before a long collection. It is how I found that two sites
-    had no working REST API before spending an hour discovering it the slow way.
+    Intended to be run before a long collection. It identifies sources whose
+    REST API is unreachable without committing to a full collection run.
     """
     print("\nPRE-FLIGHT CHECK (nothing is written)\n")
     async with aiohttp.ClientSession(headers={"User-Agent": UA}) as session:

@@ -1,19 +1,22 @@
-"""Method `sitemap`: fetch article pages one at a time and extract the body.
+"""Collection method `sitemap`: retrieve article pages individually.
 
-For sites with no WordPress API. Read sitemap.xml, fetch every article page,
-and pull the body out with trafilatura. That is one request per document
-instead of one per hundred, so it is roughly 70x more expensive per character
-than `wp_rest` and I only use it where the register is worth the cost:
-literature (aksharnaad, layastaro), opinion writing, and a general portal.
+Used for sources that expose no WordPress REST API. The sitemap tree is walked
+to enumerate article URLs, each page is then retrieved, and the article body is
+extracted with trafilatura.
 
-If a site publishes no usable sitemap there is a breadth-first link crawl as a
-fallback. I needed it because layastaro.com found exactly zero URLs and
-finished "successfully" in two seconds without collecting anything.
+This costs one request per document rather than one per hundred, making it
+roughly 70x more expensive per character than `wp_rest`. It is therefore
+reserved for sources whose register justifies the cost: literature
+(aksharnaad, layastaro), opinion writing, and a general-interest portal.
 
-Boilerplate removal is trafilatura's job here, not ours. It reads the page
-structure and drops navigation, sidebars, footers, adverts and comment
-sections; `favor_precision=True` means it throws a block away when unsure,
-which is the right trade for a training corpus.
+Sources that publish no usable sitemap fall back to breadth-first link
+discovery. That fallback was added after layastaro.com enumerated zero URLs and
+terminated successfully without collecting anything.
+
+Boilerplate removal is delegated to trafilatura, which analyses page structure
+to drop navigation, sidebars, footers, advertising and comment sections.
+`favor_precision=True` discards a block whenever classification is uncertain,
+which is the appropriate trade-off for a training corpus.
 """
 
 from __future__ import annotations

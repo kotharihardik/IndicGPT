@@ -1,23 +1,23 @@
 {
   "language": "guj",
   "algorithm": "sentencepiece_unigram",
-  "vocab_size": 16000,
+  "vocab_size": 8000,
   "trained_on": "train split only (validation/test never seen)",
-  "training_chars": 99660254,
+  "training_chars": 419080242,
   "training_composition_by_source": {
-    "abtakmedia": 7203149,
-    "aksharnaad": 603840,
-    "divya_bhaskar": 473857,
-    "gujaratabroad": 870670,
-    "gujarativishwakosh": 3516148,
-    "gujarattoday": 3391154,
-    "ia_books_fulltext": 5480331,
+    "abtakmedia": 30197647,
+    "aksharnaad": 2908063,
+    "divya_bhaskar": 1872527,
+    "gujaratabroad": 3708278,
+    "gujarativishwakosh": 15841310,
+    "gujarattoday": 13882261,
+    "ia_books_fulltext": 23522727,
     "ia_books_pdf": 6613,
-    "layastaro": 243236,
-    "opinionmagazine": 3098044,
-    "webdunia_gujarati": 173710,
-    "westerntimesnews": 4133205,
-    "ai4bharat_sangraha": 70466297
+    "layastaro": 1027188,
+    "opinionmagazine": 14167931,
+    "webdunia_gujarati": 805509,
+    "westerntimesnews": 17609380,
+    "ai4bharat_sangraha": 293530808
   },
   "pretrained_tokenizer_used": false,
   "shared_with_other_language": false,
@@ -40,8 +40,8 @@
   },
   "phase2_cost": {
     "model_dim": 384,
-    "embedding_parameters": 6144000,
-    "share_of_target_budget": 0.2458,
+    "embedding_parameters": 3072000,
+    "share_of_target_budget": 0.1229,
     "note": "input and output embeddings are tied, so counted once"
   }
 }

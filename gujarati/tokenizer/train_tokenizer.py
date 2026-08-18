@@ -61,14 +61,20 @@ TCFG = CFG["tokenizer"]
 ALGO = TCFG.get("algorithm", "sentencepiece_unigram").split("_")[-1]
 
 
-def model_stem(vocab_size: int) -> str:
-    """Filename stem for one tokenizer: size first, language last.
+def model_stem(vocab_size: int, algo: str = "") -> str:
+    """Build the filename stem for one tokenizer: size, algorithm, language.
 
-    32,000 -> "32k_unigram_guj". A size that is not a whole number of
-    thousands keeps its full digits, so nothing is silently rounded.
+    Args:
+        vocab_size: Target vocabulary size. A size that is not a whole number
+            of thousands keeps its full digits, so nothing is silently rounded.
+        algo: Algorithm short name, "unigram" or "bpe". Defaults to the value
+            configured in pipeline.yaml.
+
+    Returns:
+        A stem such as "16k_unigram_guj" or "16k_bpe_guj".
     """
     size = f"{vocab_size // 1000}k" if vocab_size % 1000 == 0 else str(vocab_size)
-    return f"{size}_{ALGO}_{LANG}"
+    return f"{size}_{algo or ALGO}_{LANG}"
 
 
 #: Every assigned code point in the Gujarati block U+0A80-U+0AFF: independent
@@ -191,7 +197,37 @@ def export_training_text(max_chars: int, seed: int) -> tuple:
 # Training
 
 
-def train(input_path: Path, vocab_size: int, sweep: bool = False) -> Path:
+def present_required_chars(input_path: Path, wanted: str) -> str:
+    """Return the subset of `wanted` that actually occurs in the training text.
+
+    `required_chars` forces code points into the vocabulary so that no character
+    of the script can degrade to byte fallback. BPE's trainer asserts that every
+    required character has non-zero frequency and aborts otherwise, while
+    Unigram tolerates absent characters. Filtering to the characters actually
+    present keeps the guarantee wherever it can be honoured and makes the option
+    safe for both algorithms.
+
+    Args:
+        input_path: The exported training text.
+        wanted: Every code point of the language's script.
+
+    Returns:
+        The characters from `wanted` observed at least once, in original order.
+    """
+    seen: set = set()
+    target = set(wanted)
+    # errors="ignore": a shard truncated mid-character by an interrupted run
+    # must not abort tokenizer training over a character-presence scan.
+    with open(input_path, encoding="utf-8", errors="ignore") as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), ""):
+            seen |= target & set(chunk)
+            if len(seen) == len(target):
+                break
+    return "".join(c for c in wanted if c in seen)
+
+
+def train(input_path: Path, vocab_size: int, algo: str = "",
+          sweep: bool = False) -> Path:
     """Train one SentencePiece Unigram model. Returns the `.model` path.
 
     SentencePiece writes `<prefix>.model` and `<prefix>.vocab` side by side,
@@ -203,16 +239,33 @@ def train(input_path: Path, vocab_size: int, sweep: bool = False) -> Path:
     """
     import sentencepiece as spm
 
-    stem = model_stem(vocab_size)
+    algo = algo or ALGO
+    stem = model_stem(vocab_size, algo)
+
+    # The two algorithms need different character handling, and this is forced
+    # by SentencePiece rather than chosen. Unigram accepts `required_chars` and
+    # uses it to pin every Gujarati code point into the vocabulary. BPE's
+    # trainer asserts freq > 0 for each required character and aborts
+    # (bpe_model_trainer.cc:45) at any character_coverage, so BPE instead uses
+    # character_coverage=1.0, which retains every character observed in the
+    # training text and achieves the same practical guarantee: no Gujarati
+    # character present in the corpus can degrade to byte fallback.
+    if algo == "unigram":
+        char_kwargs = {
+            "required_chars": present_required_chars(input_path, GUJARATI_CHARS),
+            "character_coverage": float(TCFG.get("character_coverage", 0.9995)),
+        }
+    else:
+        char_kwargs = {"character_coverage": 1.0}
     staging = CFG["paths"]["tokenizer"] / "_staging"
     staging.mkdir(parents=True, exist_ok=True)
     out_prefix = staging / stem
     spm.SentencePieceTrainer.train(
         input=str(input_path),
         model_prefix=str(out_prefix),
-        model_type="unigram",
+        model_type=algo,
         vocab_size=vocab_size,
-        character_coverage=float(TCFG.get("character_coverage", 0.9995)),
+        **char_kwargs,
 
         # Preprocessing already normalised this text. Do not touch it again.
         normalization_rule_name="identity",
@@ -220,7 +273,6 @@ def train(input_path: Path, vocab_size: int, sweep: bool = False) -> Path:
 
         # Coverage: no Gujarati character may ever become byte fallback.
         byte_fallback=True,
-        required_chars=GUJARATI_CHARS,
 
         # Segmentation behaviour.
         split_by_unicode_script=True,
@@ -232,6 +284,14 @@ def train(input_path: Path, vocab_size: int, sweep: bool = False) -> Path:
         # Fixed special-token ids so Phase 2 can rely on them.
         pad_id=0, unk_id=1, bos_id=2, eos_id=3,
         pad_piece="<pad>", unk_piece="<unk>", bos_piece="<s>", eos_piece="</s>",
+
+        # Unigram peak memory is dominated by the seed vocabulary built before
+        # pruning (SentencePiece default: 1,000,000 pieces). Lowering it is the
+        # main lever for fitting a larger text sample into a fixed RAM budget.
+        # BPE builds no seed vocabulary, so the option is only passed for
+        # Unigram.
+        **({"seed_sentencepiece_size": int(TCFG["seed_sentencepiece_size"])}
+           if algo == "unigram" and TCFG.get("seed_sentencepiece_size") else {}),
 
         input_sentence_size=int(TCFG.get("input_sentence_size", 5_000_000)),
         shuffle_input_sentence=True,
@@ -314,9 +374,16 @@ def main() -> None:
                     help="cap characters exported for training")
     ap.add_argument("--reuse-input", action="store_true",
                     help="reuse an existing spm_input.txt instead of rebuilding")
+    ap.add_argument("--algo", choices=["unigram", "bpe"], default=None,
+                    help="segmentation algorithm; defaults to the configured "
+                         "value. Both are trained during the comparison so the "
+                         "choice can be made on measured evidence.")
     args = ap.parse_args()
 
-    max_chars = args.max_chars or int(float(TCFG.get("train_text_max_chars", 2e9)))
+    # `--max-chars 0` means no cap. `or` would treat 0 as unset and fall
+    # back to the configured value, so test for None explicitly.
+    max_chars = (args.max_chars if args.max_chars is not None
+                 else int(float(TCFG.get("train_text_max_chars", 2e9))))
     seed = int(TCFG.get("seed", 1337))
     existing = CFG["paths"]["tokenizer"] / "spm_input.txt"
 
@@ -328,33 +395,42 @@ def main() -> None:
         inp, chars, by_source = export_training_text(max_chars, seed)
 
     if args.sweep:
-        sizes = TCFG.get("sweep_vocab_sizes", [8000, 16000, 24000, 32000, 48000])
-        print(f"\nsweeping {len(sizes)} vocabulary sizes: "
-              f"{', '.join(f'{v:,}' for v in sizes)}")
-        for vocab in sizes:
-            params, share = embedding_params(vocab)
-            print(f"\n--- vocab_size={vocab:,}  "
-                  f"(embedding {human(params)} params, "
-                  f"{100 * share:.0f}% of the {human(float(TCFG.get('target_params', 25e6)))} "
-                  f"budget) ---")
-            try:
-                train(inp, vocab, sweep=True)
-            except RuntimeError as exc:
-                # SentencePiece refuses a vocabulary the corpus cannot support.
-                print(f"  ! vocab_size={vocab:,} not achievable here: {exc}")
+        sizes = TCFG.get("sweep_vocab_sizes", [8000, 12000, 16000, 24000, 32000])
+        # With no --algo given, sweep both algorithms so Unigram and BPE can be
+        # compared on identical training text and identical vocabulary sizes.
+        algos = [args.algo] if args.algo else ["unigram", "bpe"]
+        print(f"\nsweeping {len(sizes)} vocabulary sizes x "
+              f"{len(algos)} algorithm(s) = {len(sizes) * len(algos)} models")
+        print(f"  sizes: {', '.join(f'{v:,}' for v in sizes)}")
+        print(f"  algos: {', '.join(algos)}")
+        for algo in algos:
+            for vocab in sizes:
+                params, share = embedding_params(vocab)
+                print(f"\n--- {algo}  vocab_size={vocab:,}  "
+                      f"(embedding {human(params)} params, "
+                      f"{100 * share:.0f}% of the "
+                      f"{human(float(TCFG.get('target_params', 25e6)))} budget) ---")
+                try:
+                    train(inp, vocab, algo=algo, sweep=True)
+                except RuntimeError as exc:
+                    # SentencePiece refuses a vocabulary the corpus cannot
+                    # support, and raises here rather than producing a model.
+                    print(f"  ! {algo} vocab_size={vocab:,} not achievable "
+                          f"here: {exc}")
         print("\nsweep done. Compare and get a recommendation with:\n"
               "  python tokenizer/tokenizer_stats.py --compare-sweep")
         return
 
     vocab = args.vocab_size or int(TCFG["vocab_size"])
+    algo = args.algo or ALGO
     params, share = embedding_params(vocab)
-    print(f"\ntraining final Gujarati Unigram model, vocab_size={vocab:,}")
+    print(f"\ntraining final Gujarati {algo} model, vocab_size={vocab:,}")
     print(f"  embedding cost: {human(params)} parameters "
           f"({100 * share:.0f}% of the target budget)")
-    model = train(inp, vocab)
+    model = train(inp, vocab, algo=algo)
     config = write_config(vocab, chars, by_source)
 
-    vocab = CFG["paths"]["tokenizer_vocab"] / f"{model_stem(vocab)}.vocab"
+    vocab = CFG["paths"]["tokenizer_vocab"] / f"{model_stem(vocab, algo)}.vocab"
     print(f"\n  model  -> {model}")
     print(f"  vocab  -> {vocab}")
     print(f"  config -> {config}")

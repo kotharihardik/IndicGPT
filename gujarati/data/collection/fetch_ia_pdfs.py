@@ -179,7 +179,7 @@ MANIFEST_COLUMNS = ["identifier", "title", "creator", "date", "publisher",
 
 
 def load_manifest(path: Path) -> dict:
-    """Read an existing manifest so reruns skip what we already processed."""
+    """Load an existing manifest so a rerun skips items already processed."""
     if not path.exists():
         return {}
     with open(path, newline="", encoding="utf-8") as fh:

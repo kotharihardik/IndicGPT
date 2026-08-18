@@ -133,42 +133,45 @@ def _top_ngram_fraction(words: list, n: int) -> float:
 
 
 def check(text: str):
-    """Return `(keep, reason)`; `reason` is None when the document is kept.
+    """Return (keep, reason); reason is None when the document is kept.
 
     Filters are ordered cheap-first so most junk is rejected before the
     expensive n-gram statistics run.
     """
+    # --- length: cheapest checks, so they run first ---
     n_chars = len(text)
-    if n_chars < Q["min_chars"]:
+    if n_chars < Q["min_chars"]:                    # 1. Too short?
         return False, "too_short"
-    if n_chars > Q["max_chars"]:
+    if n_chars > Q["max_chars"]:                    # 2. Too long?
         return False, "too_long"
 
     words = text.split()
-    if len(words) < Q["min_words"]:
+    if len(words) < Q["min_words"]:                 # 3. Too few words?
         return False, "too_few_words"
     mean_wl = sum(len(w) for w in words) / len(words)
     if not (Q["min_mean_word_len"] <= mean_wl <= Q["max_mean_word_len"]):
-        return False, "bad_word_length"
+        return False, "bad_word_length"             # 4. Strange average word length?
 
+    # --- script: is this actually Gujarati prose? ---
     if _ratio(text, [GUJARATI_BLOCK]) < Q["min_script_ratio"]:
-        return False, "not_gujarati"
+        return False, "not_gujarati"                # 5. Enough Gujarati?
     if _ratio(text, [DEVANAGARI_BLOCK]) > Q["max_devanagari_ratio"]:
-        return False, "devanagari_leakage"
+        return False, "devanagari_leakage"          # 6. Too much Hindi/Marathi?
     if _ratio(text, LATIN_BLOCKS) > Q["max_latin_ratio"]:
-        return False, "too_much_latin"
+        return False, "too_much_latin"              # 7. Too much English?
     if sum(1 for w in STOPWORDS if w in text) < Q["min_stopword_hits"]:
-        return False, "no_stopwords"
+        return False, "no_stopwords"                # 8. Real prose, or just a menu?
 
+    # --- content quality: expensive checks last ---
     if sum(1 for c in text if c.isdigit()) / n_chars > Q["max_digit_ratio"]:
-        return False, "digit_heavy"
+        return False, "digit_heavy"                 # 9. Mostly numbers (a table)?
     if sum(1 for m in BOILERPLATE if m in text.lower()) >= 2:
-        return False, "boilerplate"
+        return False, "boilerplate"                 # 10. Cookie/subscribe notice?
     if _dup_line_fraction(text) > Q["max_duplicate_line_fraction"]:
-        return False, "repeated_lines"
+        return False, "repeated_lines"              # 11. Same line over and over?
     for n, key in ((2, "max_top_2gram"), (3, "max_top_3gram"), (4, "max_top_4gram")):
         if _top_ngram_fraction(words, n) > Q[key]:
-            return False, f"repetitive_{n}gram"
+            return False, f"repetitive_{n}gram"     # 12. One phrase dominates?
     return True, None
 
 
@@ -187,7 +190,7 @@ def main() -> None:
 
     # Pass A: find lines repeated across many documents (nav bars, OCR headers).
     #
-    # Counting every distinct line over a ~900k-document corpus needs several
+    # Counting every distinct line over a 900k-document corpus needs several
     # gigabytes, because almost every line is unique and never becomes
     # boilerplate. So the counter is pruned periodically: singletons seen
     # before the previous checkpoint are dropped. This is lossy counting, and
