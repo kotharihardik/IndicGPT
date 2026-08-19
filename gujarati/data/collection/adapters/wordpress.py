@@ -5,21 +5,19 @@ throughput. A single request to /wp-json/wp/v2/posts?per_page=100 returns 100
 complete article bodies as JSON, containing no navigation, advertising or
 scripts to remove afterwards.
 
-Measured throughput on the sources used here:
+Measured throughput:
 
     wp_rest                          ~570 K chars/s
     sitemap (one request per page)     ~7 K chars/s
     serial crawler (superseded)        ~0.9 K chars/s
 
-The serial crawler this method replaced used a 2 second delay and issued two
-requests per page, one for the article text and one to harvest its links. It
-produced 10.3M characters in 3h16m before stalling, because link discovery
-from a homepage cannot reach a news archive.
+The crawler this replaced slept 2s between pages and fetched each page twice
+(once for text, once for links). It managed 10.3M characters in 3h16m before
+running out of frontier.
 
-The speed difference is structural rather than a matter of request rate: one
-request is amortised over 100 documents and no markup is transferred. The
-resulting per-host request rate is lower than that of a browser loading the
-same pages.
+The speed difference is structural, not a matter of hitting the server harder:
+one request covers 100 documents and no markup is transferred, so the per-host
+request rate is lower than a browser loading the same pages.
 """
 
 from __future__ import annotations

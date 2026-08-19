@@ -16,8 +16,8 @@ subword tokenization increases the count by roughly 50% for these languages.
 Shared verbatim with the Nepali module - it reads paths and language from
 configs/pipeline.yaml, so nothing in it is language-specific.
 
-    python data/splits/stage_stats.py            # every stage that exists
-    python data/splits/stage_stats.py --stage raw
+    python3 data/splits/stage_stats.py            # every stage that exists
+    python3 data/splits/stage_stats.py --stage raw
 """
 
 from __future__ import annotations
@@ -27,7 +27,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from corpus_io import human, lang_root, load_config, read_docs  # noqa: E402
+from corpus_io import lang_root, load_config, read_docs  # noqa: E402
 
 ROOT = lang_root(Path(__file__))
 CFG = load_config(ROOT)
@@ -66,6 +66,7 @@ def stages() -> list:
 
 
 def main() -> None:
+    """Print documents, characters and words at every pipeline stage."""
     ap = argparse.ArgumentParser(description="Per-stage corpus statistics.")
     ap.add_argument("--stage", help="only this stage (substring match)")
     args = ap.parse_args()

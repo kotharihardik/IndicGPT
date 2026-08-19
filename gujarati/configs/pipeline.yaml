@@ -13,7 +13,8 @@ paths:
   tokenizer_model:  tokenizer/model      # .model files (Phase 2 loads these)
   tokenizer_vocab:  tokenizer/vocab      # .vocab files (human-readable)
   logs:             logs
-  reports:          ../report/gujarati/phase1   # this phase's tables and figures
+  state:            data/state   # resume state for the public download
+  reports:          ../report/phase1/gujarati   # this phase's tables and figures
 
 # A line appearing in >= this many documents is treated as site boilerplate.
 repeated_line_df: 50
@@ -81,7 +82,10 @@ ocr:
 normalize:
   strip_zwj: true            # U+200D is never needed for Gujarati rendering
   keep_zwnj: true            # U+200C can block a conjunct -> keep it
-  map_digits_to_ascii: true  # ૦-૯ -> 0-9
+  map_digits_to_native: true  # 0-9 -> native-script digits (TA ruling: digits
+                            # may stay, but in the language's own script)
+  strip_latin_words: true     # remove non-language words entirely, including
+                            # proper nouns such as Tata / IRCTC (TA ruling)  # ૦-૯ -> 0-9
   strip_urls: true
   strip_emails: true
 
@@ -104,10 +108,10 @@ quality:
 
 splits:
   seed: 1337
-  val_fraction: 0.004
-  test_fraction: 0.004
-  val_max_chars: 8.0e6
-  test_max_chars: 8.0e6
+  val_fraction: 0.05
+  test_fraction: 0.05
+  val_max_chars: 1.5e8   # headroom so the 5% fraction binds, not the cap
+  test_max_chars: 1.5e8
   heldout_sources: []     # e.g. ["ia_books_fulltext"] as a domain-shift test set
 
 # Tokenizer (SentencePiece Unigram, trained from scratch on Gujarati)
@@ -116,33 +120,29 @@ tokenizer:
   # Artifact names are derived, not configured: <size>_<algo>_<lang>,
   # e.g. 32k_unigram_guj.model. Sweep candidates go in model/sweep/.
 
-  # CHOSEN FROM THE SWEEP, not from habit. Measured on 3,000 held-out docs
-  # (embedding = vocab x d_model 384, against a ~25M parameter budget):
+  # CHOSEN FROM THE SWEEP, not from habit. Measured on the full validation
+  # split, 41,171 docs (embedding = vocab x d_model 384, budget ~25M):
   #
-  #   vocab   chars/tok  vocab used  embedding  % of budget  layers left
-  #    8,000    3.346       97.7%       3.07M       12%         ~12.4
-  #   16,000    3.668       98.7%       6.14M       25%         ~10.7   <- chosen
-  #   24,000    3.829       98.2%       9.22M       37%          ~8.9
-  #   32,000    3.934       96.7%      12.29M       49%          ~7.2
-  #   48,000    4.066       92.0%      18.43M       74%          ~3.7
+  #   vocab   chars/tok  fertility  vocab used  embedding  % of budget
+  #    8,000    3.512      1.654       98.1%      3.07M        12%
+  #   12,000    3.723      1.560       98.7%      4.61M        18%
+  #   16,000    3.865      1.503       99.0%      6.14M        25%   <- chosen
+  #   24,000    4.046      1.436       99.3%      9.22M        37%
+  #   32,000    4.170      1.393       99.4%     12.29M        49%
   #
-  # Fertility improves at every step up, so a fertility-only rule would pick
-  # 48,000. That is wrong at 25M parameters: the embedding table competes
-  # directly with Transformer blocks. Going 16k -> 32k buys 7% compression for
-  # double the embedding, costing ~3.5 layers, and uses less of its own
-  # vocabulary on held-out text (96.7% vs 98.7%).
-  #
-  # This was 32,000 during collection, purely as a corpus-sizing floor: a
-  # larger vocabulary yields fewer tokens, so sizing against it guaranteed
-  # every smaller size clears the 500M target. The corpus reached 540.8M at
-  # 32,000, so that job is done and the choice now rests on model quality.
+  # Compression improves at every step up, so a fertility-only rule always
+  # picks the biggest. That is wrong at 25M parameters: the embedding competes
+  # directly with Transformer blocks, and at 32,000 it is half the budget
+  # before a single attention head exists. Rule applied: reject anything over
+  # 34% of budget, reject anything using under 95% of its vocabulary, take the
+  # largest survivor. That rejects 24,000 and 32,000 and leaves 16,000.
   vocab_size: 16000
   sweep_vocab_sizes: [8000, 12000, 16000, 24000, 32000]
 
   character_coverage: 0.9995
   max_piece_length: 16          # Gujarati words are short; 16 is generous
 
-  # Sample size for FITTING the tokenizer, ~20% of the train split.
+  # Sample size for FITTING the tokenizer, ~10% of the train split.
   #
   # Peak memory was measured directly rather than assumed (vocab 8k, this
   # machine, 8 GB RAM):
@@ -163,11 +163,15 @@ tokenizer:
   #
   # This caps the tokenizer FITTING only. Corpus statistics and the 20% token
   # accounting still cover 100% of the data.
-  train_text_max_chars: 4.2e8   # ~20% of the train split
-  input_sentence_size: 12000000  # lines SentencePiece loads. Above
-                                # the full train split's line count
-                                # (~8.8M guj, ~10.4M nep) so the
-                                # whole sample is used, never sampled.
+  train_text_max_chars: 2.11e8  # ~10% of the train split
+  input_sentence_size: 3000000  # lines SentencePiece loads. Must be
+                                # above the sample's line count (~1.8M
+                                # guj, ~2.1M nep at 20%) so nothing is
+                                # sub-sampled, but NOT far above it:
+                                # the trainer reserves against this
+                                # value, and 12,000,000 drove an 8 GB
+                                # machine into swap and turned a
+                                # 190-second model into 87 minutes.
 
   num_threads: 8
   large_corpus: true            # memory-efficient suffix array
@@ -185,12 +189,12 @@ tokenizer:
   model_dim: 384
   target_params: 25.0e6
 
-  # Held out for qualitative inspection in the report. Chosen to exercise
-  # the cases where a Gujarati tokenizer usually fails: a long postpositional
-  # chain, Gujarati digits, a conjunct-heavy loanword, and academic register.
+  # Held out for the report. One sentence per register, long enough to be
+  # worth reading: news prose with digits, academic prose full of Sanskritic
+  # compounds, and an inflection paradigm that shows whether the stem
+  # survives. All three are pre-normalised the same way the corpus is, so
+  # they cannot show byte fallback on characters preprocessing removes.
   eval_examples:
-    - "ગુજરાત રાજ્યની રાજધાની ગાંધીનગર છે."
-    - "તેમણે ૨૦૨૪માં અમદાવાદથી મુંબઈ સુધીની મુસાફરી કરી હતી."
-    - "શાળાના વિદ્યાર્થીઓએ પુસ્તકાલયમાંથી પુસ્તકો લીધાં."
-    - "આ સંશોધનપત્રમાં ભાષાશાસ્ત્રીય વિશ્લેષણ રજૂ કરવામાં આવ્યું છે."
-    - "ઘર, ઘરમાં, ઘરોમાં, ઘરોમાંથી — એક જ મૂળના જુદા જુદા રૂપો."
+    - "ગુજરાત સરકારે ૨૦૨૪ના શૈક્ષણિક વર્ષથી રાજ્યની તમામ પ્રાથમિક શાળાઓમાં માતૃભાષામાં શિક્ષણ ફરજિયાત બનાવવાનો નિર્ણય લીધો હતો."
+    - "આ સંશોધનપત્રમાં લેખકે ભાષાશાસ્ત્રીય દૃષ્ટિકોણથી ગુજરાતી ક્રિયાપદોના રૂપાંતરણની પ્રક્રિયાનું વિશ્લેષણ પ્રસ્તુત કર્યું છે."
+    - "ઘર, ઘરમાં, ઘરોમાં, ઘરોમાંથી, ઘરવાળાં - એક જ મૂળ શબ્દમાંથી બનેલાં આ પાંચ રૂપો તપાસવાથી જણાય છે કે મૂળ શબ્દ અકબંધ રહે છે."

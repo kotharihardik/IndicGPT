@@ -1,30 +1,28 @@
 """Gujarati preprocessing: Unicode normalisation, filtering, boilerplate removal.
 
 Reads every raw shard under `data/raw/` (public and manual alike, provenance
-preserved) and writes cleaned documents to `data/clean/`.
+kept) and writes cleaned documents to `data/clean/`.
 
-The Gujarati-specific choices made here, and why:
+The Gujarati-specific choices:
 
-* NFC, not NFKC. NFC composes the nukta letters (જ઼ ડ઼ ઢ઼) into single code
-  points so the tokenizer sees one spelling; NFKC would additionally destroy
+* NFC, not NFKC. NFC composes the nukta letters (જ઼ ડ઼ ઢ઼) into one code point
+  so the tokenizer sees one spelling. NFKC would go further and destroy
   distinctions we want to keep.
 * ZWJ (U+200D) removed, ZWNJ (U+200C) kept. Gujarati never needs an explicit
-  joiner to render correctly, so stray ZWJ only creates duplicate spellings of
-  identical words. ZWNJ can be orthographically meaningful (it blocks a
-  conjunct), so it is preserved.
-* Gujarati digits ૦-૯ folded to ASCII. They are rare in modern prose and
-  would otherwise occupy vocabulary slots as a high-variance token class.
-* Danda ।/॥ kept. They are shared punctuation used in Gujarati and are the
-  main sentence terminator in literary text.
-* Script filter on the Gujarati block (U+0A80-U+0AFF) over *letter*
-  characters only. Gujarati and Devanagari are different Unicode blocks, so this
-  cleanly rejects Hindi/Marathi pages that leak into a Gujarati crawl - no
-  pretrained language-ID model needed.
+  joiner, so stray ZWJ only creates duplicate spellings. ZWNJ blocks a conjunct
+  and so changes the word.
+* Latin words removed and digits written in Gujarati script (TA ruling). The
+  digit rule reverses what I did first, which was folding ૦-૯ to ASCII to save
+  vocabulary slots.
+* Danda ।/॥ kept - it is the main sentence terminator in literary text.
+* Script filter over *letters only*, on the Gujarati block (U+0A80-U+0AFF).
+  Gujarati owns that block, so this is an exact test and rejects Hindi/Marathi
+  pages that leak into the crawl without any pretrained language-ID model.
 
 Run:
 
-    python data/preprocessing/preprocess.py
-    python data/preprocessing/preprocess.py --limit 5000     # smoke test
+    python3 data/preprocessing/preprocess.py
+    python3 data/preprocessing/preprocess.py --limit 5000     # smoke test
 """
 
 from __future__ import annotations
@@ -59,7 +57,18 @@ URL = re.compile(r"https?://\S+|www\.\S+")
 EMAIL = re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+")
 PUNCT_FOLD = {"\u2018": "'", "\u2019": "'", "\u201c": '"', "\u201d": '"',
               "\u2013": "-", "\u2014": "-", "\u2026": "..."}
-GU_DIGITS = {chr(0x0AE6 + i): str(i) for i in range(10)}
+#: ASCII digit -> Gujarati digit. The TA ruled that digits may stay but
+#: must be written in the language's own script, so this maps in the opposite
+#: direction to the earlier version of this pipeline.
+GU_DIGITS = {str(i): chr(0x0AE6 + i) for i in range(10)}
+
+#: A run of Latin letters, including the apostrophes, hyphens and full stops
+#: that occur inside names such as O'Neill, e-commerce or U.S.A.
+LATIN_WORD = re.compile(r"[A-Za-z][A-Za-z'\u2019.-]*")
+
+#: Brackets or quotes left empty once the Latin word between them is removed,
+#: e.g. "(Singer)" -> "( )".
+EMPTY_WRAP = re.compile(r"[(\[{\u201c\u2018\"']\s*[)\]}\u201d\u2019\"']")
 
 #: Very frequent Gujarati function words. Genuine prose contains several;
 #: keyword spam and machine-generated pages do not.
@@ -90,7 +99,17 @@ def normalize(text: str) -> str:
         text = text.replace("\u200d", "")          # joiner: never needed in Gujarati
     if not N.get("keep_zwnj", True):
         text = text.replace("\u200c", "")          # non-joiner: kept by default
-    if N.get("map_digits_to_ascii", True):
+    # Remove non-language words. Per the TA ruling these go even when they
+    # are proper nouns embedded in Gujarati prose (Tata, IRCTC), because
+    # the corpus must be monolingual. Digits are kept.
+    if N.get("strip_latin_words", True):
+        text = LATIN_WORD.sub(" ", text)
+        # Tidy what removal leaves behind: "(Singer)" -> "( )" -> "".
+        for _ in range(2):
+            text = EMPTY_WRAP.sub(" ", text)
+
+    # Digits stay, but in the language's own script rather than ASCII.
+    if N.get("map_digits_to_native", True):
         text = text.translate(str.maketrans(GU_DIGITS))
 
     text = re.sub(r"\s*([\u0964\u0965])\s*", r"\1 ", text)   # consistent danda spacing
@@ -176,6 +195,7 @@ def check(text: str):
 
 
 def main() -> None:
+    """Run both passes over the raw corpus and write data/clean/."""
     ap = argparse.ArgumentParser(description="Normalise and filter the raw Gujarati corpus.")
     ap.add_argument("--limit", type=int, default=None, help="Process only N documents")
     ap.add_argument("--no-line-pass", action="store_true",
@@ -189,15 +209,10 @@ def main() -> None:
         out.unlink()
 
     # Pass A: find lines repeated across many documents (nav bars, OCR headers).
-    #
-    # Counting every distinct line over a 900k-document corpus needs several
-    # gigabytes, because almost every line is unique and never becomes
-    # boilerplate. So the counter is pruned periodically: singletons seen
-    # before the previous checkpoint are dropped. This is lossy counting, and
-    # it is safe for this purpose - genuine boilerplate appears in a large
-    # fraction of documents and is re-seen long before every prune, whereas the
-    # entries being discarded are ordinary sentences that would never have
-    # reached the threshold.
+    # Counting every distinct line over the whole corpus would need several GB,
+    # since almost every line is unique. So the counter drops singletons every
+    # so often (lossy counting). Safe here: real boilerplate reappears long
+    # before a prune, and what gets dropped would never hit the threshold.
     blocked = set()
     if not args.no_line_pass:
         df = Counter()
@@ -266,7 +281,8 @@ def main() -> None:
     }
     rep = CFG["paths"]["reports"]
     rep.mkdir(parents=True, exist_ok=True)
-    (rep / "cleaning.json").write_text(
+    (rep / "json").mkdir(parents=True, exist_ok=True)
+    (rep / "json" / "cleaning.json").write_text(
         json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
 
     print(f"\n==== CLEAN [{CFG['language']}] ====")
@@ -274,7 +290,7 @@ def main() -> None:
           f"{human(writer.chars)} chars)")
     for r, c in reasons.most_common():
         print(f"    {r:<28} {c:>10,}")
-    print(f"  summary -> {rep / 'cleaning.json'}")
+    print(f"  summary -> {rep / 'json' / 'cleaning.json'}")
 
 
 if __name__ == "__main__":

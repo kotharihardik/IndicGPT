@@ -1,24 +1,10 @@
 {
   "language": "guj",
   "algorithm": "sentencepiece_unigram",
-  "vocab_size": 8000,
+  "vocab_size": 16000,
   "trained_on": "train split only (validation/test never seen)",
-  "training_chars": 419080242,
-  "training_composition_by_source": {
-    "abtakmedia": 30197647,
-    "aksharnaad": 2908063,
-    "divya_bhaskar": 1872527,
-    "gujaratabroad": 3708278,
-    "gujarativishwakosh": 15841310,
-    "gujarattoday": 13882261,
-    "ia_books_fulltext": 23522727,
-    "ia_books_pdf": 6613,
-    "layastaro": 1027188,
-    "opinionmagazine": 14167931,
-    "webdunia_gujarati": 805509,
-    "westerntimesnews": 17609380,
-    "ai4bharat_sangraha": 293530808
-  },
+  "training_chars": 551412371,
+  "training_composition_by_source": {},
   "pretrained_tokenizer_used": false,
   "shared_with_other_language": false,
   "script": "Gujarati (U+0A80-U+0AFF)",
@@ -40,8 +26,8 @@
   },
   "phase2_cost": {
     "model_dim": 384,
-    "embedding_parameters": 3072000,
-    "share_of_target_budget": 0.1229,
+    "embedding_parameters": 6144000,
+    "share_of_target_budget": 0.2458,
     "note": "input and output embeddings are tied, so counted once"
   }
 }

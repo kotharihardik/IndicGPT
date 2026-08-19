@@ -1,6 +1,0 @@
-
-==== SPLITS [guj] ====
-  train         803,151 docs |    2.11B chars | manual  30.3%
-  validation      3,156 docs |    8.00M chars | manual  26.7%
-  test            2,983 docs |    8.00M chars | manual  34.3%
-  summary -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/../report/gujarati/phase1/splits.json

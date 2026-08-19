@@ -1,0 +1,47 @@
+evaluating on 41,171 held-out documents (107,259,317 characters, 80.2% Gujarati script)
+
+algo        vocab  chars/tok  fertility    byte-fb       unk  vocab used   emb params  % budget
+---------------------------------------------------------------------------------------------
+unigram    16,000      3.865      1.503   0.004485  0.000000       99.0%        6.14M       25%
+
+Example tokenizations:
+
+  ગુજરાત રાજ્યની રાજધાની ગાંધીનગર છે.
+  -> 6 tokens, 5.83 chars/token
+  -> ▁ગુજરાત | ▁રાજ્યની | ▁રાજધાની | ▁ગાંધીનગર | ▁છે | .
+
+  તેમણે ૨૦૨૪માં અમદાવાદથી મુંબઈ સુધીની મુસાફરી કરી હતી.
+  -> 11 tokens, 4.82 chars/token
+  -> ▁તેમણે | ▁૨૦૨૪ | માં | ▁અમદાવાદ | થી | ▁મુંબઈ | ▁સુધીની | ▁મુસાફરી | ▁કરી | ▁હતી | .
+
+  શાળાના વિદ્યાર્થીઓએ પુસ્તકાલયમાંથી પુસ્તકો લીધાં.
+  -> 7 tokens, 7.0 chars/token
+  -> ▁શાળાના | ▁વિદ્યાર્થીઓએ | ▁પુસ્તકાલય | માંથી | ▁પુસ્તકો | ▁લીધાં | .
+
+  આ સંશોધનપત્રમાં ભાષાશાસ્ત્રીય વિશ્લેષણ રજૂ કરવામાં આવ્યું છે.
+  -> 13 tokens, 4.69 chars/token
+  -> ▁આ | ▁સંશોધન | પત્ર | માં | ▁ભાષા | શાસ્ત્ર | ીય | ▁વિશ્લેષણ | ▁રજૂ | ▁કરવામાં | ▁આવ્યું | ▁છે | .
+
+  ઘર, ઘરમાં, ઘરોમાં, ઘરોમાંથી - એક જ મૂળના જુદા જુદા રૂપો.
+  -> 18 tokens, 3.11 chars/token
+  -> ▁ઘર | , | ▁ઘરમાં | , | ▁ઘરોમાં | , | ▁ઘરોમાં | થી | ▁- | ▁એક | ▁જ | ▁મૂળ | ના | ▁જુદા | ▁જુદા | ▁રૂપ | ો | .
+
+Compression by source register (chars/token):
+  gujarattoday              4.314
+  webdunia_gujarati         4.284
+  westerntimesnews          4.279
+  abtakmedia                4.248
+  divya_bhaskar             4.173
+  gujaratabroad             4.151
+  ai4bharat_sangraha        3.903
+  opinionmagazine           3.845
+  gujarativishwakosh        3.712
+  aksharnaad                3.662
+  layastaro                 3.345
+  ia_books_fulltext         2.966
+
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/../report/gujarati/phase1/json/tokenizer_stats.json
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/../report/gujarati/phase1/tokenizer_report.md
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/../report/gujarati/phase1/json/tokenizer_stats_frequency_curve.json  (Zipf curve data for the figure)
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/../report/gujarati/phase1/figures/tokenizer_frequency.png
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/../report/gujarati/phase1/figures/tokenizer_piece_length.png

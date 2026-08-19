@@ -17,10 +17,10 @@ This file only drives the run. The actual collection logic lives in
 Each adapter module explains why that method exists and what it measured.
 
 Usage:
-    python data/collection/collect_manual.py --check     # robots + reachability
-    python data/collection/collect_manual.py           # collect to target
-    python data/collection/collect_manual.py --status    # progress vs the 20% floor
-    python data/collection/collect_manual.py --only aksharnaad --limit-chars 1000000
+    python3 data/collection/collect_manual.py --check     # robots + reachability
+    python3 data/collection/collect_manual.py           # collect to target
+    python3 data/collection/collect_manual.py --status    # progress vs the 20% floor
+    python3 data/collection/collect_manual.py --only aksharnaad --limit-chars 1000000
 
 """
 
@@ -260,6 +260,7 @@ async def collect_all(sources: list, args) -> None:
 
 
 def main() -> None:
+    """Parse arguments and run the requested mode: check, status, or collect."""
     ap = argparse.ArgumentParser(
         description="Collect the Gujarati manual corpus (Phase 1).")
     ap.add_argument("--only", nargs="*", default=[], metavar="NAME",

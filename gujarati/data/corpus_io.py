@@ -51,8 +51,8 @@ class Document:
 
     Attributes:
         text: Document text (UTF-8).
-        language: `gu` or `sd`.
-        source_name: Registry key, e.g. `ai4bharat_sangraha` or `bbc_gujarati`.
+        language: `guj`.
+        source_name: Registry key, e.g. `ai4bharat_sangraha` or `abtakmedia`.
         source_url: Origin URL or file name.
         source_type: `public` or `manual`.
         collection_method: `public_download` / `scrape` / `ocr` / `typed`.
@@ -85,21 +85,16 @@ class Document:
     def recompute_id(self) -> str:
         """Derive a document id that is unique per *document*, not per source.
 
-        The id must be unique because two later stages depend on it:
-        `deduplicate.py` uses it as an LSH key, and `build_splits.py` hashes
-        it to assign train/validation/test. A non-unique id breaks both.
+        Two later stages depend on it: deduplicate.py keys LSH on it, and
+        build_splits.py hashes it to pick a split. A non-unique id breaks both.
 
-        It therefore hashes the text as well as the source and URL. Hashing the
-        URL alone is not enough, and failed badly in practice: a packaged
-        dataset gives every one of its documents the same `source_url` (the
-        dataset's landing page), and a split PDF gives every part the same one.
-        That collapsed 614,326 public documents onto a single id, crashed the
-        MinHash pass, and would otherwise have assigned the entire public
-        corpus to one split as a single block.
+        So it hashes the text as well as the source and URL. Hashing the URL
+        alone failed badly: a packaged dataset gives every document the same
+        source_url, which collapsed 614,326 public documents onto one id and
+        would have put the whole public corpus into a single split.
 
-        Byte-identical documents still share an id, which is correct: they are
-        the same document, and the exact-duplicate pass removes them before any
-        id-keyed structure sees them twice.
+        Byte-identical documents still share an id, which is correct - the
+        exact-duplicate pass removes them first.
         """
         seed = f"{self.source_name}\x00{self.source_url or ''}\x00{self.text}"
         digest = hashlib.sha1(seed.encode("utf-8", "ignore")).hexdigest()[:16]
@@ -108,21 +103,26 @@ class Document:
 
     @property
     def n_chars(self) -> int:
+        """Character count of the document text."""
         return len(self.text)
 
     @property
     def n_bytes(self) -> int:
+        """UTF-8 byte length, used for bits-per-byte in Phase 2."""
         return len(self.text.encode("utf-8"))
 
     @property
     def manual(self) -> bool:
+        """True when this document counts toward the >=20% manual share."""
         return is_manual(self.manual_or_public)
 
     def to_json(self) -> str:
+        """Serialise to the one-line JSON record written to disk."""
         return json.dumps(asdict(self), ensure_ascii=False)
 
     @classmethod
     def from_json(cls, line: str) -> "Document":
+        """Rebuild a Document from one stored JSON record."""
         d = json.loads(line)
         keep = {k: v for k, v in d.items() if k in cls.__dataclass_fields__}
         return cls(**keep)
@@ -142,11 +142,13 @@ class JsonlWriter:
         self.chars = 0
 
     def write(self, doc: Document) -> None:
+        """Append one document to the open gzip shard."""
         self.fh.write(doc.to_json() + "\n")
         self.n += 1
         self.chars += doc.n_chars
 
     def close(self) -> None:
+        """Flush and close the underlying gzip file."""
         self.fh.close()
 
     def __enter__(self):

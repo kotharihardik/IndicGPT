@@ -1,41 +1,34 @@
 """Train the Gujarati tokenizer from scratch (SentencePiece Unigram).
 
 Nothing pretrained is used. The model is fitted on this project's own Gujarati
-training split only, and its vocabulary is not shared with the other language.
+training split only, and the vocabulary is not shared with the other language.
 
-Unigram, not BPE. Gujarati is agglutinative: one stem takes a chain of case and
-postposition suffixes (ઘર, ઘરમાં, ઘરોમાં, ઘરોમાંથી). BPE merges greedily, so
-whether a suffix boundary survives depends on which merges fired first, and the
-same stem can come out as `ઘર|ોમાં` in one word and `ઘરો|માં` in another.
-Unigram fits a probabilistic model over the whole corpus instead, so a stem is
-spelled the same way wherever it appears. At 25M parameters that matters:
-every inconsistent spelling splits one stem's evidence across two embedding
-rows.
+Unigram rather than BPE because Gujarati is agglutinative: one stem takes a chain
+of suffixes (ઘર, ઘરમાં, ઘરોમાં, ઘરોમાંથી). BPE merges greedily, so the same stem can come out split two
+different ways in two different words. Unigram scores a whole segmentation, so
+the stem stays spelled the same way. At 25M parameters that matters - two
+spellings of one stem split its evidence across two embedding rows.
 
-The settings that matter here, and why:
+Settings that matter:
 
-    normalization_rule_name="identity"   preprocess.py already normalised the
-        text. SentencePiece's default nmt_nfkc rule would normalise it a second
-        time, differently, so the tokenizer would no longer match the corpus.
-    required_chars=GUJARATI_CHARS        pins every Gujarati code point into the
-        vocabulary. Without it a rare matra or the virama can be dropped and
-        every word containing it falls back to bytes.
-    byte_fallback=True                   nothing is unrepresentable, so UNK is
-        ~0 by construction and byte-fallback rate is the real coverage metric.
-    split_by_unicode_script=True         stops pieces straddling Gujarati and
-        Latin, which is common in news copy and generalises to nothing.
-    split_digits=True                    digits become single pieces instead of
-        memorised numbers like "2024".
+    normalization_rule_name="identity"  preprocess.py already normalised the
+        text; letting SentencePiece do it again would not match the corpus.
+    required_chars=GUJARATI_CHARS       pins every Gujarati code point into the
+        vocabulary so no word can fall back to bytes on its own letters.
+    byte_fallback=True                  nothing is unrepresentable, so UNK is 0
+        by construction and byte-fallback rate is the real coverage metric.
+    split_by_unicode_script=True        stops pieces straddling two scripts.
+    split_digits=True                   digits become single pieces instead of
+        memorised years.
 
-If the training text has to be capped, whole documents are subsampled at a
-fixed probability rather than truncating the file. Shards are read in filename
-order, so stopping early would train the tokenizer almost entirely on
-abtakmedia and leave the encyclopedia register out of the vocabulary.
+When the training text is capped, whole documents are subsampled at a fixed
+probability rather than truncating the file. Shards are read in filename order,
+so stopping early would fit the tokenizer to whichever source sorts first.
 
-    python tokenizer/train_tokenizer.py --sweep    # candidate vocab sizes
-    python tokenizer/tokenizer_stats.py --compare-sweep
+    python3 tokenizer/train_tokenizer.py --sweep    # candidate vocab sizes
+    python3 tokenizer/tokenizer_stats.py --compare-sweep
     # set tokenizer.vocab_size in configs/pipeline.yaml, then:
-    python tokenizer/train_tokenizer.py            # final model
+    python3 tokenizer/train_tokenizer.py            # final model
 """
 
 from __future__ import annotations
@@ -59,6 +52,10 @@ TCFG = CFG["tokenizer"]
 
 #: Short algorithm name for filenames: "sentencepiece_unigram" -> "unigram".
 ALGO = TCFG.get("algorithm", "sentencepiece_unigram").split("_")[-1]
+
+#: Overridable from the CLI. A single-element list so `train()` reads the
+#: value set by `main()` without threading it through every call site.
+INPUT_SENTENCE_SIZE = [int(TCFG.get("input_sentence_size", 5_000_000))]
 
 
 def model_stem(vocab_size: int, algo: str = "") -> str:
@@ -293,7 +290,7 @@ def train(input_path: Path, vocab_size: int, algo: str = "",
         **({"seed_sentencepiece_size": int(TCFG["seed_sentencepiece_size"])}
            if algo == "unigram" and TCFG.get("seed_sentencepiece_size") else {}),
 
-        input_sentence_size=int(TCFG.get("input_sentence_size", 5_000_000)),
+        input_sentence_size=INPUT_SENTENCE_SIZE[0],
         shuffle_input_sentence=True,
         num_threads=int(TCFG.get("num_threads", 8)),
         train_extremely_large_corpus=bool(TCFG.get("large_corpus", False)),
@@ -364,6 +361,7 @@ def write_config(vocab_size: int, chars: int, by_source: dict) -> Path:
 
 
 def main() -> None:
+    """Export the training text and train one model, or the whole sweep."""
     ap = argparse.ArgumentParser(
         description="Train the Gujarati tokenizer from scratch.")
     ap.add_argument("--sweep", action="store_true",
@@ -374,11 +372,18 @@ def main() -> None:
                     help="cap characters exported for training")
     ap.add_argument("--reuse-input", action="store_true",
                     help="reuse an existing spm_input.txt instead of rebuilding")
+    ap.add_argument("--input-sentence-size", type=int, default=None,
+                    help="lines SentencePiece loads. Must exceed the sample's "
+                         "line count so nothing is sub-sampled, but the trainer "
+                         "reserves against this value, so do not set it far "
+                         "above (see configs/pipeline.yaml).")
     ap.add_argument("--algo", choices=["unigram", "bpe"], default=None,
                     help="segmentation algorithm; defaults to the configured "
                          "value. Both are trained during the comparison so the "
                          "choice can be made on measured evidence.")
     args = ap.parse_args()
+    if args.input_sentence_size:
+        INPUT_SENTENCE_SIZE[0] = args.input_sentence_size
 
     # `--max-chars 0` means no cap. `or` would treat 0 as unset and fall
     # back to the configured value, so test for None explicitly.

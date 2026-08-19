@@ -15,8 +15,8 @@ Two passes over the cleaned corpus:
 Manual documents are streamed first, so when a manual and a public document
 collide the manual copy is the one kept and the 20% quota is not eroded by dedup.
 
-    python data/preprocessing/deduplicate.py
-    python data/preprocessing/deduplicate.py --no-minhash    # exact only, low RAM
+    python3 data/preprocessing/deduplicate.py
+    python3 data/preprocessing/deduplicate.py --no-minhash    # exact only, low RAM
 """
 
 from __future__ import annotations
@@ -55,6 +55,7 @@ def shingles(text: str, k: int = 5, cap: int = 20000) -> set:
 
 
 def main() -> None:
+    """Remove exact then near-duplicate documents into data/dedup/."""
     ap = argparse.ArgumentParser(description="Exact + near-duplicate removal.")
     ap.add_argument("--no-minhash", action="store_true", help="Skip near-duplicate detection")
     ap.add_argument("--threshold", type=float, default=0.8, help="MinHash Jaccard threshold")
@@ -129,7 +130,9 @@ def main() -> None:
         "minhash": None if args.no_minhash else {"threshold": args.threshold,
                                                  "num_perm": args.num_perm, "shingle_k": 5},
     }
-    path = CFG["paths"]["reports"] / "dedup.json"
+    reports = CFG["paths"]["reports"] / "json"
+    reports.mkdir(parents=True, exist_ok=True)
+    path = reports / "dedup.json"
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(summary, indent=2), encoding="utf-8")
 

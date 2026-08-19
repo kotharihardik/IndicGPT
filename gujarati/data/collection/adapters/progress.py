@@ -73,6 +73,7 @@ class Progress:
 
     @property
     def elapsed(self) -> float:
+        """Seconds since this source started collecting."""
         return time.time() - self.start
 
     def line(self, tail: str = "") -> str:

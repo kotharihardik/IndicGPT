@@ -4,8 +4,8 @@ This is a downloader, not a collector: it only puts files on disk. The `pdf`
 adapter in adapters/pdf.py is what turns them into corpus documents, and the
 `ia_books_pdf` source in manual_sources.yaml is what points at this directory.
 
-    python data/collection/fetch_ia_pdfs.py --dry-run
-    python data/collection/fetch_ia_pdfs.py --max-items 700 --max-gb 20
+    python3 data/collection/fetch_ia_pdfs.py --dry-run
+    python3 data/collection/fetch_ia_pdfs.py --max-items 700 --max-gb 20
 
 It writes manifest.csv alongside the PDFs, recording identifier, title,
 creator, date, licenceurl and rights for every item. That file is the
@@ -141,6 +141,8 @@ def download(session: requests.Session, identifier: str, filename: str,
              dest: Path, delay: float, expect: int = 0) -> int:
     """Stream one PDF to disk with inline progress. Returns bytes written."""
     url = DOWNLOAD_URL.format(identifier=identifier, filename=quote(filename))
+    # Write to .part and rename at the end, so a killed run never leaves a
+    # half-file that looks complete on the next pass.
     tmp = dest.with_suffix(dest.suffix + ".part")
     written = 0
     t0 = time.time()
@@ -165,6 +167,7 @@ def download(session: requests.Session, identifier: str, filename: str,
             print(" " * 100, end="\r")
         tmp.rename(dest)
     except (requests.RequestException, OSError) as exc:
+        # One bad item must not end the run - there are hundreds to fetch.
         print(f"  ! download {identifier}: {exc}")
         tmp.unlink(missing_ok=True)
         return 0
@@ -187,6 +190,7 @@ def load_manifest(path: Path) -> dict:
 
 
 def main() -> None:
+    """Search archive.org, download the chosen PDFs, and update the manifest."""
     ap = argparse.ArgumentParser(
         description="Download Gujarati book PDFs from archive.org.")
     ap.add_argument("--out", default=DEFAULT_OUT, help="output directory")
