@@ -1,0 +1,1008 @@
+{
+  "language": "guj",
+  "algorithm": "sentencepiece_unigram",
+  "heldout_documents": 41171,
+  "heldout_chars": 107259317,
+  "heldout_gujarati_script_share": 0.8023,
+  "note": "byte_fallback=True means characters outside the vocabulary become <0xNN> pieces rather than <unk>, so unk_rate is ~0 by construction and byte_fallback_rate is the meaningful coverage metric",
+  "recommendation": {
+    "recommended": 16000,
+    "reason": "largest vocabulary whose embedding stays within 34% of the parameter budget",
+    "warning": "",
+    "chars_per_token": 3.865,
+    "fertility_tokens_per_word": 1.503,
+    "byte_fallback_rate": 0.004485,
+    "vocab_utilisation": 0.9901,
+    "embedding_parameters": 6144000,
+    "embedding_share_of_budget": 0.2458,
+    "transformer_budget_left": 18856000.0,
+    "approx_layers_affordable": 10.7,
+    "rejected_for_coverage": [],
+    "rejected_for_underuse": [],
+    "rejected_as_too_expensive": [
+      24000,
+      32000
+    ]
+  },
+  "per_algorithm_recommendation": {
+    "unigram": {
+      "recommended": 16000,
+      "reason": "largest vocabulary whose embedding stays within 34% of the parameter budget",
+      "warning": "",
+      "chars_per_token": 3.865,
+      "fertility_tokens_per_word": 1.503,
+      "byte_fallback_rate": 0.004485,
+      "vocab_utilisation": 0.9901,
+      "embedding_parameters": 6144000,
+      "embedding_share_of_budget": 0.2458,
+      "transformer_budget_left": 18856000.0,
+      "approx_layers_affordable": 10.7,
+      "rejected_for_coverage": [],
+      "rejected_for_underuse": [],
+      "rejected_as_too_expensive": [
+        24000,
+        32000
+      ]
+    }
+  },
+  "algorithm_comparison": {},
+  "examples": [],
+  "results": [
+    {
+      "model": "8k_unigram_guj.model",
+      "algorithm": "unigram",
+      "vocab_size": 8000,
+      "vocab_used_on_heldout": 7848,
+      "vocab_utilisation": 0.981,
+      "tokens": 30375717,
+      "chars": 106688129,
+      "words": 18363128,
+      "chars_per_token": 3.512,
+      "fertility_tokens_per_word": 1.654,
+      "unk_rate": 0.0,
+      "newlines_in_heldout": 571188,
+      "byte_fallback_rate": 0.004076,
+      "hapax_pieces_on_heldout": 4,
+      "top_pieces": [
+        [
+          ".",
+          1167892
+        ],
+        [
+          "▁છે",
+          749622
+        ],
+        [
+          ",",
+          671008
+        ],
+        [
+          "ના",
+          439573
+        ],
+        [
+          "ની",
+          393760
+        ],
+        [
+          "માં",
+          383394
+        ],
+        [
+          "▁અને",
+          373012
+        ],
+        [
+          "ને",
+          327746
+        ],
+        [
+          "▁આ",
+          268203
+        ],
+        [
+          "▁કે",
+          223938
+        ],
+        [
+          "▁તે",
+          189086
+        ],
+        [
+          "ે",
+          179262
+        ],
+        [
+          "▁પણ",
+          168580
+        ],
+        [
+          "ો",
+          157585
+        ],
+        [
+          "થી",
+          150164
+        ],
+        [
+          "▁જ",
+          150034
+        ],
+        [
+          "નો",
+          146021
+        ],
+        [
+          "ી",
+          144418
+        ],
+        [
+          "ન",
+          141495
+        ],
+        [
+          "▁માટે",
+          140688
+        ],
+        [
+          "▁એક",
+          134057
+        ],
+        [
+          "▁એ",
+          133516
+        ],
+        [
+          "ક",
+          124969
+        ],
+        [
+          "એ",
+          121878
+        ],
+        [
+          "નું",
+          115927
+        ],
+        [
+          "ર",
+          115845
+        ],
+        [
+          "-",
+          115219
+        ],
+        [
+          "▁પર",
+          111711
+        ],
+        [
+          "▁",
+          104088
+        ],
+        [
+          "મ",
+          103917
+        ]
+      ],
+      "piece_length_weighted": {
+        "0": 104088,
+        "1": 6740861,
+        "2": 8282814,
+        "3": 5823984,
+        "4": 3833061,
+        "5": 2543301,
+        "6": 1583119,
+        "7": 740825,
+        "8": 302322,
+        "9": 185555,
+        "10": 65244,
+        "11": 31651,
+        "12": 10960,
+        "13": 3648,
+        "14": 462
+      },
+      "piece_length_types": {
+        "0": 1,
+        "1": 182,
+        "2": 1014,
+        "3": 1404,
+        "4": 1656,
+        "5": 1389,
+        "6": 1000,
+        "7": 528,
+        "8": 279,
+        "9": 167,
+        "10": 69,
+        "11": 28,
+        "12": 18,
+        "13": 2,
+        "14": 1
+      },
+      "embedding_parameters": 3072000,
+      "embedding_share_of_budget": 0.1229,
+      "chars_per_token_by_source": {
+        "abtakmedia": 3.821,
+        "ai4bharat_sangraha": 3.55,
+        "aksharnaad": 3.336,
+        "divya_bhaskar": 3.778,
+        "gujaratabroad": 3.742,
+        "gujarativishwakosh": 3.344,
+        "gujarattoday": 3.897,
+        "ia_books_fulltext": 2.726,
+        "layastaro": 3.042,
+        "opinionmagazine": 3.493,
+        "webdunia_gujarati": 3.888,
+        "westerntimesnews": 3.85
+      }
+    },
+    {
+      "model": "12k_unigram_guj.model",
+      "algorithm": "unigram",
+      "vocab_size": 12000,
+      "vocab_used_on_heldout": 11848,
+      "vocab_utilisation": 0.9873,
+      "tokens": 28653852,
+      "chars": 106688129,
+      "words": 18363128,
+      "chars_per_token": 3.723,
+      "fertility_tokens_per_word": 1.56,
+      "unk_rate": 0.0,
+      "newlines_in_heldout": 571188,
+      "byte_fallback_rate": 0.004321,
+      "hapax_pieces_on_heldout": 5,
+      "top_pieces": [
+        [
+          ".",
+          1166549
+        ],
+        [
+          "▁છે",
+          749451
+        ],
+        [
+          ",",
+          668490
+        ],
+        [
+          "ના",
+          389762
+        ],
+        [
+          "▁અને",
+          373007
+        ],
+        [
+          "ની",
+          366378
+        ],
+        [
+          "માં",
+          327315
+        ],
+        [
+          "ને",
+          303050
+        ],
+        [
+          "▁આ",
+          255600
+        ],
+        [
+          "▁કે",
+          217455
+        ],
+        [
+          "▁તે",
+          188320
+        ],
+        [
+          "▁પણ",
+          168580
+        ],
+        [
+          "ે",
+          154990
+        ],
+        [
+          "▁જ",
+          143245
+        ],
+        [
+          "▁માટે",
+          140688
+        ],
+        [
+          "થી",
+          139298
+        ],
+        [
+          "નો",
+          135646
+        ],
+        [
+          "▁એક",
+          130762
+        ],
+        [
+          "▁એ",
+          126490
+        ],
+        [
+          "ો",
+          122421
+        ],
+        [
+          "ી",
+          116912
+        ],
+        [
+          "-",
+          113688
+        ],
+        [
+          "એ",
+          112296
+        ],
+        [
+          "▁પર",
+          109649
+        ],
+        [
+          "નું",
+          108992
+        ],
+        [
+          "▁કરી",
+          102791
+        ],
+        [
+          "ન",
+          89397
+        ],
+        [
+          "▁સાથે",
+          88041
+        ],
+        [
+          "ા",
+          86985
+        ],
+        [
+          "▁હતી",
+          86431
+        ]
+      ],
+      "piece_length_weighted": {
+        "0": 79046,
+        "1": 5778268,
+        "2": 7237340,
+        "3": 5529257,
+        "4": 3904394,
+        "5": 2658988,
+        "6": 1739303,
+        "7": 858067,
+        "8": 369166,
+        "9": 224488,
+        "10": 85419,
+        "11": 43479,
+        "12": 15529,
+        "13": 5167,
+        "14": 1281,
+        "15": 299,
+        "16": 539
+      },
+      "piece_length_types": {
+        "0": 1,
+        "1": 188,
+        "2": 1259,
+        "3": 2013,
+        "4": 2480,
+        "5": 2167,
+        "6": 1612,
+        "7": 944,
+        "8": 505,
+        "9": 306,
+        "10": 140,
+        "11": 79,
+        "12": 32,
+        "13": 6,
+        "14": 3,
+        "15": 1,
+        "16": 2
+      },
+      "embedding_parameters": 4608000,
+      "embedding_share_of_budget": 0.1843,
+      "chars_per_token_by_source": {
+        "abtakmedia": 4.082,
+        "ai4bharat_sangraha": 3.761,
+        "aksharnaad": 3.524,
+        "divya_bhaskar": 4.027,
+        "gujaratabroad": 3.989,
+        "gujarativishwakosh": 3.575,
+        "gujarattoday": 4.15,
+        "ia_books_fulltext": 2.864,
+        "layastaro": 3.216,
+        "opinionmagazine": 3.704,
+        "webdunia_gujarati": 4.132,
+        "westerntimesnews": 4.11
+      }
+    },
+    {
+      "model": "16k_unigram_guj.model",
+      "algorithm": "unigram",
+      "vocab_size": 16000,
+      "vocab_used_on_heldout": 15842,
+      "vocab_utilisation": 0.9901,
+      "tokens": 27606452,
+      "chars": 106688129,
+      "words": 18363128,
+      "chars_per_token": 3.865,
+      "fertility_tokens_per_word": 1.503,
+      "unk_rate": 0.0,
+      "newlines_in_heldout": 571188,
+      "byte_fallback_rate": 0.004485,
+      "hapax_pieces_on_heldout": 5,
+      "top_pieces": [
+        [
+          ".",
+          1165330
+        ],
+        [
+          "▁છે",
+          748561
+        ],
+        [
+          ",",
+          668490
+        ],
+        [
+          "▁અને",
+          373009
+        ],
+        [
+          "ના",
+          358424
+        ],
+        [
+          "ની",
+          334793
+        ],
+        [
+          "માં",
+          288341
+        ],
+        [
+          "ને",
+          279029
+        ],
+        [
+          "▁આ",
+          247613
+        ],
+        [
+          "▁કે",
+          214334
+        ],
+        [
+          "▁તે",
+          185547
+        ],
+        [
+          "▁પણ",
+          168580
+        ],
+        [
+          "▁માટે",
+          140688
+        ],
+        [
+          "▁જ",
+          137702
+        ],
+        [
+          "ે",
+          136827
+        ],
+        [
+          "થી",
+          129927
+        ],
+        [
+          "નો",
+          129460
+        ],
+        [
+          "▁એક",
+          128216
+        ],
+        [
+          "▁એ",
+          120868
+        ],
+        [
+          "-",
+          112739
+        ],
+        [
+          "▁પર",
+          106909
+        ],
+        [
+          "નું",
+          103687
+        ],
+        [
+          "▁કરી",
+          102794
+        ],
+        [
+          "ી",
+          100949
+        ],
+        [
+          "એ",
+          100199
+        ],
+        [
+          "ો",
+          98224
+        ],
+        [
+          "▁સાથે",
+          88041
+        ],
+        [
+          "▁હતી",
+          86431
+        ],
+        [
+          "▁તો",
+          78350
+        ],
+        [
+          "▁નથી",
+          78277
+        ]
+      ],
+      "piece_length_weighted": {
+        "0": 70398,
+        "1": 5255692,
+        "2": 6542318,
+        "3": 5348138,
+        "4": 3908990,
+        "5": 2732196,
+        "6": 1845720,
+        "7": 931186,
+        "8": 419755,
+        "9": 248761,
+        "10": 100173,
+        "11": 51508,
+        "12": 19097,
+        "13": 6077,
+        "14": 1359,
+        "15": 631,
+        "16": 631
+      },
+      "piece_length_types": {
+        "0": 1,
+        "1": 192,
+        "2": 1427,
+        "3": 2608,
+        "4": 3280,
+        "5": 2953,
+        "6": 2270,
+        "7": 1373,
+        "8": 775,
+        "9": 441,
+        "10": 222,
+        "11": 120,
+        "12": 47,
+        "13": 12,
+        "14": 4,
+        "15": 3,
+        "16": 4
+      },
+      "embedding_parameters": 6144000,
+      "embedding_share_of_budget": 0.2458,
+      "chars_per_token_by_source": {
+        "abtakmedia": 4.248,
+        "ai4bharat_sangraha": 3.903,
+        "aksharnaad": 3.662,
+        "divya_bhaskar": 4.173,
+        "gujaratabroad": 4.151,
+        "gujarativishwakosh": 3.712,
+        "gujarattoday": 4.314,
+        "ia_books_fulltext": 2.966,
+        "layastaro": 3.345,
+        "opinionmagazine": 3.845,
+        "webdunia_gujarati": 4.284,
+        "westerntimesnews": 4.279
+      }
+    },
+    {
+      "model": "24k_unigram_guj.model",
+      "algorithm": "unigram",
+      "vocab_size": 24000,
+      "vocab_used_on_heldout": 23835,
+      "vocab_utilisation": 0.9931,
+      "tokens": 26367343,
+      "chars": 106688129,
+      "words": 18363128,
+      "chars_per_token": 4.046,
+      "fertility_tokens_per_word": 1.436,
+      "unk_rate": 0.0,
+      "newlines_in_heldout": 571188,
+      "byte_fallback_rate": 0.004696,
+      "hapax_pieces_on_heldout": 6,
+      "top_pieces": [
+        [
+          ".",
+          1164606
+        ],
+        [
+          "▁છે",
+          747074
+        ],
+        [
+          ",",
+          668490
+        ],
+        [
+          "▁અને",
+          373023
+        ],
+        [
+          "ના",
+          298655
+        ],
+        [
+          "ની",
+          291570
+        ],
+        [
+          "ને",
+          248738
+        ],
+        [
+          "▁આ",
+          238928
+        ],
+        [
+          "માં",
+          231801
+        ],
+        [
+          "▁કે",
+          209176
+        ],
+        [
+          "▁તે",
+          183203
+        ],
+        [
+          "▁પણ",
+          168580
+        ],
+        [
+          "▁માટે",
+          140688
+        ],
+        [
+          "▁જ",
+          132651
+        ],
+        [
+          "▁એક",
+          125481
+        ],
+        [
+          "નો",
+          120136
+        ],
+        [
+          "થી",
+          117765
+        ],
+        [
+          "▁એ",
+          116874
+        ],
+        [
+          "-",
+          112602
+        ],
+        [
+          "ે",
+          109323
+        ],
+        [
+          "▁પર",
+          104536
+        ],
+        [
+          "▁કરી",
+          102777
+        ],
+        [
+          "નું",
+          98335
+        ],
+        [
+          "▁સાથે",
+          88041
+        ],
+        [
+          "એ",
+          87658
+        ],
+        [
+          "▁હતી",
+          86431
+        ],
+        [
+          "▁નથી",
+          78277
+        ],
+        [
+          "▁તો",
+          77700
+        ],
+        [
+          "▁જે",
+          76579
+        ],
+        [
+          "ો",
+          72150
+        ]
+      ],
+      "piece_length_weighted": {
+        "0": 67298,
+        "1": 4680689,
+        "2": 5673188,
+        "3": 5111360,
+        "4": 3962294,
+        "5": 2790855,
+        "6": 1944568,
+        "7": 1024554,
+        "8": 489388,
+        "9": 282489,
+        "10": 117604,
+        "11": 62133,
+        "12": 23399,
+        "13": 9532,
+        "14": 2626,
+        "15": 799,
+        "16": 745
+      },
+      "piece_length_types": {
+        "0": 1,
+        "1": 193,
+        "2": 1725,
+        "3": 3977,
+        "4": 5076,
+        "5": 4408,
+        "6": 3422,
+        "7": 2170,
+        "8": 1317,
+        "9": 729,
+        "10": 366,
+        "11": 202,
+        "12": 82,
+        "13": 35,
+        "14": 13,
+        "15": 4,
+        "16": 5
+      },
+      "embedding_parameters": 9216000,
+      "embedding_share_of_budget": 0.3686,
+      "chars_per_token_by_source": {
+        "abtakmedia": 4.452,
+        "ai4bharat_sangraha": 4.082,
+        "aksharnaad": 3.84,
+        "divya_bhaskar": 4.357,
+        "gujaratabroad": 4.352,
+        "gujarativishwakosh": 3.916,
+        "gujarattoday": 4.533,
+        "ia_books_fulltext": 3.109,
+        "layastaro": 3.519,
+        "opinionmagazine": 4.029,
+        "webdunia_gujarati": 4.473,
+        "westerntimesnews": 4.489
+      }
+    },
+    {
+      "model": "32k_unigram_guj.model",
+      "algorithm": "unigram",
+      "vocab_size": 32000,
+      "vocab_used_on_heldout": 31822,
+      "vocab_utilisation": 0.9944,
+      "tokens": 25582576,
+      "chars": 106688129,
+      "words": 18363128,
+      "chars_per_token": 4.17,
+      "fertility_tokens_per_word": 1.393,
+      "unk_rate": 0.0,
+      "newlines_in_heldout": 571188,
+      "byte_fallback_rate": 0.00484,
+      "hapax_pieces_on_heldout": 11,
+      "top_pieces": [
+        [
+          ".",
+          1163755
+        ],
+        [
+          "▁છે",
+          746919
+        ],
+        [
+          ",",
+          668537
+        ],
+        [
+          "▁અને",
+          373029
+        ],
+        [
+          "ના",
+          249857
+        ],
+        [
+          "ની",
+          244782
+        ],
+        [
+          "▁આ",
+          232600
+        ],
+        [
+          "ને",
+          210338
+        ],
+        [
+          "▁કે",
+          207742
+        ],
+        [
+          "માં",
+          185296
+        ],
+        [
+          "▁તે",
+          182492
+        ],
+        [
+          "▁પણ",
+          168403
+        ],
+        [
+          "▁માટે",
+          140688
+        ],
+        [
+          "▁જ",
+          128969
+        ],
+        [
+          "▁એક",
+          124083
+        ],
+        [
+          "▁એ",
+          114787
+        ],
+        [
+          "-",
+          112310
+        ],
+        [
+          "નો",
+          105099
+        ],
+        [
+          "થી",
+          103918
+        ],
+        [
+          "▁કરી",
+          102779
+        ],
+        [
+          "▁પર",
+          102656
+        ],
+        [
+          "ે",
+          90225
+        ],
+        [
+          "નું",
+          89657
+        ],
+        [
+          "▁સાથે",
+          88041
+        ],
+        [
+          "▁હતી",
+          86431
+        ],
+        [
+          "▁નથી",
+          78277
+        ],
+        [
+          "▁તો",
+          77424
+        ],
+        [
+          "▁જે",
+          75781
+        ],
+        [
+          "એ",
+          74342
+        ],
+        [
+          "'",
+          70257
+        ]
+      ],
+      "piece_length_weighted": {
+        "0": 64208,
+        "1": 4378645,
+        "2": 5122395,
+        "3": 4925345,
+        "4": 3951242,
+        "5": 2820422,
+        "6": 2004255,
+        "7": 1086719,
+        "8": 539064,
+        "9": 315787,
+        "10": 135172,
+        "11": 70436,
+        "12": 27464,
+        "13": 12306,
+        "14": 3660,
+        "15": 889,
+        "16": 745
+      },
+      "piece_length_types": {
+        "0": 1,
+        "1": 193,
+        "2": 1963,
+        "3": 5174,
+        "4": 6557,
+        "5": 5831,
+        "6": 4677,
+        "7": 3108,
+        "8": 1960,
+        "9": 1130,
+        "10": 584,
+        "11": 311,
+        "12": 130,
+        "13": 60,
+        "14": 23,
+        "15": 5,
+        "16": 5
+      },
+      "embedding_parameters": 12288000,
+      "embedding_share_of_budget": 0.4915,
+      "chars_per_token_by_source": {
+        "abtakmedia": 4.593,
+        "ai4bharat_sangraha": 4.204,
+        "aksharnaad": 3.952,
+        "divya_bhaskar": 4.489,
+        "gujaratabroad": 4.486,
+        "gujarativishwakosh": 4.054,
+        "gujarattoday": 4.68,
+        "ia_books_fulltext": 3.213,
+        "layastaro": 3.637,
+        "opinionmagazine": 4.156,
+        "webdunia_gujarati": 4.584,
+        "westerntimesnews": 4.631
+      }
+    }
+  ]
+}

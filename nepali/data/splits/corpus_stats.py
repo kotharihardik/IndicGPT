@@ -4,8 +4,8 @@ The 500M-token target is defined on tokens after tokenization, not bytes,
 file size or words. So this script measures token counts with the trained
 SentencePiece model whenever one exists:
 
-    python data/splits/corpus_stats.py                  # before the tokenizer exists
-    python data/splits/corpus_stats.py --tokenizer      # exact counts (run this for the report)
+    python3 data/splits/corpus_stats.py                  # before the tokenizer exists
+    python3 data/splits/corpus_stats.py --tokenizer      # exact counts (run this for the report)
 
 Without `--tokenizer` it reports characters/bytes/words only and marks token
 counts as unavailable - it never guesses a token count from file size.
@@ -22,7 +22,7 @@ from collections import defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from corpus_io import human, lang_root, load_config, read_docs  # noqa: E402
+from corpus_io import lang_root, load_config, read_docs  # noqa: E402
 
 ROOT = lang_root(Path(__file__))
 CFG = load_config(ROOT)
@@ -56,7 +56,7 @@ def load_tokenizer():
             model = p
             break
     if model is None:
-        return None, (candidates[0] or candidates[1]) / f"{prefix}.model"
+        return None, (candidates[0] or candidates[1]) / f"{stem}.model"
     import sentencepiece as spm
     return spm.SentencePieceProcessor(model_file=str(model)), model
 
@@ -142,6 +142,7 @@ def figures(train: dict, split_totals: dict) -> None:
 
 
 def main() -> None:
+    """Report per-split, per-source and per-provenance corpus statistics."""
     ap = argparse.ArgumentParser(description="Corpus statistics + manual/public token accounting.")
     ap.add_argument("--tokenizer", action="store_true",
                     help="Count tokens with the trained SentencePiece model (exact)")
@@ -211,9 +212,11 @@ def main() -> None:
 
     rep = CFG["paths"]["reports"]
     rep.mkdir(parents=True, exist_ok=True)
-    (rep / "corpus_stats.md").write_text("\n".join(md), encoding="utf-8")
+    # No markdown here: report/tables/corpus_summary.md presents these
+    # figures for both languages together, which is the more useful form.
+    (rep / "json").mkdir(parents=True, exist_ok=True)
     dumpable = {s: {k: v for k, v in st.items() if k != "lengths"} for s, st in stats.items()}
-    (rep / "corpus_stats.json").write_text(
+    (rep / "json" / "corpus_stats.json").write_text(
         json.dumps({"language": LANG, "token_counts_exact": bool(sp), "splits": dumpable},
                    indent=2, ensure_ascii=False), encoding="utf-8")
     figures(train, split_totals)
@@ -227,7 +230,7 @@ def main() -> None:
     print(f"  Manual percentage: {pct:.2f}%  (measured by {unit})")
     if sp:
         print(f"  500M target:       {train['totals']['tokens']/TARGET_TOKENS*100:.2f}%")
-    print(f"  report -> {rep / 'corpus_stats.md'}")
+    print(f"  report -> {rep / 'json' / 'corpus_stats.json'}")
 
 
 if __name__ == "__main__":

@@ -1,39 +1,30 @@
 """Nepali preprocessing: Unicode normalisation, filtering, boilerplate removal.
 
 Reads every raw shard under `data/raw/` (public and manual alike, provenance
-preserved) and writes cleaned documents to `data/clean/`.
+kept) and writes cleaned documents to `data/clean/`.
 
-Gujarati-specific decisions made here, all defensible in evaluation:
+The Nepali-specific choices:
 
-* NFC, not NFKC, for the same reason as the Gujarati pipeline: it composes
-  nukta letters into single code points without destroying wanted distinctions.
-
-* The language filter is LEXICAL, not character-based. This is the key
-  difference from both other languages in this project. Gujarati owns its
-  Unicode block outright; Sindhi shares the Arabic block but owns 17 exclusive
-  letters. Nepali owns nothing - Devanagari is shared with Hindi, Marathi,
-  Sanskrit and Bhojpuri, and no character identifies Nepali. So the filter
-  counts high-frequency function words instead: Nepali uses छ/छन्/हो/भएको/
-  गरेको/लाई/र where Hindi uses है/हैं/और/किया. Measured on real pages, Nepali
-  news scores 11-14 Nepali markers per 1000 characters and 0.0 Hindi markers;
-  Hindi pages invert that exactly.
-* ZWJ (U+200D) removed, ZWNJ (U+200C) kept. Gujarati never needs an explicit
-  joiner to render correctly, so stray ZWJ only creates duplicate spellings of
-  identical words. ZWNJ can be orthographically meaningful (it blocks a
-  conjunct), so it is preserved.
-* Gujarati digits ૦-૯ folded to ASCII. They are rare in modern prose and
-  would otherwise occupy vocabulary slots as a high-variance token class.
-* Danda ।/॥ kept. They are shared punctuation used in Gujarati and are the
-  main sentence terminator in literary text.
-* Script filter on the Gujarati block (U+0A80-U+0AFF) over *letter*
-  characters only. Gujarati and Devanagari are different Unicode blocks, so this
-  cleanly rejects Hindi/Marathi pages that leak into a Gujarati crawl - no
-  pretrained language-ID model needed.
+* The language filter is LEXICAL, not character-based, and this is the biggest
+  difference from the Gujarati pipeline. Gujarati owns its Unicode block
+  outright; Nepali owns nothing, because Devanagari is shared with Hindi,
+  Marathi, Sanskrit and Bhojpuri, and no character identifies Nepali. So the
+  filter counts function words instead: Nepali uses छ/छन्/हो/भएको/गरेको/लाई
+  where Hindi uses है/हैं/और/किया. On real pages Nepali news scores 11-14
+  Nepali markers per 1000 characters and 0 Hindi markers; Hindi pages invert
+  that exactly. A document also has to beat Hindi by 1.5:1 to be kept.
+* NFC, not NFKC, for the same reason as Gujarati.
+* ZWJ (U+200D) removed, ZWNJ (U+200C) kept - ZWNJ blocks a conjunct and so
+  changes the word.
+* Latin words removed and digits written in Devanagari (TA ruling). The digit
+  rule reverses what I did first, which was folding ०-९ to ASCII.
+* Danda ।/॥ spacing regularised - it is the sentence terminator and sites space
+  it inconsistently.
 
 Run:
 
-    python data/preprocessing/preprocess.py
-    python data/preprocessing/preprocess.py --limit 5000     # smoke test
+    python3 data/preprocessing/preprocess.py
+    python3 data/preprocessing/preprocess.py --limit 5000     # smoke test
 """
 
 from __future__ import annotations
@@ -67,7 +58,18 @@ URL = re.compile(r"https?://\S+|www\.\S+")
 EMAIL = re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+")
 PUNCT_FOLD = {"\u2018": "'", "\u2019": "'", "\u201c": '"', "\u201d": '"',
               "\u2013": "-", "\u2014": "-", "\u2026": "..."}
-DEVA_DIGITS = {chr(0x0966 + i): str(i) for i in range(10)}
+#: ASCII digit -> Devanagari digit. The TA ruled that digits may stay but
+#: must be written in the language's own script, so this maps in the opposite
+#: direction to the earlier version of this pipeline.
+DEVA_DIGITS = {str(i): chr(0x0966 + i) for i in range(10)}
+
+#: A run of Latin letters, including the apostrophes, hyphens and full stops
+#: that occur inside names such as O'Neill, e-commerce or U.S.A.
+LATIN_WORD = re.compile(r"[A-Za-z][A-Za-z'\u2019.-]*")
+
+#: Brackets or quotes left empty once the Latin word between them is removed,
+#: e.g. "(Singer)" -> "( )".
+EMPTY_WRAP = re.compile(r"[(\[{\u201c\u2018\"']\s*[)\]}\u201d\u2019\"']")
 
 #: Nepali has no exclusive characters - Devanagari is shared with Hindi,
 #: Marathi and Sanskrit. Language ID is lexical. See module docstring.
@@ -85,7 +87,7 @@ def marker_rates(text):
     return (sum(padded.count(w) for w in NEPALI_MARKERS) / per_1k,
             sum(padded.count(w) for w in HINDI_MARKERS) / per_1k)
 
-#: Very frequent Gujarati function words. Genuine prose contains several;
+#: Very frequent Nepali function words. Genuine prose contains several;
 #: keyword spam and machine-generated pages do not.
 STOPWORDS = ["छ", "हो", "र", "पनि", "तर", "लाई", "भएको", "गरेको", "हुन्",
              "छन्", "भने", "गर्न", "देखि", "सम्म", "बाट", "मा", "को", "का",
@@ -96,7 +98,7 @@ BOILERPLATE = ["javascript", "enable cookies", "lorem ipsum", "all rights reserv
 
 
 def normalize(text: str) -> str:
-    """Apply the full Gujarati normalisation chain to one document."""
+    """Apply the full Nepali normalisation chain to one document."""
     if not text:
         return ""
     text = unicodedata.normalize("NFC", text)
@@ -112,10 +114,20 @@ def normalize(text: str) -> str:
         text = text.replace(a, b)
 
     if N.get("strip_zwj", True):
-        text = text.replace("\u200d", "")          # joiner: never needed in Gujarati
+        text = text.replace("\u200d", "")          # joiner: never needed in Devanagari
     if not N.get("keep_zwnj", True):
         text = text.replace("\u200c", "")          # non-joiner: kept by default
-    if N.get("map_digits_to_ascii", True):
+    # Remove non-language words. Per the TA ruling these go even when they
+    # are proper nouns embedded in Nepali prose (Tata, IRCTC), because
+    # the corpus must be monolingual. Digits are kept.
+    if N.get("strip_latin_words", True):
+        text = LATIN_WORD.sub(" ", text)
+        # Tidy what removal leaves behind: "(Singer)" -> "( )" -> "".
+        for _ in range(2):
+            text = EMPTY_WRAP.sub(" ", text)
+
+    # Digits stay, but in the language's own script rather than ASCII.
+    if N.get("map_digits_to_native", True):
         text = text.translate(str.maketrans(DEVA_DIGITS))
 
     text = re.sub(r"\s*([\u0964\u0965])\s*", r"\1 ", text)   # consistent danda spacing
@@ -163,49 +175,54 @@ def check(text: str):
     Filters are ordered cheap-first so most junk is rejected before the
     expensive n-gram statistics run.
     """
+    # --- length: cheapest checks, so they run first ---
     n_chars = len(text)
-    if n_chars < Q["min_chars"]:
+    if n_chars < Q["min_chars"]:                    # 1. Too short?
         return False, "too_short"
-    if n_chars > Q["max_chars"]:
+    if n_chars > Q["max_chars"]:                    # 2. Too long?
         return False, "too_long"
 
     words = text.split()
-    if len(words) < Q["min_words"]:
+    if len(words) < Q["min_words"]:                 # 3. Too few words?
         return False, "too_few_words"
     mean_wl = sum(len(w) for w in words) / len(words)
     if not (Q["min_mean_word_len"] <= mean_wl <= Q["max_mean_word_len"]):
-        return False, "bad_word_length"
+        return False, "bad_word_length"             # 4. Strange average word length?
 
+    # --- script: right alphabet? ---
     if _ratio(text, [DEVANAGARI_BLOCK]) < Q["min_script_ratio"]:
-        return False, "not_devanagari"
+        return False, "not_devanagari"              # 5. Enough Devanagari?
 
+    # --- language: THE check that matters for Nepali ---
     # Devanagari proves nothing on its own: Hindi, Marathi and Sanskrit are
     # indistinguishable from Nepali at the character level. This lexical test
     # is the actual language filter.
     nepali, hindi = marker_rates(text)
     if nepali < Q["min_nepali_marker_rate"]:
-        return False, "not_nepali"
+        return False, "not_nepali"                  # 6. Enough Nepali words?
     if nepali < hindi * Q["min_nepali_hindi_ratio"]:
-        return False, "hindi_not_nepali"
+        return False, "hindi_not_nepali"            # 7. More Hindi than Nepali?
     if _ratio(text, LATIN_BLOCKS) > Q["max_latin_ratio"]:
-        return False, "too_much_latin"
+        return False, "too_much_latin"              # 8. Too much English?
     if sum(1 for w in STOPWORDS if w in text) < Q["min_stopword_hits"]:
-        return False, "no_stopwords"
+        return False, "no_stopwords"                # 9. Real prose, or just a menu?
 
+    # --- content quality: expensive checks last ---
     if sum(1 for c in text if c.isdigit()) / n_chars > Q["max_digit_ratio"]:
-        return False, "digit_heavy"
+        return False, "digit_heavy"                 # 10. Mostly numbers (a table)?
     if sum(1 for m in BOILERPLATE if m in text.lower()) >= 2:
-        return False, "boilerplate"
+        return False, "boilerplate"                 # 11. Cookie/subscribe notice?
     if _dup_line_fraction(text) > Q["max_duplicate_line_fraction"]:
-        return False, "repeated_lines"
+        return False, "repeated_lines"              # 12. Same line over and over?
     for n, key in ((2, "max_top_2gram"), (3, "max_top_3gram"), (4, "max_top_4gram")):
         if _top_ngram_fraction(words, n) > Q[key]:
-            return False, f"repetitive_{n}gram"
+            return False, f"repetitive_{n}gram"     # 13. One phrase dominates?
     return True, None
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description="Normalise and filter the raw Gujarati corpus.")
+    """Run both passes over the raw corpus and write data/clean/."""
+    ap = argparse.ArgumentParser(description="Normalise and filter the raw Nepali corpus.")
     ap.add_argument("--limit", type=int, default=None, help="Process only N documents")
     ap.add_argument("--no-line-pass", action="store_true",
                     help="Skip the repeated-line boilerplate pass (saves RAM)")
@@ -218,15 +235,10 @@ def main() -> None:
         out.unlink()
 
     # Pass A: find lines repeated across many documents (nav bars, OCR headers).
-    #
-    # Counting every distinct line over a ~900k-document corpus needs several
-    # gigabytes, because almost every line is unique and never becomes
-    # boilerplate. So the counter is pruned periodically: singletons seen
-    # before the previous checkpoint are dropped. This is lossy counting, and
-    # it is safe for this purpose - genuine boilerplate appears in a large
-    # fraction of documents and is re-seen long before every prune, whereas the
-    # entries being discarded are ordinary sentences that would never have
-    # reached the threshold.
+    # Counting every distinct line over the whole corpus would need several GB,
+    # since almost every line is unique. So the counter drops singletons every
+    # so often (lossy counting). Safe here: real boilerplate reappears long
+    # before a prune, and what gets dropped would never hit the threshold.
     blocked = set()
     if not args.no_line_pass:
         df = Counter()
@@ -295,7 +307,8 @@ def main() -> None:
     }
     rep = CFG["paths"]["reports"]
     rep.mkdir(parents=True, exist_ok=True)
-    (rep / "cleaning.json").write_text(
+    (rep / "json").mkdir(parents=True, exist_ok=True)
+    (rep / "json" / "cleaning.json").write_text(
         json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
 
     print(f"\n==== CLEAN [{CFG['language']}] ====")
@@ -303,7 +316,7 @@ def main() -> None:
           f"{human(writer.chars)} chars)")
     for r, c in reasons.most_common():
         print(f"    {r:<28} {c:>10,}")
-    print(f"  summary -> {rep / 'cleaning.json'}")
+    print(f"  summary -> {rep / 'json' / 'cleaning.json'}")
 
 
 if __name__ == "__main__":

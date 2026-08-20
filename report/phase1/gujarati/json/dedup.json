@@ -1,0 +1,14 @@
+{
+  "language": "guj",
+  "documents_in": 843660,
+  "documents_out": 830410,
+  "exact_duplicates": 3365,
+  "near_duplicates": 9885,
+  "removal_rate": 0.0157,
+  "chars_kept": 2165416159,
+  "minhash": {
+    "threshold": 0.8,
+    "num_perm": 128,
+    "shingle_k": 5
+  }
+}

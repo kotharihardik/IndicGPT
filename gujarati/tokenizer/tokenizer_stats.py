@@ -74,7 +74,6 @@ KNEE_RELATIVE_GAIN = 0.02
 #: Hard ceiling on the share of the Phase 2 parameter budget the embedding
 #: table may consume. Input and output embeddings are tied, so this is a lookup
 #: table competing directly with Transformer blocks: at d_model=384 each block
-#: costs ~12*d^2 = 1.77M parameters, so every 16k of vocabulary is worth about
 #: 3.5 layers. Letting the embedding take most of the budget buys a little
 #: compression and pays for it with a model too shallow to use it.
 MAX_EMBEDDING_SHARE = 0.34
@@ -507,62 +506,6 @@ def print_table(results: list) -> None:
               f"{100 * r['embedding_share_of_budget']:>8.0f}%")
 
 
-def write_markdown(path: Path, results: list, samples: list,
-                   recommendation: dict, n_docs: int, gu_share: float) -> None:
-    """Write the human-readable report table."""
-    lines = [
-        "# Gujarati tokenizer statistics (Model H)",
-        "",
-        f"SentencePiece Unigram, trained from scratch on the Gujarati "
-        f"training split only. Measured on {n_docs:,} held-out validation "
-        f"documents ({100 * gu_share:.1f}% Gujarati script).",
-        "",
-        "## Vocabulary size comparison",
-        "",
-        "| Vocab | Chars/token | Fertility (tok/word) | Byte-fallback | UNK | "
-        "Vocab used | Embedding params | % of 25M budget |",
-        "|---|---|---|---|---|---|---|---|",
-    ]
-    for r in results:
-        lines.append(
-            f"| {r['vocab_size']:,} | {r['chars_per_token']:.3f} | "
-            f"{r['fertility_tokens_per_word']:.3f} | "
-            f"{r['byte_fallback_rate']:.6f} | {r['unk_rate']:.6f} | "
-            f"{100 * r['vocab_utilisation']:.1f}% | "
-            f"{human(r['embedding_parameters'])} | "
-            f"{100 * r['embedding_share_of_budget']:.0f}% |")
-
-    if recommendation.get("recommended"):
-        lines += ["", "## Recommended vocabulary size", "",
-                  f"{recommendation['recommended']:,} — {recommendation['reason']}.",
-                  "",
-                  "UNK rate is ~0 by construction because `byte_fallback=True`; "
-                  "the byte-fallback rate is the real coverage metric."]
-
-    best = results[-1]
-    if best.get("chars_per_token_by_source"):
-        lines += ["", "## Compression by source register", "",
-                  "| Source | Chars/token |", "|---|---|"]
-        for name, value in sorted(best["chars_per_token_by_source"].items(),
-                                  key=lambda kv: -kv[1]):
-            lines.append(f"| {name} | {value:.3f} |")
-
-    if samples:
-        lines += ["", "## Tokenization examples", ""]
-        for s in samples:
-            lines += [f"- `{s['text']}`",
-                      f"  - {s['n_tokens']} tokens, "
-                      f"{s['chars_per_token']} chars/token",
-                      f"  - `{' | '.join(s['pieces'])}`"]
-
-    lines += ["", "## Most frequent pieces", "",
-              "| Piece | Count |", "|---|---|"]
-    for piece, count in best["top_pieces"][:20]:
-        lines.append(f"| `{piece}` | {count:,} |")
-
-    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-
-
 def main() -> None:
     """Evaluate the tokenizer(s) on held-out text and write the report."""
     ap = argparse.ArgumentParser(
@@ -713,15 +656,10 @@ def main() -> None:
     curve_path = json_dir / f"{stem}_frequency_curve.json"
     curve_path.write_text(json.dumps(curves, indent=1), encoding="utf-8")
 
-    # The sweep table is presented for both languages in
-    # report/tables/tokenizer_sweep.md, so only the final model writes markdown
-    # here: its examples and piece frequencies are language-specific.
-    md_path = reports / "tokenizer_report.md"
-    if not args.compare_sweep:
-        write_markdown(md_path, results, samples, recommendation, len(docs), gu_share)
+    # No markdown is written here. Each language has exactly one hand-written
+    # report, report/phase1/<lang>/README.md, and the cross-language tables are
+    # produced by report/phase1/make_report_assets.py from this JSON.
     print(f"\nsaved -> {json_path}")
-    if not args.compare_sweep:
-        print(f"saved -> {md_path}")
     print(f"saved -> {curve_path}  (Zipf curve data for the figure)")
 
     if not args.no_figures:

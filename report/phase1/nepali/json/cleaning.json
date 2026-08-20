@@ -1,0 +1,218 @@
+{
+  "language": "nep",
+  "documents_in": 1378885,
+  "documents_kept": 1255276,
+  "keep_rate": 0.9104,
+  "chars_in": 2675371497,
+  "chars_kept": 2556361731,
+  "rejections": {
+    "repeated_lines": 811,
+    "not_nepali": 102137,
+    "repetitive_3gram": 4664,
+    "hindi_not_nepali": 39,
+    "repetitive_4gram": 10024,
+    "repetitive_2gram": 892,
+    "too_short": 4810,
+    "digit_heavy": 18,
+    "not_devanagari": 16,
+    "bad_word_length": 194,
+    "too_few_words": 3,
+    "empty_after_normalisation": 1
+  },
+  "rejections_by_source": {
+    "aakarpost": {
+      "repeated_lines": 98,
+      "not_nepali": 17,
+      "repetitive_3gram": 1,
+      "hindi_not_nepali": 1,
+      "repetitive_4gram": 1
+    },
+    "annapurnapost": {
+      "not_nepali": 104,
+      "repetitive_4gram": 18,
+      "repetitive_2gram": 1
+    },
+    "arthasarokar": {
+      "not_nepali": 1589,
+      "repetitive_4gram": 479,
+      "too_short": 340,
+      "digit_heavy": 2,
+      "repetitive_3gram": 362,
+      "repetitive_2gram": 24,
+      "repeated_lines": 2
+    },
+    "bizmandu": {
+      "not_nepali": 299,
+      "too_short": 7,
+      "repetitive_4gram": 53,
+      "repetitive_2gram": 4,
+      "repetitive_3gram": 18,
+      "repeated_lines": 20
+    },
+    "clickmandu_html": {
+      "repetitive_4gram": 179,
+      "not_nepali": 1353,
+      "repetitive_3gram": 68,
+      "too_short": 99,
+      "repetitive_2gram": 14,
+      "repeated_lines": 1
+    },
+    "court_pdf": {
+      "not_nepali": 1
+    },
+    "edukhabar": {
+      "not_nepali": 3
+    },
+    "filmykhabar": {
+      "not_nepali": 2
+    },
+    "hamrakura": {
+      "not_nepali": 27,
+      "too_short": 2,
+      "repetitive_2gram": 1,
+      "repetitive_4gram": 4
+    },
+    "khabarhub_html": {
+      "not_nepali": 3649,
+      "too_short": 141,
+      "repetitive_3gram": 135,
+      "repetitive_4gram": 372,
+      "repetitive_2gram": 14,
+      "repeated_lines": 1,
+      "hindi_not_nepali": 3
+    },
+    "krishisanjal": {
+      "not_nepali": 1
+    },
+    "nagariknetwork": {
+      "not_nepali": 20,
+      "too_short": 10,
+      "repetitive_3gram": 1,
+      "repetitive_2gram": 1
+    },
+    "nepalilink": {
+      "not_nepali": 439,
+      "digit_heavy": 3,
+      "repetitive_4gram": 27,
+      "repetitive_2gram": 6,
+      "too_short": 2,
+      "repetitive_3gram": 26,
+      "repeated_lines": 2
+    },
+    "nepalisahityaghar": {
+      "not_nepali": 114,
+      "repetitive_2gram": 12,
+      "repeated_lines": 1,
+      "repetitive_3gram": 11,
+      "repetitive_4gram": 3,
+      "too_short": 2
+    },
+    "nepalkhoj": {
+      "not_nepali": 1000,
+      "repetitive_4gram": 119,
+      "repetitive_3gram": 59,
+      "too_short": 43,
+      "repetitive_2gram": 15,
+      "repeated_lines": 1,
+      "digit_heavy": 1
+    },
+    "nepalpress_html": {
+      "repetitive_4gram": 408,
+      "not_nepali": 3848,
+      "too_short": 64,
+      "repetitive_3gram": 163,
+      "repetitive_2gram": 33,
+      "digit_heavy": 2,
+      "repeated_lines": 1,
+      "hindi_not_nepali": 1
+    },
+    "offlinethinker": {
+      "repeated_lines": 10,
+      "not_nepali": 43,
+      "repetitive_2gram": 1,
+      "hindi_not_nepali": 5,
+      "repetitive_4gram": 3,
+      "repetitive_3gram": 2
+    },
+    "onlinekhabar": {
+      "not_nepali": 4723,
+      "repetitive_4gram": 369,
+      "repetitive_3gram": 507,
+      "too_short": 171,
+      "repetitive_2gram": 23,
+      "not_devanagari": 1,
+      "repeated_lines": 18,
+      "digit_heavy": 1
+    },
+    "reportersnepal_html": {
+      "not_nepali": 2852,
+      "repetitive_3gram": 46,
+      "repetitive_4gram": 149,
+      "too_short": 137,
+      "repetitive_2gram": 11,
+      "repeated_lines": 6
+    },
+    "sahityasangraha_html": {
+      "not_nepali": 2227,
+      "repetitive_4gram": 244,
+      "repetitive_2gram": 90,
+      "repetitive_3gram": 164,
+      "hindi_not_nepali": 9,
+      "repeated_lines": 47,
+      "too_short": 23
+    },
+    "sancharkendra": {
+      "not_nepali": 474,
+      "repetitive_4gram": 43,
+      "too_short": 15,
+      "repetitive_3gram": 35,
+      "repetitive_2gram": 3
+    },
+    "swasthyakhabar": {
+      "too_short": 3,
+      "not_nepali": 16,
+      "repeated_lines": 1
+    },
+    "ai4bharat_sangraha": {
+      "not_nepali": 79336,
+      "repetitive_4gram": 7553,
+      "repetitive_2gram": 639,
+      "too_short": 3751,
+      "repetitive_3gram": 3066,
+      "repeated_lines": 602,
+      "bad_word_length": 194,
+      "hindi_not_nepali": 20,
+      "digit_heavy": 9,
+      "not_devanagari": 15,
+      "too_few_words": 3,
+      "empty_after_normalisation": 1
+    }
+  },
+  "quality_thresholds": {
+    "min_chars": 250,
+    "max_chars": 800000,
+    "min_words": 30,
+    "min_mean_word_len": 2.0,
+    "max_mean_word_len": 15.0,
+    "min_script_ratio": 0.8,
+    "min_nepali_marker_rate": 3.0,
+    "min_nepali_hindi_ratio": 1.5,
+    "max_latin_ratio": 0.15,
+    "min_stopword_hits": 3,
+    "max_digit_ratio": 0.15,
+    "max_duplicate_line_fraction": 0.3,
+    "max_top_2gram": 0.18,
+    "max_top_3gram": 0.16,
+    "max_top_4gram": 0.14
+  },
+  "normalisation": {
+    "strip_zwj": true,
+    "keep_zwnj": true,
+    "map_digits_to_native": true,
+    "strip_latin_words": true,
+    "normalize_danda": true,
+    "strip_urls": true,
+    "strip_emails": true
+  },
+  "boilerplate_lines_blocked": 403
+}

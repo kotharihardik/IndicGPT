@@ -61,9 +61,8 @@ SCRIPT_STYLE = re.compile(r"(?is)<(script|style|noscript)\b.*?</\1>")
 
 #: Nepali has no exclusive characters at all. It shares Devanagari with Hindi,
 #: Marathi, Sanskrit and Bhojpuri, so a script check cannot identify it. For
-#: Gujarati the Unicode block alone is proof, and Sindhi has 17 exclusive
-#: Arabic letters; Nepali has nothing equivalent, so identification here has to
-#: be LEXICAL. These are high-frequency Nepali function words Hindi does not
+#: Gujarati the Unicode block alone is proof; Nepali has nothing equivalent,
+#: so identification here has to be LEXICAL. These are high-frequency Nepali function words Hindi does not
 #: use, plus the Hindi equivalents Nepali does not use.
 #: Measured on real pages: Nepali news scores 11-14 NEPALI_MARKERS per 1000
 #: characters and 0.0 HINDI_MARKERS. Hindi pages invert this exactly, which is
@@ -120,21 +119,17 @@ def clean_text(raw: str, is_html: bool = False) -> str:
 def reject_reason(text: str) -> str:
     """Return '' to keep the document, or a short reason string to drop it.
 
-    The two Devanagari checks are the important ones and they do different
-    jobs. The script ratio only proves the page is Devanagari, which a Hindi
-    page satisfies just as well. The marker counts then decide *which*
-    Devanagari language it is: a page needs enough Nepali function words per
-    1000 characters, and it must not contain more Hindi markers than Nepali
-    ones.
+    The two Devanagari checks do different jobs. The script ratio only proves
+    the page is Devanagari, which a Hindi page satisfies too. The marker counts
+    then decide *which* Devanagari language it is: enough Nepali function words
+    per 1000 characters, and no more Hindi markers than Nepali ones.
 
-    Both thresholds are deliberately loose here. `preprocess.py` re-checks with
-    the strict values (3.0 markers per 1000 chars, and a 1.5x Nepali:Hindi
-    ratio). Dropping a page here means re-crawling to get it back; dropping it
-    in preprocessing is just a config edit.
+    Thresholds are loose here on purpose - preprocess.py re-checks strictly.
+    Dropping a page here costs a re-crawl; dropping it later is a config edit.
 
-    The returned string is counted in the progress display. That is how I
-    found the Hindi leakage on two of the sites, which showed up as thousands
-    of 'hindi-not-nepali' rejections rather than as silently bad data.
+    The reason string is counted in the progress display, which is how I caught
+    Hindi leakage on two sites: thousands of 'hindi-not-nepali' rejections
+    instead of silently bad data.
     """
     if len(text) < 200:
         return "too-short"

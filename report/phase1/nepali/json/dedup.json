@@ -1,0 +1,14 @@
+{
+  "language": "nep",
+  "documents_in": 1255276,
+  "documents_out": 1239652,
+  "exact_duplicates": 5045,
+  "near_duplicates": 10579,
+  "removal_rate": 0.0124,
+  "chars_kept": 2528493333,
+  "minhash": {
+    "threshold": 0.8,
+    "num_perm": 128,
+    "shingle_k": 5
+  }
+}

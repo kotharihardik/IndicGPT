@@ -1,0 +1,1062 @@
+{
+  "language": "nep",
+  "algorithm": "sentencepiece_unigram",
+  "heldout_documents": 61604,
+  "heldout_chars": 125283173,
+  "heldout_devanagari_share": 0.8403,
+  "note": "byte_fallback=True means characters outside the vocabulary become <0xNN> pieces rather than <unk>, so unk_rate is ~0 by construction and byte_fallback_rate is the meaningful coverage metric",
+  "recommendation": {
+    "recommended": 16000,
+    "reason": "largest vocabulary whose embedding stays within 34% of the parameter budget",
+    "warning": "",
+    "chars_per_token": 4.689,
+    "fertility_tokens_per_word": 1.416,
+    "byte_fallback_rate": 0.003557,
+    "vocab_utilisation": 0.9907,
+    "embedding_parameters": 6144000,
+    "embedding_share_of_budget": 0.2458,
+    "transformer_budget_left": 18856000.0,
+    "approx_layers_affordable": 10.7,
+    "rejected_for_coverage": [],
+    "rejected_for_underuse": [],
+    "rejected_as_too_expensive": [
+      24000,
+      32000
+    ]
+  },
+  "per_algorithm_recommendation": {
+    "unigram": {
+      "recommended": 16000,
+      "reason": "largest vocabulary whose embedding stays within 34% of the parameter budget",
+      "warning": "",
+      "chars_per_token": 4.689,
+      "fertility_tokens_per_word": 1.416,
+      "byte_fallback_rate": 0.003557,
+      "vocab_utilisation": 0.9907,
+      "embedding_parameters": 6144000,
+      "embedding_share_of_budget": 0.2458,
+      "transformer_budget_left": 18856000.0,
+      "approx_layers_affordable": 10.7,
+      "rejected_for_coverage": [],
+      "rejected_for_underuse": [],
+      "rejected_as_too_expensive": [
+        24000,
+        32000
+      ]
+    }
+  },
+  "algorithm_comparison": {},
+  "examples": [],
+  "results": [
+    {
+      "model": "8k_unigram_nep.model",
+      "algorithm": "unigram",
+      "vocab_size": 8000,
+      "vocab_used_on_heldout": 7859,
+      "vocab_utilisation": 0.9824,
+      "tokens": 29657996,
+      "chars": 125209376,
+      "words": 18858548,
+      "chars_per_token": 4.222,
+      "fertility_tokens_per_word": 1.573,
+      "unk_rate": 0.0,
+      "newlines_in_heldout": 73797,
+      "byte_fallback_rate": 0.003202,
+      "hapax_pieces_on_heldout": 5,
+      "top_pieces": [
+        [
+          "।",
+          1251364
+        ],
+        [
+          "को",
+          663156
+        ],
+        [
+          "मा",
+          549508
+        ],
+        [
+          ",",
+          531971
+        ],
+        [
+          "▁र",
+          392627
+        ],
+        [
+          "▁छ",
+          379804
+        ],
+        [
+          "ले",
+          357015
+        ],
+        [
+          "का",
+          343318
+        ],
+        [
+          "लाई",
+          207092
+        ],
+        [
+          "▁पनि",
+          183151
+        ],
+        [
+          "न",
+          132900
+        ],
+        [
+          "▁छन्",
+          130460
+        ],
+        [
+          "▁भएको",
+          127718
+        ],
+        [
+          "▁गर्न",
+          112787
+        ],
+        [
+          "▁हो",
+          111687
+        ],
+        [
+          "▁लागि",
+          110069
+        ],
+        [
+          "बाट",
+          109301
+        ],
+        [
+          "ी",
+          106431
+        ],
+        [
+          "र",
+          105574
+        ],
+        [
+          "▁'",
+          102994
+        ],
+        [
+          "▁गरेको",
+          102723
+        ],
+        [
+          "▁भने",
+          92734
+        ],
+        [
+          "क",
+          90380
+        ],
+        [
+          "ल",
+          89737
+        ],
+        [
+          "▁एक",
+          89678
+        ],
+        [
+          "▁गर्ने",
+          88331
+        ],
+        [
+          "-",
+          88166
+        ],
+        [
+          "▁थियो",
+          87185
+        ],
+        [
+          "▁",
+          83254
+        ],
+        [
+          "▁यो",
+          82965
+        ]
+      ],
+      "piece_length_weighted": {
+        "0": 83254,
+        "1": 5780673,
+        "2": 6255868,
+        "3": 4269180,
+        "4": 3867505,
+        "5": 3318763,
+        "6": 2494364,
+        "7": 1615876,
+        "8": 846274,
+        "9": 565070,
+        "10": 232941,
+        "11": 119204,
+        "12": 53654,
+        "13": 40947,
+        "14": 6755,
+        "15": 12097,
+        "16": 601
+      },
+      "piece_length_types": {
+        "0": 1,
+        "1": 153,
+        "2": 771,
+        "3": 1059,
+        "4": 1288,
+        "5": 1284,
+        "6": 1183,
+        "7": 826,
+        "8": 503,
+        "9": 333,
+        "10": 153,
+        "11": 104,
+        "12": 49,
+        "13": 17,
+        "14": 8,
+        "15": 5,
+        "16": 1
+      },
+      "embedding_parameters": 3072000,
+      "embedding_share_of_budget": 0.1229,
+      "chars_per_token_by_source": {
+        "aakarpost": 3.523,
+        "ai4bharat_sangraha": 4.225,
+        "annapurnapost": 4.458,
+        "arthasarokar": 4.553,
+        "bizmandu": 4.292,
+        "clickmandu_html": 4.379,
+        "edukhabar": 4.614,
+        "filmykhabar": 3.867,
+        "hamrakura": 4.282,
+        "khabarhub_html": 4.371,
+        "krishisanjal": 3.984,
+        "nagariknetwork": 4.178,
+        "nepalilink": 4.43,
+        "nepalisahityaghar": 3.525,
+        "nepalkhoj": 4.429,
+        "nepalpress_html": 4.442,
+        "offlinethinker": 3.357,
+        "onlinekhabar": 4.381,
+        "reportersnepal_html": 4.514,
+        "sahityasangraha_html": 3.235,
+        "sancharkendra": 4.458,
+        "swasthyakhabar": 4.184
+      }
+    },
+    {
+      "model": "12k_unigram_nep.model",
+      "algorithm": "unigram",
+      "vocab_size": 12000,
+      "vocab_used_on_heldout": 11856,
+      "vocab_utilisation": 0.988,
+      "tokens": 27776881,
+      "chars": 125209376,
+      "words": 18858548,
+      "chars_per_token": 4.508,
+      "fertility_tokens_per_word": 1.473,
+      "unk_rate": 0.0,
+      "newlines_in_heldout": 73797,
+      "byte_fallback_rate": 0.003419,
+      "hapax_pieces_on_heldout": 5,
+      "top_pieces": [
+        [
+          "।",
+          1251364
+        ],
+        [
+          "को",
+          571732
+        ],
+        [
+          ",",
+          531980
+        ],
+        [
+          "मा",
+          431834
+        ],
+        [
+          "▁र",
+          388872
+        ],
+        [
+          "▁छ",
+          375448
+        ],
+        [
+          "ले",
+          297950
+        ],
+        [
+          "का",
+          289613
+        ],
+        [
+          "▁पनि",
+          183151
+        ],
+        [
+          "लाई",
+          182705
+        ],
+        [
+          "▁छन्",
+          130460
+        ],
+        [
+          "▁भएको",
+          127718
+        ],
+        [
+          "▁हो",
+          110727
+        ],
+        [
+          "▁लागि",
+          109395
+        ],
+        [
+          "▁गर्न",
+          106925
+        ],
+        [
+          "▁'",
+          102994
+        ],
+        [
+          "▁गरेको",
+          102723
+        ],
+        [
+          "बाट",
+          95157
+        ],
+        [
+          "▁भने",
+          91891
+        ],
+        [
+          "-",
+          88166
+        ],
+        [
+          "▁गर्ने",
+          87714
+        ],
+        [
+          "▁एक",
+          87252
+        ],
+        [
+          "▁थियो",
+          87185
+        ],
+        [
+          "▁यो",
+          82693
+        ],
+        [
+          "न",
+          80964
+        ],
+        [
+          "▁",
+          78980
+        ],
+        [
+          "▁को",
+          75375
+        ],
+        [
+          "ी",
+          73219
+        ],
+        [
+          "▁तथा",
+          72142
+        ],
+        [
+          "र",
+          68441
+        ]
+      ],
+      "piece_length_weighted": {
+        "0": 78980,
+        "1": 4902247,
+        "2": 5120296,
+        "3": 3851253,
+        "4": 3845052,
+        "5": 3365223,
+        "6": 2628943,
+        "7": 1731434,
+        "8": 947251,
+        "9": 645371,
+        "10": 273533,
+        "11": 147436,
+        "12": 71236,
+        "13": 44613,
+        "14": 12545,
+        "15": 15113,
+        "16": 1385
+      },
+      "piece_length_types": {
+        "0": 1,
+        "1": 153,
+        "2": 949,
+        "3": 1491,
+        "4": 1941,
+        "5": 1965,
+        "6": 1829,
+        "7": 1311,
+        "8": 852,
+        "9": 583,
+        "10": 295,
+        "11": 182,
+        "12": 105,
+        "13": 40,
+        "14": 24,
+        "15": 10,
+        "16": 4
+      },
+      "embedding_parameters": 4608000,
+      "embedding_share_of_budget": 0.1843,
+      "chars_per_token_by_source": {
+        "aakarpost": 3.766,
+        "ai4bharat_sangraha": 4.511,
+        "annapurnapost": 4.771,
+        "arthasarokar": 4.849,
+        "bizmandu": 4.573,
+        "clickmandu_html": 4.672,
+        "edukhabar": 4.859,
+        "filmykhabar": 4.08,
+        "hamrakura": 4.538,
+        "khabarhub_html": 4.667,
+        "krishisanjal": 4.241,
+        "nagariknetwork": 4.469,
+        "nepalilink": 4.735,
+        "nepalisahityaghar": 3.796,
+        "nepalkhoj": 4.742,
+        "nepalpress_html": 4.737,
+        "offlinethinker": 3.639,
+        "onlinekhabar": 4.666,
+        "reportersnepal_html": 4.813,
+        "sahityasangraha_html": 3.486,
+        "sancharkendra": 4.772,
+        "swasthyakhabar": 4.463
+      }
+    },
+    {
+      "model": "16k_unigram_nep.model",
+      "algorithm": "unigram",
+      "vocab_size": 16000,
+      "vocab_used_on_heldout": 15851,
+      "vocab_utilisation": 0.9907,
+      "tokens": 26702100,
+      "chars": 125209376,
+      "words": 18858548,
+      "chars_per_token": 4.689,
+      "fertility_tokens_per_word": 1.416,
+      "unk_rate": 0.0,
+      "newlines_in_heldout": 73797,
+      "byte_fallback_rate": 0.003557,
+      "hapax_pieces_on_heldout": 5,
+      "top_pieces": [
+        [
+          "।",
+          1251364
+        ],
+        [
+          ",",
+          531992
+        ],
+        [
+          "को",
+          481032
+        ],
+        [
+          "▁र",
+          384113
+        ],
+        [
+          "▁छ",
+          372297
+        ],
+        [
+          "मा",
+          356758
+        ],
+        [
+          "का",
+          260823
+        ],
+        [
+          "ले",
+          258361
+        ],
+        [
+          "▁पनि",
+          183151
+        ],
+        [
+          "लाई",
+          156389
+        ],
+        [
+          "▁छन्",
+          130080
+        ],
+        [
+          "▁भएको",
+          127718
+        ],
+        [
+          "▁हो",
+          110126
+        ],
+        [
+          "▁लागि",
+          109237
+        ],
+        [
+          "▁गर्न",
+          106150
+        ],
+        [
+          "▁'",
+          102994
+        ],
+        [
+          "▁गरेको",
+          102723
+        ],
+        [
+          "▁भने",
+          91460
+        ],
+        [
+          "-",
+          88166
+        ],
+        [
+          "▁गर्ने",
+          87443
+        ],
+        [
+          "▁थियो",
+          87185
+        ],
+        [
+          "▁एक",
+          85317
+        ],
+        [
+          "बाट",
+          83135
+        ],
+        [
+          "▁यो",
+          82398
+        ],
+        [
+          "▁",
+          77389
+        ],
+        [
+          "▁तथा",
+          72142
+        ],
+        [
+          "▁को",
+          72091
+        ],
+        [
+          "▁मा",
+          61200
+        ],
+        [
+          "न",
+          60817
+        ],
+        [
+          "ी",
+          60544
+        ]
+      ],
+      "piece_length_weighted": {
+        "0": 77389,
+        "1": 4486346,
+        "2": 4425900,
+        "3": 3601251,
+        "4": 3797485,
+        "5": 3364691,
+        "6": 2700053,
+        "7": 1807798,
+        "8": 1013889,
+        "9": 695703,
+        "10": 300186,
+        "11": 165581,
+        "12": 84890,
+        "13": 50029,
+        "14": 16405,
+        "15": 17783,
+        "16": 1751
+      },
+      "piece_length_types": {
+        "0": 1,
+        "1": 153,
+        "2": 1108,
+        "3": 1944,
+        "4": 2575,
+        "5": 2569,
+        "6": 2491,
+        "7": 1805,
+        "8": 1215,
+        "9": 837,
+        "10": 457,
+        "11": 268,
+        "12": 162,
+        "13": 74,
+        "14": 44,
+        "15": 20,
+        "16": 7
+      },
+      "embedding_parameters": 6144000,
+      "embedding_share_of_budget": 0.2458,
+      "chars_per_token_by_source": {
+        "aakarpost": 3.93,
+        "ai4bharat_sangraha": 4.692,
+        "annapurnapost": 4.966,
+        "arthasarokar": 5.026,
+        "bizmandu": 4.741,
+        "clickmandu_html": 4.854,
+        "edukhabar": 5.043,
+        "filmykhabar": 4.285,
+        "hamrakura": 4.7,
+        "khabarhub_html": 4.856,
+        "krishisanjal": 4.441,
+        "nagariknetwork": 4.644,
+        "nepalilink": 4.924,
+        "nepalisahityaghar": 3.987,
+        "nepalkhoj": 4.926,
+        "nepalpress_html": 4.929,
+        "offlinethinker": 3.799,
+        "onlinekhabar": 4.845,
+        "reportersnepal_html": 5.008,
+        "sahityasangraha_html": 3.652,
+        "sancharkendra": 4.952,
+        "swasthyakhabar": 4.615
+      }
+    },
+    {
+      "model": "24k_unigram_nep.model",
+      "algorithm": "unigram",
+      "vocab_size": 24000,
+      "vocab_used_on_heldout": 23846,
+      "vocab_utilisation": 0.9936,
+      "tokens": 25423729,
+      "chars": 125209376,
+      "words": 18858548,
+      "chars_per_token": 4.925,
+      "fertility_tokens_per_word": 1.348,
+      "unk_rate": 0.0,
+      "newlines_in_heldout": 73797,
+      "byte_fallback_rate": 0.003735,
+      "hapax_pieces_on_heldout": 8,
+      "top_pieces": [
+        [
+          "।",
+          1251364
+        ],
+        [
+          ",",
+          531999
+        ],
+        [
+          "▁र",
+          379836
+        ],
+        [
+          "▁छ",
+          367934
+        ],
+        [
+          "को",
+          352721
+        ],
+        [
+          "मा",
+          248892
+        ],
+        [
+          "का",
+          198993
+        ],
+        [
+          "ले",
+          197956
+        ],
+        [
+          "▁पनि",
+          183151
+        ],
+        [
+          "लाई",
+          130138
+        ],
+        [
+          "▁छन्",
+          129937
+        ],
+        [
+          "▁भएको",
+          127718
+        ],
+        [
+          "▁हो",
+          109110
+        ],
+        [
+          "▁लागि",
+          108925
+        ],
+        [
+          "▁गर्न",
+          104480
+        ],
+        [
+          "▁'",
+          102994
+        ],
+        [
+          "▁गरेको",
+          102723
+        ],
+        [
+          "▁भने",
+          90369
+        ],
+        [
+          "-",
+          87693
+        ],
+        [
+          "▁थियो",
+          87185
+        ],
+        [
+          "▁गर्ने",
+          87180
+        ],
+        [
+          "▁एक",
+          83687
+        ],
+        [
+          "▁यो",
+          82294
+        ],
+        [
+          "बाट",
+          73178
+        ],
+        [
+          "▁तथा",
+          72013
+        ],
+        [
+          "▁को",
+          69880
+        ],
+        [
+          "▁",
+          67904
+        ],
+        [
+          "▁नै",
+          58327
+        ],
+        [
+          "▁तर",
+          58013
+        ],
+        [
+          "▁मा",
+          57415
+        ]
+      ],
+      "piece_length_weighted": {
+        "0": 67904,
+        "1": 4072238,
+        "2": 3549226,
+        "3": 3294407,
+        "4": 3733579,
+        "5": 3370132,
+        "6": 2766552,
+        "7": 1870578,
+        "8": 1088599,
+        "9": 772640,
+        "10": 348122,
+        "11": 188940,
+        "12": 101676,
+        "13": 58422,
+        "14": 22483,
+        "15": 21517,
+        "16": 1744
+      },
+      "piece_length_types": {
+        "0": 1,
+        "1": 155,
+        "2": 1401,
+        "3": 2913,
+        "4": 3872,
+        "5": 3739,
+        "6": 3697,
+        "7": 2743,
+        "8": 1931,
+        "9": 1407,
+        "10": 813,
+        "11": 477,
+        "12": 288,
+        "13": 146,
+        "14": 90,
+        "15": 45,
+        "16": 7
+      },
+      "embedding_parameters": 9216000,
+      "embedding_share_of_budget": 0.3686,
+      "chars_per_token_by_source": {
+        "aakarpost": 4.133,
+        "ai4bharat_sangraha": 4.927,
+        "annapurnapost": 5.208,
+        "arthasarokar": 5.243,
+        "bizmandu": 4.976,
+        "clickmandu_html": 5.093,
+        "edukhabar": 5.292,
+        "filmykhabar": 4.501,
+        "hamrakura": 4.992,
+        "khabarhub_html": 5.098,
+        "krishisanjal": 4.692,
+        "nagariknetwork": 4.967,
+        "nepalilink": 5.155,
+        "nepalisahityaghar": 4.229,
+        "nepalkhoj": 5.173,
+        "nepalpress_html": 5.165,
+        "offlinethinker": 4.043,
+        "onlinekhabar": 5.078,
+        "reportersnepal_html": 5.25,
+        "sahityasangraha_html": 3.873,
+        "sancharkendra": 5.195,
+        "swasthyakhabar": 4.876
+      }
+    },
+    {
+      "model": "32k_unigram_nep.model",
+      "algorithm": "unigram",
+      "vocab_size": 32000,
+      "vocab_used_on_heldout": 31833,
+      "vocab_utilisation": 0.9948,
+      "tokens": 24705659,
+      "chars": 125209376,
+      "words": 18858548,
+      "chars_per_token": 5.068,
+      "fertility_tokens_per_word": 1.31,
+      "unk_rate": 0.0,
+      "newlines_in_heldout": 73797,
+      "byte_fallback_rate": 0.003844,
+      "hapax_pieces_on_heldout": 12,
+      "top_pieces": [
+        [
+          "।",
+          1251364
+        ],
+        [
+          ",",
+          531999
+        ],
+        [
+          "▁र",
+          378018
+        ],
+        [
+          "▁छ",
+          366601
+        ],
+        [
+          "को",
+          264053
+        ],
+        [
+          "▁पनि",
+          183151
+        ],
+        [
+          "मा",
+          180764
+        ],
+        [
+          "ले",
+          156591
+        ],
+        [
+          "का",
+          150560
+        ],
+        [
+          "▁छन्",
+          129850
+        ],
+        [
+          "▁भएको",
+          127718
+        ],
+        [
+          "▁लागि",
+          108862
+        ],
+        [
+          "▁हो",
+          108550
+        ],
+        [
+          "लाई",
+          105387
+        ],
+        [
+          "▁गर्न",
+          103366
+        ],
+        [
+          "▁'",
+          102994
+        ],
+        [
+          "▁गरेको",
+          102723
+        ],
+        [
+          "▁भने",
+          89691
+        ],
+        [
+          "-",
+          87584
+        ],
+        [
+          "▁थियो",
+          87185
+        ],
+        [
+          "▁गर्ने",
+          86453
+        ],
+        [
+          "▁एक",
+          82518
+        ],
+        [
+          "▁यो",
+          81991
+        ],
+        [
+          "▁तथा",
+          72013
+        ],
+        [
+          "▁को",
+          69341
+        ],
+        [
+          "▁",
+          66622
+        ],
+        [
+          "बाट",
+          59477
+        ],
+        [
+          "▁नै",
+          58327
+        ],
+        [
+          "▁तर",
+          57785
+        ],
+        [
+          "▁मा",
+          56415
+        ]
+      ],
+      "piece_length_weighted": {
+        "0": 66622,
+        "1": 3904249,
+        "2": 3070679,
+        "3": 3100101,
+        "4": 3665467,
+        "5": 3315786,
+        "6": 2769344,
+        "7": 1912088,
+        "8": 1156955,
+        "9": 819149,
+        "10": 382954,
+        "11": 214596,
+        "12": 112832,
+        "13": 66409,
+        "14": 27225,
+        "15": 24268,
+        "16": 1965
+      },
+      "piece_length_types": {
+        "0": 1,
+        "1": 157,
+        "2": 1610,
+        "3": 3829,
+        "4": 5007,
+        "5": 4544,
+        "6": 4690,
+        "7": 3682,
+        "8": 2934,
+        "9": 2154,
+        "10": 1334,
+        "11": 806,
+        "12": 468,
+        "13": 256,
+        "14": 145,
+        "15": 83,
+        "16": 12
+      },
+      "embedding_parameters": 12288000,
+      "embedding_share_of_budget": 0.4915,
+      "chars_per_token_by_source": {
+        "aakarpost": 4.247,
+        "ai4bharat_sangraha": 5.071,
+        "annapurnapost": 5.343,
+        "arthasarokar": 5.377,
+        "bizmandu": 5.109,
+        "clickmandu_html": 5.239,
+        "edukhabar": 5.417,
+        "filmykhabar": 4.652,
+        "hamrakura": 5.149,
+        "khabarhub_html": 5.249,
+        "krishisanjal": 4.809,
+        "nagariknetwork": 5.096,
+        "nepalilink": 5.305,
+        "nepalisahityaghar": 4.373,
+        "nepalkhoj": 5.315,
+        "nepalpress_html": 5.31,
+        "offlinethinker": 4.158,
+        "onlinekhabar": 5.219,
+        "reportersnepal_html": 5.405,
+        "sahityasangraha_html": 4.002,
+        "sancharkendra": 5.335,
+        "swasthyakhabar": 5.028
+      }
+    }
+  ]
+}

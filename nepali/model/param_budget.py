@@ -1,11 +1,8 @@
-#!/usr/bin/env python3
 """Exact parameter count for the Phase 2 decoder-only Transformer.
 
-Phase 2 asks for "approximately ~25M trainable parameters per model", and the
-vocabulary chosen in Phase 1 spends part of that budget before a single
-Transformer block exists. This makes the trade-off explicit so a config can be
-checked before training rather than discovered after, and so the parameter
-count in the report is computed rather than guessed.
+Phase 2 asks for ~25M trainable parameters per model, and the vocabulary chosen
+in Phase 1 spends part of that before a single Transformer block exists. This
+makes the trade-off checkable before training instead of after.
 
 For a GPT-style block of width d:
 
@@ -22,11 +19,11 @@ So a block costs 12d^2 + 11d, and the whole model:
     vocab*d + context*d + L*(12d^2 + 11d) + 2d
 
 Weight tying is assumed, so the output projection reuses the token-embedding
-matrix. That saves vocab x d, which at 16k x 384 is 6.1M parameters or a
-quarter of the budget, and Phase 2 asks you to say whether you tied them.
+matrix. That saves vocab x d - at 16k x 384 that is 6.1M parameters, a quarter
+of the budget.
 
-    python model/param_budget.py           # check the configured setup
-    python model/param_budget.py --sweep   # layer counts per vocabulary
+    python3 model/param_budget.py           # check the configured setup
+    python3 model/param_budget.py --sweep   # layer counts per vocabulary
 """
 
 from __future__ import annotations
@@ -73,6 +70,7 @@ def count_params(vocab: int, d_model: int, n_layers: int, context: int = 512,
 
 
 def fmt(n: float) -> str:
+    """Format a byte count for the progress line."""
     return f"{n / 1e6:.2f}M"
 
 
@@ -135,6 +133,7 @@ def sweep(target: float, context: int) -> None:
 
 
 def main() -> None:
+    """Print the parameter breakdown, or sweep layer counts per vocabulary."""
     ap = argparse.ArgumentParser(description="Phase 2 parameter budget check.")
     ap.add_argument("--vocab", type=int, default=None)
     ap.add_argument("--d-model", type=int, default=None)

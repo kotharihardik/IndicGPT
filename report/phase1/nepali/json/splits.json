@@ -1,0 +1,36 @@
+{
+  "language": "nep",
+  "config": {
+    "seed": "1337",
+    "val_fraction": 0.05,
+    "test_fraction": 0.05,
+    "val_max_chars": 170000000,
+    "test_max_chars": 170000000,
+    "heldout_sources": []
+  },
+  "splits": {
+    "test": {
+      "docs": 61484,
+      "chars": 126310527,
+      "manual_docs": 12977,
+      "manual_chars": 27075383,
+      "manual_char_fraction": 0.2144
+    },
+    "train": {
+      "docs": 1116564,
+      "chars": 2276899633,
+      "manual_docs": 235660,
+      "manual_chars": 485912777,
+      "manual_char_fraction": 0.2134
+    },
+    "validation": {
+      "docs": 61604,
+      "chars": 125283173,
+      "manual_docs": 12920,
+      "manual_chars": 26301264,
+      "manual_char_fraction": 0.2099
+    }
+  },
+  "leakage_control": "document-level split applied AFTER exact + MinHash deduplication",
+  "note": "token counts per split are reported by corpus_stats.py using the trained tokenizer"
+}

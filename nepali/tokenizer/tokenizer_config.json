@@ -3,7 +3,7 @@
   "algorithm": "sentencepiece_unigram",
   "vocab_size": 16000,
   "trained_on": "train split only (validation/test never seen)",
-  "training_chars": 264755073,
+  "training_chars": 666477030,
   "training_composition_by_source": {},
   "pretrained_tokenizer_used": false,
   "shared_with_other_language": false,

@@ -8,9 +8,9 @@ Sangraha) and streaming is used, so the whole multi-language dataset is never
 downloaded. Each source keeps its own resume state, so an interrupted run
 continues where it stopped.
 
-    python data/collection/collect_public.py
-    python data/collection/collect_public.py --only ai4bharat_sangraha
-    python data/collection/collect_public.py --dry-run     # inspect fields first
+    python3 data/collection/collect_public.py
+    python3 data/collection/collect_public.py --only ai4bharat_sangraha
+    python3 data/collection/collect_public.py --dry-run     # inspect fields first
 """
 
 from __future__ import annotations
@@ -122,6 +122,7 @@ def collect(src: dict, dry_run: bool = False) -> dict:
 
 
 def main() -> None:
+    """Stream the configured public dataset into data/raw/public/."""
     ap = argparse.ArgumentParser(description="Collect public (downloaded) datasets.")
     ap.add_argument("--only", nargs="*", help="Restrict to these source names")
     ap.add_argument("--dry-run", action="store_true", help="Print field names and two samples")

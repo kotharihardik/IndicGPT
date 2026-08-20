@@ -19,14 +19,15 @@ plus the numbers that actually drive the decision:
 Everything is measured on the validation split. Measuring fertility on training
 text would flatter the tokenizer with text it was fitted to.
 
-    python tokenizer/tokenizer_stats.py                   # the final model
-    python tokenizer/tokenizer_stats.py --compare-sweep   # all sweep sizes
+    python3 tokenizer/tokenizer_stats.py                   # the final model
+    python3 tokenizer/tokenizer_stats.py --compare-sweep   # all sweep sizes
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import random
 import re
 import sys
 from collections import Counter, defaultdict
@@ -43,6 +44,8 @@ TCFG = CFG["tokenizer"]
 #: Short algorithm name for filenames: "sentencepiece_unigram" -> "unigram".
 ALGO = TCFG.get("algorithm", "sentencepiece_unigram").split("_")[-1]
 
+
+# ---- measurement ---------------------------------------------------------
 
 def model_stem(vocab_size: int) -> str:
     """Filename stem for one tokenizer: size first, language last.
@@ -71,7 +74,6 @@ KNEE_RELATIVE_GAIN = 0.02
 #: Hard ceiling on the share of the Phase 2 parameter budget the embedding
 #: table may consume. Input and output embeddings are tied, so this is a lookup
 #: table competing directly with Transformer blocks: at d_model=384 each block
-#: costs ~12*d^2 = 1.77M parameters, so every 16k of vocabulary is worth about
 #: 3.5 layers. Letting the embedding take most of the budget buys a little
 #: compression and pays for it with a model too shallow to use it.
 MAX_EMBEDDING_SHARE = 0.34
@@ -86,11 +88,36 @@ MIN_VOCAB_UTILISATION = 0.95
 
 
 def heldout_docs(max_docs: int) -> list:
-    """Load validation documents as `(text, source_name)` pairs."""
+    """Load a representative sample of the validation split.
+
+    Documents are written to the split in the order they are read from
+    data/dedup, which is filename order, so taking the first N documents draws
+    them all from whichever source sorts first. Reservoir sampling over the
+    whole split gives every document an equal chance regardless of position,
+    and the fixed seed keeps the sample identical between runs so metrics stay
+    comparable.
+
+    Args:
+        max_docs: Maximum documents to return. 0 or negative returns all.
+
+    Returns:
+        A list of `(text, source_name)` pairs.
+    """
     path = CFG["paths"]["splits"] / "validation.jsonl.gz"
     if not path.exists():
         raise SystemExit(f"{path} not found - run data/splits/build_splits.py first")
-    return [(d.text, d.source_name) for d in read_docs(path, limit=max_docs)]
+
+    rng = random.Random(int(TCFG.get("seed", 1337)))
+    reservoir: list = []
+    for n, d in enumerate(read_docs(path)):
+        item = (d.text, d.source_name)
+        if max_docs <= 0 or len(reservoir) < max_docs:
+            reservoir.append(item)
+        else:
+            j = rng.randint(0, n)
+            if j < max_docs:
+                reservoir[j] = item
+    return reservoir
 
 
 def evaluate(model_path: Path, docs: list) -> dict:
@@ -98,20 +125,35 @@ def evaluate(model_path: Path, docs: list) -> dict:
     import sentencepiece as spm
 
     sp = spm.SentencePieceProcessor(model_file=str(model_path))
+    # Filenames are <size>_<algo>_<lang>, so the algorithm is recoverable from
+    # the stem. A sweep now contains both unigram and bpe models.
+    parts = model_path.stem.split("_")
+    algo = parts[1] if len(parts) >= 3 else ALGO
     freq: Counter = Counter()
     per_source: dict = defaultdict(lambda: {"chars": 0, "tokens": 0})
     n_tokens = n_chars = n_words = n_unk = n_byte = 0
 
+    # Encode line by line. The tokenizer is fitted on spm_input.txt, which holds
+    # one line per paragraph, so SentencePiece never sees "\n" and has no piece
+    # for it. Encoding whole documents charged every paragraph break to byte
+    # fallback: 5.02% document-wise against 0.32% line-wise on identical text,
+    # so ~87% of the apparent fallback was newlines. Measuring the way the model
+    # is trained is the honest comparison.
+    n_newlines = 0
     for text, source in docs:
-        ids = sp.encode(text)
-        freq.update(ids)
-        n_tokens += len(ids)
-        n_chars += len(text)
-        n_words += len(text.split())
-        n_unk += sum(1 for i in ids if i == sp.unk_id())
-        n_byte += sum(1 for i in ids if BYTE_PIECE.match(sp.id_to_piece(i)))
-        per_source[source]["chars"] += len(text)
-        per_source[source]["tokens"] += len(ids)
+        n_newlines += text.count("\n")
+        for line in text.split("\n"):
+            if not line.strip():
+                continue
+            ids = sp.encode(line)
+            freq.update(ids)
+            n_tokens += len(ids)
+            n_chars += len(line)
+            n_words += len(line.split())
+            n_unk += sum(1 for i in ids if i == sp.unk_id())
+            n_byte += sum(1 for i in ids if BYTE_PIECE.match(sp.id_to_piece(i)))
+            per_source[source]["chars"] += len(line)
+            per_source[source]["tokens"] += len(ids)
 
     vocab = sp.get_piece_size()
     d_model = int(TCFG.get("model_dim", 384))
@@ -131,6 +173,7 @@ def evaluate(model_path: Path, docs: list) -> dict:
 
     return {
         "model": model_path.name,
+        "algorithm": algo,
         "vocab_size": vocab,
         "vocab_used_on_heldout": len(freq),
         "vocab_utilisation": round(len(freq) / vocab, 4),
@@ -140,6 +183,7 @@ def evaluate(model_path: Path, docs: list) -> dict:
         "chars_per_token": round(n_chars / max(n_tokens, 1), 3),
         "fertility_tokens_per_word": round(n_tokens / max(n_words, 1), 3),
         "unk_rate": round(n_unk / max(n_tokens, 1), 8),
+        "newlines_in_heldout": n_newlines,
         "byte_fallback_rate": round(n_byte / max(n_tokens, 1), 6),
         "hapax_pieces_on_heldout": sum(1 for c in freq.values() if c == 1),
         "top_pieces": [(sp.id_to_piece(i), c) for i, c in freq.most_common(30)],
@@ -200,6 +244,8 @@ def sample_tokenizations(model_path: Path) -> list:
         out.append(entry)
     return out
 
+
+# ---- the vocabulary decision ---------------------------------------------
 
 def recommend_vocab(results: list) -> dict:
     """Pick a vocabulary size from the sweep, and say why.
@@ -291,6 +337,8 @@ def recommend_vocab(results: list) -> dict:
 # Visualisation  (kept separate from computation)
 
 
+# ---- figures (drawing only; every number comes from evaluate()) ----------
+
 def plot_sweep(results: list, path: Path) -> None:
     """Fertility against vocabulary size, with the embedding cost alongside."""
     import matplotlib
@@ -381,13 +429,76 @@ def plot_piece_lengths(result: dict, path: Path) -> None:
     plt.close(fig)
 
 
+def compare_algorithms(results: list) -> dict:
+    """Compare Unigram against BPE at each shared vocabulary size.
+
+    Only produces anything when the sweep contains both algorithms, which needs
+    `--algo bpe` as well as the default. Returns a dict keyed by vocabulary
+    size plus a `summary` entry, or {} when only one algorithm is present.
+    """
+    by_algo: dict = {}
+    for r in results:
+        by_algo.setdefault(r.get("algorithm", "?"), {})[r["vocab_size"]] = r
+    if len(by_algo) < 2:
+        return {}
+
+    uni, bpe = by_algo.get("unigram", {}), by_algo.get("bpe", {})
+    shared = sorted(set(uni) & set(bpe))
+    rows, gains = {}, []
+    for v in shared:
+        u, b = uni[v], bpe[v]
+        gain = 100 * (u["chars_per_token"] - b["chars_per_token"]) / b["chars_per_token"]
+        gains.append(gain)
+        rows[v] = {
+            "unigram_chars_per_token": u["chars_per_token"],
+            "bpe_chars_per_token": b["chars_per_token"],
+            "unigram_advantage_pct": round(gain, 2),
+            "unigram_fertility": u["fertility_tokens_per_word"],
+            "bpe_fertility": b["fertility_tokens_per_word"],
+            "unigram_vocab_utilisation": u["vocab_utilisation"],
+            "bpe_vocab_utilisation": b["vocab_utilisation"],
+            "unigram_byte_fallback": u["byte_fallback_rate"],
+            "bpe_byte_fallback": b["byte_fallback_rate"],
+        }
+    rows["summary"] = {
+        "sizes_compared": shared,
+        "mean_unigram_advantage_pct": round(sum(gains) / len(gains), 2) if gains else 0.0,
+    }
+    return rows
+
+
+def print_algorithm_comparison(comparison: dict) -> None:
+    """Print the Unigram vs BPE table. Presentation only."""
+    if not comparison:
+        return
+    print("\nUnigram vs BPE at matched vocabulary sizes:")
+    print(f"  {'vocab':>7}{'uni ch/tok':>12}{'bpe ch/tok':>12}{'uni adv':>9}"
+          f"{'uni fert':>10}{'bpe fert':>10}{'uni used':>10}{'bpe used':>10}")
+    for v, r in comparison.items():
+        if v == "summary":
+            continue
+        print(f"  {v:>7,}{r['unigram_chars_per_token']:>12.3f}"
+              f"{r['bpe_chars_per_token']:>12.3f}"
+              f"{r['unigram_advantage_pct']:>8.1f}%"
+              f"{r['unigram_fertility']:>10.3f}{r['bpe_fertility']:>10.3f}"
+              f"{r['unigram_vocab_utilisation'] * 100:>9.1f}%"
+              f"{r['bpe_vocab_utilisation'] * 100:>9.1f}%")
+    s = comparison["summary"]
+    print(f"  mean Unigram compression advantage: "
+          f"{s['mean_unigram_advantage_pct']:+.1f}%")
+
+
+# ---- output --------------------------------------------------------------
+
 def print_table(results: list) -> None:
     """Print the sweep comparison table."""
-    print(f"{'vocab':>8} {'chars/tok':>10} {'fertility':>10} {'byte-fb':>10} "
-          f"{'unk':>9} {'vocab used':>11} {'emb params':>12} {'% budget':>9}")
-    print("-" * 84)
+    print(f"{'algo':<9}{'vocab':>8} {'chars/tok':>10} {'fertility':>10} "
+          f"{'byte-fb':>10} {'unk':>9} {'vocab used':>11} {'emb params':>12} "
+          f"{'% budget':>9}")
+    print("-" * 93)
     for r in results:
-        print(f"{r['vocab_size']:>8,} {r['chars_per_token']:>10.3f} "
+        print(f"{r.get('algorithm', '?'):<9}"
+              f"{r['vocab_size']:>8,} {r['chars_per_token']:>10.3f} "
               f"{r['fertility_tokens_per_word']:>10.3f} "
               f"{r['byte_fallback_rate']:>10.6f} {r['unk_rate']:>9.6f} "
               f"{r['vocab_utilisation'] * 100:>10.1f}% "
@@ -395,69 +506,17 @@ def print_table(results: list) -> None:
               f"{100 * r['embedding_share_of_budget']:>8.0f}%")
 
 
-def write_markdown(path: Path, results: list, samples: list,
-                   recommendation: dict, n_docs: int, gu_share: float) -> None:
-    """Write the human-readable report table."""
-    lines = [
-        "# Nepali tokenizer statistics (Model L)",
-        "",
-        f"SentencePiece Unigram, trained from scratch on the Nepali "
-        f"training split only. Measured on {n_docs:,} held-out validation "
-        f"documents ({100 * gu_share:.1f}% Devanagari script).",
-        "",
-        "## Vocabulary size comparison",
-        "",
-        "| Vocab | Chars/token | Fertility (tok/word) | Byte-fallback | UNK | "
-        "Vocab used | Embedding params | % of 25M budget |",
-        "|---|---|---|---|---|---|---|---|",
-    ]
-    for r in results:
-        lines.append(
-            f"| {r['vocab_size']:,} | {r['chars_per_token']:.3f} | "
-            f"{r['fertility_tokens_per_word']:.3f} | "
-            f"{r['byte_fallback_rate']:.6f} | {r['unk_rate']:.6f} | "
-            f"{100 * r['vocab_utilisation']:.1f}% | "
-            f"{human(r['embedding_parameters'])} | "
-            f"{100 * r['embedding_share_of_budget']:.0f}% |")
-
-    if recommendation.get("recommended"):
-        lines += ["", "## Recommended vocabulary size", "",
-                  f"{recommendation['recommended']:,} — {recommendation['reason']}.",
-                  "",
-                  "UNK rate is ~0 by construction because `byte_fallback=True`; "
-                  "the byte-fallback rate is the real coverage metric."]
-
-    best = results[-1]
-    if best.get("chars_per_token_by_source"):
-        lines += ["", "## Compression by source register", "",
-                  "| Source | Chars/token |", "|---|---|"]
-        for name, value in sorted(best["chars_per_token_by_source"].items(),
-                                  key=lambda kv: -kv[1]):
-            lines.append(f"| {name} | {value:.3f} |")
-
-    if samples:
-        lines += ["", "## Tokenization examples", ""]
-        for s in samples:
-            lines += [f"- `{s['text']}`",
-                      f"  - {s['n_tokens']} tokens, "
-                      f"{s['chars_per_token']} chars/token",
-                      f"  - `{' | '.join(s['pieces'])}`"]
-
-    lines += ["", "## Most frequent pieces", "",
-              "| Piece | Count |", "|---|---|"]
-    for piece, count in best["top_pieces"][:20]:
-        lines.append(f"| `{piece}` | {count:,} |")
-
-    path.write_text("\n".join(lines) + "\n", encoding="utf-8")
-
-
 def main() -> None:
+    """Evaluate the tokenizer(s) on held-out text and write the report."""
     ap = argparse.ArgumentParser(
         description="Nepali tokenizer statistics on held-out text.")
     ap.add_argument("--compare-sweep", action="store_true",
                     help="evaluate every vocab size from the training sweep")
-    ap.add_argument("--max-docs", type=int, default=3000,
-                    help="held-out documents to evaluate on")
+    ap.add_argument("--max-docs", type=int, default=0,
+                    help="held-out documents to evaluate on. 0 (the default) "
+                         "uses the entire validation split; a positive value "
+                         "samples that many documents across it, which is only "
+                         "useful for a quick check.")
     ap.add_argument("--no-figures", action="store_true")
     args = ap.parse_args()
 
@@ -481,10 +540,28 @@ def main() -> None:
         models = [model]
 
     results = sorted((evaluate(m, docs) for m in models),
-                     key=lambda r: r["vocab_size"])
+                     key=lambda r: (r.get("algorithm", ""),
+                                    r["vocab_size"]))
     print_table(results)
 
-    recommendation = recommend_vocab(results) if len(results) > 1 else {}
+    # Recommend a size WITHIN each algorithm: comparing a Unigram model against
+    # a BPE model of a different size would conflate the two decisions.
+    by_algo: dict = {}
+    for r in results:
+        by_algo.setdefault(r.get("algorithm", "?"), []).append(r)
+    per_algo_reco = {a: recommend_vocab(rs) for a, rs in by_algo.items()
+                     if len(rs) > 1}
+    comparison = compare_algorithms(results)
+    print_algorithm_comparison(comparison)
+    for a, reco in sorted(per_algo_reco.items()):
+        if reco.get("recommended"):
+            print(f"\n  [{a}] recommended vocab_size = {reco['recommended']:,}"
+                  f"  ({reco['reason']})")
+
+    # The headline recommendation stays with the configured algorithm, so the
+    # existing single-algorithm output and report format are unchanged.
+    recommendation = (per_algo_reco.get(ALGO)
+                      or (recommend_vocab(results) if len(results) > 1 else {}))
     if recommendation.get("recommended"):
         # Show what each extra step of vocabulary actually costs, because the
         # raw fertility column always favours the largest candidate and hides
@@ -515,8 +592,8 @@ def main() -> None:
         if recommendation["rejected_for_coverage"]:
             print(f"  rejected for weak script coverage: "
                   f"{recommendation['rejected_for_coverage']}")
-        print(f"  set tokenizer.vocab_size in configs/pipeline.yaml, then "
-              f"rerun train_tokenizer.py without --sweep")
+        print("  set tokenizer.vocab_size in configs/pipeline.yaml, then "
+              "rerun train_tokenizer.py without --sweep")
 
     final = tok_dir / f"{model_stem(int(TCFG['vocab_size']))}.model"
     samples = sample_tokenizations(final) if final.exists() else []
@@ -538,30 +615,52 @@ def main() -> None:
     reports.mkdir(parents=True, exist_ok=True)
     figures.mkdir(parents=True, exist_ok=True)
 
+    # `frequency_ranks` is 5,000 raw counts per model: the input to the Zipf
+    # figure, not something anyone reads. Keeping it here made the summary
+    # ~5,300 lines and pushed the tokenization examples to the bottom, so it is
+    # written to its own file and the summary keeps the named `top_pieces`.
+    curves = {r["model"]: r.get("frequency_ranks", []) for r in results}
+
     payload = {
         "language": LANG,
         "algorithm": "sentencepiece_unigram",
         "heldout_documents": len(docs),
         "heldout_chars": total_chars,
         "heldout_devanagari_share": round(gu_share, 4),
-        "results": results,
-        "recommendation": recommendation,
-        "examples": samples,
         "note": ("byte_fallback=True means characters outside the vocabulary "
                  "become <0xNN> pieces rather than <unk>, so unk_rate is ~0 by "
                  "construction and byte_fallback_rate is the meaningful "
                  "coverage metric"),
+        # Ordered for a human reader: the decision, then worked examples, then
+        # the detailed per-model measurements.
+        "recommendation": recommendation,
+        "per_algorithm_recommendation": per_algo_reco,
+        "algorithm_comparison": comparison,
+        "examples": samples,
+        "results": results,
     }
     # The sweep comparison and the final-model report are different documents
     # and must not share a filename: whichever ran last used to silently
     # overwrite the other, which cost the Gujarati sweep table once already.
     stem = "tokenizer_sweep" if args.compare_sweep else "tokenizer_stats"
-    json_path = reports / f"{stem}.json"
-    json_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False),
+    # Machine-readable output lives in json/ so the report folder itself stays
+    # readable: a handful of documents and figures rather than a pile of dumps.
+    json_dir = reports / "json"
+    json_dir.mkdir(parents=True, exist_ok=True)
+    json_path = json_dir / f"{stem}.json"
+    slim = dict(payload)
+    slim["results"] = [{k: v for k, v in r.items() if k != "frequency_ranks"}
+                       for r in results]
+    json_path.write_text(json.dumps(slim, indent=2, ensure_ascii=False),
                          encoding="utf-8")
-    md_path = reports / f"{stem}.md"
-    write_markdown(md_path, results, samples, recommendation, len(docs), gu_share)
-    print(f"\nsaved -> {json_path}\nsaved -> {md_path}")
+    curve_path = json_dir / f"{stem}_frequency_curve.json"
+    curve_path.write_text(json.dumps(curves, indent=1), encoding="utf-8")
+
+    # No markdown is written here. Each language has exactly one hand-written
+    # report, report/phase1/<lang>/README.md, and the cross-language tables are
+    # produced by report/phase1/make_report_assets.py from this JSON.
+    print(f"\nsaved -> {json_path}")
+    print(f"saved -> {curve_path}  (Zipf curve data for the figure)")
 
     if not args.no_figures:
         if len(results) > 1:

@@ -21,10 +21,10 @@ exclusive characters, so a script check cannot tell them apart. The lexical
 test that does is in adapters/base.py.
 
 Usage:
-    python data/collection/collect_manual.py --check     # robots + reachability
-    python data/collection/collect_manual.py             # collect to target
-    python data/collection/collect_manual.py --status    # progress vs the 20% floor
-    python data/collection/collect_manual.py --only onlinekhabar --limit-chars 1000000
+    python3 data/collection/collect_manual.py --check     # robots + reachability
+    python3 data/collection/collect_manual.py             # collect to target
+    python3 data/collection/collect_manual.py --status    # progress vs the 20% floor
+    python3 data/collection/collect_manual.py --only onlinekhabar --limit-chars 1000000
 
 Safe to Ctrl-C and rerun. The resume state is the collected data itself: at
 startup each source's shards are scanned for the URLs already stored and those
@@ -268,6 +268,7 @@ async def collect_all(sources: list, args) -> None:
 
 
 def main() -> None:
+    """Parse arguments and run the requested mode: check, status, or collect."""
     ap = argparse.ArgumentParser(
         description="Collect the Nepali manual corpus (Phase 1).")
     ap.add_argument("--only", nargs="*", default=[], metavar="NAME",

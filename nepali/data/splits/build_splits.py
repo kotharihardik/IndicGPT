@@ -6,18 +6,19 @@ Design decisions worth defending:
   put half an article in train and half in test.
 * Deterministic hashing of the document id with a fixed salt, so the split
   is reproducible and Phase 2/3 stay comparable across re-runs.
-* Held-out sets are capped. A naive 1% of a 500M-token corpus gives a 5M
-  token validation set, which wastes GPU time on every eval during pretraining.
+* 90/5/5. The character caps in the config sit above what 5% comes to, so
+  the fraction is what binds, not the cap.
 * Provenance survives the split, so the manual/public breakdown can be
   reported per split.
 
 Run after `deduplicate.py`.
 
-    python data/splits/build_splits.py
+    python3 data/splits/build_splits.py
 """
 
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
 import sys
@@ -38,19 +39,34 @@ def bucket(doc_id: str, salt: str) -> float:
 
 
 def main() -> None:
+    """Assign every deduplicated document to train, validation or test."""
+    # argparse is here so that --help prints help instead of silently starting
+    # a full rebuild. Without it an interrupted "--help" once truncated
+    # train.jsonl.gz, and the only reason that was recoverable is that the
+    # split is deterministic.
+    ap = argparse.ArgumentParser(
+        description="Build deterministic Nepali train/validation/test splits.")
+    ap.add_argument("--dry-run", action="store_true",
+                    help="report the split sizes without writing any file")
+    args = ap.parse_args()
+
     salt = str(S.get("seed", 1337))
     val_frac, test_frac = float(S["val_fraction"]), float(S["test_fraction"])
     val_cap, test_cap = int(float(S["val_max_chars"])), int(float(S["test_max_chars"]))
     heldout = set(S.get("heldout_sources", []))
 
+    # The existing splits are deleted up front, so an interrupted run leaves a
+    # truncated file rather than a stale one. That is safe only because the
+    # split is deterministic and a rerun reproduces it exactly.
     out_root = CFG["paths"]["splits"]
     writers = {}
-    for name in ("train", "validation", "test"):
-        path = out_root / f"{name}.jsonl.gz"
-        path.parent.mkdir(parents=True, exist_ok=True)
-        if path.exists():
-            path.unlink()
-        writers[name] = JsonlWriter(path)
+    if not args.dry_run:
+        for name in ("train", "validation", "test"):
+            path = out_root / f"{name}.jsonl.gz"
+            path.parent.mkdir(parents=True, exist_ok=True)
+            if path.exists():
+                path.unlink()
+            writers[name] = JsonlWriter(path)
 
     counts = defaultdict(lambda: {"docs": 0, "chars": 0, "manual_docs": 0, "manual_chars": 0})
     val_chars = test_chars = 0
@@ -67,7 +83,8 @@ def main() -> None:
             else:
                 split = "train"
 
-        writers[split].write(doc)
+        if not args.dry_run:
+            writers[split].write(doc)
         c = counts[split]
         c["docs"] += 1
         c["chars"] += doc.n_chars
@@ -92,7 +109,12 @@ def main() -> None:
         "leakage_control": "document-level split applied AFTER exact + MinHash deduplication",
         "note": "token counts per split are reported by corpus_stats.py using the trained tokenizer",
     }
-    path = CFG["paths"]["reports"] / "splits.json"
+    if args.dry_run:
+        print("dry run: nothing written")
+
+    reports = CFG["paths"]["reports"] / "json"
+    reports.mkdir(parents=True, exist_ok=True)
+    path = reports / "splits.json"
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(summary, indent=2), encoding="utf-8")
 

@@ -1,26 +1,27 @@
-# =====================================================================
-# What is committed, and what goes to Google Drive
-# =====================================================================
-# The project spec forbids committing large binary artifacts (datasets,
-# tokenized corpora, checkpoints) and requires Drive links in the README
-# instead. Everything small enough to be useful in review IS committed,
-# because a grader should be able to read the evidence without opening a
-# Drive folder:
+# What is committed, and what goes to Google Drive.
 #
-#   COMMITTED   all code and configs
+# The spec forbids committing large binary artifacts and asks for Drive links
+# in the README instead. Everything small enough to be useful in review is
+# committed, so a grader can read the evidence without opening Drive:
+#
+#   committed   all code and configs
 #               tokenizer .model + .vocab + tokenizer_config.json  (~2 MB)
 #               every report table, JSON summary and figure
-#               run logs (~900 KB) - the evidence behind the numbers
+#               run logs - the evidence behind the numbers
 #               the source registry with its probe results
 #
-#   IGNORED     raw / clean / dedup / split corpora   (~4 GB)
+#   ignored     raw / clean / dedup / split corpora   (~4 GB)
 #               downloaded PDFs                       (~160 MB)
 #               spm_input.txt tokenizer training text (~240 MB)
-#               Phase 2/3 model checkpoints
-# =====================================================================
+#               Phase 2/3 checkpoints
+#
+# Note: git does not support trailing comments on a pattern line, so every
+# comment here is on its own line.
 
 # ---- corpora: every stage, all large ----
 */data/raw/
+# sources withdrawn from the run, kept on disk for reproducibility
+*/data/archive/
 */data/clean/
 */data/dedup/
 */data/splits/out/
@@ -43,6 +44,11 @@
 */model/checkpoints/
 */train/runs/
 
+# ---- not part of the submission ----
+local/
+# the readable corpora staged for Google Drive
+drive_upload/
+
 # ---- Python / env ----
 __pycache__/
 *.py[cod]
@@ -55,3 +61,5 @@ venv/
 *.swp
 .vscode/
 .idea/
+
+

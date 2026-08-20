@@ -57,27 +57,17 @@ async def robots_ok(session: aiohttp.ClientSession, url: str) -> bool:
 
 async def fetch(session: aiohttp.ClientSession, url: str, as_json: bool = False,
                 retries: int = 2, timeout: float = 45.0):
-    """Retrieve a URL, retrying only failures that a retry can resolve.
+    """Retrieve a URL, retrying only the failures a retry can fix.
 
-    Retries are limited to HTTP 408, 429 and 5xx responses and to network
-    errors. A 404 is treated as final, since repeating the request cannot
-    change the outcome. Backoff is exponential: 1s, then 2s.
+    Retries 408, 429, 5xx and network errors with 1s then 2s backoff. A 404 is
+    final - asking again cannot change it.
 
-    `retries=0` is intended for speculative URLs such as a guessed
-    /sitemap.xml. Some hosts hold the connection open instead of returning
-    404, in which case three attempts at the default timeout consume over two
-    minutes without producing information.
+    Use `retries=0` for speculative URLs like a guessed /sitemap.xml: some
+    hosts hang instead of returning 404, and three attempts there burn two
+    minutes for no information.
 
-    Args:
-        session: Shared aiohttp session for the run.
-        url: Absolute URL to retrieve.
-        as_json: Parse the response body as JSON before returning it.
-        retries: Additional attempts after the first. 0 disables retrying.
-        timeout: Total per-attempt timeout in seconds.
-
-    Returns:
-        The response body as `str`, or the parsed object when `as_json` is
-        set, or None if the request failed or the body was not valid JSON.
+    Returns the body as str, the parsed object when `as_json` is set, or None
+    if the request failed.
     """
     for attempt in range(retries + 1):
         try:

@@ -44,8 +44,8 @@ def wanted_url(src: dict, url: str) -> bool:
         return False
     if url.lower().split("?")[0].endswith(SKIP_EXT):
         return False
-    # Test the decoded form too. Deny patterns written with Gujarati characters
-    # would never match the percent-encoded URLs a crawler actually sees.
+    # Test the decoded form too. Deny patterns written with Devanagari
+    # characters would never match the percent-encoded URLs a crawler sees.
     decoded = unquote(url)
     return not any(re.search(p, url) or re.search(p, decoded)
                    for p in src.get("deny", []))
