@@ -1,0 +1,46 @@
+
+=== ai4bharat_sangraha: ai4bharat/sangraha ai4bharat_sangraha ===
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+  19,979 docs | 38.72M chars
+  39,954 docs | 77.26M chars
+  59,934 docs | 116.14M chars
+  79,916 docs | 154.73M chars
+  99,897 docs | 192.93M chars
+  119,871 docs | 231.58M chars
+  139,850 docs | 269.87M chars
+  159,831 docs | 308.35M chars
+  179,814 docs | 347.01M chars
+  199,794 docs | 385.69M chars
+  219,769 docs | 424.19M chars
+  239,751 docs | 462.61M chars
+  259,733 docs | 501.72M chars
+  279,710 docs | 539.93M chars
+  299,688 docs | 578.36M chars
+  319,660 docs | 617.14M chars
+  339,651 docs | 655.83M chars
+  359,622 docs | 694.83M chars
+  379,595 docs | 733.78M chars
+  399,573 docs | 772.54M chars
+  419,555 docs | 811.20M chars
+  439,540 docs | 849.23M chars
+  459,522 docs | 887.98M chars
+  479,500 docs | 926.75M chars
+  499,478 docs | 965.85M chars
+  519,458 docs | 1.00B chars
+  539,426 docs | 1.04B chars
+  559,414 docs | 1.08B chars
+  579,395 docs | 1.12B chars
+  599,372 docs | 1.16B chars
+  619,346 docs | 1.20B chars
+  639,327 docs | 1.24B chars
+  659,304 docs | 1.27B chars
+  679,285 docs | 1.31B chars
+  699,272 docs | 1.35B chars
+  719,240 docs | 1.39B chars
+  739,219 docs | 1.43B chars
+  759,194 docs | 1.47B chars
+  budget reached: 1.50B chars
+  done: 775,851 docs, 1.50B chars -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/data/raw/public/ai4bharat_sangraha.jsonl.gz
+
+==== public total: 775,851 docs / 1.50B chars ====
+These are PUBLIC documents; they do not count towards the 20% manual quota.

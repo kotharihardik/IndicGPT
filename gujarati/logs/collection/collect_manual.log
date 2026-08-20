@@ -1,0 +1,1524 @@
+21:03:38 ========================================================================================
+21:03:38 GUJARATI MANUAL COLLECTION   2026-08-12 21:03:38
+21:03:38   sources: abtakmedia, mantavyanews, westerntimesnews, gujarativishwakosh, gujaratmirror, gstv, sandesh, divya_bhaskar, ia_books_pdf
+21:03:38   target : 130.00M manual tokens (~520.00M chars)
+21:03:38   already: 294.57M chars collected
+21:03:38 ========================================================================================
+21:03:40 
+--- abtakmedia  (wp_rest)  budget 160.00M chars ---
+21:03:40   resuming: 66,635 docs / 160.00M chars already collected, 66,635 URLs known
+21:03:40   budget already met - skipping
+21:03:41 
+--- mantavyanews  (wp_rest)  budget 140.00M chars ---
+21:03:41   resuming: 57,853 docs / 119.08M chars already collected, 57,853 URLs known
+21:04:58   [mantavyanews]  |  1 docs  |  119.09M ch  |  ~29.77M tok  |  103 ch/s  |  156 req  |  85% of budget  |  ETA 602h14m  |  1m16s
+21:05:43 ========================================================================================
+21:05:43 GUJARATI MANUAL COLLECTION   2026-08-12 21:05:43
+21:05:43   sources: abtakmedia, mantavyanews, westerntimesnews, gujarativishwakosh, gujaratmirror, gstv, sandesh, divya_bhaskar, ia_books_pdf
+21:05:43   target : 130.00M manual tokens (~520.00M chars)
+21:05:43   already: 294.57M chars collected
+21:05:43 ========================================================================================
+21:05:45 
+--- abtakmedia  (wp_rest)  budget 160.00M chars ---
+21:05:45   resuming: 66,635 docs / 160.00M chars already collected, 66,635 URLs known
+21:05:45   budget already met - skipping
+21:05:46 
+--- mantavyanews  (wp_rest)  budget 140.00M chars ---
+21:05:46   resuming: 57,853 docs / 119.08M chars already collected, 57,853 URLs known
+21:05:46   mantavyanews: 57,853 posts already stored, resuming from page 573
+21:05:50   [mantavyanews]  |  0 docs  |  119.08M ch  |  ~29.77M tok  |  0 ch/s  |  4 req  |  85% of budget  |  ETA 0s  |  3s
+21:06:00   [mantavyanews]  |  288 docs  |  119.61M ch  |  ~29.90M tok  |  37.08K ch/s  |  20 req  |  85% of budget  |  ETA 1h41m  |  14s
+21:06:11   [mantavyanews]  |  1,459 docs  |  121.94M ch  |  ~30.48M tok  |  115.09K ch/s  |  32 req  |  87% of budget  |  ETA 32m14s  |  24s
+21:06:21   [mantavyanews]  |  2,293 docs  |  123.60M ch  |  ~30.90M tok  |  129.75K ch/s  |  44 req  |  88% of budget  |  ETA 28m22s  |  34s
+21:06:34   [mantavyanews]  |  3,066 docs  |  125.19M ch  |  ~31.30M tok  |  127.18K ch/s  |  56 req  |  89% of budget  |  ETA 28m44s  |  48s
+21:06:44   [mantavyanews]  |  3,780 docs  |  126.65M ch  |  ~31.66M tok  |  129.33K ch/s  |  68 req  |  90% of budget  |  ETA 28m04s  |  58s
+21:06:55   [mantavyanews]  |  4,780 docs  |  128.80M ch  |  ~32.20M tok  |  140.95K ch/s  |  84 req  |  92% of budget  |  ETA 25m30s  |  1m08s
+21:07:05   [mantavyanews]  |  5,858 docs  |  131.02M ch  |  ~32.76M tok  |  150.39K ch/s  |  100 req  |  94% of budget  |  ETA 23m39s  |  1m19s
+21:07:15   [mantavyanews]  |  6,790 docs  |  132.96M ch  |  ~33.24M tok  |  155.29K ch/s  |  116 req  |  95% of budget  |  ETA 22m42s  |  1m29s
+21:07:28   [mantavyanews]  |  7,697 docs  |  134.91M ch  |  ~33.73M tok  |  155.21K ch/s  |  132 req  |  96% of budget  |  ETA 22m30s  |  1m41s
+21:07:38   [mantavyanews]  |  8,523 docs  |  136.66M ch  |  ~34.17M tok  |  156.06K ch/s  |  148 req  |  98% of budget  |  ETA 22m11s  |  1m52s
+21:07:52   [mantavyanews]  |  9,314 docs  |  138.19M ch  |  ~34.55M tok  |  151.82K ch/s  |  164 req  |  99% of budget  |  ETA 22m38s  |  2m05s
+21:08:03   [mantavyanews]  |  9,942 docs  |  139.54M ch  |  ~34.88M tok  |  148.57K ch/s  |  176 req  |  100% of budget  |  ETA 22m59s  |  2m17s
+21:08:09   [mantavyanews]  |  10,168 docs  |  140.00M ch  |  ~35.00M tok  |  146.23K ch/s  |  180 req  |  100% of budget  |  ETA 23m18s  |  2m23s  |  DONE (source budget reached)
+21:08:09        rejected: too-short x5,943, already-collected x1,286, latin-heavy x131, devanagari-leak x75, not-gujarati x6
+21:08:09   shard: mantavyanews.part-1786548946-4701.jsonl.gz (10,168 docs / 20.92M chars)
+21:08:09 
+--- westerntimesnews  (wp_rest)  budget 95.00M chars ---
+21:08:25   [westerntimesnews]  |  1 docs  |  2.62K ch  |  ~655 tok  |  165 ch/s  |  4 req  |  0% of budget  |  ETA 342h40m  |  15s
+21:08:38   [westerntimesnews]  |  792 docs  |  1.71M ch  |  ~426.65K tok  |  57.69K ch/s  |  12 req  |  2% of budget  |  ETA 58m35s  |  29s
+21:08:50   [westerntimesnews]  |  1,188 docs  |  2.59M ch  |  ~646.30K tok  |  62.86K ch/s  |  16 req  |  3% of budget  |  ETA 53m32s  |  41s
+21:09:01   [westerntimesnews]  |  1,580 docs  |  3.45M ch  |  ~861.66K tok  |  65.97K ch/s  |  20 req  |  4% of budget  |  ETA 50m48s  |  52s
+21:09:16   [westerntimesnews]  |  1,969 docs  |  4.33M ch  |  ~1.08M tok  |  64.50K ch/s  |  24 req  |  5% of budget  |  ETA 51m43s  |  1m07s
+21:09:26   [westerntimesnews]  |  2,355 docs  |  5.27M ch  |  ~1.32M tok  |  67.89K ch/s  |  28 req  |  6% of budget  |  ETA 48m54s  |  1m17s
+21:09:41   [westerntimesnews]  |  2,747 docs  |  6.14M ch  |  ~1.53M tok  |  66.82K ch/s  |  32 req  |  6% of budget  |  ETA 49m28s  |  1m31s
+21:10:08   [westerntimesnews]  |  3,143 docs  |  6.88M ch  |  ~1.72M tok  |  57.63K ch/s  |  36 req  |  7% of budget  |  ETA 57m09s  |  1m59s
+21:10:31   [westerntimesnews]  |  3,542 docs  |  7.64M ch  |  ~1.91M tok  |  53.69K ch/s  |  40 req  |  8% of budget  |  ETA 1h01m  |  2m22s
+21:10:46   [westerntimesnews]  |  3,938 docs  |  8.41M ch  |  ~2.10M tok  |  53.29K ch/s  |  44 req  |  9% of budget  |  ETA 1h01m  |  2m37s
+21:11:21   [westerntimesnews]  |  4,333 docs  |  9.18M ch  |  ~2.30M tok  |  47.85K ch/s  |  48 req  |  10% of budget  |  ETA 1h08m  |  3m11s
+21:12:03   [westerntimesnews]  |  4,727 docs  |  9.97M ch  |  ~2.49M tok  |  42.55K ch/s  |  52 req  |  10% of budget  |  ETA 1h16m  |  3m54s
+21:12:51   [westerntimesnews]  |  5,121 docs  |  10.79M ch  |  ~2.70M tok  |  38.20K ch/s  |  56 req  |  11% of budget  |  ETA 1h24m  |  4m42s
+21:13:09   [westerntimesnews]  |  5,515 docs  |  11.60M ch  |  ~2.90M tok  |  38.61K ch/s  |  60 req  |  12% of budget  |  ETA 1h23m  |  5m00s
+21:13:36   [westerntimesnews]  |  5,910 docs  |  12.39M ch  |  ~3.10M tok  |  37.89K ch/s  |  64 req  |  13% of budget  |  ETA 1h24m  |  5m26s
+21:14:15   [westerntimesnews]  |  6,309 docs  |  13.18M ch  |  ~3.29M tok  |  36.03K ch/s  |  68 req  |  14% of budget  |  ETA 1h28m  |  6m05s
+21:14:55   [westerntimesnews]  |  6,703 docs  |  13.98M ch  |  ~3.49M tok  |  34.44K ch/s  |  72 req  |  15% of budget  |  ETA 1h32m  |  6m45s
+21:15:43   [westerntimesnews]  |  7,095 docs  |  14.79M ch  |  ~3.70M tok  |  32.52K ch/s  |  76 req  |  16% of budget  |  ETA 1h37m  |  7m34s
+21:15:54   [westerntimesnews]  |  8,651 docs  |  18.02M ch  |  ~4.51M tok  |  38.74K ch/s  |  92 req  |  19% of budget  |  ETA 1h20m  |  7m45s
+21:16:04   [westerntimesnews]  |  9,821 docs  |  20.46M ch  |  ~5.11M tok  |  43.04K ch/s  |  104 req  |  22% of budget  |  ETA 1h11m  |  7m55s
+21:16:15   [westerntimesnews]  |  11,376 docs  |  23.69M ch  |  ~5.92M tok  |  48.67K ch/s  |  120 req  |  25% of budget  |  ETA 1h01m  |  8m06s
+21:16:25   [westerntimesnews]  |  12,771 docs  |  26.57M ch  |  ~6.64M tok  |  53.48K ch/s  |  132 req  |  28% of budget  |  ETA 55m27s  |  8m16s
+21:16:37   [westerntimesnews]  |  14,099 docs  |  29.17M ch  |  ~7.29M tok  |  57.38K ch/s  |  148 req  |  31% of budget  |  ETA 50m55s  |  8m28s
+21:16:49   [westerntimesnews]  |  15,667 docs  |  32.18M ch  |  ~8.05M tok  |  61.83K ch/s  |  164 req  |  34% of budget  |  ETA 46m27s  |  8m40s
+21:17:01   [westerntimesnews]  |  17,192 docs  |  35.19M ch  |  ~8.80M tok  |  66.17K ch/s  |  180 req  |  37% of budget  |  ETA 42m38s  |  8m51s
+21:17:11   [westerntimesnews]  |  18,451 docs  |  37.85M ch  |  ~9.46M tok  |  69.86K ch/s  |  192 req  |  40% of budget  |  ETA 39m45s  |  9m01s
+21:17:22   [westerntimesnews]  |  19,699 docs  |  40.43M ch  |  ~10.11M tok  |  73.03K ch/s  |  208 req  |  43% of budget  |  ETA 37m26s  |  9m13s
+21:17:34   [westerntimesnews]  |  21,160 docs  |  43.48M ch  |  ~10.87M tok  |  76.94K ch/s  |  224 req  |  46% of budget  |  ETA 34m52s  |  9m25s
+21:17:46   [westerntimesnews]  |  22,586 docs  |  46.38M ch  |  ~11.59M tok  |  80.31K ch/s  |  240 req  |  49% of budget  |  ETA 32m49s  |  9m37s
+21:17:56   [westerntimesnews]  |  23,584 docs  |  48.44M ch  |  ~12.11M tok  |  82.44K ch/s  |  252 req  |  51% of budget  |  ETA 31m33s  |  9m47s
+21:18:08   [westerntimesnews]  |  24,634 docs  |  50.70M ch  |  ~12.67M tok  |  84.65K ch/s  |  264 req  |  53% of budget  |  ETA 30m17s  |  9m58s
+21:18:19   [westerntimesnews]  |  26,043 docs  |  53.71M ch  |  ~13.43M tok  |  88.03K ch/s  |  280 req  |  57% of budget  |  ETA 28m33s  |  10m10s
+21:18:29   [westerntimesnews]  |  27,165 docs  |  55.99M ch  |  ~14.00M tok  |  90.29K ch/s  |  292 req  |  59% of budget  |  ETA 27m24s  |  10m20s
+21:18:39   [westerntimesnews]  |  28,347 docs  |  58.31M ch  |  ~14.58M tok  |  92.54K ch/s  |  304 req  |  61% of budget  |  ETA 26m19s  |  10m30s
+21:18:50   [westerntimesnews]  |  29,157 docs  |  60.02M ch  |  ~15.01M tok  |  93.62K ch/s  |  316 req  |  63% of budget  |  ETA 25m43s  |  10m41s
+21:19:00   [westerntimesnews]  |  30,400 docs  |  62.70M ch  |  ~15.68M tok  |  96.30K ch/s  |  328 req  |  66% of budget  |  ETA 24m32s  |  10m51s
+21:19:10   [westerntimesnews]  |  31,415 docs  |  64.67M ch  |  ~16.17M tok  |  97.73K ch/s  |  340 req  |  68% of budget  |  ETA 23m50s  |  11m01s
+21:19:20   [westerntimesnews]  |  32,798 docs  |  67.16M ch  |  ~16.79M tok  |  99.99K ch/s  |  352 req  |  71% of budget  |  ETA 22m53s  |  11m11s
+21:19:32   [westerntimesnews]  |  34,132 docs  |  69.86M ch  |  ~17.47M tok  |  102.22K ch/s  |  368 req  |  74% of budget  |  ETA 21m57s  |  11m23s
+21:19:43   [westerntimesnews]  |  35,258 docs  |  72.11M ch  |  ~18.03M tok  |  103.86K ch/s  |  380 req  |  76% of budget  |  ETA 21m14s  |  11m34s
+21:19:55   [westerntimesnews]  |  36,662 docs  |  74.96M ch  |  ~18.74M tok  |  106.20K ch/s  |  396 req  |  79% of budget  |  ETA 20m19s  |  11m45s
+21:20:05   [westerntimesnews]  |  37,746 docs  |  77.08M ch  |  ~19.27M tok  |  107.62K ch/s  |  408 req  |  81% of budget  |  ETA 19m44s  |  11m56s
+21:20:15   [westerntimesnews]  |  39,257 docs  |  80.19M ch  |  ~20.05M tok  |  110.42K ch/s  |  420 req  |  84% of budget  |  ETA 18m45s  |  12m06s
+21:20:27   [westerntimesnews]  |  40,509 docs  |  82.76M ch  |  ~20.69M tok  |  112.04K ch/s  |  436 req  |  87% of budget  |  ETA 18m06s  |  12m18s
+21:20:39   [westerntimesnews]  |  41,681 docs  |  85.11M ch  |  ~21.28M tok  |  113.44K ch/s  |  448 req  |  90% of budget  |  ETA 17m32s  |  12m30s
+21:20:49   [westerntimesnews]  |  42,859 docs  |  87.33M ch  |  ~21.83M tok  |  114.81K ch/s  |  460 req  |  92% of budget  |  ETA 17m00s  |  12m40s
+21:20:59   [westerntimesnews]  |  44,250 docs  |  89.95M ch  |  ~22.49M tok  |  116.71K ch/s  |  472 req  |  95% of budget  |  ETA 16m21s  |  12m50s
+21:21:09   [westerntimesnews]  |  45,368 docs  |  92.12M ch  |  ~23.03M tok  |  118.00K ch/s  |  484 req  |  97% of budget  |  ETA 15m52s  |  13m00s
+21:21:20   [westerntimesnews]  |  46,450 docs  |  94.10M ch  |  ~23.53M tok  |  118.98K ch/s  |  496 req  |  99% of budget  |  ETA 15m27s  |  13m10s
+21:21:23   [westerntimesnews]  |  46,944 docs  |  95.00M ch  |  ~23.75M tok  |  119.54K ch/s  |  500 req  |  100% of budget  |  ETA 15m16s  |  13m14s  |  DONE (source budget reached)
+21:21:23        rejected: not-gujarati x2,446, latin-heavy x261, devanagari-leak x31, too-short x14
+21:21:23   shard: westerntimesnews.part-1786549089-4701.jsonl.gz (46,944 docs / 95.00M chars)
+21:21:23 
+--- gujarativishwakosh  (wp_rest)  budget 85.00M chars ---
+21:21:33   [gujarativishwakosh]  |  1 docs  |  1.03K ch  |  ~257 tok  |  104 ch/s  |  4 req  |  0% of budget  |  ETA 291h21m  |  9s
+21:21:44   [gujarativishwakosh]  |  749 docs  |  3.08M ch  |  ~770.40K tok  |  148.92K ch/s  |  12 req  |  4% of budget  |  ETA 11m54s  |  20s
+21:21:54   [gujarativishwakosh]  |  1,637 docs  |  6.42M ch  |  ~1.61M tok  |  209.21K ch/s  |  20 req  |  8% of budget  |  ETA 8m12s  |  30s
+21:22:07   [gujarativishwakosh]  |  2,286 docs  |  9.00M ch  |  ~2.25M tok  |  208.60K ch/s  |  28 req  |  11% of budget  |  ETA 8m01s  |  43s
+21:22:18   [gujarativishwakosh]  |  3,036 docs  |  12.89M ch  |  ~3.22M tok  |  236.69K ch/s  |  36 req  |  15% of budget  |  ETA 6m48s  |  54s
+21:22:31   [gujarativishwakosh]  |  4,179 docs  |  17.15M ch  |  ~4.29M tok  |  254.63K ch/s  |  48 req  |  20% of budget  |  ETA 6m02s  |  1m07s
+21:22:41   [gujarativishwakosh]  |  4,556 docs  |  18.38M ch  |  ~4.59M tok  |  235.98K ch/s  |  52 req  |  22% of budget  |  ETA 6m26s  |  1m17s
+21:22:51   [gujarativishwakosh]  |  4,931 docs  |  20.38M ch  |  ~5.09M tok  |  231.60K ch/s  |  56 req  |  24% of budget  |  ETA 6m24s  |  1m27s
+21:23:02   [gujarativishwakosh]  |  5,683 docs  |  24.01M ch  |  ~6.00M tok  |  243.57K ch/s  |  64 req  |  28% of budget  |  ETA 5m51s  |  1m38s
+21:23:12   [gujarativishwakosh]  |  6,774 docs  |  28.15M ch  |  ~7.04M tok  |  259.28K ch/s  |  72 req  |  33% of budget  |  ETA 5m13s  |  1m48s
+21:23:24   [gujarativishwakosh]  |  7,602 docs  |  31.30M ch  |  ~7.82M tok  |  260.06K ch/s  |  84 req  |  37% of budget  |  ETA 5m00s  |  2m00s
+21:23:36   [gujarativishwakosh]  |  8,750 docs  |  35.31M ch  |  ~8.83M tok  |  267.31K ch/s  |  96 req  |  42% of budget  |  ETA 4m37s  |  2m12s
+21:23:51   [gujarativishwakosh]  |  9,896 docs  |  39.85M ch  |  ~9.96M tok  |  270.97K ch/s  |  108 req  |  47% of budget  |  ETA 4m17s  |  2m27s
+21:24:03   [gujarativishwakosh]  |  11,044 docs  |  44.80M ch  |  ~11.20M tok  |  281.26K ch/s  |  120 req  |  53% of budget  |  ETA 3m50s  |  2m39s
+21:24:16   [gujarativishwakosh]  |  12,186 docs  |  48.97M ch  |  ~12.24M tok  |  284.25K ch/s  |  132 req  |  58% of budget  |  ETA 3m32s  |  2m52s
+21:24:26   [gujarativishwakosh]  |  13,047 docs  |  53.04M ch  |  ~13.26M tok  |  290.97K ch/s  |  140 req  |  62% of budget  |  ETA 3m14s  |  3m02s
+21:24:36   [gujarativishwakosh]  |  13,791 docs  |  56.33M ch  |  ~14.08M tok  |  292.96K ch/s  |  148 req  |  66% of budget  |  ETA 3m01s  |  3m12s
+21:24:46   [gujarativishwakosh]  |  14,682 docs  |  60.40M ch  |  ~15.10M tok  |  298.50K ch/s  |  156 req  |  71% of budget  |  ETA 2m44s  |  3m22s
+21:24:58   [gujarativishwakosh]  |  15,622 docs  |  64.16M ch  |  ~16.04M tok  |  299.04K ch/s  |  168 req  |  75% of budget  |  ETA 2m31s  |  3m34s
+21:25:11   [gujarativishwakosh]  |  16,770 docs  |  68.19M ch  |  ~17.05M tok  |  300.12K ch/s  |  180 req  |  80% of budget  |  ETA 2m17s  |  3m47s
+21:25:23   [gujarativishwakosh]  |  17,920 docs  |  72.69M ch  |  ~18.17M tok  |  303.56K ch/s  |  192 req  |  86% of budget  |  ETA 2m01s  |  3m59s
+21:25:33   [gujarativishwakosh]  |  18,683 docs  |  75.52M ch  |  ~18.88M tok  |  302.63K ch/s  |  200 req  |  89% of budget  |  ETA 1m52s  |  4m09s
+21:25:43   [gujarativishwakosh]  |  19,707 docs  |  81.11M ch  |  ~20.28M tok  |  312.52K ch/s  |  208 req  |  95% of budget  |  ETA 1m30s  |  4m19s
+21:25:55   [gujarativishwakosh]  |  20,600 docs  |  84.68M ch  |  ~21.17M tok  |  312.31K ch/s  |  220 req  |  100% of budget  |  ETA 1m19s  |  4m31s
+21:25:55   [gujarativishwakosh]  |  20,743 docs  |  85.01M ch  |  ~21.25M tok  |  313.22K ch/s  |  220 req  |  100% of budget  |  ETA 1m18s  |  4m31s  |  DONE (source budget reached)
+21:25:55        rejected: too-short x983, devanagari-leak x13, latin-heavy x7
+21:25:55   shard: gujarativishwakosh.part-1786549883-4701.jsonl.gz (20,743 docs / 85.01M chars)
+21:25:55 
+--- gujaratmirror  (wp_rest)  budget 55.00M chars ---
+21:26:03   [gujaratmirror]  |  1 docs  |  2.22K ch  |  ~555 tok  |  267 ch/s  |  4 req  |  0% of budget  |  ETA 25h24m  |  8s
+21:26:17   [gujaratmirror]  |  801 docs  |  1.44M ch  |  ~360.91K tok  |  65.65K ch/s  |  12 req  |  3% of budget  |  ETA 5m51s  |  21s
+21:26:28   [gujaratmirror]  |  1,201 docs  |  2.17M ch  |  ~541.86K tok  |  65.56K ch/s  |  16 req  |  4% of budget  |  ETA 5m40s  |  33s
+21:26:43   [gujaratmirror]  |  2,000 docs  |  3.57M ch  |  ~893.41K tok  |  73.77K ch/s  |  24 req  |  6% of budget  |  ETA 4m43s  |  48s
+21:27:00   [gujaratmirror]  |  2,800 docs  |  4.95M ch  |  ~1.24M tok  |  76.05K ch/s  |  32 req  |  9% of budget  |  ETA 4m17s  |  1m05s
+21:27:13   [gujaratmirror]  |  3,599 docs  |  6.38M ch  |  ~1.59M tok  |  82.00K ch/s  |  40 req  |  12% of budget  |  ETA 3m41s  |  1m17s
+21:27:24   [gujaratmirror]  |  4,399 docs  |  7.80M ch  |  ~1.95M tok  |  87.82K ch/s  |  48 req  |  14% of budget  |  ETA 3m10s  |  1m28s
+21:27:34   [gujaratmirror]  |  5,592 docs  |  9.98M ch  |  ~2.49M tok  |  101.01K ch/s  |  56 req  |  18% of budget  |  ETA 2m23s  |  1m38s
+21:27:44   [gujaratmirror]  |  5,999 docs  |  10.71M ch  |  ~2.68M tok  |  98.33K ch/s  |  64 req  |  19% of budget  |  ETA 2m20s  |  1m48s
+21:27:54   [gujaratmirror]  |  6,799 docs  |  12.20M ch  |  ~3.05M tok  |  102.40K ch/s  |  72 req  |  22% of budget  |  ETA 2m00s  |  1m59s
+21:28:04   [gujaratmirror]  |  7,808 docs  |  13.98M ch  |  ~3.50M tok  |  108.25K ch/s  |  80 req  |  25% of budget  |  ETA 1m37s  |  2m09s
+21:28:15   [gujaratmirror]  |  8,399 docs  |  14.99M ch  |  ~3.75M tok  |  107.32K ch/s  |  88 req  |  27% of budget  |  ETA 1m28s  |  2m19s
+21:28:25   [gujaratmirror]  |  9,199 docs  |  16.39M ch  |  ~4.10M tok  |  109.12K ch/s  |  96 req  |  30% of budget  |  ETA 1m14s  |  2m30s
+21:28:35   [gujaratmirror]  |  10,196 docs  |  18.06M ch  |  ~4.51M tok  |  112.71K ch/s  |  104 req  |  33% of budget  |  ETA 57s  |  2m40s
+21:28:49   [gujaratmirror]  |  10,799 docs  |  19.07M ch  |  ~4.77M tok  |  109.24K ch/s  |  112 req  |  35% of budget  |  ETA 49s  |  2m54s
+21:29:04   [gujaratmirror]  |  11,999 docs  |  21.09M ch  |  ~5.27M tok  |  111.76K ch/s  |  124 req  |  38% of budget  |  ETA 30s  |  3m08s
+21:29:14   [gujaratmirror]  |  12,799 docs  |  22.41M ch  |  ~5.60M tok  |  112.44K ch/s  |  132 req  |  41% of budget  |  ETA 18s  |  3m19s
+21:29:24   [gujaratmirror]  |  13,616 docs  |  23.83M ch  |  ~5.96M tok  |  113.89K ch/s  |  140 req  |  43% of budget  |  ETA 5s  |  3m29s
+21:29:39   [gujaratmirror]  |  14,799 docs  |  25.78M ch  |  ~6.45M tok  |  115.06K ch/s  |  152 req  |  47% of budget  |  ETA ?  |  3m44s
+21:29:49   [gujaratmirror]  |  15,708 docs  |  27.30M ch  |  ~6.82M tok  |  116.62K ch/s  |  160 req  |  50% of budget  |  ETA ?  |  3m54s
+21:29:59   [gujaratmirror]  |  16,722 docs  |  29.00M ch  |  ~7.25M tok  |  118.83K ch/s  |  168 req  |  53% of budget  |  ETA ?  |  4m04s
+21:30:09   [gujaratmirror]  |  17,199 docs  |  29.72M ch  |  ~7.43M tok  |  116.77K ch/s  |  176 req  |  54% of budget  |  ETA ?  |  4m14s
+21:30:19   [gujaratmirror]  |  18,338 docs  |  31.50M ch  |  ~7.88M tok  |  119.09K ch/s  |  184 req  |  57% of budget  |  ETA ?  |  4m24s
+21:30:31   [gujaratmirror]  |  18,798 docs  |  32.22M ch  |  ~8.05M tok  |  116.79K ch/s  |  192 req  |  59% of budget  |  ETA ?  |  4m35s
+21:30:42   [gujaratmirror]  |  19,598 docs  |  33.48M ch  |  ~8.37M tok  |  116.59K ch/s  |  200 req  |  61% of budget  |  ETA ?  |  4m47s
+21:30:53   [gujaratmirror]  |  20,398 docs  |  34.77M ch  |  ~8.69M tok  |  116.82K ch/s  |  208 req  |  63% of budget  |  ETA ?  |  4m57s
+21:31:07   [gujaratmirror]  |  21,598 docs  |  36.67M ch  |  ~9.17M tok  |  117.38K ch/s  |  220 req  |  67% of budget  |  ETA ?  |  5m12s
+21:31:24   [gujaratmirror]  |  22,798 docs  |  38.59M ch  |  ~9.65M tok  |  117.10K ch/s  |  232 req  |  70% of budget  |  ETA ?  |  5m29s
+21:31:36   [gujaratmirror]  |  23,598 docs  |  39.87M ch  |  ~9.97M tok  |  116.89K ch/s  |  240 req  |  72% of budget  |  ETA ?  |  5m41s
+21:31:46   [gujaratmirror]  |  24,398 docs  |  41.11M ch  |  ~10.28M tok  |  116.91K ch/s  |  248 req  |  75% of budget  |  ETA ?  |  5m51s
+21:32:01   [gujaratmirror]  |  25,198 docs  |  42.44M ch  |  ~10.61M tok  |  115.98K ch/s  |  256 req  |  77% of budget  |  ETA ?  |  6m05s
+21:32:13   [gujaratmirror]  |  25,998 docs  |  43.75M ch  |  ~10.94M tok  |  115.79K ch/s  |  264 req  |  80% of budget  |  ETA ?  |  6m17s
+21:32:23   [gujaratmirror]  |  26,398 docs  |  44.41M ch  |  ~11.10M tok  |  114.47K ch/s  |  268 req  |  81% of budget  |  ETA ?  |  6m27s
+21:32:34   [gujaratmirror]  |  27,198 docs  |  45.70M ch  |  ~11.43M tok  |  114.48K ch/s  |  276 req  |  83% of budget  |  ETA ?  |  6m39s
+21:32:45   [gujaratmirror]  |  27,998 docs  |  46.97M ch  |  ~11.74M tok  |  114.64K ch/s  |  284 req  |  85% of budget  |  ETA ?  |  6m49s
+21:32:57   [gujaratmirror]  |  28,797 docs  |  48.28M ch  |  ~12.07M tok  |  114.43K ch/s  |  292 req  |  88% of budget  |  ETA ?  |  7m01s
+21:33:08   [gujaratmirror]  |  29,595 docs  |  49.58M ch  |  ~12.40M tok  |  114.53K ch/s  |  300 req  |  90% of budget  |  ETA ?  |  7m12s
+21:33:22   [gujaratmirror]  |  30,395 docs  |  50.81M ch  |  ~12.70M tok  |  113.75K ch/s  |  308 req  |  92% of budget  |  ETA ?  |  7m26s
+21:33:36   [gujaratmirror]  |  30,795 docs  |  51.43M ch  |  ~12.86M tok  |  111.60K ch/s  |  312 req  |  94% of budget  |  ETA ?  |  7m40s
+21:33:54   [gujaratmirror]  |  31,595 docs  |  52.70M ch  |  ~13.18M tok  |  110.00K ch/s  |  320 req  |  96% of budget  |  ETA ?  |  7m59s
+21:34:07   [gujaratmirror]  |  32,395 docs  |  53.99M ch  |  ~13.50M tok  |  109.78K ch/s  |  328 req  |  98% of budget  |  ETA ?  |  8m11s
+21:34:12   [gujaratmirror]  |  33,022 docs  |  55.00M ch  |  ~13.75M tok  |  110.56K ch/s  |  332 req  |  100% of budget  |  ETA ?  |  8m17s  |  DONE (source budget reached)
+21:34:12        rejected: too-short x3, latin-heavy x1, not-gujarati x1, no-stopwords x1
+21:34:12   shard: gujaratmirror.part-1786550155-4701.jsonl.gz (33,022 docs / 55.00M chars)
+21:34:12 
+  collection target reached - stopping
+21:34:12 
+========================================================================================
+21:34:12 TOTAL 550.49M chars  ~137.62M tokens (105.9% of target) in 28m29s
+21:34:12 ========================================================================================
+22:15:45 ========================================================================================
+22:15:45 GUJARATI MANUAL COLLECTION   2026-08-12 22:15:45
+22:15:45   sources: ia_books_pdf
+22:15:45   target : 130.00M manual tokens (~520.00M chars)
+22:15:45   already: 0 chars collected
+22:15:45 ========================================================================================
+22:15:45 
+--- ia_books_pdf  (pdf)  budget 6.00M chars ---
+22:15:45   ia_books_pdf: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/data/raw/pdfs missing - run fetch_ia_pdfs.py first
+22:15:45   [ia_books_pdf]  |  0 docs  |  0 ch  |  ~0 tok  |  0 ch/s  |  0 req  |  0% of budget  |  ETA 0s  |  0s  |  DONE
+22:15:45   shard: ia_books_pdf.part-1786553145-52944.jsonl.gz (0 docs / 0 chars)
+22:15:45 
+========================================================================================
+22:15:45 TOTAL 0 chars  ~0 tokens (0.0% of target) in 0s
+22:15:45 ========================================================================================
+22:16:01 ========================================================================================
+22:16:01 GUJARATI MANUAL COLLECTION   2026-08-12 22:16:01
+22:16:01   sources: ia_books_pdf
+22:16:01   target : 130.00M manual tokens (~520.00M chars)
+22:16:01   already: 0 chars collected
+22:16:01 ========================================================================================
+22:16:01 
+--- ia_books_pdf  (pdf)  budget 6.00M chars ---
+22:16:01   ia_books_pdf: /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/data/raw/pdfs missing - run fetch_ia_pdfs.py first
+22:16:01   [ia_books_pdf]  |  0 docs  |  0 ch  |  ~0 tok  |  0 ch/s  |  0 req  |  0% of budget  |  ETA 0s  |  0s  |  DONE
+22:16:01   shard: ia_books_pdf.part-1786553161-53072.jsonl.gz (0 docs / 0 chars)
+22:16:01 
+========================================================================================
+22:16:01 TOTAL 0 chars  ~0 tokens (0.0% of target) in 0s
+22:16:01 ========================================================================================
+22:18:25 ========================================================================================
+22:18:25 GUJARATI MANUAL COLLECTION   2026-08-12 22:18:25
+22:18:25   sources: ia_books_pdf
+22:18:25   target : 130.00M manual tokens (~520.00M chars)
+22:18:25   already: 0 chars collected
+22:18:25 ========================================================================================
+22:18:25 
+--- ia_books_pdf  (pdf)  budget 6.00M chars ---
+22:18:25   ia_books_pdf: 24 PDFs on disk
+22:18:25   [ia_books_pdf]  |  1 docs  |  98.02K ch  |  ~24.51K tok  |  394.70K ch/s  |  0 req  |  2% of budget  |  ETA 21m57s  |  0s
+22:18:34   [ia_books_pdf]  |  26 docs  |  3.71M ch  |  ~928.72K tok  |  404.86K ch/s  |  0 req  |  62% of budget  |  ETA 21m15s  |  9s  |  DONE
+22:18:34        rejected: not-gujarati x4, too-short x1, too-few-words x1
+22:18:34   shard: ia_books_pdf.part-1786553305-54653.jsonl.gz (26 docs / 3.71M chars)
+22:18:34 
+========================================================================================
+22:18:34 TOTAL 3.71M chars  ~928.72K tokens (0.7% of target) in 9s
+22:18:34 ========================================================================================
+22:24:33 ========================================================================================
+22:24:33 GUJARATI MANUAL COLLECTION   2026-08-13 22:24:33
+22:24:33   sources: opinionmagazine, aksharnaad, gujarattoday, gujaratabroad, loksansar, sunvillasamachar, eaglenews
+22:24:33   target : 130.00M manual tokens (~520.00M chars)
+22:24:33   already: 0 chars collected
+22:24:33 ========================================================================================
+22:24:33 
+--- opinionmagazine  (sitemap)  budget 70.00M chars ---
+22:24:58   opinionmagazine: 13,170 new article URLs from sitemap
+22:24:59   [opinionmagazine]  |  1 docs  |  11.46K ch  |  ~2.87K tok  |  433 ch/s  |  14 req  |  0% of budget  |  ETA 333h13m  |  26s
+22:25:11   [opinionmagazine]  |  21 docs  |  208.12K ch  |  ~52.03K tok  |  5.46K ch/s  |  57 req  |  0% of budget  |  ETA 26h26m  |  38s
+22:25:21   [opinionmagazine]  |  52 docs  |  421.13K ch  |  ~105.28K tok  |  8.75K ch/s  |  95 req  |  1% of budget  |  ETA 16h29m  |  48s
+22:25:32   [opinionmagazine]  |  92 docs  |  584.35K ch  |  ~146.09K tok  |  9.87K ch/s  |  137 req  |  1% of budget  |  ETA 14h36m  |  59s
+22:25:42   [opinionmagazine]  |  129 docs  |  821.96K ch  |  ~205.49K tok  |  11.84K ch/s  |  173 req  |  1% of budget  |  ETA 12h11m  |  1m09s
+22:25:52   [opinionmagazine]  |  159 docs  |  1.01M ch  |  ~253.08K tok  |  12.73K ch/s  |  203 req  |  1% of budget  |  ETA 11h19m  |  1m19s
+22:26:02   [opinionmagazine]  |  183 docs  |  1.20M ch  |  ~300.23K tok  |  13.40K ch/s  |  235 req  |  2% of budget  |  ETA 10h45m  |  1m29s
+22:26:12   [opinionmagazine]  |  211 docs  |  1.39M ch  |  ~346.99K tok  |  13.93K ch/s  |  275 req  |  2% of budget  |  ETA 10h20m  |  1m39s
+22:26:22   [opinionmagazine]  |  239 docs  |  1.60M ch  |  ~399.99K tok  |  14.57K ch/s  |  311 req  |  2% of budget  |  ETA 9h52m  |  1m49s
+22:26:33   [opinionmagazine]  |  263 docs  |  1.70M ch  |  ~424.75K tok  |  14.16K ch/s  |  350 req  |  2% of budget  |  ETA 10h10m  |  1m59s
+22:26:43   [opinionmagazine]  |  290 docs  |  1.88M ch  |  ~469.60K tok  |  14.45K ch/s  |  390 req  |  3% of budget  |  ETA 9h57m  |  2m10s
+22:26:53   [opinionmagazine]  |  321 docs  |  2.05M ch  |  ~512.61K tok  |  14.58K ch/s  |  429 req  |  3% of budget  |  ETA 9h52m  |  2m20s
+22:27:03   [opinionmagazine]  |  339 docs  |  2.12M ch  |  ~531.19K tok  |  14.10K ch/s  |  462 req  |  3% of budget  |  ETA 10h12m  |  2m30s
+22:27:05 ========================================================================================
+22:27:05 GUJARATI MANUAL COLLECTION   2026-08-13 22:27:05
+22:27:05   sources: gujarattoday, gujaratabroad, loksansar, sunvillasamachar, eaglenews
+22:27:05   target : 130.00M manual tokens (~520.00M chars)
+22:27:05   already: 0 chars collected
+22:27:05 ========================================================================================
+22:27:05 
+--- gujarattoday  (wp_rest)  budget 102.00M chars ---
+22:27:09   [gujarattoday]  |  1 docs  |  1.65K ch  |  ~412 tok  |  359 ch/s  |  4 req  |  0% of budget  |  ETA 401h46m  |  4s
+22:27:13   [opinionmagazine]  |  365 docs  |  2.26M ch  |  ~566.23K tok  |  14.09K ch/s  |  497 req  |  3% of budget  |  ETA 10h12m  |  2m40s
+22:27:22   [gujarattoday]  |  1,442 docs  |  3.07M ch  |  ~767.52K tok  |  180.02K ch/s  |  20 req  |  3% of budget  |  ETA 47m51s  |  17s
+22:27:24   [opinionmagazine]  |  389 docs  |  2.39M ch  |  ~596.34K tok  |  13.92K ch/s  |  531 req  |  3% of budget  |  ETA 10h19m  |  2m51s
+22:27:33   [gujarattoday]  |  2,865 docs  |  5.49M ch  |  ~1.37M tok  |  192.08K ch/s  |  36 req  |  5% of budget  |  ETA 44m38s  |  28s
+22:27:34   [opinionmagazine]  |  415 docs  |  2.54M ch  |  ~634.50K tok  |  13.98K ch/s  |  567 req  |  4% of budget  |  ETA 10h16m  |  3m01s
+22:27:43   [gujarattoday]  |  4,025 docs  |  7.40M ch  |  ~1.85M tok  |  191.50K ch/s  |  48 req  |  7% of budget  |  ETA 44m36s  |  38s
+22:27:45   [opinionmagazine]  |  435 docs  |  2.68M ch  |  ~670.89K tok  |  13.96K ch/s  |  602 req  |  4% of budget  |  ETA 10h17m  |  3m12s
+22:27:53   [gujarattoday]  |  5,205 docs  |  9.55M ch  |  ~2.39M tok  |  196.31K ch/s  |  60 req  |  9% of budget  |  ETA 43m20s  |  48s
+22:27:55   [opinionmagazine]  |  461 docs  |  2.87M ch  |  ~717.95K tok  |  14.20K ch/s  |  639 req  |  4% of budget  |  ETA 10h06m  |  3m22s
+22:28:04   [gujarattoday]  |  6,210 docs  |  11.33M ch  |  ~2.83M tok  |  190.23K ch/s  |  72 req  |  11% of budget  |  ETA 44m33s  |  59s
+22:28:05   [opinionmagazine]  |  481 docs  |  3.02M ch  |  ~756.11K tok  |  14.22K ch/s  |  674 req  |  4% of budget  |  ETA 10h06m  |  3m32s
+22:28:16   [opinionmagazine]  |  509 docs  |  3.22M ch  |  ~806.23K tok  |  14.47K ch/s  |  711 req  |  5% of budget  |  ETA 9h55m  |  3m42s
+22:28:16   [gujarattoday]  |  7,412 docs  |  14.01M ch  |  ~3.50M tok  |  196.08K ch/s  |  88 req  |  14% of budget  |  ETA 43m00s  |  1m11s
+22:28:26   [opinionmagazine]  |  535 docs  |  3.40M ch  |  ~850.36K tok  |  14.59K ch/s  |  748 req  |  5% of budget  |  ETA 9h49m  |  3m53s
+22:28:28   [gujarattoday]  |  7,939 docs  |  15.35M ch  |  ~3.84M tok  |  184.65K ch/s  |  104 req  |  15% of budget  |  ETA 45m33s  |  1m23s
+22:28:36   [opinionmagazine]  |  558 docs  |  3.57M ch  |  ~891.48K tok  |  14.67K ch/s  |  784 req  |  5% of budget  |  ETA 9h46m  |  4m03s
+22:28:40   [gujarattoday]  |  9,188 docs  |  17.33M ch  |  ~4.33M tok  |  181.16K ch/s  |  120 req  |  17% of budget  |  ETA 46m14s  |  1m35s
+22:28:46   [opinionmagazine]  |  583 docs  |  3.84M ch  |  ~959.69K tok  |  15.16K ch/s  |  815 req  |  5% of budget  |  ETA 9h27m  |  4m13s
+22:28:51   [gujarattoday]  |  10,338 docs  |  19.08M ch  |  ~4.77M tok  |  180.24K ch/s  |  132 req  |  19% of budget  |  ETA 46m19s  |  1m45s
+22:28:56   [opinionmagazine]  |  611 docs  |  4.01M ch  |  ~1.00M tok  |  15.23K ch/s  |  847 req  |  6% of budget  |  ETA 9h24m  |  4m23s
+22:29:03   [gujarattoday]  |  11,885 docs  |  21.48M ch  |  ~5.37M tok  |  182.33K ch/s  |  148 req  |  21% of budget  |  ETA 45m34s  |  1m57s
+22:29:07   [opinionmagazine]  |  637 docs  |  4.14M ch  |  ~1.03M tok  |  15.09K ch/s  |  890 req  |  6% of budget  |  ETA 9h29m  |  4m34s
+22:29:13   [gujarattoday]  |  13,037 docs  |  23.35M ch  |  ~5.84M tok  |  181.73K ch/s  |  160 req  |  23% of budget  |  ETA 45m32s  |  2m08s
+22:29:17   [opinionmagazine]  |  668 docs  |  4.29M ch  |  ~1.07M tok  |  15.09K ch/s  |  927 req  |  6% of budget  |  ETA 9h29m  |  4m44s
+22:29:26   [gujarattoday]  |  14,586 docs  |  25.62M ch  |  ~6.41M tok  |  181.80K ch/s  |  176 req  |  25% of budget  |  ETA 45m19s  |  2m20s
+22:29:28   [opinionmagazine]  |  704 docs  |  4.49M ch  |  ~1.12M tok  |  15.22K ch/s  |  968 req  |  6% of budget  |  ETA 9h24m  |  4m55s
+22:29:36   [gujarattoday]  |  15,741 docs  |  27.39M ch  |  ~6.85M tok  |  181.01K ch/s  |  188 req  |  27% of budget  |  ETA 45m21s  |  2m31s
+22:29:38   [opinionmagazine]  |  734 docs  |  4.77M ch  |  ~1.19M tok  |  15.61K ch/s  |  1,006 req  |  7% of budget  |  ETA 9h10m  |  5m05s
+22:29:48   [gujarattoday]  |  17,283 docs  |  29.75M ch  |  ~7.44M tok  |  182.10K ch/s  |  204 req  |  29% of budget  |  ETA 44m52s  |  2m43s
+22:29:49   [opinionmagazine]  |  766 docs  |  4.94M ch  |  ~1.23M tok  |  15.62K ch/s  |  1,043 req  |  7% of budget  |  ETA 9h09m  |  5m16s
+22:29:58   [gujarattoday]  |  18,493 docs  |  31.48M ch  |  ~7.87M tok  |  181.60K ch/s  |  216 req  |  31% of budget  |  ETA 44m50s  |  2m53s
+22:29:59   [opinionmagazine]  |  791 docs  |  5.07M ch  |  ~1.27M tok  |  15.53K ch/s  |  1,081 req  |  7% of budget  |  ETA 9h12m  |  5m26s
+22:30:09   [opinionmagazine]  |  824 docs  |  5.25M ch  |  ~1.31M tok  |  15.58K ch/s  |  1,115 req  |  7% of budget  |  ETA 9h10m  |  5m36s
+22:30:10   [gujarattoday]  |  19,939 docs  |  33.65M ch  |  ~8.41M tok  |  181.47K ch/s  |  232 req  |  33% of budget  |  ETA 44m40s  |  3m05s
+22:30:19   [opinionmagazine]  |  850 docs  |  5.42M ch  |  ~1.36M tok  |  15.64K ch/s  |  1,153 req  |  8% of budget  |  ETA 9h08m  |  5m46s
+22:30:27   [gujarattoday]  |  21,074 docs  |  35.31M ch  |  ~8.83M tok  |  174.21K ch/s  |  244 req  |  35% of budget  |  ETA 46m22s  |  3m22s
+22:30:30   [opinionmagazine]  |  867 docs  |  5.58M ch  |  ~1.40M tok  |  15.64K ch/s  |  1,183 req  |  8% of budget  |  ETA 9h08m  |  5m56s
+22:30:38   [gujarattoday]  |  22,194 docs  |  36.97M ch  |  ~9.24M tok  |  172.97K ch/s  |  256 req  |  36% of budget  |  ETA 46m32s  |  3m33s
+22:30:40   [opinionmagazine]  |  888 docs  |  5.74M ch  |  ~1.43M tok  |  15.63K ch/s  |  1,218 req  |  8% of budget  |  ETA 9h08m  |  6m07s
+22:30:48   [gujarattoday]  |  23,589 docs  |  38.94M ch  |  ~9.74M tok  |  174.05K ch/s  |  268 req  |  38% of budget  |  ETA 46m03s  |  3m43s
+22:30:50   [opinionmagazine]  |  917 docs  |  5.92M ch  |  ~1.48M tok  |  15.67K ch/s  |  1,254 req  |  8% of budget  |  ETA 9h06m  |  6m17s
+22:30:58   [gujarattoday]  |  24,699 docs  |  40.56M ch  |  ~10.14M tok  |  173.50K ch/s  |  280 req  |  40% of budget  |  ETA 46m03s  |  3m53s
+22:31:00   [opinionmagazine]  |  943 docs  |  6.10M ch  |  ~1.53M tok  |  15.76K ch/s  |  1,287 req  |  9% of budget  |  ETA 9h03m  |  6m27s
+22:31:10   [opinionmagazine]  |  969 docs  |  6.26M ch  |  ~1.57M tok  |  15.75K ch/s  |  1,321 req  |  9% of budget  |  ETA 9h03m  |  6m37s
+22:31:11   [gujarattoday]  |  26,018 docs  |  42.38M ch  |  ~10.60M tok  |  172.28K ch/s  |  296 req  |  42% of budget  |  ETA 46m12s  |  4m06s
+22:31:20   [opinionmagazine]  |  1,003 docs  |  6.46M ch  |  ~1.61M tok  |  15.83K ch/s  |  1,364 req  |  9% of budget  |  ETA 9h00m  |  6m47s
+22:31:22   [gujarattoday]  |  27,188 docs  |  44.02M ch  |  ~11.00M tok  |  171.38K ch/s  |  308 req  |  43% of budget  |  ETA 46m17s  |  4m16s
+22:31:31   [opinionmagazine]  |  1,032 docs  |  6.66M ch  |  ~1.67M tok  |  15.93K ch/s  |  1,400 req  |  10% of budget  |  ETA 8h57m  |  6m58s
+22:31:34   [gujarattoday]  |  28,721 docs  |  46.11M ch  |  ~11.53M tok  |  171.42K ch/s  |  324 req  |  45% of budget  |  ETA 46m04s  |  4m28s
+22:31:41   [opinionmagazine]  |  1,065 docs  |  6.89M ch  |  ~1.72M tok  |  16.09K ch/s  |  1,439 req  |  10% of budget  |  ETA 8h51m  |  7m08s
+22:31:46   [gujarattoday]  |  30,233 docs  |  48.15M ch  |  ~12.04M tok  |  171.23K ch/s  |  340 req  |  47% of budget  |  ETA 45m55s  |  4m41s
+22:31:52   [opinionmagazine]  |  1,102 docs  |  7.16M ch  |  ~1.79M tok  |  16.30K ch/s  |  1,482 req  |  10% of budget  |  ETA 8h44m  |  7m18s
+22:31:57   [gujarattoday]  |  31,364 docs  |  49.71M ch  |  ~12.43M tok  |  169.84K ch/s  |  352 req  |  49% of budget  |  ETA 46m08s  |  4m52s
+22:32:02   [opinionmagazine]  |  1,149 docs  |  7.41M ch  |  ~1.85M tok  |  16.50K ch/s  |  1,535 req  |  11% of budget  |  ETA 8h37m  |  7m28s
+22:32:09   [gujarattoday]  |  32,904 docs  |  51.91M ch  |  ~12.98M tok  |  170.43K ch/s  |  368 req  |  51% of budget  |  ETA 45m46s  |  5m04s
+22:32:12   [opinionmagazine]  |  1,182 docs  |  7.65M ch  |  ~1.91M tok  |  16.67K ch/s  |  1,573 req  |  11% of budget  |  ETA 8h32m  |  7m39s
+22:32:19   [gujarattoday]  |  34,144 docs  |  53.75M ch  |  ~13.44M tok  |  170.87K ch/s  |  380 req  |  53% of budget  |  ETA 45m28s  |  5m14s
+22:32:22   [opinionmagazine]  |  1,211 docs  |  7.88M ch  |  ~1.97M tok  |  16.79K ch/s  |  1,604 req  |  11% of budget  |  ETA 8h28m  |  7m49s
+22:32:30   [gujarattoday]  |  35,226 docs  |  55.44M ch  |  ~13.86M tok  |  170.39K ch/s  |  392 req  |  54% of budget  |  ETA 45m26s  |  5m25s
+22:32:32   [opinionmagazine]  |  1,243 docs  |  8.08M ch  |  ~2.02M tok  |  16.85K ch/s  |  1,641 req  |  12% of budget  |  ETA 8h26m  |  7m59s
+22:32:42   [opinionmagazine]  |  1,278 docs  |  8.27M ch  |  ~2.07M tok  |  16.88K ch/s  |  1,680 req  |  12% of budget  |  ETA 8h25m  |  8m09s
+22:32:43   [gujarattoday]  |  36,783 docs  |  57.81M ch  |  ~14.45M tok  |  170.79K ch/s  |  408 req  |  57% of budget  |  ETA 45m06s  |  5m38s
+22:32:52   [opinionmagazine]  |  1,315 docs  |  8.47M ch  |  ~2.12M tok  |  16.95K ch/s  |  1,720 req  |  12% of budget  |  ETA 8h23m  |  8m19s
+22:32:54   [gujarattoday]  |  37,951 docs  |  59.55M ch  |  ~14.89M tok  |  170.70K ch/s  |  420 req  |  58% of budget  |  ETA 44m57s  |  5m48s
+22:33:03   [opinionmagazine]  |  1,353 docs  |  8.75M ch  |  ~2.19M tok  |  17.16K ch/s  |  1,761 req  |  13% of budget  |  ETA 8h16m  |  8m30s
+22:33:04   [gujarattoday]  |  39,195 docs  |  61.45M ch  |  ~15.36M tok  |  171.22K ch/s  |  432 req  |  60% of budget  |  ETA 44m38s  |  5m58s
+22:33:13   [opinionmagazine]  |  1,391 docs  |  9.12M ch  |  ~2.28M tok  |  17.52K ch/s  |  1,803 req  |  13% of budget  |  ETA 8h05m  |  8m40s
+22:33:14   [gujarattoday]  |  40,406 docs  |  63.39M ch  |  ~15.85M tok  |  171.85K ch/s  |  444 req  |  62% of budget  |  ETA 44m17s  |  6m08s
+22:33:23   [opinionmagazine]  |  1,423 docs  |  9.38M ch  |  ~2.34M tok  |  17.68K ch/s  |  1,837 req  |  13% of budget  |  ETA 8h01m  |  8m50s
+22:33:25   [gujarattoday]  |  41,449 docs  |  65.03M ch  |  ~16.26M tok  |  171.18K ch/s  |  456 req  |  64% of budget  |  ETA 44m17s  |  6m19s
+22:33:33   [opinionmagazine]  |  1,454 docs  |  9.65M ch  |  ~2.41M tok  |  17.85K ch/s  |  1,874 req  |  14% of budget  |  ETA 7h56m  |  9m00s
+22:33:36   [gujarattoday]  |  43,013 docs  |  67.44M ch  |  ~16.86M tok  |  172.29K ch/s  |  472 req  |  66% of budget  |  ETA 43m46s  |  6m31s
+22:33:44   [opinionmagazine]  |  1,485 docs  |  10.00M ch  |  ~2.50M tok  |  18.16K ch/s  |  1,912 req  |  14% of budget  |  ETA 7h48m  |  9m10s
+22:33:49   [gujarattoday]  |  44,578 docs  |  69.96M ch  |  ~17.49M tok  |  173.18K ch/s  |  488 req  |  69% of budget  |  ETA 43m18s  |  6m43s
+22:33:54   [opinionmagazine]  |  1,510 docs  |  10.19M ch  |  ~2.55M tok  |  18.15K ch/s  |  1,946 req  |  15% of budget  |  ETA 7h48m  |  9m21s
+22:33:59   [gujarattoday]  |  45,740 docs  |  71.79M ch  |  ~17.95M tok  |  173.15K ch/s  |  500 req  |  70% of budget  |  ETA 43m08s  |  6m54s
+22:34:04   [opinionmagazine]  |  1,541 docs  |  10.53M ch  |  ~2.63M tok  |  18.42K ch/s  |  1,981 req  |  15% of budget  |  ETA 7h40m  |  9m31s
+22:34:10   [gujarattoday]  |  46,410 docs  |  73.10M ch  |  ~18.28M tok  |  171.68K ch/s  |  512 req  |  72% of budget  |  ETA 43m23s  |  7m05s  |  DONE
+22:34:10        rejected: too-short x3,943, too-few-words x144, no-stopwords x9
+22:34:10   shard: gujarattoday.part-1786640225-36373.jsonl.gz (46,410 docs / 73.10M chars)
+22:34:10 
+--- gujaratabroad  (wp_rest)  budget 21.00M chars ---
+22:34:15   [opinionmagazine]  |  1,564 docs  |  10.67M ch  |  ~2.67M tok  |  18.33K ch/s  |  2,010 req  |  15% of budget  |  ETA 7h43m  |  9m42s
+22:34:25   [opinionmagazine]  |  1,567 docs  |  10.69M ch  |  ~2.67M tok  |  18.03K ch/s  |  2,014 req  |  15% of budget  |  ETA 7h50m  |  9m52s
+22:34:38   [gujaratabroad]  |  1 docs  |  2.54K ch  |  ~636 tok  |  91 ch/s  |  4 req  |  0% of budget  |  ETA 1352h21m  |  27s
+22:34:39   [opinionmagazine]  |  1,571 docs  |  10.70M ch  |  ~2.68M tok  |  17.66K ch/s  |  2,022 req  |  15% of budget  |  ETA 8h00m  |  10m06s
+22:34:49   [opinionmagazine]  |  1,579 docs  |  10.76M ch  |  ~2.69M tok  |  17.45K ch/s  |  2,035 req  |  15% of budget  |  ETA 8h06m  |  10m16s
+22:34:59   [opinionmagazine]  |  1,604 docs  |  10.93M ch  |  ~2.73M tok  |  17.45K ch/s  |  2,066 req  |  16% of budget  |  ETA 8h06m  |  10m26s
+22:35:00   [gujaratabroad]  |  400 docs  |  1.17M ch  |  ~292.85K tok  |  23.66K ch/s  |  8 req  |  6% of budget  |  ETA 5h13m  |  49s
+22:35:10   [opinionmagazine]  |  1,623 docs  |  11.05M ch  |  ~2.76M tok  |  17.35K ch/s  |  2,092 req  |  16% of budget  |  ETA 8h09m  |  10m37s
+22:35:20   [opinionmagazine]  |  1,651 docs  |  11.24M ch  |  ~2.81M tok  |  17.36K ch/s  |  2,124 req  |  16% of budget  |  ETA 8h08m  |  10m47s
+22:35:21   [gujaratabroad]  |  799 docs  |  2.43M ch  |  ~608.56K tok  |  34.37K ch/s  |  12 req  |  12% of budget  |  ETA 3h35m  |  1m10s
+22:35:30   [opinionmagazine]  |  1,679 docs  |  11.45M ch  |  ~2.86M tok  |  17.41K ch/s  |  2,155 req  |  16% of budget  |  ETA 8h06m  |  10m57s
+22:35:41   [opinionmagazine]  |  1,704 docs  |  11.68M ch  |  ~2.92M tok  |  17.48K ch/s  |  2,188 req  |  17% of budget  |  ETA 8h04m  |  11m07s
+22:35:41   [gujaratabroad]  |  1,196 docs  |  3.72M ch  |  ~931.05K tok  |  41.20K ch/s  |  16 req  |  18% of budget  |  ETA 2h59m  |  1m30s
+22:35:51   [opinionmagazine]  |  1,739 docs  |  11.93M ch  |  ~2.98M tok  |  17.59K ch/s  |  2,225 req  |  17% of budget  |  ETA 8h01m  |  11m18s
+22:36:01   [opinionmagazine]  |  1,768 docs  |  12.21M ch  |  ~3.05M tok  |  17.72K ch/s  |  2,258 req  |  17% of budget  |  ETA 7h57m  |  11m28s
+22:36:12   [opinionmagazine]  |  1,792 docs  |  12.44M ch  |  ~3.11M tok  |  17.79K ch/s  |  2,286 req  |  18% of budget  |  ETA 7h55m  |  11m38s
+22:36:17   [gujaratabroad]  |  1,596 docs  |  5.00M ch  |  ~1.25M tok  |  39.39K ch/s  |  20 req  |  24% of budget  |  ETA 3h06m  |  2m06s
+22:36:22   [opinionmagazine]  |  1,817 docs  |  12.64M ch  |  ~3.16M tok  |  17.82K ch/s  |  2,319 req  |  18% of budget  |  ETA 7h54m  |  11m49s
+22:36:32   [opinionmagazine]  |  1,849 docs  |  12.86M ch  |  ~3.21M tok  |  17.87K ch/s  |  2,357 req  |  18% of budget  |  ETA 7h52m  |  11m59s
+22:36:42   [gujaratabroad]  |  1,996 docs  |  6.31M ch  |  ~1.58M tok  |  41.57K ch/s  |  24 req  |  30% of budget  |  ETA 2h56m  |  2m31s
+22:36:42   [opinionmagazine]  |  1,877 docs  |  13.02M ch  |  ~3.25M tok  |  17.84K ch/s  |  2,390 req  |  19% of budget  |  ETA 7h53m  |  12m09s
+22:36:52   [opinionmagazine]  |  1,903 docs  |  13.18M ch  |  ~3.29M tok  |  17.81K ch/s  |  2,420 req  |  19% of budget  |  ETA 7h54m  |  12m19s
+22:37:02   [opinionmagazine]  |  1,933 docs  |  13.36M ch  |  ~3.34M tok  |  17.82K ch/s  |  2,453 req  |  19% of budget  |  ETA 7h53m  |  12m29s
+22:37:09   [gujaratabroad]  |  2,393 docs  |  7.56M ch  |  ~1.89M tok  |  42.35K ch/s  |  28 req  |  36% of budget  |  ETA 2h52m  |  2m58s
+22:37:13   [opinionmagazine]  |  1,966 docs  |  13.54M ch  |  ~3.39M tok  |  17.81K ch/s  |  2,491 req  |  19% of budget  |  ETA 7h53m  |  12m40s
+22:37:23   [opinionmagazine]  |  1,996 docs  |  13.71M ch  |  ~3.43M tok  |  17.79K ch/s  |  2,527 req  |  20% of budget  |  ETA 7h54m  |  12m50s
+22:37:33   [gujaratabroad]  |  2,779 docs  |  8.94M ch  |  ~2.23M tok  |  44.14K ch/s  |  32 req  |  43% of budget  |  ETA 2h45m  |  3m22s
+22:37:33   [opinionmagazine]  |  2,025 docs  |  13.93M ch  |  ~3.48M tok  |  17.85K ch/s  |  2,560 req  |  20% of budget  |  ETA 7h52m  |  13m00s
+22:37:43   [opinionmagazine]  |  2,055 docs  |  14.20M ch  |  ~3.55M tok  |  17.97K ch/s  |  2,595 req  |  20% of budget  |  ETA 7h49m  |  13m10s
+22:37:54   [opinionmagazine]  |  2,079 docs  |  14.38M ch  |  ~3.59M tok  |  17.94K ch/s  |  2,625 req  |  21% of budget  |  ETA 7h49m  |  13m21s
+22:37:56   [gujaratabroad]  |  3,152 docs  |  10.08M ch  |  ~2.52M tok  |  44.74K ch/s  |  36 req  |  48% of budget  |  ETA 2h42m  |  3m45s
+22:38:05   [opinionmagazine]  |  2,102 docs  |  14.54M ch  |  ~3.64M tok  |  17.90K ch/s  |  2,650 req  |  21% of budget  |  ETA 7h50m  |  13m32s
+22:38:15   [opinionmagazine]  |  2,129 docs  |  14.73M ch  |  ~3.68M tok  |  17.91K ch/s  |  2,683 req  |  21% of budget  |  ETA 7h50m  |  13m42s
+22:38:22   [gujaratabroad]  |  3,500 docs  |  11.10M ch  |  ~2.77M tok  |  44.13K ch/s  |  40 req  |  53% of budget  |  ETA 2h44m  |  4m11s
+22:38:25   [opinionmagazine]  |  2,147 docs  |  14.87M ch  |  ~3.72M tok  |  17.86K ch/s  |  2,709 req  |  21% of budget  |  ETA 7h51m  |  13m52s
+22:38:36   [opinionmagazine]  |  2,171 docs  |  15.02M ch  |  ~3.75M tok  |  17.81K ch/s  |  2,741 req  |  21% of budget  |  ETA 7h52m  |  14m03s
+22:38:46   [opinionmagazine]  |  2,190 docs  |  15.17M ch  |  ~3.79M tok  |  17.77K ch/s  |  2,764 req  |  22% of budget  |  ETA 7h53m  |  14m13s
+22:38:48   [gujaratabroad]  |  3,848 docs  |  12.07M ch  |  ~3.02M tok  |  43.53K ch/s  |  44 req  |  57% of budget  |  ETA 2h46m  |  4m37s
+22:38:57   [opinionmagazine]  |  2,218 docs  |  15.34M ch  |  ~3.84M tok  |  17.76K ch/s  |  2,798 req  |  22% of budget  |  ETA 7h53m  |  14m23s
+22:39:07   [opinionmagazine]  |  2,251 docs  |  15.56M ch  |  ~3.89M tok  |  17.80K ch/s  |  2,835 req  |  22% of budget  |  ETA 7h52m  |  14m34s
+22:39:17   [opinionmagazine]  |  2,282 docs  |  15.74M ch  |  ~3.94M tok  |  17.80K ch/s  |  2,869 req  |  22% of budget  |  ETA 7h52m  |  14m44s
+22:39:21   [gujaratabroad]  |  4,232 docs  |  13.18M ch  |  ~3.29M tok  |  42.39K ch/s  |  48 req  |  63% of budget  |  ETA 2h50m  |  5m10s
+22:39:28   [opinionmagazine]  |  2,313 docs  |  15.96M ch  |  ~3.99M tok  |  17.83K ch/s  |  2,904 req  |  23% of budget  |  ETA 7h51m  |  14m54s
+22:39:38   [opinionmagazine]  |  2,340 docs  |  16.10M ch  |  ~4.03M tok  |  17.79K ch/s  |  2,935 req  |  23% of budget  |  ETA 7h52m  |  15m05s
+22:39:48   [opinionmagazine]  |  2,368 docs  |  16.30M ch  |  ~4.07M tok  |  17.81K ch/s  |  2,966 req  |  23% of budget  |  ETA 7h51m  |  15m15s
+22:39:53   [gujaratabroad]  |  4,631 docs  |  14.34M ch  |  ~3.58M tok  |  41.84K ch/s  |  52 req  |  68% of budget  |  ETA 2h52m  |  5m42s
+22:39:58   [opinionmagazine]  |  2,396 docs  |  16.50M ch  |  ~4.13M tok  |  17.83K ch/s  |  2,997 req  |  24% of budget  |  ETA 7h50m  |  15m25s
+22:40:08   [opinionmagazine]  |  2,423 docs  |  16.68M ch  |  ~4.17M tok  |  17.83K ch/s  |  3,028 req  |  24% of budget  |  ETA 7h50m  |  15m35s
+22:40:17   [gujaratabroad]  |  5,031 docs  |  15.60M ch  |  ~3.90M tok  |  42.57K ch/s  |  56 req  |  74% of budget  |  ETA 2h48m  |  6m06s
+22:40:19   [opinionmagazine]  |  2,455 docs  |  16.83M ch  |  ~4.21M tok  |  17.79K ch/s  |  3,062 req  |  24% of budget  |  ETA 7h51m  |  15m46s
+22:40:29   [opinionmagazine]  |  2,485 docs  |  17.09M ch  |  ~4.27M tok  |  17.87K ch/s  |  3,097 req  |  24% of budget  |  ETA 7h49m  |  15m56s
+22:40:37   [gujaratabroad]  |  5,430 docs  |  16.76M ch  |  ~4.19M tok  |  43.37K ch/s  |  60 req  |  80% of budget  |  ETA 2h45m  |  6m26s
+22:40:39   [opinionmagazine]  |  2,509 docs  |  17.30M ch  |  ~4.33M tok  |  17.90K ch/s  |  3,125 req  |  25% of budget  |  ETA 7h48m  |  16m06s
+22:40:50   [opinionmagazine]  |  2,536 docs  |  17.47M ch  |  ~4.37M tok  |  17.88K ch/s  |  3,158 req  |  25% of budget  |  ETA 7h48m  |  16m17s
+22:40:59   [gujaratabroad]  |  5,830 docs  |  17.90M ch  |  ~4.48M tok  |  43.85K ch/s  |  64 req  |  85% of budget  |  ETA 2h43m  |  6m48s
+22:41:01   [opinionmagazine]  |  2,559 docs  |  17.60M ch  |  ~4.40M tok  |  17.81K ch/s  |  3,187 req  |  25% of budget  |  ETA 7h50m  |  16m28s
+22:41:12   [opinionmagazine]  |  2,588 docs  |  17.80M ch  |  ~4.45M tok  |  17.82K ch/s  |  3,218 req  |  25% of budget  |  ETA 7h49m  |  16m39s
+22:41:14   [gujaratabroad]  |  6,230 docs  |  19.05M ch  |  ~4.76M tok  |  44.97K ch/s  |  68 req  |  91% of budget  |  ETA 2h38m  |  7m03s
+22:41:15   [gujaratabroad]  |  6,483 docs  |  19.76M ch  |  ~4.94M tok  |  46.51K ch/s  |  72 req  |  94% of budget  |  ETA 2h33m  |  7m04s  |  DONE
+22:41:15        rejected: too-short x167, not-gujarati x6
+22:41:15   shard: gujaratabroad.part-1786640650-36373.jsonl.gz (6,483 docs / 19.76M chars)
+22:41:15 
+--- loksansar  (wp_rest)  budget 35.00M chars ---
+22:41:18   [loksansar]  |  1 docs  |  598 ch  |  ~149 tok  |  201 ch/s  |  4 req  |  0% of budget  |  ETA 587h37m  |  2s
+22:41:22   [opinionmagazine]  |  2,615 docs  |  17.96M ch  |  ~4.49M tok  |  17.79K ch/s  |  3,248 req  |  26% of budget  |  ETA 7h50m  |  16m49s
+22:41:29   [loksansar]  |  2,789 docs  |  4.75M ch  |  ~1.19M tok  |  352.63K ch/s  |  32 req  |  14% of budget  |  ETA 19m57s  |  13s
+22:41:32   [opinionmagazine]  |  2,646 docs  |  18.17M ch  |  ~4.54M tok  |  17.82K ch/s  |  3,282 req  |  26% of budget  |  ETA 7h49m  |  16m59s
+22:41:39   [loksansar]  |  5,751 docs  |  9.44M ch  |  ~2.36M tok  |  401.88K ch/s  |  60 req  |  27% of budget  |  ETA 17m19s  |  23s
+22:41:43   [opinionmagazine]  |  2,675 docs  |  18.35M ch  |  ~4.59M tok  |  17.82K ch/s  |  3,316 req  |  26% of budget  |  ETA 7h49m  |  17m10s
+22:41:49   [loksansar]  |  8,777 docs  |  13.88M ch  |  ~3.47M tok  |  407.13K ch/s  |  92 req  |  40% of budget  |  ETA 16m55s  |  34s
+22:41:53   [opinionmagazine]  |  2,707 docs  |  18.56M ch  |  ~4.64M tok  |  17.84K ch/s  |  3,349 req  |  27% of budget  |  ETA 7h48m  |  17m20s
+22:41:59   [loksansar]  |  11,298 docs  |  17.59M ch  |  ~4.40M tok  |  398.80K ch/s  |  116 req  |  50% of budget  |  ETA 17m06s  |  44s
+22:42:04   [opinionmagazine]  |  2,731 docs  |  18.72M ch  |  ~4.68M tok  |  17.81K ch/s  |  3,380 req  |  27% of budget  |  ETA 7h49m  |  17m31s
+22:42:10   [loksansar]  |  14,242 docs  |  21.75M ch  |  ~5.44M tok  |  398.03K ch/s  |  148 req  |  62% of budget  |  ETA 16m58s  |  54s
+22:42:14   [opinionmagazine]  |  2,759 docs  |  18.89M ch  |  ~4.72M tok  |  17.80K ch/s  |  3,413 req  |  27% of budget  |  ETA 7h49m  |  17m41s
+22:42:21   [loksansar]  |  16,971 docs  |  25.65M ch  |  ~6.41M tok  |  391.42K ch/s  |  176 req  |  73% of budget  |  ETA 17m05s  |  1m05s
+22:42:24   [opinionmagazine]  |  2,785 docs  |  19.07M ch  |  ~4.77M tok  |  17.80K ch/s  |  3,442 req  |  27% of budget  |  ETA 7h48m  |  17m51s
+22:42:31   [loksansar]  |  19,699 docs  |  29.57M ch  |  ~7.39M tok  |  388.41K ch/s  |  204 req  |  84% of budget  |  ETA 17m03s  |  1m16s
+22:42:34   [opinionmagazine]  |  2,812 docs  |  19.24M ch  |  ~4.81M tok  |  17.79K ch/s  |  3,476 req  |  27% of budget  |  ETA 7h49m  |  18m01s
+22:42:42   [loksansar]  |  22,420 docs  |  33.01M ch  |  ~8.25M tok  |  378.80K ch/s  |  232 req  |  94% of budget  |  ETA 17m20s  |  1m27s
+22:42:45   [opinionmagazine]  |  2,844 docs  |  19.43M ch  |  ~4.86M tok  |  17.79K ch/s  |  3,511 req  |  28% of budget  |  ETA 7h49m  |  18m12s
+22:42:47   [loksansar]  |  23,937 docs  |  35.00M ch  |  ~8.75M tok  |  382.67K ch/s  |  244 req  |  100% of budget  |  ETA 17m04s  |  1m31s  |  DONE (source budget reached)
+22:42:47        rejected: too-short x397, no-stopwords x11, latin-heavy x10, not-gujarati x3
+22:42:47   shard: loksansar.part-1786641075-36373.jsonl.gz (23,937 docs / 35.00M chars)
+22:42:47 
+--- sunvillasamachar  (wp_rest)  budget 27.00M chars ---
+22:42:53   [sunvillasamachar]  |  1 docs  |  2.07K ch  |  ~517 tok  |  347 ch/s  |  4 req  |  0% of budget  |  ETA 313h35m  |  5s
+22:42:55   [opinionmagazine]  |  2,869 docs  |  19.62M ch  |  ~4.90M tok  |  17.80K ch/s  |  3,538 req  |  28% of budget  |  ETA 7h48m  |  18m22s
+22:43:03   [sunvillasamachar]  |  1,595 docs  |  3.43M ch  |  ~858.60K tok  |  211.01K ch/s  |  20 req  |  13% of budget  |  ETA 30m42s  |  16s
+22:43:05   [opinionmagazine]  |  2,902 docs  |  19.82M ch  |  ~4.95M tok  |  17.81K ch/s  |  3,574 req  |  28% of budget  |  ETA 7h47m  |  18m32s
+22:43:15   [opinionmagazine]  |  2,932 docs  |  20.02M ch  |  ~5.00M tok  |  17.83K ch/s  |  3,607 req  |  29% of budget  |  ETA 7h47m  |  18m42s
+22:43:16   [sunvillasamachar]  |  3,154 docs  |  6.17M ch  |  ~1.54M tok  |  213.89K ch/s  |  36 req  |  23% of budget  |  ETA 30m04s  |  28s
+22:43:26   [opinionmagazine]  |  2,961 docs  |  20.18M ch  |  ~5.05M tok  |  17.81K ch/s  |  3,640 req  |  29% of budget  |  ETA 7h47m  |  18m53s
+22:43:27   [sunvillasamachar]  |  4,743 docs  |  8.84M ch  |  ~2.21M tok  |  222.46K ch/s  |  52 req  |  33% of budget  |  ETA 28m42s  |  39s
+22:43:36   [opinionmagazine]  |  2,985 docs  |  20.32M ch  |  ~5.08M tok  |  17.77K ch/s  |  3,667 req  |  29% of budget  |  ETA 7h48m  |  19m03s
+22:43:37   [sunvillasamachar]  |  6,467 docs  |  11.59M ch  |  ~2.90M tok  |  230.10K ch/s  |  72 req  |  43% of budget  |  ETA 27m33s  |  50s
+22:43:47   [sunvillasamachar]  |  8,004 docs  |  14.18M ch  |  ~3.54M tok  |  237.36K ch/s  |  88 req  |  53% of budget  |  ETA 26m32s  |  59s  |  DONE
+22:43:47        rejected: not-gujarati x380, latin-heavy x32, devanagari-leak x16, too-short x6
+22:43:47   shard: sunvillasamachar.part-1786641167-36373.jsonl.gz (8,004 docs / 14.18M chars)
+22:43:47 
+--- eaglenews  (wp_rest)  budget 3.50M chars ---
+22:43:47   [opinionmagazine]  |  3,012 docs  |  20.48M ch  |  ~5.12M tok  |  17.74K ch/s  |  3,698 req  |  29% of budget  |  ETA 7h49m  |  19m14s
+22:43:57   [opinionmagazine]  |  3,040 docs  |  20.67M ch  |  ~5.17M tok  |  17.75K ch/s  |  3,727 req  |  30% of budget  |  ETA 7h48m  |  19m24s
+22:44:08   [opinionmagazine]  |  3,069 docs  |  20.87M ch  |  ~5.22M tok  |  17.76K ch/s  |  3,760 req  |  30% of budget  |  ETA 7h48m  |  19m34s
+22:44:18   [opinionmagazine]  |  3,097 docs  |  21.01M ch  |  ~5.25M tok  |  17.73K ch/s  |  3,795 req  |  30% of budget  |  ETA 7h49m  |  19m45s
+22:44:28   [opinionmagazine]  |  3,127 docs  |  21.20M ch  |  ~5.30M tok  |  17.73K ch/s  |  3,832 req  |  30% of budget  |  ETA 7h48m  |  19m55s
+22:44:28   [eaglenews]  |  1 docs  |  1.03K ch  |  ~257 tok  |  24 ch/s  |  4 req  |  0% of budget  |  ETA 4286h48m  |  41s
+22:44:38   [opinionmagazine]  |  3,163 docs  |  21.45M ch  |  ~5.36M tok  |  17.79K ch/s  |  3,869 req  |  31% of budget  |  ETA 7h47m  |  20m05s
+22:44:49   [opinionmagazine]  |  3,190 docs  |  21.60M ch  |  ~5.40M tok  |  17.77K ch/s  |  3,902 req  |  31% of budget  |  ETA 7h47m  |  20m15s
+22:44:50   [eaglenews]  |  283 docs  |  285.92K ch  |  ~71.48K tok  |  4.49K ch/s  |  8 req  |  8% of budget  |  ETA 23h22m  |  1m03s
+22:44:59   [opinionmagazine]  |  3,224 docs  |  21.79M ch  |  ~5.45M tok  |  17.77K ch/s  |  3,940 req  |  31% of budget  |  ETA 7h47m  |  20m26s
+22:45:09   [opinionmagazine]  |  3,252 docs  |  21.93M ch  |  ~5.48M tok  |  17.74K ch/s  |  3,969 req  |  31% of budget  |  ETA 7h47m  |  20m36s
+22:45:19   [opinionmagazine]  |  3,284 docs  |  22.16M ch  |  ~5.54M tok  |  17.78K ch/s  |  4,005 req  |  32% of budget  |  ETA 7h46m  |  20m46s
+22:45:29   [opinionmagazine]  |  3,313 docs  |  22.31M ch  |  ~5.58M tok  |  17.75K ch/s  |  4,037 req  |  32% of budget  |  ETA 7h47m  |  20m56s
+22:45:29   [eaglenews]  |  587 docs  |  569.72K ch  |  ~142.43K tok  |  5.54K ch/s  |  12 req  |  16% of budget  |  ETA 18h55m  |  1m42s
+22:45:39   [opinionmagazine]  |  3,342 docs  |  22.48M ch  |  ~5.62M tok  |  17.75K ch/s  |  4,069 req  |  32% of budget  |  ETA 7h47m  |  21m06s
+22:45:49   [opinionmagazine]  |  3,364 docs  |  22.60M ch  |  ~5.65M tok  |  17.71K ch/s  |  4,096 req  |  32% of budget  |  ETA 7h48m  |  21m16s
+22:46:01   [opinionmagazine]  |  3,384 docs  |  22.75M ch  |  ~5.69M tok  |  17.66K ch/s  |  4,119 req  |  33% of budget  |  ETA 7h49m  |  21m28s
+22:46:12   [opinionmagazine]  |  3,399 docs  |  22.84M ch  |  ~5.71M tok  |  17.58K ch/s  |  4,140 req  |  33% of budget  |  ETA 7h51m  |  21m39s
+22:46:22   [opinionmagazine]  |  3,428 docs  |  23.06M ch  |  ~5.77M tok  |  17.61K ch/s  |  4,173 req  |  33% of budget  |  ETA 7h50m  |  21m49s
+22:46:29   [eaglenews]  |  909 docs  |  858.67K ch  |  ~214.67K tok  |  5.30K ch/s  |  16 req  |  25% of budget  |  ETA 19h46m  |  2m42s
+22:46:32   [opinionmagazine]  |  3,460 docs  |  23.27M ch  |  ~5.82M tok  |  17.63K ch/s  |  4,207 req  |  33% of budget  |  ETA 7h49m  |  21m59s
+22:46:43   [opinionmagazine]  |  3,491 docs  |  23.44M ch  |  ~5.86M tok  |  17.62K ch/s  |  4,242 req  |  33% of budget  |  ETA 7h49m  |  22m10s
+22:46:53   [opinionmagazine]  |  3,525 docs  |  23.66M ch  |  ~5.91M tok  |  17.65K ch/s  |  4,279 req  |  34% of budget  |  ETA 7h48m  |  22m20s
+22:46:57   [eaglenews]  |  1,231 docs  |  1.19M ch  |  ~297.75K tok  |  6.24K ch/s  |  20 req  |  34% of budget  |  ETA 16h46m  |  3m10s
+22:47:04   [opinionmagazine]  |  3,555 docs  |  23.86M ch  |  ~5.96M tok  |  17.66K ch/s  |  4,312 req  |  34% of budget  |  ETA 7h48m  |  22m31s
+22:47:14   [opinionmagazine]  |  3,585 docs  |  24.04M ch  |  ~6.01M tok  |  17.66K ch/s  |  4,343 req  |  34% of budget  |  ETA 7h48m  |  22m41s
+22:47:19   [eaglenews]  |  1,544 docs  |  1.56M ch  |  ~388.76K tok  |  7.33K ch/s  |  24 req  |  44% of budget  |  ETA 14h15m  |  3m32s
+22:47:24   [opinionmagazine]  |  3,617 docs  |  24.27M ch  |  ~6.07M tok  |  17.70K ch/s  |  4,376 req  |  35% of budget  |  ETA 7h46m  |  22m51s
+22:47:35   [opinionmagazine]  |  3,642 docs  |  24.44M ch  |  ~6.11M tok  |  17.68K ch/s  |  4,403 req  |  35% of budget  |  ETA 7h47m  |  23m02s
+22:47:42   [eaglenews]  |  1,851 docs  |  1.88M ch  |  ~469.54K tok  |  7.99K ch/s  |  28 req  |  54% of budget  |  ETA 13h04m  |  3m55s
+22:47:45   [opinionmagazine]  |  3,677 docs  |  24.66M ch  |  ~6.17M tok  |  17.72K ch/s  |  4,440 req  |  35% of budget  |  ETA 7h46m  |  23m12s
+22:47:56   [opinionmagazine]  |  3,708 docs  |  24.92M ch  |  ~6.23M tok  |  17.76K ch/s  |  4,472 req  |  36% of budget  |  ETA 7h44m  |  23m23s
+22:48:04   [eaglenews]  |  2,098 docs  |  2.18M ch  |  ~545.42K tok  |  8.49K ch/s  |  32 req  |  62% of budget  |  ETA 12h17m  |  4m17s
+22:48:06   [opinionmagazine]  |  3,739 docs  |  25.15M ch  |  ~6.29M tok  |  17.80K ch/s  |  4,503 req  |  36% of budget  |  ETA 7h43m  |  23m33s
+22:48:16   [opinionmagazine]  |  3,770 docs  |  25.35M ch  |  ~6.34M tok  |  17.81K ch/s  |  4,537 req  |  36% of budget  |  ETA 7h42m  |  23m43s
+22:48:23   [eaglenews]  |  2,354 docs  |  2.45M ch  |  ~613.71K tok  |  8.88K ch/s  |  36 req  |  70% of budget  |  ETA 11h45m  |  4m36s
+22:48:26   [opinionmagazine]  |  3,806 docs  |  25.61M ch  |  ~6.40M tok  |  17.87K ch/s  |  4,576 req  |  37% of budget  |  ETA 7h41m  |  23m53s
+22:48:36   [opinionmagazine]  |  3,833 docs  |  25.77M ch  |  ~6.44M tok  |  17.86K ch/s  |  4,606 req  |  37% of budget  |  ETA 7h41m  |  24m03s
+22:48:45   [eaglenews]  |  2,726 docs  |  2.76M ch  |  ~690.18K tok  |  9.25K ch/s  |  40 req  |  79% of budget  |  ETA 11h15m  |  4m58s
+22:48:46   [opinionmagazine]  |  3,863 docs  |  26.06M ch  |  ~6.51M tok  |  17.92K ch/s  |  4,637 req  |  37% of budget  |  ETA 7h39m  |  24m13s
+22:48:56   [opinionmagazine]  |  3,889 docs  |  26.29M ch  |  ~6.57M tok  |  17.96K ch/s  |  4,666 req  |  38% of budget  |  ETA 7h38m  |  24m23s
+22:49:06   [opinionmagazine]  |  3,912 docs  |  26.44M ch  |  ~6.61M tok  |  17.94K ch/s  |  4,689 req  |  38% of budget  |  ETA 7h38m  |  24m33s
+22:49:15   [eaglenews]  |  3,059 docs  |  3.09M ch  |  ~773.16K tok  |  9.41K ch/s  |  44 req  |  88% of budget  |  ETA 11h03m  |  5m28s
+22:49:17   [opinionmagazine]  |  3,942 docs  |  26.67M ch  |  ~6.67M tok  |  17.97K ch/s  |  4,722 req  |  38% of budget  |  ETA 7h37m  |  24m44s
+22:49:28   [opinionmagazine]  |  3,973 docs  |  26.92M ch  |  ~6.73M tok  |  18.00K ch/s  |  4,756 req  |  38% of budget  |  ETA 7h36m  |  24m55s
+22:49:38   [eaglenews]  |  3,218 docs  |  3.23M ch  |  ~807.85K tok  |  9.21K ch/s  |  48 req  |  92% of budget  |  ETA 11h18m  |  5m51s  |  DONE
+22:49:38        rejected: too-short x941, not-gujarati x62, latin-heavy x5, devanagari-leak x2
+22:49:38   shard: eaglenews.part-1786641227-36373.jsonl.gz (3,218 docs / 3.23M chars)
+22:49:38 
+========================================================================================
+22:49:38 TOTAL 145.27M chars  ~36.32M tokens (27.9% of target) in 22m32s
+22:49:38 ========================================================================================
+22:49:38   [opinionmagazine]  |  4,000 docs  |  27.16M ch  |  ~6.79M tok  |  18.04K ch/s  |  4,786 req  |  39% of budget  |  ETA 7h35m  |  25m05s
+22:49:49   [opinionmagazine]  |  4,032 docs  |  27.37M ch  |  ~6.84M tok  |  18.05K ch/s  |  4,821 req  |  39% of budget  |  ETA 7h34m  |  25m15s
+22:49:59   [opinionmagazine]  |  4,059 docs  |  27.56M ch  |  ~6.89M tok  |  18.06K ch/s  |  4,854 req  |  39% of budget  |  ETA 7h34m  |  25m26s
+22:50:10   [opinionmagazine]  |  4,093 docs  |  27.77M ch  |  ~6.94M tok  |  18.07K ch/s  |  4,890 req  |  40% of budget  |  ETA 7h34m  |  25m36s
+22:50:20   [opinionmagazine]  |  4,127 docs  |  27.98M ch  |  ~7.00M tok  |  18.09K ch/s  |  4,928 req  |  40% of budget  |  ETA 7h33m  |  25m47s
+22:50:30   [opinionmagazine]  |  4,158 docs  |  28.18M ch  |  ~7.05M tok  |  18.10K ch/s  |  4,964 req  |  40% of budget  |  ETA 7h32m  |  25m57s
+22:50:40   [opinionmagazine]  |  4,185 docs  |  28.41M ch  |  ~7.10M tok  |  18.12K ch/s  |  4,995 req  |  41% of budget  |  ETA 7h32m  |  26m07s
+22:50:51   [opinionmagazine]  |  4,211 docs  |  28.66M ch  |  ~7.16M tok  |  18.16K ch/s  |  5,025 req  |  41% of budget  |  ETA 7h30m  |  26m18s
+22:51:01   [opinionmagazine]  |  4,242 docs  |  28.90M ch  |  ~7.23M tok  |  18.20K ch/s  |  5,057 req  |  41% of budget  |  ETA 7h29m  |  26m28s
+22:51:12   [opinionmagazine]  |  4,276 docs  |  29.17M ch  |  ~7.29M tok  |  18.24K ch/s  |  5,094 req  |  42% of budget  |  ETA 7h28m  |  26m39s
+22:51:22   [opinionmagazine]  |  4,301 docs  |  29.34M ch  |  ~7.34M tok  |  18.23K ch/s  |  5,122 req  |  42% of budget  |  ETA 7h28m  |  26m49s
+22:51:33   [opinionmagazine]  |  4,331 docs  |  29.54M ch  |  ~7.39M tok  |  18.23K ch/s  |  5,155 req  |  42% of budget  |  ETA 7h28m  |  27m00s
+22:51:43   [opinionmagazine]  |  4,364 docs  |  29.75M ch  |  ~7.44M tok  |  18.25K ch/s  |  5,190 req  |  42% of budget  |  ETA 7h27m  |  27m10s
+22:51:53   [opinionmagazine]  |  4,403 docs  |  30.01M ch  |  ~7.50M tok  |  18.30K ch/s  |  5,229 req  |  43% of budget  |  ETA 7h26m  |  27m20s
+22:52:03   [opinionmagazine]  |  4,434 docs  |  30.19M ch  |  ~7.55M tok  |  18.29K ch/s  |  5,266 req  |  43% of budget  |  ETA 7h26m  |  27m30s
+22:52:14   [opinionmagazine]  |  4,467 docs  |  30.35M ch  |  ~7.59M tok  |  18.27K ch/s  |  5,302 req  |  43% of budget  |  ETA 7h26m  |  27m41s
+22:52:24   [opinionmagazine]  |  4,504 docs  |  30.48M ch  |  ~7.62M tok  |  18.24K ch/s  |  5,341 req  |  44% of budget  |  ETA 7h27m  |  27m51s
+22:52:34   [opinionmagazine]  |  4,536 docs  |  30.59M ch  |  ~7.65M tok  |  18.20K ch/s  |  5,378 req  |  44% of budget  |  ETA 7h28m  |  28m01s
+22:52:44   [opinionmagazine]  |  4,574 docs  |  30.71M ch  |  ~7.68M tok  |  18.15K ch/s  |  5,418 req  |  44% of budget  |  ETA 7h29m  |  28m11s
+22:52:55   [opinionmagazine]  |  4,609 docs  |  30.83M ch  |  ~7.71M tok  |  18.12K ch/s  |  5,457 req  |  44% of budget  |  ETA 7h30m  |  28m21s
+22:53:05   [opinionmagazine]  |  4,644 docs  |  30.98M ch  |  ~7.75M tok  |  18.10K ch/s  |  5,493 req  |  44% of budget  |  ETA 7h30m  |  28m31s
+22:53:15   [opinionmagazine]  |  4,676 docs  |  31.14M ch  |  ~7.78M tok  |  18.08K ch/s  |  5,527 req  |  44% of budget  |  ETA 7h30m  |  28m42s
+22:53:25   [opinionmagazine]  |  4,714 docs  |  31.26M ch  |  ~7.82M tok  |  18.05K ch/s  |  5,565 req  |  45% of budget  |  ETA 7h31m  |  28m52s
+22:53:35   [opinionmagazine]  |  4,749 docs  |  31.39M ch  |  ~7.85M tok  |  18.01K ch/s  |  5,601 req  |  45% of budget  |  ETA 7h32m  |  29m02s
+22:53:46   [opinionmagazine]  |  4,784 docs  |  31.50M ch  |  ~7.88M tok  |  17.97K ch/s  |  5,638 req  |  45% of budget  |  ETA 7h33m  |  29m13s
+22:53:56   [opinionmagazine]  |  4,820 docs  |  31.62M ch  |  ~7.91M tok  |  17.93K ch/s  |  5,677 req  |  45% of budget  |  ETA 7h33m  |  29m23s
+22:54:06   [opinionmagazine]  |  4,854 docs  |  31.73M ch  |  ~7.93M tok  |  17.89K ch/s  |  5,713 req  |  45% of budget  |  ETA 7h34m  |  29m33s
+22:54:17   [opinionmagazine]  |  4,889 docs  |  31.84M ch  |  ~7.96M tok  |  17.85K ch/s  |  5,751 req  |  45% of budget  |  ETA 7h35m  |  29m43s
+22:54:27   [opinionmagazine]  |  4,925 docs  |  31.98M ch  |  ~7.99M tok  |  17.82K ch/s  |  5,791 req  |  46% of budget  |  ETA 7h36m  |  29m54s
+22:54:38   [opinionmagazine]  |  4,959 docs  |  32.16M ch  |  ~8.04M tok  |  17.82K ch/s  |  5,829 req  |  46% of budget  |  ETA 7h36m  |  30m05s
+22:54:48   [opinionmagazine]  |  4,997 docs  |  32.34M ch  |  ~8.08M tok  |  17.81K ch/s  |  5,871 req  |  46% of budget  |  ETA 7h36m  |  30m15s
+22:54:59   [opinionmagazine]  |  5,031 docs  |  32.51M ch  |  ~8.13M tok  |  17.80K ch/s  |  5,907 req  |  46% of budget  |  ETA 7h36m  |  30m26s
+22:55:09   [opinionmagazine]  |  5,066 docs  |  32.70M ch  |  ~8.18M tok  |  17.81K ch/s  |  5,944 req  |  47% of budget  |  ETA 7h36m  |  30m36s
+22:55:19   [opinionmagazine]  |  5,100 docs  |  32.91M ch  |  ~8.23M tok  |  17.82K ch/s  |  5,980 req  |  47% of budget  |  ETA 7h35m  |  30m46s
+22:55:30   [opinionmagazine]  |  5,133 docs  |  33.11M ch  |  ~8.28M tok  |  17.83K ch/s  |  6,015 req  |  47% of budget  |  ETA 7h35m  |  30m57s
+22:55:41   [opinionmagazine]  |  5,169 docs  |  33.31M ch  |  ~8.33M tok  |  17.83K ch/s  |  6,054 req  |  48% of budget  |  ETA 7h35m  |  31m08s
+22:55:51   [opinionmagazine]  |  5,202 docs  |  33.45M ch  |  ~8.36M tok  |  17.81K ch/s  |  6,087 req  |  48% of budget  |  ETA 7h35m  |  31m18s
+22:56:01   [opinionmagazine]  |  5,240 docs  |  33.65M ch  |  ~8.41M tok  |  17.82K ch/s  |  6,128 req  |  48% of budget  |  ETA 7h34m  |  31m28s
+22:56:12   [opinionmagazine]  |  5,274 docs  |  33.87M ch  |  ~8.47M tok  |  17.83K ch/s  |  6,163 req  |  48% of budget  |  ETA 7h34m  |  31m38s
+22:56:22   [opinionmagazine]  |  5,310 docs  |  34.05M ch  |  ~8.51M tok  |  17.83K ch/s  |  6,200 req  |  49% of budget  |  ETA 7h34m  |  31m49s
+22:56:32   [opinionmagazine]  |  5,343 docs  |  34.23M ch  |  ~8.56M tok  |  17.83K ch/s  |  6,234 req  |  49% of budget  |  ETA 7h34m  |  31m59s
+22:56:43   [opinionmagazine]  |  5,383 docs  |  34.43M ch  |  ~8.61M tok  |  17.84K ch/s  |  6,275 req  |  49% of budget  |  ETA 7h33m  |  32m09s
+22:56:53   [opinionmagazine]  |  5,415 docs  |  34.60M ch  |  ~8.65M tok  |  17.83K ch/s  |  6,309 req  |  49% of budget  |  ETA 7h33m  |  32m20s
+22:57:03   [opinionmagazine]  |  5,450 docs  |  34.76M ch  |  ~8.69M tok  |  17.82K ch/s  |  6,349 req  |  50% of budget  |  ETA 7h33m  |  32m30s
+22:57:13   [opinionmagazine]  |  5,484 docs  |  34.90M ch  |  ~8.73M tok  |  17.80K ch/s  |  6,384 req  |  50% of budget  |  ETA 7h34m  |  32m40s
+22:57:24   [opinionmagazine]  |  5,521 docs  |  35.13M ch  |  ~8.78M tok  |  17.82K ch/s  |  6,422 req  |  50% of budget  |  ETA 7h33m  |  32m50s
+22:57:34   [opinionmagazine]  |  5,557 docs  |  35.37M ch  |  ~8.84M tok  |  17.85K ch/s  |  6,461 req  |  51% of budget  |  ETA 7h32m  |  33m01s
+22:57:44   [opinionmagazine]  |  5,591 docs  |  35.60M ch  |  ~8.90M tok  |  17.88K ch/s  |  6,495 req  |  51% of budget  |  ETA 7h31m  |  33m11s
+22:57:54   [opinionmagazine]  |  5,622 docs  |  35.82M ch  |  ~8.95M tok  |  17.89K ch/s  |  6,529 req  |  51% of budget  |  ETA 7h31m  |  33m21s
+22:58:05   [opinionmagazine]  |  5,652 docs  |  36.01M ch  |  ~9.00M tok  |  17.90K ch/s  |  6,560 req  |  51% of budget  |  ETA 7h30m  |  33m31s
+22:58:15   [opinionmagazine]  |  5,684 docs  |  36.21M ch  |  ~9.05M tok  |  17.91K ch/s  |  6,593 req  |  52% of budget  |  ETA 7h30m  |  33m41s
+22:58:25   [opinionmagazine]  |  5,713 docs  |  36.40M ch  |  ~9.10M tok  |  17.91K ch/s  |  6,625 req  |  52% of budget  |  ETA 7h30m  |  33m52s
+22:58:36   [opinionmagazine]  |  5,742 docs  |  36.57M ch  |  ~9.14M tok  |  17.90K ch/s  |  6,656 req  |  52% of budget  |  ETA 7h30m  |  34m03s
+22:58:46   [opinionmagazine]  |  5,765 docs  |  36.75M ch  |  ~9.19M tok  |  17.90K ch/s  |  6,683 req  |  53% of budget  |  ETA 7h29m  |  34m13s
+22:58:56   [opinionmagazine]  |  5,793 docs  |  36.92M ch  |  ~9.23M tok  |  17.89K ch/s  |  6,713 req  |  53% of budget  |  ETA 7h30m  |  34m23s
+22:59:07   [opinionmagazine]  |  5,828 docs  |  37.10M ch  |  ~9.27M tok  |  17.88K ch/s  |  6,749 req  |  53% of budget  |  ETA 7h30m  |  34m34s
+22:59:17   [opinionmagazine]  |  5,851 docs  |  37.26M ch  |  ~9.31M tok  |  17.87K ch/s  |  6,777 req  |  53% of budget  |  ETA 7h30m  |  34m44s
+22:59:27   [opinionmagazine]  |  5,883 docs  |  37.47M ch  |  ~9.37M tok  |  17.89K ch/s  |  6,811 req  |  54% of budget  |  ETA 7h29m  |  34m54s
+22:59:38   [opinionmagazine]  |  5,912 docs  |  37.65M ch  |  ~9.41M tok  |  17.88K ch/s  |  6,845 req  |  54% of budget  |  ETA 7h29m  |  35m04s
+22:59:48   [opinionmagazine]  |  5,944 docs  |  37.89M ch  |  ~9.47M tok  |  17.91K ch/s  |  6,880 req  |  54% of budget  |  ETA 7h28m  |  35m15s
+22:59:58   [opinionmagazine]  |  5,981 docs  |  38.11M ch  |  ~9.53M tok  |  17.93K ch/s  |  6,918 req  |  54% of budget  |  ETA 7h28m  |  35m25s
+23:00:09   [opinionmagazine]  |  6,010 docs  |  38.27M ch  |  ~9.57M tok  |  17.92K ch/s  |  6,950 req  |  55% of budget  |  ETA 7h28m  |  35m36s
+23:00:19   [opinionmagazine]  |  6,046 docs  |  38.50M ch  |  ~9.62M tok  |  17.93K ch/s  |  6,987 req  |  55% of budget  |  ETA 7h27m  |  35m46s
+23:00:29   [opinionmagazine]  |  6,075 docs  |  38.67M ch  |  ~9.67M tok  |  17.93K ch/s  |  7,017 req  |  55% of budget  |  ETA 7h27m  |  35m56s
+23:00:40   [opinionmagazine]  |  6,107 docs  |  38.80M ch  |  ~9.70M tok  |  17.91K ch/s  |  7,050 req  |  55% of budget  |  ETA 7h27m  |  36m06s
+23:00:50   [opinionmagazine]  |  6,144 docs  |  38.99M ch  |  ~9.75M tok  |  17.91K ch/s  |  7,088 req  |  56% of budget  |  ETA 7h27m  |  36m17s
+23:01:00   [opinionmagazine]  |  6,176 docs  |  39.17M ch  |  ~9.79M tok  |  17.90K ch/s  |  7,122 req  |  56% of budget  |  ETA 7h27m  |  36m27s
+23:01:11   [opinionmagazine]  |  6,210 docs  |  39.36M ch  |  ~9.84M tok  |  17.91K ch/s  |  7,159 req  |  56% of budget  |  ETA 7h27m  |  36m38s
+23:01:21   [opinionmagazine]  |  6,246 docs  |  39.57M ch  |  ~9.89M tok  |  17.92K ch/s  |  7,196 req  |  57% of budget  |  ETA 7h26m  |  36m48s
+23:01:31   [opinionmagazine]  |  6,286 docs  |  39.80M ch  |  ~9.95M tok  |  17.94K ch/s  |  7,236 req  |  57% of budget  |  ETA 7h26m  |  36m58s
+23:01:41   [opinionmagazine]  |  6,321 docs  |  39.99M ch  |  ~10.00M tok  |  17.94K ch/s  |  7,274 req  |  57% of budget  |  ETA 7h25m  |  37m08s
+23:01:51   [opinionmagazine]  |  6,353 docs  |  40.16M ch  |  ~10.04M tok  |  17.94K ch/s  |  7,310 req  |  57% of budget  |  ETA 7h25m  |  37m18s
+23:02:02   [opinionmagazine]  |  6,388 docs  |  40.39M ch  |  ~10.10M tok  |  17.96K ch/s  |  7,346 req  |  58% of budget  |  ETA 7h25m  |  37m28s
+23:02:12   [opinionmagazine]  |  6,421 docs  |  40.66M ch  |  ~10.16M tok  |  18.00K ch/s  |  7,382 req  |  58% of budget  |  ETA 7h23m  |  37m38s
+23:02:22   [opinionmagazine]  |  6,458 docs  |  40.88M ch  |  ~10.22M tok  |  18.01K ch/s  |  7,422 req  |  58% of budget  |  ETA 7h23m  |  37m49s
+23:02:33   [opinionmagazine]  |  6,486 docs  |  41.04M ch  |  ~10.26M tok  |  18.00K ch/s  |  7,450 req  |  59% of budget  |  ETA 7h23m  |  37m59s
+23:02:43   [opinionmagazine]  |  6,491 docs  |  41.07M ch  |  ~10.27M tok  |  17.93K ch/s  |  7,455 req  |  59% of budget  |  ETA 7h25m  |  38m10s
+23:02:54   [opinionmagazine]  |  6,499 docs  |  41.12M ch  |  ~10.28M tok  |  17.87K ch/s  |  7,463 req  |  59% of budget  |  ETA 7h26m  |  38m21s
+23:03:04   [opinionmagazine]  |  6,508 docs  |  41.19M ch  |  ~10.30M tok  |  17.82K ch/s  |  7,472 req  |  59% of budget  |  ETA 7h27m  |  38m31s
+23:03:15   [opinionmagazine]  |  6,533 docs  |  41.31M ch  |  ~10.33M tok  |  17.79K ch/s  |  7,500 req  |  59% of budget  |  ETA 7h28m  |  38m42s
+23:03:25   [opinionmagazine]  |  6,564 docs  |  41.48M ch  |  ~10.37M tok  |  17.79K ch/s  |  7,533 req  |  59% of budget  |  ETA 7h28m  |  38m52s
+23:03:35   [opinionmagazine]  |  6,596 docs  |  41.66M ch  |  ~10.42M tok  |  17.79K ch/s  |  7,565 req  |  60% of budget  |  ETA 7h28m  |  39m02s
+23:03:45   [opinionmagazine]  |  6,623 docs  |  41.88M ch  |  ~10.47M tok  |  17.80K ch/s  |  7,593 req  |  60% of budget  |  ETA 7h27m  |  39m12s
+23:03:55   [opinionmagazine]  |  6,662 docs  |  42.05M ch  |  ~10.51M tok  |  17.80K ch/s  |  7,634 req  |  60% of budget  |  ETA 7h27m  |  39m22s
+23:04:06   [opinionmagazine]  |  6,693 docs  |  42.25M ch  |  ~10.56M tok  |  17.80K ch/s  |  7,667 req  |  60% of budget  |  ETA 7h27m  |  39m33s
+23:04:16   [opinionmagazine]  |  6,719 docs  |  42.37M ch  |  ~10.59M tok  |  17.77K ch/s  |  7,695 req  |  61% of budget  |  ETA 7h27m  |  39m43s
+23:04:27   [opinionmagazine]  |  6,750 docs  |  42.56M ch  |  ~10.64M tok  |  17.78K ch/s  |  7,728 req  |  61% of budget  |  ETA 7h27m  |  39m53s
+23:04:37   [opinionmagazine]  |  6,778 docs  |  42.71M ch  |  ~10.68M tok  |  17.77K ch/s  |  7,758 req  |  61% of budget  |  ETA 7h27m  |  40m04s
+23:04:47   [opinionmagazine]  |  6,812 docs  |  42.87M ch  |  ~10.72M tok  |  17.76K ch/s  |  7,793 req  |  61% of budget  |  ETA 7h27m  |  40m14s
+23:04:57   [opinionmagazine]  |  6,845 docs  |  43.09M ch  |  ~10.77M tok  |  17.77K ch/s  |  7,826 req  |  62% of budget  |  ETA 7h27m  |  40m24s
+23:05:08   [opinionmagazine]  |  6,876 docs  |  43.29M ch  |  ~10.82M tok  |  17.78K ch/s  |  7,857 req  |  62% of budget  |  ETA 7h26m  |  40m34s
+23:05:18   [opinionmagazine]  |  6,912 docs  |  43.48M ch  |  ~10.87M tok  |  17.79K ch/s  |  7,893 req  |  62% of budget  |  ETA 7h26m  |  40m44s
+23:05:28   [opinionmagazine]  |  6,944 docs  |  43.70M ch  |  ~10.92M tok  |  17.80K ch/s  |  7,928 req  |  62% of budget  |  ETA 7h26m  |  40m55s
+23:05:39   [opinionmagazine]  |  6,978 docs  |  43.89M ch  |  ~10.97M tok  |  17.80K ch/s  |  7,963 req  |  63% of budget  |  ETA 7h25m  |  41m06s
+23:05:49   [opinionmagazine]  |  7,019 docs  |  44.15M ch  |  ~11.04M tok  |  17.83K ch/s  |  8,006 req  |  63% of budget  |  ETA 7h24m  |  41m16s
+23:05:59   [opinionmagazine]  |  7,049 docs  |  44.35M ch  |  ~11.09M tok  |  17.84K ch/s  |  8,037 req  |  63% of budget  |  ETA 7h24m  |  41m26s
+23:06:09   [opinionmagazine]  |  7,081 docs  |  44.53M ch  |  ~11.13M tok  |  17.84K ch/s  |  8,070 req  |  64% of budget  |  ETA 7h24m  |  41m36s
+23:06:19   [opinionmagazine]  |  7,113 docs  |  44.68M ch  |  ~11.17M tok  |  17.83K ch/s  |  8,103 req  |  64% of budget  |  ETA 7h24m  |  41m46s
+23:06:29   [opinionmagazine]  |  7,146 docs  |  44.85M ch  |  ~11.21M tok  |  17.82K ch/s  |  8,137 req  |  64% of budget  |  ETA 7h24m  |  41m56s
+23:06:39   [opinionmagazine]  |  7,177 docs  |  45.02M ch  |  ~11.26M tok  |  17.82K ch/s  |  8,170 req  |  64% of budget  |  ETA 7h24m  |  42m06s
+23:06:50   [opinionmagazine]  |  7,212 docs  |  45.21M ch  |  ~11.30M tok  |  17.82K ch/s  |  8,205 req  |  65% of budget  |  ETA 7h24m  |  42m17s
+23:07:00   [opinionmagazine]  |  7,247 docs  |  45.42M ch  |  ~11.36M tok  |  17.83K ch/s  |  8,241 req  |  65% of budget  |  ETA 7h23m  |  42m27s
+23:07:10   [opinionmagazine]  |  7,276 docs  |  45.61M ch  |  ~11.40M tok  |  17.84K ch/s  |  8,271 req  |  65% of budget  |  ETA 7h23m  |  42m37s
+23:07:20   [opinionmagazine]  |  7,301 docs  |  45.73M ch  |  ~11.43M tok  |  17.81K ch/s  |  8,297 req  |  65% of budget  |  ETA 7h23m  |  42m47s
+23:07:31   [opinionmagazine]  |  7,328 docs  |  45.85M ch  |  ~11.46M tok  |  17.78K ch/s  |  8,325 req  |  65% of budget  |  ETA 7h24m  |  42m57s
+23:07:41   [opinionmagazine]  |  7,359 docs  |  46.04M ch  |  ~11.51M tok  |  17.79K ch/s  |  8,357 req  |  66% of budget  |  ETA 7h24m  |  43m08s
+23:07:51   [opinionmagazine]  |  7,392 docs  |  46.23M ch  |  ~11.56M tok  |  17.79K ch/s  |  8,391 req  |  66% of budget  |  ETA 7h23m  |  43m18s
+23:08:01   [opinionmagazine]  |  7,426 docs  |  46.42M ch  |  ~11.61M tok  |  17.80K ch/s  |  8,427 req  |  66% of budget  |  ETA 7h23m  |  43m28s
+23:08:11   [opinionmagazine]  |  7,457 docs  |  46.59M ch  |  ~11.65M tok  |  17.79K ch/s  |  8,461 req  |  67% of budget  |  ETA 7h23m  |  43m38s
+23:08:21   [opinionmagazine]  |  7,489 docs  |  46.75M ch  |  ~11.69M tok  |  17.78K ch/s  |  8,494 req  |  67% of budget  |  ETA 7h23m  |  43m48s
+23:08:32   [opinionmagazine]  |  7,520 docs  |  46.95M ch  |  ~11.74M tok  |  17.79K ch/s  |  8,525 req  |  67% of budget  |  ETA 7h23m  |  43m59s
+23:08:42   [opinionmagazine]  |  7,552 docs  |  47.14M ch  |  ~11.78M tok  |  17.79K ch/s  |  8,557 req  |  67% of budget  |  ETA 7h22m  |  44m09s
+23:08:52   [opinionmagazine]  |  7,580 docs  |  47.32M ch  |  ~11.83M tok  |  17.79K ch/s  |  8,589 req  |  68% of budget  |  ETA 7h22m  |  44m19s
+23:09:02   [opinionmagazine]  |  7,616 docs  |  47.51M ch  |  ~11.88M tok  |  17.80K ch/s  |  8,625 req  |  68% of budget  |  ETA 7h22m  |  44m29s
+23:09:12   [opinionmagazine]  |  7,652 docs  |  47.69M ch  |  ~11.92M tok  |  17.80K ch/s  |  8,665 req  |  68% of budget  |  ETA 7h22m  |  44m39s
+23:09:23   [opinionmagazine]  |  7,688 docs  |  47.88M ch  |  ~11.97M tok  |  17.80K ch/s  |  8,704 req  |  68% of budget  |  ETA 7h22m  |  44m50s
+23:09:33   [opinionmagazine]  |  7,720 docs  |  48.06M ch  |  ~12.01M tok  |  17.80K ch/s  |  8,737 req  |  69% of budget  |  ETA 7h21m  |  45m00s
+23:09:43   [opinionmagazine]  |  7,755 docs  |  48.29M ch  |  ~12.07M tok  |  17.82K ch/s  |  8,774 req  |  69% of budget  |  ETA 7h21m  |  45m10s
+23:09:54   [opinionmagazine]  |  7,791 docs  |  48.53M ch  |  ~12.13M tok  |  17.83K ch/s  |  8,812 req  |  69% of budget  |  ETA 7h20m  |  45m21s
+23:10:04   [opinionmagazine]  |  7,826 docs  |  48.78M ch  |  ~12.19M tok  |  17.86K ch/s  |  8,849 req  |  70% of budget  |  ETA 7h19m  |  45m31s
+23:10:17   [opinionmagazine]  |  7,854 docs  |  48.94M ch  |  ~12.23M tok  |  17.83K ch/s  |  8,878 req  |  70% of budget  |  ETA 7h20m  |  45m44s
+23:10:30   [opinionmagazine]  |  7,860 docs  |  48.97M ch  |  ~12.24M tok  |  17.76K ch/s  |  8,884 req  |  70% of budget  |  ETA 7h22m  |  45m57s
+23:10:41   [opinionmagazine]  |  7,870 docs  |  49.01M ch  |  ~12.25M tok  |  17.70K ch/s  |  8,896 req  |  70% of budget  |  ETA 7h23m  |  46m08s
+23:10:51   [opinionmagazine]  |  7,899 docs  |  49.17M ch  |  ~12.29M tok  |  17.70K ch/s  |  8,930 req  |  70% of budget  |  ETA 7h23m  |  46m18s
+23:11:01   [opinionmagazine]  |  7,932 docs  |  49.35M ch  |  ~12.34M tok  |  17.70K ch/s  |  8,966 req  |  71% of budget  |  ETA 7h23m  |  46m28s
+23:11:11   [opinionmagazine]  |  7,963 docs  |  49.51M ch  |  ~12.38M tok  |  17.69K ch/s  |  8,997 req  |  71% of budget  |  ETA 7h23m  |  46m38s
+23:11:22   [opinionmagazine]  |  8,002 docs  |  49.77M ch  |  ~12.44M tok  |  17.72K ch/s  |  9,036 req  |  71% of budget  |  ETA 7h22m  |  46m49s
+23:11:33   [opinionmagazine]  |  8,036 docs  |  50.04M ch  |  ~12.51M tok  |  17.75K ch/s  |  9,073 req  |  71% of budget  |  ETA 7h21m  |  46m59s
+23:11:43   [opinionmagazine]  |  8,075 docs  |  50.27M ch  |  ~12.57M tok  |  17.76K ch/s  |  9,114 req  |  72% of budget  |  ETA 7h20m  |  47m10s
+23:11:53   [opinionmagazine]  |  8,110 docs  |  50.51M ch  |  ~12.63M tok  |  17.78K ch/s  |  9,151 req  |  72% of budget  |  ETA 7h20m  |  47m20s
+23:12:03   [opinionmagazine]  |  8,141 docs  |  50.67M ch  |  ~12.67M tok  |  17.77K ch/s  |  9,183 req  |  72% of budget  |  ETA 7h20m  |  47m30s
+23:12:14   [opinionmagazine]  |  8,179 docs  |  50.86M ch  |  ~12.72M tok  |  17.78K ch/s  |  9,222 req  |  73% of budget  |  ETA 7h19m  |  47m41s
+23:12:24   [opinionmagazine]  |  8,209 docs  |  51.06M ch  |  ~12.76M tok  |  17.78K ch/s  |  9,255 req  |  73% of budget  |  ETA 7h19m  |  47m51s
+23:12:34   [opinionmagazine]  |  8,236 docs  |  51.21M ch  |  ~12.80M tok  |  17.77K ch/s  |  9,285 req  |  73% of budget  |  ETA 7h19m  |  48m01s
+23:12:44   [opinionmagazine]  |  8,265 docs  |  51.37M ch  |  ~12.84M tok  |  17.76K ch/s  |  9,315 req  |  73% of budget  |  ETA 7h19m  |  48m11s
+23:12:54   [opinionmagazine]  |  8,296 docs  |  51.57M ch  |  ~12.89M tok  |  17.77K ch/s  |  9,348 req  |  74% of budget  |  ETA 7h19m  |  48m21s
+23:13:05   [opinionmagazine]  |  8,336 docs  |  51.88M ch  |  ~12.97M tok  |  17.81K ch/s  |  9,388 req  |  74% of budget  |  ETA 7h17m  |  48m32s
+23:13:15   [opinionmagazine]  |  8,372 docs  |  52.05M ch  |  ~13.01M tok  |  17.81K ch/s  |  9,424 req  |  74% of budget  |  ETA 7h17m  |  48m42s
+23:13:25   [opinionmagazine]  |  8,408 docs  |  52.27M ch  |  ~13.07M tok  |  17.82K ch/s  |  9,463 req  |  75% of budget  |  ETA 7h17m  |  48m52s
+23:13:35   [opinionmagazine]  |  8,442 docs  |  52.44M ch  |  ~13.11M tok  |  17.82K ch/s  |  9,499 req  |  75% of budget  |  ETA 7h17m  |  49m02s
+23:13:46   [opinionmagazine]  |  8,475 docs  |  52.66M ch  |  ~13.16M tok  |  17.83K ch/s  |  9,534 req  |  75% of budget  |  ETA 7h16m  |  49m12s
+23:13:56   [opinionmagazine]  |  8,508 docs  |  52.82M ch  |  ~13.21M tok  |  17.82K ch/s  |  9,572 req  |  75% of budget  |  ETA 7h16m  |  49m23s
+23:14:07   [opinionmagazine]  |  8,540 docs  |  53.02M ch  |  ~13.26M tok  |  17.83K ch/s  |  9,608 req  |  76% of budget  |  ETA 7h16m  |  49m34s
+23:14:17   [opinionmagazine]  |  8,570 docs  |  53.20M ch  |  ~13.30M tok  |  17.82K ch/s  |  9,642 req  |  76% of budget  |  ETA 7h16m  |  49m44s
+23:14:27   [opinionmagazine]  |  8,599 docs  |  53.35M ch  |  ~13.34M tok  |  17.81K ch/s  |  9,674 req  |  76% of budget  |  ETA 7h16m  |  49m54s
+23:14:38   [opinionmagazine]  |  8,630 docs  |  53.51M ch  |  ~13.38M tok  |  17.81K ch/s  |  9,708 req  |  76% of budget  |  ETA 7h16m  |  50m05s
+23:14:48   [opinionmagazine]  |  8,657 docs  |  53.63M ch  |  ~13.41M tok  |  17.78K ch/s  |  9,737 req  |  77% of budget  |  ETA 7h17m  |  50m15s
+23:14:58   [opinionmagazine]  |  8,687 docs  |  53.81M ch  |  ~13.45M tok  |  17.79K ch/s  |  9,770 req  |  77% of budget  |  ETA 7h16m  |  50m25s
+23:15:10   [opinionmagazine]  |  8,716 docs  |  53.96M ch  |  ~13.49M tok  |  17.77K ch/s  |  9,801 req  |  77% of budget  |  ETA 7h17m  |  50m37s
+23:15:20   [opinionmagazine]  |  8,748 docs  |  54.13M ch  |  ~13.53M tok  |  17.76K ch/s  |  9,836 req  |  77% of budget  |  ETA 7h17m  |  50m47s
+23:15:30   [opinionmagazine]  |  8,780 docs  |  54.34M ch  |  ~13.59M tok  |  17.77K ch/s  |  9,871 req  |  78% of budget  |  ETA 7h16m  |  50m57s
+23:15:41   [opinionmagazine]  |  8,814 docs  |  54.53M ch  |  ~13.63M tok  |  17.77K ch/s  |  9,907 req  |  78% of budget  |  ETA 7h16m  |  51m08s
+23:15:52   [opinionmagazine]  |  8,847 docs  |  54.73M ch  |  ~13.68M tok  |  17.77K ch/s  |  9,942 req  |  78% of budget  |  ETA 7h16m  |  51m19s
+23:16:02   [opinionmagazine]  |  8,878 docs  |  54.93M ch  |  ~13.73M tok  |  17.78K ch/s  |  9,978 req  |  78% of budget  |  ETA 7h15m  |  51m29s
+23:16:12   [opinionmagazine]  |  8,911 docs  |  55.11M ch  |  ~13.78M tok  |  17.78K ch/s  |  10,013 req  |  79% of budget  |  ETA 7h15m  |  51m39s
+23:16:22   [opinionmagazine]  |  8,943 docs  |  55.30M ch  |  ~13.82M tok  |  17.78K ch/s  |  10,047 req  |  79% of budget  |  ETA 7h15m  |  51m49s
+23:16:32   [opinionmagazine]  |  8,975 docs  |  55.47M ch  |  ~13.87M tok  |  17.78K ch/s  |  10,081 req  |  79% of budget  |  ETA 7h15m  |  51m59s
+23:16:42   [opinionmagazine]  |  9,010 docs  |  55.63M ch  |  ~13.91M tok  |  17.77K ch/s  |  10,121 req  |  79% of budget  |  ETA 7h15m  |  52m09s
+23:16:53   [opinionmagazine]  |  9,050 docs  |  55.86M ch  |  ~13.96M tok  |  17.79K ch/s  |  10,166 req  |  80% of budget  |  ETA 7h14m  |  52m20s
+23:17:03   [opinionmagazine]  |  9,084 docs  |  56.04M ch  |  ~14.01M tok  |  17.79K ch/s  |  10,204 req  |  80% of budget  |  ETA 7h14m  |  52m30s
+23:17:13   [opinionmagazine]  |  9,122 docs  |  56.25M ch  |  ~14.06M tok  |  17.80K ch/s  |  10,246 req  |  80% of budget  |  ETA 7h14m  |  52m40s
+23:17:24   [opinionmagazine]  |  9,148 docs  |  56.44M ch  |  ~14.11M tok  |  17.80K ch/s  |  10,280 req  |  81% of budget  |  ETA 7h14m  |  52m51s
+23:17:34   [opinionmagazine]  |  9,179 docs  |  56.63M ch  |  ~14.16M tok  |  17.80K ch/s  |  10,315 req  |  81% of budget  |  ETA 7h13m  |  53m01s
+23:17:45   [opinionmagazine]  |  9,211 docs  |  56.83M ch  |  ~14.21M tok  |  17.80K ch/s  |  10,349 req  |  81% of budget  |  ETA 7h13m  |  53m12s
+23:17:55   [opinionmagazine]  |  9,242 docs  |  56.98M ch  |  ~14.25M tok  |  17.80K ch/s  |  10,385 req  |  81% of budget  |  ETA 7h13m  |  53m22s
+23:18:07   [opinionmagazine]  |  9,268 docs  |  57.13M ch  |  ~14.28M tok  |  17.78K ch/s  |  10,415 req  |  82% of budget  |  ETA 7h13m  |  53m34s
+23:18:17   [opinionmagazine]  |  9,299 docs  |  57.29M ch  |  ~14.32M tok  |  17.77K ch/s  |  10,449 req  |  82% of budget  |  ETA 7h14m  |  53m44s
+23:18:28   [opinionmagazine]  |  9,327 docs  |  57.43M ch  |  ~14.36M tok  |  17.75K ch/s  |  10,483 req  |  82% of budget  |  ETA 7h14m  |  53m54s
+23:18:38   [opinionmagazine]  |  9,364 docs  |  57.62M ch  |  ~14.41M tok  |  17.76K ch/s  |  10,524 req  |  82% of budget  |  ETA 7h13m  |  54m04s
+23:18:48   [opinionmagazine]  |  9,395 docs  |  57.81M ch  |  ~14.45M tok  |  17.76K ch/s  |  10,557 req  |  83% of budget  |  ETA 7h13m  |  54m15s
+23:18:59   [opinionmagazine]  |  9,432 docs  |  57.97M ch  |  ~14.49M tok  |  17.75K ch/s  |  10,597 req  |  83% of budget  |  ETA 7h13m  |  54m25s
+23:19:10   [opinionmagazine]  |  9,461 docs  |  58.14M ch  |  ~14.54M tok  |  17.74K ch/s  |  10,629 req  |  83% of budget  |  ETA 7h13m  |  54m36s
+23:19:20   [opinionmagazine]  |  9,487 docs  |  58.37M ch  |  ~14.59M tok  |  17.76K ch/s  |  10,658 req  |  83% of budget  |  ETA 7h13m  |  54m47s
+23:19:30   [opinionmagazine]  |  9,514 docs  |  58.55M ch  |  ~14.64M tok  |  17.76K ch/s  |  10,689 req  |  84% of budget  |  ETA 7h13m  |  54m57s
+23:19:40   [opinionmagazine]  |  9,539 docs  |  58.69M ch  |  ~14.67M tok  |  17.74K ch/s  |  10,720 req  |  84% of budget  |  ETA 7h13m  |  55m07s
+23:19:50   [opinionmagazine]  |  9,568 docs  |  58.88M ch  |  ~14.72M tok  |  17.75K ch/s  |  10,753 req  |  84% of budget  |  ETA 7h13m  |  55m17s
+23:20:01   [opinionmagazine]  |  9,601 docs  |  59.05M ch  |  ~14.76M tok  |  17.74K ch/s  |  10,790 req  |  84% of budget  |  ETA 7h13m  |  55m28s
+23:20:12   [opinionmagazine]  |  9,629 docs  |  59.22M ch  |  ~14.80M tok  |  17.73K ch/s  |  10,823 req  |  85% of budget  |  ETA 7h13m  |  55m39s
+23:20:22   [opinionmagazine]  |  9,663 docs  |  59.40M ch  |  ~14.85M tok  |  17.73K ch/s  |  10,859 req  |  85% of budget  |  ETA 7h12m  |  55m49s
+23:20:32   [opinionmagazine]  |  9,693 docs  |  59.54M ch  |  ~14.89M tok  |  17.72K ch/s  |  10,892 req  |  85% of budget  |  ETA 7h12m  |  55m59s
+23:20:42   [opinionmagazine]  |  9,721 docs  |  59.74M ch  |  ~14.94M tok  |  17.73K ch/s  |  10,925 req  |  85% of budget  |  ETA 7h12m  |  56m09s
+23:20:52   [opinionmagazine]  |  9,753 docs  |  59.96M ch  |  ~14.99M tok  |  17.74K ch/s  |  10,961 req  |  86% of budget  |  ETA 7h12m  |  56m19s
+23:21:02   [opinionmagazine]  |  9,780 docs  |  60.18M ch  |  ~15.05M tok  |  17.75K ch/s  |  10,991 req  |  86% of budget  |  ETA 7h11m  |  56m29s
+23:21:13   [opinionmagazine]  |  9,814 docs  |  60.37M ch  |  ~15.09M tok  |  17.76K ch/s  |  11,028 req  |  86% of budget  |  ETA 7h11m  |  56m39s
+23:21:23   [opinionmagazine]  |  9,841 docs  |  60.54M ch  |  ~15.13M tok  |  17.75K ch/s  |  11,059 req  |  86% of budget  |  ETA 7h11m  |  56m49s
+23:21:33   [opinionmagazine]  |  9,875 docs  |  60.75M ch  |  ~15.19M tok  |  17.76K ch/s  |  11,096 req  |  87% of budget  |  ETA 7h10m  |  57m00s
+23:21:43   [opinionmagazine]  |  9,906 docs  |  60.95M ch  |  ~15.24M tok  |  17.77K ch/s  |  11,132 req  |  87% of budget  |  ETA 7h10m  |  57m10s
+23:21:53   [opinionmagazine]  |  9,932 docs  |  61.11M ch  |  ~15.28M tok  |  17.76K ch/s  |  11,160 req  |  87% of budget  |  ETA 7h10m  |  57m20s
+23:22:03   [opinionmagazine]  |  9,960 docs  |  61.27M ch  |  ~15.32M tok  |  17.76K ch/s  |  11,190 req  |  88% of budget  |  ETA 7h10m  |  57m30s
+23:22:13   [opinionmagazine]  |  9,991 docs  |  61.43M ch  |  ~15.36M tok  |  17.75K ch/s  |  11,223 req  |  88% of budget  |  ETA 7h10m  |  57m40s
+23:22:24   [opinionmagazine]  |  10,019 docs  |  61.61M ch  |  ~15.40M tok  |  17.75K ch/s  |  11,254 req  |  88% of budget  |  ETA 7h10m  |  57m50s
+23:22:34   [opinionmagazine]  |  10,052 docs  |  61.77M ch  |  ~15.44M tok  |  17.74K ch/s  |  11,291 req  |  88% of budget  |  ETA 7h10m  |  58m01s
+23:22:44   [opinionmagazine]  |  10,083 docs  |  61.93M ch  |  ~15.48M tok  |  17.74K ch/s  |  11,329 req  |  88% of budget  |  ETA 7h10m  |  58m11s
+23:22:55   [opinionmagazine]  |  10,116 docs  |  62.15M ch  |  ~15.54M tok  |  17.75K ch/s  |  11,366 req  |  89% of budget  |  ETA 7h10m  |  58m22s
+23:23:05   [opinionmagazine]  |  10,143 docs  |  62.30M ch  |  ~15.58M tok  |  17.74K ch/s  |  11,397 req  |  89% of budget  |  ETA 7h10m  |  58m32s
+23:23:16   [opinionmagazine]  |  10,170 docs  |  62.45M ch  |  ~15.61M tok  |  17.73K ch/s  |  11,426 req  |  89% of budget  |  ETA 7h10m  |  58m43s
+23:23:26   [opinionmagazine]  |  10,199 docs  |  62.63M ch  |  ~15.66M tok  |  17.72K ch/s  |  11,459 req  |  89% of budget  |  ETA 7h10m  |  58m53s
+23:23:37   [opinionmagazine]  |  10,236 docs  |  62.90M ch  |  ~15.73M tok  |  17.75K ch/s  |  11,499 req  |  90% of budget  |  ETA 7h09m  |  59m03s
+23:23:47   [opinionmagazine]  |  10,266 docs  |  63.08M ch  |  ~15.77M tok  |  17.75K ch/s  |  11,532 req  |  90% of budget  |  ETA 7h09m  |  59m14s
+23:23:58   [opinionmagazine]  |  10,299 docs  |  63.26M ch  |  ~15.81M tok  |  17.74K ch/s  |  11,567 req  |  90% of budget  |  ETA 7h09m  |  59m25s
+23:24:09   [opinionmagazine]  |  10,334 docs  |  63.45M ch  |  ~15.86M tok  |  17.74K ch/s  |  11,605 req  |  91% of budget  |  ETA 7h08m  |  59m36s
+23:24:19   [opinionmagazine]  |  10,367 docs  |  63.61M ch  |  ~15.90M tok  |  17.74K ch/s  |  11,641 req  |  91% of budget  |  ETA 7h08m  |  59m46s
+23:24:29   [opinionmagazine]  |  10,406 docs  |  63.84M ch  |  ~15.96M tok  |  17.75K ch/s  |  11,683 req  |  91% of budget  |  ETA 7h08m  |  59m56s
+23:24:39   [opinionmagazine]  |  10,434 docs  |  64.00M ch  |  ~16.00M tok  |  17.74K ch/s  |  11,715 req  |  91% of budget  |  ETA 7h08m  |  1h00m
+23:24:49   [opinionmagazine]  |  10,461 docs  |  64.19M ch  |  ~16.05M tok  |  17.75K ch/s  |  11,745 req  |  92% of budget  |  ETA 7h08m  |  1h00m
+23:25:00   [opinionmagazine]  |  10,497 docs  |  64.42M ch  |  ~16.10M tok  |  17.76K ch/s  |  11,782 req  |  92% of budget  |  ETA 7h07m  |  1h00m
+23:25:10   [opinionmagazine]  |  10,525 docs  |  64.58M ch  |  ~16.14M tok  |  17.75K ch/s  |  11,810 req  |  92% of budget  |  ETA 7h07m  |  1h00m
+23:25:21   [opinionmagazine]  |  10,552 docs  |  64.76M ch  |  ~16.19M tok  |  17.75K ch/s  |  11,837 req  |  93% of budget  |  ETA 7h07m  |  1h00m
+23:25:31   [opinionmagazine]  |  10,585 docs  |  65.03M ch  |  ~16.26M tok  |  17.77K ch/s  |  11,870 req  |  93% of budget  |  ETA 7h06m  |  1h00m
+23:25:42   [opinionmagazine]  |  10,608 docs  |  65.24M ch  |  ~16.31M tok  |  17.78K ch/s  |  11,893 req  |  93% of budget  |  ETA 7h06m  |  1h01m
+23:25:52   [opinionmagazine]  |  10,639 docs  |  65.40M ch  |  ~16.35M tok  |  17.78K ch/s  |  11,925 req  |  93% of budget  |  ETA 7h06m  |  1h01m
+23:26:02   [opinionmagazine]  |  10,669 docs  |  65.53M ch  |  ~16.38M tok  |  17.76K ch/s  |  11,955 req  |  94% of budget  |  ETA 7h06m  |  1h01m
+23:26:12   [opinionmagazine]  |  10,702 docs  |  65.70M ch  |  ~16.42M tok  |  17.76K ch/s  |  11,989 req  |  94% of budget  |  ETA 7h06m  |  1h01m
+23:26:23   [opinionmagazine]  |  10,731 docs  |  65.88M ch  |  ~16.47M tok  |  17.76K ch/s  |  12,018 req  |  94% of budget  |  ETA 7h06m  |  1h01m
+23:26:33   [opinionmagazine]  |  10,765 docs  |  66.12M ch  |  ~16.53M tok  |  17.77K ch/s  |  12,052 req  |  94% of budget  |  ETA 7h05m  |  1h02m
+23:26:43   [opinionmagazine]  |  10,800 docs  |  66.30M ch  |  ~16.58M tok  |  17.77K ch/s  |  12,088 req  |  95% of budget  |  ETA 7h05m  |  1h02m
+23:26:53   [opinionmagazine]  |  10,833 docs  |  66.51M ch  |  ~16.63M tok  |  17.78K ch/s  |  12,121 req  |  95% of budget  |  ETA 7h05m  |  1h02m
+23:27:04   [opinionmagazine]  |  10,872 docs  |  66.73M ch  |  ~16.68M tok  |  17.79K ch/s  |  12,161 req  |  95% of budget  |  ETA 7h04m  |  1h02m
+23:27:14   [opinionmagazine]  |  10,901 docs  |  66.88M ch  |  ~16.72M tok  |  17.78K ch/s  |  12,190 req  |  96% of budget  |  ETA 7h04m  |  1h02m
+23:27:24   [opinionmagazine]  |  10,942 docs  |  67.06M ch  |  ~16.77M tok  |  17.78K ch/s  |  12,231 req  |  96% of budget  |  ETA 7h04m  |  1h02m
+23:27:34   [opinionmagazine]  |  10,970 docs  |  67.21M ch  |  ~16.80M tok  |  17.77K ch/s  |  12,260 req  |  96% of budget  |  ETA 7h04m  |  1h03m
+23:27:44   [opinionmagazine]  |  10,999 docs  |  67.36M ch  |  ~16.84M tok  |  17.76K ch/s  |  12,292 req  |  96% of budget  |  ETA 7h04m  |  1h03m
+23:27:55   [opinionmagazine]  |  11,035 docs  |  67.54M ch  |  ~16.89M tok  |  17.77K ch/s  |  12,329 req  |  96% of budget  |  ETA 7h04m  |  1h03m
+23:28:05   [opinionmagazine]  |  11,073 docs  |  67.76M ch  |  ~16.94M tok  |  17.78K ch/s  |  12,368 req  |  97% of budget  |  ETA 7h04m  |  1h03m
+23:28:15   [opinionmagazine]  |  11,107 docs  |  67.94M ch  |  ~16.98M tok  |  17.78K ch/s  |  12,403 req  |  97% of budget  |  ETA 7h03m  |  1h03m
+23:28:25   [opinionmagazine]  |  11,144 docs  |  68.17M ch  |  ~17.04M tok  |  17.79K ch/s  |  12,441 req  |  97% of budget  |  ETA 7h03m  |  1h03m
+23:28:36   [opinionmagazine]  |  11,178 docs  |  68.36M ch  |  ~17.09M tok  |  17.79K ch/s  |  12,479 req  |  98% of budget  |  ETA 7h03m  |  1h04m
+23:28:46   [opinionmagazine]  |  11,210 docs  |  68.55M ch  |  ~17.14M tok  |  17.79K ch/s  |  12,512 req  |  98% of budget  |  ETA 7h02m  |  1h04m
+23:28:56   [opinionmagazine]  |  11,243 docs  |  68.71M ch  |  ~17.18M tok  |  17.79K ch/s  |  12,546 req  |  98% of budget  |  ETA 7h02m  |  1h04m
+23:29:06   [opinionmagazine]  |  11,279 docs  |  68.90M ch  |  ~17.22M tok  |  17.79K ch/s  |  12,582 req  |  98% of budget  |  ETA 7h02m  |  1h04m
+23:29:17   [opinionmagazine]  |  11,312 docs  |  69.06M ch  |  ~17.27M tok  |  17.78K ch/s  |  12,615 req  |  99% of budget  |  ETA 7h02m  |  1h04m
+23:29:27   [opinionmagazine]  |  11,348 docs  |  69.24M ch  |  ~17.31M tok  |  17.78K ch/s  |  12,652 req  |  99% of budget  |  ETA 7h02m  |  1h04m
+23:29:37   [opinionmagazine]  |  11,386 docs  |  69.43M ch  |  ~17.36M tok  |  17.78K ch/s  |  12,690 req  |  99% of budget  |  ETA 7h02m  |  1h05m
+23:29:47   [opinionmagazine]  |  11,421 docs  |  69.60M ch  |  ~17.40M tok  |  17.78K ch/s  |  12,725 req  |  99% of budget  |  ETA 7h02m  |  1h05m
+23:29:58   [opinionmagazine]  |  11,462 docs  |  69.77M ch  |  ~17.44M tok  |  17.77K ch/s  |  12,766 req  |  100% of budget  |  ETA 7h02m  |  1h05m
+23:30:09   [opinionmagazine]  |  11,494 docs  |  69.93M ch  |  ~17.48M tok  |  17.77K ch/s  |  12,800 req  |  100% of budget  |  ETA 7h02m  |  1h05m
+23:30:13   [opinionmagazine]  |  11,508 docs  |  70.01M ch  |  ~17.50M tok  |  17.77K ch/s  |  12,815 req  |  100% of budget  |  ETA 7h02m  |  1h05m  |  DONE (source budget reached)
+23:30:13        rejected: not-gujarati x953, too-short x211, latin-heavy x55, no-text-extracted x30, no-stopwords x20
+23:30:13   shard: opinionmagazine.part-1786640073-34643.jsonl.gz (11,508 docs / 70.01M chars)
+23:30:13 
+--- aksharnaad  (sitemap)  budget 25.00M chars ---
+23:31:02   aksharnaad: 2,843 new article URLs from sitemap
+23:31:03   [aksharnaad]  |  1 docs  |  5.69K ch  |  ~1.42K tok  |  112 ch/s  |  14 req  |  0% of budget  |  ETA 1106h45m  |  50s
+23:31:13   [aksharnaad]  |  42 docs  |  400.34K ch  |  ~100.08K tok  |  6.62K ch/s  |  55 req  |  2% of budget  |  ETA 18h51m  |  1m00s
+23:31:23   [aksharnaad]  |  84 docs  |  692.98K ch  |  ~173.24K tok  |  9.84K ch/s  |  97 req  |  3% of budget  |  ETA 12h41m  |  1m10s
+23:31:33   [aksharnaad]  |  117 docs  |  917.62K ch  |  ~229.40K tok  |  11.41K ch/s  |  130 req  |  4% of budget  |  ETA 10h56m  |  1m20s
+23:31:44   [aksharnaad]  |  145 docs  |  1.13M ch  |  ~282.19K tok  |  12.38K ch/s  |  160 req  |  5% of budget  |  ETA 10h04m  |  1m31s
+23:31:54   [aksharnaad]  |  175 docs  |  1.35M ch  |  ~337.89K tok  |  13.33K ch/s  |  190 req  |  5% of budget  |  ETA 9h21m  |  1m41s
+23:32:05   [aksharnaad]  |  199 docs  |  1.51M ch  |  ~376.60K tok  |  13.48K ch/s  |  219 req  |  6% of budget  |  ETA 9h14m  |  1m51s
+23:32:15   [aksharnaad]  |  224 docs  |  1.61M ch  |  ~401.50K tok  |  13.16K ch/s  |  246 req  |  6% of budget  |  ETA 9h27m  |  2m02s
+23:32:25   [aksharnaad]  |  252 docs  |  1.75M ch  |  ~438.33K tok  |  13.27K ch/s  |  276 req  |  7% of budget  |  ETA 9h22m  |  2m12s
+23:32:35   [aksharnaad]  |  285 docs  |  1.95M ch  |  ~487.36K tok  |  13.70K ch/s  |  312 req  |  8% of budget  |  ETA 9h04m  |  2m22s
+23:32:45   [aksharnaad]  |  314 docs  |  2.15M ch  |  ~537.52K tok  |  14.12K ch/s  |  343 req  |  9% of budget  |  ETA 8h48m  |  2m32s
+23:32:56   [aksharnaad]  |  346 docs  |  2.33M ch  |  ~582.93K tok  |  14.25K ch/s  |  375 req  |  9% of budget  |  ETA 8h43m  |  2m43s
+23:33:07   [aksharnaad]  |  373 docs  |  2.49M ch  |  ~622.07K tok  |  14.33K ch/s  |  402 req  |  10% of budget  |  ETA 8h40m  |  2m53s
+23:33:17   [aksharnaad]  |  407 docs  |  2.67M ch  |  ~667.30K tok  |  14.50K ch/s  |  436 req  |  11% of budget  |  ETA 8h34m  |  3m04s
+23:33:27   [aksharnaad]  |  434 docs  |  2.87M ch  |  ~718.45K tok  |  14.80K ch/s  |  463 req  |  11% of budget  |  ETA 8h23m  |  3m14s
+23:33:37   [aksharnaad]  |  466 docs  |  3.11M ch  |  ~777.52K tok  |  15.23K ch/s  |  495 req  |  12% of budget  |  ETA 8h09m  |  3m24s
+23:33:48   [aksharnaad]  |  492 docs  |  3.59M ch  |  ~898.25K tok  |  16.68K ch/s  |  524 req  |  14% of budget  |  ETA 7h25m  |  3m35s
+23:33:58   [aksharnaad]  |  522 docs  |  3.92M ch  |  ~981.21K tok  |  17.40K ch/s  |  554 req  |  16% of budget  |  ETA 7h07m  |  3m45s
+23:34:09   [aksharnaad]  |  548 docs  |  4.19M ch  |  ~1.05M tok  |  17.78K ch/s  |  580 req  |  17% of budget  |  ETA 6h57m  |  3m55s
+23:34:19   [aksharnaad]  |  582 docs  |  4.52M ch  |  ~1.13M tok  |  18.35K ch/s  |  614 req  |  18% of budget  |  ETA 6h44m  |  4m06s
+23:34:30   [aksharnaad]  |  604 docs  |  4.76M ch  |  ~1.19M tok  |  18.51K ch/s  |  636 req  |  19% of budget  |  ETA 6h40m  |  4m16s
+23:34:40   [aksharnaad]  |  636 docs  |  5.24M ch  |  ~1.31M tok  |  19.59K ch/s  |  668 req  |  21% of budget  |  ETA 6h18m  |  4m27s
+23:34:51   [aksharnaad]  |  674 docs  |  5.65M ch  |  ~1.41M tok  |  20.33K ch/s  |  707 req  |  23% of budget  |  ETA 6h04m  |  4m37s
+23:35:01   [aksharnaad]  |  705 docs  |  5.88M ch  |  ~1.47M tok  |  20.41K ch/s  |  739 req  |  24% of budget  |  ETA 6h02m  |  4m48s
+23:35:11   [aksharnaad]  |  729 docs  |  6.04M ch  |  ~1.51M tok  |  20.25K ch/s  |  763 req  |  24% of budget  |  ETA 6h05m  |  4m58s
+23:35:21   [aksharnaad]  |  762 docs  |  6.31M ch  |  ~1.58M tok  |  20.46K ch/s  |  796 req  |  25% of budget  |  ETA 6h01m  |  5m08s
+23:35:32   [aksharnaad]  |  791 docs  |  6.52M ch  |  ~1.63M tok  |  20.47K ch/s  |  825 req  |  26% of budget  |  ETA 6h01m  |  5m18s
+23:35:42   [aksharnaad]  |  821 docs  |  6.67M ch  |  ~1.67M tok  |  20.30K ch/s  |  856 req  |  27% of budget  |  ETA 6h04m  |  5m28s
+23:35:52   [aksharnaad]  |  853 docs  |  7.09M ch  |  ~1.77M tok  |  20.90K ch/s  |  888 req  |  28% of budget  |  ETA 5h53m  |  5m39s
+23:36:02   [aksharnaad]  |  889 docs  |  7.37M ch  |  ~1.84M tok  |  21.08K ch/s  |  924 req  |  29% of budget  |  ETA 5h49m  |  5m49s
+23:36:12   [aksharnaad]  |  928 docs  |  7.76M ch  |  ~1.94M tok  |  21.60K ch/s  |  965 req  |  31% of budget  |  ETA 5h41m  |  5m59s
+23:36:23   [aksharnaad]  |  953 docs  |  7.99M ch  |  ~2.00M tok  |  21.60K ch/s  |  990 req  |  32% of budget  |  ETA 5h40m  |  6m09s
+23:36:33   [aksharnaad]  |  978 docs  |  8.22M ch  |  ~2.06M tok  |  21.62K ch/s  |  1,015 req  |  33% of budget  |  ETA 5h40m  |  6m20s
+23:36:44   [aksharnaad]  |  1,010 docs  |  8.56M ch  |  ~2.14M tok  |  21.91K ch/s  |  1,048 req  |  34% of budget  |  ETA 5h35m  |  6m30s
+23:36:54   [aksharnaad]  |  1,042 docs  |  8.79M ch  |  ~2.20M tok  |  21.92K ch/s  |  1,081 req  |  35% of budget  |  ETA 5h35m  |  6m40s
+23:37:04   [aksharnaad]  |  1,070 docs  |  8.95M ch  |  ~2.24M tok  |  21.75K ch/s  |  1,109 req  |  36% of budget  |  ETA 5h37m  |  6m51s
+23:37:14   [aksharnaad]  |  1,104 docs  |  9.09M ch  |  ~2.27M tok  |  21.58K ch/s  |  1,143 req  |  36% of budget  |  ETA 5h40m  |  7m01s
+23:37:24   [aksharnaad]  |  1,136 docs  |  9.26M ch  |  ~2.32M tok  |  21.46K ch/s  |  1,175 req  |  37% of budget  |  ETA 5h42m  |  7m11s
+23:37:35   [aksharnaad]  |  1,167 docs  |  9.45M ch  |  ~2.36M tok  |  21.39K ch/s  |  1,206 req  |  38% of budget  |  ETA 5h43m  |  7m21s
+23:37:45   [aksharnaad]  |  1,196 docs  |  9.62M ch  |  ~2.41M tok  |  21.30K ch/s  |  1,235 req  |  38% of budget  |  ETA 5h44m  |  7m31s
+23:37:56   [aksharnaad]  |  1,229 docs  |  9.81M ch  |  ~2.45M tok  |  21.19K ch/s  |  1,269 req  |  39% of budget  |  ETA 5h46m  |  7m42s
+23:38:06   [aksharnaad]  |  1,258 docs  |  10.01M ch  |  ~2.50M tok  |  21.16K ch/s  |  1,298 req  |  40% of budget  |  ETA 5h46m  |  7m53s
+23:38:17   [aksharnaad]  |  1,292 docs  |  10.25M ch  |  ~2.56M tok  |  21.19K ch/s  |  1,332 req  |  41% of budget  |  ETA 5h45m  |  8m03s
+23:38:27   [aksharnaad]  |  1,322 docs  |  10.37M ch  |  ~2.59M tok  |  20.99K ch/s  |  1,362 req  |  41% of budget  |  ETA 5h49m  |  8m14s
+23:38:37   [aksharnaad]  |  1,355 docs  |  10.53M ch  |  ~2.63M tok  |  20.88K ch/s  |  1,395 req  |  42% of budget  |  ETA 5h50m  |  8m24s
+23:38:47   [aksharnaad]  |  1,392 docs  |  10.72M ch  |  ~2.68M tok  |  20.84K ch/s  |  1,432 req  |  43% of budget  |  ETA 5h51m  |  8m34s
+23:38:57   [aksharnaad]  |  1,422 docs  |  10.91M ch  |  ~2.73M tok  |  20.80K ch/s  |  1,464 req  |  44% of budget  |  ETA 5h51m  |  8m44s
+23:39:08   [aksharnaad]  |  1,448 docs  |  11.07M ch  |  ~2.77M tok  |  20.69K ch/s  |  1,491 req  |  44% of budget  |  ETA 5h53m  |  8m54s
+23:39:18   [aksharnaad]  |  1,479 docs  |  11.22M ch  |  ~2.81M tok  |  20.58K ch/s  |  1,522 req  |  45% of budget  |  ETA 5h55m  |  9m05s
+23:39:29   [aksharnaad]  |  1,511 docs  |  11.48M ch  |  ~2.87M tok  |  20.66K ch/s  |  1,554 req  |  46% of budget  |  ETA 5h53m  |  9m15s
+23:39:39   [aksharnaad]  |  1,539 docs  |  11.58M ch  |  ~2.90M tok  |  20.46K ch/s  |  1,583 req  |  46% of budget  |  ETA 5h57m  |  9m26s
+23:39:49   [aksharnaad]  |  1,569 docs  |  11.73M ch  |  ~2.93M tok  |  20.35K ch/s  |  1,613 req  |  47% of budget  |  ETA 5h58m  |  9m36s
+23:39:59   [aksharnaad]  |  1,597 docs  |  11.88M ch  |  ~2.97M tok  |  20.27K ch/s  |  1,643 req  |  48% of budget  |  ETA 6h00m  |  9m46s
+23:40:09   [aksharnaad]  |  1,623 docs  |  12.03M ch  |  ~3.01M tok  |  20.18K ch/s  |  1,669 req  |  48% of budget  |  ETA 6h01m  |  9m56s
+23:40:19   [aksharnaad]  |  1,656 docs  |  12.19M ch  |  ~3.05M tok  |  20.11K ch/s  |  1,703 req  |  49% of budget  |  ETA 6h02m  |  10m06s
+23:40:31   [aksharnaad]  |  1,686 docs  |  12.34M ch  |  ~3.08M tok  |  19.97K ch/s  |  1,733 req  |  49% of budget  |  ETA 6h05m  |  10m17s
+23:40:41   [aksharnaad]  |  1,719 docs  |  12.51M ch  |  ~3.13M tok  |  19.93K ch/s  |  1,767 req  |  50% of budget  |  ETA 6h05m  |  10m27s
+23:40:51   [aksharnaad]  |  1,745 docs  |  12.67M ch  |  ~3.17M tok  |  19.85K ch/s  |  1,793 req  |  51% of budget  |  ETA 6h07m  |  10m37s
+23:41:01   [aksharnaad]  |  1,780 docs  |  12.82M ch  |  ~3.21M tok  |  19.78K ch/s  |  1,829 req  |  51% of budget  |  ETA 6h08m  |  10m48s
+23:41:12   [aksharnaad]  |  1,811 docs  |  12.97M ch  |  ~3.24M tok  |  19.68K ch/s  |  1,861 req  |  52% of budget  |  ETA 6h10m  |  10m59s
+23:41:22   [aksharnaad]  |  1,843 docs  |  13.11M ch  |  ~3.28M tok  |  19.59K ch/s  |  1,893 req  |  52% of budget  |  ETA 6h11m  |  11m09s
+23:41:32   [aksharnaad]  |  1,866 docs  |  13.19M ch  |  ~3.30M tok  |  19.42K ch/s  |  1,916 req  |  53% of budget  |  ETA 6h14m  |  11m19s
+23:41:43   [aksharnaad]  |  1,893 docs  |  13.27M ch  |  ~3.32M tok  |  19.24K ch/s  |  1,943 req  |  53% of budget  |  ETA 6h18m  |  11m29s
+23:41:53   [aksharnaad]  |  1,924 docs  |  13.36M ch  |  ~3.34M tok  |  19.09K ch/s  |  1,974 req  |  53% of budget  |  ETA 6h21m  |  11m39s
+23:42:04   [aksharnaad]  |  1,949 docs  |  13.46M ch  |  ~3.37M tok  |  18.93K ch/s  |  2,004 req  |  54% of budget  |  ETA 6h24m  |  11m51s
+23:42:15   [aksharnaad]  |  1,980 docs  |  13.58M ch  |  ~3.40M tok  |  18.82K ch/s  |  2,036 req  |  54% of budget  |  ETA 6h26m  |  12m01s
+23:42:25   [aksharnaad]  |  2,015 docs  |  13.75M ch  |  ~3.44M tok  |  18.78K ch/s  |  2,072 req  |  55% of budget  |  ETA 6h27m  |  12m11s
+23:42:35   [aksharnaad]  |  2,057 docs  |  14.02M ch  |  ~3.51M tok  |  18.89K ch/s  |  2,114 req  |  56% of budget  |  ETA 6h24m  |  12m22s
+23:42:46   [aksharnaad]  |  2,082 docs  |  14.14M ch  |  ~3.53M tok  |  18.78K ch/s  |  2,139 req  |  57% of budget  |  ETA 6h26m  |  12m32s
+23:42:56   [aksharnaad]  |  2,109 docs  |  14.27M ch  |  ~3.57M tok  |  18.71K ch/s  |  2,166 req  |  57% of budget  |  ETA 6h28m  |  12m43s
+23:43:06   [aksharnaad]  |  2,133 docs  |  14.40M ch  |  ~3.60M tok  |  18.61K ch/s  |  2,190 req  |  58% of budget  |  ETA 6h30m  |  12m53s
+23:43:17   [aksharnaad]  |  2,161 docs  |  14.52M ch  |  ~3.63M tok  |  18.53K ch/s  |  2,218 req  |  58% of budget  |  ETA 6h31m  |  13m03s
+23:43:27   [aksharnaad]  |  2,187 docs  |  14.61M ch  |  ~3.65M tok  |  18.40K ch/s  |  2,244 req  |  58% of budget  |  ETA 6h34m  |  13m14s
+23:43:37   [aksharnaad]  |  2,217 docs  |  14.72M ch  |  ~3.68M tok  |  18.30K ch/s  |  2,275 req  |  59% of budget  |  ETA 6h36m  |  13m24s
+23:43:48   [aksharnaad]  |  2,248 docs  |  14.84M ch  |  ~3.71M tok  |  18.21K ch/s  |  2,308 req  |  59% of budget  |  ETA 6h38m  |  13m34s
+23:43:58   [aksharnaad]  |  2,279 docs  |  14.96M ch  |  ~3.74M tok  |  18.13K ch/s  |  2,340 req  |  60% of budget  |  ETA 6h39m  |  13m44s
+23:44:09   [aksharnaad]  |  2,311 docs  |  15.04M ch  |  ~3.76M tok  |  17.99K ch/s  |  2,374 req  |  60% of budget  |  ETA 6h42m  |  13m55s
+23:44:19   [aksharnaad]  |  2,340 docs  |  15.16M ch  |  ~3.79M tok  |  17.92K ch/s  |  2,403 req  |  61% of budget  |  ETA 6h44m  |  14m06s
+23:44:30   [aksharnaad]  |  2,378 docs  |  15.33M ch  |  ~3.83M tok  |  17.90K ch/s  |  2,441 req  |  61% of budget  |  ETA 6h44m  |  14m16s
+23:44:40   [aksharnaad]  |  2,410 docs  |  15.43M ch  |  ~3.86M tok  |  17.80K ch/s  |  2,473 req  |  62% of budget  |  ETA 6h46m  |  14m26s
+23:44:50   [aksharnaad]  |  2,445 docs  |  15.50M ch  |  ~3.88M tok  |  17.68K ch/s  |  2,509 req  |  62% of budget  |  ETA 6h49m  |  14m37s
+23:45:00   [aksharnaad]  |  2,473 docs  |  15.60M ch  |  ~3.90M tok  |  17.58K ch/s  |  2,539 req  |  62% of budget  |  ETA 6h51m  |  14m47s
+23:45:11   [aksharnaad]  |  2,498 docs  |  15.63M ch  |  ~3.91M tok  |  17.41K ch/s  |  2,567 req  |  63% of budget  |  ETA 6h55m  |  14m57s
+23:45:21   [aksharnaad]  |  2,532 docs  |  15.70M ch  |  ~3.93M tok  |  17.29K ch/s  |  2,601 req  |  63% of budget  |  ETA 6h58m  |  15m07s
+23:45:31   [aksharnaad]  |  2,567 docs  |  15.82M ch  |  ~3.95M tok  |  17.23K ch/s  |  2,636 req  |  63% of budget  |  ETA 6h59m  |  15m18s
+23:45:41   [aksharnaad]  |  2,593 docs  |  15.86M ch  |  ~3.97M tok  |  17.09K ch/s  |  2,669 req  |  63% of budget  |  ETA 7h03m  |  15m28s
+23:45:51   [aksharnaad]  |  2,624 docs  |  15.92M ch  |  ~3.98M tok  |  16.96K ch/s  |  2,702 req  |  64% of budget  |  ETA 7h06m  |  15m38s
+23:46:02   [aksharnaad]  |  2,657 docs  |  15.98M ch  |  ~4.00M tok  |  16.84K ch/s  |  2,735 req  |  64% of budget  |  ETA 7h09m  |  15m48s
+23:46:12   [aksharnaad]  |  2,689 docs  |  16.04M ch  |  ~4.01M tok  |  16.71K ch/s  |  2,771 req  |  64% of budget  |  ETA 7h12m  |  15m59s
+23:46:23   [aksharnaad]  |  2,715 docs  |  16.07M ch  |  ~4.02M tok  |  16.57K ch/s  |  2,803 req  |  64% of budget  |  ETA 7h16m  |  16m09s
+23:46:33   [aksharnaad]  |  2,737 docs  |  16.11M ch  |  ~4.03M tok  |  16.44K ch/s  |  2,834 req  |  64% of budget  |  ETA 7h19m  |  16m19s
+23:46:41   [aksharnaad]  |  2,751 docs  |  16.16M ch  |  ~4.04M tok  |  16.36K ch/s  |  2,855 req  |  65% of budget  |  ETA 7h22m  |  16m27s  |  DONE
+23:46:41        rejected: not-gujarati x45, devanagari-leak x28, latin-heavy x14, no-stopwords x5
+23:46:41   shard: aksharnaad.part-1786644013-34643.jsonl.gz (2,751 docs / 16.16M chars)
+23:46:41 
+--- gujarattoday  (wp_rest)  budget 102.00M chars ---
+23:46:41   resuming: 46,410 docs / 73.10M chars already collected, 46,410 URLs known
+23:46:44   gujarattoday: 46,410 posts already stored, resuming from page 459
+23:46:44   [gujarattoday]  |  0 docs  |  73.10M ch  |  ~18.28M tok  |  0 ch/s  |  4 req  |  72% of budget  |  ETA 0s  |  2s
+23:46:57   [gujarattoday]  |  0 docs  |  73.10M ch  |  ~18.28M tok  |  0 ch/s  |  40 req  |  72% of budget  |  ETA 0s  |  15s
+23:47:02   [gujarattoday]  |  51 docs  |  73.21M ch  |  ~18.30M tok  |  5.26K ch/s  |  52 req  |  72% of budget  |  ETA 22h54m  |  21s  |  DONE
+23:47:02        rejected: already-collected x4,380, too-short x374, too-few-words x1
+23:47:02   shard: gujarattoday.part-1786645001-34643.jsonl.gz (51 docs / 110.45K chars)
+23:47:03 
+--- gujaratabroad  (wp_rest)  budget 21.00M chars ---
+23:47:03   resuming: 6,483 docs / 19.76M chars already collected, 6,483 URLs known
+23:47:05   gujaratabroad: 6,483 posts already stored, resuming from page 59
+12:06:59 ========================================================================================
+12:06:59 GUJARATI MANUAL COLLECTION   2026-08-15 12:06:59
+12:06:59   sources: ia_books_fulltext
+12:06:59   target : 130.00M manual tokens (~520.00M chars)
+12:06:59   already: 0 chars collected
+12:06:59 ========================================================================================
+12:06:59 
+--- ia_books_fulltext  (ia_fulltext)  budget 400.00M chars ---
+12:11:05   [ia_books_fulltext]  |  1 docs  |  299.72K ch  |  ~74.93K tok  |  1.22K ch/s  |  0 req  |  0% of budget  |  ETA 118h31m  |  4m06s
+12:11:17   [ia_books_fulltext]  |  4 docs  |  878.04K ch  |  ~219.51K tok  |  3.40K ch/s  |  0 req  |  0% of budget  |  ETA 42h24m  |  4m18s
+12:11:46   [ia_books_fulltext]  |  5 docs  |  1.04M ch  |  ~260.02K tok  |  3.63K ch/s  |  0 req  |  0% of budget  |  ETA 39h44m  |  4m46s
+12:12:09   [ia_books_fulltext]  |  7 docs  |  1.23M ch  |  ~307.82K tok  |  3.97K ch/s  |  0 req  |  0% of budget  |  ETA 36h16m  |  5m09s
+12:12:23   [ia_books_fulltext]  |  8 docs  |  1.26M ch  |  ~315.97K tok  |  3.91K ch/s  |  0 req  |  0% of budget  |  ETA 36h52m  |  5m23s
+12:13:07   [ia_books_fulltext]  |  9 docs  |  1.49M ch  |  ~373.38K tok  |  4.06K ch/s  |  0 req  |  0% of budget  |  ETA 35h27m  |  6m07s
+12:13:49   [ia_books_fulltext]  |  11 docs  |  1.78M ch  |  ~444.93K tok  |  4.35K ch/s  |  0 req  |  0% of budget  |  ETA 33h07m  |  6m49s
+12:16:24   [ia_books_fulltext]  |  12 docs  |  2.08M ch  |  ~519.92K tok  |  3.68K ch/s  |  0 req  |  1% of budget  |  ETA 39h04m  |  9m24s
+12:17:47 ========================================================================================
+12:17:47 GUJARATI MANUAL COLLECTION   2026-08-15 12:17:47
+12:17:47   sources: ia_books_fulltext
+12:17:47   target : 130.00M manual tokens (~520.00M chars)
+12:17:47   already: 2.38M chars collected
+12:17:47 ========================================================================================
+12:17:47 
+--- ia_books_fulltext  (ia_fulltext)  budget 400.00M chars ---
+12:17:47   resuming: 13 docs / 2.38M chars already collected, 10 URLs known
+12:21:36   [ia_books_fulltext]  |  1 docs  |  2.68M ch  |  ~669.84K tok  |  1.31K ch/s  |  0 req  |  1% of budget  |  ETA 109h37m  |  3m48s
+12:22:15   [ia_books_fulltext]  |  7 docs  |  3.61M ch  |  ~902.73K tok  |  4.60K ch/s  |  0 req  |  1% of budget  |  ETA 31h09m  |  4m27s
+12:24:12   [ia_books_fulltext]  |  12 docs  |  4.46M ch  |  ~1.11M tok  |  5.41K ch/s  |  0 req  |  1% of budget  |  ETA 26h27m  |  6m24s
+12:24:43 ========================================================================================
+12:24:43 GUJARATI MANUAL COLLECTION   2026-08-15 12:24:43
+12:24:43   sources: gu_wikisource, layastaro, webdunia_gujarati
+12:24:43   target : 130.00M manual tokens (~520.00M chars)
+12:24:43   already: 0 chars collected
+12:24:43 ========================================================================================
+12:24:43 
+--- gu_wikisource  (sitemap)  budget 60.00M chars ---
+12:24:43   gu_wikisource: 0 new article URLs from sitemap
+12:24:43   [gu_wikisource]  |  0 docs  |  0 ch  |  ~0 tok  |  0 ch/s  |  2 req  |  0% of budget  |  ETA 0s  |  0s  |  DONE
+12:24:43   shard: gu_wikisource.part-1786776883-21219.jsonl.gz (0 docs / 0 chars)
+12:24:43 
+--- layastaro  (sitemap)  budget 25.00M chars ---
+12:24:46   layastaro: 0 new article URLs from sitemap
+12:24:46   [layastaro]  |  0 docs  |  0 ch  |  ~0 tok  |  0 ch/s  |  1 req  |  0% of budget  |  ETA 0s  |  3s  |  DONE
+12:24:46   shard: layastaro.part-1786776883-21219.jsonl.gz (0 docs / 0 chars)
+12:24:46 
+--- webdunia_gujarati  (sitemap)  budget 25.00M chars ---
+12:24:50   webdunia_gujarati: 3,933 new article URLs from sitemap
+12:24:51   [webdunia_gujarati]  |  1 docs  |  2.03K ch  |  ~506 tok  |  490 ch/s  |  10 req  |  0% of budget  |  ETA 294h44m  |  4s
+12:25:01   [webdunia_gujarati]  |  99 docs  |  183.54K ch  |  ~45.89K tok  |  12.91K ch/s  |  167 req  |  1% of budget  |  ETA 11h11m  |  14s
+12:25:11   [webdunia_gujarati]  |  113 docs  |  194.06K ch  |  ~48.52K tok  |  7.78K ch/s  |  282 req  |  1% of budget  |  ETA 18h33m  |  24s
+12:25:22   [webdunia_gujarati]  |  116 docs  |  196.32K ch  |  ~49.08K tok  |  5.49K ch/s  |  330 req  |  1% of budget  |  ETA 26h17m  |  35s
+12:25:33   [webdunia_gujarati]  |  129 docs  |  206.11K ch  |  ~51.53K tok  |  4.42K ch/s  |  437 req  |  1% of budget  |  ETA 32h39m  |  46s
+12:25:39   [ia_books_fulltext]  |  21 docs  |  6.39M ch  |  ~1.60M tok  |  8.51K ch/s  |  0 req  |  2% of budget  |  ETA 16h46m  |  7m52s
+12:25:44   [webdunia_gujarati]  |  153 docs  |  217.13K ch  |  ~54.28K tok  |  3.78K ch/s  |  556 req  |  1% of budget  |  ETA 38h12m  |  57s
+12:25:55   [webdunia_gujarati]  |  163 docs  |  222.28K ch  |  ~55.57K tok  |  3.27K ch/s  |  677 req  |  1% of budget  |  ETA 44h11m  |  1m08s
+12:26:05   [webdunia_gujarati]  |  183 docs  |  229.17K ch  |  ~57.29K tok  |  2.94K ch/s  |  774 req  |  1% of budget  |  ETA 49h10m  |  1m18s
+12:26:15   [webdunia_gujarati]  |  203 docs  |  238.95K ch  |  ~59.74K tok  |  2.71K ch/s  |  890 req  |  1% of budget  |  ETA 53h13m  |  1m28s
+12:26:25   [webdunia_gujarati]  |  232 docs  |  252.59K ch  |  ~63.15K tok  |  2.57K ch/s  |  1,003 req  |  1% of budget  |  ETA 56h07m  |  1m38s
+12:26:35   [webdunia_gujarati]  |  246 docs  |  261.43K ch  |  ~65.36K tok  |  2.41K ch/s  |  1,115 req  |  1% of budget  |  ETA 59h47m  |  1m48s
+12:26:45   [webdunia_gujarati]  |  278 docs  |  279.10K ch  |  ~69.78K tok  |  2.35K ch/s  |  1,232 req  |  1% of budget  |  ETA 61h18m  |  1m58s
+12:26:46   [ia_books_fulltext]  |  34 docs  |  8.96M ch  |  ~2.24M tok  |  12.21K ch/s  |  0 req  |  2% of budget  |  ETA 11h37m  |  8m58s
+12:26:55   [webdunia_gujarati]  |  288 docs  |  283.46K ch  |  ~70.86K tok  |  2.20K ch/s  |  1,344 req  |  1% of budget  |  ETA 65h29m  |  2m08s
+12:27:04 ========================================================================================
+12:27:04 ========================================================================================
+12:27:04 GUJARATI MANUAL COLLECTION   2026-08-15 12:27:04
+12:27:04 GUJARATI MANUAL COLLECTION   2026-08-15 12:27:04
+12:27:04   sources: gu_wikisource
+12:27:04   sources: layastaro
+12:27:04   target : 130.00M manual tokens (~520.00M chars)
+12:27:04   target : 130.00M manual tokens (~520.00M chars)
+12:27:04   already: 0 chars collected
+12:27:04   already: 0 chars collected
+12:27:04 ========================================================================================
+12:27:04 ========================================================================================
+12:27:04 
+--- gu_wikisource  (sitemap)  budget 60.00M chars ---
+12:27:04 
+--- layastaro  (sitemap)  budget 25.00M chars ---
+12:27:04 ========================================================================================
+12:27:04 GUJARATI MANUAL COLLECTION   2026-08-15 12:27:04
+12:27:04   sources: webdunia_gujarati
+12:27:04   target : 130.00M manual tokens (~520.00M chars)
+12:27:04   already: 282.76K chars collected
+12:27:04 ========================================================================================
+12:27:04 
+--- webdunia_gujarati  (sitemap)  budget 25.00M chars ---
+12:27:04   resuming: 287 docs / 282.76K chars already collected, 287 URLs known
+12:27:05   gu_wikisource: 0 new article URLs from sitemap
+12:27:05   [gu_wikisource]  |  0 docs  |  0 ch  |  ~0 tok  |  0 ch/s  |  2 req  |  0% of budget  |  ETA 0s  |  0s  |  DONE
+12:27:05   shard: gu_wikisource.part-1786777024-22846.jsonl.gz (0 docs / 0 chars)
+12:27:05 
+========================================================================================
+12:27:05 TOTAL 0 chars  ~0 tokens (0.0% of target) in 0s
+12:27:05 ========================================================================================
+12:27:06   layastaro: 0 new article URLs from sitemap
+12:27:06   [layastaro]  |  0 docs  |  0 ch  |  ~0 tok  |  0 ch/s  |  1 req  |  0% of budget  |  ETA 0s  |  1s  |  DONE
+12:27:06   shard: layastaro.part-1786777024-22847.jsonl.gz (0 docs / 0 chars)
+12:27:06 
+========================================================================================
+12:27:06 TOTAL 0 chars  ~0 tokens (0.0% of target) in 1s
+12:27:06 ========================================================================================
+12:27:07   webdunia_gujarati: 3,646 new article URLs from sitemap
+12:27:25   [webdunia_gujarati]  |  1 docs  |  283.56K ch  |  ~70.89K tok  |  38 ch/s  |  1,057 req  |  1% of budget  |  ETA 3791h11m  |  21s
+12:27:35   [webdunia_gujarati]  |  35 docs  |  309.15K ch  |  ~77.29K tok  |  834 ch/s  |  1,235 req  |  1% of budget  |  ETA 172h53m  |  31s
+12:27:46   [webdunia_gujarati]  |  61 docs  |  334.14K ch  |  ~83.53K tok  |  1.23K ch/s  |  1,350 req  |  1% of budget  |  ETA 117h09m  |  41s
+12:27:56   [webdunia_gujarati]  |  93 docs  |  359.25K ch  |  ~89.81K tok  |  1.47K ch/s  |  1,469 req  |  1% of budget  |  ETA 98h31m  |  52s
+12:28:06   [webdunia_gujarati]  |  101 docs  |  364.45K ch  |  ~91.11K tok  |  1.31K ch/s  |  1,571 req  |  1% of budget  |  ETA 110h28m  |  1m02s
+12:28:16   [webdunia_gujarati]  |  112 docs  |  370.02K ch  |  ~92.50K tok  |  1.20K ch/s  |  1,687 req  |  1% of budget  |  ETA 120h02m  |  1m12s
+12:28:27   [webdunia_gujarati]  |  169 docs  |  474.88K ch  |  ~118.72K tok  |  2.32K ch/s  |  1,759 req  |  2% of budget  |  ETA 62h05m  |  1m22s
+12:28:37   [webdunia_gujarati]  |  227 docs  |  589.30K ch  |  ~147.32K tok  |  3.30K ch/s  |  1,817 req  |  2% of budget  |  ETA 43h46m  |  1m33s
+12:28:47   [webdunia_gujarati]  |  283 docs  |  699.45K ch  |  ~174.86K tok  |  4.03K ch/s  |  1,873 req  |  3% of budget  |  ETA 35h49m  |  1m43s
+12:28:57   [webdunia_gujarati]  |  342 docs  |  824.00K ch  |  ~206.00K tok  |  4.76K ch/s  |  1,933 req  |  3% of budget  |  ETA 30h16m  |  1m53s
+12:29:08   [webdunia_gujarati]  |  395 docs  |  912.20K ch  |  ~228.05K tok  |  5.09K ch/s  |  1,988 req  |  4% of budget  |  ETA 28h20m  |  2m03s
+12:29:14   [ia_books_fulltext]  |  43 docs  |  10.65M ch  |  ~2.66M tok  |  12.05K ch/s  |  0 req  |  3% of budget  |  ETA 11h44m  |  11m26s
+12:29:18   [webdunia_gujarati]  |  448 docs  |  1.01M ch  |  ~253.64K tok  |  5.47K ch/s  |  2,043 req  |  4% of budget  |  ETA 26h20m  |  2m13s
+12:29:28   [webdunia_gujarati]  |  507 docs  |  1.13M ch  |  ~283.49K tok  |  5.92K ch/s  |  2,102 req  |  5% of budget  |  ETA 24h21m  |  2m23s
+12:29:38   [webdunia_gujarati]  |  562 docs  |  1.25M ch  |  ~311.35K tok  |  6.26K ch/s  |  2,158 req  |  5% of budget  |  ETA 23h01m  |  2m33s
+12:29:48   [webdunia_gujarati]  |  618 docs  |  1.36M ch  |  ~339.08K tok  |  6.54K ch/s  |  2,214 req  |  5% of budget  |  ETA 22h00m  |  2m44s
+12:29:58   [webdunia_gujarati]  |  673 docs  |  1.46M ch  |  ~365.16K tok  |  6.75K ch/s  |  2,269 req  |  6% of budget  |  ETA 21h20m  |  2m54s
+12:30:09   [webdunia_gujarati]  |  722 docs  |  1.56M ch  |  ~389.59K tok  |  6.91K ch/s  |  2,319 req  |  6% of budget  |  ETA 20h50m  |  3m04s
+12:30:19   [webdunia_gujarati]  |  776 docs  |  1.67M ch  |  ~417.14K tok  |  7.12K ch/s  |  2,373 req  |  7% of budget  |  ETA 20h13m  |  3m14s
+12:30:29   [webdunia_gujarati]  |  830 docs  |  1.77M ch  |  ~442.06K tok  |  7.24K ch/s  |  2,427 req  |  7% of budget  |  ETA 19h52m  |  3m25s
+12:30:37   [ia_books_fulltext]  |  54 docs  |  12.93M ch  |  ~3.23M tok  |  13.71K ch/s  |  0 req  |  3% of budget  |  ETA 10h16m  |  12m49s
+12:30:39   [webdunia_gujarati]  |  877 docs  |  1.87M ch  |  ~468.42K tok  |  7.39K ch/s  |  2,475 req  |  7% of budget  |  ETA 19h28m  |  3m35s
+12:30:40 ========================================================================================
+12:30:40 ========================================================================================
+12:30:40 GUJARATI MANUAL COLLECTION   2026-08-15 12:30:40
+12:30:40   sources: gu_wikisource
+12:30:40 GUJARATI MANUAL COLLECTION   2026-08-15 12:30:40
+12:30:40   sources: layastaro
+12:30:40   target : 130.00M manual tokens (~520.00M chars)
+12:30:40   target : 130.00M manual tokens (~520.00M chars)
+12:30:40   already: 0 chars collected
+12:30:40   already: 0 chars collected
+12:30:40 ========================================================================================
+12:30:40 ========================================================================================
+12:30:40 
+--- gu_wikisource  (sitemap)  budget 60.00M chars ---
+12:30:40 
+--- layastaro  (sitemap)  budget 25.00M chars ---
+12:30:40   gu_wikisource: 0 new article URLs from sitemap
+12:30:40   gu_wikisource: sitemap thin - falling back to link crawl
+12:30:40     gu_wikisource: link-crawl found 0 URLs (frontier 174)
+12:30:41   layastaro: 0 new article URLs from sitemap
+12:30:41   layastaro: sitemap thin - falling back to link crawl
+12:30:46     layastaro: link-crawl found 0 URLs (frontier 149)
+12:30:49   [webdunia_gujarati]  |  925 docs  |  1.97M ch  |  ~492.18K tok  |  7.48K ch/s  |  2,523 req  |  8% of budget  |  ETA 19h14m  |  3m45s
+12:30:59   [webdunia_gujarati]  |  971 docs  |  2.06M ch  |  ~514.01K tok  |  7.53K ch/s  |  2,570 req  |  8% of budget  |  ETA 19h05m  |  3m55s
+12:31:09   [webdunia_gujarati]  |  1,015 docs  |  2.13M ch  |  ~533.21K tok  |  7.54K ch/s  |  2,615 req  |  9% of budget  |  ETA 19h04m  |  4m05s
+12:31:19   [webdunia_gujarati]  |  1,072 docs  |  2.23M ch  |  ~558.47K tok  |  7.64K ch/s  |  2,672 req  |  9% of budget  |  ETA 18h49m  |  4m15s
+12:31:25     gu_wikisource: link-crawl found 205 URLs (frontier 10,758)
+12:31:30   [webdunia_gujarati]  |  1,126 docs  |  2.34M ch  |  ~586.24K tok  |  7.76K ch/s  |  2,726 req  |  9% of budget  |  ETA 18h31m  |  4m25s
+12:31:40   [webdunia_gujarati]  |  1,179 docs  |  2.45M ch  |  ~612.19K tok  |  7.85K ch/s  |  2,779 req  |  10% of budget  |  ETA 18h18m  |  4m35s
+12:31:43   [ia_books_fulltext]  |  67 docs  |  15.66M ch  |  ~3.91M tok  |  15.89K ch/s  |  0 req  |  4% of budget  |  ETA 8h48m  |  13m55s
+12:31:50   [webdunia_gujarati]  |  1,232 docs  |  2.55M ch  |  ~638.06K tok  |  7.94K ch/s  |  2,832 req  |  10% of budget  |  ETA 18h06m  |  4m45s
+12:32:00   [webdunia_gujarati]  |  1,281 docs  |  2.65M ch  |  ~662.52K tok  |  8.00K ch/s  |  2,881 req  |  11% of budget  |  ETA 17h57m  |  4m55s
+12:32:03     gu_wikisource: link-crawl found 402 URLs (frontier 13,787)
+12:32:10   [webdunia_gujarati]  |  1,328 docs  |  2.73M ch  |  ~682.92K tok  |  8.01K ch/s  |  2,928 req  |  11% of budget  |  ETA 17h56m  |  5m05s
+12:32:20   [webdunia_gujarati]  |  1,378 docs  |  2.83M ch  |  ~707.04K tok  |  8.06K ch/s  |  2,978 req  |  11% of budget  |  ETA 17h50m  |  5m15s
+12:32:30   [webdunia_gujarati]  |  1,431 docs  |  2.93M ch  |  ~731.77K tok  |  8.10K ch/s  |  3,031 req  |  12% of budget  |  ETA 17h44m  |  5m26s
+12:32:41   [webdunia_gujarati]  |  1,483 docs  |  3.03M ch  |  ~756.59K tok  |  8.15K ch/s  |  3,083 req  |  12% of budget  |  ETA 17h37m  |  5m36s
+12:32:46     gu_wikisource: link-crawl found 601 URLs (frontier 17,903)
+12:32:51   [webdunia_gujarati]  |  1,535 docs  |  3.12M ch  |  ~780.12K tok  |  8.18K ch/s  |  3,135 req  |  12% of budget  |  ETA 17h33m  |  5m47s
+12:33:01   [webdunia_gujarati]  |  1,585 docs  |  3.22M ch  |  ~804.43K tok  |  8.21K ch/s  |  3,185 req  |  13% of budget  |  ETA 17h29m  |  5m57s
+12:33:11   [webdunia_gujarati]  |  1,637 docs  |  3.31M ch  |  ~828.73K tok  |  8.25K ch/s  |  3,237 req  |  13% of budget  |  ETA 17h23m  |  6m07s
+12:33:22   [webdunia_gujarati]  |  1,689 docs  |  3.41M ch  |  ~852.06K tok  |  8.27K ch/s  |  3,289 req  |  14% of budget  |  ETA 17h20m  |  6m17s
+12:33:32     gu_wikisource: link-crawl found 802 URLs (frontier 21,291)
+12:33:32   [webdunia_gujarati]  |  1,740 docs  |  3.50M ch  |  ~875.89K tok  |  8.29K ch/s  |  3,341 req  |  14% of budget  |  ETA 17h18m  |  6m28s
+12:33:42   [webdunia_gujarati]  |  1,793 docs  |  3.61M ch  |  ~901.45K tok  |  8.34K ch/s  |  3,393 req  |  14% of budget  |  ETA 17h12m  |  6m38s
+12:33:52   [webdunia_gujarati]  |  1,840 docs  |  3.70M ch  |  ~925.91K tok  |  8.37K ch/s  |  3,440 req  |  15% of budget  |  ETA 17h07m  |  6m48s
+12:33:53     layastaro: link-crawl found 200 URLs (frontier 3,839)
+12:33:58   [ia_books_fulltext]  |  76 docs  |  17.57M ch  |  ~4.39M tok  |  15.66K ch/s  |  0 req  |  4% of budget  |  ETA 8h54m  |  16m10s
+12:34:04   [webdunia_gujarati]  |  1,881 docs  |  3.79M ch  |  ~946.93K tok  |  8.34K ch/s  |  3,481 req  |  15% of budget  |  ETA 17h11m  |  7m00s
+12:34:14   [webdunia_gujarati]  |  1,936 docs  |  3.90M ch  |  ~975.39K tok  |  8.41K ch/s  |  3,536 req  |  16% of budget  |  ETA 17h02m  |  7m10s
+12:34:22     gu_wikisource: link-crawl found 1,005 URLs (frontier 24,162)
+12:34:24   [webdunia_gujarati]  |  1,986 docs  |  4.00M ch  |  ~999.36K tok  |  8.44K ch/s  |  3,586 req  |  16% of budget  |  ETA 16h58m  |  7m20s
+12:34:34   [webdunia_gujarati]  |  2,028 docs  |  4.07M ch  |  ~1.02M tok  |  8.42K ch/s  |  3,628 req  |  16% of budget  |  ETA 17h01m  |  7m30s
+12:34:41   [webdunia_gujarati]  |  2,055 docs  |  4.12M ch  |  ~1.03M tok  |  8.40K ch/s  |  3,655 req  |  16% of budget  |  ETA 17h03m  |  7m37s  |  DONE
+12:34:41        rejected: too-short x1,565, latin-heavy x13, not-gujarati x9, devanagari-leak x2, no-text-extracted x1
+12:34:41   shard: webdunia_gujarati.part-1786777024-22848.jsonl.gz (2,055 docs / 3.84M chars)
+12:34:41 
+========================================================================================
+12:34:41 TOTAL 4.12M chars  ~1.03M tokens (0.8% of target) in 7m37s
+12:34:41 ========================================================================================
+12:34:50   [ia_books_fulltext]  |  93 docs  |  21.52M ch  |  ~5.38M tok  |  18.72K ch/s  |  0 req  |  5% of budget  |  ETA 7h23m  |  17m02s
+12:35:10     gu_wikisource: link-crawl found 1,207 URLs (frontier 26,557)
+12:35:42   [ia_books_fulltext]  |  100 docs  |  22.79M ch  |  ~5.70M tok  |  19.00K ch/s  |  0 req  |  6% of budget  |  ETA 7h16m  |  17m54s
+12:35:46     gu_wikisource: link-crawl found 1,402 URLs (frontier 29,378)
+12:36:21     gu_wikisource: link-crawl found 1,600 URLs (frontier 30,651)
+12:37:00     gu_wikisource: link-crawl found 1,804 URLs (frontier 31,932)
+12:37:02   [ia_books_fulltext]  |  107 docs  |  24.33M ch  |  ~6.08M tok  |  19.01K ch/s  |  0 req  |  6% of budget  |  ETA 7h14m  |  19m15s
+12:37:36   [ia_books_fulltext]  |  112 docs  |  25.35M ch  |  ~6.34M tok  |  19.32K ch/s  |  0 req  |  6% of budget  |  ETA 7h06m  |  19m48s
+12:37:41     layastaro: link-crawl found 400 URLs (frontier 4,518)
+12:37:42     gu_wikisource: link-crawl found 2,004 URLs (frontier 33,141)
+12:38:18     gu_wikisource: link-crawl found 2,204 URLs (frontier 34,335)
+12:38:37   [ia_books_fulltext]  |  116 docs  |  25.89M ch  |  ~6.47M tok  |  18.81K ch/s  |  0 req  |  6% of budget  |  ETA 7h17m  |  20m49s
+12:38:54     gu_wikisource: link-crawl found 2,403 URLs (frontier 35,543)
+12:39:26   [ia_books_fulltext]  |  121 docs  |  26.80M ch  |  ~6.70M tok  |  18.80K ch/s  |  0 req  |  7% of budget  |  ETA 7h17m  |  21m38s
+12:39:27     gu_wikisource: link-crawl found 2,603 URLs (frontier 36,724)
+12:39:48   [ia_books_fulltext]  |  127 docs  |  27.55M ch  |  ~6.89M tok  |  19.06K ch/s  |  0 req  |  7% of budget  |  ETA 7h10m  |  22m00s
+12:40:05     gu_wikisource: link-crawl found 2,803 URLs (frontier 37,861)
+12:40:22   [ia_books_fulltext]  |  128 docs  |  27.77M ch  |  ~6.94M tok  |  18.75K ch/s  |  0 req  |  7% of budget  |  ETA 7h17m  |  22m34s
+12:40:40     gu_wikisource: link-crawl found 3,003 URLs (frontier 39,038)
+12:41:09     layastaro: link-crawl found 600 URLs (frontier 5,208)
+12:41:15     gu_wikisource: link-crawl found 3,203 URLs (frontier 40,233)
+12:41:50     gu_wikisource: link-crawl found 3,403 URLs (frontier 41,406)
+12:42:29     gu_wikisource: link-crawl found 3,603 URLs (frontier 42,613)
+12:42:40   [ia_books_fulltext]  |  134 docs  |  28.28M ch  |  ~7.07M tok  |  17.35K ch/s  |  0 req  |  7% of budget  |  ETA 7h52m  |  24m52s
+12:43:04     gu_wikisource: link-crawl found 3,803 URLs (frontier 43,726)
+12:43:47     gu_wikisource: link-crawl found 4,003 URLs (frontier 44,869)
+12:44:17     layastaro: link-crawl found 800 URLs (frontier 5,717)
+12:44:25     gu_wikisource: link-crawl found 4,203 URLs (frontier 46,105)
+12:45:00     gu_wikisource: link-crawl found 4,403 URLs (frontier 47,282)
+12:45:31     gu_wikisource: link-crawl found 4,603 URLs (frontier 48,492)
+12:45:34   [ia_books_fulltext]  |  146 docs  |  30.88M ch  |  ~7.72M tok  |  17.10K ch/s  |  0 req  |  8% of budget  |  ETA 7h56m  |  27m46s
+12:45:44   [ia_books_fulltext]  |  158 docs  |  33.62M ch  |  ~8.40M tok  |  18.63K ch/s  |  0 req  |  8% of budget  |  ETA 7h15m  |  27m56s
+12:46:01     gu_wikisource: link-crawl found 4,803 URLs (frontier 49,674)
+12:46:37     gu_wikisource: link-crawl found 5,003 URLs (frontier 50,872)
+12:46:39     layastaro: link-crawl found 1,000 URLs (frontier 6,127)
+12:46:53   [ia_books_fulltext]  |  161 docs  |  33.73M ch  |  ~8.43M tok  |  17.96K ch/s  |  0 req  |  8% of budget  |  ETA 7h31m  |  29m05s
+12:47:05   [ia_books_fulltext]  |  167 docs  |  34.43M ch  |  ~8.61M tok  |  18.24K ch/s  |  0 req  |  9% of budget  |  ETA 7h23m  |  29m17s
+12:47:09     gu_wikisource: link-crawl found 5,203 URLs (frontier 52,127)
+12:47:22   [ia_books_fulltext]  |  171 docs  |  34.56M ch  |  ~8.64M tok  |  18.14K ch/s  |  0 req  |  9% of budget  |  ETA 7h25m  |  29m34s
+12:47:49     gu_wikisource: link-crawl found 5,403 URLs (frontier 53,331)
+12:48:19   [ia_books_fulltext]  |  177 docs  |  35.11M ch  |  ~8.78M tok  |  17.87K ch/s  |  0 req  |  9% of budget  |  ETA 7h32m  |  30m31s
+12:48:28     gu_wikisource: link-crawl found 5,603 URLs (frontier 54,533)
+12:49:13     gu_wikisource: link-crawl found 5,803 URLs (frontier 55,741)
+12:49:27     layastaro: link-crawl found 1,200 URLs (frontier 6,414)
+12:50:50   [ia_books_fulltext]  |  181 docs  |  35.51M ch  |  ~8.88M tok  |  16.71K ch/s  |  0 req  |  9% of budget  |  ETA 8h03m  |  33m02s
+12:51:11   [ia_books_fulltext]  |  188 docs  |  36.53M ch  |  ~9.13M tok  |  17.04K ch/s  |  0 req  |  9% of budget  |  ETA 7h52m  |  33m23s
+12:51:37     layastaro: link-crawl found 1,400 URLs (frontier 6,700)
+12:53:54     layastaro: link-crawl found 1,607 URLs (frontier 7,037)
+12:54:56   [ia_books_fulltext]  |  196 docs  |  38.09M ch  |  ~9.52M tok  |  16.02K ch/s  |  0 req  |  10% of budget  |  ETA 8h21m  |  37m08s
+12:55:50     layastaro: link-crawl found 1,807 URLs (frontier 7,111)
+12:57:58     layastaro: link-crawl found 2,007 URLs (frontier 7,202)
+12:58:55   [ia_books_fulltext]  |  208 docs  |  41.04M ch  |  ~10.26M tok  |  15.66K ch/s  |  0 req  |  10% of budget  |  ETA 8h29m  |  41m07s
+12:59:10   [ia_books_fulltext]  |  215 docs  |  42.71M ch  |  ~10.68M tok  |  16.24K ch/s  |  0 req  |  11% of budget  |  ETA 8h09m  |  41m22s
+12:59:35   [ia_books_fulltext]  |  219 docs  |  42.81M ch  |  ~10.70M tok  |  16.13K ch/s  |  0 req  |  11% of budget  |  ETA 8h13m  |  41m47s
+12:59:55     layastaro: link-crawl found 2,207 URLs (frontier 7,291)
+13:00:19   [ia_books_fulltext]  |  221 docs  |  43.10M ch  |  ~10.77M tok  |  15.96K ch/s  |  0 req  |  11% of budget  |  ETA 8h18m  |  42m31s
+13:00:52   [ia_books_fulltext]  |  226 docs  |  43.74M ch  |  ~10.94M tok  |  16.00K ch/s  |  0 req  |  11% of budget  |  ETA 8h15m  |  43m04s
+13:01:38   [ia_books_fulltext]  |  229 docs  |  44.20M ch  |  ~11.05M tok  |  15.90K ch/s  |  0 req  |  11% of budget  |  ETA 8h18m  |  43m50s
+13:01:57     layastaro: link-crawl found 2,407 URLs (frontier 7,367)
+13:02:36   [ia_books_fulltext]  |  233 docs  |  44.87M ch  |  ~11.22M tok  |  15.81K ch/s  |  0 req  |  11% of budget  |  ETA 8h21m  |  44m48s
+13:03:21   [ia_books_fulltext]  |  243 docs  |  46.86M ch  |  ~11.71M tok  |  16.27K ch/s  |  0 req  |  12% of budget  |  ETA 8h04m  |  45m34s
+13:03:42   [ia_books_fulltext]  |  249 docs  |  47.26M ch  |  ~11.82M tok  |  16.29K ch/s  |  0 req  |  12% of budget  |  ETA 8h03m  |  45m54s
+13:04:05     layastaro: link-crawl found 2,607 URLs (frontier 7,595)
+13:04:21   [ia_books_fulltext]  |  251 docs  |  47.51M ch  |  ~11.88M tok  |  16.16K ch/s  |  0 req  |  12% of budget  |  ETA 8h07m  |  46m33s
+13:05:56     layastaro: link-crawl found 2,807 URLs (frontier 7,996)
+13:07:34     layastaro: link-crawl found 3,007 URLs (frontier 8,384)
+13:07:46   [ia_books_fulltext]  |  257 docs  |  48.31M ch  |  ~12.08M tok  |  15.32K ch/s  |  0 req  |  12% of budget  |  ETA 8h33m  |  49m58s
+13:08:13   [ia_books_fulltext]  |  268 docs  |  50.44M ch  |  ~12.61M tok  |  15.89K ch/s  |  0 req  |  13% of budget  |  ETA 8h12m  |  50m25s
+13:09:34     layastaro: link-crawl found 3,207 URLs (frontier 8,820)
+13:10:00   [ia_books_fulltext]  |  275 docs  |  51.04M ch  |  ~12.76M tok  |  15.54K ch/s  |  0 req  |  13% of budget  |  ETA 8h23m  |  52m12s
+13:10:11   [ia_books_fulltext]  |  284 docs  |  52.47M ch  |  ~13.12M tok  |  15.93K ch/s  |  0 req  |  13% of budget  |  ETA 8h09m  |  52m23s
+13:10:23   [ia_books_fulltext]  |  288 docs  |  52.83M ch  |  ~13.21M tok  |  15.99K ch/s  |  0 req  |  13% of budget  |  ETA 8h07m  |  52m35s
+13:12:03     layastaro: link-crawl found 3,407 URLs (frontier 9,219)
+13:13:34   [ia_books_fulltext]  |  293 docs  |  53.28M ch  |  ~13.32M tok  |  15.21K ch/s  |  0 req  |  13% of budget  |  ETA 8h31m  |  55m46s
+13:13:46   [ia_books_fulltext]  |  304 docs  |  55.46M ch  |  ~13.86M tok  |  15.80K ch/s  |  0 req  |  14% of budget  |  ETA 8h09m  |  55m58s
+13:14:00   [ia_books_fulltext]  |  309 docs  |  55.81M ch  |  ~13.95M tok  |  15.84K ch/s  |  0 req  |  14% of budget  |  ETA 8h08m  |  56m12s
+13:14:13     layastaro: link-crawl found 3,607 URLs (frontier 9,608)
+13:15:54   [ia_books_fulltext]  |  314 docs  |  56.09M ch  |  ~14.02M tok  |  15.41K ch/s  |  0 req  |  14% of budget  |  ETA 8h21m  |  58m06s
+13:17:14     layastaro: link-crawl found 3,805 URLs (frontier 9,752)
+13:17:56   [ia_books_fulltext]  |  321 docs  |  56.78M ch  |  ~14.20M tok  |  15.08K ch/s  |  0 req  |  14% of budget  |  ETA 8h32m  |  1h00m
+13:18:18   [ia_books_fulltext]  |  330 docs  |  58.12M ch  |  ~14.53M tok  |  15.35K ch/s  |  0 req  |  15% of budget  |  ETA 8h21m  |  1h00m
+13:18:55   [ia_books_fulltext]  |  337 docs  |  58.49M ch  |  ~14.62M tok  |  15.30K ch/s  |  0 req  |  15% of budget  |  ETA 8h22m  |  1h01m
+13:19:32     layastaro: link-crawl found 4,005 URLs (frontier 9,552)
+13:20:58   [ia_books_fulltext]  |  342 docs  |  59.07M ch  |  ~14.77M tok  |  14.96K ch/s  |  0 req  |  15% of budget  |  ETA 8h33m  |  1h03m
+13:22:11     layastaro: link-crawl found 4,205 URLs (frontier 9,352)
+13:24:05     layastaro: link-crawl found 4,405 URLs (frontier 9,152)
+13:24:48   [ia_books_fulltext]  |  359 docs  |  63.46M ch  |  ~15.86M tok  |  15.19K ch/s  |  0 req  |  16% of budget  |  ETA 8h20m  |  1h07m
+13:26:12     layastaro: link-crawl found 4,605 URLs (frontier 8,952)
+13:27:11   [ia_books_fulltext]  |  375 docs  |  66.74M ch  |  ~16.69M tok  |  15.46K ch/s  |  0 req  |  17% of budget  |  ETA 8h08m  |  1h09m
+13:28:25     layastaro: link-crawl found 4,805 URLs (frontier 8,752)
+13:28:39   [ia_books_fulltext]  |  389 docs  |  69.90M ch  |  ~17.47M tok  |  15.88K ch/s  |  0 req  |  17% of budget  |  ETA 7h52m  |  1h10m
+13:29:29   [ia_books_fulltext]  |  394 docs  |  70.99M ch  |  ~17.75M tok  |  15.95K ch/s  |  0 req  |  18% of budget  |  ETA 7h49m  |  1h11m
+13:30:21     layastaro: link-crawl found 5,005 URLs (frontier 8,552)
+13:31:22   [ia_books_fulltext]  |  405 docs  |  73.39M ch  |  ~18.35M tok  |  16.09K ch/s  |  0 req  |  18% of budget  |  ETA 7h42m  |  1h13m
+13:32:09     layastaro: link-crawl found 5,205 URLs (frontier 8,352)
+13:33:01   [ia_books_fulltext]  |  427 docs  |  78.51M ch  |  ~19.63M tok  |  16.87K ch/s  |  0 req  |  20% of budget  |  ETA 7h16m  |  1h15m
+13:33:47     layastaro: link-crawl found 5,405 URLs (frontier 8,152)
+13:35:38   [ia_books_fulltext]  |  453 docs  |  84.86M ch  |  ~21.21M tok  |  17.66K ch/s  |  0 req  |  21% of budget  |  ETA 6h50m  |  1h17m
+13:35:44     layastaro: link-crawl found 5,604 URLs (frontier 7,952)
+13:37:21   [ia_books_fulltext]  |  468 docs  |  88.65M ch  |  ~22.16M tok  |  18.07K ch/s  |  0 req  |  22% of budget  |  ETA 6h37m  |  1h19m
+13:37:43     layastaro: link-crawl found 5,803 URLs (frontier 7,744)
+13:39:46     layastaro: link-crawl found 6,000 URLs (frontier 7,504)
+13:41:14   [ia_books_fulltext]  |  488 docs  |  93.51M ch  |  ~23.38M tok  |  18.20K ch/s  |  0 req  |  23% of budget  |  ETA 6h30m  |  1h23m
+13:41:38   [ia_books_fulltext]  |  500 docs  |  96.21M ch  |  ~24.05M tok  |  18.65K ch/s  |  0 req  |  24% of budget  |  ETA 6h18m  |  1h23m
+13:41:41     layastaro: link-crawl found 6,205 URLs (frontier 7,264)
+13:41:55   [ia_books_fulltext]  |  513 docs  |  96.89M ch  |  ~24.22M tok  |  18.72K ch/s  |  0 req  |  24% of budget  |  ETA 6h16m  |  1h24m
+13:42:06   [ia_books_fulltext]  |  516 docs  |  96.96M ch  |  ~24.24M tok  |  18.70K ch/s  |  0 req  |  24% of budget  |  ETA 6h17m  |  1h24m
+13:42:18   [ia_books_fulltext]  |  521 docs  |  97.13M ch  |  ~24.28M tok  |  18.69K ch/s  |  0 req  |  24% of budget  |  ETA 6h17m  |  1h24m
+13:42:58   [ia_books_fulltext]  |  527 docs  |  97.28M ch  |  ~24.32M tok  |  18.57K ch/s  |  0 req  |  24% of budget  |  ETA 6h19m  |  1h25m
+13:43:07     layastaro: link-crawl found 6,402 URLs (frontier 6,992)
+13:44:50   [ia_books_fulltext]  |  533 docs  |  98.01M ch  |  ~24.50M tok  |  18.31K ch/s  |  0 req  |  25% of budget  |  ETA 6h24m  |  1h27m
+13:45:00     layastaro: link-crawl found 6,602 URLs (frontier 6,768)
+13:45:02     layastaro: link-crawl found 6,607 URLs (frontier 6,760)
+13:45:08   [ia_books_fulltext]  |  545 docs  |  100.98M ch  |  ~25.25M tok  |  18.82K ch/s  |  0 req  |  25% of budget  |  ETA 6h11m  |  1h27m
+13:45:28   [ia_books_fulltext]  |  550 docs  |  101.11M ch  |  ~25.28M tok  |  18.77K ch/s  |  0 req  |  25% of budget  |  ETA 6h11m  |  1h27m
+13:45:44   [ia_books_fulltext]  |  558 docs  |  101.57M ch  |  ~25.39M tok  |  18.80K ch/s  |  0 req  |  25% of budget  |  ETA 6h10m  |  1h27m
+13:46:09   [ia_books_fulltext]  |  565 docs  |  102.01M ch  |  ~25.50M tok  |  18.79K ch/s  |  0 req  |  26% of budget  |  ETA 6h10m  |  1h28m
+13:47:15   [ia_books_fulltext]  |  568 docs  |  102.72M ch  |  ~25.68M tok  |  18.69K ch/s  |  0 req  |  26% of budget  |  ETA 6h12m  |  1h29m
+13:47:44   [ia_books_fulltext]  |  572 docs  |  103.52M ch  |  ~25.88M tok  |  18.74K ch/s  |  0 req  |  26% of budget  |  ETA 6h10m  |  1h29m
+13:48:09     layastaro: link-crawl found 6,801 URLs (frontier 6,544)
+13:48:10     layastaro: link-crawl found 6,806 URLs (frontier 6,536)
+13:48:23   [ia_books_fulltext]  |  574 docs  |  103.84M ch  |  ~25.96M tok  |  18.66K ch/s  |  0 req  |  26% of budget  |  ETA 6h11m  |  1h30m
+13:49:45     layastaro: link-crawl found 7,003 URLs (frontier 6,264)
+13:50:17   [ia_books_fulltext]  |  576 docs  |  104.32M ch  |  ~26.08M tok  |  18.37K ch/s  |  0 req  |  26% of budget  |  ETA 6h17m  |  1h32m
+13:50:34   [ia_books_fulltext]  |  594 docs  |  108.48M ch  |  ~27.12M tok  |  19.06K ch/s  |  0 req  |  27% of budget  |  ETA 5h59m  |  1h32m
+13:50:49   [ia_books_fulltext]  |  602 docs  |  109.34M ch  |  ~27.33M tok  |  19.16K ch/s  |  0 req  |  27% of budget  |  ETA 5h57m  |  1h33m
+13:51:15     layastaro: link-crawl found 7,201 URLs (frontier 6,000)
+13:51:19     layastaro: link-crawl found 7,207 URLs (frontier 5,992)
+13:52:46   [ia_books_fulltext]  |  610 docs  |  109.92M ch  |  ~27.48M tok  |  18.87K ch/s  |  0 req  |  27% of budget  |  ETA 6h02m  |  1h34m
+13:53:13     layastaro: link-crawl found 7,404 URLs (frontier 5,744)
+13:54:47   [ia_books_fulltext]  |  625 docs  |  114.01M ch  |  ~28.50M tok  |  19.18K ch/s  |  0 req  |  29% of budget  |  ETA 5h52m  |  1h36m
+13:54:47     layastaro: link-crawl found 7,604 URLs (frontier 5,456)
+13:56:26     layastaro: link-crawl found 7,801 URLs (frontier 5,192)
+13:56:29     layastaro: link-crawl found 7,806 URLs (frontier 5,184)
+13:57:39   [ia_books_fulltext]  |  637 docs  |  116.60M ch  |  ~29.15M tok  |  19.06K ch/s  |  0 req  |  29% of budget  |  ETA 5h52m  |  1h39m
+13:58:43   [ia_books_fulltext]  |  647 docs  |  118.89M ch  |  ~29.72M tok  |  19.24K ch/s  |  0 req  |  30% of budget  |  ETA 5h47m  |  1h40m
+13:58:47     layastaro: link-crawl found 8,004 URLs (frontier 4,928)
+13:59:16   [ia_books_fulltext]  |  653 docs  |  119.62M ch  |  ~29.90M tok  |  19.26K ch/s  |  0 req  |  30% of budget  |  ETA 5h46m  |  1h41m
+14:00:18   [ia_books_fulltext]  |  656 docs  |  119.72M ch  |  ~29.93M tok  |  19.08K ch/s  |  0 req  |  30% of budget  |  ETA 5h49m  |  1h42m
+14:00:36   [ia_books_fulltext]  |  664 docs  |  120.39M ch  |  ~30.10M tok  |  19.13K ch/s  |  0 req  |  30% of budget  |  ETA 5h48m  |  1h42m
+14:01:27     layastaro: link-crawl found 8,204 URLs (frontier 4,728)
+14:01:43   [ia_books_fulltext]  |  671 docs  |  120.83M ch  |  ~30.21M tok  |  18.99K ch/s  |  0 req  |  30% of budget  |  ETA 5h50m  |  1h43m
+14:02:18   [ia_books_fulltext]  |  685 docs  |  123.40M ch  |  ~30.85M tok  |  19.30K ch/s  |  0 req  |  31% of budget  |  ETA 5h42m  |  1h44m
+14:02:40   [ia_books_fulltext]  |  692 docs  |  123.99M ch  |  ~31.00M tok  |  19.33K ch/s  |  0 req  |  31% of budget  |  ETA 5h41m  |  1h44m
+14:04:25     layastaro: link-crawl found 8,404 URLs (frontier 4,528)
+14:06:42   [ia_books_fulltext]  |  700 docs  |  124.52M ch  |  ~31.13M tok  |  18.69K ch/s  |  0 req  |  31% of budget  |  ETA 5h52m  |  1h48m
+14:07:10   [ia_books_fulltext]  |  713 docs  |  127.03M ch  |  ~31.76M tok  |  18.99K ch/s  |  0 req  |  32% of budget  |  ETA 5h44m  |  1h49m
+14:07:24   [ia_books_fulltext]  |  720 docs  |  127.53M ch  |  ~31.88M tok  |  19.03K ch/s  |  0 req  |  32% of budget  |  ETA 5h43m  |  1h49m
+14:07:28     layastaro: link-crawl found 8,604 URLs (frontier 4,328)
+14:10:25     layastaro: link-crawl found 8,804 URLs (frontier 4,128)
+14:11:23   [ia_books_fulltext]  |  728 docs  |  128.18M ch  |  ~32.04M tok  |  18.46K ch/s  |  0 req  |  32% of budget  |  ETA 5h53m  |  1h53m
+14:13:32     layastaro: link-crawl found 9,004 URLs (frontier 3,928)
+14:14:46   [ia_books_fulltext]  |  737 docs  |  130.34M ch  |  ~32.59M tok  |  18.23K ch/s  |  0 req  |  33% of budget  |  ETA 5h56m  |  1h56m
+14:15:14   [ia_books_fulltext]  |  759 docs  |  136.28M ch  |  ~34.07M tok  |  19.00K ch/s  |  0 req  |  34% of budget  |  ETA 5h36m  |  1h57m
+14:15:41     layastaro: link-crawl found 9,204 URLs (frontier 3,728)
+14:15:55   [ia_books_fulltext]  |  768 docs  |  137.60M ch  |  ~34.40M tok  |  19.08K ch/s  |  0 req  |  34% of budget  |  ETA 5h34m  |  1h58m
+14:16:32   [ia_books_fulltext]  |  773 docs  |  138.57M ch  |  ~34.64M tok  |  19.12K ch/s  |  0 req  |  35% of budget  |  ETA 5h32m  |  1h58m
+14:16:45   [ia_books_fulltext]  |  779 docs  |  139.35M ch  |  ~34.84M tok  |  19.19K ch/s  |  0 req  |  35% of budget  |  ETA 5h30m  |  1h58m
+14:17:22     layastaro: link-crawl found 9,403 URLs (frontier 3,496)
+14:17:41   [ia_books_fulltext]  |  783 docs  |  139.48M ch  |  ~34.87M tok  |  19.06K ch/s  |  0 req  |  35% of budget  |  ETA 5h32m  |  1h59m
+14:18:27   [ia_books_fulltext]  |  791 docs  |  140.47M ch  |  ~35.12M tok  |  19.08K ch/s  |  0 req  |  35% of budget  |  ETA 5h31m  |  2h00m
+14:18:37     layastaro: link-crawl found 9,602 URLs (frontier 3,200)
+14:20:06   [ia_books_fulltext]  |  798 docs  |  141.37M ch  |  ~35.34M tok  |  18.94K ch/s  |  0 req  |  35% of budget  |  ETA 5h33m  |  2h02m
+14:20:29     layastaro: link-crawl found 9,803 URLs (frontier 2,904)
+14:20:50   [ia_books_fulltext]  |  806 docs  |  142.72M ch  |  ~35.68M tok  |  19.01K ch/s  |  0 req  |  36% of budget  |  ETA 5h30m  |  2h03m
+14:21:01   [ia_books_fulltext]  |  812 docs  |  142.99M ch  |  ~35.75M tok  |  19.02K ch/s  |  0 req  |  36% of budget  |  ETA 5h30m  |  2h03m
+14:21:13   [ia_books_fulltext]  |  816 docs  |  143.11M ch  |  ~35.78M tok  |  19.00K ch/s  |  0 req  |  36% of budget  |  ETA 5h30m  |  2h03m
+14:22:02     layastaro: link-crawl found 10,000 URLs (frontier 2,616)
+14:22:04     layastaro: link-crawl found 10,006 URLs (frontier 2,608)
+14:22:16   [ia_books_fulltext]  |  821 docs  |  143.34M ch  |  ~35.84M tok  |  18.87K ch/s  |  0 req  |  36% of budget  |  ETA 5h32m  |  2h04m
+14:22:49   [ia_books_fulltext]  |  828 docs  |  144.02M ch  |  ~36.00M tok  |  18.88K ch/s  |  0 req  |  36% of budget  |  ETA 5h31m  |  2h05m
+14:23:37     layastaro: link-crawl found 10,203 URLs (frontier 2,320)
+14:24:02   [ia_books_fulltext]  |  834 docs  |  144.72M ch  |  ~36.18M tok  |  18.79K ch/s  |  0 req  |  36% of budget  |  ETA 5h32m  |  2h06m
+14:24:36   [ia_books_fulltext]  |  835 docs  |  144.88M ch  |  ~36.22M tok  |  18.73K ch/s  |  0 req  |  36% of budget  |  ETA 5h33m  |  2h06m
+14:25:03     layastaro: link-crawl found 10,401 URLs (frontier 2,032)
+14:25:05     layastaro: link-crawl found 10,406 URLs (frontier 2,024)
+14:25:25   [ia_books_fulltext]  |  842 docs  |  145.45M ch  |  ~36.36M tok  |  18.68K ch/s  |  0 req  |  36% of budget  |  ETA 5h34m  |  2h07m
+14:26:42     layastaro: link-crawl found 10,604 URLs (frontier 1,744)
+14:28:16     layastaro: link-crawl found 10,801 URLs (frontier 1,464)
+14:28:17     layastaro: link-crawl found 10,807 URLs (frontier 1,456)
+14:29:38     layastaro: link-crawl found 11,002 URLs (frontier 1,168)
+14:30:32   [ia_books_fulltext]  |  846 docs  |  145.94M ch  |  ~36.49M tok  |  18.03K ch/s  |  0 req  |  36% of budget  |  ETA 5h45m  |  2h12m
+14:31:12     layastaro: link-crawl found 11,200 URLs (frontier 888)
+14:31:13     layastaro: link-crawl found 11,206 URLs (frontier 880)
+14:31:20   [ia_books_fulltext]  |  851 docs  |  146.84M ch  |  ~36.71M tok  |  18.03K ch/s  |  0 req  |  37% of budget  |  ETA 5h44m  |  2h13m
+14:31:47   [ia_books_fulltext]  |  855 docs  |  147.23M ch  |  ~36.81M tok  |  18.02K ch/s  |  0 req  |  37% of budget  |  ETA 5h44m  |  2h13m
+14:32:14   [ia_books_fulltext]  |  856 docs  |  147.53M ch  |  ~36.88M tok  |  17.99K ch/s  |  0 req  |  37% of budget  |  ETA 5h44m  |  2h14m
+14:32:29     layastaro: link-crawl found 11,402 URLs (frontier 592)
+14:33:53     layastaro: link-crawl found 11,600 URLs (frontier 304)
+14:33:55     layastaro: link-crawl found 11,605 URLs (frontier 296)
+14:34:00   [ia_books_fulltext]  |  858 docs  |  147.98M ch  |  ~37.00M tok  |  17.82K ch/s  |  0 req  |  37% of budget  |  ETA 5h48m  |  2h16m
+14:35:13     layastaro: link-crawl found 11,803 URLs (frontier 0)
+14:35:13   layastaro: 11,803 new article URLs after link crawl
+14:35:16   [layastaro]  |  1 docs  |  6.17K ch  |  ~1.54K tok  |  0 ch/s  |  13,579 req  |  0% of budget  |  ETA 174975h17m  |  2h04m
+14:35:27   [layastaro]  |  15 docs  |  32.16K ch  |  ~8.04K tok  |  4 ch/s  |  13,594 req  |  0% of budget  |  ETA 33627h31m  |  2h04m
+14:35:38   [layastaro]  |  29 docs  |  74.58K ch  |  ~18.65K tok  |  9 ch/s  |  13,608 req  |  0% of budget  |  ETA 14519h56m  |  2h04m
+14:35:48   [layastaro]  |  40 docs  |  99.35K ch  |  ~24.84K tok  |  13 ch/s  |  13,619 req  |  0% of budget  |  ETA 10915h28m  |  2h05m
+14:36:00   [layastaro]  |  57 docs  |  134.24K ch  |  ~33.56K tok  |  17 ch/s  |  13,636 req  |  1% of budget  |  ETA 8089h41m  |  2h05m
+14:36:10   [layastaro]  |  72 docs  |  158.47K ch  |  ~39.62K tok  |  21 ch/s  |  13,651 req  |  1% of budget  |  ETA 6862h09m  |  2h05m
+14:36:20   [layastaro]  |  87 docs  |  205.73K ch  |  ~51.43K tok  |  27 ch/s  |  13,666 req  |  1% of budget  |  ETA 5292h14m  |  2h05m
+14:36:31   [layastaro]  |  103 docs  |  254.53K ch  |  ~63.63K tok  |  33 ch/s  |  13,682 req  |  1% of budget  |  ETA 4283h14m  |  2h05m
+14:36:41   [layastaro]  |  113 docs  |  283.89K ch  |  ~70.97K tok  |  37 ch/s  |  13,692 req  |  1% of budget  |  ETA 3845h17m  |  2h06m
+14:36:52   [layastaro]  |  121 docs  |  327.67K ch  |  ~81.92K tok  |  43 ch/s  |  13,701 req  |  1% of budget  |  ETA 3335h53m  |  2h06m
+14:37:00   [ia_books_fulltext]  |  868 docs  |  150.14M ch  |  ~37.53M tok  |  17.69K ch/s  |  0 req  |  38% of budget  |  ETA 5h48m  |  2h19m
+14:37:04   [layastaro]  |  130 docs  |  410.26K ch  |  ~102.56K tok  |  54 ch/s  |  13,710 req  |  2% of budget  |  ETA 2668h06m  |  2h06m
+14:37:14   [layastaro]  |  139 docs  |  452.61K ch  |  ~113.15K tok  |  59 ch/s  |  13,719 req  |  2% of budget  |  ETA 2421h36m  |  2h06m
+14:37:16   [ia_books_fulltext]  |  879 docs  |  152.25M ch  |  ~38.06M tok  |  17.91K ch/s  |  0 req  |  38% of budget  |  ETA 5h42m  |  2h19m
+14:37:26   [layastaro]  |  154 docs  |  564.03K ch  |  ~141.01K tok  |  74 ch/s  |  13,738 req  |  2% of budget  |  ETA 1945h56m  |  2h06m
+14:37:37   [layastaro]  |  170 docs  |  596.03K ch  |  ~149.01K tok  |  78 ch/s  |  13,754 req  |  2% of budget  |  ETA 1843h54m  |  2h06m
+14:37:47   [layastaro]  |  185 docs  |  643.76K ch  |  ~160.94K tok  |  84 ch/s  |  13,769 req  |  3% of budget  |  ETA 1709h17m  |  2h07m
+14:37:57   [layastaro]  |  199 docs  |  678.31K ch  |  ~169.58K tok  |  88 ch/s  |  13,783 req  |  3% of budget  |  ETA 1624h21m  |  2h07m
+14:38:08   [layastaro]  |  209 docs  |  714.31K ch  |  ~178.58K tok  |  93 ch/s  |  13,796 req  |  3% of budget  |  ETA 1544h31m  |  2h07m
+14:38:19   [layastaro]  |  223 docs  |  771.40K ch  |  ~192.85K tok  |  100 ch/s  |  13,810 req  |  3% of budget  |  ETA 1432h10m  |  2h07m
+14:38:30   [layastaro]  |  237 docs  |  794.86K ch  |  ~198.71K tok  |  103 ch/s  |  13,824 req  |  3% of budget  |  ETA 1391h48m  |  2h07m
+14:38:34   [ia_books_fulltext]  |  880 docs  |  152.55M ch  |  ~38.14M tok  |  17.78K ch/s  |  0 req  |  38% of budget  |  ETA 5h44m  |  2h20m
+14:38:40   ia_books_fulltext: scanned 984 archive.org items
+14:38:40   [ia_books_fulltext]  |  881 docs  |  152.75M ch  |  ~38.19M tok  |  17.79K ch/s  |  0 req  |  38% of budget  |  ETA 5h44m  |  2h20m  |  DONE
+14:38:40        rejected: latin-heavy x182, not-gujarati x175, ia-no-ocr-text x69, ia-http-500 x5, ia-http-401 x2
+14:38:40   shard: ia_books_fulltext.part-1786776467-16536.jsonl.gz (881 docs / 150.37M chars)
+14:38:40 
+========================================================================================
+14:38:40 TOTAL 152.75M chars  ~38.19M tokens (29.4% of target) in 2h20m
+14:38:40 ========================================================================================
+14:38:41   [layastaro]  |  251 docs  |  830.69K ch  |  ~207.67K tok  |  108 ch/s  |  13,839 req  |  3% of budget  |  ETA 1333h33m  |  2h08m
+14:38:51   [layastaro]  |  262 docs  |  854.80K ch  |  ~213.70K tok  |  111 ch/s  |  13,854 req  |  3% of budget  |  ETA 1297h38m  |  2h08m
+14:39:02   [layastaro]  |  274 docs  |  896.34K ch  |  ~224.09K tok  |  116 ch/s  |  13,866 req  |  4% of budget  |  ETA 1239h06m  |  2h08m
+14:39:12   [layastaro]  |  289 docs  |  934.58K ch  |  ~233.64K tok  |  121 ch/s  |  13,881 req  |  4% of budget  |  ETA 1189h55m  |  2h08m
+14:39:23   [layastaro]  |  304 docs  |  1.01M ch  |  ~251.56K tok  |  130 ch/s  |  13,896 req  |  4% of budget  |  ETA 1106h33m  |  2h08m
+14:39:33   [layastaro]  |  320 docs  |  1.05M ch  |  ~262.80K tok  |  135 ch/s  |  13,915 req  |  4% of budget  |  ETA 1060h30m  |  2h08m
+14:39:43   [layastaro]  |  337 docs  |  1.08M ch  |  ~270.58K tok  |  139 ch/s  |  13,932 req  |  4% of budget  |  ETA 1031h19m  |  2h09m
+14:39:53   [layastaro]  |  359 docs  |  1.10M ch  |  ~275.26K tok  |  141 ch/s  |  13,954 req  |  4% of budget  |  ETA 1015h04m  |  2h09m
+14:40:04   [layastaro]  |  373 docs  |  1.12M ch  |  ~281.18K tok  |  144 ch/s  |  13,971 req  |  4% of budget  |  ETA 994h58m  |  2h09m
+14:40:14   [layastaro]  |  385 docs  |  1.16M ch  |  ~290.49K tok  |  149 ch/s  |  13,985 req  |  5% of budget  |  ETA 964h16m  |  2h09m
+14:40:24   [layastaro]  |  401 docs  |  1.21M ch  |  ~302.29K tok  |  155 ch/s  |  14,002 req  |  5% of budget  |  ETA 927h47m  |  2h09m
+14:40:34   [layastaro]  |  413 docs  |  1.24M ch  |  ~309.27K tok  |  158 ch/s  |  14,019 req  |  5% of budget  |  ETA 907h58m  |  2h09m
+14:40:44   [layastaro]  |  423 docs  |  1.27M ch  |  ~317.63K tok  |  162 ch/s  |  14,030 req  |  5% of budget  |  ETA 885h09m  |  2h10m
+14:40:55   [layastaro]  |  436 docs  |  1.30M ch  |  ~325.15K tok  |  166 ch/s  |  14,046 req  |  5% of budget  |  ETA 865h45m  |  2h10m
+14:41:05   [layastaro]  |  449 docs  |  1.37M ch  |  ~342.06K tok  |  174 ch/s  |  14,061 req  |  5% of budget  |  ETA 823h56m  |  2h10m
+14:41:15   [layastaro]  |  464 docs  |  1.41M ch  |  ~352.44K tok  |  179 ch/s  |  14,093 req  |  6% of budget  |  ETA 800h40m  |  2h10m
+14:41:25   [layastaro]  |  475 docs  |  1.44M ch  |  ~359.58K tok  |  183 ch/s  |  14,108 req  |  6% of budget  |  ETA 785h44m  |  2h10m
+14:41:36   [layastaro]  |  492 docs  |  1.47M ch  |  ~367.78K tok  |  187 ch/s  |  14,125 req  |  6% of budget  |  ETA 769h10m  |  2h10m
+14:41:46   [layastaro]  |  504 docs  |  1.48M ch  |  ~370.12K tok  |  188 ch/s  |  14,139 req  |  6% of budget  |  ETA 765h18m  |  2h11m
+14:41:56   [layastaro]  |  516 docs  |  1.53M ch  |  ~382.84K tok  |  194 ch/s  |  14,152 req  |  6% of budget  |  ETA 740h47m  |  2h11m
+14:42:08   [layastaro]  |  526 docs  |  1.56M ch  |  ~391.17K tok  |  198 ch/s  |  14,167 req  |  6% of budget  |  ETA 726h00m  |  2h11m
+14:42:18   [layastaro]  |  546 docs  |  1.67M ch  |  ~417.74K tok  |  211 ch/s  |  14,187 req  |  7% of budget  |  ETA 680h36m  |  2h11m
+14:42:30   [layastaro]  |  561 docs  |  1.71M ch  |  ~426.47K tok  |  215 ch/s  |  14,202 req  |  7% of budget  |  ETA 667h35m  |  2h11m
+14:42:41   [layastaro]  |  579 docs  |  1.74M ch  |  ~435.76K tok  |  220 ch/s  |  14,221 req  |  7% of budget  |  ETA 654h14m  |  2h12m
+14:42:52   [layastaro]  |  592 docs  |  1.77M ch  |  ~442.83K tok  |  223 ch/s  |  14,237 req  |  7% of budget  |  ETA 644h39m  |  2h12m
+14:43:02   [layastaro]  |  603 docs  |  1.81M ch  |  ~451.89K tok  |  227 ch/s  |  14,254 req  |  7% of budget  |  ETA 632h30m  |  2h12m
+14:43:12   [layastaro]  |  617 docs  |  1.87M ch  |  ~467.33K tok  |  235 ch/s  |  14,268 req  |  7% of budget  |  ETA 612h19m  |  2h12m
+14:43:23   [layastaro]  |  632 docs  |  1.90M ch  |  ~473.87K tok  |  238 ch/s  |  14,285 req  |  8% of budget  |  ETA 604h37m  |  2h12m
+14:43:33   [layastaro]  |  650 docs  |  1.92M ch  |  ~479.19K tok  |  240 ch/s  |  14,305 req  |  8% of budget  |  ETA 598h40m  |  2h12m
+14:43:43   [layastaro]  |  664 docs  |  1.95M ch  |  ~487.06K tok  |  244 ch/s  |  14,319 req  |  8% of budget  |  ETA 589h43m  |  2h13m
+14:43:54   [layastaro]  |  683 docs  |  1.97M ch  |  ~492.24K tok  |  246 ch/s  |  14,338 req  |  8% of budget  |  ETA 584h16m  |  2h13m
+14:44:05   [layastaro]  |  698 docs  |  2.00M ch  |  ~499.94K tok  |  249 ch/s  |  14,358 req  |  8% of budget  |  ETA 575h59m  |  2h13m
+14:44:15   [layastaro]  |  720 docs  |  2.02M ch  |  ~504.34K tok  |  251 ch/s  |  14,383 req  |  8% of budget  |  ETA 571h40m  |  2h13m
+14:44:26   [layastaro]  |  735 docs  |  2.04M ch  |  ~509.26K tok  |  253 ch/s  |  14,401 req  |  8% of budget  |  ETA 566h53m  |  2h13m
+14:44:37   [layastaro]  |  750 docs  |  2.16M ch  |  ~540.84K tok  |  269 ch/s  |  14,418 req  |  9% of budget  |  ETA 534h23m  |  2h13m
+14:44:48   [layastaro]  |  771 docs  |  2.28M ch  |  ~570.02K tok  |  283 ch/s  |  14,439 req  |  9% of budget  |  ETA 507h38m  |  2h14m
+14:44:59   [layastaro]  |  781 docs  |  2.32M ch  |  ~578.95K tok  |  287 ch/s  |  14,463 req  |  9% of budget  |  ETA 500h26m  |  2h14m
+14:45:09   [layastaro]  |  788 docs  |  2.33M ch  |  ~582.77K tok  |  288 ch/s  |  14,480 req  |  9% of budget  |  ETA 497h47m  |  2h14m
+14:45:19   [layastaro]  |  798 docs  |  2.35M ch  |  ~588.18K tok  |  291 ch/s  |  14,496 req  |  9% of budget  |  ETA 493h49m  |  2h14m
+14:45:30   [layastaro]  |  810 docs  |  2.37M ch  |  ~593.37K tok  |  293 ch/s  |  14,513 req  |  9% of budget  |  ETA 490h05m  |  2h14m
+14:45:40   [layastaro]  |  821 docs  |  2.38M ch  |  ~595.91K tok  |  294 ch/s  |  14,530 req  |  10% of budget  |  ETA 488h37m  |  2h15m
+14:45:51   [layastaro]  |  837 docs  |  2.40M ch  |  ~598.93K tok  |  295 ch/s  |  14,546 req  |  10% of budget  |  ETA 486h46m  |  2h15m
+14:46:07   [layastaro]  |  850 docs  |  2.41M ch  |  ~602.28K tok  |  296 ch/s  |  14,607 req  |  10% of budget  |  ETA 485h01m  |  2h15m
+14:46:17   [layastaro]  |  868 docs  |  2.43M ch  |  ~608.60K tok  |  299 ch/s  |  14,625 req  |  10% of budget  |  ETA 480h33m  |  2h15m
+14:46:28   [layastaro]  |  884 docs  |  2.46M ch  |  ~615.35K tok  |  302 ch/s  |  14,641 req  |  10% of budget  |  ETA 475h54m  |  2h15m
+14:46:38   [layastaro]  |  900 docs  |  2.49M ch  |  ~623.19K tok  |  305 ch/s  |  14,664 req  |  10% of budget  |  ETA 470h29m  |  2h15m
+14:46:48   [layastaro]  |  915 docs  |  2.51M ch  |  ~626.85K tok  |  306 ch/s  |  14,681 req  |  10% of budget  |  ETA 468h18m  |  2h16m
+14:46:59   [layastaro]  |  931 docs  |  2.52M ch  |  ~630.11K tok  |  308 ch/s  |  14,704 req  |  10% of budget  |  ETA 466h30m  |  2h16m
+14:47:09   [layastaro]  |  949 docs  |  2.54M ch  |  ~634.59K tok  |  309 ch/s  |  14,725 req  |  10% of budget  |  ETA 463h45m  |  2h16m
+14:47:20   [layastaro]  |  962 docs  |  2.59M ch  |  ~646.94K tok  |  315 ch/s  |  14,741 req  |  10% of budget  |  ETA 455h26m  |  2h16m
+14:47:30   [layastaro]  |  976 docs  |  2.63M ch  |  ~658.72K tok  |  320 ch/s  |  14,759 req  |  11% of budget  |  ETA 447h48m  |  2h16m
+14:47:41   [layastaro]  |  990 docs  |  2.66M ch  |  ~665.13K tok  |  323 ch/s  |  14,774 req  |  11% of budget  |  ETA 444h03m  |  2h17m
+14:47:51   [layastaro]  |  1,000 docs  |  2.68M ch  |  ~670.31K tok  |  325 ch/s  |  14,788 req  |  11% of budget  |  ETA 441h10m  |  2h17m
+14:48:01   [layastaro]  |  1,015 docs  |  2.82M ch  |  ~704.68K tok  |  342 ch/s  |  14,803 req  |  11% of budget  |  ETA 420h03m  |  2h17m
+14:48:12   [layastaro]  |  1,033 docs  |  2.86M ch  |  ~714.12K tok  |  346 ch/s  |  14,825 req  |  11% of budget  |  ETA 415h02m  |  2h17m
+14:48:24   [layastaro]  |  1,048 docs  |  2.88M ch  |  ~720.00K tok  |  348 ch/s  |  14,854 req  |  12% of budget  |  ETA 412h11m  |  2h17m
+14:48:34   [layastaro]  |  1,065 docs  |  2.90M ch  |  ~724.69K tok  |  350 ch/s  |  14,872 req  |  12% of budget  |  ETA 410h00m  |  2h17m
+14:48:45   [layastaro]  |  1,083 docs  |  2.91M ch  |  ~727.46K tok  |  351 ch/s  |  14,890 req  |  12% of budget  |  ETA 408h57m  |  2h18m
+14:48:55   [layastaro]  |  1,102 docs  |  2.94M ch  |  ~735.06K tok  |  354 ch/s  |  14,915 req  |  12% of budget  |  ETA 405h13m  |  2h18m
+14:49:05   [layastaro]  |  1,119 docs  |  2.96M ch  |  ~740.89K tok  |  356 ch/s  |  14,935 req  |  12% of budget  |  ETA 402h31m  |  2h18m
+14:49:16   [layastaro]  |  1,135 docs  |  2.98M ch  |  ~744.34K tok  |  358 ch/s  |  14,953 req  |  12% of budget  |  ETA 401h09m  |  2h18m
+14:49:26   [layastaro]  |  1,150 docs  |  2.99M ch  |  ~747.53K tok  |  359 ch/s  |  14,975 req  |  12% of budget  |  ETA 399h55m  |  2h18m
+14:49:37   [layastaro]  |  1,166 docs  |  3.00M ch  |  ~750.82K tok  |  360 ch/s  |  14,991 req  |  12% of budget  |  ETA 398h40m  |  2h18m
+14:49:47   [layastaro]  |  1,188 docs  |  3.02M ch  |  ~754.09K tok  |  361 ch/s  |  15,013 req  |  12% of budget  |  ETA 397h24m  |  2h19m
+14:49:57   [layastaro]  |  1,203 docs  |  3.03M ch  |  ~757.49K tok  |  362 ch/s  |  15,035 req  |  12% of budget  |  ETA 396h05m  |  2h19m
+14:50:07   [layastaro]  |  1,218 docs  |  3.05M ch  |  ~763.34K tok  |  364 ch/s  |  15,056 req  |  12% of budget  |  ETA 393h31m  |  2h19m
+14:50:18   [layastaro]  |  1,238 docs  |  3.10M ch  |  ~774.71K tok  |  369 ch/s  |  15,076 req  |  12% of budget  |  ETA 388h11m  |  2h19m
+14:50:28   [layastaro]  |  1,256 docs  |  3.15M ch  |  ~787.24K tok  |  375 ch/s  |  15,097 req  |  13% of budget  |  ETA 382h26m  |  2h19m
+14:50:38   [layastaro]  |  1,278 docs  |  3.18M ch  |  ~793.93K tok  |  378 ch/s  |  15,122 req  |  13% of budget  |  ETA 379h39m  |  2h19m
+14:50:48   [layastaro]  |  1,294 docs  |  3.20M ch  |  ~799.24K tok  |  380 ch/s  |  15,149 req  |  13% of budget  |  ETA 377h34m  |  2h20m
+14:50:58   [layastaro]  |  1,316 docs  |  3.22M ch  |  ~806.20K tok  |  383 ch/s  |  15,174 req  |  13% of budget  |  ETA 374h44m  |  2h20m
+14:51:08   [layastaro]  |  1,338 docs  |  3.28M ch  |  ~819.33K tok  |  388 ch/s  |  15,202 req  |  13% of budget  |  ETA 369h08m  |  2h20m
+14:51:19   [layastaro]  |  1,349 docs  |  3.29M ch  |  ~823.00K tok  |  390 ch/s  |  15,218 req  |  13% of budget  |  ETA 367h58m  |  2h20m
+14:51:30   [layastaro]  |  1,364 docs  |  3.31M ch  |  ~828.34K tok  |  392 ch/s  |  15,239 req  |  13% of budget  |  ETA 366h01m  |  2h20m
+14:51:41   [layastaro]  |  1,375 docs  |  3.33M ch  |  ~831.84K tok  |  393 ch/s  |  15,257 req  |  13% of budget  |  ETA 364h58m  |  2h21m
+14:51:51   [layastaro]  |  1,393 docs  |  3.35M ch  |  ~838.05K tok  |  395 ch/s  |  15,278 req  |  13% of budget  |  ETA 362h41m  |  2h21m
+14:52:02   [layastaro]  |  1,403 docs  |  3.37M ch  |  ~841.80K tok  |  396 ch/s  |  15,300 req  |  13% of budget  |  ETA 361h30m  |  2h21m
+14:52:12   [layastaro]  |  1,412 docs  |  3.39M ch  |  ~846.46K tok  |  398 ch/s  |  15,314 req  |  14% of budget  |  ETA 359h56m  |  2h21m
+14:52:22   [layastaro]  |  1,426 docs  |  3.40M ch  |  ~850.84K tok  |  400 ch/s  |  15,332 req  |  14% of budget  |  ETA 358h30m  |  2h21m
+14:52:33   [layastaro]  |  1,444 docs  |  3.43M ch  |  ~857.97K tok  |  403 ch/s  |  15,350 req  |  14% of budget  |  ETA 355h57m  |  2h21m
+14:52:43   [layastaro]  |  1,460 docs  |  3.47M ch  |  ~868.71K tok  |  407 ch/s  |  15,366 req  |  14% of budget  |  ETA 351h56m  |  2h22m
+14:52:54   [layastaro]  |  1,475 docs  |  3.49M ch  |  ~872.69K tok  |  409 ch/s  |  15,387 req  |  14% of budget  |  ETA 350h47m  |  2h22m
+14:53:05   [layastaro]  |  1,493 docs  |  3.52M ch  |  ~879.32K tok  |  411 ch/s  |  15,407 req  |  14% of budget  |  ETA 348h33m  |  2h22m
+14:53:16   [layastaro]  |  1,512 docs  |  3.54M ch  |  ~886.06K tok  |  414 ch/s  |  15,428 req  |  14% of budget  |  ETA 346h19m  |  2h22m
+14:53:26   [layastaro]  |  1,532 docs  |  3.58M ch  |  ~894.69K tok  |  417 ch/s  |  15,450 req  |  14% of budget  |  ETA 343h22m  |  2h22m
+14:53:37   [layastaro]  |  1,543 docs  |  3.60M ch  |  ~900.62K tok  |  419 ch/s  |  15,470 req  |  14% of budget  |  ETA 341h32m  |  2h22m
+14:53:47   [layastaro]  |  1,557 docs  |  3.62M ch  |  ~904.89K tok  |  421 ch/s  |  15,489 req  |  14% of budget  |  ETA 340h19m  |  2h23m
+14:53:57   [layastaro]  |  1,574 docs  |  3.65M ch  |  ~912.13K tok  |  424 ch/s  |  15,510 req  |  15% of budget  |  ETA 338h00m  |  2h23m
+14:54:08   [layastaro]  |  1,589 docs  |  3.67M ch  |  ~917.06K tok  |  426 ch/s  |  15,527 req  |  15% of budget  |  ETA 336h34m  |  2h23m
+14:54:19   [layastaro]  |  1,605 docs  |  3.70M ch  |  ~923.82K tok  |  428 ch/s  |  15,545 req  |  15% of budget  |  ETA 334h31m  |  2h23m
+14:54:29   [layastaro]  |  1,618 docs  |  3.72M ch  |  ~930.11K tok  |  431 ch/s  |  15,561 req  |  15% of budget  |  ETA 332h38m  |  2h23m
+14:54:39   [layastaro]  |  1,632 docs  |  3.74M ch  |  ~935.25K tok  |  433 ch/s  |  15,578 req  |  15% of budget  |  ETA 331h11m  |  2h23m
+14:54:50   [layastaro]  |  1,641 docs  |  3.76M ch  |  ~939.62K tok  |  434 ch/s  |  15,591 req  |  15% of budget  |  ETA 330h02m  |  2h24m
+14:55:00   [layastaro]  |  1,658 docs  |  3.78M ch  |  ~945.88K tok  |  436 ch/s  |  15,609 req  |  15% of budget  |  ETA 328h13m  |  2h24m
+14:55:10   [layastaro]  |  1,674 docs  |  3.81M ch  |  ~951.53K tok  |  438 ch/s  |  15,625 req  |  15% of budget  |  ETA 326h39m  |  2h24m
+14:55:21   [layastaro]  |  1,690 docs  |  3.83M ch  |  ~957.12K tok  |  440 ch/s  |  15,641 req  |  15% of budget  |  ETA 325h07m  |  2h24m
+14:55:31   [layastaro]  |  1,708 docs  |  3.85M ch  |  ~963.27K tok  |  443 ch/s  |  15,660 req  |  15% of budget  |  ETA 323h25m  |  2h24m
+14:55:43   [layastaro]  |  1,723 docs  |  3.88M ch  |  ~969.00K tok  |  445 ch/s  |  15,680 req  |  16% of budget  |  ETA 321h55m  |  2h25m
+14:55:53   [layastaro]  |  1,740 docs  |  3.89M ch  |  ~973.55K tok  |  446 ch/s  |  15,699 req  |  16% of budget  |  ETA 320h47m  |  2h25m
+14:56:04   [layastaro]  |  1,757 docs  |  3.93M ch  |  ~982.28K tok  |  450 ch/s  |  15,716 req  |  16% of budget  |  ETA 318h18m  |  2h25m
+14:56:14   [layastaro]  |  1,772 docs  |  3.95M ch  |  ~987.69K tok  |  452 ch/s  |  15,731 req  |  16% of budget  |  ETA 316h55m  |  2h25m
+14:56:26   [layastaro]  |  1,788 docs  |  4.00M ch  |  ~1.00M tok  |  457 ch/s  |  15,753 req  |  16% of budget  |  ETA 313h13m  |  2h25m
+14:56:36   [layastaro]  |  1,803 docs  |  4.03M ch  |  ~1.01M tok  |  459 ch/s  |  15,770 req  |  16% of budget  |  ETA 311h35m  |  2h25m
+14:56:47   [layastaro]  |  1,818 docs  |  4.06M ch  |  ~1.02M tok  |  463 ch/s  |  15,788 req  |  16% of budget  |  ETA 309h25m  |  2h26m
+14:56:57   [layastaro]  |  1,832 docs  |  4.09M ch  |  ~1.02M tok  |  466 ch/s  |  15,803 req  |  16% of budget  |  ETA 307h28m  |  2h26m
+14:57:07   [layastaro]  |  1,851 docs  |  4.12M ch  |  ~1.03M tok  |  469 ch/s  |  15,822 req  |  16% of budget  |  ETA 305h24m  |  2h26m
+14:57:18   [layastaro]  |  1,867 docs  |  4.15M ch  |  ~1.04M tok  |  471 ch/s  |  15,841 req  |  17% of budget  |  ETA 304h05m  |  2h26m
+14:57:30   [layastaro]  |  1,884 docs  |  4.18M ch  |  ~1.05M tok  |  474 ch/s  |  15,860 req  |  17% of budget  |  ETA 301h55m  |  2h26m
+14:57:40   [layastaro]  |  1,894 docs  |  4.20M ch  |  ~1.05M tok  |  476 ch/s  |  15,877 req  |  17% of budget  |  ETA 300h45m  |  2h27m
+14:57:51   [layastaro]  |  1,913 docs  |  4.25M ch  |  ~1.06M tok  |  480 ch/s  |  15,898 req  |  17% of budget  |  ETA 297h54m  |  2h27m
+14:58:01   [layastaro]  |  1,928 docs  |  4.28M ch  |  ~1.07M tok  |  484 ch/s  |  15,917 req  |  17% of budget  |  ETA 295h40m  |  2h27m
+14:58:12   [layastaro]  |  1,946 docs  |  4.30M ch  |  ~1.08M tok  |  485 ch/s  |  15,937 req  |  17% of budget  |  ETA 294h46m  |  2h27m
+14:58:22   [layastaro]  |  1,964 docs  |  4.33M ch  |  ~1.08M tok  |  488 ch/s  |  15,956 req  |  17% of budget  |  ETA 293h27m  |  2h27m
+14:58:32   [layastaro]  |  1,983 docs  |  4.34M ch  |  ~1.09M tok  |  489 ch/s  |  15,978 req  |  17% of budget  |  ETA 292h44m  |  2h27m
+14:58:43   [layastaro]  |  1,995 docs  |  4.36M ch  |  ~1.09M tok  |  491 ch/s  |  15,995 req  |  17% of budget  |  ETA 291h40m  |  2h28m
+14:58:54   [layastaro]  |  2,012 docs  |  4.39M ch  |  ~1.10M tok  |  493 ch/s  |  16,016 req  |  18% of budget  |  ETA 290h23m  |  2h28m
+14:59:04   [layastaro]  |  2,031 docs  |  4.43M ch  |  ~1.11M tok  |  497 ch/s  |  16,037 req  |  18% of budget  |  ETA 287h59m  |  2h28m
+14:59:14   [layastaro]  |  2,050 docs  |  4.46M ch  |  ~1.12M tok  |  500 ch/s  |  16,059 req  |  18% of budget  |  ETA 286h08m  |  2h28m
+14:59:25   [layastaro]  |  2,064 docs  |  4.48M ch  |  ~1.12M tok  |  502 ch/s  |  16,078 req  |  18% of budget  |  ETA 285h07m  |  2h28m
+14:59:35   [layastaro]  |  2,079 docs  |  4.53M ch  |  ~1.13M tok  |  506 ch/s  |  16,096 req  |  18% of budget  |  ETA 282h38m  |  2h28m
+14:59:46   [layastaro]  |  2,094 docs  |  4.56M ch  |  ~1.14M tok  |  509 ch/s  |  16,117 req  |  18% of budget  |  ETA 280h58m  |  2h29m
+14:59:56   [layastaro]  |  2,112 docs  |  4.58M ch  |  ~1.14M tok  |  511 ch/s  |  16,136 req  |  18% of budget  |  ETA 280h10m  |  2h29m
+15:00:07   [layastaro]  |  2,131 docs  |  4.59M ch  |  ~1.15M tok  |  512 ch/s  |  16,155 req  |  18% of budget  |  ETA 279h30m  |  2h29m
+15:00:18   [layastaro]  |  2,146 docs  |  4.60M ch  |  ~1.15M tok  |  512 ch/s  |  16,174 req  |  18% of budget  |  ETA 279h16m  |  2h29m
+15:00:28   [layastaro]  |  2,160 docs  |  4.61M ch  |  ~1.15M tok  |  512 ch/s  |  16,190 req  |  18% of budget  |  ETA 279h09m  |  2h29m
+15:00:39   [layastaro]  |  2,178 docs  |  4.63M ch  |  ~1.16M tok  |  513 ch/s  |  16,209 req  |  19% of budget  |  ETA 278h31m  |  2h29m
+15:00:50   [layastaro]  |  2,197 docs  |  4.65M ch  |  ~1.16M tok  |  515 ch/s  |  16,228 req  |  19% of budget  |  ETA 277h34m  |  2h30m
+15:01:01   [layastaro]  |  2,220 docs  |  4.68M ch  |  ~1.17M tok  |  518 ch/s  |  16,252 req  |  19% of budget  |  ETA 276h02m  |  2h30m
+15:01:12   [layastaro]  |  2,239 docs  |  4.71M ch  |  ~1.18M tok  |  521 ch/s  |  16,272 req  |  19% of budget  |  ETA 274h18m  |  2h30m
+15:01:23   [layastaro]  |  2,255 docs  |  4.74M ch  |  ~1.19M tok  |  524 ch/s  |  16,288 req  |  19% of budget  |  ETA 273h01m  |  2h30m
+15:01:33   [layastaro]  |  2,272 docs  |  4.78M ch  |  ~1.19M tok  |  527 ch/s  |  16,305 req  |  19% of budget  |  ETA 271h20m  |  2h30m
+15:01:44   [layastaro]  |  2,289 docs  |  4.80M ch  |  ~1.20M tok  |  529 ch/s  |  16,322 req  |  19% of budget  |  ETA 270h14m  |  2h31m
+15:01:54   [layastaro]  |  2,309 docs  |  4.82M ch  |  ~1.20M tok  |  530 ch/s  |  16,342 req  |  19% of budget  |  ETA 269h34m  |  2h31m
+15:02:04   [layastaro]  |  2,327 docs  |  4.83M ch  |  ~1.21M tok  |  531 ch/s  |  16,360 req  |  19% of budget  |  ETA 269h07m  |  2h31m
+15:02:14   [layastaro]  |  2,343 docs  |  4.85M ch  |  ~1.21M tok  |  532 ch/s  |  16,376 req  |  19% of budget  |  ETA 268h35m  |  2h31m
+15:02:24   [layastaro]  |  2,361 docs  |  4.86M ch  |  ~1.21M tok  |  533 ch/s  |  16,395 req  |  19% of budget  |  ETA 268h20m  |  2h31m
+15:02:36   [layastaro]  |  2,377 docs  |  4.87M ch  |  ~1.22M tok  |  534 ch/s  |  16,411 req  |  19% of budget  |  ETA 267h43m  |  2h31m
+15:02:46   [layastaro]  |  2,395 docs  |  4.89M ch  |  ~1.22M tok  |  535 ch/s  |  16,430 req  |  20% of budget  |  ETA 267h15m  |  2h32m
+15:02:56   [layastaro]  |  2,411 docs  |  4.90M ch  |  ~1.22M tok  |  536 ch/s  |  16,447 req  |  20% of budget  |  ETA 266h49m  |  2h32m
+15:03:06   [layastaro]  |  2,429 docs  |  4.92M ch  |  ~1.23M tok  |  537 ch/s  |  16,465 req  |  20% of budget  |  ETA 266h01m  |  2h32m
+15:03:17   [layastaro]  |  2,449 docs  |  4.93M ch  |  ~1.23M tok  |  538 ch/s  |  16,486 req  |  20% of budget  |  ETA 265h35m  |  2h32m
+15:03:28   [layastaro]  |  2,469 docs  |  4.95M ch  |  ~1.24M tok  |  539 ch/s  |  16,507 req  |  20% of budget  |  ETA 265h08m  |  2h32m
+15:03:39   [layastaro]  |  2,488 docs  |  4.96M ch  |  ~1.24M tok  |  539 ch/s  |  16,527 req  |  20% of budget  |  ETA 264h58m  |  2h32m
+15:03:49   [layastaro]  |  2,505 docs  |  4.97M ch  |  ~1.24M tok  |  540 ch/s  |  16,545 req  |  20% of budget  |  ETA 264h30m  |  2h33m
+15:04:01   [layastaro]  |  2,520 docs  |  4.99M ch  |  ~1.25M tok  |  542 ch/s  |  16,560 req  |  20% of budget  |  ETA 263h48m  |  2h33m
+15:04:11   [layastaro]  |  2,537 docs  |  5.00M ch  |  ~1.25M tok  |  542 ch/s  |  16,579 req  |  20% of budget  |  ETA 263h32m  |  2h33m
+15:04:22   [layastaro]  |  2,556 docs  |  5.03M ch  |  ~1.26M tok  |  545 ch/s  |  16,598 req  |  20% of budget  |  ETA 262h23m  |  2h33m
+15:04:32   [layastaro]  |  2,577 docs  |  5.05M ch  |  ~1.26M tok  |  546 ch/s  |  16,620 req  |  20% of budget  |  ETA 261h36m  |  2h33m
+15:04:42   [layastaro]  |  2,596 docs  |  5.06M ch  |  ~1.27M tok  |  547 ch/s  |  16,641 req  |  20% of budget  |  ETA 261h09m  |  2h34m
+15:04:53   [layastaro]  |  2,627 docs  |  5.08M ch  |  ~1.27M tok  |  549 ch/s  |  16,673 req  |  20% of budget  |  ETA 260h24m  |  2h34m
+15:05:04   [layastaro]  |  2,651 docs  |  5.11M ch  |  ~1.28M tok  |  551 ch/s  |  16,699 req  |  20% of budget  |  ETA 259h27m  |  2h34m
+15:05:15   [layastaro]  |  2,681 docs  |  5.13M ch  |  ~1.28M tok  |  552 ch/s  |  16,729 req  |  21% of budget  |  ETA 258h39m  |  2h34m
+15:05:25   [layastaro]  |  2,711 docs  |  5.15M ch  |  ~1.29M tok  |  554 ch/s  |  16,759 req  |  21% of budget  |  ETA 258h02m  |  2h34m
+15:05:35   [layastaro]  |  2,745 docs  |  5.17M ch  |  ~1.29M tok  |  556 ch/s  |  16,793 req  |  21% of budget  |  ETA 256h57m  |  2h34m
+15:05:45   [layastaro]  |  2,777 docs  |  5.20M ch  |  ~1.30M tok  |  558 ch/s  |  16,826 req  |  21% of budget  |  ETA 256h08m  |  2h35m
+15:05:56   [layastaro]  |  2,807 docs  |  5.22M ch  |  ~1.30M tok  |  560 ch/s  |  16,861 req  |  21% of budget  |  ETA 255h13m  |  2h35m
+15:06:06   [layastaro]  |  2,833 docs  |  5.24M ch  |  ~1.31M tok  |  561 ch/s  |  16,894 req  |  21% of budget  |  ETA 254h39m  |  2h35m
+15:06:16   [layastaro]  |  2,864 docs  |  5.28M ch  |  ~1.32M tok  |  565 ch/s  |  16,925 req  |  21% of budget  |  ETA 252h42m  |  2h35m
+15:06:26   [layastaro]  |  2,895 docs  |  5.32M ch  |  ~1.33M tok  |  569 ch/s  |  16,956 req  |  21% of budget  |  ETA 251h13m  |  2h35m
+15:06:36   [layastaro]  |  2,922 docs  |  5.34M ch  |  ~1.33M tok  |  570 ch/s  |  16,985 req  |  21% of budget  |  ETA 250h36m  |  2h35m
+15:06:47   [layastaro]  |  2,943 docs  |  5.37M ch  |  ~1.34M tok  |  572 ch/s  |  17,013 req  |  21% of budget  |  ETA 249h33m  |  2h36m
+15:06:58   [layastaro]  |  2,961 docs  |  5.38M ch  |  ~1.35M tok  |  573 ch/s  |  17,035 req  |  22% of budget  |  ETA 249h04m  |  2h36m
+15:07:08   [layastaro]  |  2,984 docs  |  5.40M ch  |  ~1.35M tok  |  574 ch/s  |  17,059 req  |  22% of budget  |  ETA 248h43m  |  2h36m
+15:07:18   [layastaro]  |  3,015 docs  |  5.42M ch  |  ~1.35M tok  |  576 ch/s  |  17,092 req  |  22% of budget  |  ETA 248h03m  |  2h36m
+15:07:28   [layastaro]  |  3,046 docs  |  5.44M ch  |  ~1.36M tok  |  578 ch/s  |  17,130 req  |  22% of budget  |  ETA 247h12m  |  2h36m
+15:07:39   [layastaro]  |  3,083 docs  |  5.48M ch  |  ~1.37M tok  |  581 ch/s  |  17,167 req  |  22% of budget  |  ETA 245h51m  |  2h36m
+15:07:49   [layastaro]  |  3,115 docs  |  5.51M ch  |  ~1.38M tok  |  584 ch/s  |  17,200 req  |  22% of budget  |  ETA 244h31m  |  2h37m
+15:08:00   [layastaro]  |  3,148 docs  |  5.54M ch  |  ~1.39M tok  |  586 ch/s  |  17,234 req  |  22% of budget  |  ETA 243h29m  |  2h37m
+15:08:11   [layastaro]  |  3,173 docs  |  5.57M ch  |  ~1.39M tok  |  588 ch/s  |  17,260 req  |  22% of budget  |  ETA 242h38m  |  2h37m
+15:08:21   [layastaro]  |  3,201 docs  |  5.59M ch  |  ~1.40M tok  |  590 ch/s  |  17,290 req  |  22% of budget  |  ETA 242h01m  |  2h37m
+15:08:32   [layastaro]  |  3,223 docs  |  5.61M ch  |  ~1.40M tok  |  591 ch/s  |  17,323 req  |  22% of budget  |  ETA 241h24m  |  2h37m
+15:08:42   [layastaro]  |  3,255 docs  |  5.64M ch  |  ~1.41M tok  |  594 ch/s  |  17,370 req  |  23% of budget  |  ETA 240h13m  |  2h38m
+15:08:52   [layastaro]  |  3,286 docs  |  5.68M ch  |  ~1.42M tok  |  598 ch/s  |  17,413 req  |  23% of budget  |  ETA 238h46m  |  2h38m
+15:09:03   [layastaro]  |  3,315 docs  |  5.71M ch  |  ~1.43M tok  |  600 ch/s  |  17,451 req  |  23% of budget  |  ETA 237h57m  |  2h38m
+15:09:13   [layastaro]  |  3,349 docs  |  5.73M ch  |  ~1.43M tok  |  602 ch/s  |  17,493 req  |  23% of budget  |  ETA 237h10m  |  2h38m
+15:09:24   [layastaro]  |  3,383 docs  |  5.76M ch  |  ~1.44M tok  |  604 ch/s  |  17,538 req  |  23% of budget  |  ETA 236h08m  |  2h38m
+15:09:35   [layastaro]  |  3,420 docs  |  5.79M ch  |  ~1.45M tok  |  606 ch/s  |  17,611 req  |  23% of budget  |  ETA 235h20m  |  2h38m
+15:09:46   [layastaro]  |  3,465 docs  |  5.85M ch  |  ~1.46M tok  |  612 ch/s  |  17,660 req  |  23% of budget  |  ETA 233h13m  |  2h39m
+15:09:56   [layastaro]  |  3,490 docs  |  5.87M ch  |  ~1.47M tok  |  614 ch/s  |  17,710 req  |  23% of budget  |  ETA 232h29m  |  2h39m
+15:10:06   [layastaro]  |  3,529 docs  |  5.89M ch  |  ~1.47M tok  |  616 ch/s  |  17,752 req  |  24% of budget  |  ETA 231h46m  |  2h39m
+15:10:17   [layastaro]  |  3,555 docs  |  5.91M ch  |  ~1.48M tok  |  617 ch/s  |  17,799 req  |  24% of budget  |  ETA 231h15m  |  2h39m
+15:10:27   [layastaro]  |  3,581 docs  |  5.93M ch  |  ~1.48M tok  |  618 ch/s  |  17,848 req  |  24% of budget  |  ETA 230h46m  |  2h39m
+15:10:38   [layastaro]  |  3,613 docs  |  5.95M ch  |  ~1.49M tok  |  620 ch/s  |  17,906 req  |  24% of budget  |  ETA 230h10m  |  2h39m
+15:10:48   [layastaro]  |  3,641 docs  |  5.98M ch  |  ~1.49M tok  |  621 ch/s  |  17,970 req  |  24% of budget  |  ETA 229h35m  |  2h40m
+15:10:58   [layastaro]  |  3,694 docs  |  6.02M ch  |  ~1.50M tok  |  625 ch/s  |  18,036 req  |  24% of budget  |  ETA 228h13m  |  2h40m
+15:11:08   [layastaro]  |  3,757 docs  |  6.06M ch  |  ~1.51M tok  |  629 ch/s  |  18,108 req  |  24% of budget  |  ETA 226h51m  |  2h40m
+15:11:18   [layastaro]  |  3,813 docs  |  6.11M ch  |  ~1.53M tok  |  633 ch/s  |  18,193 req  |  24% of budget  |  ETA 225h11m  |  2h40m
+15:11:29   [layastaro]  |  3,850 docs  |  6.15M ch  |  ~1.54M tok  |  637 ch/s  |  18,285 req  |  25% of budget  |  ETA 223h53m  |  2h40m
+15:11:39   [layastaro]  |  3,879 docs  |  6.17M ch  |  ~1.54M tok  |  638 ch/s  |  18,375 req  |  25% of budget  |  ETA 223h22m  |  2h40m
+15:11:50   [layastaro]  |  3,944 docs  |  6.23M ch  |  ~1.56M tok  |  643 ch/s  |  18,455 req  |  25% of budget  |  ETA 221h37m  |  2h41m
+15:12:00   [layastaro]  |  3,960 docs  |  6.26M ch  |  ~1.56M tok  |  646 ch/s  |  18,541 req  |  25% of budget  |  ETA 220h49m  |  2h41m
+15:12:10   [layastaro]  |  4,002 docs  |  6.29M ch  |  ~1.57M tok  |  648 ch/s  |  18,609 req  |  25% of budget  |  ETA 219h55m  |  2h41m
+15:12:21   [layastaro]  |  4,040 docs  |  6.32M ch  |  ~1.58M tok  |  651 ch/s  |  18,666 req  |  25% of budget  |  ETA 219h03m  |  2h41m
+15:12:31   [layastaro]  |  4,090 docs  |  6.37M ch  |  ~1.59M tok  |  656 ch/s  |  18,730 req  |  25% of budget  |  ETA 217h20m  |  2h41m
+15:12:41   [layastaro]  |  4,137 docs  |  6.49M ch  |  ~1.62M tok  |  667 ch/s  |  18,799 req  |  26% of budget  |  ETA 213h47m  |  2h42m
+15:12:51   [layastaro]  |  4,200 docs  |  6.54M ch  |  ~1.63M tok  |  671 ch/s  |  18,867 req  |  26% of budget  |  ETA 212h21m  |  2h42m
+15:13:01   [layastaro]  |  4,242 docs  |  6.57M ch  |  ~1.64M tok  |  674 ch/s  |  18,943 req  |  26% of budget  |  ETA 211h18m  |  2h42m
+15:13:11   [layastaro]  |  4,283 docs  |  6.63M ch  |  ~1.66M tok  |  679 ch/s  |  19,016 req  |  27% of budget  |  ETA 209h46m  |  2h42m
+15:13:26   [layastaro]  |  4,313 docs  |  6.67M ch  |  ~1.67M tok  |  682 ch/s  |  19,135 req  |  27% of budget  |  ETA 208h53m  |  2h42m
+15:13:36   [layastaro]  |  4,341 docs  |  6.69M ch  |  ~1.67M tok  |  684 ch/s  |  19,216 req  |  27% of budget  |  ETA 208h23m  |  2h42m
+15:13:46   [layastaro]  |  4,405 docs  |  6.74M ch  |  ~1.68M tok  |  688 ch/s  |  19,284 req  |  27% of budget  |  ETA 207h09m  |  2h43m
+15:13:56   [layastaro]  |  4,462 docs  |  6.80M ch  |  ~1.70M tok  |  693 ch/s  |  19,347 req  |  27% of budget  |  ETA 205h29m  |  2h43m
+15:14:06   [layastaro]  |  4,497 docs  |  6.82M ch  |  ~1.71M tok  |  695 ch/s  |  19,410 req  |  27% of budget  |  ETA 204h50m  |  2h43m
+15:14:16   [layastaro]  |  4,520 docs  |  6.84M ch  |  ~1.71M tok  |  697 ch/s  |  19,462 req  |  27% of budget  |  ETA 204h26m  |  2h43m
+15:14:27   [layastaro]  |  4,539 docs  |  6.86M ch  |  ~1.72M tok  |  698 ch/s  |  19,527 req  |  27% of budget  |  ETA 204h09m  |  2h43m
+15:14:37   [layastaro]  |  4,570 docs  |  6.90M ch  |  ~1.72M tok  |  701 ch/s  |  19,568 req  |  28% of budget  |  ETA 203h15m  |  2h43m
+15:14:47   [layastaro]  |  4,611 docs  |  6.92M ch  |  ~1.73M tok  |  703 ch/s  |  19,612 req  |  28% of budget  |  ETA 202h40m  |  2h44m
+15:14:57   [layastaro]  |  4,659 docs  |  6.96M ch  |  ~1.74M tok  |  705 ch/s  |  19,660 req  |  28% of budget  |  ETA 201h53m  |  2h44m
+15:15:08   [layastaro]  |  4,688 docs  |  6.98M ch  |  ~1.75M tok  |  707 ch/s  |  19,724 req  |  28% of budget  |  ETA 201h22m  |  2h44m
+15:15:21   [layastaro]  |  4,704 docs  |  6.99M ch  |  ~1.75M tok  |  707 ch/s  |  19,808 req  |  28% of budget  |  ETA 201h22m  |  2h44m
+15:15:31   [layastaro]  |  4,731 docs  |  7.02M ch  |  ~1.76M tok  |  710 ch/s  |  19,875 req  |  28% of budget  |  ETA 200h40m  |  2h44m
+15:15:41   [layastaro]  |  4,734 docs  |  7.03M ch  |  ~1.76M tok  |  709 ch/s  |  19,962 req  |  28% of budget  |  ETA 200h47m  |  2h45m
+15:15:52   [layastaro]  |  4,781 docs  |  7.06M ch  |  ~1.77M tok  |  712 ch/s  |  20,022 req  |  28% of budget  |  ETA 200h00m  |  2h45m
+15:16:02   [layastaro]  |  4,837 docs  |  7.11M ch  |  ~1.78M tok  |  716 ch/s  |  20,094 req  |  28% of budget  |  ETA 198h46m  |  2h45m
+15:16:12   [layastaro]  |  4,887 docs  |  7.15M ch  |  ~1.79M tok  |  719 ch/s  |  20,159 req  |  29% of budget  |  ETA 197h56m  |  2h45m
+15:16:23   [layastaro]  |  4,896 docs  |  7.16M ch  |  ~1.79M tok  |  720 ch/s  |  20,240 req  |  29% of budget  |  ETA 197h44m  |  2h45m
+15:16:34   [layastaro]  |  4,908 docs  |  7.19M ch  |  ~1.80M tok  |  722 ch/s  |  20,295 req  |  29% of budget  |  ETA 197h10m  |  2h45m
+15:16:44   [layastaro]  |  4,951 docs  |  7.26M ch  |  ~1.82M tok  |  728 ch/s  |  20,348 req  |  29% of budget  |  ETA 195h24m  |  2h46m
+15:17:03   [layastaro]  |  4,970 docs  |  7.28M ch  |  ~1.82M tok  |  729 ch/s  |  20,513 req  |  29% of budget  |  ETA 195h15m  |  2h46m
+15:17:14   [layastaro]  |  5,009 docs  |  7.31M ch  |  ~1.83M tok  |  731 ch/s  |  20,582 req  |  29% of budget  |  ETA 194h38m  |  2h46m
+15:17:25   [layastaro]  |  5,016 docs  |  7.32M ch  |  ~1.83M tok  |  731 ch/s  |  20,692 req  |  29% of budget  |  ETA 194h40m  |  2h46m
+15:17:36   [layastaro]  |  5,058 docs  |  7.34M ch  |  ~1.84M tok  |  733 ch/s  |  20,765 req  |  29% of budget  |  ETA 194h14m  |  2h46m
+15:17:46   [layastaro]  |  5,094 docs  |  7.37M ch  |  ~1.84M tok  |  734 ch/s  |  20,836 req  |  29% of budget  |  ETA 193h46m  |  2h47m
+15:17:57   [layastaro]  |  5,129 docs  |  7.40M ch  |  ~1.85M tok  |  736 ch/s  |  20,906 req  |  30% of budget  |  ETA 193h16m  |  2h47m
+15:18:16   [layastaro]  |  5,155 docs  |  7.42M ch  |  ~1.85M tok  |  737 ch/s  |  21,053 req  |  30% of budget  |  ETA 193h03m  |  2h47m
+15:18:30   [layastaro]  |  5,173 docs  |  7.43M ch  |  ~1.86M tok  |  738 ch/s  |  21,180 req  |  30% of budget  |  ETA 192h55m  |  2h47m
+15:18:40   [layastaro]  |  5,179 docs  |  7.44M ch  |  ~1.86M tok  |  737 ch/s  |  21,261 req  |  30% of budget  |  ETA 193h00m  |  2h48m
+15:18:52   [layastaro]  |  5,211 docs  |  7.46M ch  |  ~1.86M tok  |  738 ch/s  |  21,334 req  |  30% of budget  |  ETA 192h41m  |  2h48m
+15:19:02   [layastaro]  |  5,237 docs  |  7.49M ch  |  ~1.87M tok  |  740 ch/s  |  21,397 req  |  30% of budget  |  ETA 192h08m  |  2h48m
+15:19:13   [layastaro]  |  5,272 docs  |  7.52M ch  |  ~1.88M tok  |  743 ch/s  |  21,478 req  |  30% of budget  |  ETA 191h31m  |  2h48m
+15:19:23   [layastaro]  |  5,283 docs  |  7.52M ch  |  ~1.88M tok  |  743 ch/s  |  21,569 req  |  30% of budget  |  ETA 191h35m  |  2h48m
+15:19:34   [layastaro]  |  5,339 docs  |  7.56M ch  |  ~1.89M tok  |  745 ch/s  |  21,633 req  |  30% of budget  |  ETA 190h49m  |  2h48m
+15:19:44   [layastaro]  |  5,399 docs  |  7.60M ch  |  ~1.90M tok  |  748 ch/s  |  21,695 req  |  30% of budget  |  ETA 190h03m  |  2h49m
+15:19:54   [layastaro]  |  5,439 docs  |  7.63M ch  |  ~1.91M tok  |  750 ch/s  |  21,742 req  |  31% of budget  |  ETA 189h32m  |  2h49m
+15:20:05   [layastaro]  |  5,489 docs  |  7.67M ch  |  ~1.92M tok  |  754 ch/s  |  21,795 req  |  31% of budget  |  ETA 188h41m  |  2h49m
+15:20:15   [layastaro]  |  5,549 docs  |  7.71M ch  |  ~1.93M tok  |  758 ch/s  |  21,858 req  |  31% of budget  |  ETA 187h42m  |  2h49m
+15:20:25   [layastaro]  |  5,600 docs  |  7.76M ch  |  ~1.94M tok  |  761 ch/s  |  21,916 req  |  31% of budget  |  ETA 186h44m  |  2h49m
+15:20:36   [layastaro]  |  5,663 docs  |  7.81M ch  |  ~1.95M tok  |  766 ch/s  |  21,981 req  |  31% of budget  |  ETA 185h43m  |  2h49m
+15:20:46   [layastaro]  |  5,718 docs  |  7.86M ch  |  ~1.97M tok  |  770 ch/s  |  22,041 req  |  31% of budget  |  ETA 184h39m  |  2h50m
+15:20:56   [layastaro]  |  5,772 docs  |  7.91M ch  |  ~1.98M tok  |  773 ch/s  |  22,100 req  |  32% of budget  |  ETA 183h49m  |  2h50m
+15:21:06   [layastaro]  |  5,838 docs  |  7.95M ch  |  ~1.99M tok  |  777 ch/s  |  22,172 req  |  32% of budget  |  ETA 182h51m  |  2h50m
+15:21:16   [layastaro]  |  5,914 docs  |  8.02M ch  |  ~2.00M tok  |  783 ch/s  |  22,250 req  |  32% of budget  |  ETA 181h31m  |  2h50m
+15:21:27   [layastaro]  |  5,998 docs  |  8.09M ch  |  ~2.02M tok  |  789 ch/s  |  22,341 req  |  32% of budget  |  ETA 180h07m  |  2h50m
+15:21:37   [layastaro]  |  6,073 docs  |  8.15M ch  |  ~2.04M tok  |  794 ch/s  |  22,424 req  |  33% of budget  |  ETA 179h02m  |  2h50m
+15:21:47   [layastaro]  |  6,140 docs  |  8.19M ch  |  ~2.05M tok  |  798 ch/s  |  22,494 req  |  33% of budget  |  ETA 178h08m  |  2h51m
+15:21:57   [layastaro]  |  6,214 docs  |  8.25M ch  |  ~2.06M tok  |  802 ch/s  |  22,575 req  |  33% of budget  |  ETA 177h06m  |  2h51m
+15:22:07   [layastaro]  |  6,290 docs  |  8.31M ch  |  ~2.08M tok  |  807 ch/s  |  22,657 req  |  33% of budget  |  ETA 175h58m  |  2h51m
+15:22:17   [layastaro]  |  6,359 docs  |  8.35M ch  |  ~2.09M tok  |  811 ch/s  |  22,729 req  |  33% of budget  |  ETA 175h12m  |  2h51m
+15:22:27   [layastaro]  |  6,417 docs  |  8.40M ch  |  ~2.10M tok  |  814 ch/s  |  22,789 req  |  34% of budget  |  ETA 174h27m  |  2h51m
+15:22:37   [layastaro]  |  6,477 docs  |  8.44M ch  |  ~2.11M tok  |  817 ch/s  |  22,855 req  |  34% of budget  |  ETA 173h46m  |  2h51m
+15:22:57   [layastaro]  |  6,533 docs  |  8.48M ch  |  ~2.12M tok  |  820 ch/s  |  23,039 req  |  34% of budget  |  ETA 173h11m  |  2h52m
+15:23:11   [layastaro]  |  6,536 docs  |  8.48M ch  |  ~2.12M tok  |  819 ch/s  |  23,208 req  |  34% of budget  |  ETA 173h23m  |  2h52m
+15:23:32   [layastaro]  |  6,545 docs  |  8.49M ch  |  ~2.12M tok  |  818 ch/s  |  23,436 req  |  34% of budget  |  ETA 173h34m  |  2h52m
+15:23:48   [layastaro]  |  6,558 docs  |  8.50M ch  |  ~2.13M tok  |  818 ch/s  |  23,603 req  |  34% of budget  |  ETA 173h37m  |  2h53m
+15:23:58   [layastaro]  |  6,565 docs  |  8.51M ch  |  ~2.13M tok  |  817 ch/s  |  23,712 req  |  34% of budget  |  ETA 173h42m  |  2h53m
+15:24:34   [layastaro]  |  6,576 docs  |  8.51M ch  |  ~2.13M tok  |  815 ch/s  |  24,045 req  |  34% of budget  |  ETA 174h09m  |  2h53m
+15:24:44   [layastaro]  |  6,594 docs  |  8.53M ch  |  ~2.13M tok  |  816 ch/s  |  24,076 req  |  34% of budget  |  ETA 174h00m  |  2h54m
+15:24:55   [layastaro]  |  6,596 docs  |  8.53M ch  |  ~2.13M tok  |  815 ch/s  |  24,157 req  |  34% of budget  |  ETA 174h09m  |  2h54m
+15:25:08   [layastaro]  |  6,602 docs  |  8.53M ch  |  ~2.13M tok  |  815 ch/s  |  24,258 req  |  34% of budget  |  ETA 174h18m  |  2h54m
+15:25:19   [layastaro]  |  6,623 docs  |  8.55M ch  |  ~2.14M tok  |  815 ch/s  |  24,280 req  |  34% of budget  |  ETA 174h12m  |  2h54m
+15:25:33   [layastaro]  |  6,630 docs  |  8.55M ch  |  ~2.14M tok  |  815 ch/s  |  24,386 req  |  34% of budget  |  ETA 174h18m  |  2h54m
+15:25:46   [layastaro]  |  6,631 docs  |  8.55M ch  |  ~2.14M tok  |  814 ch/s  |  24,480 req  |  34% of budget  |  ETA 174h30m  |  2h55m
+15:25:57   [layastaro]  |  6,635 docs  |  8.56M ch  |  ~2.14M tok  |  813 ch/s  |  24,567 req  |  34% of budget  |  ETA 174h39m  |  2h55m
+15:26:09   [layastaro]  |  6,637 docs  |  8.56M ch  |  ~2.14M tok  |  813 ch/s  |  24,647 req  |  34% of budget  |  ETA 174h39m  |  2h55m
+15:26:19   [layastaro]  |  6,654 docs  |  8.57M ch  |  ~2.14M tok  |  813 ch/s  |  24,690 req  |  34% of budget  |  ETA 174h37m  |  2h55m
+15:26:30   [layastaro]  |  6,657 docs  |  8.58M ch  |  ~2.14M tok  |  812 ch/s  |  24,749 req  |  34% of budget  |  ETA 174h45m  |  2h55m
+15:26:49   [layastaro]  |  6,666 docs  |  8.58M ch  |  ~2.15M tok  |  812 ch/s  |  24,913 req  |  34% of budget  |  ETA 174h56m  |  2h56m
+15:27:15   [layastaro]  |  6,673 docs  |  8.59M ch  |  ~2.15M tok  |  810 ch/s  |  25,111 req  |  34% of budget  |  ETA 175h15m  |  2h56m
+15:27:43   [layastaro]  |  6,684 docs  |  8.60M ch  |  ~2.15M tok  |  809 ch/s  |  25,343 req  |  34% of budget  |  ETA 175h27m  |  2h57m
+15:27:46   [layastaro]  |  6,684 docs  |  8.60M ch  |  ~2.15M tok  |  809 ch/s  |  25,381 req  |  34% of budget  |  ETA 175h31m  |  2h57m  |  DONE
+15:27:46        rejected: no-text-extracted x4,432, latin-heavy x305, devanagari-leak x174, too-short x101, not-gujarati x86
+15:27:46   shard: layastaro.part-1786777240-25241.jsonl.gz (6,684 docs / 8.60M chars)
+15:27:46 
+========================================================================================
+15:27:46 TOTAL 8.60M chars  ~2.15M tokens (1.7% of target) in 2h57m
+15:27:46 ========================================================================================

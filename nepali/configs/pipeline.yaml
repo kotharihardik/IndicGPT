@@ -1,0 +1,212 @@
+# Nepali (Model L) — Phase 1 pipeline configuration
+# Independent of Gujarati: separate data, tokenizer, vocabulary, config.
+# Where a decision differs from the Gujarati pipeline the reason is given
+# inline, because "we did it differently" needs a why.
+#
+# WHY NEPALI AND NOT SINDHI
+# Sindhi was attempted first and abandoned on measured grounds: only two
+# usable manual sources exist (135M chars), and the best one found
+# (sindhsalamat.com, 576M chars) declares ai-train=no. Manual availability
+# caps the whole corpus, because the 20% floor is a ratio of the total, so
+# Sindhi could not have exceeded ~79M tokens overall. Nepali has ~3,563M
+# chars of ai-train-permitted manual text available, so it was chosen instead.
+# No Sindhi code is kept in the repository; this note is the record.
+language: nep
+language_name: Nepali
+
+# SCRIPT: Devanagari (U+0900-U+097F), shared with Hindi, Marathi, Sanskrit
+# and Bhojpuri. See the `quality:` block for why that matters more here
+# than the script choice did for either other language.
+
+paths:
+  raw:              data/raw
+  raw_public:       data/raw/public
+  raw_manual:       data/raw/manual
+  clean:            data/clean
+  dedup:            data/dedup
+  splits:           data/splits/out
+  tokenizer:        tokenizer
+  tokenizer_model:  tokenizer/model
+  tokenizer_vocab:  tokenizer/vocab
+  logs:             logs
+  state:            data/state
+  reports:          ../report/phase1/nepali   # this phase's tables and figures
+
+repeated_line_df: 50
+
+# Corpus targets
+# Unlike Sindhi, Nepali can reach the full target: measured manual
+# availability is ~3,563M chars (~1,000M tokens) across ai-train-permitted
+# sources, against a 100M-token manual requirement. Manual is therefore
+# NOT the binding constraint here, and the corpus is planned at the full
+# ~500M tokens the spec asks for.
+targets:
+  corpus_tokens: 500.0e6
+  manual_fraction: 0.20
+  collection_headroom: 1.25
+
+tokens:
+  # Devanagari Nepali: estimated pessimistically until measured. Expect a
+  # value near Gujarati's (both are abugidas with similar matra density),
+  # so 4.0 is the conservative starting point.
+  chars_per_token: 4.0
+
+crawl:
+  user_agent: "LMA-Monsoon2026-StudentCrawler/0.2 (academic corpus collection; contact: hardikkothari300@gmail.com)"
+  host_concurrency: 5
+  host_spacing: 0.2
+  timeout: 45
+  max_retries: 4
+  min_chars: 400
+
+# Collection-time quality gate, applied by reject_reason() in
+# data/collection/adapters/base.py. Deliberately looser than the strict
+# `quality:` block below: rejecting a document at collection time is
+# irreversible (the page would have to be re-crawled), whereas rejecting it
+# in preprocessing is a config edit and a rerun of a local stage.
+# Collect wide, filter strictly later.
+collect_quality:
+  min_chars: 200
+  min_words: 20
+  min_script_ratio: 0.60          # Devanagari share of letters
+  min_nepali_marker_rate: 2.0     # see `quality:` below
+  max_latin_ratio: 0.35
+  max_digit_ratio: 0.30
+  min_stopword_hits: 2
+
+ocr:
+  # Not used. No reliable Nepali Tesseract model, and archive.org holds only
+  # 240 Nepali text items (against 1,152 Gujarati), so books are not a
+  # meaningful Nepali source. Kept for schema parity only.
+  tesseract_lang: nep
+  dpi: 300
+
+# Normalisation — close to Gujarati, since both are Devanagari-family
+normalize:
+  strip_zwj: true             # U+200D: not needed for Devanagari rendering
+  keep_zwnj: true             # U+200C can block a conjunct -> keep
+  map_digits_to_native: true  # 0-9 -> native-script digits (TA ruling: digits
+                            # may stay, but in the language's own script)
+  strip_latin_words: true     # remove non-language words entirely, including
+                            # proper nouns such as Tata / IRCTC (TA ruling)   # Devanagari ०-९ -> 0-9
+  normalize_danda: true       # । and ॥ spacing
+  strip_urls: true
+  strip_emails: true
+
+# Quality filters — THE KEY DIFFERENCE, AND THE HARDEST OF THE THREE
+# Gujarati has its own exclusive Unicode block: "85% of letters are
+# Gujarati" is a complete language test.
+# Sindhi shares the Arabic block with Urdu/Persian/Arabic, but owns 17
+# letters no other language uses, so a character test still works.
+# NEPALI HAS NEITHER. It shares Devanagari with Hindi, Marathi, Sanskrit
+# and Bhojpuri, and there is no character that identifies it. Every
+# character-based method fails.
+#
+# So language identification here is LEXICAL. Nepali and Hindi differ
+# sharply in high-frequency function words:
+#     Nepali   छ, छन्, हो, हुन्, भएको, गरेको, लाई, र, पनि, तर
+#     Hindi    है, हैं, और, में, किया, नहीं, कहा, गया
+# Measured on real pages: Nepali news scores 11-14 Nepali markers per
+# 1000 chars and 0.0 Hindi markers. Hindi pages invert that completely.
+# The filter requires Nepali markers above a floor AND more Nepali
+# markers than Hindi ones.
+quality:
+  min_chars: 250
+  max_chars: 800000
+  min_words: 30
+  min_mean_word_len: 2.0
+  max_mean_word_len: 15.0
+  min_script_ratio: 0.80        # >=80% of letters are Devanagari
+  min_nepali_marker_rate: 3.0   # Nepali marker words per 1000 chars
+  min_nepali_hindi_ratio: 1.5   # Nepali markers must outnumber Hindi 1.5:1
+  max_latin_ratio: 0.15
+  min_stopword_hits: 3
+  max_digit_ratio: 0.15
+  max_duplicate_line_fraction: 0.30
+  max_top_2gram: 0.18
+  max_top_3gram: 0.16
+  max_top_4gram: 0.14
+
+splits:
+  seed: 1337
+  val_fraction: 0.05
+  test_fraction: 0.05
+  val_max_chars: 1.7e8   # headroom so the 5% fraction binds, not the cap
+  test_max_chars: 1.7e8
+  heldout_sources: []
+
+# Tokenizer (SentencePiece Unigram, trained from scratch on Nepali)
+tokenizer:
+  algorithm: sentencepiece_unigram
+  # Artifact names are derived, not configured: <size>_<algo>_<lang>,
+  # e.g. 32k_unigram_nep.model. Sweep candidates go in model/sweep/.
+
+  # CHOSEN FROM THE SWEEP, run independently of Gujarati's. Measured on the
+  # full validation split, 61,604 docs (embedding = vocab x 384, budget ~25M):
+  #
+  #   vocab   chars/tok  fertility  vocab used  embedding  % of budget
+  #    8,000    4.222      1.573       98.2%      3.07M        12%
+  #   12,000    4.508      1.473       98.8%      4.61M        18%
+  #   16,000    4.689      1.416       99.1%      6.14M        25%   <- chosen
+  #   24,000    4.925      1.348       99.4%      9.22M        37%
+  #   32,000    5.068      1.310       99.5%     12.29M        49%
+  #
+  # Same rule as Gujarati: reject anything over 34% of the parameter budget,
+  # reject anything using under 95% of its vocabulary, take the largest
+  # survivor. Two separate sweeps landing on 16,000 is convergence, not
+  # copying - the vocabularies themselves share nothing.
+  vocab_size: 16000
+  sweep_vocab_sizes: [8000, 12000, 16000, 24000, 32000]
+
+  character_coverage: 0.9995
+  max_piece_length: 16
+  # Sample size for FITTING the tokenizer, ~10% of the train split.
+  #
+  # Peak memory was measured directly rather than assumed (vocab 8k, this
+  # machine, 8 GB RAM, on the Gujarati sample of comparable size):
+  #
+  #     share  chars   unigram peak RSS   wall
+  #       5%   106M        1.2 GB         44s
+  #      10%   211M        1.5 GB         88s
+  #      15%   317M        1.6 GB        135s
+  #      20%   422M        1.7 GB        190s
+  #      20%   422M        1.0 GB         14s   (bpe)
+  #
+  # An earlier cap of 100M characters was set after the trainer reached ~18 GB
+  # RSS on 470M characters. That measurement was taken at SentencePiece's
+  # default seed_sentencepiece_size of 1,000,000; lowering it to 200,000 cut
+  # peak memory roughly tenfold, because the seed lattice rather than the text
+  # dominates. Memory scales very weakly with sample size, so this cap is set
+  # by diminishing returns, not by RAM.
+  #
+  # This caps the tokenizer FITTING only. Corpus statistics and the 20% token
+  # accounting still cover 100% of the data.
+  train_text_max_chars: 2.50e8  # ~10% of the train split
+  input_sentence_size: 3000000  # lines SentencePiece loads. Must be
+                                # above the sample's line count (~1.8M
+                                # guj, ~2.1M nep at 20%) so nothing is
+                                # sub-sampled, but NOT far above it:
+                                # the trainer reserves against this
+                                # value, and 12,000,000 drove an 8 GB
+                                # machine into swap and turned a
+                                # 190-second model into 87 minutes.
+  num_threads: 8
+  large_corpus: true            # memory-efficient suffix array
+  seed_sentencepiece_size: 200000  # down from SentencePiece's
+                                # 1,000,000 default. This is the
+                                # dominant Unigram memory term;
+                                # BPE ignores it.
+  seed: 1337
+
+  model_dim: 384
+  target_params: 25.0e6
+
+  # Held out for the report. One sentence per register, long enough to be
+  # worth reading: news prose with digits, academic prose full of Sanskritic
+  # compounds, and an inflection paradigm that shows whether the stem
+  # survives. All three are pre-normalised the same way the corpus is, so
+  # they cannot show byte fallback on characters preprocessing removes.
+  eval_examples:
+    - "नेपाल सरकारले २०८१ सालको बजेटमा शिक्षा र स्वास्थ्य क्षेत्रका लागि छुट्याइएको रकम बढाउने निर्णय गरेको छ।"
+    - "यस अनुसन्धानपत्रमा लेखकले भाषाशास्त्रीय दृष्टिकोणबाट नेपाली क्रियापदका रूपान्तरणको प्रक्रियाको विश्लेषण प्रस्तुत गरेका छन्।"
+    - "घर, घरमा, घरहरूमा, घरहरूबाट, घरवालाहरू - एउटै मूल शब्दबाट बनेका यी पाँच रूपहरू हेर्दा मूल शब्द अक्षुण्ण रहेको देखिन्छ।"

@@ -1,0 +1,20 @@
+
+=== ai4bharat_sangraha: ai4bharat/sangraha ai4bharat_sangraha ===
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+  resuming: skipping 776,676 examples already consumed
+  795,826 docs | 1.54B chars
+  815,812 docs | 1.58B chars
+  835,787 docs | 1.62B chars
+  855,772 docs | 1.65B chars
+  875,754 docs | 1.69B chars
+  895,729 docs | 1.73B chars
+  915,711 docs | 1.77B chars
+  935,694 docs | 1.81B chars
+  955,672 docs | 1.85B chars
+  975,660 docs | 1.89B chars
+  995,641 docs | 1.93B chars
+  budget reached: 1.95B chars
+  done: 1,007,817 docs, 1.95B chars -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/data/raw/public/ai4bharat_sangraha.jsonl.gz
+
+==== public total: 1,007,817 docs / 1.95B chars ====
+These are PUBLIC documents; they do not count towards the 20% manual quota.

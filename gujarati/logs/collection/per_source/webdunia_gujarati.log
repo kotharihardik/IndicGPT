@@ -1,0 +1,62 @@
+========================================================================================
+GUJARATI MANUAL COLLECTION   2026-08-15 12:27:04
+  sources: webdunia_gujarati
+  target : 130.00M manual tokens (~520.00M chars)
+  already: 282.76K chars collected
+========================================================================================
+
+--- webdunia_gujarati  (sitemap)  budget 25.00M chars ---
+  resuming: 287 docs / 282.76K chars already collected, 287 URLs known
+  webdunia_gujarati: 3,646 new article URLs from sitemap
+  [webdunia_gujarati]  |  1 docs  |  283.56K ch  |  ~70.89K tok  |  38 ch/s  |  1,057 req  |  1% of budget  |  ETA 3791h11m  |  21s
+  [webdunia_gujarati]  |  35 docs  |  309.15K ch  |  ~77.29K tok  |  834 ch/s  |  1,235 req  |  1% of budget  |  ETA 172h53m  |  31s
+  [webdunia_gujarati]  |  61 docs  |  334.14K ch  |  ~83.53K tok  |  1.23K ch/s  |  1,350 req  |  1% of budget  |  ETA 117h09m  |  41s
+  [webdunia_gujarati]  |  93 docs  |  359.25K ch  |  ~89.81K tok  |  1.47K ch/s  |  1,469 req  |  1% of budget  |  ETA 98h31m  |  52s
+  [webdunia_gujarati]  |  101 docs  |  364.45K ch  |  ~91.11K tok  |  1.31K ch/s  |  1,571 req  |  1% of budget  |  ETA 110h28m  |  1m02s
+  [webdunia_gujarati]  |  112 docs  |  370.02K ch  |  ~92.50K tok  |  1.20K ch/s  |  1,687 req  |  1% of budget  |  ETA 120h02m  |  1m12s
+  [webdunia_gujarati]  |  169 docs  |  474.88K ch  |  ~118.72K tok  |  2.32K ch/s  |  1,759 req  |  2% of budget  |  ETA 62h05m  |  1m22s
+  [webdunia_gujarati]  |  227 docs  |  589.30K ch  |  ~147.32K tok  |  3.30K ch/s  |  1,817 req  |  2% of budget  |  ETA 43h46m  |  1m33s
+  [webdunia_gujarati]  |  283 docs  |  699.45K ch  |  ~174.86K tok  |  4.03K ch/s  |  1,873 req  |  3% of budget  |  ETA 35h49m  |  1m43s
+  [webdunia_gujarati]  |  342 docs  |  824.00K ch  |  ~206.00K tok  |  4.76K ch/s  |  1,933 req  |  3% of budget  |  ETA 30h16m  |  1m53s
+  [webdunia_gujarati]  |  395 docs  |  912.20K ch  |  ~228.05K tok  |  5.09K ch/s  |  1,988 req  |  4% of budget  |  ETA 28h20m  |  2m03s
+  [webdunia_gujarati]  |  448 docs  |  1.01M ch  |  ~253.64K tok  |  5.47K ch/s  |  2,043 req  |  4% of budget  |  ETA 26h20m  |  2m13s
+  [webdunia_gujarati]  |  507 docs  |  1.13M ch  |  ~283.49K tok  |  5.92K ch/s  |  2,102 req  |  5% of budget  |  ETA 24h21m  |  2m23s
+  [webdunia_gujarati]  |  562 docs  |  1.25M ch  |  ~311.35K tok  |  6.26K ch/s  |  2,158 req  |  5% of budget  |  ETA 23h01m  |  2m33s
+  [webdunia_gujarati]  |  618 docs  |  1.36M ch  |  ~339.08K tok  |  6.54K ch/s  |  2,214 req  |  5% of budget  |  ETA 22h00m  |  2m44s
+  [webdunia_gujarati]  |  673 docs  |  1.46M ch  |  ~365.16K tok  |  6.75K ch/s  |  2,269 req  |  6% of budget  |  ETA 21h20m  |  2m54s
+  [webdunia_gujarati]  |  722 docs  |  1.56M ch  |  ~389.59K tok  |  6.91K ch/s  |  2,319 req  |  6% of budget  |  ETA 20h50m  |  3m04s
+  [webdunia_gujarati]  |  776 docs  |  1.67M ch  |  ~417.14K tok  |  7.12K ch/s  |  2,373 req  |  7% of budget  |  ETA 20h13m  |  3m14s
+  [webdunia_gujarati]  |  830 docs  |  1.77M ch  |  ~442.06K tok  |  7.24K ch/s  |  2,427 req  |  7% of budget  |  ETA 19h52m  |  3m25s
+  [webdunia_gujarati]  |  877 docs  |  1.87M ch  |  ~468.42K tok  |  7.39K ch/s  |  2,475 req  |  7% of budget  |  ETA 19h28m  |  3m35s
+  [webdunia_gujarati]  |  925 docs  |  1.97M ch  |  ~492.18K tok  |  7.48K ch/s  |  2,523 req  |  8% of budget  |  ETA 19h14m  |  3m45s
+  [webdunia_gujarati]  |  971 docs  |  2.06M ch  |  ~514.01K tok  |  7.53K ch/s  |  2,570 req  |  8% of budget  |  ETA 19h05m  |  3m55s
+  [webdunia_gujarati]  |  1,015 docs  |  2.13M ch  |  ~533.21K tok  |  7.54K ch/s  |  2,615 req  |  9% of budget  |  ETA 19h04m  |  4m05s
+  [webdunia_gujarati]  |  1,072 docs  |  2.23M ch  |  ~558.47K tok  |  7.64K ch/s  |  2,672 req  |  9% of budget  |  ETA 18h49m  |  4m15s
+  [webdunia_gujarati]  |  1,126 docs  |  2.34M ch  |  ~586.24K tok  |  7.76K ch/s  |  2,726 req  |  9% of budget  |  ETA 18h31m  |  4m25s
+  [webdunia_gujarati]  |  1,179 docs  |  2.45M ch  |  ~612.19K tok  |  7.85K ch/s  |  2,779 req  |  10% of budget  |  ETA 18h18m  |  4m35s
+  [webdunia_gujarati]  |  1,232 docs  |  2.55M ch  |  ~638.06K tok  |  7.94K ch/s  |  2,832 req  |  10% of budget  |  ETA 18h06m  |  4m45s
+  [webdunia_gujarati]  |  1,281 docs  |  2.65M ch  |  ~662.52K tok  |  8.00K ch/s  |  2,881 req  |  11% of budget  |  ETA 17h57m  |  4m55s
+  [webdunia_gujarati]  |  1,328 docs  |  2.73M ch  |  ~682.92K tok  |  8.01K ch/s  |  2,928 req  |  11% of budget  |  ETA 17h56m  |  5m05s
+  [webdunia_gujarati]  |  1,378 docs  |  2.83M ch  |  ~707.04K tok  |  8.06K ch/s  |  2,978 req  |  11% of budget  |  ETA 17h50m  |  5m15s
+  [webdunia_gujarati]  |  1,431 docs  |  2.93M ch  |  ~731.77K tok  |  8.10K ch/s  |  3,031 req  |  12% of budget  |  ETA 17h44m  |  5m26s
+  [webdunia_gujarati]  |  1,483 docs  |  3.03M ch  |  ~756.59K tok  |  8.15K ch/s  |  3,083 req  |  12% of budget  |  ETA 17h37m  |  5m36s
+  [webdunia_gujarati]  |  1,535 docs  |  3.12M ch  |  ~780.12K tok  |  8.18K ch/s  |  3,135 req  |  12% of budget  |  ETA 17h33m  |  5m47s
+  [webdunia_gujarati]  |  1,585 docs  |  3.22M ch  |  ~804.43K tok  |  8.21K ch/s  |  3,185 req  |  13% of budget  |  ETA 17h29m  |  5m57s
+  [webdunia_gujarati]  |  1,637 docs  |  3.31M ch  |  ~828.73K tok  |  8.25K ch/s  |  3,237 req  |  13% of budget  |  ETA 17h23m  |  6m07s
+  [webdunia_gujarati]  |  1,689 docs  |  3.41M ch  |  ~852.06K tok  |  8.27K ch/s  |  3,289 req  |  14% of budget  |  ETA 17h20m  |  6m17s
+  [webdunia_gujarati]  |  1,740 docs  |  3.50M ch  |  ~875.89K tok  |  8.29K ch/s  |  3,341 req  |  14% of budget  |  ETA 17h18m  |  6m28s
+  [webdunia_gujarati]  |  1,793 docs  |  3.61M ch  |  ~901.45K tok  |  8.34K ch/s  |  3,393 req  |  14% of budget  |  ETA 17h12m  |  6m38s
+  [webdunia_gujarati]  |  1,840 docs  |  3.70M ch  |  ~925.91K tok  |  8.37K ch/s  |  3,440 req  |  15% of budget  |  ETA 17h07m  |  6m48s
+  [webdunia_gujarati]  |  1,881 docs  |  3.79M ch  |  ~946.93K tok  |  8.34K ch/s  |  3,481 req  |  15% of budget  |  ETA 17h11m  |  7m00s
+  [webdunia_gujarati]  |  1,936 docs  |  3.90M ch  |  ~975.39K tok  |  8.41K ch/s  |  3,536 req  |  16% of budget  |  ETA 17h02m  |  7m10s
+  [webdunia_gujarati]  |  1,986 docs  |  4.00M ch  |  ~999.36K tok  |  8.44K ch/s  |  3,586 req  |  16% of budget  |  ETA 16h58m  |  7m20s
+  [webdunia_gujarati]  |  2,028 docs  |  4.07M ch  |  ~1.02M tok  |  8.42K ch/s  |  3,628 req  |  16% of budget  |  ETA 17h01m  |  7m30s
+  [webdunia_gujarati]  |  2,055 docs  |  4.12M ch  |  ~1.03M tok  |  8.40K ch/s  |  3,655 req  |  16% of budget  |  ETA 17h03m  |  7m37s  |  DONE
+       rejected: too-short x1,565, latin-heavy x13, not-gujarati x9, devanagari-leak x2, no-text-extracted x1
+  shard: webdunia_gujarati.part-1786777024-22848.jsonl.gz (2,055 docs / 3.84M chars)
+
+========================================================================================
+TOTAL 4.12M chars  ~1.03M tokens (0.8% of target) in 7m37s
+========================================================================================
+
+progress: python3 data/collection/collect_manual.py --status

@@ -1,0 +1,33 @@
+{
+  "language": "guj",
+  "algorithm": "sentencepiece_unigram",
+  "vocab_size": 16000,
+  "trained_on": "train split only (validation/test never seen)",
+  "training_chars": 551412371,
+  "training_composition_by_source": {},
+  "pretrained_tokenizer_used": false,
+  "shared_with_other_language": false,
+  "script": "Gujarati (U+0A80-U+0AFF)",
+  "required_chars_count": 91,
+  "settings": {
+    "normalization_rule_name": "identity",
+    "byte_fallback": true,
+    "split_by_unicode_script": true,
+    "split_by_whitespace": true,
+    "split_digits": true,
+    "character_coverage": 0.9995,
+    "max_sentencepiece_length": 16
+  },
+  "special_tokens": {
+    "<pad>": 0,
+    "<unk>": 1,
+    "<s>": 2,
+    "</s>": 3
+  },
+  "phase2_cost": {
+    "model_dim": 384,
+    "embedding_parameters": 6144000,
+    "share_of_target_budget": 0.2458,
+    "note": "input and output embeddings are tied, so counted once"
+  }
+}

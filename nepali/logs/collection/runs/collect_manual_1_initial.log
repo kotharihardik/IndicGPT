@@ -1,0 +1,292 @@
+========================================================================================
+NEPALI MANUAL COLLECTION   2026-08-14 00:10:25
+  sources: onlinekhabar, reportersnepal, khabarhub, annapurnapost, clickmandu, bizmandu, nepalisahityaghar, hamrakura
+  target : 125.00M manual tokens (~500.00M chars)
+  already: 0 chars collected
+========================================================================================
+
+--- onlinekhabar  (wp_rest)  budget 150.00M chars ---
+  [onlinekhabar]  |  1 docs  |  1.43K ch  |  ~357 tok  |  928 ch/s  |  4 req  |  0% of budget  |  ETA 149h36m  |  1s
+  [onlinekhabar]  |  2,381 docs  |  5.97M ch  |  ~1.49M tok  |  517.42K ch/s  |  24 req  |  4% of budget  |  ETA 15m54s  |  11s
+  [onlinekhabar]  |  4,386 docs  |  10.93M ch  |  ~2.73M tok  |  487.11K ch/s  |  48 req  |  7% of budget  |  ETA 16m44s  |  22s
+  [onlinekhabar]  |  6,781 docs  |  16.67M ch  |  ~4.17M tok  |  501.04K ch/s  |  72 req  |  11% of budget  |  ETA 16m04s  |  33s
+  [onlinekhabar]  |  8,767 docs  |  21.54M ch  |  ~5.39M tok  |  494.12K ch/s  |  92 req  |  14% of budget  |  ETA 16m08s  |  43s
+  [onlinekhabar]  |  10,782 docs  |  26.31M ch  |  ~6.58M tok  |  490.89K ch/s  |  112 req  |  18% of budget  |  ETA 16m04s  |  53s
+  [onlinekhabar]  |  11,958 docs  |  29.06M ch  |  ~7.27M tok  |  452.11K ch/s  |  124 req  |  19% of budget  |  ETA 17m21s  |  1m04s
+  [onlinekhabar]  |  13,955 docs  |  34.08M ch  |  ~8.52M tok  |  452.82K ch/s  |  144 req  |  23% of budget  |  ETA 17m08s  |  1m15s
+  [onlinekhabar]  |  15,950 docs  |  38.68M ch  |  ~9.67M tok  |  450.02K ch/s  |  164 req  |  26% of budget  |  ETA 17m05s  |  1m25s
+  [onlinekhabar]  |  18,100 docs  |  44.02M ch  |  ~11.01M tok  |  458.79K ch/s  |  184 req  |  29% of budget  |  ETA 16m33s  |  1m35s
+  [onlinekhabar]  |  20,093 docs  |  48.58M ch  |  ~12.15M tok  |  458.51K ch/s  |  204 req  |  32% of budget  |  ETA 16m24s  |  1m45s
+  [onlinekhabar]  |  22,311 docs  |  53.55M ch  |  ~13.39M tok  |  461.81K ch/s  |  224 req  |  36% of budget  |  ETA 16m06s  |  1m55s
+  [onlinekhabar]  |  24,726 docs  |  58.31M ch  |  ~14.58M tok  |  459.39K ch/s  |  252 req  |  39% of budget  |  ETA 16m01s  |  2m06s
+  [onlinekhabar]  |  26,789 docs  |  63.41M ch  |  ~15.85M tok  |  463.06K ch/s  |  272 req  |  42% of budget  |  ETA 15m42s  |  2m16s
+  [onlinekhabar]  |  28,925 docs  |  68.71M ch  |  ~17.18M tok  |  467.64K ch/s  |  292 req  |  46% of budget  |  ETA 15m22s  |  2m26s
+  [onlinekhabar]  |  31,154 docs  |  73.12M ch  |  ~18.28M tok  |  465.95K ch/s  |  316 req  |  49% of budget  |  ETA 15m16s  |  2m36s
+  [onlinekhabar]  |  33,504 docs  |  78.02M ch  |  ~19.51M tok  |  460.91K ch/s  |  340 req  |  52% of budget  |  ETA 15m15s  |  2m49s
+  [onlinekhabar]  |  35,493 docs  |  82.09M ch  |  ~20.52M tok  |  457.69K ch/s  |  360 req  |  55% of budget  |  ETA 15m13s  |  2m59s
+  [onlinekhabar]  |  37,488 docs  |  86.93M ch  |  ~21.73M tok  |  458.29K ch/s  |  380 req  |  58% of budget  |  ETA 15m01s  |  3m09s
+  [onlinekhabar]  |  39,484 docs  |  91.49M ch  |  ~22.87M tok  |  457.18K ch/s  |  400 req  |  61% of budget  |  ETA 14m53s  |  3m20s
+  [onlinekhabar]  |  41,479 docs  |  95.87M ch  |  ~23.97M tok  |  455.94K ch/s  |  420 req  |  64% of budget  |  ETA 14m46s  |  3m30s
+  [onlinekhabar]  |  43,739 docs  |  100.98M ch  |  ~25.25M tok  |  458.45K ch/s  |  440 req  |  67% of budget  |  ETA 14m30s  |  3m40s
+  [onlinekhabar]  |  45,835 docs  |  105.74M ch  |  ~26.43M tok  |  459.18K ch/s  |  460 req  |  70% of budget  |  ETA 14m18s  |  3m50s
+  [onlinekhabar]  |  47,718 docs  |  110.16M ch  |  ~27.54M tok  |  458.49K ch/s  |  480 req  |  73% of budget  |  ETA 14m10s  |  4m00s
+  [onlinekhabar]  |  49,726 docs  |  114.33M ch  |  ~28.58M tok  |  456.81K ch/s  |  500 req  |  76% of budget  |  ETA 14m04s  |  4m10s
+  [onlinekhabar]  |  51,681 docs  |  118.85M ch  |  ~29.71M tok  |  456.63K ch/s  |  520 req  |  79% of budget  |  ETA 13m54s  |  4m20s
+  [onlinekhabar]  |  53,509 docs  |  123.01M ch  |  ~30.75M tok  |  455.14K ch/s  |  540 req  |  82% of budget  |  ETA 13m48s  |  4m30s
+  [onlinekhabar]  |  55,445 docs  |  127.60M ch  |  ~31.90M tok  |  455.05K ch/s  |  560 req  |  85% of budget  |  ETA 13m38s  |  4m40s
+  [onlinekhabar]  |  57,443 docs  |  132.11M ch  |  ~33.03M tok  |  454.58K ch/s  |  580 req  |  88% of budget  |  ETA 13m29s  |  4m50s
+  [onlinekhabar]  |  59,440 docs  |  137.19M ch  |  ~34.30M tok  |  455.76K ch/s  |  600 req  |  91% of budget  |  ETA 13m16s  |  5m01s
+  [onlinekhabar]  |  61,745 docs  |  142.68M ch  |  ~35.67M tok  |  458.77K ch/s  |  620 req  |  95% of budget  |  ETA 12m58s  |  5m11s
+  [onlinekhabar]  |  63,833 docs  |  147.38M ch  |  ~36.85M tok  |  458.36K ch/s  |  644 req  |  98% of budget  |  ETA 12m49s  |  5m21s
+  [onlinekhabar]  |  65,014 docs  |  150.00M ch  |  ~37.50M tok  |  459.64K ch/s  |  652 req  |  100% of budget  |  ETA 12m41s  |  5m26s  |  DONE (source budget reached)
+       rejected: not-nepali x88, too-short x73, latin-heavy x10, hindi-not-nepali x1
+  shard: onlinekhabar.part-1786646425-5000.jsonl.gz (65,014 docs / 150.00M chars)
+
+--- reportersnepal  (wp_rest)  budget 70.00M chars ---
+  [reportersnepal]  |  1 docs  |  742 ch  |  ~185 tok  |  311 ch/s  |  4 req  |  0% of budget  |  ETA 312h33m  |  2s
+  [reportersnepal]  |  2,387 docs  |  3.80M ch  |  ~950.98K tok  |  278.19K ch/s  |  28 req  |  5% of budget  |  ETA 20m44s  |  13s
+  [reportersnepal]  |  4,769 docs  |  7.65M ch  |  ~1.91M tok  |  311.65K ch/s  |  52 req  |  11% of budget  |  ETA 18m18s  |  24s
+  [reportersnepal]  |  7,145 docs  |  11.29M ch  |  ~2.82M tok  |  319.72K ch/s  |  76 req  |  16% of budget  |  ETA 17m39s  |  35s
+  [reportersnepal]  |  9,524 docs  |  15.07M ch  |  ~3.77M tok  |  328.73K ch/s  |  100 req  |  22% of budget  |  ETA 16m58s  |  45s
+  [reportersnepal]  |  11,946 docs  |  18.72M ch  |  ~4.68M tok  |  335.15K ch/s  |  124 req  |  27% of budget  |  ETA 16m28s  |  55s
+  [reportersnepal]  |  14,691 docs  |  22.90M ch  |  ~5.72M tok  |  341.24K ch/s  |  152 req  |  33% of budget  |  ETA 15m58s  |  1m07s
+  [reportersnepal]  |  16,684 docs  |  26.45M ch  |  ~6.61M tok  |  334.97K ch/s  |  172 req  |  38% of budget  |  ETA 16m05s  |  1m18s
+  [reportersnepal]  |  19,074 docs  |  30.29M ch  |  ~7.57M tok  |  337.31K ch/s  |  196 req  |  43% of budget  |  ETA 15m47s  |  1m29s
+  [reportersnepal]  |  21,066 docs  |  33.78M ch  |  ~8.45M tok  |  336.08K ch/s  |  216 req  |  48% of budget  |  ETA 15m40s  |  1m40s
+  [reportersnepal]  |  23,460 docs  |  37.75M ch  |  ~9.44M tok  |  339.49K ch/s  |  240 req  |  54% of budget  |  ETA 15m19s  |  1m51s
+  [reportersnepal]  |  25,901 docs  |  41.74M ch  |  ~10.44M tok  |  344.40K ch/s  |  264 req  |  60% of budget  |  ETA 14m55s  |  2m01s
+  [reportersnepal]  |  27,854 docs  |  44.94M ch  |  ~11.24M tok  |  338.59K ch/s  |  284 req  |  64% of budget  |  ETA 15m00s  |  2m12s
+  [reportersnepal]  |  29,852 docs  |  48.41M ch  |  ~12.10M tok  |  337.20K ch/s  |  304 req  |  69% of budget  |  ETA 14m54s  |  2m23s
+  [reportersnepal]  |  31,835 docs  |  51.92M ch  |  ~12.98M tok  |  338.04K ch/s  |  324 req  |  74% of budget  |  ETA 14m41s  |  2m33s
+  [reportersnepal]  |  34,200 docs  |  55.98M ch  |  ~14.00M tok  |  339.94K ch/s  |  348 req  |  80% of budget  |  ETA 14m24s  |  2m44s
+  [reportersnepal]  |  36,175 docs  |  59.56M ch  |  ~14.89M tok  |  340.92K ch/s  |  368 req  |  85% of budget  |  ETA 14m11s  |  2m54s
+  [reportersnepal]  |  37,763 docs  |  62.53M ch  |  ~15.63M tok  |  337.50K ch/s  |  384 req  |  89% of budget  |  ETA 14m11s  |  3m05s
+  [reportersnepal]  |  39,759 docs  |  66.16M ch  |  ~16.54M tok  |  336.52K ch/s  |  404 req  |  95% of budget  |  ETA 14m03s  |  3m16s
+  [reportersnepal]  |  41,978 docs  |  70.00M ch  |  ~17.50M tok  |  339.67K ch/s  |  424 req  |  100% of budget  |  ETA 13m44s  |  3m26s  |  DONE (source budget reached)
+       rejected: not-nepali x159, too-short x87, latin-heavy x2, not-devanagari x1
+  shard: reportersnepal.part-1786646751-5000.jsonl.gz (41,978 docs / 70.00M chars)
+
+--- khabarhub  (wp_rest)  budget 60.00M chars ---
+  [khabarhub]  |  1 docs  |  1.83K ch  |  ~458 tok  |  882 ch/s  |  4 req  |  0% of budget  |  ETA 88h07m  |  2s
+  [khabarhub]  |  3,145 docs  |  5.62M ch  |  ~1.41M tok  |  465.19K ch/s  |  32 req  |  9% of budget  |  ETA 9m49s  |  12s
+  [khabarhub]  |  5,956 docs  |  10.61M ch  |  ~2.65M tok  |  469.77K ch/s  |  64 req  |  18% of budget  |  ETA 9m33s  |  22s
+  [khabarhub]  |  9,125 docs  |  16.08M ch  |  ~4.02M tok  |  482.82K ch/s  |  96 req  |  27% of budget  |  ETA 9m06s  |  33s
+  [khabarhub]  |  11,907 docs  |  20.85M ch  |  ~5.21M tok  |  478.65K ch/s  |  124 req  |  35% of budget  |  ETA 9m01s  |  43s
+  [khabarhub]  |  14,691 docs  |  25.44M ch  |  ~6.36M tok  |  457.69K ch/s  |  152 req  |  42% of budget  |  ETA 9m16s  |  55s
+  [khabarhub]  |  16,826 docs  |  29.02M ch  |  ~7.26M tok  |  442.51K ch/s  |  172 req  |  48% of budget  |  ETA 9m27s  |  1m05s
+  [khabarhub]  |  19,449 docs  |  33.16M ch  |  ~8.29M tok  |  427.12K ch/s  |  200 req  |  55% of budget  |  ETA 9m37s  |  1m17s
+  [khabarhub]  |  21,838 docs  |  37.39M ch  |  ~9.35M tok  |  425.49K ch/s  |  224 req  |  62% of budget  |  ETA 9m30s  |  1m27s
+  [khabarhub]  |  23,122 docs  |  39.36M ch  |  ~9.84M tok  |  402.08K ch/s  |  236 req  |  66% of budget  |  ETA 9m58s  |  1m37s
+  [khabarhub]  |  25,406 docs  |  43.20M ch  |  ~10.80M tok  |  390.32K ch/s  |  260 req  |  72% of budget  |  ETA 10m06s  |  1m50s
+  [khabarhub]  |  27,984 docs  |  47.46M ch  |  ~11.86M tok  |  393.23K ch/s  |  284 req  |  79% of budget  |  ETA 9m51s  |  2m00s
+  [khabarhub]  |  30,965 docs  |  52.31M ch  |  ~13.08M tok  |  399.15K ch/s  |  316 req  |  87% of budget  |  ETA 9m30s  |  2m11s
+  [khabarhub]  |  33,750 docs  |  57.10M ch  |  ~14.27M tok  |  400.12K ch/s  |  344 req  |  95% of budget  |  ETA 9m17s  |  2m22s
+  [khabarhub]  |  35,338 docs  |  59.50M ch  |  ~14.88M tok  |  386.45K ch/s  |  360 req  |  99% of budget  |  ETA 9m30s  |  2m33s
+  [khabarhub]  |  35,659 docs  |  60.01M ch  |  ~15.00M tok  |  388.50K ch/s  |  360 req  |  100% of budget  |  ETA 9m26s  |  2m34s  |  DONE (source budget reached)
+       rejected: not-nepali x171, too-short x88, latin-heavy x5, not-devanagari x1, hindi-not-nepali x1
+  shard: khabarhub.part-1786646957-5000.jsonl.gz (35,659 docs / 60.01M chars)
+
+--- annapurnapost  (sitemap)  budget 5.00M chars ---
+  annapurnapost: 2,000 new article URLs from sitemap
+  [annapurnapost]  |  1 docs  |  2.38K ch  |  ~594 tok  |  271 ch/s  |  12 req  |  0% of budget  |  ETA 224h47m  |  8s
+  [annapurnapost]  |  43 docs  |  102.20K ch  |  ~25.55K tok  |  5.26K ch/s  |  55 req  |  2% of budget  |  ETA 11h36m  |  19s
+  [annapurnapost]  |  70 docs  |  152.05K ch  |  ~38.01K tok  |  5.16K ch/s  |  82 req  |  3% of budget  |  ETA 11h49m  |  29s
+  [annapurnapost]  |  93 docs  |  194.98K ch  |  ~48.75K tok  |  4.94K ch/s  |  106 req  |  4% of budget  |  ETA 12h21m  |  39s
+  [annapurnapost]  |  112 docs  |  272.02K ch  |  ~68.01K tok  |  5.47K ch/s  |  125 req  |  5% of budget  |  ETA 11h09m  |  49s
+  [annapurnapost]  |  140 docs  |  317.23K ch  |  ~79.31K tok  |  5.30K ch/s  |  153 req  |  6% of budget  |  ETA 11h31m  |  59s
+  [annapurnapost]  |  163 docs  |  359.96K ch  |  ~89.99K tok  |  5.15K ch/s  |  179 req  |  7% of budget  |  ETA 11h51m  |  1m09s
+  [annapurnapost]  |  192 docs  |  428.08K ch  |  ~107.02K tok  |  5.32K ch/s  |  210 req  |  9% of budget  |  ETA 11h28m  |  1m20s
+  [annapurnapost]  |  219 docs  |  480.67K ch  |  ~120.17K tok  |  5.28K ch/s  |  237 req  |  10% of budget  |  ETA 11h32m  |  1m30s
+  [annapurnapost]  |  248 docs  |  555.21K ch  |  ~138.80K tok  |  5.50K ch/s  |  266 req  |  11% of budget  |  ETA 11h05m  |  1m41s
+  [annapurnapost]  |  271 docs  |  598.10K ch  |  ~149.52K tok  |  5.39K ch/s  |  290 req  |  12% of budget  |  ETA 11h18m  |  1m51s
+  [annapurnapost]  |  300 docs  |  694.55K ch  |  ~173.64K tok  |  5.70K ch/s  |  321 req  |  14% of budget  |  ETA 10h40m  |  2m01s
+  [annapurnapost]  |  326 docs  |  781.51K ch  |  ~195.38K tok  |  5.93K ch/s  |  347 req  |  16% of budget  |  ETA 10h16m  |  2m11s
+  [annapurnapost]  |  353 docs  |  869.19K ch  |  ~217.30K tok  |  6.11K ch/s  |  375 req  |  17% of budget  |  ETA 9h57m  |  2m22s
+  [annapurnapost]  |  373 docs  |  899.28K ch  |  ~224.82K tok  |  5.89K ch/s  |  395 req  |  18% of budget  |  ETA 10h19m  |  2m32s
+  [annapurnapost]  |  398 docs  |  942.83K ch  |  ~235.71K tok  |  5.79K ch/s  |  422 req  |  19% of budget  |  ETA 10h30m  |  2m42s
+  [annapurnapost]  |  424 docs  |  1.01M ch  |  ~252.75K tok  |  5.84K ch/s  |  448 req  |  20% of budget  |  ETA 10h25m  |  2m53s
+  [annapurnapost]  |  453 docs  |  1.05M ch  |  ~262.54K tok  |  5.72K ch/s  |  478 req  |  21% of budget  |  ETA 10h37m  |  3m03s
+  [annapurnapost]  |  473 docs  |  1.12M ch  |  ~280.10K tok  |  5.79K ch/s  |  499 req  |  22% of budget  |  ETA 10h30m  |  3m13s
+  [annapurnapost]  |  492 docs  |  1.17M ch  |  ~291.28K tok  |  5.71K ch/s  |  519 req  |  23% of budget  |  ETA 10h38m  |  3m23s
+  [annapurnapost]  |  512 docs  |  1.21M ch  |  ~302.61K tok  |  5.66K ch/s  |  539 req  |  24% of budget  |  ETA 10h44m  |  3m34s
+  [annapurnapost]  |  533 docs  |  1.27M ch  |  ~316.84K tok  |  5.65K ch/s  |  562 req  |  25% of budget  |  ETA 10h45m  |  3m44s
+  [annapurnapost]  |  550 docs  |  1.31M ch  |  ~326.94K tok  |  5.55K ch/s  |  581 req  |  26% of budget  |  ETA 10h56m  |  3m55s
+  [annapurnapost]  |  570 docs  |  1.33M ch  |  ~332.84K tok  |  5.41K ch/s  |  601 req  |  27% of budget  |  ETA 11h13m  |  4m05s
+  [annapurnapost]  |  599 docs  |  1.40M ch  |  ~348.79K tok  |  5.44K ch/s  |  630 req  |  28% of budget  |  ETA 11h09m  |  4m16s
+  [annapurnapost]  |  623 docs  |  1.45M ch  |  ~361.37K tok  |  5.43K ch/s  |  656 req  |  29% of budget  |  ETA 11h11m  |  4m26s
+  [annapurnapost]  |  646 docs  |  1.50M ch  |  ~374.98K tok  |  5.42K ch/s  |  681 req  |  30% of budget  |  ETA 11h11m  |  4m36s
+  [annapurnapost]  |  673 docs  |  1.57M ch  |  ~391.45K tok  |  5.45K ch/s  |  708 req  |  31% of budget  |  ETA 11h07m  |  4m47s
+  [annapurnapost]  |  697 docs  |  1.62M ch  |  ~404.32K tok  |  5.44K ch/s  |  732 req  |  32% of budget  |  ETA 11h08m  |  4m57s
+  [annapurnapost]  |  724 docs  |  1.70M ch  |  ~423.80K tok  |  5.52K ch/s  |  759 req  |  34% of budget  |  ETA 10h59m  |  5m07s
+  [annapurnapost]  |  748 docs  |  1.79M ch  |  ~446.70K tok  |  5.63K ch/s  |  784 req  |  36% of budget  |  ETA 10h45m  |  5m17s
+  [annapurnapost]  |  773 docs  |  1.85M ch  |  ~461.73K tok  |  5.64K ch/s  |  809 req  |  37% of budget  |  ETA 10h44m  |  5m27s
+  [annapurnapost]  |  796 docs  |  1.87M ch  |  ~467.95K tok  |  5.54K ch/s  |  832 req  |  37% of budget  |  ETA 10h55m  |  5m37s
+  [annapurnapost]  |  816 docs  |  1.90M ch  |  ~475.23K tok  |  5.46K ch/s  |  852 req  |  38% of budget  |  ETA 11h05m  |  5m47s
+  [annapurnapost]  |  838 docs  |  1.95M ch  |  ~487.67K tok  |  5.45K ch/s  |  874 req  |  39% of budget  |  ETA 11h06m  |  5m57s
+  [annapurnapost]  |  864 docs  |  2.00M ch  |  ~500.57K tok  |  5.43K ch/s  |  901 req  |  40% of budget  |  ETA 11h08m  |  6m08s
+  [annapurnapost]  |  889 docs  |  2.03M ch  |  ~508.12K tok  |  5.37K ch/s  |  928 req  |  41% of budget  |  ETA 11h16m  |  6m18s
+  [annapurnapost]  |  912 docs  |  2.06M ch  |  ~516.22K tok  |  5.29K ch/s  |  954 req  |  41% of budget  |  ETA 11h26m  |  6m30s
+  [annapurnapost]  |  937 docs  |  2.14M ch  |  ~535.21K tok  |  5.34K ch/s  |  980 req  |  43% of budget  |  ETA 11h19m  |  6m40s
+  [annapurnapost]  |  960 docs  |  2.18M ch  |  ~545.14K tok  |  5.31K ch/s  |  1,004 req  |  44% of budget  |  ETA 11h23m  |  6m50s
+  [annapurnapost]  |  987 docs  |  2.24M ch  |  ~558.92K tok  |  5.31K ch/s  |  1,031 req  |  45% of budget  |  ETA 11h23m  |  7m00s
+  [annapurnapost]  |  1,010 docs  |  2.28M ch  |  ~570.64K tok  |  5.29K ch/s  |  1,055 req  |  46% of budget  |  ETA 11h25m  |  7m11s
+  [annapurnapost]  |  1,033 docs  |  2.33M ch  |  ~582.25K tok  |  5.27K ch/s  |  1,078 req  |  47% of budget  |  ETA 11h27m  |  7m21s
+  [annapurnapost]  |  1,057 docs  |  2.37M ch  |  ~593.26K tok  |  5.25K ch/s  |  1,104 req  |  47% of budget  |  ETA 11h30m  |  7m31s
+  [annapurnapost]  |  1,079 docs  |  2.43M ch  |  ~608.36K tok  |  5.27K ch/s  |  1,127 req  |  49% of budget  |  ETA 11h28m  |  7m41s
+  [annapurnapost]  |  1,105 docs  |  2.48M ch  |  ~621.08K tok  |  5.26K ch/s  |  1,155 req  |  50% of budget  |  ETA 11h28m  |  7m51s
+  [annapurnapost]  |  1,131 docs  |  2.54M ch  |  ~634.41K tok  |  5.27K ch/s  |  1,181 req  |  51% of budget  |  ETA 11h28m  |  8m01s
+  [annapurnapost]  |  1,155 docs  |  2.60M ch  |  ~650.41K tok  |  5.29K ch/s  |  1,205 req  |  52% of budget  |  ETA 11h25m  |  8m12s
+  [annapurnapost]  |  1,175 docs  |  2.64M ch  |  ~659.29K tok  |  5.25K ch/s  |  1,226 req  |  53% of budget  |  ETA 11h30m  |  8m22s
+  [annapurnapost]  |  1,203 docs  |  2.73M ch  |  ~681.89K tok  |  5.32K ch/s  |  1,254 req  |  55% of budget  |  ETA 11h20m  |  8m32s
+  [annapurnapost]  |  1,221 docs  |  2.77M ch  |  ~692.80K tok  |  5.29K ch/s  |  1,273 req  |  55% of budget  |  ETA 11h24m  |  8m43s
+  [annapurnapost]  |  1,244 docs  |  2.84M ch  |  ~710.06K tok  |  5.32K ch/s  |  1,296 req  |  57% of budget  |  ETA 11h20m  |  8m53s
+  [annapurnapost]  |  1,264 docs  |  2.89M ch  |  ~723.17K tok  |  5.32K ch/s  |  1,316 req  |  58% of budget  |  ETA 11h20m  |  9m03s
+  [annapurnapost]  |  1,288 docs  |  2.95M ch  |  ~737.84K tok  |  5.33K ch/s  |  1,340 req  |  59% of budget  |  ETA 11h18m  |  9m13s
+  [annapurnapost]  |  1,316 docs  |  3.01M ch  |  ~753.61K tok  |  5.34K ch/s  |  1,368 req  |  60% of budget  |  ETA 11h16m  |  9m24s
+  [annapurnapost]  |  1,344 docs  |  3.06M ch  |  ~763.85K tok  |  5.32K ch/s  |  1,397 req  |  61% of budget  |  ETA 11h19m  |  9m34s
+  [annapurnapost]  |  1,371 docs  |  3.10M ch  |  ~775.23K tok  |  5.30K ch/s  |  1,424 req  |  62% of budget  |  ETA 11h21m  |  9m44s
+  [annapurnapost]  |  1,393 docs  |  3.17M ch  |  ~791.84K tok  |  5.32K ch/s  |  1,446 req  |  63% of budget  |  ETA 11h18m  |  9m55s
+  [annapurnapost]  |  1,416 docs  |  3.21M ch  |  ~803.07K tok  |  5.30K ch/s  |  1,470 req  |  64% of budget  |  ETA 11h21m  |  10m05s
+  [annapurnapost]  |  1,440 docs  |  3.25M ch  |  ~812.30K tok  |  5.27K ch/s  |  1,498 req  |  65% of budget  |  ETA 11h24m  |  10m16s
+  [annapurnapost]  |  1,465 docs  |  3.32M ch  |  ~830.82K tok  |  5.31K ch/s  |  1,523 req  |  66% of budget  |  ETA 11h20m  |  10m26s
+  [annapurnapost]  |  1,488 docs  |  3.36M ch  |  ~839.12K tok  |  5.27K ch/s  |  1,546 req  |  67% of budget  |  ETA 11h25m  |  10m36s
+  [annapurnapost]  |  1,517 docs  |  3.43M ch  |  ~856.57K tok  |  5.30K ch/s  |  1,575 req  |  69% of budget  |  ETA 11h21m  |  10m47s
+  [annapurnapost]  |  1,545 docs  |  3.47M ch  |  ~867.31K tok  |  5.28K ch/s  |  1,603 req  |  69% of budget  |  ETA 11h23m  |  10m57s
+  [annapurnapost]  |  1,570 docs  |  3.56M ch  |  ~889.88K tok  |  5.33K ch/s  |  1,630 req  |  71% of budget  |  ETA 11h16m  |  11m07s
+  [annapurnapost]  |  1,596 docs  |  3.60M ch  |  ~900.35K tok  |  5.31K ch/s  |  1,658 req  |  72% of budget  |  ETA 11h18m  |  11m17s
+  [annapurnapost]  |  1,619 docs  |  3.67M ch  |  ~918.70K tok  |  5.34K ch/s  |  1,681 req  |  73% of budget  |  ETA 11h14m  |  11m27s
+  [annapurnapost]  |  1,639 docs  |  3.72M ch  |  ~929.27K tok  |  5.32K ch/s  |  1,703 req  |  74% of budget  |  ETA 11h17m  |  11m38s
+  [annapurnapost]  |  1,663 docs  |  3.80M ch  |  ~950.06K tok  |  5.37K ch/s  |  1,728 req  |  76% of budget  |  ETA 11h11m  |  11m48s
+  [annapurnapost]  |  1,685 docs  |  3.85M ch  |  ~961.29K tok  |  5.34K ch/s  |  1,751 req  |  77% of budget  |  ETA 11h14m  |  11m59s
+  [annapurnapost]  |  1,707 docs  |  3.89M ch  |  ~972.34K tok  |  5.33K ch/s  |  1,773 req  |  78% of budget  |  ETA 11h16m  |  12m10s
+  [annapurnapost]  |  1,729 docs  |  3.96M ch  |  ~990.02K tok  |  5.35K ch/s  |  1,795 req  |  79% of budget  |  ETA 11h13m  |  12m20s
+  [annapurnapost]  |  1,751 docs  |  4.00M ch  |  ~999.05K tok  |  5.32K ch/s  |  1,817 req  |  80% of budget  |  ETA 11h16m  |  12m31s
+  [annapurnapost]  |  1,775 docs  |  4.05M ch  |  ~1.01M tok  |  5.32K ch/s  |  1,841 req  |  81% of budget  |  ETA 11h16m  |  12m41s
+  [annapurnapost]  |  1,793 docs  |  4.11M ch  |  ~1.03M tok  |  5.32K ch/s  |  1,860 req  |  82% of budget  |  ETA 11h16m  |  12m51s
+  [annapurnapost]  |  1,813 docs  |  4.13M ch  |  ~1.03M tok  |  5.28K ch/s  |  1,881 req  |  83% of budget  |  ETA 11h20m  |  13m02s
+  [annapurnapost]  |  1,836 docs  |  4.17M ch  |  ~1.04M tok  |  5.27K ch/s  |  1,905 req  |  83% of budget  |  ETA 11h23m  |  13m12s
+  [annapurnapost]  |  1,856 docs  |  4.24M ch  |  ~1.06M tok  |  5.28K ch/s  |  1,925 req  |  85% of budget  |  ETA 11h21m  |  13m23s
+  [annapurnapost]  |  1,878 docs  |  4.28M ch  |  ~1.07M tok  |  5.25K ch/s  |  1,948 req  |  86% of budget  |  ETA 11h24m  |  13m35s
+  [annapurnapost]  |  1,902 docs  |  4.31M ch  |  ~1.08M tok  |  5.22K ch/s  |  1,974 req  |  86% of budget  |  ETA 11h28m  |  13m45s
+  [annapurnapost]  |  1,924 docs  |  4.38M ch  |  ~1.09M tok  |  5.24K ch/s  |  1,997 req  |  88% of budget  |  ETA 11h25m  |  13m55s
+  [annapurnapost]  |  1,937 docs  |  4.40M ch  |  ~1.10M tok  |  5.22K ch/s  |  2,011 req  |  88% of budget  |  ETA 11h28m  |  14m02s  |  DONE
+       rejected: not-nepali x43, not-devanagari x20
+  shard: annapurnapost.part-1786647112-5000.jsonl.gz (1,937 docs / 4.40M chars)
+
+--- clickmandu  (wp_rest)  budget 60.00M chars ---
+  [clickmandu]  |  1 docs  |  851 ch  |  ~212 tok  |  576 ch/s  |  4 req  |  0% of budget  |  ETA 103h48m  |  1s
+  [clickmandu]  |  1,998 docs  |  5.23M ch  |  ~1.31M tok  |  439.62K ch/s  |  24 req  |  9% of budget  |  ETA 7m58s  |  11s
+  [clickmandu]  |  4,392 docs  |  11.78M ch  |  ~2.95M tok  |  517.56K ch/s  |  48 req  |  20% of budget  |  ETA 6m33s  |  22s
+  [clickmandu]  |  7,062 docs  |  18.33M ch  |  ~4.58M tok  |  559.34K ch/s  |  72 req  |  31% of budget  |  ETA 5m52s  |  32s
+  [clickmandu]  |  8,860 docs  |  22.81M ch  |  ~5.70M tok  |  533.16K ch/s  |  92 req  |  38% of budget  |  ETA 6m01s  |  42s
+  [clickmandu]  |  11,147 docs  |  28.06M ch  |  ~7.01M tok  |  530.39K ch/s  |  116 req  |  47% of budget  |  ETA 5m53s  |  52s
+  [clickmandu]  |  13,377 docs  |  33.58M ch  |  ~8.39M tok  |  533.82K ch/s  |  136 req  |  56% of budget  |  ETA 5m40s  |  1m02s
+  [clickmandu]  |  15,525 docs  |  38.49M ch  |  ~9.62M tok  |  524.57K ch/s  |  160 req  |  64% of budget  |  ETA 5m37s  |  1m13s
+  [clickmandu]  |  17,903 docs  |  43.20M ch  |  ~10.80M tok  |  517.80K ch/s  |  184 req  |  72% of budget  |  ETA 5m32s  |  1m23s
+  [clickmandu]  |  20,289 docs  |  49.06M ch  |  ~12.27M tok  |  520.77K ch/s  |  208 req  |  82% of budget  |  ETA 5m19s  |  1m34s
+  [clickmandu]  |  22,679 docs  |  54.62M ch  |  ~13.65M tok  |  519.36K ch/s  |  232 req  |  91% of budget  |  ETA 5m09s  |  1m45s
+  [clickmandu]  |  24,909 docs  |  60.00M ch  |  ~15.00M tok  |  526.65K ch/s  |  252 req  |  100% of budget  |  ETA 4m55s  |  1m53s  |  DONE (source budget reached)
+       rejected: not-nepali x62, too-short x56, latin-heavy x9, not-devanagari x1
+  shard: clickmandu.part-1786647955-5000.jsonl.gz (24,909 docs / 60.00M chars)
+
+--- bizmandu  (sitemap)  budget 20.00M chars ---
+  bizmandu: 9,000 new article URLs from sitemap
+  [bizmandu]  |  1 docs  |  645 ch  |  ~161 tok  |  12 ch/s  |  12 req  |  0% of budget  |  ETA 3381h36m  |  50s
+  [bizmandu]  |  145 docs  |  205.91K ch  |  ~51.48K tok  |  3.40K ch/s  |  165 req  |  1% of budget  |  ETA 12h42m  |  1m00s
+  [bizmandu]  |  285 docs  |  391.01K ch  |  ~97.75K tok  |  5.53K ch/s  |  307 req  |  2% of budget  |  ETA 7h47m  |  1m10s
+  [bizmandu]  |  421 docs  |  576.49K ch  |  ~144.12K tok  |  7.13K ch/s  |  446 req  |  3% of budget  |  ETA 6h02m  |  1m20s
+  [bizmandu]  |  485 docs  |  646.72K ch  |  ~161.68K tok  |  6.48K ch/s  |  513 req  |  3% of budget  |  ETA 6h38m  |  1m39s
+  [bizmandu]  |  623 docs  |  821.75K ch  |  ~205.44K tok  |  7.48K ch/s  |  651 req  |  4% of budget  |  ETA 5h44m  |  1m49s
+  [bizmandu]  |  759 docs  |  1.01M ch  |  ~252.87K tok  |  8.44K ch/s  |  787 req  |  5% of budget  |  ETA 5h05m  |  1m59s
+  [bizmandu]  |  894 docs  |  1.14M ch  |  ~285.61K tok  |  8.79K ch/s  |  924 req  |  6% of budget  |  ETA 4h52m  |  2m09s
+  [bizmandu]  |  1,038 docs  |  1.28M ch  |  ~320.26K tok  |  9.15K ch/s  |  1,068 req  |  6% of budget  |  ETA 4h40m  |  2m19s
+  [bizmandu]  |  1,184 docs  |  1.43M ch  |  ~357.95K tok  |  9.53K ch/s  |  1,215 req  |  7% of budget  |  ETA 4h29m  |  2m30s
+  [bizmandu]  |  1,305 docs  |  1.57M ch  |  ~391.85K tok  |  9.78K ch/s  |  1,336 req  |  8% of budget  |  ETA 4h22m  |  2m40s
+  [bizmandu]  |  1,429 docs  |  1.70M ch  |  ~424.38K tok  |  9.97K ch/s  |  1,462 req  |  8% of budget  |  ETA 4h17m  |  2m50s
+  [bizmandu]  |  1,567 docs  |  1.87M ch  |  ~466.29K tok  |  10.34K ch/s  |  1,602 req  |  9% of budget  |  ETA 4h07m  |  3m00s
+  [bizmandu]  |  1,707 docs  |  2.01M ch  |  ~503.50K tok  |  10.58K ch/s  |  1,742 req  |  10% of budget  |  ETA 4h02m  |  3m10s
+  [bizmandu]  |  1,821 docs  |  2.16M ch  |  ~540.35K tok  |  10.78K ch/s  |  1,856 req  |  11% of budget  |  ETA 3h57m  |  3m20s
+  [bizmandu]  |  1,928 docs  |  2.29M ch  |  ~573.22K tok  |  10.89K ch/s  |  1,963 req  |  11% of budget  |  ETA 3h54m  |  3m30s
+  [bizmandu]  |  2,042 docs  |  2.44M ch  |  ~611.14K tok  |  11.08K ch/s  |  2,083 req  |  12% of budget  |  ETA 3h50m  |  3m40s
+  [bizmandu]  |  2,176 docs  |  2.62M ch  |  ~656.10K tok  |  11.38K ch/s  |  2,218 req  |  13% of budget  |  ETA 3h44m  |  3m50s
+  [bizmandu]  |  2,307 docs  |  2.80M ch  |  ~699.85K tok  |  11.63K ch/s  |  2,349 req  |  14% of budget  |  ETA 3h39m  |  4m00s
+  [bizmandu]  |  2,435 docs  |  3.00M ch  |  ~749.26K tok  |  11.95K ch/s  |  2,478 req  |  15% of budget  |  ETA 3h32m  |  4m10s
+  [bizmandu]  |  2,581 docs  |  3.21M ch  |  ~801.54K tok  |  12.29K ch/s  |  2,624 req  |  16% of budget  |  ETA 3h26m  |  4m20s
+  [bizmandu]  |  2,621 docs  |  3.26M ch  |  ~815.96K tok  |  12.04K ch/s  |  2,664 req  |  16% of budget  |  ETA 3h30m  |  4m31s
+  [bizmandu]  |  2,743 docs  |  3.44M ch  |  ~859.25K tok  |  12.22K ch/s  |  2,787 req  |  17% of budget  |  ETA 3h27m  |  4m41s
+  [bizmandu]  |  2,874 docs  |  3.63M ch  |  ~907.08K tok  |  12.45K ch/s  |  2,919 req  |  18% of budget  |  ETA 3h23m  |  4m51s
+  [bizmandu]  |  3,008 docs  |  3.83M ch  |  ~956.30K tok  |  12.69K ch/s  |  3,053 req  |  19% of budget  |  ETA 3h19m  |  5m01s
+  [bizmandu]  |  3,146 docs  |  4.05M ch  |  ~1.01M tok  |  13.01K ch/s  |  3,196 req  |  20% of budget  |  ETA 3h14m  |  5m11s
+  [bizmandu]  |  3,239 docs  |  4.23M ch  |  ~1.06M tok  |  13.16K ch/s  |  3,289 req  |  21% of budget  |  ETA 3h11m  |  5m21s
+  [bizmandu]  |  3,357 docs  |  4.43M ch  |  ~1.11M tok  |  13.36K ch/s  |  3,409 req  |  22% of budget  |  ETA 3h08m  |  5m31s
+  [bizmandu]  |  3,473 docs  |  4.67M ch  |  ~1.17M tok  |  13.65K ch/s  |  3,523 req  |  23% of budget  |  ETA 3h04m  |  5m41s
+  [bizmandu]  |  3,608 docs  |  4.92M ch  |  ~1.23M tok  |  13.99K ch/s  |  3,659 req  |  25% of budget  |  ETA 2h59m  |  5m52s
+  [bizmandu]  |  3,726 docs  |  5.16M ch  |  ~1.29M tok  |  14.24K ch/s  |  3,785 req  |  26% of budget  |  ETA 2h56m  |  6m02s
+  [bizmandu]  |  3,837 docs  |  5.38M ch  |  ~1.34M tok  |  14.45K ch/s  |  3,897 req  |  27% of budget  |  ETA 2h53m  |  6m12s
+  [bizmandu]  |  3,962 docs  |  5.60M ch  |  ~1.40M tok  |  14.65K ch/s  |  4,023 req  |  28% of budget  |  ETA 2h50m  |  6m22s
+  [bizmandu]  |  4,041 docs  |  5.74M ch  |  ~1.44M tok  |  14.62K ch/s  |  4,115 req  |  29% of budget  |  ETA 2h50m  |  6m32s
+  [bizmandu]  |  4,124 docs  |  5.89M ch  |  ~1.47M tok  |  14.62K ch/s  |  4,236 req  |  29% of budget  |  ETA 2h50m  |  6m42s
+  [bizmandu]  |  4,196 docs  |  6.03M ch  |  ~1.51M tok  |  14.60K ch/s  |  4,370 req  |  30% of budget  |  ETA 2h50m  |  6m53s
+  [bizmandu]  |  4,313 docs  |  6.29M ch  |  ~1.57M tok  |  14.86K ch/s  |  4,496 req  |  31% of budget  |  ETA 2h47m  |  7m03s
+  [bizmandu]  |  4,441 docs  |  6.57M ch  |  ~1.64M tok  |  15.17K ch/s  |  4,624 req  |  33% of budget  |  ETA 2h43m  |  7m13s
+  [bizmandu]  |  4,543 docs  |  6.77M ch  |  ~1.69M tok  |  15.26K ch/s  |  4,726 req  |  34% of budget  |  ETA 2h42m  |  7m23s
+  [bizmandu]  |  4,584 docs  |  6.86M ch  |  ~1.72M tok  |  15.13K ch/s  |  4,767 req  |  34% of budget  |  ETA 2h43m  |  7m33s
+  [bizmandu]  |  4,681 docs  |  7.05M ch  |  ~1.76M tok  |  15.22K ch/s  |  4,864 req  |  35% of budget  |  ETA 2h42m  |  7m43s
+  [bizmandu]  |  4,820 docs  |  7.36M ch  |  ~1.84M tok  |  15.54K ch/s  |  5,003 req  |  37% of budget  |  ETA 2h38m  |  7m53s
+  [bizmandu]  |  4,967 docs  |  7.68M ch  |  ~1.92M tok  |  15.87K ch/s  |  5,150 req  |  38% of budget  |  ETA 2h35m  |  8m03s
+  [bizmandu]  |  5,097 docs  |  7.98M ch  |  ~1.99M tok  |  16.16K ch/s  |  5,280 req  |  40% of budget  |  ETA 2h32m  |  8m13s
+  [bizmandu]  |  5,233 docs  |  8.31M ch  |  ~2.08M tok  |  16.48K ch/s  |  5,429 req  |  42% of budget  |  ETA 2h28m  |  8m23s
+  [bizmandu]  |  5,356 docs  |  8.62M ch  |  ~2.15M tok  |  16.77K ch/s  |  5,573 req  |  43% of budget  |  ETA 2h26m  |  8m33s
+  [bizmandu]  |  5,480 docs  |  8.91M ch  |  ~2.23M tok  |  17.01K ch/s  |  5,714 req  |  45% of budget  |  ETA 2h23m  |  8m43s
+  [bizmandu]  |  5,617 docs  |  9.24M ch  |  ~2.31M tok  |  17.29K ch/s  |  5,869 req  |  46% of budget  |  ETA 2h21m  |  8m54s
+  [bizmandu]  |  5,731 docs  |  9.51M ch  |  ~2.38M tok  |  17.48K ch/s  |  6,007 req  |  48% of budget  |  ETA 2h19m  |  9m04s
+  [bizmandu]  |  5,856 docs  |  9.80M ch  |  ~2.45M tok  |  17.67K ch/s  |  6,165 req  |  49% of budget  |  ETA 2h17m  |  9m14s
+  [bizmandu]  |  5,932 docs  |  9.96M ch  |  ~2.49M tok  |  17.63K ch/s  |  6,262 req  |  50% of budget  |  ETA 2h17m  |  9m25s
+  [bizmandu]  |  5,962 docs  |  10.03M ch  |  ~2.51M tok  |  17.44K ch/s  |  6,312 req  |  50% of budget  |  ETA 2h19m  |  9m35s
+  [bizmandu]  |  6,092 docs  |  10.31M ch  |  ~2.58M tok  |  17.61K ch/s  |  6,464 req  |  52% of budget  |  ETA 2h17m  |  9m45s
+  [bizmandu]  |  6,213 docs  |  10.55M ch  |  ~2.64M tok  |  17.72K ch/s  |  6,600 req  |  53% of budget  |  ETA 2h16m  |  9m55s
+  [bizmandu]  |  6,353 docs  |  10.92M ch  |  ~2.73M tok  |  18.03K ch/s  |  6,751 req  |  55% of budget  |  ETA 2h13m  |  10m05s
+  [bizmandu]  |  6,493 docs  |  11.23M ch  |  ~2.81M tok  |  18.22K ch/s  |  6,909 req  |  56% of budget  |  ETA 2h12m  |  10m16s
+  [bizmandu]  |  6,599 docs  |  11.46M ch  |  ~2.87M tok  |  18.29K ch/s  |  7,021 req  |  57% of budget  |  ETA 2h11m  |  10m26s
+  [bizmandu]  |  6,720 docs  |  11.71M ch  |  ~2.93M tok  |  18.39K ch/s  |  7,155 req  |  59% of budget  |  ETA 2h10m  |  10m36s
+  [bizmandu]  |  6,850 docs  |  12.01M ch  |  ~3.00M tok  |  18.56K ch/s  |  7,307 req  |  60% of budget  |  ETA 2h08m  |  10m47s
+  [bizmandu]  |  6,971 docs  |  12.25M ch  |  ~3.06M tok  |  18.64K ch/s  |  7,462 req  |  61% of budget  |  ETA 2h08m  |  10m57s
+  [bizmandu]  |  7,081 docs  |  12.50M ch  |  ~3.12M tok  |  18.73K ch/s  |  7,614 req  |  62% of budget  |  ETA 2h07m  |  11m07s
+  [bizmandu]  |  7,216 docs  |  12.77M ch  |  ~3.19M tok  |  18.86K ch/s  |  7,766 req  |  64% of budget  |  ETA 2h06m  |  11m17s
+  [bizmandu]  |  7,360 docs  |  13.03M ch  |  ~3.26M tok  |  18.95K ch/s  |  7,920 req  |  65% of budget  |  ETA 2h05m  |  11m27s
+  [bizmandu]  |  7,503 docs  |  13.31M ch  |  ~3.33M tok  |  19.08K ch/s  |  8,068 req  |  67% of budget  |  ETA 2h04m  |  11m37s
+  [bizmandu]  |  7,641 docs  |  13.56M ch  |  ~3.39M tok  |  19.16K ch/s  |  8,215 req  |  68% of budget  |  ETA 2h03m  |  11m47s
+  [bizmandu]  |  7,773 docs  |  13.79M ch  |  ~3.45M tok  |  19.22K ch/s  |  8,350 req  |  69% of budget  |  ETA 2h02m  |  11m57s
+  [bizmandu]  |  7,890 docs  |  14.05M ch  |  ~3.51M tok  |  19.31K ch/s  |  8,479 req  |  70% of budget  |  ETA 2h02m  |  12m07s
+  [bizmandu]  |  8,000 docs  |  14.24M ch  |  ~3.56M tok  |  19.31K ch/s  |  8,598 req  |  71% of budget  |  ETA 2h02m  |  12m17s
+  [bizmandu]  |  8,062 docs  |  14.41M ch  |  ~3.60M tok  |  19.25K ch/s  |  8,669 req  |  72% of budget  |  ETA 2h02m  |  12m28s
+  [bizmandu]  |  8,094 docs  |  14.47M ch  |  ~3.62M tok  |  19.08K ch/s  |  8,704 req  |  72% of budget  |  ETA 2h03m  |  12m38s
+  [bizmandu]  |  8,217 docs  |  14.71M ch  |  ~3.68M tok  |  19.13K ch/s  |  8,828 req  |  74% of budget  |  ETA 2h02m  |  12m49s
+  [bizmandu]  |  8,331 docs  |  14.93M ch  |  ~3.73M tok  |  19.16K ch/s  |  8,945 req  |  75% of budget  |  ETA 2h02m  |  12m59s
+  [bizmandu]  |  8,395 docs  |  15.08M ch  |  ~3.77M tok  |  19.22K ch/s  |  9,010 req  |  75% of budget  |  ETA 2h01m  |  13m04s  |  DONE
+       rejected: no-text-extracted x519, too-short x36, not-nepali x31, latin-heavy x15, not-devanagari x3
+  shard: bizmandu.part-1786648068-5000.jsonl.gz (8,395 docs / 15.08M chars)
+
+--- nepalisahityaghar  (wp_rest)  budget 8.00M chars ---
+  [nepalisahityaghar]  |  1 docs  |  14.91K ch  |  ~3.73K tok  |  1.46K ch/s  |  4 req  |  0% of budget  |  ETA 26h40m  |  10s
+  [nepalisahityaghar]  |  395 docs  |  1.28M ch  |  ~318.76K tok  |  63.15K ch/s  |  8 req  |  16% of budget  |  ETA 36m44s  |  20s
+  [nepalisahityaghar]  |  1,091 docs  |  3.83M ch  |  ~957.67K tok  |  112.47K ch/s  |  16 req  |  48% of budget  |  ETA 20m15s  |  34s
+  [nepalisahityaghar]  |  1,435 docs  |  5.00M ch  |  ~1.25M tok  |  141.27K ch/s  |  20 req  |  63% of budget  |  ETA 15m59s  |  35s  |  DONE
+       rejected: not-nepali x125, too-short x34, latin-heavy x2
+  shard: nepalisahityaghar.part-1786648853-5000.jsonl.gz (1,435 docs / 5.00M chars)
+
+--- hamrakura  (sitemap)  budget 1.50M chars ---
+  hamrakura: 423 new article URLs from sitemap
+  [hamrakura]  |  1 docs  |  4.36K ch  |  ~1.09K tok  |  1.05K ch/s  |  31 req  |  0% of budget  |  ETA 36h00m  |  4s
+  [hamrakura]  |  115 docs  |  170.00K ch  |  ~42.50K tok  |  11.93K ch/s  |  153 req  |  11% of budget  |  ETA 3h09m  |  14s
+  [hamrakura]  |  229 docs  |  400.88K ch  |  ~100.22K tok  |  16.53K ch/s  |  269 req  |  27% of budget  |  ETA 2h16m  |  24s
+  [hamrakura]  |  342 docs  |  731.14K ch  |  ~182.79K tok  |  21.28K ch/s  |  382 req  |  49% of budget  |  ETA 1h45m  |  34s
+  [hamrakura]  |  384 docs  |  860.85K ch  |  ~215.21K tok  |  22.07K ch/s  |  424 req  |  57% of budget  |  ETA 1h41m  |  39s  |  DONE
+       rejected: too-short x34, no-text-extracted x2, not-nepali x2, not-devanagari x1
+  shard: hamrakura.part-1786648888-5000.jsonl.gz (384 docs / 860.85K chars)
+
+========================================================================================
+TOTAL 365.35M chars  ~91.34M tokens (73.1% of target) in 41m42s
+========================================================================================
+
+progress: python3 data/collection/collect_manual.py --status

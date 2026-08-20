@@ -1,0 +1,389 @@
+========================================================================================
+GUJARATI MANUAL COLLECTION   2026-08-15 12:30:40
+  sources: layastaro
+  target : 130.00M manual tokens (~520.00M chars)
+  already: 0 chars collected
+========================================================================================
+
+--- layastaro  (sitemap)  budget 25.00M chars ---
+  layastaro: 0 new article URLs from sitemap
+  layastaro: sitemap thin - falling back to link crawl
+    layastaro: link-crawl found 0 URLs (frontier 149)
+/Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/gujarati/data/collection/collect_manual.py:569: XMLParsedAsHTMLWarning: It looks like you're using an HTML parser to parse an XML document.
+
+Assuming this really is an XML document, what you're doing might work, but you should know that using an XML parser will be more reliable. To parse this document as XML, make sure you have the Python package 'lxml' installed, and pass the keyword argument `features="xml"` into the BeautifulSoup constructor.
+
+If you want or need to use an HTML parser on this document, you can make this warning go away by filtering it. To do that, run this code before calling the BeautifulSoup constructor:
+
+    from bs4 import XMLParsedAsHTMLWarning
+    import warnings
+
+    warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
+
+  soup = BeautifulSoup(body, "lxml")
+    layastaro: link-crawl found 200 URLs (frontier 3,839)
+    layastaro: link-crawl found 400 URLs (frontier 4,518)
+    layastaro: link-crawl found 600 URLs (frontier 5,208)
+    layastaro: link-crawl found 800 URLs (frontier 5,717)
+    layastaro: link-crawl found 1,000 URLs (frontier 6,127)
+    layastaro: link-crawl found 1,200 URLs (frontier 6,414)
+    layastaro: link-crawl found 1,400 URLs (frontier 6,700)
+    layastaro: link-crawl found 1,607 URLs (frontier 7,037)
+    layastaro: link-crawl found 1,807 URLs (frontier 7,111)
+    layastaro: link-crawl found 2,007 URLs (frontier 7,202)
+    layastaro: link-crawl found 2,207 URLs (frontier 7,291)
+    layastaro: link-crawl found 2,407 URLs (frontier 7,367)
+    layastaro: link-crawl found 2,607 URLs (frontier 7,595)
+    layastaro: link-crawl found 2,807 URLs (frontier 7,996)
+    layastaro: link-crawl found 3,007 URLs (frontier 8,384)
+    layastaro: link-crawl found 3,207 URLs (frontier 8,820)
+    layastaro: link-crawl found 3,407 URLs (frontier 9,219)
+    layastaro: link-crawl found 3,607 URLs (frontier 9,608)
+    layastaro: link-crawl found 3,805 URLs (frontier 9,752)
+    layastaro: link-crawl found 4,005 URLs (frontier 9,552)
+    layastaro: link-crawl found 4,205 URLs (frontier 9,352)
+    layastaro: link-crawl found 4,405 URLs (frontier 9,152)
+    layastaro: link-crawl found 4,605 URLs (frontier 8,952)
+    layastaro: link-crawl found 4,805 URLs (frontier 8,752)
+    layastaro: link-crawl found 5,005 URLs (frontier 8,552)
+    layastaro: link-crawl found 5,205 URLs (frontier 8,352)
+    layastaro: link-crawl found 5,405 URLs (frontier 8,152)
+    layastaro: link-crawl found 5,604 URLs (frontier 7,952)
+    layastaro: link-crawl found 5,803 URLs (frontier 7,744)
+    layastaro: link-crawl found 6,000 URLs (frontier 7,504)
+    layastaro: link-crawl found 6,205 URLs (frontier 7,264)
+    layastaro: link-crawl found 6,402 URLs (frontier 6,992)
+    layastaro: link-crawl found 6,602 URLs (frontier 6,768)
+    layastaro: link-crawl found 6,607 URLs (frontier 6,760)
+    layastaro: link-crawl found 6,801 URLs (frontier 6,544)
+    layastaro: link-crawl found 6,806 URLs (frontier 6,536)
+    layastaro: link-crawl found 7,003 URLs (frontier 6,264)
+    layastaro: link-crawl found 7,201 URLs (frontier 6,000)
+    layastaro: link-crawl found 7,207 URLs (frontier 5,992)
+    layastaro: link-crawl found 7,404 URLs (frontier 5,744)
+    layastaro: link-crawl found 7,604 URLs (frontier 5,456)
+    layastaro: link-crawl found 7,801 URLs (frontier 5,192)
+    layastaro: link-crawl found 7,806 URLs (frontier 5,184)
+    layastaro: link-crawl found 8,004 URLs (frontier 4,928)
+    layastaro: link-crawl found 8,204 URLs (frontier 4,728)
+    layastaro: link-crawl found 8,404 URLs (frontier 4,528)
+    layastaro: link-crawl found 8,604 URLs (frontier 4,328)
+    layastaro: link-crawl found 8,804 URLs (frontier 4,128)
+    layastaro: link-crawl found 9,004 URLs (frontier 3,928)
+    layastaro: link-crawl found 9,204 URLs (frontier 3,728)
+    layastaro: link-crawl found 9,403 URLs (frontier 3,496)
+    layastaro: link-crawl found 9,602 URLs (frontier 3,200)
+    layastaro: link-crawl found 9,803 URLs (frontier 2,904)
+    layastaro: link-crawl found 10,000 URLs (frontier 2,616)
+    layastaro: link-crawl found 10,006 URLs (frontier 2,608)
+    layastaro: link-crawl found 10,203 URLs (frontier 2,320)
+    layastaro: link-crawl found 10,401 URLs (frontier 2,032)
+    layastaro: link-crawl found 10,406 URLs (frontier 2,024)
+    layastaro: link-crawl found 10,604 URLs (frontier 1,744)
+    layastaro: link-crawl found 10,801 URLs (frontier 1,464)
+    layastaro: link-crawl found 10,807 URLs (frontier 1,456)
+    layastaro: link-crawl found 11,002 URLs (frontier 1,168)
+    layastaro: link-crawl found 11,200 URLs (frontier 888)
+    layastaro: link-crawl found 11,206 URLs (frontier 880)
+    layastaro: link-crawl found 11,402 URLs (frontier 592)
+    layastaro: link-crawl found 11,600 URLs (frontier 304)
+    layastaro: link-crawl found 11,605 URLs (frontier 296)
+    layastaro: link-crawl found 11,803 URLs (frontier 0)
+  layastaro: 11,803 new article URLs after link crawl
+  [layastaro]  |  1 docs  |  6.17K ch  |  ~1.54K tok  |  0 ch/s  |  13,579 req  |  0% of budget  |  ETA 174975h17m  |  2h04m
+  [layastaro]  |  15 docs  |  32.16K ch  |  ~8.04K tok  |  4 ch/s  |  13,594 req  |  0% of budget  |  ETA 33627h31m  |  2h04m
+  [layastaro]  |  29 docs  |  74.58K ch  |  ~18.65K tok  |  9 ch/s  |  13,608 req  |  0% of budget  |  ETA 14519h56m  |  2h04m
+  [layastaro]  |  40 docs  |  99.35K ch  |  ~24.84K tok  |  13 ch/s  |  13,619 req  |  0% of budget  |  ETA 10915h28m  |  2h05m
+  [layastaro]  |  57 docs  |  134.24K ch  |  ~33.56K tok  |  17 ch/s  |  13,636 req  |  1% of budget  |  ETA 8089h41m  |  2h05m
+  [layastaro]  |  72 docs  |  158.47K ch  |  ~39.62K tok  |  21 ch/s  |  13,651 req  |  1% of budget  |  ETA 6862h09m  |  2h05m
+  [layastaro]  |  87 docs  |  205.73K ch  |  ~51.43K tok  |  27 ch/s  |  13,666 req  |  1% of budget  |  ETA 5292h14m  |  2h05m
+  [layastaro]  |  103 docs  |  254.53K ch  |  ~63.63K tok  |  33 ch/s  |  13,682 req  |  1% of budget  |  ETA 4283h14m  |  2h05m
+  [layastaro]  |  113 docs  |  283.89K ch  |  ~70.97K tok  |  37 ch/s  |  13,692 req  |  1% of budget  |  ETA 3845h17m  |  2h06m
+  [layastaro]  |  121 docs  |  327.67K ch  |  ~81.92K tok  |  43 ch/s  |  13,701 req  |  1% of budget  |  ETA 3335h53m  |  2h06m
+  [layastaro]  |  130 docs  |  410.26K ch  |  ~102.56K tok  |  54 ch/s  |  13,710 req  |  2% of budget  |  ETA 2668h06m  |  2h06m
+  [layastaro]  |  139 docs  |  452.61K ch  |  ~113.15K tok  |  59 ch/s  |  13,719 req  |  2% of budget  |  ETA 2421h36m  |  2h06m
+  [layastaro]  |  154 docs  |  564.03K ch  |  ~141.01K tok  |  74 ch/s  |  13,738 req  |  2% of budget  |  ETA 1945h56m  |  2h06m
+  [layastaro]  |  170 docs  |  596.03K ch  |  ~149.01K tok  |  78 ch/s  |  13,754 req  |  2% of budget  |  ETA 1843h54m  |  2h06m
+  [layastaro]  |  185 docs  |  643.76K ch  |  ~160.94K tok  |  84 ch/s  |  13,769 req  |  3% of budget  |  ETA 1709h17m  |  2h07m
+  [layastaro]  |  199 docs  |  678.31K ch  |  ~169.58K tok  |  88 ch/s  |  13,783 req  |  3% of budget  |  ETA 1624h21m  |  2h07m
+  [layastaro]  |  209 docs  |  714.31K ch  |  ~178.58K tok  |  93 ch/s  |  13,796 req  |  3% of budget  |  ETA 1544h31m  |  2h07m
+  [layastaro]  |  223 docs  |  771.40K ch  |  ~192.85K tok  |  100 ch/s  |  13,810 req  |  3% of budget  |  ETA 1432h10m  |  2h07m
+  [layastaro]  |  237 docs  |  794.86K ch  |  ~198.71K tok  |  103 ch/s  |  13,824 req  |  3% of budget  |  ETA 1391h48m  |  2h07m
+  [layastaro]  |  251 docs  |  830.69K ch  |  ~207.67K tok  |  108 ch/s  |  13,839 req  |  3% of budget  |  ETA 1333h33m  |  2h08m
+  [layastaro]  |  262 docs  |  854.80K ch  |  ~213.70K tok  |  111 ch/s  |  13,854 req  |  3% of budget  |  ETA 1297h38m  |  2h08m
+  [layastaro]  |  274 docs  |  896.34K ch  |  ~224.09K tok  |  116 ch/s  |  13,866 req  |  4% of budget  |  ETA 1239h06m  |  2h08m
+  [layastaro]  |  289 docs  |  934.58K ch  |  ~233.64K tok  |  121 ch/s  |  13,881 req  |  4% of budget  |  ETA 1189h55m  |  2h08m
+  [layastaro]  |  304 docs  |  1.01M ch  |  ~251.56K tok  |  130 ch/s  |  13,896 req  |  4% of budget  |  ETA 1106h33m  |  2h08m
+  [layastaro]  |  320 docs  |  1.05M ch  |  ~262.80K tok  |  135 ch/s  |  13,915 req  |  4% of budget  |  ETA 1060h30m  |  2h08m
+  [layastaro]  |  337 docs  |  1.08M ch  |  ~270.58K tok  |  139 ch/s  |  13,932 req  |  4% of budget  |  ETA 1031h19m  |  2h09m
+  [layastaro]  |  359 docs  |  1.10M ch  |  ~275.26K tok  |  141 ch/s  |  13,954 req  |  4% of budget  |  ETA 1015h04m  |  2h09m
+  [layastaro]  |  373 docs  |  1.12M ch  |  ~281.18K tok  |  144 ch/s  |  13,971 req  |  4% of budget  |  ETA 994h58m  |  2h09m
+  [layastaro]  |  385 docs  |  1.16M ch  |  ~290.49K tok  |  149 ch/s  |  13,985 req  |  5% of budget  |  ETA 964h16m  |  2h09m
+  [layastaro]  |  401 docs  |  1.21M ch  |  ~302.29K tok  |  155 ch/s  |  14,002 req  |  5% of budget  |  ETA 927h47m  |  2h09m
+  [layastaro]  |  413 docs  |  1.24M ch  |  ~309.27K tok  |  158 ch/s  |  14,019 req  |  5% of budget  |  ETA 907h58m  |  2h09m
+  [layastaro]  |  423 docs  |  1.27M ch  |  ~317.63K tok  |  162 ch/s  |  14,030 req  |  5% of budget  |  ETA 885h09m  |  2h10m
+  [layastaro]  |  436 docs  |  1.30M ch  |  ~325.15K tok  |  166 ch/s  |  14,046 req  |  5% of budget  |  ETA 865h45m  |  2h10m
+  [layastaro]  |  449 docs  |  1.37M ch  |  ~342.06K tok  |  174 ch/s  |  14,061 req  |  5% of budget  |  ETA 823h56m  |  2h10m
+  [layastaro]  |  464 docs  |  1.41M ch  |  ~352.44K tok  |  179 ch/s  |  14,093 req  |  6% of budget  |  ETA 800h40m  |  2h10m
+  [layastaro]  |  475 docs  |  1.44M ch  |  ~359.58K tok  |  183 ch/s  |  14,108 req  |  6% of budget  |  ETA 785h44m  |  2h10m
+  [layastaro]  |  492 docs  |  1.47M ch  |  ~367.78K tok  |  187 ch/s  |  14,125 req  |  6% of budget  |  ETA 769h10m  |  2h10m
+  [layastaro]  |  504 docs  |  1.48M ch  |  ~370.12K tok  |  188 ch/s  |  14,139 req  |  6% of budget  |  ETA 765h18m  |  2h11m
+  [layastaro]  |  516 docs  |  1.53M ch  |  ~382.84K tok  |  194 ch/s  |  14,152 req  |  6% of budget  |  ETA 740h47m  |  2h11m
+  [layastaro]  |  526 docs  |  1.56M ch  |  ~391.17K tok  |  198 ch/s  |  14,167 req  |  6% of budget  |  ETA 726h00m  |  2h11m
+  [layastaro]  |  546 docs  |  1.67M ch  |  ~417.74K tok  |  211 ch/s  |  14,187 req  |  7% of budget  |  ETA 680h36m  |  2h11m
+  [layastaro]  |  561 docs  |  1.71M ch  |  ~426.47K tok  |  215 ch/s  |  14,202 req  |  7% of budget  |  ETA 667h35m  |  2h11m
+  [layastaro]  |  579 docs  |  1.74M ch  |  ~435.76K tok  |  220 ch/s  |  14,221 req  |  7% of budget  |  ETA 654h14m  |  2h12m
+  [layastaro]  |  592 docs  |  1.77M ch  |  ~442.83K tok  |  223 ch/s  |  14,237 req  |  7% of budget  |  ETA 644h39m  |  2h12m
+  [layastaro]  |  603 docs  |  1.81M ch  |  ~451.89K tok  |  227 ch/s  |  14,254 req  |  7% of budget  |  ETA 632h30m  |  2h12m
+  [layastaro]  |  617 docs  |  1.87M ch  |  ~467.33K tok  |  235 ch/s  |  14,268 req  |  7% of budget  |  ETA 612h19m  |  2h12m
+  [layastaro]  |  632 docs  |  1.90M ch  |  ~473.87K tok  |  238 ch/s  |  14,285 req  |  8% of budget  |  ETA 604h37m  |  2h12m
+  [layastaro]  |  650 docs  |  1.92M ch  |  ~479.19K tok  |  240 ch/s  |  14,305 req  |  8% of budget  |  ETA 598h40m  |  2h12m
+  [layastaro]  |  664 docs  |  1.95M ch  |  ~487.06K tok  |  244 ch/s  |  14,319 req  |  8% of budget  |  ETA 589h43m  |  2h13m
+  [layastaro]  |  683 docs  |  1.97M ch  |  ~492.24K tok  |  246 ch/s  |  14,338 req  |  8% of budget  |  ETA 584h16m  |  2h13m
+  [layastaro]  |  698 docs  |  2.00M ch  |  ~499.94K tok  |  249 ch/s  |  14,358 req  |  8% of budget  |  ETA 575h59m  |  2h13m
+  [layastaro]  |  720 docs  |  2.02M ch  |  ~504.34K tok  |  251 ch/s  |  14,383 req  |  8% of budget  |  ETA 571h40m  |  2h13m
+  [layastaro]  |  735 docs  |  2.04M ch  |  ~509.26K tok  |  253 ch/s  |  14,401 req  |  8% of budget  |  ETA 566h53m  |  2h13m
+  [layastaro]  |  750 docs  |  2.16M ch  |  ~540.84K tok  |  269 ch/s  |  14,418 req  |  9% of budget  |  ETA 534h23m  |  2h13m
+  [layastaro]  |  771 docs  |  2.28M ch  |  ~570.02K tok  |  283 ch/s  |  14,439 req  |  9% of budget  |  ETA 507h38m  |  2h14m
+  [layastaro]  |  781 docs  |  2.32M ch  |  ~578.95K tok  |  287 ch/s  |  14,463 req  |  9% of budget  |  ETA 500h26m  |  2h14m
+  [layastaro]  |  788 docs  |  2.33M ch  |  ~582.77K tok  |  288 ch/s  |  14,480 req  |  9% of budget  |  ETA 497h47m  |  2h14m
+  [layastaro]  |  798 docs  |  2.35M ch  |  ~588.18K tok  |  291 ch/s  |  14,496 req  |  9% of budget  |  ETA 493h49m  |  2h14m
+  [layastaro]  |  810 docs  |  2.37M ch  |  ~593.37K tok  |  293 ch/s  |  14,513 req  |  9% of budget  |  ETA 490h05m  |  2h14m
+  [layastaro]  |  821 docs  |  2.38M ch  |  ~595.91K tok  |  294 ch/s  |  14,530 req  |  10% of budget  |  ETA 488h37m  |  2h15m
+  [layastaro]  |  837 docs  |  2.40M ch  |  ~598.93K tok  |  295 ch/s  |  14,546 req  |  10% of budget  |  ETA 486h46m  |  2h15m
+  [layastaro]  |  850 docs  |  2.41M ch  |  ~602.28K tok  |  296 ch/s  |  14,607 req  |  10% of budget  |  ETA 485h01m  |  2h15m
+  [layastaro]  |  868 docs  |  2.43M ch  |  ~608.60K tok  |  299 ch/s  |  14,625 req  |  10% of budget  |  ETA 480h33m  |  2h15m
+  [layastaro]  |  884 docs  |  2.46M ch  |  ~615.35K tok  |  302 ch/s  |  14,641 req  |  10% of budget  |  ETA 475h54m  |  2h15m
+  [layastaro]  |  900 docs  |  2.49M ch  |  ~623.19K tok  |  305 ch/s  |  14,664 req  |  10% of budget  |  ETA 470h29m  |  2h15m
+  [layastaro]  |  915 docs  |  2.51M ch  |  ~626.85K tok  |  306 ch/s  |  14,681 req  |  10% of budget  |  ETA 468h18m  |  2h16m
+  [layastaro]  |  931 docs  |  2.52M ch  |  ~630.11K tok  |  308 ch/s  |  14,704 req  |  10% of budget  |  ETA 466h30m  |  2h16m
+  [layastaro]  |  949 docs  |  2.54M ch  |  ~634.59K tok  |  309 ch/s  |  14,725 req  |  10% of budget  |  ETA 463h45m  |  2h16m
+  [layastaro]  |  962 docs  |  2.59M ch  |  ~646.94K tok  |  315 ch/s  |  14,741 req  |  10% of budget  |  ETA 455h26m  |  2h16m
+  [layastaro]  |  976 docs  |  2.63M ch  |  ~658.72K tok  |  320 ch/s  |  14,759 req  |  11% of budget  |  ETA 447h48m  |  2h16m
+  [layastaro]  |  990 docs  |  2.66M ch  |  ~665.13K tok  |  323 ch/s  |  14,774 req  |  11% of budget  |  ETA 444h03m  |  2h17m
+  [layastaro]  |  1,000 docs  |  2.68M ch  |  ~670.31K tok  |  325 ch/s  |  14,788 req  |  11% of budget  |  ETA 441h10m  |  2h17m
+  [layastaro]  |  1,015 docs  |  2.82M ch  |  ~704.68K tok  |  342 ch/s  |  14,803 req  |  11% of budget  |  ETA 420h03m  |  2h17m
+  [layastaro]  |  1,033 docs  |  2.86M ch  |  ~714.12K tok  |  346 ch/s  |  14,825 req  |  11% of budget  |  ETA 415h02m  |  2h17m
+  [layastaro]  |  1,048 docs  |  2.88M ch  |  ~720.00K tok  |  348 ch/s  |  14,854 req  |  12% of budget  |  ETA 412h11m  |  2h17m
+  [layastaro]  |  1,065 docs  |  2.90M ch  |  ~724.69K tok  |  350 ch/s  |  14,872 req  |  12% of budget  |  ETA 410h00m  |  2h17m
+  [layastaro]  |  1,083 docs  |  2.91M ch  |  ~727.46K tok  |  351 ch/s  |  14,890 req  |  12% of budget  |  ETA 408h57m  |  2h18m
+  [layastaro]  |  1,102 docs  |  2.94M ch  |  ~735.06K tok  |  354 ch/s  |  14,915 req  |  12% of budget  |  ETA 405h13m  |  2h18m
+  [layastaro]  |  1,119 docs  |  2.96M ch  |  ~740.89K tok  |  356 ch/s  |  14,935 req  |  12% of budget  |  ETA 402h31m  |  2h18m
+  [layastaro]  |  1,135 docs  |  2.98M ch  |  ~744.34K tok  |  358 ch/s  |  14,953 req  |  12% of budget  |  ETA 401h09m  |  2h18m
+  [layastaro]  |  1,150 docs  |  2.99M ch  |  ~747.53K tok  |  359 ch/s  |  14,975 req  |  12% of budget  |  ETA 399h55m  |  2h18m
+  [layastaro]  |  1,166 docs  |  3.00M ch  |  ~750.82K tok  |  360 ch/s  |  14,991 req  |  12% of budget  |  ETA 398h40m  |  2h18m
+  [layastaro]  |  1,188 docs  |  3.02M ch  |  ~754.09K tok  |  361 ch/s  |  15,013 req  |  12% of budget  |  ETA 397h24m  |  2h19m
+  [layastaro]  |  1,203 docs  |  3.03M ch  |  ~757.49K tok  |  362 ch/s  |  15,035 req  |  12% of budget  |  ETA 396h05m  |  2h19m
+  [layastaro]  |  1,218 docs  |  3.05M ch  |  ~763.34K tok  |  364 ch/s  |  15,056 req  |  12% of budget  |  ETA 393h31m  |  2h19m
+  [layastaro]  |  1,238 docs  |  3.10M ch  |  ~774.71K tok  |  369 ch/s  |  15,076 req  |  12% of budget  |  ETA 388h11m  |  2h19m
+  [layastaro]  |  1,256 docs  |  3.15M ch  |  ~787.24K tok  |  375 ch/s  |  15,097 req  |  13% of budget  |  ETA 382h26m  |  2h19m
+  [layastaro]  |  1,278 docs  |  3.18M ch  |  ~793.93K tok  |  378 ch/s  |  15,122 req  |  13% of budget  |  ETA 379h39m  |  2h19m
+  [layastaro]  |  1,294 docs  |  3.20M ch  |  ~799.24K tok  |  380 ch/s  |  15,149 req  |  13% of budget  |  ETA 377h34m  |  2h20m
+  [layastaro]  |  1,316 docs  |  3.22M ch  |  ~806.20K tok  |  383 ch/s  |  15,174 req  |  13% of budget  |  ETA 374h44m  |  2h20m
+  [layastaro]  |  1,338 docs  |  3.28M ch  |  ~819.33K tok  |  388 ch/s  |  15,202 req  |  13% of budget  |  ETA 369h08m  |  2h20m
+  [layastaro]  |  1,349 docs  |  3.29M ch  |  ~823.00K tok  |  390 ch/s  |  15,218 req  |  13% of budget  |  ETA 367h58m  |  2h20m
+  [layastaro]  |  1,364 docs  |  3.31M ch  |  ~828.34K tok  |  392 ch/s  |  15,239 req  |  13% of budget  |  ETA 366h01m  |  2h20m
+  [layastaro]  |  1,375 docs  |  3.33M ch  |  ~831.84K tok  |  393 ch/s  |  15,257 req  |  13% of budget  |  ETA 364h58m  |  2h21m
+  [layastaro]  |  1,393 docs  |  3.35M ch  |  ~838.05K tok  |  395 ch/s  |  15,278 req  |  13% of budget  |  ETA 362h41m  |  2h21m
+  [layastaro]  |  1,403 docs  |  3.37M ch  |  ~841.80K tok  |  396 ch/s  |  15,300 req  |  13% of budget  |  ETA 361h30m  |  2h21m
+  [layastaro]  |  1,412 docs  |  3.39M ch  |  ~846.46K tok  |  398 ch/s  |  15,314 req  |  14% of budget  |  ETA 359h56m  |  2h21m
+  [layastaro]  |  1,426 docs  |  3.40M ch  |  ~850.84K tok  |  400 ch/s  |  15,332 req  |  14% of budget  |  ETA 358h30m  |  2h21m
+  [layastaro]  |  1,444 docs  |  3.43M ch  |  ~857.97K tok  |  403 ch/s  |  15,350 req  |  14% of budget  |  ETA 355h57m  |  2h21m
+  [layastaro]  |  1,460 docs  |  3.47M ch  |  ~868.71K tok  |  407 ch/s  |  15,366 req  |  14% of budget  |  ETA 351h56m  |  2h22m
+  [layastaro]  |  1,475 docs  |  3.49M ch  |  ~872.69K tok  |  409 ch/s  |  15,387 req  |  14% of budget  |  ETA 350h47m  |  2h22m
+  [layastaro]  |  1,493 docs  |  3.52M ch  |  ~879.32K tok  |  411 ch/s  |  15,407 req  |  14% of budget  |  ETA 348h33m  |  2h22m
+  [layastaro]  |  1,512 docs  |  3.54M ch  |  ~886.06K tok  |  414 ch/s  |  15,428 req  |  14% of budget  |  ETA 346h19m  |  2h22m
+  [layastaro]  |  1,532 docs  |  3.58M ch  |  ~894.69K tok  |  417 ch/s  |  15,450 req  |  14% of budget  |  ETA 343h22m  |  2h22m
+  [layastaro]  |  1,543 docs  |  3.60M ch  |  ~900.62K tok  |  419 ch/s  |  15,470 req  |  14% of budget  |  ETA 341h32m  |  2h22m
+  [layastaro]  |  1,557 docs  |  3.62M ch  |  ~904.89K tok  |  421 ch/s  |  15,489 req  |  14% of budget  |  ETA 340h19m  |  2h23m
+  [layastaro]  |  1,574 docs  |  3.65M ch  |  ~912.13K tok  |  424 ch/s  |  15,510 req  |  15% of budget  |  ETA 338h00m  |  2h23m
+  [layastaro]  |  1,589 docs  |  3.67M ch  |  ~917.06K tok  |  426 ch/s  |  15,527 req  |  15% of budget  |  ETA 336h34m  |  2h23m
+  [layastaro]  |  1,605 docs  |  3.70M ch  |  ~923.82K tok  |  428 ch/s  |  15,545 req  |  15% of budget  |  ETA 334h31m  |  2h23m
+  [layastaro]  |  1,618 docs  |  3.72M ch  |  ~930.11K tok  |  431 ch/s  |  15,561 req  |  15% of budget  |  ETA 332h38m  |  2h23m
+  [layastaro]  |  1,632 docs  |  3.74M ch  |  ~935.25K tok  |  433 ch/s  |  15,578 req  |  15% of budget  |  ETA 331h11m  |  2h23m
+  [layastaro]  |  1,641 docs  |  3.76M ch  |  ~939.62K tok  |  434 ch/s  |  15,591 req  |  15% of budget  |  ETA 330h02m  |  2h24m
+  [layastaro]  |  1,658 docs  |  3.78M ch  |  ~945.88K tok  |  436 ch/s  |  15,609 req  |  15% of budget  |  ETA 328h13m  |  2h24m
+  [layastaro]  |  1,674 docs  |  3.81M ch  |  ~951.53K tok  |  438 ch/s  |  15,625 req  |  15% of budget  |  ETA 326h39m  |  2h24m
+  [layastaro]  |  1,690 docs  |  3.83M ch  |  ~957.12K tok  |  440 ch/s  |  15,641 req  |  15% of budget  |  ETA 325h07m  |  2h24m
+  [layastaro]  |  1,708 docs  |  3.85M ch  |  ~963.27K tok  |  443 ch/s  |  15,660 req  |  15% of budget  |  ETA 323h25m  |  2h24m
+  [layastaro]  |  1,723 docs  |  3.88M ch  |  ~969.00K tok  |  445 ch/s  |  15,680 req  |  16% of budget  |  ETA 321h55m  |  2h25m
+  [layastaro]  |  1,740 docs  |  3.89M ch  |  ~973.55K tok  |  446 ch/s  |  15,699 req  |  16% of budget  |  ETA 320h47m  |  2h25m
+  [layastaro]  |  1,757 docs  |  3.93M ch  |  ~982.28K tok  |  450 ch/s  |  15,716 req  |  16% of budget  |  ETA 318h18m  |  2h25m
+  [layastaro]  |  1,772 docs  |  3.95M ch  |  ~987.69K tok  |  452 ch/s  |  15,731 req  |  16% of budget  |  ETA 316h55m  |  2h25m
+  [layastaro]  |  1,788 docs  |  4.00M ch  |  ~1.00M tok  |  457 ch/s  |  15,753 req  |  16% of budget  |  ETA 313h13m  |  2h25m
+  [layastaro]  |  1,803 docs  |  4.03M ch  |  ~1.01M tok  |  459 ch/s  |  15,770 req  |  16% of budget  |  ETA 311h35m  |  2h25m
+  [layastaro]  |  1,818 docs  |  4.06M ch  |  ~1.02M tok  |  463 ch/s  |  15,788 req  |  16% of budget  |  ETA 309h25m  |  2h26m
+  [layastaro]  |  1,832 docs  |  4.09M ch  |  ~1.02M tok  |  466 ch/s  |  15,803 req  |  16% of budget  |  ETA 307h28m  |  2h26m
+  [layastaro]  |  1,851 docs  |  4.12M ch  |  ~1.03M tok  |  469 ch/s  |  15,822 req  |  16% of budget  |  ETA 305h24m  |  2h26m
+  [layastaro]  |  1,867 docs  |  4.15M ch  |  ~1.04M tok  |  471 ch/s  |  15,841 req  |  17% of budget  |  ETA 304h05m  |  2h26m
+  [layastaro]  |  1,884 docs  |  4.18M ch  |  ~1.05M tok  |  474 ch/s  |  15,860 req  |  17% of budget  |  ETA 301h55m  |  2h26m
+  [layastaro]  |  1,894 docs  |  4.20M ch  |  ~1.05M tok  |  476 ch/s  |  15,877 req  |  17% of budget  |  ETA 300h45m  |  2h27m
+  [layastaro]  |  1,913 docs  |  4.25M ch  |  ~1.06M tok  |  480 ch/s  |  15,898 req  |  17% of budget  |  ETA 297h54m  |  2h27m
+  [layastaro]  |  1,928 docs  |  4.28M ch  |  ~1.07M tok  |  484 ch/s  |  15,917 req  |  17% of budget  |  ETA 295h40m  |  2h27m
+  [layastaro]  |  1,946 docs  |  4.30M ch  |  ~1.08M tok  |  485 ch/s  |  15,937 req  |  17% of budget  |  ETA 294h46m  |  2h27m
+  [layastaro]  |  1,964 docs  |  4.33M ch  |  ~1.08M tok  |  488 ch/s  |  15,956 req  |  17% of budget  |  ETA 293h27m  |  2h27m
+  [layastaro]  |  1,983 docs  |  4.34M ch  |  ~1.09M tok  |  489 ch/s  |  15,978 req  |  17% of budget  |  ETA 292h44m  |  2h27m
+  [layastaro]  |  1,995 docs  |  4.36M ch  |  ~1.09M tok  |  491 ch/s  |  15,995 req  |  17% of budget  |  ETA 291h40m  |  2h28m
+  [layastaro]  |  2,012 docs  |  4.39M ch  |  ~1.10M tok  |  493 ch/s  |  16,016 req  |  18% of budget  |  ETA 290h23m  |  2h28m
+  [layastaro]  |  2,031 docs  |  4.43M ch  |  ~1.11M tok  |  497 ch/s  |  16,037 req  |  18% of budget  |  ETA 287h59m  |  2h28m
+  [layastaro]  |  2,050 docs  |  4.46M ch  |  ~1.12M tok  |  500 ch/s  |  16,059 req  |  18% of budget  |  ETA 286h08m  |  2h28m
+  [layastaro]  |  2,064 docs  |  4.48M ch  |  ~1.12M tok  |  502 ch/s  |  16,078 req  |  18% of budget  |  ETA 285h07m  |  2h28m
+  [layastaro]  |  2,079 docs  |  4.53M ch  |  ~1.13M tok  |  506 ch/s  |  16,096 req  |  18% of budget  |  ETA 282h38m  |  2h28m
+  [layastaro]  |  2,094 docs  |  4.56M ch  |  ~1.14M tok  |  509 ch/s  |  16,117 req  |  18% of budget  |  ETA 280h58m  |  2h29m
+  [layastaro]  |  2,112 docs  |  4.58M ch  |  ~1.14M tok  |  511 ch/s  |  16,136 req  |  18% of budget  |  ETA 280h10m  |  2h29m
+  [layastaro]  |  2,131 docs  |  4.59M ch  |  ~1.15M tok  |  512 ch/s  |  16,155 req  |  18% of budget  |  ETA 279h30m  |  2h29m
+  [layastaro]  |  2,146 docs  |  4.60M ch  |  ~1.15M tok  |  512 ch/s  |  16,174 req  |  18% of budget  |  ETA 279h16m  |  2h29m
+  [layastaro]  |  2,160 docs  |  4.61M ch  |  ~1.15M tok  |  512 ch/s  |  16,190 req  |  18% of budget  |  ETA 279h09m  |  2h29m
+  [layastaro]  |  2,178 docs  |  4.63M ch  |  ~1.16M tok  |  513 ch/s  |  16,209 req  |  19% of budget  |  ETA 278h31m  |  2h29m
+  [layastaro]  |  2,197 docs  |  4.65M ch  |  ~1.16M tok  |  515 ch/s  |  16,228 req  |  19% of budget  |  ETA 277h34m  |  2h30m
+  [layastaro]  |  2,220 docs  |  4.68M ch  |  ~1.17M tok  |  518 ch/s  |  16,252 req  |  19% of budget  |  ETA 276h02m  |  2h30m
+  [layastaro]  |  2,239 docs  |  4.71M ch  |  ~1.18M tok  |  521 ch/s  |  16,272 req  |  19% of budget  |  ETA 274h18m  |  2h30m
+  [layastaro]  |  2,255 docs  |  4.74M ch  |  ~1.19M tok  |  524 ch/s  |  16,288 req  |  19% of budget  |  ETA 273h01m  |  2h30m
+  [layastaro]  |  2,272 docs  |  4.78M ch  |  ~1.19M tok  |  527 ch/s  |  16,305 req  |  19% of budget  |  ETA 271h20m  |  2h30m
+  [layastaro]  |  2,289 docs  |  4.80M ch  |  ~1.20M tok  |  529 ch/s  |  16,322 req  |  19% of budget  |  ETA 270h14m  |  2h31m
+  [layastaro]  |  2,309 docs  |  4.82M ch  |  ~1.20M tok  |  530 ch/s  |  16,342 req  |  19% of budget  |  ETA 269h34m  |  2h31m
+  [layastaro]  |  2,327 docs  |  4.83M ch  |  ~1.21M tok  |  531 ch/s  |  16,360 req  |  19% of budget  |  ETA 269h07m  |  2h31m
+  [layastaro]  |  2,343 docs  |  4.85M ch  |  ~1.21M tok  |  532 ch/s  |  16,376 req  |  19% of budget  |  ETA 268h35m  |  2h31m
+  [layastaro]  |  2,361 docs  |  4.86M ch  |  ~1.21M tok  |  533 ch/s  |  16,395 req  |  19% of budget  |  ETA 268h20m  |  2h31m
+  [layastaro]  |  2,377 docs  |  4.87M ch  |  ~1.22M tok  |  534 ch/s  |  16,411 req  |  19% of budget  |  ETA 267h43m  |  2h31m
+  [layastaro]  |  2,395 docs  |  4.89M ch  |  ~1.22M tok  |  535 ch/s  |  16,430 req  |  20% of budget  |  ETA 267h15m  |  2h32m
+  [layastaro]  |  2,411 docs  |  4.90M ch  |  ~1.22M tok  |  536 ch/s  |  16,447 req  |  20% of budget  |  ETA 266h49m  |  2h32m
+  [layastaro]  |  2,429 docs  |  4.92M ch  |  ~1.23M tok  |  537 ch/s  |  16,465 req  |  20% of budget  |  ETA 266h01m  |  2h32m
+  [layastaro]  |  2,449 docs  |  4.93M ch  |  ~1.23M tok  |  538 ch/s  |  16,486 req  |  20% of budget  |  ETA 265h35m  |  2h32m
+  [layastaro]  |  2,469 docs  |  4.95M ch  |  ~1.24M tok  |  539 ch/s  |  16,507 req  |  20% of budget  |  ETA 265h08m  |  2h32m
+  [layastaro]  |  2,488 docs  |  4.96M ch  |  ~1.24M tok  |  539 ch/s  |  16,527 req  |  20% of budget  |  ETA 264h58m  |  2h32m
+  [layastaro]  |  2,505 docs  |  4.97M ch  |  ~1.24M tok  |  540 ch/s  |  16,545 req  |  20% of budget  |  ETA 264h30m  |  2h33m
+  [layastaro]  |  2,520 docs  |  4.99M ch  |  ~1.25M tok  |  542 ch/s  |  16,560 req  |  20% of budget  |  ETA 263h48m  |  2h33m
+  [layastaro]  |  2,537 docs  |  5.00M ch  |  ~1.25M tok  |  542 ch/s  |  16,579 req  |  20% of budget  |  ETA 263h32m  |  2h33m
+  [layastaro]  |  2,556 docs  |  5.03M ch  |  ~1.26M tok  |  545 ch/s  |  16,598 req  |  20% of budget  |  ETA 262h23m  |  2h33m
+  [layastaro]  |  2,577 docs  |  5.05M ch  |  ~1.26M tok  |  546 ch/s  |  16,620 req  |  20% of budget  |  ETA 261h36m  |  2h33m
+  [layastaro]  |  2,596 docs  |  5.06M ch  |  ~1.27M tok  |  547 ch/s  |  16,641 req  |  20% of budget  |  ETA 261h09m  |  2h34m
+  [layastaro]  |  2,627 docs  |  5.08M ch  |  ~1.27M tok  |  549 ch/s  |  16,673 req  |  20% of budget  |  ETA 260h24m  |  2h34m
+  [layastaro]  |  2,651 docs  |  5.11M ch  |  ~1.28M tok  |  551 ch/s  |  16,699 req  |  20% of budget  |  ETA 259h27m  |  2h34m
+  [layastaro]  |  2,681 docs  |  5.13M ch  |  ~1.28M tok  |  552 ch/s  |  16,729 req  |  21% of budget  |  ETA 258h39m  |  2h34m
+  [layastaro]  |  2,711 docs  |  5.15M ch  |  ~1.29M tok  |  554 ch/s  |  16,759 req  |  21% of budget  |  ETA 258h02m  |  2h34m
+  [layastaro]  |  2,745 docs  |  5.17M ch  |  ~1.29M tok  |  556 ch/s  |  16,793 req  |  21% of budget  |  ETA 256h57m  |  2h34m
+  [layastaro]  |  2,777 docs  |  5.20M ch  |  ~1.30M tok  |  558 ch/s  |  16,826 req  |  21% of budget  |  ETA 256h08m  |  2h35m
+  [layastaro]  |  2,807 docs  |  5.22M ch  |  ~1.30M tok  |  560 ch/s  |  16,861 req  |  21% of budget  |  ETA 255h13m  |  2h35m
+  [layastaro]  |  2,833 docs  |  5.24M ch  |  ~1.31M tok  |  561 ch/s  |  16,894 req  |  21% of budget  |  ETA 254h39m  |  2h35m
+  [layastaro]  |  2,864 docs  |  5.28M ch  |  ~1.32M tok  |  565 ch/s  |  16,925 req  |  21% of budget  |  ETA 252h42m  |  2h35m
+  [layastaro]  |  2,895 docs  |  5.32M ch  |  ~1.33M tok  |  569 ch/s  |  16,956 req  |  21% of budget  |  ETA 251h13m  |  2h35m
+  [layastaro]  |  2,922 docs  |  5.34M ch  |  ~1.33M tok  |  570 ch/s  |  16,985 req  |  21% of budget  |  ETA 250h36m  |  2h35m
+  [layastaro]  |  2,943 docs  |  5.37M ch  |  ~1.34M tok  |  572 ch/s  |  17,013 req  |  21% of budget  |  ETA 249h33m  |  2h36m
+  [layastaro]  |  2,961 docs  |  5.38M ch  |  ~1.35M tok  |  573 ch/s  |  17,035 req  |  22% of budget  |  ETA 249h04m  |  2h36m
+  [layastaro]  |  2,984 docs  |  5.40M ch  |  ~1.35M tok  |  574 ch/s  |  17,059 req  |  22% of budget  |  ETA 248h43m  |  2h36m
+  [layastaro]  |  3,015 docs  |  5.42M ch  |  ~1.35M tok  |  576 ch/s  |  17,092 req  |  22% of budget  |  ETA 248h03m  |  2h36m
+  [layastaro]  |  3,046 docs  |  5.44M ch  |  ~1.36M tok  |  578 ch/s  |  17,130 req  |  22% of budget  |  ETA 247h12m  |  2h36m
+  [layastaro]  |  3,083 docs  |  5.48M ch  |  ~1.37M tok  |  581 ch/s  |  17,167 req  |  22% of budget  |  ETA 245h51m  |  2h36m
+  [layastaro]  |  3,115 docs  |  5.51M ch  |  ~1.38M tok  |  584 ch/s  |  17,200 req  |  22% of budget  |  ETA 244h31m  |  2h37m
+  [layastaro]  |  3,148 docs  |  5.54M ch  |  ~1.39M tok  |  586 ch/s  |  17,234 req  |  22% of budget  |  ETA 243h29m  |  2h37m
+  [layastaro]  |  3,173 docs  |  5.57M ch  |  ~1.39M tok  |  588 ch/s  |  17,260 req  |  22% of budget  |  ETA 242h38m  |  2h37m
+  [layastaro]  |  3,201 docs  |  5.59M ch  |  ~1.40M tok  |  590 ch/s  |  17,290 req  |  22% of budget  |  ETA 242h01m  |  2h37m
+  [layastaro]  |  3,223 docs  |  5.61M ch  |  ~1.40M tok  |  591 ch/s  |  17,323 req  |  22% of budget  |  ETA 241h24m  |  2h37m
+  [layastaro]  |  3,255 docs  |  5.64M ch  |  ~1.41M tok  |  594 ch/s  |  17,370 req  |  23% of budget  |  ETA 240h13m  |  2h38m
+  [layastaro]  |  3,286 docs  |  5.68M ch  |  ~1.42M tok  |  598 ch/s  |  17,413 req  |  23% of budget  |  ETA 238h46m  |  2h38m
+  [layastaro]  |  3,315 docs  |  5.71M ch  |  ~1.43M tok  |  600 ch/s  |  17,451 req  |  23% of budget  |  ETA 237h57m  |  2h38m
+  [layastaro]  |  3,349 docs  |  5.73M ch  |  ~1.43M tok  |  602 ch/s  |  17,493 req  |  23% of budget  |  ETA 237h10m  |  2h38m
+  [layastaro]  |  3,383 docs  |  5.76M ch  |  ~1.44M tok  |  604 ch/s  |  17,538 req  |  23% of budget  |  ETA 236h08m  |  2h38m
+  [layastaro]  |  3,420 docs  |  5.79M ch  |  ~1.45M tok  |  606 ch/s  |  17,611 req  |  23% of budget  |  ETA 235h20m  |  2h38m
+  [layastaro]  |  3,465 docs  |  5.85M ch  |  ~1.46M tok  |  612 ch/s  |  17,660 req  |  23% of budget  |  ETA 233h13m  |  2h39m
+  [layastaro]  |  3,490 docs  |  5.87M ch  |  ~1.47M tok  |  614 ch/s  |  17,710 req  |  23% of budget  |  ETA 232h29m  |  2h39m
+  [layastaro]  |  3,529 docs  |  5.89M ch  |  ~1.47M tok  |  616 ch/s  |  17,752 req  |  24% of budget  |  ETA 231h46m  |  2h39m
+  [layastaro]  |  3,555 docs  |  5.91M ch  |  ~1.48M tok  |  617 ch/s  |  17,799 req  |  24% of budget  |  ETA 231h15m  |  2h39m
+  [layastaro]  |  3,581 docs  |  5.93M ch  |  ~1.48M tok  |  618 ch/s  |  17,848 req  |  24% of budget  |  ETA 230h46m  |  2h39m
+  [layastaro]  |  3,613 docs  |  5.95M ch  |  ~1.49M tok  |  620 ch/s  |  17,906 req  |  24% of budget  |  ETA 230h10m  |  2h39m
+  [layastaro]  |  3,641 docs  |  5.98M ch  |  ~1.49M tok  |  621 ch/s  |  17,970 req  |  24% of budget  |  ETA 229h35m  |  2h40m
+  [layastaro]  |  3,694 docs  |  6.02M ch  |  ~1.50M tok  |  625 ch/s  |  18,036 req  |  24% of budget  |  ETA 228h13m  |  2h40m
+  [layastaro]  |  3,757 docs  |  6.06M ch  |  ~1.51M tok  |  629 ch/s  |  18,108 req  |  24% of budget  |  ETA 226h51m  |  2h40m
+  [layastaro]  |  3,813 docs  |  6.11M ch  |  ~1.53M tok  |  633 ch/s  |  18,193 req  |  24% of budget  |  ETA 225h11m  |  2h40m
+  [layastaro]  |  3,850 docs  |  6.15M ch  |  ~1.54M tok  |  637 ch/s  |  18,285 req  |  25% of budget  |  ETA 223h53m  |  2h40m
+  [layastaro]  |  3,879 docs  |  6.17M ch  |  ~1.54M tok  |  638 ch/s  |  18,375 req  |  25% of budget  |  ETA 223h22m  |  2h40m
+  [layastaro]  |  3,944 docs  |  6.23M ch  |  ~1.56M tok  |  643 ch/s  |  18,455 req  |  25% of budget  |  ETA 221h37m  |  2h41m
+  [layastaro]  |  3,960 docs  |  6.26M ch  |  ~1.56M tok  |  646 ch/s  |  18,541 req  |  25% of budget  |  ETA 220h49m  |  2h41m
+  [layastaro]  |  4,002 docs  |  6.29M ch  |  ~1.57M tok  |  648 ch/s  |  18,609 req  |  25% of budget  |  ETA 219h55m  |  2h41m
+  [layastaro]  |  4,040 docs  |  6.32M ch  |  ~1.58M tok  |  651 ch/s  |  18,666 req  |  25% of budget  |  ETA 219h03m  |  2h41m
+  [layastaro]  |  4,090 docs  |  6.37M ch  |  ~1.59M tok  |  656 ch/s  |  18,730 req  |  25% of budget  |  ETA 217h20m  |  2h41m
+  [layastaro]  |  4,137 docs  |  6.49M ch  |  ~1.62M tok  |  667 ch/s  |  18,799 req  |  26% of budget  |  ETA 213h47m  |  2h42m
+  [layastaro]  |  4,200 docs  |  6.54M ch  |  ~1.63M tok  |  671 ch/s  |  18,867 req  |  26% of budget  |  ETA 212h21m  |  2h42m
+  [layastaro]  |  4,242 docs  |  6.57M ch  |  ~1.64M tok  |  674 ch/s  |  18,943 req  |  26% of budget  |  ETA 211h18m  |  2h42m
+  [layastaro]  |  4,283 docs  |  6.63M ch  |  ~1.66M tok  |  679 ch/s  |  19,016 req  |  27% of budget  |  ETA 209h46m  |  2h42m
+  [layastaro]  |  4,313 docs  |  6.67M ch  |  ~1.67M tok  |  682 ch/s  |  19,135 req  |  27% of budget  |  ETA 208h53m  |  2h42m
+  [layastaro]  |  4,341 docs  |  6.69M ch  |  ~1.67M tok  |  684 ch/s  |  19,216 req  |  27% of budget  |  ETA 208h23m  |  2h42m
+  [layastaro]  |  4,405 docs  |  6.74M ch  |  ~1.68M tok  |  688 ch/s  |  19,284 req  |  27% of budget  |  ETA 207h09m  |  2h43m
+  [layastaro]  |  4,462 docs  |  6.80M ch  |  ~1.70M tok  |  693 ch/s  |  19,347 req  |  27% of budget  |  ETA 205h29m  |  2h43m
+  [layastaro]  |  4,497 docs  |  6.82M ch  |  ~1.71M tok  |  695 ch/s  |  19,410 req  |  27% of budget  |  ETA 204h50m  |  2h43m
+  [layastaro]  |  4,520 docs  |  6.84M ch  |  ~1.71M tok  |  697 ch/s  |  19,462 req  |  27% of budget  |  ETA 204h26m  |  2h43m
+  [layastaro]  |  4,539 docs  |  6.86M ch  |  ~1.72M tok  |  698 ch/s  |  19,527 req  |  27% of budget  |  ETA 204h09m  |  2h43m
+  [layastaro]  |  4,570 docs  |  6.90M ch  |  ~1.72M tok  |  701 ch/s  |  19,568 req  |  28% of budget  |  ETA 203h15m  |  2h43m
+  [layastaro]  |  4,611 docs  |  6.92M ch  |  ~1.73M tok  |  703 ch/s  |  19,612 req  |  28% of budget  |  ETA 202h40m  |  2h44m
+  [layastaro]  |  4,659 docs  |  6.96M ch  |  ~1.74M tok  |  705 ch/s  |  19,660 req  |  28% of budget  |  ETA 201h53m  |  2h44m
+  [layastaro]  |  4,688 docs  |  6.98M ch  |  ~1.75M tok  |  707 ch/s  |  19,724 req  |  28% of budget  |  ETA 201h22m  |  2h44m
+  [layastaro]  |  4,704 docs  |  6.99M ch  |  ~1.75M tok  |  707 ch/s  |  19,808 req  |  28% of budget  |  ETA 201h22m  |  2h44m
+  [layastaro]  |  4,731 docs  |  7.02M ch  |  ~1.76M tok  |  710 ch/s  |  19,875 req  |  28% of budget  |  ETA 200h40m  |  2h44m
+  [layastaro]  |  4,734 docs  |  7.03M ch  |  ~1.76M tok  |  709 ch/s  |  19,962 req  |  28% of budget  |  ETA 200h47m  |  2h45m
+  [layastaro]  |  4,781 docs  |  7.06M ch  |  ~1.77M tok  |  712 ch/s  |  20,022 req  |  28% of budget  |  ETA 200h00m  |  2h45m
+  [layastaro]  |  4,837 docs  |  7.11M ch  |  ~1.78M tok  |  716 ch/s  |  20,094 req  |  28% of budget  |  ETA 198h46m  |  2h45m
+  [layastaro]  |  4,887 docs  |  7.15M ch  |  ~1.79M tok  |  719 ch/s  |  20,159 req  |  29% of budget  |  ETA 197h56m  |  2h45m
+  [layastaro]  |  4,896 docs  |  7.16M ch  |  ~1.79M tok  |  720 ch/s  |  20,240 req  |  29% of budget  |  ETA 197h44m  |  2h45m
+  [layastaro]  |  4,908 docs  |  7.19M ch  |  ~1.80M tok  |  722 ch/s  |  20,295 req  |  29% of budget  |  ETA 197h10m  |  2h45m
+  [layastaro]  |  4,951 docs  |  7.26M ch  |  ~1.82M tok  |  728 ch/s  |  20,348 req  |  29% of budget  |  ETA 195h24m  |  2h46m
+  [layastaro]  |  4,970 docs  |  7.28M ch  |  ~1.82M tok  |  729 ch/s  |  20,513 req  |  29% of budget  |  ETA 195h15m  |  2h46m
+  [layastaro]  |  5,009 docs  |  7.31M ch  |  ~1.83M tok  |  731 ch/s  |  20,582 req  |  29% of budget  |  ETA 194h38m  |  2h46m
+  [layastaro]  |  5,016 docs  |  7.32M ch  |  ~1.83M tok  |  731 ch/s  |  20,692 req  |  29% of budget  |  ETA 194h40m  |  2h46m
+  [layastaro]  |  5,058 docs  |  7.34M ch  |  ~1.84M tok  |  733 ch/s  |  20,765 req  |  29% of budget  |  ETA 194h14m  |  2h46m
+  [layastaro]  |  5,094 docs  |  7.37M ch  |  ~1.84M tok  |  734 ch/s  |  20,836 req  |  29% of budget  |  ETA 193h46m  |  2h47m
+  [layastaro]  |  5,129 docs  |  7.40M ch  |  ~1.85M tok  |  736 ch/s  |  20,906 req  |  30% of budget  |  ETA 193h16m  |  2h47m
+  [layastaro]  |  5,155 docs  |  7.42M ch  |  ~1.85M tok  |  737 ch/s  |  21,053 req  |  30% of budget  |  ETA 193h03m  |  2h47m
+  [layastaro]  |  5,173 docs  |  7.43M ch  |  ~1.86M tok  |  738 ch/s  |  21,180 req  |  30% of budget  |  ETA 192h55m  |  2h47m
+  [layastaro]  |  5,179 docs  |  7.44M ch  |  ~1.86M tok  |  737 ch/s  |  21,261 req  |  30% of budget  |  ETA 193h00m  |  2h48m
+  [layastaro]  |  5,211 docs  |  7.46M ch  |  ~1.86M tok  |  738 ch/s  |  21,334 req  |  30% of budget  |  ETA 192h41m  |  2h48m
+  [layastaro]  |  5,237 docs  |  7.49M ch  |  ~1.87M tok  |  740 ch/s  |  21,397 req  |  30% of budget  |  ETA 192h08m  |  2h48m
+  [layastaro]  |  5,272 docs  |  7.52M ch  |  ~1.88M tok  |  743 ch/s  |  21,478 req  |  30% of budget  |  ETA 191h31m  |  2h48m
+  [layastaro]  |  5,283 docs  |  7.52M ch  |  ~1.88M tok  |  743 ch/s  |  21,569 req  |  30% of budget  |  ETA 191h35m  |  2h48m
+  [layastaro]  |  5,339 docs  |  7.56M ch  |  ~1.89M tok  |  745 ch/s  |  21,633 req  |  30% of budget  |  ETA 190h49m  |  2h48m
+  [layastaro]  |  5,399 docs  |  7.60M ch  |  ~1.90M tok  |  748 ch/s  |  21,695 req  |  30% of budget  |  ETA 190h03m  |  2h49m
+  [layastaro]  |  5,439 docs  |  7.63M ch  |  ~1.91M tok  |  750 ch/s  |  21,742 req  |  31% of budget  |  ETA 189h32m  |  2h49m
+  [layastaro]  |  5,489 docs  |  7.67M ch  |  ~1.92M tok  |  754 ch/s  |  21,795 req  |  31% of budget  |  ETA 188h41m  |  2h49m
+  [layastaro]  |  5,549 docs  |  7.71M ch  |  ~1.93M tok  |  758 ch/s  |  21,858 req  |  31% of budget  |  ETA 187h42m  |  2h49m
+  [layastaro]  |  5,600 docs  |  7.76M ch  |  ~1.94M tok  |  761 ch/s  |  21,916 req  |  31% of budget  |  ETA 186h44m  |  2h49m
+  [layastaro]  |  5,663 docs  |  7.81M ch  |  ~1.95M tok  |  766 ch/s  |  21,981 req  |  31% of budget  |  ETA 185h43m  |  2h49m
+  [layastaro]  |  5,718 docs  |  7.86M ch  |  ~1.97M tok  |  770 ch/s  |  22,041 req  |  31% of budget  |  ETA 184h39m  |  2h50m
+  [layastaro]  |  5,772 docs  |  7.91M ch  |  ~1.98M tok  |  773 ch/s  |  22,100 req  |  32% of budget  |  ETA 183h49m  |  2h50m
+  [layastaro]  |  5,838 docs  |  7.95M ch  |  ~1.99M tok  |  777 ch/s  |  22,172 req  |  32% of budget  |  ETA 182h51m  |  2h50m
+  [layastaro]  |  5,914 docs  |  8.02M ch  |  ~2.00M tok  |  783 ch/s  |  22,250 req  |  32% of budget  |  ETA 181h31m  |  2h50m
+  [layastaro]  |  5,998 docs  |  8.09M ch  |  ~2.02M tok  |  789 ch/s  |  22,341 req  |  32% of budget  |  ETA 180h07m  |  2h50m
+  [layastaro]  |  6,073 docs  |  8.15M ch  |  ~2.04M tok  |  794 ch/s  |  22,424 req  |  33% of budget  |  ETA 179h02m  |  2h50m
+  [layastaro]  |  6,140 docs  |  8.19M ch  |  ~2.05M tok  |  798 ch/s  |  22,494 req  |  33% of budget  |  ETA 178h08m  |  2h51m
+  [layastaro]  |  6,214 docs  |  8.25M ch  |  ~2.06M tok  |  802 ch/s  |  22,575 req  |  33% of budget  |  ETA 177h06m  |  2h51m
+  [layastaro]  |  6,290 docs  |  8.31M ch  |  ~2.08M tok  |  807 ch/s  |  22,657 req  |  33% of budget  |  ETA 175h58m  |  2h51m
+  [layastaro]  |  6,359 docs  |  8.35M ch  |  ~2.09M tok  |  811 ch/s  |  22,729 req  |  33% of budget  |  ETA 175h12m  |  2h51m
+  [layastaro]  |  6,417 docs  |  8.40M ch  |  ~2.10M tok  |  814 ch/s  |  22,789 req  |  34% of budget  |  ETA 174h27m  |  2h51m
+  [layastaro]  |  6,477 docs  |  8.44M ch  |  ~2.11M tok  |  817 ch/s  |  22,855 req  |  34% of budget  |  ETA 173h46m  |  2h51m
+  [layastaro]  |  6,533 docs  |  8.48M ch  |  ~2.12M tok  |  820 ch/s  |  23,039 req  |  34% of budget  |  ETA 173h11m  |  2h52m
+  [layastaro]  |  6,536 docs  |  8.48M ch  |  ~2.12M tok  |  819 ch/s  |  23,208 req  |  34% of budget  |  ETA 173h23m  |  2h52m
+  [layastaro]  |  6,545 docs  |  8.49M ch  |  ~2.12M tok  |  818 ch/s  |  23,436 req  |  34% of budget  |  ETA 173h34m  |  2h52m
+  [layastaro]  |  6,558 docs  |  8.50M ch  |  ~2.13M tok  |  818 ch/s  |  23,603 req  |  34% of budget  |  ETA 173h37m  |  2h53m
+  [layastaro]  |  6,565 docs  |  8.51M ch  |  ~2.13M tok  |  817 ch/s  |  23,712 req  |  34% of budget  |  ETA 173h42m  |  2h53m
+  [layastaro]  |  6,576 docs  |  8.51M ch  |  ~2.13M tok  |  815 ch/s  |  24,045 req  |  34% of budget  |  ETA 174h09m  |  2h53m
+  [layastaro]  |  6,594 docs  |  8.53M ch  |  ~2.13M tok  |  816 ch/s  |  24,076 req  |  34% of budget  |  ETA 174h00m  |  2h54m
+  [layastaro]  |  6,596 docs  |  8.53M ch  |  ~2.13M tok  |  815 ch/s  |  24,157 req  |  34% of budget  |  ETA 174h09m  |  2h54m
+  [layastaro]  |  6,602 docs  |  8.53M ch  |  ~2.13M tok  |  815 ch/s  |  24,258 req  |  34% of budget  |  ETA 174h18m  |  2h54m
+  [layastaro]  |  6,623 docs  |  8.55M ch  |  ~2.14M tok  |  815 ch/s  |  24,280 req  |  34% of budget  |  ETA 174h12m  |  2h54m
+  [layastaro]  |  6,630 docs  |  8.55M ch  |  ~2.14M tok  |  815 ch/s  |  24,386 req  |  34% of budget  |  ETA 174h18m  |  2h54m
+  [layastaro]  |  6,631 docs  |  8.55M ch  |  ~2.14M tok  |  814 ch/s  |  24,480 req  |  34% of budget  |  ETA 174h30m  |  2h55m
+  [layastaro]  |  6,635 docs  |  8.56M ch  |  ~2.14M tok  |  813 ch/s  |  24,567 req  |  34% of budget  |  ETA 174h39m  |  2h55m
+  [layastaro]  |  6,637 docs  |  8.56M ch  |  ~2.14M tok  |  813 ch/s  |  24,647 req  |  34% of budget  |  ETA 174h39m  |  2h55m
+  [layastaro]  |  6,654 docs  |  8.57M ch  |  ~2.14M tok  |  813 ch/s  |  24,690 req  |  34% of budget  |  ETA 174h37m  |  2h55m
+  [layastaro]  |  6,657 docs  |  8.58M ch  |  ~2.14M tok  |  812 ch/s  |  24,749 req  |  34% of budget  |  ETA 174h45m  |  2h55m
+  [layastaro]  |  6,666 docs  |  8.58M ch  |  ~2.15M tok  |  812 ch/s  |  24,913 req  |  34% of budget  |  ETA 174h56m  |  2h56m
+  [layastaro]  |  6,673 docs  |  8.59M ch  |  ~2.15M tok  |  810 ch/s  |  25,111 req  |  34% of budget  |  ETA 175h15m  |  2h56m
+  [layastaro]  |  6,684 docs  |  8.60M ch  |  ~2.15M tok  |  809 ch/s  |  25,343 req  |  34% of budget  |  ETA 175h27m  |  2h57m
+  [layastaro]  |  6,684 docs  |  8.60M ch  |  ~2.15M tok  |  809 ch/s  |  25,381 req  |  34% of budget  |  ETA 175h31m  |  2h57m  |  DONE
+       rejected: no-text-extracted x4,432, latin-heavy x305, devanagari-leak x174, too-short x101, not-gujarati x86
+  shard: layastaro.part-1786777240-25241.jsonl.gz (6,684 docs / 8.60M chars)
+
+========================================================================================
+TOTAL 8.60M chars  ~2.15M tokens (1.7% of target) in 2h57m
+========================================================================================
+
+progress: python3 data/collection/collect_manual.py --status

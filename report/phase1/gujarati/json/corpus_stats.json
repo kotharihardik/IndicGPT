@@ -1,0 +1,432 @@
+{
+  "language": "guj",
+  "token_counts_exact": true,
+  "splits": {
+    "train": {
+      "totals": {
+        "docs": 747765,
+        "chars": 1951290045,
+        "bytes": 5086069749,
+        "words": 333367098,
+        "tokens": 517108008
+      },
+      "manual": {
+        "docs": 186861,
+        "chars": 593671761,
+        "bytes": 1548345300,
+        "words": 98451156,
+        "tokens": 162931797
+      },
+      "by_source": {
+        "abtakmedia": {
+          "docs": 59283,
+          "chars": 141479713,
+          "bytes": 371636454,
+          "words": 23031549,
+          "tokens": 34344947
+        },
+        "aksharnaad": {
+          "docs": 2388,
+          "chars": 14164971,
+          "bytes": 36538963,
+          "words": 2530144,
+          "tokens": 3941205
+        },
+        "divya_bhaskar": {
+          "docs": 1843,
+          "chars": 7371516,
+          "bytes": 19268733,
+          "words": 1239747,
+          "tokens": 1826294
+        },
+        "gujaratabroad": {
+          "docs": 5614,
+          "chars": 16717454,
+          "bytes": 43640724,
+          "words": 2790878,
+          "tokens": 4145624
+        },
+        "gujarativishwakosh": {
+          "docs": 18568,
+          "chars": 73748389,
+          "bytes": 193173981,
+          "words": 11471740,
+          "tokens": 20445663
+        },
+        "gujarattoday": {
+          "docs": 40450,
+          "chars": 62982854,
+          "bytes": 166336320,
+          "words": 10173998,
+          "tokens": 14768173
+        },
+        "ia_books_fulltext": {
+          "docs": 788,
+          "chars": 121685749,
+          "bytes": 310886086,
+          "words": 21326700,
+          "tokens": 43751846
+        },
+        "ia_books_pdf": {
+          "docs": 17,
+          "chars": 2624007,
+          "bytes": 6719046,
+          "words": 451618,
+          "tokens": 1078886
+        },
+        "layastaro": {
+          "docs": 4527,
+          "chars": 5247241,
+          "bytes": 13435095,
+          "words": 965174,
+          "tokens": 1688051
+        },
+        "opinionmagazine": {
+          "docs": 10019,
+          "chars": 61413428,
+          "bytes": 159962404,
+          "words": 10457071,
+          "tokens": 16135320
+        },
+        "webdunia_gujarati": {
+          "docs": 1983,
+          "chars": 3614315,
+          "bytes": 9440670,
+          "words": 616356,
+          "tokens": 879738
+        },
+        "westerntimesnews": {
+          "docs": 41381,
+          "chars": 82622124,
+          "bytes": 217306824,
+          "words": 13396181,
+          "tokens": 19926050
+        },
+        "ai4bharat_sangraha": {
+          "docs": 560904,
+          "chars": 1357618284,
+          "bytes": 3537724449,
+          "words": 234915942,
+          "tokens": 354176211
+        }
+      },
+      "by_provenance": {
+        "manual_web": {
+          "docs": 186844,
+          "chars": 591047754,
+          "bytes": 1541626254,
+          "words": 97999538,
+          "tokens": 161852911
+        },
+        "manual_pdf": {
+          "docs": 17,
+          "chars": 2624007,
+          "bytes": 6719046,
+          "words": 451618,
+          "tokens": 1078886
+        },
+        "public_hf": {
+          "docs": 560904,
+          "chars": 1357618284,
+          "bytes": 3537724449,
+          "words": 234915942,
+          "tokens": 354176211
+        }
+      },
+      "provenance_of_source": {
+        "abtakmedia": "manual_web",
+        "aksharnaad": "manual_web",
+        "divya_bhaskar": "manual_web",
+        "gujaratabroad": "manual_web",
+        "gujarativishwakosh": "manual_web",
+        "gujarattoday": "manual_web",
+        "ia_books_fulltext": "manual_web",
+        "ia_books_pdf": "manual_pdf",
+        "layastaro": "manual_web",
+        "opinionmagazine": "manual_web",
+        "webdunia_gujarati": "manual_web",
+        "westerntimesnews": "manual_web",
+        "ai4bharat_sangraha": "public_hf"
+      }
+    },
+    "validation": {
+      "totals": {
+        "docs": 41171,
+        "chars": 107259317,
+        "bytes": 279545306,
+        "words": 18363128,
+        "tokens": 28416795
+      },
+      "manual": {
+        "docs": 10314,
+        "chars": 32634889,
+        "bytes": 85068833,
+        "words": 5450162,
+        "tokens": 8990129
+      },
+      "by_source": {
+        "abtakmedia": {
+          "docs": 3250,
+          "chars": 7748210,
+          "bytes": 20348690,
+          "words": 1262246,
+          "tokens": 1889167
+        },
+        "aksharnaad": {
+          "docs": 138,
+          "chars": 768745,
+          "bytes": 1981414,
+          "words": 137726,
+          "tokens": 215224
+        },
+        "divya_bhaskar": {
+          "docs": 113,
+          "chars": 490236,
+          "bytes": 1281041,
+          "words": 82762,
+          "tokens": 120902
+        },
+        "gujaratabroad": {
+          "docs": 327,
+          "chars": 943431,
+          "bytes": 2463615,
+          "words": 157686,
+          "tokens": 233180
+        },
+        "gujarativishwakosh": {
+          "docs": 1016,
+          "chars": 3638378,
+          "bytes": 9532430,
+          "words": 567162,
+          "tokens": 1001000
+        },
+        "gujarattoday": {
+          "docs": 2222,
+          "chars": 3427413,
+          "bytes": 9052599,
+          "words": 553375,
+          "tokens": 803380
+        },
+        "ia_books_fulltext": {
+          "docs": 43,
+          "chars": 7037232,
+          "bytes": 17967883,
+          "words": 1257552,
+          "tokens": 2549237
+        },
+        "layastaro": {
+          "docs": 259,
+          "chars": 317688,
+          "bytes": 812378,
+          "words": 58707,
+          "tokens": 102392
+        },
+        "opinionmagazine": {
+          "docs": 557,
+          "chars": 3536415,
+          "bytes": 9202584,
+          "words": 604101,
+          "tokens": 935081
+        },
+        "webdunia_gujarati": {
+          "docs": 112,
+          "chars": 194601,
+          "bytes": 508082,
+          "words": 33367,
+          "tokens": 47295
+        },
+        "westerntimesnews": {
+          "docs": 2277,
+          "chars": 4532540,
+          "bytes": 11918117,
+          "words": 735478,
+          "tokens": 1093271
+        },
+        "ai4bharat_sangraha": {
+          "docs": 30857,
+          "chars": 74624428,
+          "bytes": 194476473,
+          "words": 12912966,
+          "tokens": 19426666
+        }
+      },
+      "by_provenance": {
+        "manual_web": {
+          "docs": 10314,
+          "chars": 32634889,
+          "bytes": 85068833,
+          "words": 5450162,
+          "tokens": 8990129
+        },
+        "public_hf": {
+          "docs": 30857,
+          "chars": 74624428,
+          "bytes": 194476473,
+          "words": 12912966,
+          "tokens": 19426666
+        }
+      },
+      "provenance_of_source": {
+        "abtakmedia": "manual_web",
+        "aksharnaad": "manual_web",
+        "divya_bhaskar": "manual_web",
+        "gujaratabroad": "manual_web",
+        "gujarativishwakosh": "manual_web",
+        "gujarattoday": "manual_web",
+        "ia_books_fulltext": "manual_web",
+        "layastaro": "manual_web",
+        "opinionmagazine": "manual_web",
+        "webdunia_gujarati": "manual_web",
+        "westerntimesnews": "manual_web",
+        "ai4bharat_sangraha": "public_hf"
+      }
+    },
+    "test": {
+      "totals": {
+        "docs": 41474,
+        "chars": 106866797,
+        "bytes": 278636172,
+        "words": 18263983,
+        "tokens": 28142340
+      },
+      "manual": {
+        "docs": 10404,
+        "chars": 31256064,
+        "bytes": 81609231,
+        "words": 5169001,
+        "tokens": 8428660
+      },
+      "by_source": {
+        "abtakmedia": {
+          "docs": 3277,
+          "chars": 7725984,
+          "bytes": 20291134,
+          "words": 1259839,
+          "tokens": 1874744
+        },
+        "aksharnaad": {
+          "docs": 134,
+          "chars": 888242,
+          "bytes": 2299013,
+          "words": 156967,
+          "tokens": 243962
+        },
+        "divya_bhaskar": {
+          "docs": 119,
+          "chars": 446331,
+          "bytes": 1166680,
+          "words": 75555,
+          "tokens": 109484
+        },
+        "gujaratabroad": {
+          "docs": 324,
+          "chars": 1033539,
+          "bytes": 2700117,
+          "words": 171733,
+          "tokens": 254787
+        },
+        "gujarativishwakosh": {
+          "docs": 1039,
+          "chars": 4038048,
+          "bytes": 10565691,
+          "words": 630259,
+          "tokens": 1121735
+        },
+        "gujarattoday": {
+          "docs": 2196,
+          "chars": 3377912,
+          "bytes": 8919436,
+          "words": 546119,
+          "tokens": 794255
+        },
+        "ia_books_fulltext": {
+          "docs": 37,
+          "chars": 5018338,
+          "bytes": 12825268,
+          "words": 875871,
+          "tokens": 1822450
+        },
+        "ia_books_pdf": {
+          "docs": 1,
+          "chars": 5745,
+          "bytes": 12693,
+          "words": 1230,
+          "tokens": 3370
+        },
+        "layastaro": {
+          "docs": 244,
+          "chars": 282042,
+          "bytes": 723477,
+          "words": 52080,
+          "tokens": 90219
+        },
+        "opinionmagazine": {
+          "docs": 573,
+          "chars": 3589368,
+          "bytes": 9349708,
+          "words": 610359,
+          "tokens": 945040
+        },
+        "webdunia_gujarati": {
+          "docs": 96,
+          "chars": 180184,
+          "bytes": 470688,
+          "words": 30717,
+          "tokens": 43973
+        },
+        "westerntimesnews": {
+          "docs": 2364,
+          "chars": 4670331,
+          "bytes": 12285326,
+          "words": 758272,
+          "tokens": 1124641
+        },
+        "ai4bharat_sangraha": {
+          "docs": 31070,
+          "chars": 75610733,
+          "bytes": 197026941,
+          "words": 13094982,
+          "tokens": 19713680
+        }
+      },
+      "by_provenance": {
+        "manual_web": {
+          "docs": 10403,
+          "chars": 31250319,
+          "bytes": 81596538,
+          "words": 5167771,
+          "tokens": 8425290
+        },
+        "manual_pdf": {
+          "docs": 1,
+          "chars": 5745,
+          "bytes": 12693,
+          "words": 1230,
+          "tokens": 3370
+        },
+        "public_hf": {
+          "docs": 31070,
+          "chars": 75610733,
+          "bytes": 197026941,
+          "words": 13094982,
+          "tokens": 19713680
+        }
+      },
+      "provenance_of_source": {
+        "abtakmedia": "manual_web",
+        "aksharnaad": "manual_web",
+        "divya_bhaskar": "manual_web",
+        "gujaratabroad": "manual_web",
+        "gujarativishwakosh": "manual_web",
+        "gujarattoday": "manual_web",
+        "ia_books_fulltext": "manual_web",
+        "ia_books_pdf": "manual_pdf",
+        "layastaro": "manual_web",
+        "opinionmagazine": "manual_web",
+        "webdunia_gujarati": "manual_web",
+        "westerntimesnews": "manual_web",
+        "ai4bharat_sangraha": "public_hf"
+      }
+    }
+  }
+}

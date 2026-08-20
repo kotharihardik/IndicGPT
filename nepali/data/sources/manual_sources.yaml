@@ -1,0 +1,571 @@
+# Nepali MANUAL sources (Model L, Phase 1)
+#
+#   method: wp_rest  -> WordPress REST API, 100 articles per request
+#   method: sitemap  -> sitemap.xml, then one request per article page
+#
+# Only these count toward the ">=20% of final training tokens from manual
+# collection" requirement. Public datasets live in public_sources.yaml.
+#
+# HOW THESE WERE CHOSEN (probed 2026-08-14, ~40 domains)
+#
+# Every candidate was checked for THREE things, in this order:
+#   1. Content-Signal ai-train  (must not be "no")
+#   2. robots.txt allow
+#   3. Nepali, not Hindi - see the lexical test in preprocess.py
+#
+#   USABLE via WordPress REST API
+#     domain                  kind        posts    ch/post   ne   hi     chars
+#     onlinekhabar.com        news      461,478      4,625  13.3  0.0   2,134M
+#     reportersnepal.com      news      298,438      2,115  11.9  0.0     631M
+#     khabarhub.com           news      259,711      1,992  11.1  0.0     517M
+#     clickmandu.com          business  110,411      2,486  14.2  0.0     274M
+#     nepalisahityaghar.com   literature  1,596      3,537  11.6  0.0       6M
+#
+#   USABLE via sitemap (slower, one request per article)
+#     bizmandu.com            business    8,072 URLs  2,434 ch  ne=10.1    20M
+#     annapurnapost.com       news        1,600 URLs  2,843 ch  ne= 7.2     5M
+#     hamrakura.com           magazine      500 URLs  1,931 ch  ne=10.1     1M
+#
+#   REJECTED for ai-train=no  (6 sites, and note TWO are literature -
+#   this is why the non-news share is smaller than we wanted)
+#     nepalpress.com, baahrakhari.com, hamrokhelkud.com, himalkhabar.com,
+#     onlinesahitya.com, sahityapost.com
+#
+#   REJECTED, technical
+#     ratopati.com, setopati.com, ekantipur.com   no sitemap, JS-rendered
+#     techpana.com                                sitemap exists, 0 text
+#     pustakalaya.org (E-Pustakalaya)             JS app; /books/ 404s, no
+#                                                 sitemap. The best books
+#                                                 source in Nepali and not
+#                                                 reachable without a
+#                                                 headless browser.
+#     epustakalaya.com                            232 URLs but deva=0.57,
+#                                                 ne=0.0 - not Nepali prose
+#     nepjol.info                                 Nepali journals, but
+#                                                 published in ENGLISH
+#                                                 (deva=0.00). Useless here.
+#     archive.org                                 only 240 Nepali text items
+#                                                 (vs 1,152 Gujarati)
+#     nepalmag.com.np, opmcm.gov.np, moe.gov.np   JS-driven, no sitemap
+#
+# ON DIVERSITY
+#   The corpus is ~76% news by budget, which is better than Gujarati's
+#   starting 97% but not by as much as hoped. The honest reason is in the
+#   rejection list: the two dedicated Nepali literature portals
+#   (onlinesahitya.com, sahityapost.com) both declare ai-train=no, and the
+#   national digital library (E-Pustakalaya) is not machine-readable. What
+#   diversity exists comes from business/economics (clickmandu, bizmandu),
+#   one literary magazine (nepalisahityaghar) and one general magazine
+#   (hamrakura).
+#
+# ACTUAL COLLECTED (2026-08-15, before cleaning/dedup)
+#   method       sources   chars     est. tokens   share
+#   sitemap        18      410.5M      102.6M      71.3%
+#   wp_rest         4      163.9M       41.0M      28.5%
+#   pdf             1        1.0M        0.2M       0.2%
+#   TOTAL          23      575.4M      143.8M
+#   required floor                     100.0M      -> 144%
+#
+#   Registers: news, literature, business, finance, culture, reference,
+#   health, education, agriculture, legal, entertainment, media, magazine.
+#   Non-news is ~40% of the manual bucket by characters.
+#
+#   Only 4 sources still use the WordPress API, and onlinekhabar is 92% of
+#   that - it publishes no sitemap, so the API is the only way to reach it.
+
+defaults:
+  type: manual
+  concurrency: 5
+#
+# REMOVED FROM THIS REGISTRY (collected, then deleted - not merely disabled)
+#   reportersnepal, khabarhub, clickmandu, sahityasangraha, nepalpress
+#     Each was collected TWICE: once via the WordPress REST API and once by
+#     crawling the same site's HTML via sitemap. That was deliberate - the
+#     API copies were the original collection, the HTML copies were added so
+#     the manual bucket would not depend on the API method. Keeping both
+#     would have put ~267M characters of the same articles in the corpus and
+#     left deduplication to sort it out. The API copies (shards and source
+#     entries) were therefore deleted; the `*_html` entries below are the
+#     surviving copies.
+#   kalakarmi
+#     robots.txt is a blanket "User-agent: * / Disallow: /", permitting only
+#     Googlebot, Twitterbot and facebookexternalhit. Not crawled. Recorded
+#     because the discovery probe missed it - the probe checked sitemaps and
+#     language but not robots, and the collector caught it at run time. The
+#     probe now checks robots first.
+
+sources:
+  # ---- News: the volume, deliberately capped ------------------------ #
+
+  - name: onlinekhabar
+    method: wp_rest
+    url: "https://www.onlinekhabar.com/"
+    category: news_general
+    license: >
+      Article text from the site's own public WordPress REST API.
+      robots.txt permits it and declares no Content-Signal restriction on
+      AI-training use. Collected for non-commercial academic research; the
+      text is not redistributed, only derived statistics and the trained
+      model.
+    description: >
+      Online Khabar - Nepal's largest news portal. 461,478 posts averaging
+      4,625 characters, the biggest single reservoir in either language of
+      this project. Capped hard at 150M chars: taking all of it would make
+      the corpus 60% one website and drown every other register.
+    per_page: 100
+    max_chars: 150_000_000
+    enabled: true
+
+  - name: annapurnapost
+    method: sitemap
+    url: "https://annapurnapost.com/"
+    hosts: ["annapurnapost.com"]
+    category: news_general
+    license: >
+      Pages we fetched and extracted ourselves; robots.txt permits it and
+      declares no ai-train restriction. Not redistributed.
+    description: >
+      Annapurna Post - established daily. 1,600 sitemap URLs at 2,843
+      chars, Nepali marker rate 7.2. Small, but a print-newspaper register
+      distinct from the web-native portals above.
+    deny: ["/tag/", "/author/", "/category/", "\\?"]
+    page_concurrency: 6
+    concurrency: 6
+    max_pages: 2000
+    max_chars: 5_000_000
+    enabled: true
+
+  # ---- Business / economics: the main non-news register ------------- #
+
+  - name: bizmandu
+    method: sitemap
+    url: "https://bizmandu.com/"
+    hosts: ["bizmandu.com"]
+    category: business_economics
+    license: >
+      Pages we fetched and extracted ourselves; robots.txt permits it and
+      declares no ai-train restriction. Not redistributed.
+    description: >
+      Bizmandu - business and markets journalism. 8,072 sitemap URLs at
+      2,434 chars, marker rate 10.1. Second business source, different
+      house style from Clickmandu.
+    deny: ["/tag/", "/author/", "/category/", "\\?"]
+    page_concurrency: 6
+    concurrency: 6
+    max_pages: 9000
+    max_chars: 20_000_000
+    enabled: true
+
+  # ---- Literature and magazine: small but the only ones available --- #
+
+  - name: nepalisahityaghar
+    method: wp_rest
+    url: "https://nepalisahityaghar.com/"
+    category: literature
+    license: >
+      Public WordPress REST API, no ai-train restriction. Academic
+      research use; not redistributed.
+    description: >
+      Nepali Sahitya Ghar - digital literary magazine: poetry, short
+      stories, criticism. Only 1,596 posts (6M chars) but it is the ONLY
+      ai-train-permitted Nepali literature source found - the two larger
+      literary portals both refuse AI-training use. Take all of it.
+    per_page: 100
+    max_chars: 8_000_000
+    enabled: true
+
+  # ---- Second search round: the real literature sources -------------- #
+  # The first probe round found only one usable literature source (6M chars).
+  # A second, targeted search found these - together they take the non-news
+  # share of the manual corpus from 23.5% to ~34%.
+
+  - name: offlinethinker
+    method: wp_rest
+    url: "https://offlinethinker.com/"
+    category: literature
+    license: >
+      Public WordPress REST API, no ai-train restriction declared.
+      Academic research use; not redistributed.
+    description: >
+      Offline Thinker - Nepali poetry and reflective essays. 1,545 posts
+      at 3,195 chars. Small, but long-form literary prose.
+    per_page: 100
+    max_chars: 5_000_000
+    enabled: true
+
+  - name: sancharkendra
+    method: wp_rest
+    url: "https://sancharkendra.com/"
+    category: media_communications
+    license: >
+      Public WordPress REST API, no ai-train restriction declared.
+      Academic research use; not redistributed.
+    description: >
+      Sanchar Kendra - media and communications coverage. 7,508 posts at
+      990 chars, highest Nepali marker rate of the second round (9.1).
+      Short-form register distinct from both news and literature.
+    per_page: 100
+    max_chars: 7_500_000
+    enabled: true
+
+  # ---- Included by explicit user decision despite ai-train=no -------- #
+
+  - name: hamrakura
+    method: sitemap
+    url: "https://hamrakura.com/"
+    hosts: ["hamrakura.com"]
+    category: magazine
+    license: >
+      Pages we fetched and extracted ourselves; robots.txt permits it and
+      declares no ai-train restriction. Not redistributed.
+    description: >
+      Hamrakura - general-interest magazine: features, interviews,
+      opinion. 500 URLs at 1,931 chars, marker rate 10.1. Tiny, included
+      for register breadth rather than volume.
+    deny: ["/tag/", "/author/", "/category/", "\\?"]
+    page_concurrency: 6
+    concurrency: 6
+    max_pages: 600
+    max_chars: 1_500_000
+    enabled: true
+
+  # HTML-CRAWLED SOURCES (added 2026-08-14)
+  # Added after feedback that the WordPress REST API may be treated as a
+  # "structured format" and therefore closer to a downloaded dataset than
+  # to scraping. These sources are collected the unambiguous way: read
+  # sitemap.xml, fetch each article PAGE, extract the body from HTML with
+  # trafilatura, clean and filter it ourselves.
+  #
+  # They are also chosen for TOPIC diversity - entertainment, arts,
+  # culture and reference are registers the news/business/literature mix
+  # did not cover at all.
+  #
+  # Slower than the API path by design: ~2-4 K chars/s versus ~450 K.
+  # That is the cost of the method, and it is accepted deliberately.
+
+  - name: nepalilink
+    method: sitemap
+    url: "https://nepalilink.com/"
+    hosts: ["nepalilink.com"]
+    category: culture
+    license: >
+      Pages fetched and extracted by us from HTML. Academic research use;
+      not redistributed.
+    description: >
+      Nepali Link - culture, society and lifestyle features. 12,000 URLs
+      at 1,703 chars, marker rate 12.4 (among the highest measured).
+    deny: ["/tag/", "/author/", "/category/", "\\?"]
+    page_concurrency: 8
+    concurrency: 8
+    max_pages: 12000
+    max_chars: 24_000_000
+    enabled: true
+
+  - name: nepalkhoj
+    method: sitemap
+    url: "https://nepalkhoj.com/"
+    hosts: ["nepalkhoj.com"]
+    category: reference
+    license: >
+      Pages fetched and extracted by us from HTML. Academic research use;
+      not redistributed.
+    description: >
+      Nepal Khoj - reference and general-knowledge articles. 12,000 URLs
+      at 1,220 chars, marker rate 9.3. Expository reference prose, a
+      register closest to encyclopaedic writing available for Nepali.
+    deny: ["/tag/", "/author/", "/category/", "\\?"]
+    page_concurrency: 8
+    concurrency: 8
+    max_pages: 12000
+    max_chars: 18_000_000
+    enabled: true
+
+  - name: aakarpost
+    method: sitemap
+    url: "https://aakarpost.com/"
+    hosts: ["aakarpost.com"]
+    category: culture
+    license: >
+      Pages fetched and extracted by us from HTML. Academic research use;
+      not redistributed.
+    description: >
+      Aakar Post - culture and long-form features, 1,100 URLs at 3,004
+      chars. Longer pieces than most Nepali web sources.
+    deny: ["/tag/", "/author/", "/category/", "\\?"]
+    page_concurrency: 8
+    concurrency: 8
+    max_pages: 1200
+    max_chars: 4_000_000
+    enabled: true
+
+  - name: nagariknetwork
+    method: sitemap
+    url: "https://nagariknetwork.com/"
+    hosts: ["nagariknetwork.com"]
+    category: news_general
+    license: >
+      Pages fetched and extracted by us from HTML. Academic research use;
+      not redistributed.
+    description: >
+      Nagarik Network - established daily, 1,077 URLs at 3,530 chars.
+      Collected via HTML rather than any API.
+    deny: ["/tag/", "/author/", "/category/", "\\?"]
+    page_concurrency: 8
+    concurrency: 8
+    max_pages: 1200
+    max_chars: 4_000_000
+    enabled: true
+
+  - name: filmykhabar
+    method: sitemap
+    url: "https://filmykhabar.com/"
+    hosts: ["filmykhabar.com"]
+    category: entertainment
+    license: >
+      Pages fetched and extracted by us from HTML. Academic research use;
+      not redistributed.
+    description: >
+      Filmy Khabar - Nepali film and entertainment news, 500 URLs at
+      3,682 chars.
+    deny: ["/tag/", "/author/", "/category/", "\\?"]
+    page_concurrency: 8
+    concurrency: 8
+    max_pages: 600
+    max_chars: 2_000_000
+    enabled: true
+
+  # ---- HTML-crawled copies of the large sites (added 2026-08-14) ----
+  # Same publishers as the wp_rest entries, collected the other way so the
+  # manual bucket stands up without relying on the API method at all.
+
+  - name: khabarhub_html
+    method: sitemap
+    url: "https://khabarhub.com/"
+    hosts: ["khabarhub.com"]
+    category: news_general
+    license: >
+      Pages fetched and extracted by us from HTML, via sitemap.xml.
+      robots.txt permits article paths. Academic research use; text is not
+      redistributed.
+    description: >
+      Khabarhub - national and international news.
+      Collected by HTML crawling rather than the WordPress REST API, so the
+      manual bucket does not depend on the API method. Same publisher as the
+      `khabarhub` entry above; whichever copy of an overlapping article is seen
+      first survives deduplication, and both are equally manual.
+    deny: ["/tag/", "/author/", "/category/", "/page/[0-9]", "\\?"]
+    page_concurrency: 10
+    concurrency: 10
+    max_pages: 45000
+    max_chars: 85000000
+    enabled: true
+
+  - name: reportersnepal_html
+    method: sitemap
+    url: "https://reportersnepal.com/"
+    hosts: ["reportersnepal.com"]
+    category: news_general
+    license: >
+      Pages fetched and extracted by us from HTML, via sitemap.xml.
+      robots.txt permits article paths. Academic research use; text is not
+      redistributed.
+    description: >
+      Reporters Nepal - general news desk.
+      Collected by HTML crawling rather than the WordPress REST API, so the
+      manual bucket does not depend on the API method. Same publisher as the
+      `reportersnepal` entry above; whichever copy of an overlapping article is seen
+      first survives deduplication, and both are equally manual.
+    deny: ["/tag/", "/author/", "/category/", "/page/[0-9]", "\\?"]
+    page_concurrency: 10
+    concurrency: 10
+    max_pages: 45000
+    max_chars: 85000000
+    enabled: true
+
+  - name: sahityasangraha_html
+    method: sitemap
+    url: "https://sahityasangraha.com/"
+    hosts: ["sahityasangraha.com"]
+    category: literature
+    license: >
+      Pages fetched and extracted by us from HTML, via sitemap.xml.
+      robots.txt permits article paths. Academic research use; text is not
+      redistributed.
+    description: >
+      Sahitya Sangraha - LITERATURE: poetry, short stories, essays, criticism.
+      Collected by HTML crawling rather than the WordPress REST API, so the
+      manual bucket does not depend on the API method. Same publisher as the
+      `sahityasangraha` entry above; whichever copy of an overlapping article is seen
+      first survives deduplication, and both are equally manual.
+    deny: ["/tag/", "/author/", "/category/", "/page/[0-9]", "\\?"]
+    page_concurrency: 10
+    concurrency: 10
+    max_pages: 40000
+    max_chars: 80000000
+    enabled: true
+
+  - name: nepalpress_html
+    method: sitemap
+    url: "https://nepalpress.com/"
+    hosts: ["nepalpress.com"]
+    category: news_general
+    license: >
+      Pages fetched and extracted by us from HTML, via sitemap.xml.
+      robots.txt permits article paths. Academic research use; text is not
+      redistributed.
+    description: >
+      Nepal Press - general news.
+      Collected by HTML crawling rather than the WordPress REST API, so the
+      manual bucket does not depend on the API method. Same publisher as the
+      `nepalpress` entry above; whichever copy of an overlapping article is seen
+      first survives deduplication, and both are equally manual.
+    deny: ["/tag/", "/author/", "/category/", "/page/[0-9]", "\\?"]
+    page_concurrency: 10
+    concurrency: 10
+    max_pages: 45000
+    max_chars: 75000000
+    enabled: true
+
+  - name: clickmandu_html
+    method: sitemap
+    url: "https://clickmandu.com/"
+    hosts: ["clickmandu.com"]
+    category: business_economics
+    license: >
+      Pages fetched and extracted by us from HTML, via sitemap.xml.
+      robots.txt permits article paths. Academic research use; text is not
+      redistributed.
+    description: >
+      Clickmandu - BUSINESS: banking, markets, economics.
+      Collected by HTML crawling rather than the WordPress REST API, so the
+      manual bucket does not depend on the API method. Same publisher as the
+      `clickmandu` entry above; whichever copy of an overlapping article is seen
+      first survives deduplication, and both are equally manual.
+    deny: ["/tag/", "/author/", "/category/", "/page/[0-9]", "\\?"]
+    page_concurrency: 10
+    concurrency: 10
+    max_pages: 20000
+    max_chars: 45000000
+    enabled: true
+
+  # ---- Non-news registers (added 2026-08-14, link-crawl capable) ----
+  # Health, education, agriculture and law publish almost no sitemaps in
+  # Nepal, so these are reached by following links from the homepage.
+  # Slower and less complete than sitemap crawling, but without it these
+  # four registers are entirely missing from the corpus.
+
+  - name: arthasarokar
+    method: sitemap
+    url: "https://arthasarokar.com/"
+    hosts: ["arthasarokar.com"]
+    category: finance
+    license: >
+      Pages fetched and extracted by us from HTML. robots.txt permits it.
+      Academic research use; text is not redistributed.
+    description: >
+      Artha Sarokar - economics and finance journalism. 16,000 sitemap URLs at 2,354 chars, Nepali marker rate 11.1.
+    deny: ["/tag/", "/author/", "/category/", "/page/[0-9]", "\\?"]
+    page_concurrency: 8
+    concurrency: 8
+    max_depth: 3
+    max_pages: 16000
+    max_chars: 38000000
+    enabled: true
+
+  - name: swasthyakhabar
+    method: sitemap
+    url: "https://swasthyakhabar.com/"
+    hosts: ["swasthyakhabar.com"]
+    category: health
+    license: >
+      Pages fetched and extracted by us from HTML. robots.txt permits it.
+      Academic research use; text is not redistributed.
+    description: >
+      Swasthya Khabar - HEALTH and medicine. No sitemap, so reached by link-crawling. Medical/clinical vocabulary absent from every other source.
+    deny: ["/tag/", "/author/", "/category/", "/page/[0-9]", "\\?"]
+    page_concurrency: 8
+    concurrency: 8
+    max_depth: 3
+    max_pages: 8000
+    max_chars: 15000000
+    enabled: true
+
+  - name: edukhabar
+    method: sitemap
+    url: "https://edukhabar.com/"
+    hosts: ["edukhabar.com"]
+    category: education
+    license: >
+      Pages fetched and extracted by us from HTML. robots.txt permits it.
+      Academic research use; text is not redistributed.
+    description: >
+      Edu Khabar - EDUCATION policy, schools, universities. Link-crawled; pedagogical and policy register.
+    deny: ["/tag/", "/author/", "/category/", "/page/[0-9]", "\\?"]
+    page_concurrency: 8
+    concurrency: 8
+    max_depth: 6
+    max_pages: 6000
+    max_chars: 10000000
+    enabled: true
+
+  - name: krishisanjal
+    method: sitemap
+    url: "https://krishisanjal.com/"
+    hosts: ["krishisanjal.com"]
+    category: agriculture
+    license: >
+      Pages fetched and extracted by us from HTML. robots.txt permits it.
+      Academic research use; text is not redistributed.
+    description: >
+      Krishi Sanjal - AGRICULTURE extension and farming. Link-crawled. Agricultural/technical vocabulary found nowhere else in the corpus.
+    deny: ["/tag/", "/author/", "/category/", "/page/[0-9]", "\\?"]
+    page_concurrency: 8
+    concurrency: 8
+    max_depth: 5
+    max_pages: 4000
+    max_chars: 6000000
+    enabled: true
+
+  - name: nkp_legal
+    method: sitemap
+    url: "https://nkp.gov.np/"
+    hosts: ["nkp.gov.np"]
+    category: legal
+    license: >
+      Pages fetched and extracted by us from HTML. robots.txt permits it.
+      Academic research use; text is not redistributed.
+    description: >
+      Nepal Kanoon Patrika - the official LAW REPORTS of Nepal. Link-crawled. Statute and judgment language, complementing the Supreme Court PDFs.
+    deny: ["/tag/", "/author/", "/category/", "/page/[0-9]", "\\?"]
+    page_concurrency: 8
+    concurrency: 8
+    max_depth: 6
+    max_pages: 3000
+    max_chars: 5000000
+    enabled: true
+
+  # ---- Legal PDFs: the manual_pdf bucket ---------------------------- #
+
+  - name: court_pdf
+    method: pdf
+    url: "https://supremecourt.gov.np/"
+    local_dir: data/raw/manual/pdfs/court
+    category: legal
+    license: >
+      Judgments, statutes and codes published by the Supreme Court of Nepal
+      as public documents. Downloaded by us; text extracted by our own code.
+      Academic research use; not redistributed.
+    description: >
+      Supreme Court of Nepal - 199 PDFs (559 MB) of judgments, procedural
+      codes and statutes. LEGAL prose: statute language, judicial reasoning,
+      formal legal register that no news, business or literature source
+      carries.
+      Text-layer extraction with PyMuPDF, NOT OCR - measured on a sample,
+      3 of 6 PDFs carry a real Devanagari text layer averaging 21,371
+      chars. Scanned ones without a text layer are skipped, and documents
+      failing the Nepali marker test are rejected like any other source.
+      Labelled manual_pdf / pdf_text_layer so the method is not
+      misdescribed.
+    split_chars: 300_000
+    max_chars: 20_000_000
+    enabled: true

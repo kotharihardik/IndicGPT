@@ -1,0 +1,160 @@
+{
+  "language": "guj",
+  "documents_in": 864122,
+  "documents_kept": 843660,
+  "keep_rate": 0.9763,
+  "chars_in": 2298677721,
+  "chars_kept": 2199611007,
+  "rejections": {
+    "devanagari_leakage": 6208,
+    "repetitive_4gram": 2715,
+    "repeated_lines": 2284,
+    "repetitive_3gram": 1231,
+    "repetitive_2gram": 390,
+    "too_short": 1110,
+    "digit_heavy": 122,
+    "not_gujarati": 5580,
+    "no_stopwords": 267,
+    "bad_word_length": 444,
+    "too_few_words": 111
+  },
+  "rejections_by_source": {
+    "abtakmedia": {
+      "devanagari_leakage": 54,
+      "repetitive_4gram": 82,
+      "repeated_lines": 51,
+      "repetitive_3gram": 32,
+      "repetitive_2gram": 8,
+      "too_short": 17,
+      "digit_heavy": 9,
+      "not_gujarati": 2
+    },
+    "aksharnaad": {
+      "devanagari_leakage": 21,
+      "repeated_lines": 19,
+      "repetitive_3gram": 17,
+      "repetitive_4gram": 19,
+      "repetitive_2gram": 13
+    },
+    "divya_bhaskar": {
+      "repeated_lines": 1317,
+      "no_stopwords": 13,
+      "bad_word_length": 5,
+      "repetitive_4gram": 3,
+      "too_short": 1
+    },
+    "gujarat_gov_press": {
+      "too_short": 13
+    },
+    "gujaratabroad": {
+      "repetitive_3gram": 5,
+      "digit_heavy": 1,
+      "repeated_lines": 8,
+      "too_short": 1,
+      "repetitive_4gram": 2
+    },
+    "gujarativishwakosh": {
+      "devanagari_leakage": 39,
+      "too_short": 23,
+      "repeated_lines": 46,
+      "repetitive_4gram": 6,
+      "repetitive_3gram": 2,
+      "repetitive_2gram": 2,
+      "digit_heavy": 2
+    },
+    "gujarattoday": {
+      "repetitive_4gram": 68,
+      "no_stopwords": 5,
+      "too_short": 34,
+      "repetitive_3gram": 15,
+      "bad_word_length": 284,
+      "too_few_words": 109,
+      "repeated_lines": 2,
+      "digit_heavy": 9
+    },
+    "ia_books_fulltext": {
+      "repeated_lines": 11
+    },
+    "ia_books_pdf": {
+      "repeated_lines": 2,
+      "bad_word_length": 1,
+      "digit_heavy": 2
+    },
+    "layastaro": {
+      "repetitive_4gram": 210,
+      "repetitive_2gram": 92,
+      "repetitive_3gram": 242,
+      "repeated_lines": 46,
+      "devanagari_leakage": 73,
+      "too_short": 77,
+      "no_stopwords": 4
+    },
+    "opinionmagazine": {
+      "repetitive_3gram": 82,
+      "repetitive_2gram": 64,
+      "too_short": 34,
+      "repetitive_4gram": 50,
+      "repeated_lines": 35,
+      "devanagari_leakage": 26,
+      "not_gujarati": 1,
+      "no_stopwords": 3
+    },
+    "webdunia_gujarati": {
+      "no_stopwords": 1,
+      "repeated_lines": 6,
+      "too_short": 126,
+      "repetitive_2gram": 2,
+      "repetitive_3gram": 3,
+      "repetitive_4gram": 3,
+      "devanagari_leakage": 3
+    },
+    "westerntimesnews": {
+      "devanagari_leakage": 102,
+      "digit_heavy": 10,
+      "not_gujarati": 4,
+      "repetitive_4gram": 52,
+      "repetitive_3gram": 14,
+      "repetitive_2gram": 7,
+      "repeated_lines": 10,
+      "too_short": 7
+    },
+    "ai4bharat_sangraha": {
+      "repeated_lines": 731,
+      "devanagari_leakage": 5890,
+      "repetitive_4gram": 2220,
+      "not_gujarati": 5573,
+      "repetitive_3gram": 819,
+      "digit_heavy": 89,
+      "too_short": 777,
+      "no_stopwords": 241,
+      "repetitive_2gram": 202,
+      "bad_word_length": 154,
+      "too_few_words": 2
+    }
+  },
+  "quality_thresholds": {
+    "min_chars": 250,
+    "max_chars": 800000,
+    "min_words": 30,
+    "min_mean_word_len": 2.0,
+    "max_mean_word_len": 15.0,
+    "min_script_ratio": 0.85,
+    "max_devanagari_ratio": 0.05,
+    "max_latin_ratio": 0.15,
+    "min_stopword_hits": 3,
+    "max_digit_ratio": 0.15,
+    "max_duplicate_line_fraction": 0.3,
+    "max_top_2gram": 0.18,
+    "max_top_3gram": 0.16,
+    "max_top_4gram": 0.14
+  },
+  "normalisation": {
+    "strip_zwj": true,
+    "keep_zwnj": true,
+    "map_digits_to_native": true,
+    "strip_latin_words": true,
+    "strip_urls": true,
+    "strip_emails": true
+  },
+  "boilerplate_lines_blocked": 815
+}

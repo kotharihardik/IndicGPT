@@ -1,0 +1,21 @@
+========================================================================================
+NEPALI MANUAL COLLECTION   2026-08-14 16:19:03
+  sources: nagariknetwork
+  target : 125.00M manual tokens (~500.00M chars)
+  already: 0 chars collected
+========================================================================================
+
+--- nagariknetwork  (sitemap)  budget 4.00M chars ---
+  nagariknetwork: 463 new article URLs from sitemap
+  [nagariknetwork]  |  1 docs  |  454 ch  |  ~113 tok  |  121 ch/s  |  20 req  |  0% of budget  |  ETA 1143h00m  |  3s
+  [nagariknetwork]  |  141 docs  |  241.25K ch  |  ~60.31K tok  |  17.46K ch/s  |  232 req  |  6% of budget  |  ETA 7h56m  |  13s
+  [nagariknetwork]  |  259 docs  |  766.00K ch  |  ~191.50K tok  |  32.12K ch/s  |  456 req  |  19% of budget  |  ETA 4h19m  |  23s
+  [nagariknetwork]  |  272 docs  |  893.03K ch  |  ~223.26K tok  |  35.99K ch/s  |  471 req  |  22% of budget  |  ETA 3h51m  |  24s  |  DONE
+       rejected: too-short x112, not-devanagari x44, not-nepali x21, no-text-extracted x8, latin-heavy x6
+  shard: nagariknetwork.part-1786704543-36793.jsonl.gz (272 docs / 893.03K chars)
+
+========================================================================================
+TOTAL 893.03K chars  ~223.26K tokens (0.2% of target) in 24s
+========================================================================================
+
+progress: python3 data/collection/collect_manual.py --status

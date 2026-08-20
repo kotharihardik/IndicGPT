@@ -1,0 +1,19 @@
+========================================================================================
+NEPALI MANUAL COLLECTION   2026-08-14 20:44:21
+  sources: court_pdf
+  target : 125.00M manual tokens (~500.00M chars)
+  already: 0 chars collected
+========================================================================================
+
+--- court_pdf  (pdf)  budget 20.00M chars ---
+  court_pdf: 195 PDFs on disk
+  [court_pdf]  |  1 docs  |  1.17K ch  |  ~292 tok  |  2.86K ch/s  |  0 req  |  0% of budget  |  ETA 48h36m  |  0s
+  [court_pdf]  |  23 docs  |  961.15K ch  |  ~240.29K tok  |  132.35K ch/s  |  0 req  |  5% of budget  |  ETA 1h02m  |  7s  |  DONE
+       rejected: not-devanagari x113, pdf-no-text-layer x47, not-nepali x8, too-short x3, pdf-FileDataError x1
+  shard: court_pdf.part-1786720461-10440.jsonl.gz (23 docs / 961.15K chars)
+
+========================================================================================
+TOTAL 961.15K chars  ~240.29K tokens (0.2% of target) in 7s
+========================================================================================
+
+progress: python3 data/collection/collect_manual.py --status

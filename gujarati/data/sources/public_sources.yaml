@@ -1,0 +1,23 @@
+# Gujarati PUBLIC sources  (source_type: public, label: public_hf)
+# These are downloaded datasets. They NEVER count towards the >=20% manual
+# requirement, no matter how much cleaning is applied to them.
+#
+# Only the configured subset is streamed (config_name: verified, split: guj),
+# so the full multi-language dataset is never downloaded.
+
+sources:
+
+  - name: ai4bharat_sangraha
+    hf_path: ai4bharat/sangraha
+    config_name: verified           # exact Hugging Face builder config name
+    split: guj                      # verified Gujarati subset split name in HF
+    text_field: text
+    type: public
+    category: web_corpus
+    collection_method: public_download
+    url: https://huggingface.co/datasets/ai4bharat/sangraha
+    license: "see dataset card"
+    description: "AI4Bharat Sangraha verified Gujarati subset only; cap at ~400M tokens (~1.6B chars)."
+    max_chars: 1600000000           # ~400M tokens × ~4 chars/token; enough for model training target
+    min_chars: 300
+    enabled: true

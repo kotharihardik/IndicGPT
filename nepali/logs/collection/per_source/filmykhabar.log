@@ -1,0 +1,20 @@
+========================================================================================
+NEPALI MANUAL COLLECTION   2026-08-14 16:19:03
+  sources: filmykhabar
+  target : 125.00M manual tokens (~500.00M chars)
+  already: 0 chars collected
+========================================================================================
+
+--- filmykhabar  (sitemap)  budget 2.00M chars ---
+  filmykhabar: 399 new article URLs from sitemap
+  [filmykhabar]  |  1 docs  |  1.10K ch  |  ~275 tok  |  191 ch/s  |  2 req  |  0% of budget  |  ETA 723h39m  |  5s
+  [filmykhabar]  |  29 docs  |  84.64K ch  |  ~21.16K tok  |  4.67K ch/s  |  220 req  |  4% of budget  |  ETA 29h44m  |  18s
+  [filmykhabar]  |  120 docs  |  443.24K ch  |  ~110.81K tok  |  14.90K ch/s  |  400 req  |  22% of budget  |  ETA 9h18m  |  29s  |  DONE
+       rejected: too-short x257, not-devanagari x19, no-text-extracted x2, latin-heavy x1
+  shard: filmykhabar.part-1786704543-36794.jsonl.gz (120 docs / 443.24K chars)
+
+========================================================================================
+TOTAL 443.24K chars  ~110.81K tokens (0.1% of target) in 29s
+========================================================================================
+
+progress: python3 data/collection/collect_manual.py --status

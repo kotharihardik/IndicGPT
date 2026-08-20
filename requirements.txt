@@ -1,0 +1,27 @@
+# Phase 1: corpus collection, preprocessing and tokenizer training.
+# Python 3.12.
+
+# config files and the source registries
+pyyaml>=6.0
+
+# public dataset download (streamed, never fully materialised)
+datasets>=2.19.0
+huggingface_hub>=0.23.0
+
+# manual collection
+aiohttp>=3.9.0          # all async fetching: WordPress API, sitemaps, archive.org
+requests>=2.31.0        # fetch_ia_pdfs.py only, which streams large files
+trafilatura>=1.9.0      # article body extraction from HTML
+beautifulsoup4>=4.12.0  # sitemap XML and link discovery
+lxml>=5.2.0             # parser backend for the above
+PyMuPDF>=1.24.0         # PDF text-layer extraction
+
+# deduplication
+datasketch>=1.6.4       # MinHash + LSH for near-duplicates
+
+# tokenizer
+sentencepiece>=0.2.0
+
+# statistics and report figures
+matplotlib>=3.8.0
+numpy>=1.26

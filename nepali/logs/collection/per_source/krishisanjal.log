@@ -1,0 +1,21 @@
+========================================================================================
+NEPALI MANUAL COLLECTION   2026-08-14 20:43:23
+  sources: krishisanjal
+  target : 125.00M manual tokens (~500.00M chars)
+  already: 143.83K chars collected
+========================================================================================
+
+--- krishisanjal  (sitemap)  budget 6.00M chars ---
+  resuming: 50 docs / 143.83K chars already collected, 50 URLs known
+    krishisanjal: link-crawl found 0 URLs (frontier 12)
+  krishisanjal: 19 new article URLs from sitemap
+  [krishisanjal]  |  1 docs  |  146.56K ch  |  ~36.64K tok  |  20 ch/s  |  92 req  |  2% of budget  |  ETA 6905h04m  |  2m16s
+  [krishisanjal]  |  2 docs  |  148.81K ch  |  ~37.20K tok  |  34 ch/s  |  94 req  |  2% of budget  |  ETA 4040h14m  |  2m24s  |  DONE
+       rejected: too-short x15, not-devanagari x1, not-nepali x1
+  shard: krishisanjal.part-1786720403-9656.jsonl.gz (2 docs / 4.98K chars)
+
+========================================================================================
+TOTAL 148.81K chars  ~37.20K tokens (0.0% of target) in 2m24s
+========================================================================================
+
+progress: python3 data/collection/collect_manual.py --status

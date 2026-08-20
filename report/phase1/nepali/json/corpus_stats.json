@@ -1,0 +1,673 @@
+{
+  "language": "nep",
+  "token_counts_exact": true,
+  "splits": {
+    "train": {
+      "totals": {
+        "docs": 1116564,
+        "chars": 2276899633,
+        "bytes": 6103590773,
+        "words": 342752983,
+        "tokens": 488046826
+      },
+      "manual": {
+        "docs": 235660,
+        "chars": 485912777,
+        "bytes": 1302379260,
+        "words": 72768864,
+        "tokens": 105385046
+      },
+      "by_source": {
+        "aakarpost": {
+          "docs": 475,
+          "chars": 1622797,
+          "bytes": 4270864,
+          "words": 262297,
+          "tokens": 408719
+        },
+        "annapurnapost": {
+          "docs": 1617,
+          "chars": 3896887,
+          "bytes": 10483502,
+          "words": 565761,
+          "tokens": 790409
+        },
+        "arthasarokar": {
+          "docs": 11592,
+          "chars": 14354790,
+          "bytes": 38599283,
+          "words": 2145480,
+          "tokens": 2883032
+        },
+        "bizmandu": {
+          "docs": 7189,
+          "chars": 13060859,
+          "bytes": 34999234,
+          "words": 2008306,
+          "tokens": 2770382
+        },
+        "clickmandu_html": {
+          "docs": 16401,
+          "chars": 30773612,
+          "bytes": 82665915,
+          "words": 4615299,
+          "tokens": 6379774
+        },
+        "court_pdf": {
+          "docs": 22,
+          "chars": 918188,
+          "bytes": 2422929,
+          "words": 142442,
+          "tokens": 363599
+        },
+        "edukhabar": {
+          "docs": 222,
+          "chars": 1079851,
+          "bytes": 2901814,
+          "words": 160123,
+          "tokens": 215816
+        },
+        "filmykhabar": {
+          "docs": 109,
+          "chars": 403198,
+          "bytes": 1073357,
+          "words": 64459,
+          "tokens": 91254
+        },
+        "hamrakura": {
+          "docs": 319,
+          "chars": 758323,
+          "bytes": 2038718,
+          "words": 112724,
+          "tokens": 156689
+        },
+        "khabarhub_html": {
+          "docs": 35900,
+          "chars": 57338362,
+          "bytes": 154065439,
+          "words": 8529185,
+          "tokens": 11870033
+        },
+        "krishisanjal": {
+          "docs": 45,
+          "chars": 119782,
+          "bytes": 321634,
+          "words": 17543,
+          "tokens": 25306
+        },
+        "nagariknetwork": {
+          "docs": 212,
+          "chars": 769535,
+          "bytes": 2070185,
+          "words": 113108,
+          "tokens": 159141
+        },
+        "nepalilink": {
+          "docs": 10204,
+          "chars": 19474278,
+          "bytes": 52395978,
+          "words": 2858652,
+          "tokens": 3990210
+        },
+        "nepalisahityaghar": {
+          "docs": 1130,
+          "chars": 4288242,
+          "bytes": 11438966,
+          "words": 648520,
+          "tokens": 1093027
+        },
+        "nepalkhoj": {
+          "docs": 8652,
+          "chars": 11333737,
+          "bytes": 30480284,
+          "words": 1681995,
+          "tokens": 2331527
+        },
+        "nepalpress_html": {
+          "docs": 35968,
+          "chars": 61407503,
+          "bytes": 165198449,
+          "words": 9048086,
+          "tokens": 12574305
+        },
+        "nkp_legal": {
+          "docs": 10,
+          "chars": 345104,
+          "bytes": 920597,
+          "words": 52465,
+          "tokens": 79424
+        },
+        "offlinethinker": {
+          "docs": 395,
+          "chars": 1050066,
+          "bytes": 2748312,
+          "words": 175347,
+          "tokens": 305582
+        },
+        "onlinekhabar": {
+          "docs": 53231,
+          "chars": 128734752,
+          "bytes": 345238121,
+          "words": 19027272,
+          "tokens": 26976162
+        },
+        "reportersnepal_html": {
+          "docs": 35428,
+          "chars": 60498006,
+          "bytes": 162962970,
+          "words": 8796895,
+          "tokens": 12183865
+        },
+        "sahityasangraha_html": {
+          "docs": 11625,
+          "chars": 64742666,
+          "bytes": 171066381,
+          "words": 10421341,
+          "tokens": 17878296
+        },
+        "sancharkendra": {
+          "docs": 4190,
+          "chars": 5601660,
+          "bytes": 15067841,
+          "words": 825330,
+          "tokens": 1133931
+        },
+        "swasthyakhabar": {
+          "docs": 724,
+          "chars": 3340579,
+          "bytes": 8948487,
+          "words": 496234,
+          "tokens": 724563
+        },
+        "ai4bharat_sangraha": {
+          "docs": 880904,
+          "chars": 1790986856,
+          "bytes": 4801211513,
+          "words": 269984119,
+          "tokens": 382661780
+        }
+      },
+      "by_provenance": {
+        "manual_web": {
+          "docs": 235638,
+          "chars": 484994589,
+          "bytes": 1299956331,
+          "words": 72626422,
+          "tokens": 105021447
+        },
+        "manual_pdf": {
+          "docs": 22,
+          "chars": 918188,
+          "bytes": 2422929,
+          "words": 142442,
+          "tokens": 363599
+        },
+        "public_hf": {
+          "docs": 880904,
+          "chars": 1790986856,
+          "bytes": 4801211513,
+          "words": 269984119,
+          "tokens": 382661780
+        }
+      },
+      "provenance_of_source": {
+        "aakarpost": "manual_web",
+        "annapurnapost": "manual_web",
+        "arthasarokar": "manual_web",
+        "bizmandu": "manual_web",
+        "clickmandu_html": "manual_web",
+        "court_pdf": "manual_pdf",
+        "edukhabar": "manual_web",
+        "filmykhabar": "manual_web",
+        "hamrakura": "manual_web",
+        "khabarhub_html": "manual_web",
+        "krishisanjal": "manual_web",
+        "nagariknetwork": "manual_web",
+        "nepalilink": "manual_web",
+        "nepalisahityaghar": "manual_web",
+        "nepalkhoj": "manual_web",
+        "nepalpress_html": "manual_web",
+        "nkp_legal": "manual_web",
+        "offlinethinker": "manual_web",
+        "onlinekhabar": "manual_web",
+        "reportersnepal_html": "manual_web",
+        "sahityasangraha_html": "manual_web",
+        "sancharkendra": "manual_web",
+        "swasthyakhabar": "manual_web",
+        "ai4bharat_sangraha": "public_hf"
+      }
+    },
+    "validation": {
+      "totals": {
+        "docs": 61604,
+        "chars": 125283173,
+        "bytes": 335850374,
+        "words": 18858548,
+        "tokens": 26814777
+      },
+      "manual": {
+        "docs": 12920,
+        "chars": 26301264,
+        "bytes": 70504074,
+        "words": 3937052,
+        "tokens": 5678538
+      },
+      "by_source": {
+        "aakarpost": {
+          "docs": 34,
+          "chars": 111868,
+          "bytes": 293850,
+          "words": 18030,
+          "tokens": 28608
+        },
+        "annapurnapost": {
+          "docs": 89,
+          "chars": 170606,
+          "bytes": 458969,
+          "words": 24693,
+          "tokens": 34522
+        },
+        "arthasarokar": {
+          "docs": 640,
+          "chars": 768591,
+          "bytes": 2067271,
+          "words": 115005,
+          "tokens": 153241
+        },
+        "bizmandu": {
+          "docs": 398,
+          "chars": 801538,
+          "bytes": 2148278,
+          "words": 122733,
+          "tokens": 169752
+        },
+        "clickmandu_html": {
+          "docs": 882,
+          "chars": 1608907,
+          "bytes": 4323535,
+          "words": 240978,
+          "tokens": 332562
+        },
+        "edukhabar": {
+          "docs": 13,
+          "chars": 38961,
+          "bytes": 104563,
+          "words": 5896,
+          "tokens": 7772
+        },
+        "filmykhabar": {
+          "docs": 3,
+          "chars": 16379,
+          "bytes": 43390,
+          "words": 2698,
+          "tokens": 3857
+        },
+        "hamrakura": {
+          "docs": 14,
+          "chars": 30046,
+          "bytes": 80826,
+          "words": 4465,
+          "tokens": 6411
+        },
+        "khabarhub_html": {
+          "docs": 1951,
+          "chars": 3154869,
+          "bytes": 8481076,
+          "words": 467738,
+          "tokens": 652764
+        },
+        "krishisanjal": {
+          "docs": 5,
+          "chars": 25726,
+          "bytes": 68673,
+          "words": 3912,
+          "tokens": 5843
+        },
+        "nagariknetwork": {
+          "docs": 8,
+          "chars": 14149,
+          "bytes": 38081,
+          "words": 2116,
+          "tokens": 3058
+        },
+        "nepalilink": {
+          "docs": 538,
+          "chars": 993356,
+          "bytes": 2672884,
+          "words": 146015,
+          "tokens": 203567
+        },
+        "nepalisahityaghar": {
+          "docs": 79,
+          "chars": 249718,
+          "bytes": 665066,
+          "words": 38114,
+          "tokens": 63944
+        },
+        "nepalkhoj": {
+          "docs": 472,
+          "chars": 599391,
+          "bytes": 1612377,
+          "words": 88802,
+          "tokens": 122795
+        },
+        "nepalpress_html": {
+          "docs": 1999,
+          "chars": 3494361,
+          "bytes": 9401873,
+          "words": 514658,
+          "tokens": 715450
+        },
+        "offlinethinker": {
+          "docs": 20,
+          "chars": 35395,
+          "bytes": 92812,
+          "words": 5721,
+          "tokens": 10189
+        },
+        "onlinekhabar": {
+          "docs": 2973,
+          "chars": 7222720,
+          "bytes": 19374466,
+          "words": 1065967,
+          "tokens": 1506091
+        },
+        "reportersnepal_html": {
+          "docs": 1954,
+          "chars": 3322856,
+          "bytes": 8953592,
+          "words": 482068,
+          "tokens": 666846
+        },
+        "sahityasangraha_html": {
+          "docs": 616,
+          "chars": 3249324,
+          "bytes": 8568518,
+          "words": 529272,
+          "tokens": 909863
+        },
+        "sancharkendra": {
+          "docs": 198,
+          "chars": 285795,
+          "bytes": 768153,
+          "words": 42142,
+          "tokens": 58004
+        },
+        "swasthyakhabar": {
+          "docs": 34,
+          "chars": 106708,
+          "bytes": 285821,
+          "words": 16029,
+          "tokens": 23399
+        },
+        "ai4bharat_sangraha": {
+          "docs": 48684,
+          "chars": 98981909,
+          "bytes": 265346300,
+          "words": 14921496,
+          "tokens": 21136239
+        }
+      },
+      "by_provenance": {
+        "manual_web": {
+          "docs": 12920,
+          "chars": 26301264,
+          "bytes": 70504074,
+          "words": 3937052,
+          "tokens": 5678538
+        },
+        "public_hf": {
+          "docs": 48684,
+          "chars": 98981909,
+          "bytes": 265346300,
+          "words": 14921496,
+          "tokens": 21136239
+        }
+      },
+      "provenance_of_source": {
+        "aakarpost": "manual_web",
+        "annapurnapost": "manual_web",
+        "arthasarokar": "manual_web",
+        "bizmandu": "manual_web",
+        "clickmandu_html": "manual_web",
+        "edukhabar": "manual_web",
+        "filmykhabar": "manual_web",
+        "hamrakura": "manual_web",
+        "khabarhub_html": "manual_web",
+        "krishisanjal": "manual_web",
+        "nagariknetwork": "manual_web",
+        "nepalilink": "manual_web",
+        "nepalisahityaghar": "manual_web",
+        "nepalkhoj": "manual_web",
+        "nepalpress_html": "manual_web",
+        "offlinethinker": "manual_web",
+        "onlinekhabar": "manual_web",
+        "reportersnepal_html": "manual_web",
+        "sahityasangraha_html": "manual_web",
+        "sancharkendra": "manual_web",
+        "swasthyakhabar": "manual_web",
+        "ai4bharat_sangraha": "public_hf"
+      }
+    },
+    "test": {
+      "totals": {
+        "docs": 61484,
+        "chars": 126310527,
+        "bytes": 338591297,
+        "words": 19010869,
+        "tokens": 27099101
+      },
+      "manual": {
+        "docs": 12977,
+        "chars": 27075383,
+        "bytes": 72574809,
+        "words": 4053590,
+        "tokens": 5874788
+      },
+      "by_source": {
+        "aakarpost": {
+          "docs": 23,
+          "chars": 73722,
+          "bytes": 193597,
+          "words": 12053,
+          "tokens": 18316
+        },
+        "annapurnapost": {
+          "docs": 105,
+          "chars": 231724,
+          "bytes": 623696,
+          "words": 33948,
+          "tokens": 46167
+        },
+        "arthasarokar": {
+          "docs": 662,
+          "chars": 817282,
+          "bytes": 2197833,
+          "words": 122112,
+          "tokens": 163857
+        },
+        "bizmandu": {
+          "docs": 393,
+          "chars": 678382,
+          "bytes": 1820508,
+          "words": 103445,
+          "tokens": 142330
+        },
+        "clickmandu_html": {
+          "docs": 902,
+          "chars": 1740737,
+          "bytes": 4673713,
+          "words": 262096,
+          "tokens": 362038
+        },
+        "edukhabar": {
+          "docs": 8,
+          "chars": 27354,
+          "bytes": 73658,
+          "words": 4032,
+          "tokens": 5223
+        },
+        "filmykhabar": {
+          "docs": 5,
+          "chars": 16701,
+          "bytes": 44269,
+          "words": 2751,
+          "tokens": 3937
+        },
+        "hamrakura": {
+          "docs": 16,
+          "chars": 43236,
+          "bytes": 116154,
+          "words": 6510,
+          "tokens": 9053
+        },
+        "khabarhub_html": {
+          "docs": 1991,
+          "chars": 3196803,
+          "bytes": 8592232,
+          "words": 474860,
+          "tokens": 661151
+        },
+        "krishisanjal": {
+          "docs": 1,
+          "chars": 896,
+          "bytes": 2438,
+          "words": 117,
+          "tokens": 156
+        },
+        "nagariknetwork": {
+          "docs": 8,
+          "chars": 36278,
+          "bytes": 97400,
+          "words": 5398,
+          "tokens": 7736
+        },
+        "nepalilink": {
+          "docs": 564,
+          "chars": 1108954,
+          "bytes": 2983939,
+          "words": 162806,
+          "tokens": 226790
+        },
+        "nepalisahityaghar": {
+          "docs": 72,
+          "chars": 256964,
+          "bytes": 682947,
+          "words": 39478,
+          "tokens": 67509
+        },
+        "nepalkhoj": {
+          "docs": 520,
+          "chars": 702556,
+          "bytes": 1889415,
+          "words": 104036,
+          "tokens": 144627
+        },
+        "nepalpress_html": {
+          "docs": 1967,
+          "chars": 3544444,
+          "bytes": 9535680,
+          "words": 521496,
+          "tokens": 728380
+        },
+        "nkp_legal": {
+          "docs": 1,
+          "chars": 20594,
+          "bytes": 55106,
+          "words": 3120,
+          "tokens": 4477
+        },
+        "offlinethinker": {
+          "docs": 28,
+          "chars": 65873,
+          "bytes": 172174,
+          "words": 11050,
+          "tokens": 18959
+        },
+        "onlinekhabar": {
+          "docs": 2890,
+          "chars": 7200537,
+          "bytes": 19316398,
+          "words": 1062304,
+          "tokens": 1507712
+        },
+        "reportersnepal_html": {
+          "docs": 1954,
+          "chars": 3297845,
+          "bytes": 8882321,
+          "words": 479662,
+          "tokens": 665723
+        },
+        "sahityasangraha_html": {
+          "docs": 636,
+          "chars": 3610927,
+          "bytes": 9537838,
+          "words": 582743,
+          "tokens": 1005864
+        },
+        "sancharkendra": {
+          "docs": 192,
+          "chars": 240536,
+          "bytes": 647448,
+          "words": 35225,
+          "tokens": 47976
+        },
+        "swasthyakhabar": {
+          "docs": 39,
+          "chars": 163038,
+          "bytes": 436045,
+          "words": 24348,
+          "tokens": 36807
+        },
+        "ai4bharat_sangraha": {
+          "docs": 48507,
+          "chars": 99235144,
+          "bytes": 266016488,
+          "words": 14957279,
+          "tokens": 21224313
+        }
+      },
+      "by_provenance": {
+        "manual_web": {
+          "docs": 12977,
+          "chars": 27075383,
+          "bytes": 72574809,
+          "words": 4053590,
+          "tokens": 5874788
+        },
+        "public_hf": {
+          "docs": 48507,
+          "chars": 99235144,
+          "bytes": 266016488,
+          "words": 14957279,
+          "tokens": 21224313
+        }
+      },
+      "provenance_of_source": {
+        "aakarpost": "manual_web",
+        "annapurnapost": "manual_web",
+        "arthasarokar": "manual_web",
+        "bizmandu": "manual_web",
+        "clickmandu_html": "manual_web",
+        "edukhabar": "manual_web",
+        "filmykhabar": "manual_web",
+        "hamrakura": "manual_web",
+        "khabarhub_html": "manual_web",
+        "krishisanjal": "manual_web",
+        "nagariknetwork": "manual_web",
+        "nepalilink": "manual_web",
+        "nepalisahityaghar": "manual_web",
+        "nepalkhoj": "manual_web",
+        "nepalpress_html": "manual_web",
+        "nkp_legal": "manual_web",
+        "offlinethinker": "manual_web",
+        "onlinekhabar": "manual_web",
+        "reportersnepal_html": "manual_web",
+        "sahityasangraha_html": "manual_web",
+        "sancharkendra": "manual_web",
+        "swasthyakhabar": "manual_web",
+        "ai4bharat_sangraha": "public_hf"
+      }
+    }
+  }
+}

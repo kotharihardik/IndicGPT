@@ -1,0 +1,167 @@
+========================================================================================
+GUJARATI MANUAL COLLECTION   2026-08-12 21:05:43
+  sources: abtakmedia, mantavyanews, westerntimesnews, gujarativishwakosh, gujaratmirror, gstv, sandesh, divya_bhaskar, ia_books_pdf
+  target : 130.00M manual tokens (~520.00M chars)
+  already: 294.57M chars collected
+========================================================================================
+
+--- abtakmedia  (wp_rest)  budget 160.00M chars ---
+  resuming: 66,635 docs / 160.00M chars already collected, 66,635 URLs known
+  budget already met - skipping
+
+--- mantavyanews  (wp_rest)  budget 140.00M chars ---
+  resuming: 57,853 docs / 119.08M chars already collected, 57,853 URLs known
+  mantavyanews: 57,853 posts already stored, resuming from page 573
+  [mantavyanews]  |  0 docs  |  119.08M ch  |  ~29.77M tok  |  0 ch/s  |  4 req  |  85% of budget  |  ETA 0s  |  3s
+  [mantavyanews]  |  288 docs  |  119.61M ch  |  ~29.90M tok  |  37.08K ch/s  |  20 req  |  85% of budget  |  ETA 1h41m  |  14s
+  [mantavyanews]  |  1,459 docs  |  121.94M ch  |  ~30.48M tok  |  115.09K ch/s  |  32 req  |  87% of budget  |  ETA 32m14s  |  24s
+  [mantavyanews]  |  2,293 docs  |  123.60M ch  |  ~30.90M tok  |  129.75K ch/s  |  44 req  |  88% of budget  |  ETA 28m22s  |  34s
+  [mantavyanews]  |  3,066 docs  |  125.19M ch  |  ~31.30M tok  |  127.18K ch/s  |  56 req  |  89% of budget  |  ETA 28m44s  |  48s
+  [mantavyanews]  |  3,780 docs  |  126.65M ch  |  ~31.66M tok  |  129.33K ch/s  |  68 req  |  90% of budget  |  ETA 28m04s  |  58s
+  [mantavyanews]  |  4,780 docs  |  128.80M ch  |  ~32.20M tok  |  140.95K ch/s  |  84 req  |  92% of budget  |  ETA 25m30s  |  1m08s
+  [mantavyanews]  |  5,858 docs  |  131.02M ch  |  ~32.76M tok  |  150.39K ch/s  |  100 req  |  94% of budget  |  ETA 23m39s  |  1m19s
+  [mantavyanews]  |  6,790 docs  |  132.96M ch  |  ~33.24M tok  |  155.29K ch/s  |  116 req  |  95% of budget  |  ETA 22m42s  |  1m29s
+  [mantavyanews]  |  7,697 docs  |  134.91M ch  |  ~33.73M tok  |  155.21K ch/s  |  132 req  |  96% of budget  |  ETA 22m30s  |  1m41s
+  [mantavyanews]  |  8,523 docs  |  136.66M ch  |  ~34.17M tok  |  156.06K ch/s  |  148 req  |  98% of budget  |  ETA 22m11s  |  1m52s
+  [mantavyanews]  |  9,314 docs  |  138.19M ch  |  ~34.55M tok  |  151.82K ch/s  |  164 req  |  99% of budget  |  ETA 22m38s  |  2m05s
+  [mantavyanews]  |  9,942 docs  |  139.54M ch  |  ~34.88M tok  |  148.57K ch/s  |  176 req  |  100% of budget  |  ETA 22m59s  |  2m17s
+  [mantavyanews]  |  10,168 docs  |  140.00M ch  |  ~35.00M tok  |  146.23K ch/s  |  180 req  |  100% of budget  |  ETA 23m18s  |  2m23s  |  DONE (source budget reached)
+       rejected: too-short x5,943, already-collected x1,286, latin-heavy x131, devanagari-leak x75, not-gujarati x6
+  shard: mantavyanews.part-1786548946-4701.jsonl.gz (10,168 docs / 20.92M chars)
+
+--- westerntimesnews  (wp_rest)  budget 95.00M chars ---
+  [westerntimesnews]  |  1 docs  |  2.62K ch  |  ~655 tok  |  165 ch/s  |  4 req  |  0% of budget  |  ETA 342h40m  |  15s
+  [westerntimesnews]  |  792 docs  |  1.71M ch  |  ~426.65K tok  |  57.69K ch/s  |  12 req  |  2% of budget  |  ETA 58m35s  |  29s
+  [westerntimesnews]  |  1,188 docs  |  2.59M ch  |  ~646.30K tok  |  62.86K ch/s  |  16 req  |  3% of budget  |  ETA 53m32s  |  41s
+  [westerntimesnews]  |  1,580 docs  |  3.45M ch  |  ~861.66K tok  |  65.97K ch/s  |  20 req  |  4% of budget  |  ETA 50m48s  |  52s
+  [westerntimesnews]  |  1,969 docs  |  4.33M ch  |  ~1.08M tok  |  64.50K ch/s  |  24 req  |  5% of budget  |  ETA 51m43s  |  1m07s
+  [westerntimesnews]  |  2,355 docs  |  5.27M ch  |  ~1.32M tok  |  67.89K ch/s  |  28 req  |  6% of budget  |  ETA 48m54s  |  1m17s
+  [westerntimesnews]  |  2,747 docs  |  6.14M ch  |  ~1.53M tok  |  66.82K ch/s  |  32 req  |  6% of budget  |  ETA 49m28s  |  1m31s
+  [westerntimesnews]  |  3,143 docs  |  6.88M ch  |  ~1.72M tok  |  57.63K ch/s  |  36 req  |  7% of budget  |  ETA 57m09s  |  1m59s
+  [westerntimesnews]  |  3,542 docs  |  7.64M ch  |  ~1.91M tok  |  53.69K ch/s  |  40 req  |  8% of budget  |  ETA 1h01m  |  2m22s
+  [westerntimesnews]  |  3,938 docs  |  8.41M ch  |  ~2.10M tok  |  53.29K ch/s  |  44 req  |  9% of budget  |  ETA 1h01m  |  2m37s
+  [westerntimesnews]  |  4,333 docs  |  9.18M ch  |  ~2.30M tok  |  47.85K ch/s  |  48 req  |  10% of budget  |  ETA 1h08m  |  3m11s
+  [westerntimesnews]  |  4,727 docs  |  9.97M ch  |  ~2.49M tok  |  42.55K ch/s  |  52 req  |  10% of budget  |  ETA 1h16m  |  3m54s
+  [westerntimesnews]  |  5,121 docs  |  10.79M ch  |  ~2.70M tok  |  38.20K ch/s  |  56 req  |  11% of budget  |  ETA 1h24m  |  4m42s
+  [westerntimesnews]  |  5,515 docs  |  11.60M ch  |  ~2.90M tok  |  38.61K ch/s  |  60 req  |  12% of budget  |  ETA 1h23m  |  5m00s
+  [westerntimesnews]  |  5,910 docs  |  12.39M ch  |  ~3.10M tok  |  37.89K ch/s  |  64 req  |  13% of budget  |  ETA 1h24m  |  5m26s
+  [westerntimesnews]  |  6,309 docs  |  13.18M ch  |  ~3.29M tok  |  36.03K ch/s  |  68 req  |  14% of budget  |  ETA 1h28m  |  6m05s
+  [westerntimesnews]  |  6,703 docs  |  13.98M ch  |  ~3.49M tok  |  34.44K ch/s  |  72 req  |  15% of budget  |  ETA 1h32m  |  6m45s
+  [westerntimesnews]  |  7,095 docs  |  14.79M ch  |  ~3.70M tok  |  32.52K ch/s  |  76 req  |  16% of budget  |  ETA 1h37m  |  7m34s
+  [westerntimesnews]  |  8,651 docs  |  18.02M ch  |  ~4.51M tok  |  38.74K ch/s  |  92 req  |  19% of budget  |  ETA 1h20m  |  7m45s
+  [westerntimesnews]  |  9,821 docs  |  20.46M ch  |  ~5.11M tok  |  43.04K ch/s  |  104 req  |  22% of budget  |  ETA 1h11m  |  7m55s
+  [westerntimesnews]  |  11,376 docs  |  23.69M ch  |  ~5.92M tok  |  48.67K ch/s  |  120 req  |  25% of budget  |  ETA 1h01m  |  8m06s
+  [westerntimesnews]  |  12,771 docs  |  26.57M ch  |  ~6.64M tok  |  53.48K ch/s  |  132 req  |  28% of budget  |  ETA 55m27s  |  8m16s
+  [westerntimesnews]  |  14,099 docs  |  29.17M ch  |  ~7.29M tok  |  57.38K ch/s  |  148 req  |  31% of budget  |  ETA 50m55s  |  8m28s
+  [westerntimesnews]  |  15,667 docs  |  32.18M ch  |  ~8.05M tok  |  61.83K ch/s  |  164 req  |  34% of budget  |  ETA 46m27s  |  8m40s
+  [westerntimesnews]  |  17,192 docs  |  35.19M ch  |  ~8.80M tok  |  66.17K ch/s  |  180 req  |  37% of budget  |  ETA 42m38s  |  8m51s
+  [westerntimesnews]  |  18,451 docs  |  37.85M ch  |  ~9.46M tok  |  69.86K ch/s  |  192 req  |  40% of budget  |  ETA 39m45s  |  9m01s
+  [westerntimesnews]  |  19,699 docs  |  40.43M ch  |  ~10.11M tok  |  73.03K ch/s  |  208 req  |  43% of budget  |  ETA 37m26s  |  9m13s
+  [westerntimesnews]  |  21,160 docs  |  43.48M ch  |  ~10.87M tok  |  76.94K ch/s  |  224 req  |  46% of budget  |  ETA 34m52s  |  9m25s
+  [westerntimesnews]  |  22,586 docs  |  46.38M ch  |  ~11.59M tok  |  80.31K ch/s  |  240 req  |  49% of budget  |  ETA 32m49s  |  9m37s
+  [westerntimesnews]  |  23,584 docs  |  48.44M ch  |  ~12.11M tok  |  82.44K ch/s  |  252 req  |  51% of budget  |  ETA 31m33s  |  9m47s
+  [westerntimesnews]  |  24,634 docs  |  50.70M ch  |  ~12.67M tok  |  84.65K ch/s  |  264 req  |  53% of budget  |  ETA 30m17s  |  9m58s
+  [westerntimesnews]  |  26,043 docs  |  53.71M ch  |  ~13.43M tok  |  88.03K ch/s  |  280 req  |  57% of budget  |  ETA 28m33s  |  10m10s
+  [westerntimesnews]  |  27,165 docs  |  55.99M ch  |  ~14.00M tok  |  90.29K ch/s  |  292 req  |  59% of budget  |  ETA 27m24s  |  10m20s
+  [westerntimesnews]  |  28,347 docs  |  58.31M ch  |  ~14.58M tok  |  92.54K ch/s  |  304 req  |  61% of budget  |  ETA 26m19s  |  10m30s
+  [westerntimesnews]  |  29,157 docs  |  60.02M ch  |  ~15.01M tok  |  93.62K ch/s  |  316 req  |  63% of budget  |  ETA 25m43s  |  10m41s
+  [westerntimesnews]  |  30,400 docs  |  62.70M ch  |  ~15.68M tok  |  96.30K ch/s  |  328 req  |  66% of budget  |  ETA 24m32s  |  10m51s
+  [westerntimesnews]  |  31,415 docs  |  64.67M ch  |  ~16.17M tok  |  97.73K ch/s  |  340 req  |  68% of budget  |  ETA 23m50s  |  11m01s
+  [westerntimesnews]  |  32,798 docs  |  67.16M ch  |  ~16.79M tok  |  99.99K ch/s  |  352 req  |  71% of budget  |  ETA 22m53s  |  11m11s
+  [westerntimesnews]  |  34,132 docs  |  69.86M ch  |  ~17.47M tok  |  102.22K ch/s  |  368 req  |  74% of budget  |  ETA 21m57s  |  11m23s
+  [westerntimesnews]  |  35,258 docs  |  72.11M ch  |  ~18.03M tok  |  103.86K ch/s  |  380 req  |  76% of budget  |  ETA 21m14s  |  11m34s
+  [westerntimesnews]  |  36,662 docs  |  74.96M ch  |  ~18.74M tok  |  106.20K ch/s  |  396 req  |  79% of budget  |  ETA 20m19s  |  11m45s
+  [westerntimesnews]  |  37,746 docs  |  77.08M ch  |  ~19.27M tok  |  107.62K ch/s  |  408 req  |  81% of budget  |  ETA 19m44s  |  11m56s
+  [westerntimesnews]  |  39,257 docs  |  80.19M ch  |  ~20.05M tok  |  110.42K ch/s  |  420 req  |  84% of budget  |  ETA 18m45s  |  12m06s
+  [westerntimesnews]  |  40,509 docs  |  82.76M ch  |  ~20.69M tok  |  112.04K ch/s  |  436 req  |  87% of budget  |  ETA 18m06s  |  12m18s
+  [westerntimesnews]  |  41,681 docs  |  85.11M ch  |  ~21.28M tok  |  113.44K ch/s  |  448 req  |  90% of budget  |  ETA 17m32s  |  12m30s
+  [westerntimesnews]  |  42,859 docs  |  87.33M ch  |  ~21.83M tok  |  114.81K ch/s  |  460 req  |  92% of budget  |  ETA 17m00s  |  12m40s
+  [westerntimesnews]  |  44,250 docs  |  89.95M ch  |  ~22.49M tok  |  116.71K ch/s  |  472 req  |  95% of budget  |  ETA 16m21s  |  12m50s
+  [westerntimesnews]  |  45,368 docs  |  92.12M ch  |  ~23.03M tok  |  118.00K ch/s  |  484 req  |  97% of budget  |  ETA 15m52s  |  13m00s
+  [westerntimesnews]  |  46,450 docs  |  94.10M ch  |  ~23.53M tok  |  118.98K ch/s  |  496 req  |  99% of budget  |  ETA 15m27s  |  13m10s
+  [westerntimesnews]  |  46,944 docs  |  95.00M ch  |  ~23.75M tok  |  119.54K ch/s  |  500 req  |  100% of budget  |  ETA 15m16s  |  13m14s  |  DONE (source budget reached)
+       rejected: not-gujarati x2,446, latin-heavy x261, devanagari-leak x31, too-short x14
+  shard: westerntimesnews.part-1786549089-4701.jsonl.gz (46,944 docs / 95.00M chars)
+
+--- gujarativishwakosh  (wp_rest)  budget 85.00M chars ---
+  [gujarativishwakosh]  |  1 docs  |  1.03K ch  |  ~257 tok  |  104 ch/s  |  4 req  |  0% of budget  |  ETA 291h21m  |  9s
+  [gujarativishwakosh]  |  749 docs  |  3.08M ch  |  ~770.40K tok  |  148.92K ch/s  |  12 req  |  4% of budget  |  ETA 11m54s  |  20s
+  [gujarativishwakosh]  |  1,637 docs  |  6.42M ch  |  ~1.61M tok  |  209.21K ch/s  |  20 req  |  8% of budget  |  ETA 8m12s  |  30s
+  [gujarativishwakosh]  |  2,286 docs  |  9.00M ch  |  ~2.25M tok  |  208.60K ch/s  |  28 req  |  11% of budget  |  ETA 8m01s  |  43s
+  [gujarativishwakosh]  |  3,036 docs  |  12.89M ch  |  ~3.22M tok  |  236.69K ch/s  |  36 req  |  15% of budget  |  ETA 6m48s  |  54s
+  [gujarativishwakosh]  |  4,179 docs  |  17.15M ch  |  ~4.29M tok  |  254.63K ch/s  |  48 req  |  20% of budget  |  ETA 6m02s  |  1m07s
+  [gujarativishwakosh]  |  4,556 docs  |  18.38M ch  |  ~4.59M tok  |  235.98K ch/s  |  52 req  |  22% of budget  |  ETA 6m26s  |  1m17s
+  [gujarativishwakosh]  |  4,931 docs  |  20.38M ch  |  ~5.09M tok  |  231.60K ch/s  |  56 req  |  24% of budget  |  ETA 6m24s  |  1m27s
+  [gujarativishwakosh]  |  5,683 docs  |  24.01M ch  |  ~6.00M tok  |  243.57K ch/s  |  64 req  |  28% of budget  |  ETA 5m51s  |  1m38s
+  [gujarativishwakosh]  |  6,774 docs  |  28.15M ch  |  ~7.04M tok  |  259.28K ch/s  |  72 req  |  33% of budget  |  ETA 5m13s  |  1m48s
+  [gujarativishwakosh]  |  7,602 docs  |  31.30M ch  |  ~7.82M tok  |  260.06K ch/s  |  84 req  |  37% of budget  |  ETA 5m00s  |  2m00s
+  [gujarativishwakosh]  |  8,750 docs  |  35.31M ch  |  ~8.83M tok  |  267.31K ch/s  |  96 req  |  42% of budget  |  ETA 4m37s  |  2m12s
+  [gujarativishwakosh]  |  9,896 docs  |  39.85M ch  |  ~9.96M tok  |  270.97K ch/s  |  108 req  |  47% of budget  |  ETA 4m17s  |  2m27s
+  [gujarativishwakosh]  |  11,044 docs  |  44.80M ch  |  ~11.20M tok  |  281.26K ch/s  |  120 req  |  53% of budget  |  ETA 3m50s  |  2m39s
+  [gujarativishwakosh]  |  12,186 docs  |  48.97M ch  |  ~12.24M tok  |  284.25K ch/s  |  132 req  |  58% of budget  |  ETA 3m32s  |  2m52s
+  [gujarativishwakosh]  |  13,047 docs  |  53.04M ch  |  ~13.26M tok  |  290.97K ch/s  |  140 req  |  62% of budget  |  ETA 3m14s  |  3m02s
+  [gujarativishwakosh]  |  13,791 docs  |  56.33M ch  |  ~14.08M tok  |  292.96K ch/s  |  148 req  |  66% of budget  |  ETA 3m01s  |  3m12s
+  [gujarativishwakosh]  |  14,682 docs  |  60.40M ch  |  ~15.10M tok  |  298.50K ch/s  |  156 req  |  71% of budget  |  ETA 2m44s  |  3m22s
+  [gujarativishwakosh]  |  15,622 docs  |  64.16M ch  |  ~16.04M tok  |  299.04K ch/s  |  168 req  |  75% of budget  |  ETA 2m31s  |  3m34s
+  [gujarativishwakosh]  |  16,770 docs  |  68.19M ch  |  ~17.05M tok  |  300.12K ch/s  |  180 req  |  80% of budget  |  ETA 2m17s  |  3m47s
+  [gujarativishwakosh]  |  17,920 docs  |  72.69M ch  |  ~18.17M tok  |  303.56K ch/s  |  192 req  |  86% of budget  |  ETA 2m01s  |  3m59s
+  [gujarativishwakosh]  |  18,683 docs  |  75.52M ch  |  ~18.88M tok  |  302.63K ch/s  |  200 req  |  89% of budget  |  ETA 1m52s  |  4m09s
+  [gujarativishwakosh]  |  19,707 docs  |  81.11M ch  |  ~20.28M tok  |  312.52K ch/s  |  208 req  |  95% of budget  |  ETA 1m30s  |  4m19s
+  [gujarativishwakosh]  |  20,600 docs  |  84.68M ch  |  ~21.17M tok  |  312.31K ch/s  |  220 req  |  100% of budget  |  ETA 1m19s  |  4m31s
+  [gujarativishwakosh]  |  20,743 docs  |  85.01M ch  |  ~21.25M tok  |  313.22K ch/s  |  220 req  |  100% of budget  |  ETA 1m18s  |  4m31s  |  DONE (source budget reached)
+       rejected: too-short x983, devanagari-leak x13, latin-heavy x7
+  shard: gujarativishwakosh.part-1786549883-4701.jsonl.gz (20,743 docs / 85.01M chars)
+
+--- gujaratmirror  (wp_rest)  budget 55.00M chars ---
+  [gujaratmirror]  |  1 docs  |  2.22K ch  |  ~555 tok  |  267 ch/s  |  4 req  |  0% of budget  |  ETA 25h24m  |  8s
+  [gujaratmirror]  |  801 docs  |  1.44M ch  |  ~360.91K tok  |  65.65K ch/s  |  12 req  |  3% of budget  |  ETA 5m51s  |  21s
+  [gujaratmirror]  |  1,201 docs  |  2.17M ch  |  ~541.86K tok  |  65.56K ch/s  |  16 req  |  4% of budget  |  ETA 5m40s  |  33s
+  [gujaratmirror]  |  2,000 docs  |  3.57M ch  |  ~893.41K tok  |  73.77K ch/s  |  24 req  |  6% of budget  |  ETA 4m43s  |  48s
+  [gujaratmirror]  |  2,800 docs  |  4.95M ch  |  ~1.24M tok  |  76.05K ch/s  |  32 req  |  9% of budget  |  ETA 4m17s  |  1m05s
+  [gujaratmirror]  |  3,599 docs  |  6.38M ch  |  ~1.59M tok  |  82.00K ch/s  |  40 req  |  12% of budget  |  ETA 3m41s  |  1m17s
+  [gujaratmirror]  |  4,399 docs  |  7.80M ch  |  ~1.95M tok  |  87.82K ch/s  |  48 req  |  14% of budget  |  ETA 3m10s  |  1m28s
+  [gujaratmirror]  |  5,592 docs  |  9.98M ch  |  ~2.49M tok  |  101.01K ch/s  |  56 req  |  18% of budget  |  ETA 2m23s  |  1m38s
+  [gujaratmirror]  |  5,999 docs  |  10.71M ch  |  ~2.68M tok  |  98.33K ch/s  |  64 req  |  19% of budget  |  ETA 2m20s  |  1m48s
+  [gujaratmirror]  |  6,799 docs  |  12.20M ch  |  ~3.05M tok  |  102.40K ch/s  |  72 req  |  22% of budget  |  ETA 2m00s  |  1m59s
+  [gujaratmirror]  |  7,808 docs  |  13.98M ch  |  ~3.50M tok  |  108.25K ch/s  |  80 req  |  25% of budget  |  ETA 1m37s  |  2m09s
+  [gujaratmirror]  |  8,399 docs  |  14.99M ch  |  ~3.75M tok  |  107.32K ch/s  |  88 req  |  27% of budget  |  ETA 1m28s  |  2m19s
+  [gujaratmirror]  |  9,199 docs  |  16.39M ch  |  ~4.10M tok  |  109.12K ch/s  |  96 req  |  30% of budget  |  ETA 1m14s  |  2m30s
+  [gujaratmirror]  |  10,196 docs  |  18.06M ch  |  ~4.51M tok  |  112.71K ch/s  |  104 req  |  33% of budget  |  ETA 57s  |  2m40s
+  [gujaratmirror]  |  10,799 docs  |  19.07M ch  |  ~4.77M tok  |  109.24K ch/s  |  112 req  |  35% of budget  |  ETA 49s  |  2m54s
+  [gujaratmirror]  |  11,999 docs  |  21.09M ch  |  ~5.27M tok  |  111.76K ch/s  |  124 req  |  38% of budget  |  ETA 30s  |  3m08s
+  [gujaratmirror]  |  12,799 docs  |  22.41M ch  |  ~5.60M tok  |  112.44K ch/s  |  132 req  |  41% of budget  |  ETA 18s  |  3m19s
+  [gujaratmirror]  |  13,616 docs  |  23.83M ch  |  ~5.96M tok  |  113.89K ch/s  |  140 req  |  43% of budget  |  ETA 5s  |  3m29s
+  [gujaratmirror]  |  14,799 docs  |  25.78M ch  |  ~6.45M tok  |  115.06K ch/s  |  152 req  |  47% of budget  |  ETA ?  |  3m44s
+  [gujaratmirror]  |  15,708 docs  |  27.30M ch  |  ~6.82M tok  |  116.62K ch/s  |  160 req  |  50% of budget  |  ETA ?  |  3m54s
+  [gujaratmirror]  |  16,722 docs  |  29.00M ch  |  ~7.25M tok  |  118.83K ch/s  |  168 req  |  53% of budget  |  ETA ?  |  4m04s
+  [gujaratmirror]  |  17,199 docs  |  29.72M ch  |  ~7.43M tok  |  116.77K ch/s  |  176 req  |  54% of budget  |  ETA ?  |  4m14s
+  [gujaratmirror]  |  18,338 docs  |  31.50M ch  |  ~7.88M tok  |  119.09K ch/s  |  184 req  |  57% of budget  |  ETA ?  |  4m24s
+  [gujaratmirror]  |  18,798 docs  |  32.22M ch  |  ~8.05M tok  |  116.79K ch/s  |  192 req  |  59% of budget  |  ETA ?  |  4m35s
+  [gujaratmirror]  |  19,598 docs  |  33.48M ch  |  ~8.37M tok  |  116.59K ch/s  |  200 req  |  61% of budget  |  ETA ?  |  4m47s
+  [gujaratmirror]  |  20,398 docs  |  34.77M ch  |  ~8.69M tok  |  116.82K ch/s  |  208 req  |  63% of budget  |  ETA ?  |  4m57s
+  [gujaratmirror]  |  21,598 docs  |  36.67M ch  |  ~9.17M tok  |  117.38K ch/s  |  220 req  |  67% of budget  |  ETA ?  |  5m12s
+  [gujaratmirror]  |  22,798 docs  |  38.59M ch  |  ~9.65M tok  |  117.10K ch/s  |  232 req  |  70% of budget  |  ETA ?  |  5m29s
+  [gujaratmirror]  |  23,598 docs  |  39.87M ch  |  ~9.97M tok  |  116.89K ch/s  |  240 req  |  72% of budget  |  ETA ?  |  5m41s
+  [gujaratmirror]  |  24,398 docs  |  41.11M ch  |  ~10.28M tok  |  116.91K ch/s  |  248 req  |  75% of budget  |  ETA ?  |  5m51s
+  [gujaratmirror]  |  25,198 docs  |  42.44M ch  |  ~10.61M tok  |  115.98K ch/s  |  256 req  |  77% of budget  |  ETA ?  |  6m05s
+  [gujaratmirror]  |  25,998 docs  |  43.75M ch  |  ~10.94M tok  |  115.79K ch/s  |  264 req  |  80% of budget  |  ETA ?  |  6m17s
+  [gujaratmirror]  |  26,398 docs  |  44.41M ch  |  ~11.10M tok  |  114.47K ch/s  |  268 req  |  81% of budget  |  ETA ?  |  6m27s
+  [gujaratmirror]  |  27,198 docs  |  45.70M ch  |  ~11.43M tok  |  114.48K ch/s  |  276 req  |  83% of budget  |  ETA ?  |  6m39s
+  [gujaratmirror]  |  27,998 docs  |  46.97M ch  |  ~11.74M tok  |  114.64K ch/s  |  284 req  |  85% of budget  |  ETA ?  |  6m49s
+  [gujaratmirror]  |  28,797 docs  |  48.28M ch  |  ~12.07M tok  |  114.43K ch/s  |  292 req  |  88% of budget  |  ETA ?  |  7m01s
+  [gujaratmirror]  |  29,595 docs  |  49.58M ch  |  ~12.40M tok  |  114.53K ch/s  |  300 req  |  90% of budget  |  ETA ?  |  7m12s
+  [gujaratmirror]  |  30,395 docs  |  50.81M ch  |  ~12.70M tok  |  113.75K ch/s  |  308 req  |  92% of budget  |  ETA ?  |  7m26s
+  [gujaratmirror]  |  30,795 docs  |  51.43M ch  |  ~12.86M tok  |  111.60K ch/s  |  312 req  |  94% of budget  |  ETA ?  |  7m40s
+  [gujaratmirror]  |  31,595 docs  |  52.70M ch  |  ~13.18M tok  |  110.00K ch/s  |  320 req  |  96% of budget  |  ETA ?  |  7m59s
+  [gujaratmirror]  |  32,395 docs  |  53.99M ch  |  ~13.50M tok  |  109.78K ch/s  |  328 req  |  98% of budget  |  ETA ?  |  8m11s
+  [gujaratmirror]  |  33,022 docs  |  55.00M ch  |  ~13.75M tok  |  110.56K ch/s  |  332 req  |  100% of budget  |  ETA ?  |  8m17s  |  DONE (source budget reached)
+       rejected: too-short x3, latin-heavy x1, not-gujarati x1, no-stopwords x1
+  shard: gujaratmirror.part-1786550155-4701.jsonl.gz (33,022 docs / 55.00M chars)
+
+  collection target reached - stopping
+
+========================================================================================
+TOTAL 550.49M chars  ~137.62M tokens (105.9% of target) in 28m29s
+========================================================================================
+
+progress: python3 data/collection/collect_manual.py --status

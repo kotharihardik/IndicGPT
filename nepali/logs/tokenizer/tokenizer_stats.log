@@ -1,0 +1,57 @@
+evaluating on 61,604 held-out documents (125,283,173 characters, 84.0% Devanagari script)
+
+algo        vocab  chars/tok  fertility    byte-fb       unk  vocab used   emb params  % budget
+---------------------------------------------------------------------------------------------
+unigram    16,000      4.689      1.416   0.003557  0.000000       99.1%        6.14M       25%
+
+Example tokenizations:
+
+  नेपालको राजधानी काठमाडौं हो।
+  -> 5 tokens, 5.6 chars/token
+  -> ▁नेपालको | ▁राजधानी | ▁काठमाडौं | ▁हो | ।
+
+  उनले २०२४ मा पोखराबाट काठमाडौंसम्म यात्रा गरे।
+  -> 10 tokens, 4.6 chars/token
+  -> ▁उनले | ▁२०२४ | ▁मा | ▁पोखरा | बाट | ▁काठमाडौं | सम्म | ▁यात्रा | ▁गरे | ।
+
+  विद्यार्थीहरूले पुस्तकालयबाट किताब लिए।
+  -> 6 tokens, 6.5 chars/token
+  -> ▁विद्यार्थीहरूले | ▁पुस्तकालय | बाट | ▁किताब | ▁लिए | ।
+
+  यस अनुसन्धान पत्रमा भाषाशास्त्रीय विश्लेषण प्रस्तुत गरिएको छ।
+  -> 11 tokens, 5.55 chars/token
+  -> ▁यस | ▁अनुसन्धान | ▁पत्रमा | ▁भाषा | शास्त्र | ीय | ▁विश्लेषण | ▁प्रस्तुत | ▁गरिएको | ▁छ | ।
+
+  घर, घरमा, घरहरूमा, घरहरूबाट - एउटै मूल शब्दका विभिन्न रूप।
+  -> 17 tokens, 3.41 chars/token
+  -> ▁घर | , | ▁घरमा | , | ▁घर | हरूमा | , | ▁घर | हरूबाट | ▁- | ▁एउटै | ▁मूल | ▁शब्द | का | ▁विभिन्न | ▁रूप | ।
+
+Compression by source register (chars/token):
+  edukhabar                 5.043
+  arthasarokar              5.026
+  reportersnepal_html       5.008
+  annapurnapost             4.966
+  sancharkendra             4.952
+  nepalpress_html           4.929
+  nepalkhoj                 4.926
+  nepalilink                4.924
+  khabarhub_html            4.856
+  clickmandu_html           4.854
+  onlinekhabar              4.845
+  bizmandu                  4.741
+  hamrakura                 4.700
+  ai4bharat_sangraha        4.692
+  nagariknetwork            4.644
+  swasthyakhabar            4.615
+  krishisanjal              4.441
+  filmykhabar               4.285
+  nepalisahityaghar         3.987
+  aakarpost                 3.930
+  offlinethinker            3.799
+  sahityasangraha_html      3.652
+
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/phase1/json/tokenizer_stats.json
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/phase1/tokenizer_report.md
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/phase1/json/tokenizer_stats_frequency_curve.json  (Zipf curve data for the figure)
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/phase1/figures/tokenizer_frequency.png
+saved -> /Users/hardikkothari/Music/sem_3/LMA/project-1/individual-project-kotharihardik/nepali/../report/nepali/phase1/figures/tokenizer_piece_length.png
