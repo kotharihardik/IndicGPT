@@ -11,7 +11,7 @@ scratch:
 The two models share no data, no tokenizer, no vocabulary and no weights. Each
 language lives in its own top-level directory and can be run on its own.
 
-> **📦 Corpus download (raw + preprocessed, both languages, ~26 GB):**
+> **Corpus download** (raw + preprocessed, both languages):
 > <https://iiithydstudents-my.sharepoint.com/:f:/g/personal/hardik_k_students_iiit_ac_in/IgDZ46BkCoOhT74gAOPIOBrCAVnN7uIm5sKRY9rQiqDukj0?e=0hlbPM>
 >
 > Plain readable `.jsonl` — no archives to unpack. Tokenizer models and
