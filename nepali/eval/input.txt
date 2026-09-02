@@ -1,0 +1,10 @@
+# Prompts for eval/infer.py — one per line.
+# Blank lines and lines starting with # are ignored.
+# Run:  cd nepali && python3 eval/infer.py --input eval/input.txt
+# Results are written beside this file as input_output.md
+
+काठमाडौंमा आज बिहान भारी वर्षा भयो र
+नेपाल सरकारले २०८१ सालको बजेटमा शिक्षा र स्वास्थ्य क्षेत्रका लागि
+नेपाली साहित्यको इतिहासमा सबैभन्दा महत्त्वपूर्ण
+यस अनुसन्धानपत्रमा लेखकले भाषाशास्त्रीय दृष्टिकोणबाट
+खेलकुदको क्षेत्रमा नेपालले पछिल्लो दशकमा
