@@ -1,15 +1,14 @@
 """Loss curves and throughput from a run's metrics.jsonl.
 
-The trainer appends one JSON object per logged step, so the plotting here is
-pure reading and drawing - no numbers are recomputed, which is what keeps the
-figures and the tables consistent with each other.
+The trainer appends one JSON object per logged step, so this script only reads
+and draws. Nothing is recomputed, which keeps the figures and the report tables
+consistent.
 
-Three figures:
+Two figures:
 
     loss_curve.png        training and validation loss against tokens seen
-    perplexity_curve.png  the same on a perplexity axis, which is easier to read
     schedule.png          learning rate and gradient norm, the two things to
-                          look at first when a run misbehaves
+                          check first when a run misbehaves
 
     python3 train/plot_curves.py
     python3 train/plot_curves.py --run-name gujarati-25m
@@ -19,7 +18,6 @@ from __future__ import annotations
 
 import argparse
 import json
-import math
 import shutil
 import sys
 from pathlib import Path
@@ -70,29 +68,6 @@ def plot_loss(rows: Dict[str, List[Dict]], path: Path) -> None:
     fig.savefig(path, dpi=150)
     plt.close(fig)
 
-
-def plot_perplexity(rows: Dict[str, List[Dict]], path: Path) -> None:
-    """The same curves as perplexity, on a log axis."""
-    import matplotlib
-    matplotlib.use("Agg")
-    import matplotlib.pyplot as plt
-
-    fig, ax = plt.subplots(figsize=(8, 5))
-    train, val = rows["train"], rows["validation"]
-    ax.semilogy([r["tokens"] / 1e6 for r in train],
-                [math.exp(min(r["loss"], 20)) for r in train],
-                color=COLOUR, linewidth=1.0, alpha=0.75, label="Training perplexity")
-    ax.semilogy([r["tokens"] / 1e6 for r in val], [r["perplexity"] for r in val],
-                color="#d62728", marker="o", markersize=3, linewidth=1.4,
-                label="Validation perplexity")
-    ax.set_xlabel("Training tokens seen (millions)")
-    ax.set_ylabel("Perplexity (log scale)")
-    ax.set_title(f"{LANGUAGE}: pretraining perplexity")
-    ax.grid(alpha=0.3, which="both")
-    ax.legend()
-    fig.tight_layout()
-    fig.savefig(path, dpi=150)
-    plt.close(fig)
 
 
 def plot_schedule(rows: Dict[str, List[Dict]], path: Path) -> None:
@@ -167,12 +142,12 @@ def main() -> None:
         raise SystemExit(f"{metrics} not found - train the model first")
 
     rows = read_metrics(metrics)
-    # The brief asks for training logs *in the repository*, but train/runs/ is
-    # gitignored (it holds ~300 MB of checkpoints). Copy the small text files
-    # into <language>/logs/pretrain/, alongside the Phase 1 logs, which is where
-    # a run log for this pipeline belongs: logs/collection, logs/preprocessing,
-    # logs/tokenizer and now logs/pretrain.
-    logs = Path(cfg["logs_dir"]) / "pretrain"
+    # The brief asks for training logs in the repository, but train/runs/ is
+    # gitignored because it holds ~300 MB of checkpoints. Copy the small text
+    # files into <language>/logs/pretrain/<run>/, alongside the Phase 1 logs.
+    # One directory per run, named by the config: the 12k and 16k runs write the
+    # same four filenames and would otherwise overwrite each other.
+    logs = Path(cfg["logs_dir"]) / "pretrain" / cfg.get("logs_subdir", "pretrain")
     logs.mkdir(parents=True, exist_ok=True)
     for name in ("metrics.jsonl", "train.log", "config.json", "COMPLETED"):
         source = metrics.parent / name
@@ -182,7 +157,6 @@ def main() -> None:
     figures = Path(cfg["reports_dir"]) / "figures"
     figures.mkdir(parents=True, exist_ok=True)
     plot_loss(rows, figures / "loss_curve.png")
-    plot_perplexity(rows, figures / "perplexity_curve.png")
     plot_schedule(rows, figures / "schedule.png")
 
     summary = summarise(rows)

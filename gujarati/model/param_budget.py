@@ -1,11 +1,11 @@
 """Parameter budget for the Phase 2 decoder-only Transformer.
 
 Phase 1 used this file to price each candidate vocabulary against the ~25M
-target before the model existed. Now the model does exist, so the analytic
-formula is checked against the real thing: `count_params` computes the budget
-from a config, `measured()` builds `DecoderLM` and counts its tensors, and the
-two must agree. That way a number quoted in the report can never drift away
-from the network that was actually trained.
+target before the model existed. The model now exists, so the analytic formula
+is checked against it: `count_params` computes the budget from a config,
+`measured()` builds `DecoderLM` and counts its tensors, and the two must agree.
+A parameter count quoted in the report therefore cannot drift from the network
+that was trained.
 
 For a pre-norm block of width d with h heads, SwiGLU width d_ff and no biases:
 
@@ -18,7 +18,7 @@ and the whole model, with the output head tied to the token embedding:
     vocab d + L (4 d^2 + 3 d d_ff + 4 d) + 2 d
 
 RoPE contributes nothing: it is computed from the position, not learned. A
-learned positional table would add `context x d` on top.
+learned positional table would add `context x d`.
 
     python3 model/param_budget.py            # the configured model
     python3 model/param_budget.py --sweep    # depths affordable per vocabulary
@@ -145,8 +145,8 @@ def sweep(base: ModelConfig) -> None:
     print("  " + "-" * 61)
     for vocab in TCFG.get("sweep_vocab_sizes", [8000, 12000, 16000, 24000, 32000]):
         for d_model in (256, 320, 384, 448):
-            # Keep the SwiGLU width at 8/3 of the model dimension, rounded to a
-            # multiple of 64, so every row is the same architecture rescaled.
+            # SwiGLU width at 8/3 of the model dimension, rounded to a multiple
+            # of 64, so every row is the same architecture rescaled.
             d_ff = int(round(d_model * 8 / 3 / 64)) * 64
             trial = ModelConfig.from_dict({**base.to_dict(), "vocab_size": vocab,
                                            "d_model": d_model, "d_ff": d_ff,
@@ -161,7 +161,7 @@ def sweep(base: ModelConfig) -> None:
                   f"{fmt(counts['non_embedding']):>11}{mark}")
     print("\n  Every token passes through every block but touches exactly one\n"
           "  embedding row, so at a fixed budget depth generally beats a larger\n"
-          "  lookup table - which is why Phase 1 capped the vocabulary at 16,000.")
+          "  lookup table. Phase 1 capped the vocabulary at 16,000 for that reason.")
 
 
 def main() -> None:
@@ -181,7 +181,7 @@ def main() -> None:
     args = ap.parse_args()
 
     # Start from configs/model.yaml so this always prices the real model. The
-    # vocabulary size is whatever the trained tokenizer actually holds.
+    # vocabulary size is whatever the trained tokenizer holds.
     stated = read_yaml(ROOT / "configs" / "model.yaml").get("vocab_size")
     cfg = load_model_config(ROOT, vocab_size=args.vocab or stated)
 

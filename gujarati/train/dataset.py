@@ -41,7 +41,7 @@ class TokenStream:
                 f"{self.path} not found - run train/prepare_data.py first")
         mapped = np.memmap(self.path, dtype=np.uint16, mode="r")
         # A ~1 GB training stream fits in RAM on any machine that can train on
-        # it, and random block access is much cheaper once it is resident.
+        # it, and random block access is much cheaper once resident.
         self.tokens = np.asarray(mapped) if preload else mapped
 
     def __len__(self) -> int:
@@ -76,15 +76,15 @@ def to_batch(window: np.ndarray, device: torch.device
 class BlockSampler:
     """Deterministic shuffled order over non-overlapping training blocks.
 
-    The stream is cut into `n_blocks` windows of `block_size` tokens. Each epoch
-    is a fresh permutation seeded by `seed + epoch`, so:
+    The stream is cut into `n_blocks` windows of `block_size` tokens, and each
+    epoch is a fresh permutation seeded by `seed + epoch`. Three properties
+    follow:
 
-      - one epoch covers every token exactly once (no random-offset resampling,
-        which would over-visit some spans and skip others);
-      - a run that stops at step 4,200 and restarts continues with the same
-        blocks in the same order, because the order is a pure function of the
-        seed and the step;
-      - two runs with the same seed see identical data, which is what makes a
+      - one epoch covers every token exactly once, unlike random-offset
+        resampling, which over-visits some spans and skips others;
+      - a run that stops and restarts continues with the same blocks in the same
+        order, because the order is a function of the seed and the step alone;
+      - two runs with the same seed see identical data, which is what makes the
         comparison between the two languages meaningful.
     """
 
@@ -124,19 +124,18 @@ def sequential_windows(stream: TokenStream, block_size: int, batch_size: int,
                        ) -> Iterator[np.ndarray]:
     """Walk the split in non-overlapping windows, front to back.
 
-    With `max_windows` unset - the default, and what every reported metric uses -
-    this covers the entire split: every token except a final remainder shorter
+    With `max_windows` unset - the default, and what every reported metric uses
+    - this covers the entire split: every token except a final remainder shorter
     than one window is predicted exactly once. Each window starts with no left
-    context, which is the standard non-overlapping evaluation. A sliding window
-    would report a slightly lower perplexity by giving early positions more
-    history; this is the cheaper and more common convention, and it is applied
-    identically to both models.
+    context, the standard non-overlapping evaluation. A sliding window would
+    report a slightly lower perplexity by giving early positions more history;
+    this convention is cheaper, more common, and applied identically to both
+    models.
 
-    With `max_windows` set, the windows are spread **evenly across the whole
-    split** rather than taken from the front. That matters here: Phase 1 writes
-    manual sources first, so the head of every split file is manual text with no
-    public documents in it at all. Reading the first N windows would evaluate
-    one register and call it the validation loss.
+    With `max_windows` set, the windows are spread evenly across the whole split
+    rather than taken from the front. Phase 1 writes manual sources first, so
+    the head of every split file is manual text with no public documents in it;
+    reading the first N windows would evaluate one register only.
     """
     total = (len(stream) - 1) // block_size
     if max_windows and max_windows < total:

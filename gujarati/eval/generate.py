@@ -14,9 +14,9 @@ That is the fair target: it is what the model would have produced had it
 predicted perfectly, so the score measures the model rather than the tokenizer's
 round trip.
 
-Four settings are reported, as the brief asks: greedy, and sampling at
-temperature 0.5, 1.0 and 1.5. Greedy is deterministic; the sampled ones use a
-fixed seed so the numbers reproduce.
+Four settings are reported: greedy, and sampling at temperature 0.5, 1.0 and
+1.5. Greedy is deterministic; the sampled settings use a fixed seed so the
+numbers reproduce.
 
     python3 eval/generate.py
     python3 eval/generate.py --prompts 32 --continuation-tokens 64   # quick
@@ -25,7 +25,6 @@ fixed seed so the numbers reproduce.
 from __future__ import annotations
 
 import argparse
-import json
 import sys
 import time
 from pathlib import Path
@@ -36,7 +35,7 @@ import torch
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "data"))
 from common import (LANGUAGE, PIPELINE, add_common_args, eval_config,  # noqa: E402
-                    load_model, load_tokenizer, pick_device, report_dir,
+                    load_model, load_tokenizer, pick_device,
                     resolve_checkpoint, save_json)
 from corpus_io import read_docs, split_file  # noqa: E402
 from dataset import load_meta  # noqa: E402
@@ -48,8 +47,8 @@ def collect_prompts(cfg: Dict, split: str, sp, prefix_tokens: int,
     """Cut held-out documents into (prompt, reference) pairs.
 
     Documents are taken at a stride through the split rather than from the
-    front, because the split is written manual sources first: reading the first
-    N documents would evaluate on one register only.
+    front: the split is written manual sources first, so the first N documents
+    would cover one register only.
     """
     path = split_file(PIPELINE["paths"]["splits"], split)
     needed = prefix_tokens + continuation_tokens
@@ -130,7 +129,7 @@ def quote(text: str) -> str:
     """Render generated text as a markdown blockquote.
 
     Continuations often contain paragraph breaks, which would otherwise end the
-    block and scramble the layout of the samples file.
+    block and break the layout of the samples file.
     """
     body = text.strip() or "(empty)"
     return "\n".join("> " + line if line else ">" for line in body.split("\n"))
@@ -215,13 +214,6 @@ def main() -> None:
     path = Path(cfg["reports_dir"]) / "samples.md"
     path.write_text(md, encoding="utf-8")
     print(f"  wrote {path}")
-
-    raw = report_dir(cfg, "json") / f"{args.out}_outputs.json"
-    raw.write_text(json.dumps(
-        {name: {"outputs": blob["outputs"], "references": blob["references"]}
-         for name, blob in results.items()}, indent=2, ensure_ascii=False),
-        encoding="utf-8")
-    print(f"  wrote {raw}")
 
 
 if __name__ == "__main__":

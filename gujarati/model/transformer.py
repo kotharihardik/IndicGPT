@@ -2,8 +2,7 @@
 
 Nothing pre-built is used: no `nn.Transformer*`, no HuggingFace classes and no
 `F.scaled_dot_product_attention`. Attention, the causal mask and the positional
-scheme are all spelled out here, so every tensor operation in the forward pass
-is visible and explainable.
+scheme are written out here.
 
 Shape names used throughout:
 
@@ -14,7 +13,7 @@ Shape names used throughout:
     dk  head dimension, `C // h`
     V   vocabulary size
 
-The forward pass follows the Phase 2 brief in order:
+Forward pass:
 
     ids -> token embedding -> embedding dropout
         -> N x [ LayerNorm -> causal self-attention -> + residual
@@ -22,8 +21,8 @@ The forward pass follows the Phase 2 brief in order:
         -> final LayerNorm -> tied output projection -> logits
         -> cross-entropy against the next token
 
-Positions are injected with RoPE rather than a learned table; the reasoning is
-in `RotaryPositionalEmbedding`.
+Positions are injected with RoPE rather than a learned table; see
+`RotaryPositionalEmbedding`.
 """
 
 from __future__ import annotations
@@ -117,23 +116,20 @@ class ModelConfig:
 class RotaryPositionalEmbedding(nn.Module):
     """RoPE: rotate queries and keys by an angle proportional to position.
 
-    Why this and not a learned table. A learned positional embedding is a
-    `context_length x d_model` matrix, so the model can only ever see positions
-    it was trained on - the table simply has no row for position 600 if it was
-    trained at 512. RoPE stores no positions at all: it rotates each (even, odd)
-    pair of a head's channels by `position * frequency`, and because the dot
-    product of two rotated vectors depends only on the *difference* of their
-    angles, attention becomes a function of relative distance. Two consequences
-    matter here:
+    Each (even, odd) pair of a head's channels is rotated by
+    `position * frequency`. The dot product of two rotated vectors depends only
+    on the *difference* of their angles, so attention becomes a function of
+    relative distance.
 
-      - it costs zero parameters, which at a ~25M budget buys back the
-        `512 x 384 = 196,608` a learned table would have spent;
-      - the sequence length is not hard-limited by a table size. The cached
-        cosines below are built for `max_seq_len`, but that cache can be rebuilt
-        for any longer length, so evaluating beyond the training context is a
-        matter of quality degradation rather than an index error.
+    Chosen over a learned table for two reasons:
 
-    The rotation is applied to Q and K only. V carries content, not position.
+      - it costs zero parameters, against the `512 x 384 = 196,608` a learned
+        table would spend out of a ~25M budget;
+      - the sequence length is not fixed by a table size. The cached cosines
+        below are built for `max_seq_len` and rebuilt for any longer length, so
+        going past the training context degrades quality rather than raising.
+
+    The rotation is applied to Q and K only; V carries content, not position.
     """
 
     def __init__(self, head_dim: int, max_seq_len: int, theta: float = 10000.0) -> None:
@@ -180,12 +176,9 @@ class RotaryPositionalEmbedding(nn.Module):
         cos = cos[offset:offset + seq_len].unsqueeze(0).unsqueeze(0)   # (1,1,T,dk/2)
         sin = sin[offset:offset + seq_len].unsqueeze(0).unsqueeze(0)
 
-        # The rotation itself runs in float32 and the result is cast back. Under
-        # fp16 autocast a float16 rotation costs about 1e-3 of relative accuracy,
-        # which is fp16's mantissa rather than a bug - but the angles are exact
-        # in float32 and this is elementwise work next to two large matmuls, so
-        # the accuracy is free. The output is cast back so the attention matmul
-        # still runs on tensor cores.
+        # Rotate in float32 and cast back: the angles are exact in float32, and
+        # this is cheap elementwise work next to two large matmuls. Casting back
+        # keeps the attention matmul on tensor cores.
         # Split-half convention: channel i pairs with channel i + dk/2.
         x1, x2 = x.float().chunk(2, dim=-1)                            # (B,h,T,dk/2)
         rotated = torch.cat([x1 * cos - x2 * sin, x2 * cos + x1 * sin], dim=-1)
@@ -209,10 +202,9 @@ def sinusoidal_table(seq_len: int, d_model: int) -> torch.Tensor:
 class CausalSelfAttention(nn.Module):
     """Multi-head causal self-attention, written out operation by operation.
 
-    Q, K and V come from three separate projections, matching `Q = X W_Q`
-    exactly. A single fused `Linear(C, 3C)` would be arithmetically identical
-    and marginally faster, but three matrices keep the mapping to the formula
-    obvious.
+    Q, K and V come from three separate projections, matching `Q = X W_Q`. A
+    fused `Linear(C, 3C)` would be arithmetically identical and marginally
+    faster; three matrices keep the mapping to the formula clear.
     """
 
     def __init__(self, cfg: ModelConfig) -> None:
@@ -243,10 +235,10 @@ class CausalSelfAttention(nn.Module):
     def _causal_mask(self, seq_len: int, device) -> torch.Tensor:
         """Additive mask for a window of `seq_len` tokens.
 
-        Queries and keys are the same tokens here - there is no key/value cache -
-        so the mask is the plain upper triangle. `offset` shifts the RoPE phase
-        but not this, because a token's position in the wider sequence does not
-        change which of its neighbours it may look at.
+        Queries and keys are the same tokens (there is no key/value cache), so
+        the mask is the plain upper triangle. `offset` shifts the RoPE phase but
+        not this: a token's position in the wider sequence does not change which
+        of its neighbours it may attend to.
         """
         if seq_len > self.mask.shape[0]:
             full = torch.full((seq_len, seq_len), float("-inf"), device=device)
@@ -284,8 +276,8 @@ class CausalSelfAttention(nn.Module):
         # much query t wants key s in head i.
         scores = torch.matmul(q, k.transpose(-2, -1)) * self.scale
 
-        # Mask, then softmax in float32. Softmax is where fp16 loses accuracy
-        # first, and the mask is exactly representable in float32.
+        # Mask, then softmax in float32: softmax is where fp16 loses accuracy
+        # first.
         scores = scores.float() + self._causal_mask(T, x.device)
         weights = torch.softmax(scores, dim=-1).to(v.dtype)
 
@@ -304,15 +296,15 @@ class CausalSelfAttention(nn.Module):
 class FeedForward(nn.Module):
     """Position-wise feed-forward network: the same MLP applied at every token.
 
-    Two variants, both at the same parameter cost:
+    Two variants:
 
         gelu    d -> d_ff -> d           2 * d * d_ff weights
         swiglu  d -> d_ff (x2) -> d      3 * d * d_ff weights
 
-    so `d_ff = 1024` under SwiGLU costs exactly what `d_ff = 1536` costs under
-    GELU at `d_model = 384`. SwiGLU is the default because the gate lets the
-    network suppress a channel multiplicatively rather than only through the
-    non-linearity, which is consistently a little better at equal size.
+    so `d_ff = 1024` under SwiGLU costs what `d_ff = 1536` costs under GELU at
+    `d_model = 384`. SwiGLU is the default: the gate can suppress a channel
+    multiplicatively rather than only through the non-linearity, which is
+    consistently a little better at equal size.
     """
 
     def __init__(self, cfg: ModelConfig) -> None:
@@ -341,15 +333,14 @@ class FeedForward(nn.Module):
 class TransformerBlock(nn.Module):
     """One pre-norm decoder block: attention sublayer, then feed-forward.
 
-    Pre-norm means the LayerNorm sits *inside* each residual branch:
+    Pre-norm places the LayerNorm *inside* each residual branch:
 
         x = x + Attn(LN(x));  x = x + FFN(LN(x))
 
-    so the residual stream itself is never normalised and there is an unbroken
+    The residual stream is therefore never normalised and there is an unbroken
     identity path from the embedding to the output head. Post-norm puts a
-    LayerNorm on that path, which rescales the gradient at every one of the 11
-    layers and needs a warmup to train at all. Pre-norm trains stably without
-    that, which is why it is the standard for deep stacks.
+    LayerNorm on that path, rescaling the gradient at every layer, and needs a
+    long warmup to train a stack this deep.
     """
 
     def __init__(self, cfg: ModelConfig) -> None:
@@ -377,10 +368,9 @@ class DecoderLM(nn.Module):
     """The full decoder-only language model.
 
     Weight tying: the output projection reuses the token-embedding matrix
-    instead of holding its own `V x C`. At `V = 16,000` and `C = 384` that is
-    6.14M parameters saved - a quarter of the 25M budget - and it is also
-    principled: the row that represents a token on the way in is the same
-    vector the model scores it against on the way out.
+    instead of holding its own `V x C`. At `V = 16,000` and `C = 384` that saves
+    6.14M parameters, a quarter of the 25M budget, and the row representing a
+    token on the way in is the same vector it is scored against on the way out.
     """
 
     def __init__(self, cfg: ModelConfig) -> None:
@@ -407,8 +397,8 @@ class DecoderLM(nn.Module):
 
         self.apply(self._init_weights)
         # Residual branches are summed `2 * n_layers` times into one stream, so
-        # their output projections start smaller to keep that sum's variance
-        # from growing with depth (GPT-2's scaled initialisation).
+        # their output projections start smaller to keep the variance of that
+        # sum from growing with depth (GPT-2's scaled initialisation).
         scale = self.cfg.init_std / math.sqrt(2 * cfg.n_layers)
         for name, param in self.named_parameters():
             if name.endswith("o_proj.weight") or name.endswith("down_proj.weight"):
@@ -530,8 +520,8 @@ class DecoderLM(nn.Module):
                 nxt = torch.multinomial(torch.softmax(step, dim=-1), num_samples=1)
 
             if eos_id is not None:
-                # A finished row keeps emitting the stop token, so the tensor
-                # stays rectangular and the extra tokens are trivial to trim.
+                # A finished row keeps emitting the stop token, so the batch
+                # stays rectangular and the extra tokens are easy to trim.
                 nxt = torch.where(finished.unsqueeze(1),
                                   torch.full_like(nxt, eos_id), nxt)
                 finished |= nxt.squeeze(1) == eos_id
@@ -552,10 +542,10 @@ def build_model(cfg: ModelConfig) -> DecoderLM:
 def _self_test(vocab_size: int = 512, verbose: bool = True) -> bool:
     """Check the properties that make this a correct causal Transformer.
 
-    Fast enough to run before every training job, and it catches the mistakes
-    that are otherwise invisible: a positional scheme that is not relative,
-    attention that does not normalise, a mask that leaks, or an initialisation
-    so far off that the first loss is meaningless.
+    Fast enough to run before every training job. It catches the failures that
+    are otherwise invisible: a positional scheme that is not relative, attention
+    that does not normalise, a mask that leaks, or an initialisation far enough
+    off that the first loss is meaningless.
     """
     ok = True
 
@@ -568,7 +558,7 @@ def _self_test(vocab_size: int = 512, verbose: bool = True) -> bool:
     torch.manual_seed(0)
 
     # 1. RoPE is relative: the score between positions m and n must depend only
-    #    on m - n, which is the entire justification for using it.
+    #    on m - n, which is the reason for using it.
     rope = RotaryPositionalEmbedding(64, 512)
     q, k = torch.randn(1, 1, 1, 64), torch.randn(1, 1, 1, 64)
 
@@ -601,9 +591,8 @@ def _self_test(vocab_size: int = 512, verbose: bool = True) -> bool:
     check("no weight above the diagonal",
           float(attn[-1].triu(1).abs().max()) == 0.0)
 
-    # 3. An untrained model should be near-uniform over the vocabulary, so the
-    #    first loss should sit close to ln(V). Far from it means the
-    #    initialisation is wrong.
+    # 3. An untrained model is near-uniform over the vocabulary, so the first
+    #    loss should sit close to ln(V). Far from it means a bad initialisation.
     expected = math.log(vocab_size)
     check("initial loss near ln(vocab)", abs(float(loss) - expected) < 1.0,
           f"{float(loss):.2f} vs {expected:.2f}")

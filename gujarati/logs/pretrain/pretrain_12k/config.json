@@ -1,0 +1,117 @@
+{
+  "language": "guj",
+  "language_name": "Gujarati",
+  "run_name": "gujarati-25m-12k",
+  "model_config": {
+    "vocab_size": 12000,
+    "d_model": 384,
+    "n_layers": 12,
+    "n_heads": 6,
+    "d_ff": 1024,
+    "context_length": 512,
+    "dropout": 0.0,
+    "attn_dropout": 0.0,
+    "positional": "rope",
+    "rope_theta": 10000.0,
+    "ffn_activation": "swiglu",
+    "norm_eps": 1e-05,
+    "tie_embeddings": true,
+    "bias": false,
+    "init_std": 0.02,
+    "pad_id": 0,
+    "unk_id": 1,
+    "bos_id": 2,
+    "eos_id": 3
+  },
+  "train_config": {
+    "run_name": "gujarati-25m-12k",
+    "paths_note": "paths are relative to the gujarati/ directory",
+    "tokenizer_model": "/kaggle/working/repo/gujarati/tokenizer/model/sweep/12k_unigram_guj.model",
+    "data_dir": "/kaggle/working/repo/gujarati/data/tokenized_12k",
+    "runs_dir": "/kaggle/working/runs",
+    "reports_dir": "/kaggle/working/repo/report/phase2/gujarati_12k",
+    "logs_subdir": "pretrain_12k",
+    "seed": 1337,
+    "micro_batch_size": 32,
+    "gradient_accumulation_steps": 2,
+    "epochs": 1.0,
+    "max_steps": null,
+    "learning_rate": 0.0006,
+    "min_lr": 6e-05,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.1,
+    "grad_clip": 1.0,
+    "warmup_steps": 500,
+    "precision": "auto",
+    "eval_interval": 500,
+    "eval_windows": 512,
+    "log_interval": 20,
+    "checkpoint_interval": 1000,
+    "keep_checkpoints": 2,
+    "preload_train": true
+  },
+  "parameters": {
+    "total": 25860864,
+    "non_embedding": 21252864
+  },
+  "data": {
+    "dir": "/kaggle/working/tokenized/gujarati_12k",
+    "meta": {
+      "language": "guj",
+      "tokenizer": "tokenizer/model/sweep/12k_unigram_guj.model",
+      "vocab_size": 12000,
+      "dtype": "uint16",
+      "document_wrapping": "<s> text </s>",
+      "special_ids": {
+        "pad": 0,
+        "unk": 1,
+        "bos": 2,
+        "eos": 3
+      },
+      "splits": {
+        "train": {
+          "docs": 747765,
+          "content_tokens": 536492422,
+          "special_tokens": 1495530,
+          "chars": 1951290045,
+          "bytes": 5086069749,
+          "tokens": 537987952,
+          "seconds": 263.7,
+          "bin": "train.bin",
+          "bytes_on_disk": 1075975904
+        },
+        "validation": {
+          "docs": 41171,
+          "content_tokens": 29480929,
+          "special_tokens": 82342,
+          "chars": 107259317,
+          "bytes": 279545306,
+          "tokens": 29563271,
+          "seconds": 14.9,
+          "bin": "validation.bin",
+          "bytes_on_disk": 59126542
+        },
+        "test": {
+          "docs": 41474,
+          "content_tokens": 29197873,
+          "special_tokens": 82948,
+          "chars": 106866797,
+          "bytes": 278636172,
+          "tokens": 29280821,
+          "seconds": 14.8,
+          "bin": "test.bin",
+          "bytes_on_disk": 58561642
+        }
+      }
+    }
+  },
+  "max_steps": 16418,
+  "tokens_per_step": 32768,
+  "device": "cuda",
+  "torch": "2.10.0+cu128",
+  "started": "2026-09-03T17:41:56"
+}

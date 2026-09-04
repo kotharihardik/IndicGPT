@@ -4,9 +4,9 @@
     python3 eval/run_eval.py --quick         # a small version, for a smoke test
     python3 eval/run_eval.py --only perplexity attention
 
-Each stage is a separate script and is run as its own process, so one failing
-stage cannot leave a half-written result behind in another, and any stage can be
-re-run on its own afterwards. Everything lands in `report/phase2/<language>/`.
+Each stage runs as its own process, so a failure in one cannot leave a
+half-written result in another and any stage can be re-run on its own. All
+output lands in the run's report directory.
 """
 
 from __future__ import annotations
@@ -80,10 +80,9 @@ def main() -> None:
         else:
             if args.checkpoint:
                 extra += ["--checkpoint", args.checkpoint]
-            # causal_check keeps its own default of cpu. Three of its four tests
-            # compare values for EXACT equality, and it runs on one 64-token
-            # sequence, so there is nothing to gain from a GPU and something to
-            # lose if a fused kernel ever reorders a reduction.
+            # causal_check keeps its own cpu default: three of its four tests
+            # compare values for exact equality, and a fused GPU kernel that
+            # reorders a reduction could change the result.
             if name != "causal_check":
                 extra += ["--device", args.device]
             for flag in ("data_dir", "runs_dir", "run_name", "reports_dir"):

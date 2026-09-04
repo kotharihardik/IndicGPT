@@ -1,7 +1,7 @@
 # Prompts for eval/infer.py — one per line.
 # Blank lines and lines starting with # are ignored.
 # Run:  cd gujarati && python3 eval/infer.py --input eval/input.txt
-# Results are written beside this file as input_output.md
+# Output is appended to manual_samples.md in the report directory
 
 અમદાવાદ શહેરમાં આજે સવારે ભારે વરસાદ પડ્યો હતો અને
 ગુજરાત સરકારે ૨૦૨૪ના શૈક્ષણિક વર્ષથી રાજ્યની તમામ પ્રાથમિક શાળાઓમાં

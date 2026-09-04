@@ -1,46 +1,26 @@
-"""Generate text from a trained checkpoint - the hands-on way to try the model.
+"""Generate text from a trained checkpoint, one prompt at a time.
 
-`eval/generate.py` scores 200 held-out prompts under four decoding settings and
-writes a metrics file. This is the other thing you want: type a prompt, read
-what the model says.
+`eval/generate.py` scores 200 held-out prompts and writes metrics. This script
+is for reading the output by hand.
 
     python3 eval/infer.py --prompt "ગુજરાત સરકારે"
     python3 eval/infer.py --prompt "..." --temperature 0.8 --samples 3
-    python3 eval/infer.py --greedy --max-new-tokens 200
-    python3 eval/infer.py                      # interactive; blank line or Ctrl-D quits
-                                               # type /new to start a fresh document
-    python3 eval/infer.py --input eval/input.txt               # a file of prompts
-    python3 eval/infer.py --prompt "..." --out my_tests.md     # append elsewhere
-    python3 eval/infer.py --prompt "..." --no-save             # print only
+    python3 eval/infer.py --input eval/input.txt      # a file of prompts
+    python3 eval/infer.py                             # interactive; Ctrl-D quits
 
-Every prompt and continuation is appended to
-`report/phase2/<language>/manual_samples.md` unless `--no-save` is given, so a
-session of hand-written prompts becomes a readable record next to the automated
-samples in `samples.md`. With `--input prompts.txt` the results go next to the
-prompts instead, as `prompts_output.md`.
+Output is appended to `manual_samples.md` in the run's report directory (set by
+`reports_dir` in `configs/eval.yaml`) unless `--no-save` is given. Read it from
+the file rather than the terminal: terminals use one fixed-width cell per
+character and do not shape complex scripts, so Gujarati matras and Devanagari
+conjuncts appear misplaced on screen. The text itself is correct.
 
-Writing to a file is also the practical way to *read* the output: terminal
-emulators lay out one character per fixed-width cell and mostly do not shape
-complex scripts, so Gujarati matras and Devanagari conjuncts land in the wrong
-place or come out as boxes. The text is correct either way - any editor or
-markdown viewer renders it properly.
+With no prompt the model continues from `<s>`, the document-start token, so it
+writes an opening rather than continuing a fragment.
 
-With no prompt the model continues from `<s>`, the document-start token it saw
-in training, so it writes an opening rather than continuing a fragment.
-
-Decoding notes, because the settings change the character of the output:
-
-    --greedy            always the most likely token. Deterministic, and it
-                        loops: a small model falls into a repeated phrase within
-                        a sentence or two. Useful for seeing what the model is
-                        most confident about, not for reading.
-    --temperature 0.5   sharpened. Fluent and safe, still repetitive.
-    --temperature 1.0   the model's own distribution. On these two models this
-                        is where the output reads best - it matched the held-out
-                        text's own Distinct-2 in evaluation.
-    --temperature 1.5   flattened. Drifts into word salad.
-    --top-k 40          keep only the k most likely tokens each step. Cuts the
-                        long tail that produces nonsense at high temperature.
+Decoding settings: `--greedy` is deterministic and repeats itself, temperature
+0.5 is fluent but still repetitive, 1.0 reads best on these models, and 1.5
+drifts. `--top-k` trims the long tail that produces nonsense at high
+temperature.
 """
 
 from __future__ import annotations
@@ -82,9 +62,7 @@ def read_prompts(path: Path) -> list:
     """Read prompts from a text file, one per line.
 
     Blank lines and lines starting with `#` are skipped, so the file can carry
-    notes about what is being tried. Everything else is taken literally,
-    including trailing punctuation - the model continues exactly what it is
-    given.
+    notes. Everything else is taken literally, trailing punctuation included.
     """
     if not path.exists():
         raise SystemExit(f"{path} not found. Put one prompt per line in it.")
@@ -124,11 +102,9 @@ def quote(text: str) -> str:
 def save(path: Path, prompt: str, texts: list, args, meta: dict) -> None:
     """Append this prompt and its continuations to the session log.
 
-    Appending rather than overwriting: a session is a series of prompts, and
-    the interesting part is usually the comparison between them. The file is
-    markdown for the same reason `samples.md` is - these are the qualitative
-    examples the brief asks for, and they have to be readable next to the
-    metrics rather than parsed out of a log.
+    Appended rather than overwritten, so one session reads as a series of
+    prompts. Markdown, because these are the qualitative examples the brief
+    asks for and they have to be readable alongside the metrics.
     """
     path.parent.mkdir(parents=True, exist_ok=True)
     if not path.exists():
@@ -169,11 +145,10 @@ def main() -> None:
     ap.add_argument("--seed", type=int, default=None,
                     help="fix the sampling seed to make a run reproducible")
     ap.add_argument("--input", default=None,
-                    help="a text file of prompts, one per line; results are "
-                         "written beside it as <name>_output.md")
+                    help="a text file of prompts, one per line")
     ap.add_argument("--out", default=None,
-                    help="file to append prompts and continuations to (default: "
-                         "beside --input, else <reports_dir>/manual_samples.md)")
+                    help="file to append prompts and continuations to "
+                         "(default: <reports_dir>/manual_samples.md)")
     ap.add_argument("--no-save", action="store_true",
                     help="print only, write nothing")
     args = ap.parse_args()
@@ -189,11 +164,10 @@ def main() -> None:
     if args.seed is not None:
         torch.manual_seed(args.seed)
 
-    # With --input the results belong next to the prompts that produced them,
-    # so the two files can be read side by side.
+    # Output always goes to the report directory, never beside the prompts:
+    # generated text is a report artifact and does not belong in eval/.
     source = Path(args.input) if args.input else None
-    default_out = (source.with_name(source.stem + "_output.md") if source
-                   else Path(cfg["reports_dir"]) / "manual_samples.md")
+    default_out = Path(cfg["reports_dir"]) / "manual_samples.md"
     out = None if args.no_save else Path(args.out or default_out)
     record = {"checkpoint": checkpoint.name, "step": meta["state"]["step"]}
     if out:

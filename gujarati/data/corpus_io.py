@@ -158,13 +158,51 @@ class JsonlWriter:
         self.close()
 
 
-def read_docs(path: Path, limit: Optional[int] = None) -> Iterator[Document]:
-    """Stream documents from a `.jsonl.gz` file or a directory of them."""
+def open_jsonl(path: Path):
+    """Open a corpus shard, gzipped or not, as a text stream.
+
+    Both forms turn up in practice. The pipeline writes `.jsonl.gz`, but a
+    hosting platform that unpacks an uploaded archive will often decompress the
+    members too, leaving plain `.jsonl` on disk. Reading either is a two-line
+    difference; re-compressing several gigabytes to satisfy a suffix is not.
+    """
     path = Path(path)
-    files = sorted(path.rglob("*.jsonl.gz")) if path.is_dir() else [path]
+    if path.suffix == ".gz":
+        return gzip.open(path, "rt", encoding="utf-8")
+    return open(path, "rt", encoding="utf-8")
+
+
+def jsonl_shards(directory: Path) -> List[Path]:
+    """Every corpus shard in a directory, gzipped or plain, each counted once.
+
+    When both `train.jsonl.gz` and `train.jsonl` exist the gzipped one wins, so
+    a half-finished decompression cannot make the corpus be read twice.
+    """
+    directory = Path(directory)
+    chosen: Dict[tuple, Path] = {}
+    for shard in sorted(directory.rglob("*.jsonl.gz")) + sorted(directory.rglob("*.jsonl")):
+        stem = shard.name[:-3] if shard.name.endswith(".gz") else shard.name
+        chosen.setdefault((str(shard.parent), stem), shard)
+    return [chosen[key] for key in sorted(chosen)]
+
+
+def split_file(directory: Path, split: str) -> Path:
+    """Path to one split, accepting `<split>.jsonl.gz` or `<split>.jsonl`."""
+    for suffix in (".jsonl.gz", ".jsonl"):
+        candidate = Path(directory) / f"{split}{suffix}"
+        if candidate.exists():
+            return candidate
+    raise FileNotFoundError(
+        f"no {split}.jsonl.gz or {split}.jsonl in {directory}")
+
+
+def read_docs(path: Path, limit: Optional[int] = None) -> Iterator[Document]:
+    """Stream documents from a JSONL shard, or a directory of them."""
+    path = Path(path)
+    files = jsonl_shards(path) if path.is_dir() else [path]
     n = 0
     for f in files:
-        with gzip.open(f, "rt", encoding="utf-8") as fh:
+        with open_jsonl(f) as fh:
             for line in fh:
                 line = line.strip()
                 if not line:

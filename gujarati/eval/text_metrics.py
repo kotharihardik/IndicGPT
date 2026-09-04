@@ -45,14 +45,13 @@ def _is_word_char(ch: str) -> bool:
 
 
 def tokenize_words(text: str) -> List[str]:
-    """Split text into word tokens, with punctuation separated into its own.
+    """Split text into word tokens, with punctuation as separate tokens.
 
-    This is the standard `13a` BLEU tokenizer's behaviour extended to Unicode:
+    The standard `13a` BLEU tokenizer's behaviour extended to Unicode:
     punctuation is detached from the words it touches, but a combining mark
-    stays with its consonant. Detaching the danda (`.`/`|`) is the one place it
-    goes further than `13a`, which only knows about ASCII punctuation; for
-    Gujarati and Nepali that is the correct reading, since the danda is sentence
-    punctuation exactly as a full stop is.
+    stays with its consonant. It goes beyond `13a` in detaching the danda,
+    which `13a` does not know about and which is sentence punctuation in both
+    of these scripts exactly as a full stop is.
     """
     tokens: List[str] = []
     buffer: List[str] = []
@@ -152,19 +151,17 @@ def corpus_chrf(hypotheses: Sequence[str], references: Sequence[str],
                 beta: float = 2.0) -> Dict[str, float]:
     """Corpus-level chrF++ : character n-grams plus short word n-grams.
 
-    chrF is the natural metric for the two languages here. Gujarati and Nepali
-    are both heavily inflected, so a correct stem with the wrong case ending
-    scores zero on word-level BLEU but keeps most of its character n-grams.
-    Setting `word_order = 0` gives plain chrF.
+    chrF suits both languages here: they are heavily inflected, so a correct
+    stem with the wrong case ending scores zero on word-level BLEU but keeps
+    most of its character n-grams. `word_order = 0` gives plain chrF.
 
-    Following Popovic (2015): precision and recall are averaged over the n-gram
-    orders *first*, and one F-score is computed from those two averages. Taking
-    an F-score per order and averaging those instead gives a slightly different
-    and non-standard number.
+    Following Popovic (2015), precision and recall are averaged over the n-gram
+    orders first and one F-score is computed from those averages; an F-score per
+    order, averaged, would be a different and non-standard number.
 
-    Whitespace is removed before taking character n-grams, so a difference in
-    spacing does not count as a difference in content. Beta = 2 weights recall
-    twice as heavily as precision, which is the published default.
+    Whitespace is removed before taking character n-grams, so spacing does not
+    count as content. Beta = 2 weights recall twice as heavily as precision,
+    the published default.
     """
     orders: List[Tuple[str, int]] = ([("char", n) for n in range(1, char_order + 1)]
                                      + [("word", n) for n in range(1, word_order + 1)])
