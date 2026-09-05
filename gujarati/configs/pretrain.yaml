@@ -1,4 +1,4 @@
-# Gujarati (Model H) — Phase 2 pretraining
+# Gujarati (Model H) - Phase 2 pretraining
 #
 # One pass over the tokenized training split: 518.6M tokens, 15,826 steps.
 # The optimizer, schedule, batch size and seed are identical to the other
@@ -52,9 +52,9 @@ max_steps: null
 # matters in a run this short. Weight decay applies to matrices only, see
 # Trainer._build_optimizer.
 learning_rate: 0.0006             # peak, after warmup
-min_lr: 6e-05                     # cosine floor, 10% of peak
+min_lr: 6.0e-05                     # cosine floor, 10% of peak
 betas: [0.9, 0.95]
-eps: 1e-08
+eps: 1.0e-08
 weight_decay: 0.1
 grad_clip: 1.0                    # clip the global gradient norm
 

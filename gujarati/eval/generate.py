@@ -139,12 +139,12 @@ def samples_markdown(prompts: Sequence[Dict], results: Dict[str, Dict], sp,
                      count: int) -> str:
     """Readable side-by-side samples for the report."""
     first = next(iter(results))
-    lines = [f"# {LANGUAGE} — generated continuations", "",
+    lines = [f"# {LANGUAGE} - generated continuations", "",
              "Each block shows one held-out prompt, the true continuation, and "
              "what the model produced under each decoding setting. Prompts come "
              "from the test split, which the model never saw.", ""]
     for i in range(min(count, len(prompts))):
-        lines += [f"## Sample {i + 1} — source `{prompts[i]['source']}`", "",
+        lines += [f"## Sample {i + 1} - source `{prompts[i]['source']}`", "",
                   "**Prompt**", "", quote(sp.decode(prompts[i]["prompt_ids"][1:])), "",
                   "**Reference continuation**", "",
                   quote(results[first]["references"][i]), ""]

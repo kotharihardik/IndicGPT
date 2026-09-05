@@ -1,5 +1,6 @@
 # Phase 1: corpus collection, preprocessing and tokenizer training.
-# Python 3.12.
+# Phase 2: the Transformer, pretraining and evaluation.
+# Python 3.12 (Kaggle runs 3.11; nothing here needs 3.12 specifically).
 
 # config files and the source registries
 pyyaml>=6.0
@@ -25,3 +26,15 @@ sentencepiece>=0.2.0
 # statistics and report figures
 matplotlib>=3.8.0
 numpy>=1.26
+
+# ---- Phase 2 ----
+
+# the model, training and evaluation. Everything else in Phase 2 is standard
+# library: BLEU, chrF++ and ROUGE-L are implemented in eval/text_metrics.py so
+# a hosted GPU worker needs no extra package.
+torch>=2.2
+
+# optional, and only for `python3 eval/text_metrics.py --self-test`: the
+# recorded reference values were produced with it, and the self-test compares
+# against those recorded numbers rather than importing it.
+# sacrebleu>=2.4

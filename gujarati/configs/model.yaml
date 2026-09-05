@@ -1,4 +1,4 @@
-# Gujarati (Model H) — Phase 2 model architecture
+# Gujarati (Model H) - Phase 2 model architecture
 #
 # Decoder-only Transformer, ~25M trainable parameters, implemented in
 # model/transformer.py. vocab_size is read from the tokenizer at build time and
@@ -47,7 +47,7 @@ ffn_activation: swiglu
 # Pre-norm: the LayerNorm sits inside each residual branch, leaving an unbroken
 # identity path from embedding to output head. Post-norm puts a norm on that
 # path and needs a long warmup to train a stack this deep.
-norm_eps: 1e-05
+norm_eps: 1.0e-05
 
 # Tying the output projection to the token embedding saves a second
 # 16,000 x 384 matrix: 6.14M parameters, 24% of the budget.

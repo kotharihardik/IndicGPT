@@ -102,13 +102,20 @@ def plot_schedule(rows: Dict[str, List[Dict]], path: Path) -> None:
 
 
 def summarise(rows: Dict[str, List[Dict]]) -> Dict:
-    """Headline numbers about the run, for the report tables."""
+    """Headline numbers about the run, for the report tables.
+
+    The step and token totals are the maximum over every row, not the last
+    training row: training rows are written every `log_interval` steps, so the
+    final partial interval never produces one and the run's true end is only
+    recorded by the closing validation row.
+    """
     train, val = rows["train"], rows["validation"]
     speeds = [r["tokens_per_second"] for r in train if r.get("tokens_per_second")]
     best = min(val, key=lambda r: r["loss"]) if val else {}
+    every = train + val
     return {
-        "steps": train[-1]["step"] if train else 0,
-        "tokens": train[-1]["tokens"] if train else 0,
+        "steps": max((r["step"] for r in every), default=0),
+        "tokens": max((r["tokens"] for r in every), default=0),
         "final_train_loss": train[-1]["loss"] if train else None,
         "final_val_loss": val[-1]["loss"] if val else None,
         "final_val_perplexity": val[-1]["perplexity"] if val else None,

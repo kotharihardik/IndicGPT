@@ -82,7 +82,24 @@ class ModelConfig:
     bos_id: int = 2
     eos_id: int = 3
 
+    #: Fields that must be numeric whatever the config said.
+    _INT_FIELDS = ("vocab_size", "d_model", "n_layers", "n_heads", "d_ff",
+                   "context_length", "pad_id", "unk_id", "bos_id", "eos_id")
+    _FLOAT_FIELDS = ("dropout", "attn_dropout", "rope_theta", "norm_eps", "init_std")
+
     def __post_init__(self) -> None:
+        # YAML 1.1, which PyYAML implements, only reads a value like 1e-05 as a
+        # number when it has a decimal point and a signed exponent (1.0e-05).
+        # Without them it is a string, and a string reaching nn.LayerNorm fails
+        # on the first forward pass rather than at load time. Coerce here so the
+        # config cannot carry a wrong type no matter how it was written.
+        for name in self._INT_FIELDS:
+            setattr(self, name, int(getattr(self, name)))
+        for name in self._FLOAT_FIELDS:
+            setattr(self, name, float(getattr(self, name)))
+        self.tie_embeddings = bool(self.tie_embeddings)
+        self.bias = bool(self.bias)
+
         if self.d_model % self.n_heads:
             raise ValueError(
                 f"d_model {self.d_model} is not divisible by n_heads {self.n_heads}")

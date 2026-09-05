@@ -222,7 +222,7 @@ def plot_entropy_vs_distance(stats: Dict, path: Path) -> None:
 
 def examples_markdown(examples: Sequence[Dict], layers: Sequence[int]) -> str:
     """The example sentences and their pieces, indexed to match the figures."""
-    lines = [f"# {LANGUAGE} — attention example sentences", "",
+    lines = [f"# {LANGUAGE} - attention example sentences", "",
              "The heatmap axes are token indices. The pieces below are numbered "
              "to match, so a bright cell can be read back to actual words.", ""]
     for n, example in enumerate(examples):
