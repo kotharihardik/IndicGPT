@@ -14,14 +14,14 @@ Three things are produced, all from the same forward passes:
               head, which reads the previous word or two, from a long-range head
               that gathers from the whole prefix.
 
-Two extra diagnostics come almost free and make the discussion concrete:
-`previous_token_mass` (attention on exactly t-1, the signature of an induction
-or positional head) and `bos_mass` (attention parked on the start token, the
-"attention sink" heads use when they have nothing to contribute).
+Two further diagnostics are computed alongside them: `previous_token_mass`
+(attention on exactly t-1, the signature of an induction or positional head) and
+`bos_mass` (attention parked on the start token, the sink a head uses when it
+has nothing to contribute).
 
 Axis labels are token *indices*, not the pieces themselves: rendering Gujarati
-or Devanagari inside a figure needs a script font that a hosted worker may not
-have, and a plot of empty boxes helps nobody. The pieces are written next to the
+or Devanagari inside a figure needs a script font a hosted worker may not have,
+and the labels would come out as empty boxes. The pieces are listed beside the
 figures in `attention_examples.md`, indexed to match.
 
     python3 eval/attention.py
@@ -52,8 +52,8 @@ def head_statistics(model, stream, block_size: int, batch_size: int,
                     n_batches: int, device: torch.device) -> Dict:
     """Entropy, distance and mass diagnostics for every layer and head.
 
-    Averages over held-out text rather than over one sentence, so the numbers
-    describe the head and not the example.
+    Averaged over held-out text rather than one sentence, so the numbers
+    describe the head rather than the example.
     """
     n_layers, n_heads = model.cfg.n_layers, model.cfg.n_heads
     keys = ("entropy", "normalised_entropy", "distance", "normalised_distance",
@@ -128,9 +128,9 @@ def plot_heatmaps(example: Dict, layer: int, path: Path, title_note: str) -> Non
     """One panel per head: query position against key position.
 
     All heads share one colour scale so the panels can be compared, and the
-    scale is square-root rather than linear. Attention is extremely peaked -
-    most heads park a large share of their mass on the start token - and on a
-    linear scale everything except that one cell renders as flat black.
+    scale is square-root rather than linear. Attention is strongly peaked - many
+    heads park a large share of their mass on the start token - and on a linear
+    scale everything except that cell renders as flat black.
     """
     import matplotlib.colors as mcolors
 
@@ -222,7 +222,7 @@ def plot_entropy_vs_distance(stats: Dict, path: Path) -> None:
 
 def examples_markdown(examples: Sequence[Dict], layers: Sequence[int]) -> str:
     """The example sentences and their pieces, indexed to match the figures."""
-    lines = [f"# {LANGUAGE} — attention example sentences", "",
+    lines = [f"# {LANGUAGE} - attention example sentences", "",
              "The heatmap axes are token indices. The pieces below are numbered "
              "to match, so a bright cell can be read back to actual words.", ""]
     for n, example in enumerate(examples):

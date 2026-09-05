@@ -1,0 +1,15 @@
+{
+  "language": "Gujarati",
+  "run_name": "gujarati-25m-12k",
+  "metrics_file": "/kaggle/working/runs/gujarati-25m-12k/metrics.jsonl",
+  "steps": 16418,
+  "tokens": 537985024,
+  "final_train_loss": 3.8238762855529784,
+  "final_val_loss": 3.7676830142736435,
+  "final_val_perplexity": 43.279670196205466,
+  "best_val_loss": 3.7676830142736435,
+  "best_val_perplexity": 43.279670196205466,
+  "best_val_step": 16418,
+  "median_tokens_per_second": 29075.05246982647,
+  "wall_hours": 5.168313979705175
+}

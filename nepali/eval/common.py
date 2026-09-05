@@ -1,10 +1,9 @@
-"""Shared plumbing for the Phase 2 evaluation scripts.
+"""Shared loading and plotting helpers for the Phase 2 evaluation scripts.
 
 Every evaluation script needs the same four things - a checkpoint, the model it
 describes, this language's tokenizer, and somewhere to write results - so they
-are resolved once here. Results always land in `report/phase2/<language>/`,
-because the brief grades what is in the repository, not what was printed to a
-terminal.
+are resolved once here. Results go to the run's report directory, set by
+`reports_dir` in `configs/eval.yaml`.
 """
 
 from __future__ import annotations
@@ -63,8 +62,8 @@ def load_model(checkpoint: Path, device: torch.device
                ) -> Tuple[DecoderLM, ModelConfig, Dict[str, Any]]:
     """Rebuild the model a checkpoint describes and load its weights.
 
-    The architecture comes from the checkpoint rather than from the YAML, so
-    evaluating an old run cannot silently pick up a newer config.
+    The architecture comes from the checkpoint rather than the YAML, so
+    evaluating an earlier run cannot pick up a newer config by accident.
     """
     blob = torch.load(checkpoint, map_location=device, weights_only=False)
     model_cfg = ModelConfig.from_dict(blob["model_config"])
@@ -85,8 +84,8 @@ def load_tokenizer():
 def add_common_args(parser) -> None:
     """Arguments every evaluation script accepts.
 
-    The four path overrides exist for hosted workers, where the tokenized data
-    is read-only under one root and the run directory lives under another.
+    The path overrides are for hosted workers, where the tokenized data is
+    read-only under one root and the run directory lives under another.
     """
     parser.add_argument("--checkpoint", default=None, help="path, or 'best'/'latest'")
     parser.add_argument("--device", default="auto")

@@ -1,18 +1,18 @@
 """Load the Phase 2 YAML configs and turn them into objects.
 
-Three files describe a run, and they are kept apart on purpose:
+Three files describe a run, kept apart by role:
 
-    configs/model.yaml      what the network *is*   -> ModelConfig
+    configs/model.yaml      what the network is     -> ModelConfig
     configs/pretrain.yaml   how it is trained       -> dict
     configs/eval.yaml       how it is measured      -> dict
 
-Paths inside them are written relative to the language directory and resolved
-here, so a config never has to know where the repository was checked out - which
-matters because the same files run on a laptop and on a Kaggle worker.
+Paths inside them are relative to the language directory and resolved here, so
+a config does not need to know where the repository was checked out. The same
+files therefore run on a laptop and on a Kaggle worker.
 
-The vocabulary size is read from the trained tokenizer rather than trusted from
+The vocabulary size is read from the trained tokenizer rather than taken from
 the YAML: it is a Phase 1 artifact, and a mismatch between the embedding table
-and the tokenizer would only surface as nonsense output much later.
+and the tokenizer would surface only as nonsense output much later.
 """
 
 from __future__ import annotations
@@ -60,9 +60,21 @@ def load_stage(root: Path, stage: str) -> Dict[str, Any]:
 
 
 def tokenizer_path(root: Path, cfg: Optional[Dict[str, Any]] = None) -> Path:
-    """Path of this language's SentencePiece model, from Phase 1."""
-    if cfg and cfg.get("tokenizer_model"):
-        return Path(cfg["tokenizer_model"])
+    """Path of this language's SentencePiece model, from Phase 1.
+
+    Which vocabulary a run uses is a property of the run, so it is named by
+    `tokenizer_model` in `configs/pretrain.yaml` and read from there when the
+    caller passes no config. Without that, the vocabulary would be whichever
+    `.model` sorts first in the tokenizer directory, and a run could tokenize
+    against one table while training an embedding sized for another.
+    """
+    if cfg is None:
+        cfg = read_yaml(Path(root) / "configs" / "pretrain.yaml")
+    stated = cfg.get("tokenizer_model")
+    if stated:
+        # load_stage() has already resolved this one; a raw read has not.
+        path = Path(stated)
+        return path if path.is_absolute() else (Path(root) / path).resolve()
     pipeline = load_pipeline_config(root)
     model_dir = pipeline["paths"]["tokenizer_model"]
     models = sorted(model_dir.glob("*.model"))
@@ -85,8 +97,7 @@ def load_model_config(root: Path, vocab_size: Optional[int] = None) -> ModelConf
 
     The vocabulary size comes from the trained tokenizer unless one is passed
     in (a checkpoint knows its own). If the YAML also states a size, the two
-    must agree - a silent disagreement would mean training against the wrong
-    embedding table.
+    must agree, or the model would be built against the wrong embedding table.
     """
     blob = read_yaml(Path(root) / "configs" / "model.yaml")
     stated = blob.pop("vocab_size", None)

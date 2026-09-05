@@ -1,0 +1,15 @@
+{
+  "language": "Nepali",
+  "run_name": "nepali-25m-12k",
+  "metrics_file": "/kaggle/working/runs/nepali-25m-12k/metrics.jsonl",
+  "steps": 15564,
+  "tokens": 510001152,
+  "final_train_loss": 3.504321354627609,
+  "final_val_loss": 3.5168841779232025,
+  "final_val_perplexity": 33.67932602107657,
+  "best_val_loss": 3.516430154442787,
+  "best_val_perplexity": 33.66403828701616,
+  "best_val_step": 15500,
+  "median_tokens_per_second": 29066.932307402112,
+  "wall_hours": 4.910019548601574
+}

@@ -8,12 +8,11 @@ Three numbers per split:
     bits-per-byte   the same total likelihood divided by the UTF-8 bytes of the
                     text instead of by tokens
 
-Bits-per-byte is the only one of the three that compares Model H with Model L
-honestly. Perplexity is per *token*, and the two models have different
-tokenizers: Nepali's compresses at 4.689 characters per token against Gujarati's
-3.865, so a Nepali token carries more text and is correspondingly harder to
-predict. Dividing by bytes removes the tokenizer from the comparison entirely,
-because the bytes are a property of the text.
+Bits-per-byte is the only one of the three that compares two models fairly when
+their tokenizers differ. Perplexity is per *token*, and a tokenizer that cuts
+text into fewer, longer pieces makes each prediction harder. Dividing by bytes
+removes the tokenizer, because bytes are a property of the text. This applies
+between Model H and Model L, and between the 16k and 12k runs of one model.
 
 Evaluation walks each split front to back in non-overlapping windows of
 `context_length` tokens. Every token is predicted exactly once, except a final
@@ -68,16 +67,16 @@ def score_split(model, stream, split_meta: Dict, block_size: int,
 
     for window in sequential_windows(stream, block_size, batch_size, max_windows):
         x, y = to_batch(window, device)
-        # float32 throughout: this is the headline number, and the cost of not
-        # using mixed precision here is a few seconds.
+        # float32 throughout: this is the reported number, and skipping mixed
+        # precision here costs only a few seconds.
         _, loss, _ = model(x, targets=y)
         total_nll += float(loss) * y.numel()
         predicted += y.numel()
 
     stream_tokens = len(stream)
     covered = predicted / stream_tokens
-    # `bytes` counts the UTF-8 text only; the <s>/</s> wrappers add tokens with
-    # no bytes, which is why the token/byte ratio here is not the tokenizer's.
+    # `bytes` counts the UTF-8 text only. The <s>/</s> wrappers add tokens with
+    # no bytes, so the ratio here is not the tokenizer's chars-per-token.
     bytes_covered = split_meta["bytes"] * covered
 
     cross_entropy = total_nll / max(predicted, 1)

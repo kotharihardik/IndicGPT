@@ -1,0 +1,224 @@
+{
+  "language": "Nepali",
+  "checkpoint": "/kaggle/working/runs/nepali-25m/checkpoints/best.pt",
+  "step": 14962,
+  "split": "test",
+  "prompts": 200,
+  "prefix_tokens": 64,
+  "continuation_tokens": 96,
+  "seed": 1337,
+  "settings": {
+    "greedy": {
+      "bleu": {
+        "bleu": 1.9083868074110153,
+        "precisions": [
+          14.13273214034099,
+          3.5229384021723598,
+          1.029283850391418,
+          0.36770113251948816
+        ],
+        "brevity_penalty": 0.9159590958206093,
+        "hypothesis_length": 14194,
+        "reference_length": 15440,
+        "smoothed": false
+      },
+      "chrf": {
+        "chrf": 15.820981255457895,
+        "precision": 18.217740499033887,
+        "recall": 15.31719181634764,
+        "char_order": 6,
+        "word_order": 2,
+        "beta": 2.0
+      },
+      "rouge_l": {
+        "rouge_l": 11.664417908136322,
+        "beta": 1.0,
+        "pairs": 200
+      },
+      "diversity": {
+        "distinct_1": 0.11039876003945329,
+        "distinct_2": 0.21180505931113333,
+        "repetition_1": 0.6997368571905335,
+        "repetition_2": 0.6688766497907026,
+        "repetition_3": 0.6476512233517556,
+        "repetition_4": 0.6307066089877015,
+        "mean_words": 70.97
+      },
+      "reference_diversity": {
+        "distinct_1": 0.3926165803108808,
+        "distinct_2": 0.8621391076115485,
+        "repetition_1": 0.19775318122951127,
+        "repetition_2": 0.04216431361632164,
+        "repetition_3": 0.013860508870412055,
+        "repetition_4": 0.005677889426079656,
+        "mean_words": 77.2
+      },
+      "setting": "greedy",
+      "stopped_at_eos": 28,
+      "seconds": 50.2
+    },
+    "temp 0.5": {
+      "bleu": {
+        "bleu": 2.309585303164212,
+        "precisions": [
+          19.674533395033166,
+          4.778317405608648,
+          1.4085627884768424,
+          0.4609412906356138
+        ],
+        "brevity_penalty": 0.8262922741257417,
+        "hypothesis_length": 12966,
+        "reference_length": 15440,
+        "smoothed": false
+      },
+      "chrf": {
+        "chrf": 19.356043722150428,
+        "precision": 23.40476097054317,
+        "recall": 18.553658706139352,
+        "char_order": 6,
+        "word_order": 2,
+        "beta": 2.0
+      },
+      "rouge_l": {
+        "rouge_l": 13.17405985432024,
+        "beta": 1.0,
+        "pairs": 200
+      },
+      "diversity": {
+        "distinct_1": 0.22188801480795928,
+        "distinct_2": 0.5326648911170296,
+        "repetition_1": 0.4480309647465755,
+        "repetition_2": 0.30446700518800757,
+        "repetition_3": 0.2268740542458821,
+        "repetition_4": 0.17638675345720156,
+        "mean_words": 64.83
+      },
+      "reference_diversity": {
+        "distinct_1": 0.3926165803108808,
+        "distinct_2": 0.8621391076115485,
+        "repetition_1": 0.19775318122951127,
+        "repetition_2": 0.04216431361632164,
+        "repetition_3": 0.013860508870412055,
+        "repetition_4": 0.005677889426079656,
+        "mean_words": 77.2
+      },
+      "setting": "temp 0.5",
+      "stopped_at_eos": 64,
+      "seconds": 50.7
+    },
+    "temp 1.0": {
+      "bleu": {
+        "bleu": 1.4094077624274541,
+        "precisions": [
+          16.151765375854215,
+          3.0184864240323512,
+          0.6740914419695193,
+          0.1784651992861392
+        ],
+        "brevity_penalty": 0.9056622469834588,
+        "hypothesis_length": 14048,
+        "reference_length": 15440,
+        "smoothed": false
+      },
+      "chrf": {
+        "chrf": 21.015270550285095,
+        "precision": 22.596242339787185,
+        "recall": 20.65400039446674,
+        "char_order": 6,
+        "word_order": 2,
+        "beta": 2.0
+      },
+      "rouge_l": {
+        "rouge_l": 10.38060091609447,
+        "beta": 1.0,
+        "pairs": 200
+      },
+      "diversity": {
+        "distinct_1": 0.42369020501138954,
+        "distinct_2": 0.8820768341998845,
+        "repetition_1": 0.14343514711371905,
+        "repetition_2": 0.023750098344829964,
+        "repetition_3": 0.004585039459145461,
+        "repetition_4": 0.0008139220600520903,
+        "mean_words": 70.24
+      },
+      "reference_diversity": {
+        "distinct_1": 0.3926165803108808,
+        "distinct_2": 0.8621391076115485,
+        "repetition_1": 0.19775318122951127,
+        "repetition_2": 0.04216431361632164,
+        "repetition_3": 0.013860508870412055,
+        "repetition_4": 0.005677889426079656,
+        "mean_words": 77.2
+      },
+      "setting": "temp 1.0",
+      "stopped_at_eos": 35,
+      "seconds": 50.3
+    },
+    "temp 1.5": {
+      "bleu": {
+        "bleu": 0.08104165066910078,
+        "precisions": [
+          5.542643848158321,
+          0.41431530823630264,
+          0.007246901949416625,
+          0.003676740936833591
+        ],
+        "brevity_penalty": 0.9163100205718625,
+        "hypothesis_length": 14199,
+        "reference_length": 15440,
+        "smoothed": true
+      },
+      "chrf": {
+        "chrf": 17.369337150142524,
+        "precision": 17.220512193249736,
+        "recall": 17.406946194344243,
+        "char_order": 6,
+        "word_order": 2,
+        "beta": 2.0
+      },
+      "rouge_l": {
+        "rouge_l": 4.10400701048964,
+        "beta": 1.0,
+        "pairs": 200
+      },
+      "diversity": {
+        "distinct_1": 0.6108176632157194,
+        "distinct_2": 0.9817844131723694,
+        "repetition_1": 0.031158711195922242,
+        "repetition_2": 0.004918779111050308,
+        "repetition_3": 0.003417531445879972,
+        "repetition_4": 0.0028497842996470044,
+        "mean_words": 70.995
+      },
+      "reference_diversity": {
+        "distinct_1": 0.3926165803108808,
+        "distinct_2": 0.8621391076115485,
+        "repetition_1": 0.19775318122951127,
+        "repetition_2": 0.04216431361632164,
+        "repetition_3": 0.013860508870412055,
+        "repetition_4": 0.005677889426079656,
+        "mean_words": 77.2
+      },
+      "setting": "temp 1.5",
+      "stopped_at_eos": 10,
+      "seconds": 50.5
+    }
+  },
+  "sources": [
+    "aakarpost",
+    "ai4bharat_sangraha",
+    "arthasarokar",
+    "bizmandu",
+    "clickmandu_html",
+    "khabarhub_html",
+    "nepalilink",
+    "nepalisahityaghar",
+    "nepalkhoj",
+    "nepalpress_html",
+    "onlinekhabar",
+    "reportersnepal_html",
+    "sahityasangraha_html",
+    "sancharkendra"
+  ]
+}

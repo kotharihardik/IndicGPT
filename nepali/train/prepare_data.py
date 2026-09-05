@@ -1,20 +1,21 @@
 """Turn the Phase 1 splits into flat token streams the trainer can memory-map.
 
 Each split becomes one `uint16` file: every document is encoded with this
-language's own Phase 1 tokenizer, wrapped as `<s> ... </s>`, and appended to a
-single contiguous stream. Training then reads fixed-length windows straight out
-of that array, so no tokenization happens on the GPU clock.
+language's own Phase 1 tokenizer, wrapped as `<s> ... </s>`, and appended to one
+contiguous stream. Training reads fixed-length windows straight out of that
+array, so no tokenization happens on the GPU clock.
 
     <s>  marks a document start, so generation has a well-defined prompt.
     </s> separates documents, so the model learns where text ends instead of
          running one article into the next.
 
-`uint16` is enough because the vocabulary is 16,000 pieces; the whole training
-stream is ~1 GB rather than the ~4 GB an int32 file would need.
+`uint16` holds any vocabulary up to 65,536 pieces, so the training stream is
+~1 GB rather than the ~4 GB an int32 file would need. The size is checked
+against the tokenizer at startup.
 
 Alongside the streams, `meta.json` records the document, character, byte and
-token totals per split. The byte totals are what bits-per-byte is divided by in
-evaluation, so they are measured here once rather than re-derived later.
+token totals per split. The byte totals are the denominator of bits-per-byte, so
+they are measured here once rather than re-derived during evaluation.
 
     python3 train/prepare_data.py                       # all three splits
     python3 train/prepare_data.py --splits validation   # just one

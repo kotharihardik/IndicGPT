@@ -1,0 +1,31 @@
+{
+  "language": "Nepali",
+  "source": "best.pt at step 14,962",
+  "sequence_length": 64,
+  "checks": {
+    "future_edit": {
+      "max_change_at_or_before_cut": 0.0,
+      "max_change_after_cut": 22.121156692504883,
+      "cut_position": 32,
+      "passed": true
+    },
+    "prefix_equality": {
+      "max_difference": 0.0,
+      "cut_position": 32,
+      "passed": true
+    },
+    "mask_shape": {
+      "max_weight_above_diagonal": 0.0,
+      "max_row_sum_error": 2.384185791015625e-07,
+      "layers_checked": 11,
+      "passed": true
+    },
+    "gradient_reach": {
+      "max_gradient_at_or_before_cut": 74899.734375,
+      "max_gradient_after_cut": 0.0,
+      "cut_position": 32,
+      "passed": true
+    },
+    "all_passed": true
+  }
+}

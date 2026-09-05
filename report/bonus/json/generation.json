@@ -1,0 +1,222 @@
+{
+  "language": "Gujarati",
+  "checkpoint": "/kaggle/working/runs/gujarati-25m-16k-nopos/checkpoints/best.pt",
+  "step": 15826,
+  "split": "test",
+  "prompts": 200,
+  "prefix_tokens": 64,
+  "continuation_tokens": 96,
+  "seed": 1337,
+  "settings": {
+    "greedy": {
+      "bleu": {
+        "bleu": 2.327022509796956,
+        "precisions": [
+          13.060686015831136,
+          3.643048128342246,
+          1.165311653116531,
+          0.5288461538461539
+        ],
+        "brevity_penalty": 1.0,
+        "hypothesis_length": 15160,
+        "reference_length": 14535,
+        "smoothed": false
+      },
+      "chrf": {
+        "chrf": 15.190947671546171,
+        "precision": 15.224347134554348,
+        "recall": 15.182620690861057,
+        "char_order": 6,
+        "word_order": 2,
+        "beta": 2.0
+      },
+      "rouge_l": {
+        "rouge_l": 11.853925263925554,
+        "beta": 1.0,
+        "pairs": 200
+      },
+      "diversity": {
+        "distinct_1": 0.09287598944591029,
+        "distinct_2": 0.1749331550802139,
+        "repetition_1": 0.79511040570853,
+        "repetition_2": 0.7687155406792934,
+        "repetition_3": 0.7544438820996839,
+        "repetition_4": 0.7435819261003842,
+        "mean_words": 75.8
+      },
+      "reference_diversity": {
+        "distinct_1": 0.39442724458204337,
+        "distinct_2": 0.8244855249389605,
+        "repetition_1": 0.21164253130633326,
+        "repetition_2": 0.05142028440864855,
+        "repetition_3": 0.016142184639838762,
+        "repetition_4": 0.006982951016484806,
+        "mean_words": 72.675
+      },
+      "setting": "greedy",
+      "stopped_at_eos": 0,
+      "seconds": 53.0
+    },
+    "temp 0.5": {
+      "bleu": {
+        "bleu": 3.2888992804720503,
+        "precisions": [
+          18.142981109405245,
+          5.249983086394696,
+          1.6665523626637404,
+          0.7370836520408872
+        ],
+        "brevity_penalty": 1.0,
+        "hypothesis_length": 14981,
+        "reference_length": 14535,
+        "smoothed": false
+      },
+      "chrf": {
+        "chrf": 18.776149581862136,
+        "precision": 19.612112392552696,
+        "recall": 18.578176710435756,
+        "char_order": 6,
+        "word_order": 2,
+        "beta": 2.0
+      },
+      "rouge_l": {
+        "rouge_l": 14.298881704907963,
+        "beta": 1.0,
+        "pairs": 200
+      },
+      "diversity": {
+        "distinct_1": 0.17628996729190308,
+        "distinct_2": 0.40234084297408834,
+        "repetition_1": 0.5983540506181929,
+        "repetition_2": 0.4797278766863958,
+        "repetition_3": 0.411096154355158,
+        "repetition_4": 0.3596220337250204,
+        "mean_words": 74.905
+      },
+      "reference_diversity": {
+        "distinct_1": 0.39442724458204337,
+        "distinct_2": 0.8244855249389605,
+        "repetition_1": 0.21164253130633326,
+        "repetition_2": 0.05142028440864855,
+        "repetition_3": 0.016142184639838762,
+        "repetition_4": 0.006982951016484806,
+        "mean_words": 72.675
+      },
+      "setting": "temp 0.5",
+      "stopped_at_eos": 5,
+      "seconds": 52.2
+    },
+    "temp 1.0": {
+      "bleu": {
+        "bleu": 1.419978223548153,
+        "precisions": [
+          17.225696418419556,
+          3.1069780853517877,
+          0.5558806319485079,
+          0.15587885985748218
+        ],
+        "brevity_penalty": 0.9676331728743414,
+        "hypothesis_length": 14072,
+        "reference_length": 14535,
+        "smoothed": false
+      },
+      "chrf": {
+        "chrf": 19.670082481312747,
+        "precision": 20.155330084156407,
+        "recall": 19.552399528941763,
+        "char_order": 6,
+        "word_order": 2,
+        "beta": 2.0
+      },
+      "rouge_l": {
+        "rouge_l": 11.366519533882217,
+        "beta": 1.0,
+        "pairs": 200
+      },
+      "diversity": {
+        "distinct_1": 0.4171404206935759,
+        "distinct_2": 0.851643598615917,
+        "repetition_1": 0.16649796314863935,
+        "repetition_2": 0.031783206270163414,
+        "repetition_3": 0.00636489935551136,
+        "repetition_4": 0.0017082879161936914,
+        "mean_words": 70.36
+      },
+      "reference_diversity": {
+        "distinct_1": 0.39442724458204337,
+        "distinct_2": 0.8244855249389605,
+        "repetition_1": 0.21164253130633326,
+        "repetition_2": 0.05142028440864855,
+        "repetition_3": 0.016142184639838762,
+        "repetition_4": 0.006982951016484806,
+        "mean_words": 72.675
+      },
+      "setting": "temp 1.0",
+      "stopped_at_eos": 19,
+      "seconds": 52.2
+    },
+    "temp 1.5": {
+      "bleu": {
+        "bleu": 0.1426768514252939,
+        "precisions": [
+          6.607867842643148,
+          0.5111458185432344,
+          0.036007489557828024,
+          0.0036533684056700277
+        ],
+        "brevity_penalty": 0.9827213662988811,
+        "hypothesis_length": 14286,
+        "reference_length": 14535,
+        "smoothed": true
+      },
+      "chrf": {
+        "chrf": 16.567946872046527,
+        "precision": 15.442939079157924,
+        "recall": 16.875285184436343,
+        "char_order": 6,
+        "word_order": 2,
+        "beta": 2.0
+      },
+      "rouge_l": {
+        "rouge_l": 4.92254122173177,
+        "beta": 1.0,
+        "pairs": 200
+      },
+      "diversity": {
+        "distinct_1": 0.6080778384432312,
+        "distinct_2": 0.979057219934687,
+        "repetition_1": 0.04087650008989797,
+        "repetition_2": 0.007726308882056353,
+        "repetition_3": 0.0050017047837272125,
+        "repetition_4": 0.0032556937056551914,
+        "mean_words": 71.43
+      },
+      "reference_diversity": {
+        "distinct_1": 0.39442724458204337,
+        "distinct_2": 0.8244855249389605,
+        "repetition_1": 0.21164253130633326,
+        "repetition_2": 0.05142028440864855,
+        "repetition_3": 0.016142184639838762,
+        "repetition_4": 0.006982951016484806,
+        "mean_words": 72.675
+      },
+      "setting": "temp 1.5",
+      "stopped_at_eos": 8,
+      "seconds": 52.4
+    }
+  },
+  "sources": [
+    "abtakmedia",
+    "ai4bharat_sangraha",
+    "aksharnaad",
+    "divya_bhaskar",
+    "gujaratabroad",
+    "gujarativishwakosh",
+    "gujarattoday",
+    "ia_books_fulltext",
+    "layastaro",
+    "opinionmagazine",
+    "webdunia_gujarati",
+    "westerntimesnews"
+  ]
+}

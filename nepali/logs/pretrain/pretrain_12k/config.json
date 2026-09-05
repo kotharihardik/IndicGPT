@@ -1,0 +1,117 @@
+{
+  "language": "nep",
+  "language_name": "Nepali",
+  "run_name": "nepali-25m-12k",
+  "model_config": {
+    "vocab_size": 12000,
+    "d_model": 384,
+    "n_layers": 12,
+    "n_heads": 6,
+    "d_ff": 1024,
+    "context_length": 512,
+    "dropout": 0.0,
+    "attn_dropout": 0.0,
+    "positional": "rope",
+    "rope_theta": 10000.0,
+    "ffn_activation": "swiglu",
+    "norm_eps": 1e-05,
+    "tie_embeddings": true,
+    "bias": false,
+    "init_std": 0.02,
+    "pad_id": 0,
+    "unk_id": 1,
+    "bos_id": 2,
+    "eos_id": 3
+  },
+  "train_config": {
+    "run_name": "nepali-25m-12k",
+    "paths_note": "paths are relative to the nepali/ directory",
+    "tokenizer_model": "/kaggle/working/repo/nepali/tokenizer/model/sweep/12k_unigram_nep.model",
+    "data_dir": "/kaggle/working/repo/nepali/data/tokenized_12k",
+    "runs_dir": "/kaggle/working/runs",
+    "reports_dir": "/kaggle/working/repo/report/phase2/nepali_12k",
+    "logs_subdir": "pretrain_12k",
+    "seed": 1337,
+    "micro_batch_size": 32,
+    "gradient_accumulation_steps": 2,
+    "epochs": 1.0,
+    "max_steps": null,
+    "learning_rate": 0.0006,
+    "min_lr": 6e-05,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.1,
+    "grad_clip": 1.0,
+    "warmup_steps": 500,
+    "precision": "auto",
+    "eval_interval": 500,
+    "eval_windows": 512,
+    "log_interval": 20,
+    "checkpoint_interval": 1000,
+    "keep_checkpoints": 2,
+    "preload_train": true
+  },
+  "parameters": {
+    "total": 25860864,
+    "non_embedding": 21252864
+  },
+  "data": {
+    "dir": "/kaggle/working/tokenized/nepali_12k",
+    "meta": {
+      "language": "nep",
+      "tokenizer": "tokenizer/model/sweep/12k_unigram_nep.model",
+      "vocab_size": 12000,
+      "dtype": "uint16",
+      "document_wrapping": "<s> text </s>",
+      "special_ids": {
+        "pad": 0,
+        "unk": 1,
+        "bos": 2,
+        "eos": 3
+      },
+      "splits": {
+        "train": {
+          "docs": 1116564,
+          "content_tokens": 507769360,
+          "special_tokens": 2233128,
+          "chars": 2276899633,
+          "bytes": 6103590773,
+          "tokens": 510002488,
+          "seconds": 240.7,
+          "bin": "train.bin",
+          "bytes_on_disk": 1020004976
+        },
+        "validation": {
+          "docs": 61604,
+          "content_tokens": 27895432,
+          "special_tokens": 123208,
+          "chars": 125283173,
+          "bytes": 335850374,
+          "tokens": 28018640,
+          "seconds": 13.2,
+          "bin": "validation.bin",
+          "bytes_on_disk": 56037280
+        },
+        "test": {
+          "docs": 61484,
+          "content_tokens": 28199026,
+          "special_tokens": 122968,
+          "chars": 126310527,
+          "bytes": 338591297,
+          "tokens": 28321994,
+          "seconds": 13.3,
+          "bin": "test.bin",
+          "bytes_on_disk": 56643988
+        }
+      }
+    }
+  },
+  "max_steps": 15564,
+  "tokens_per_step": 32768,
+  "device": "cuda",
+  "torch": "2.10.0+cu128",
+  "started": "2026-09-03T17:35:58"
+}

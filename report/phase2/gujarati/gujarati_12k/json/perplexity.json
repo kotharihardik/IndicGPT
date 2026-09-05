@@ -1,0 +1,37 @@
+{
+  "language": "Gujarati",
+  "checkpoint": "/kaggle/working/runs/gujarati-25m-12k/checkpoints/best.pt",
+  "step": 16418,
+  "tokens_seen": 537985024,
+  "context_length": 512,
+  "parameters": 25860864,
+  "evaluation": "non-overlapping windows, float32, whole split",
+  "splits": {
+    "validation": {
+      "cross_entropy_nats": 3.8157636656825584,
+      "perplexity": 45.41142228947959,
+      "bits_per_byte": 0.5821786672074778,
+      "bits_per_token": 5.50498331768452,
+      "predicted_tokens": 29562880,
+      "split_tokens": 29563271,
+      "coverage": 0.9999867741292904,
+      "bytes_evaluated": 279541608.76992536,
+      "bytes_per_token": 9.455831392947012,
+      "documents": 41171,
+      "seconds": 793.9
+    },
+    "test": {
+      "cross_entropy_nats": 3.798626244938416,
+      "perplexity": 44.63981817563998,
+      "bits_per_byte": 0.575899707697645,
+      "bits_per_token": 5.4802592457633175,
+      "predicted_tokens": 29280768,
+      "split_tokens": 29280821,
+      "coverage": 0.9999981899414637,
+      "bytes_evaluated": 278635667.65221834,
+      "bytes_per_token": 9.515995880033554,
+      "documents": 41474,
+      "seconds": 788.9
+    }
+  }
+}
