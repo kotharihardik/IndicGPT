@@ -18,7 +18,7 @@ language lives in its own top-level directory and can be run on its own.
 > vocabularies are committed to this repository directly.
 
 > **Pretrained checkpoints** (all five runs, ten files):
-> <https://huggingface.co/hardik300/LMA_mini_project>
+> <https://huggingface.co/hardik300/LMA_mini_project/tree/main>
 >
 > A public Hugging Face model repository - it opens without a sign-in or an
 > access request, which is what the brief asks a checkpoint link to do.
@@ -97,8 +97,7 @@ noisier distribution. [`results.md`](report/phase2/results.md) Section 7
 develops this.
 
 **The Phase 2 report is [`report/phase2/phase2_report.pdf`](report/phase2/phase2_report.pdf)**
-(10 pages: architecture and decisions, results, samples, attention, comparison).
-It is generated from the evaluation JSON by `make_report_pdf.py`.
+(11 pages: architecture and decisions, results, samples, attention, comparison).
 
 **Measured results** - loss curves, perplexity, bits-per-byte, BLEU / chrF++ /
 ROUGE-L, diversity, attention heatmaps and the causal-masking checks - are in

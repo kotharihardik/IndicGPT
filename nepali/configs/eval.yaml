@@ -1,17 +1,13 @@
 # Nepali (Model L) - Phase 2 evaluation
-#
-# Identical to the other language's settings apart from the example sentences.
-# The two models are only comparable if measured the same way, on the same
-# number of prompts, at the same lengths.
+# Identical to the other language apart from the example sentences: the two
+# models are only comparable if measured the same way.
 
 reports_dir: ../report/phase2/nepali/nepali_16k
 checkpoint_tag: best              # 'best' (lowest validation loss) or 'latest'
 
-# Generation. Each prompt is the first 64 tokens of a held-out document; the
-# model writes 96 tokens and is scored against the document's real next 96. 200
-# prompts is enough that corpus BLEU is not dominated by a few documents.
-# Prompts are taken at a stride through the split, not from the front, because
-# the split is written manual sources first.
+# Each prompt is the first 64 tokens of a held-out document; the model writes 96
+# and is scored against the real next 96. Prompts are taken at a stride, not
+# from the front, because the split is written manual sources first.
 generation:
   split: test
   prompts: 200
@@ -21,10 +17,8 @@ generation:
   seed: 1337
   samples_shown: 8                # how many go into samples.md
 
-# Attention. Head statistics are averaged over 20 batches of 8 x 512 = 81,920
-# held-out tokens, so entropy and distance describe the head rather than one
-# example. The heatmaps then use one short sentence so the picture stays
-# readable.
+# Head statistics average over 20 batches of 8 x 512 = 81,920 held-out tokens.
+# The heatmaps then use one short sentence so the picture stays readable.
 attention:
   batches: 20
   heatmap_layers: null            # null -> first and last layer
@@ -33,8 +27,8 @@ attention:
     - "नेपाल सरकारले २०८१ सालको बजेटमा शिक्षा र स्वास्थ्य क्षेत्रका लागि छुट्याइएको रकम बढाउने निर्णय गरेको छ।"
     - "घर, घरमा, घरहरूमा, घरहरूबाट, घरवालाहरू - एउटै मूल शब्दबाट बनेका यी पाँच रूपहरू हेर्दा मूल शब्द अक्षुण्ण रहेको देखिन्छ।"
 
-# Perplexity. Both held-out splits, whole, in float32. Windows are
-# non-overlapping, so every token is predicted exactly once.
+# Both held-out splits, whole, in float32. Windows are non-overlapping, so
+# every token is predicted exactly once.
 perplexity:
   splits: ['validation', 'test']
   batch_size: 16

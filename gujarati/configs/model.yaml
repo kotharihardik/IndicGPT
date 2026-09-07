@@ -1,74 +1,31 @@
 # Gujarati (Model H) - Phase 2 model architecture
-#
-# Decoder-only Transformer, ~25M trainable parameters, implemented in
-# model/transformer.py. vocab_size is read from the tokenizer at build time and
-# is not repeated here.
-#
-# Parameter budget (tied embeddings, no biases, RoPE):
-#   token embedding + tied output head   16,000 x 384   =    6,144,000
-#   11 blocks (attention + SwiGLU + 2 LayerNorms)       =   19,481,088
-#   final LayerNorm                                     =          768
-#   total                                                   25,625,856
-#
-# `python3 model/param_budget.py` re-derives this and checks it against the
-# model it builds.
-#
-# Depth/width choice: Phase 1 fixed d_model = 384 by pricing the embedding
-# against the 25M budget. One block costs 1,771,008 parameters, so what is left
-# after the embedding buys 11. Alternatives at the same budget are wider and
-# shallower (448 x 8) or narrower and deeper (320 x 14). Depth/width ratios of
-# 20-40 behave similarly at this scale; 384 x 11 sits in that band and runs
-# faster than the narrow option, which needs more sequential kernel launches for
-# the same arithmetic.
-#
-# The 12k control run in report/phase2/vocab_comparison.md uses n_layers: 12,
-# which is what the smaller embedding pays for at the same parameter budget.
+# ~25M trainable parameters. vocab_size is read from the tokenizer at build
+# time, not set here. `python3 model/param_budget.py` prints the breakdown.
 
 d_model: 384
-n_layers: 11
+n_layers: 11              # what the budget leaves after a 6.14M embedding
 n_heads: 6                # head_dim = 384 / 6 = 64
 d_ff: 1024                # SwiGLU uses 3 matrices of this width
 context_length: 512
 
-# Positional scheme. RoPE rotates each (even, odd) channel pair of Q and K by an
-# angle set by the token's position. The dot product of two rotated vectors
-# depends only on the angle difference, so attention sees relative distance. It
-# costs no parameters (a learned table would cost 196,608) and is not tied to
-# one sequence length, because the cosine cache is computed rather than learned.
-# Quality still degrades past the 512 tokens the model trained at, since longer
-# relative distances were never seen.
+# RoPE costs no parameters and is relative, so length is not capped by a table.
 # Alternatives implemented: learned, sinusoidal, none.
 positional: rope
 rope_theta: 10000.0
 
-# Feed-forward activation. swiglu at d_ff 1024 costs the same as gelu at 1536.
-ffn_activation: swiglu
+ffn_activation: swiglu    # at d_ff 1024 this costs what gelu at 1536 costs
+norm_eps: 1.0e-05         # pre-norm: the LayerNorm sits inside each residual branch
+tie_embeddings: True      # output head reuses the embedding, saving 6.14M
+bias: False               # LayerNorm already re-centres every sublayer input
 
-# Pre-norm: the LayerNorm sits inside each residual branch, leaving an unbroken
-# identity path from embedding to output head. Post-norm puts a norm on that
-# path and needs a long warmup to train a stack this deep.
-norm_eps: 1.0e-05
-
-# Tying the output projection to the token embedding saves a second
-# 16,000 x 384 matrix: 6.14M parameters, 24% of the budget.
-tie_embeddings: True
-
-# No bias terms on the linear projections. They add 4d + d_ff per block and give
-# no measurable gain once LayerNorm re-centres every sublayer input.
-bias: False
-
-# Dropout is 0.0 for pretraining. The model sees ~519M tokens once, at 25M
-# parameters. In that data-rich regime there is nothing to memorise and dropout
-# only slows learning; validation loss tracks training loss throughout. All
-# three dropout sites the brief requires are implemented and wired (embedding
-# output, attention probabilities, both sublayer outputs) and are switched on
-# for Phase 3 finetuning, where the reasoning corpus is small and seen often.
+# 0.0 for pretraining: one pass over ~519M tokens, so nothing to memorise.
+# Wired at all three sites (embedding, attention, sublayer) and used in Phase 3.
 dropout: 0.0
 attn_dropout: 0.0
 
 init_std: 0.02
 
-# Fixed by the Phase 1 tokenizer; repeated here so the model can be built
+# Fixed by the Phase 1 tokenizer, repeated here so the model can be built
 # without loading SentencePiece.
 pad_id: 0
 unk_id: 1

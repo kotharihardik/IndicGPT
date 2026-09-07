@@ -1,24 +1,7 @@
 """Parameter budget for the Phase 2 decoder-only Transformer.
 
-Phase 1 used this file to price each candidate vocabulary against the ~25M
-target before the model existed. The model now exists, so the analytic formula
-is checked against it: `count_params` computes the budget from a config,
-`measured()` builds `DecoderLM` and counts its tensors, and the two must agree.
-A parameter count quoted in the report therefore cannot drift from the network
-that was trained.
-
-For a pre-norm block of width d with h heads, SwiGLU width d_ff and no biases:
-
-    attention  W_Q, W_K, W_V, W_O        4 d^2
-    SwiGLU     W_gate, W_up, W_down      3 d d_ff
-    LayerNorm  x2 (weight + bias each)   4 d
-
-and the whole model, with the output head tied to the token embedding:
-
-    vocab d + L (4 d^2 + 3 d d_ff + 4 d) + 2 d
-
-RoPE contributes nothing: it is computed from the position, not learned. A
-learned positional table would add `context x d`.
+Counts parameters two ways, analytically from a config and by building the
+model, and prints both.
 
     python3 model/param_budget.py            # the configured model
     python3 model/param_budget.py --sweep    # depths affordable per vocabulary
@@ -145,8 +128,7 @@ def sweep(base: ModelConfig) -> None:
     print("  " + "-" * 61)
     for vocab in TCFG.get("sweep_vocab_sizes", [8000, 12000, 16000, 24000, 32000]):
         for d_model in (256, 320, 384, 448):
-            # SwiGLU width at 8/3 of the model dimension, rounded to a multiple
-            # of 64, so every row is the same architecture rescaled.
+            # d_ff at 8/3 of d_model, rounded to a multiple of 64.
             d_ff = int(round(d_model * 8 / 3 / 64)) * 64
             trial = ModelConfig.from_dict({**base.to_dict(), "vocab_size": vocab,
                                            "d_model": d_model, "d_ff": d_ff,
@@ -180,8 +162,7 @@ def main() -> None:
                     help="skip building the model to cross-check the formula")
     args = ap.parse_args()
 
-    # Start from configs/model.yaml so this always prices the real model. The
-    # vocabulary size is whatever the trained tokenizer holds.
+    # Start from configs/model.yaml so this prices the real model.
     stated = read_yaml(ROOT / "configs" / "model.yaml").get("vocab_size")
     cfg = load_model_config(ROOT, vocab_size=args.vocab or stated)
 

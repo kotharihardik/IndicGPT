@@ -1,23 +1,14 @@
 """Intrinsic language-modelling metrics on the held-out splits.
 
-Three numbers per split:
+    cross-entropy   mean negative log-likelihood per token, in nats
+    perplexity      exp(cross-entropy)
+    bits-per-byte   the same likelihood divided by UTF-8 bytes, not tokens
 
-    cross-entropy   mean negative log-likelihood per predicted token, in nats
-    perplexity      exp(cross-entropy) - the effective number of tokens the
-                    model is choosing between at each step
-    bits-per-byte   the same total likelihood divided by the UTF-8 bytes of the
-                    text instead of by tokens
+Bits-per-byte is the one comparable across different tokenizers.
 
-Bits-per-byte is the only one of the three that compares two models fairly when
-their tokenizers differ. Perplexity is per *token*, and a tokenizer that cuts
-text into fewer, longer pieces makes each prediction harder. Dividing by bytes
-removes the tokenizer, because bytes are a property of the text. This applies
-between Model H and Model L, and between the 16k and 12k runs of one model.
-
-Evaluation walks each split front to back in non-overlapping windows of
-`context_length` tokens. Every token is predicted exactly once, except a final
-remainder shorter than one window; the byte total is scaled by the same fraction
-so the two sides of the division cover the same text.
+Each split is walked front to back in non-overlapping windows, so every token
+is predicted once apart from a final remainder; the byte total is scaled by the
+same fraction so both sides of the division cover the same text.
 
     python3 eval/perplexity.py                       # validation and test
     python3 eval/perplexity.py --splits validation --max-windows 200
@@ -48,18 +39,8 @@ def score_split(model, stream, split_meta: Dict, block_size: int,
                 max_windows: int | None = None) -> Dict[str, float]:
     """Total likelihood of one split, and the three metrics derived from it.
 
-    Args:
-        model: The trained language model, already in eval mode.
-        stream: The tokenized split.
-        split_meta: The `meta.json` entry for this split, holding its byte and
-            token totals.
-        block_size: Window length in tokens, the model's context.
-        batch_size: Windows per forward pass.
-        device: Where to run.
-        max_windows: Stop early; the byte total is scaled to match.
-
-    Returns:
-        Cross-entropy, perplexity, bits-per-byte and the counts behind them.
+    `split_meta` is the meta.json entry, which carries the byte total.
+    `max_windows` stops early; the byte total is scaled to match.
     """
     model.eval()
     total_nll, predicted = 0.0, 0
@@ -67,16 +48,14 @@ def score_split(model, stream, split_meta: Dict, block_size: int,
 
     for window in sequential_windows(stream, block_size, batch_size, max_windows):
         x, y = to_batch(window, device)
-        # float32 throughout: this is the reported number, and skipping mixed
-        # precision here costs only a few seconds.
+        # float32 throughout: this is the reported number.
         _, loss, _ = model(x, targets=y)
         total_nll += float(loss) * y.numel()
         predicted += y.numel()
 
     stream_tokens = len(stream)
     covered = predicted / stream_tokens
-    # `bytes` counts the UTF-8 text only. The <s>/</s> wrappers add tokens with
-    # no bytes, so the ratio here is not the tokenizer's chars-per-token.
+    # `bytes` is UTF-8 text only; the <s>/</s> wrappers add tokens with no bytes.
     bytes_covered = split_meta["bytes"] * covered
 
     cross_entropy = total_nll / max(predicted, 1)

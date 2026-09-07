@@ -11,8 +11,7 @@ pretrained on the Phase 1 corpora.
 | Evaluation config | [`configs/eval.yaml`](../../gujarati/configs/eval.yaml) | [`configs/eval.yaml`](../../nepali/configs/eval.yaml) |
 | Figures | [`gujarati_16k/`](gujarati/gujarati_16k/README.md) | [`nepali_16k/`](nepali/nepali_16k/README.md) |
 
-The submitted report is [`phase2_report.pdf`](phase2_report.pdf), generated from
-the same evaluation output by `make_report_pdf.py`.
+The submitted report is [`phase2_report.pdf`](phase2_report.pdf).
 
 All measured numbers are in [`results.md`](results.md), generated
 from the evaluation output. The 16,000-piece vocabulary chosen in Phase 1 is the
@@ -519,7 +518,7 @@ and `--logs-dir` pointed at writable storage.
 ## 8. What is committed
 
 Checkpoints (`*.pt`, ~295 MB per run) are published at
-<https://huggingface.co/hardik300/LMA_mini_project>, one folder per run;
+<https://huggingface.co/hardik300/LMA_mini_project/tree/main>, one folder per run;
 the link is also in the top-level README. Everything small enough to be evidence
 is committed, in two places:
 

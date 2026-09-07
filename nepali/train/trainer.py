@@ -1,19 +1,11 @@
 """Training loop for the decoder-only language model.
 
-One class holds the whole run: build the optimizer and schedule, step with
-gradient accumulation and mixed precision, evaluate on held-out data at a fixed
-interval, write metrics, and checkpoint often enough that losing a session costs
-minutes rather than hours.
+Builds the optimizer and schedule, steps with gradient accumulation and mixed
+precision, validates at a fixed interval, writes metrics, and checkpoints.
 
-Every checkpoint contains model weights, optimizer state, scheduler state,
-gradient-scaler state, the training step, the number of tokens seen, the model
-and training configuration, and the random-number states of Python, NumPy and
-PyTorch. A resumed run continues on the data it would have seen anyway, because
-the batch order is a function of (seed, step) alone.
-
-SIGINT and SIGTERM finish the current step, write a checkpoint and exit cleanly;
-`--max-hours` does the same before a hosted session is killed on its own
-schedule.
+Every checkpoint carries model weights, optimizer state, scheduler state,
+scaler state, step, tokens seen, both configs and the RNG states. SIGINT,
+SIGTERM and `--max-hours` finish the current step, checkpoint and exit.
 """
 
 from __future__ import annotations
@@ -62,40 +54,28 @@ def make_scaler(enabled: bool):
 
 
 def pick_precision(device: torch.device, requested: str) -> tuple:
-    """Choose the autocast dtype for this device.
+    """Choose the autocast dtype: (enabled, dtype, needs a gradient scaler).
 
-    `auto` picks bf16 on Ampere or newer and fp16 everywhere else. The test is
-    the compute capability, not `torch.cuda.is_bf16_supported()`: that helper
-    defaults to `including_emulation=True`, so on a Turing card such as the T4
-    it only checks that a bf16 tensor can be created and answers yes. There are
-    no bf16 tensor cores behind it, so the maths falls back to fp32 and the card
-    runs at a quarter of its fp16 speed. fp16 uses the tensor cores and needs
-    only a loss scaler. An explicit `bf16` is still honoured.
-
-    Returns:
-        (autocast enabled, dtype, whether a gradient scaler is needed).
+    `auto` tests the compute capability, not `torch.cuda.is_bf16_supported()`:
+    that helper counts emulation, so a T4 answers yes and then runs bf16 at
+    fp32 speed. Below Ampere, fp16 plus a loss scaler is the fast path.
     """
     if device.type != "cuda" or requested == "fp32":
         return False, torch.float32, False
     if requested == "bf16":
         return True, torch.bfloat16, False
     if requested == "auto" and torch.cuda.get_device_capability(device)[0] >= 8:
-        # Ampere and newer: real bf16 tensor cores, and bf16 keeps fp32's
-        # exponent range, so no loss scaling is needed.
+        # Ampere and newer: real bf16 tensor cores, no loss scaling needed.
         return True, torch.bfloat16, False
-    # Turing (T4) and Pascal (P100): fp16 is the fast path. Gradients underflow
-    # in fp16's narrow exponent range, so a scaler multiplies the loss up before
-    # the backward pass and divides it out before the optimizer step.
+    # Turing and Pascal: fp16 is the fast path, with a scaler for underflow.
     return True, torch.float16, True
 
 
 def cosine_schedule(warmup_steps: int, max_steps: int, min_ratio: float):
     """Learning-rate multiplier: linear warmup, then cosine decay to `min_ratio`.
 
-    Warmup is needed because Adam's second-moment estimate is meaningless for
-    the first few dozen steps, so a full learning rate there takes large, badly
-    scaled steps. Cosine decay keeps most of the run near the peak and anneals
-    smoothly at the end, which lets the final loss settle.
+    Warmup because Adam's second-moment estimate is meaningless for the first
+    few dozen steps.
     """
 
     def multiplier(step: int) -> float:
@@ -159,10 +139,10 @@ class Trainer:
         return max(1, int(epochs * len(self.train_stream) / self.tokens_per_step))
 
     def _build_optimizer(self) -> torch.optim.Optimizer:
-        """AdamW with weight decay on matrices only.
+        """AdamW, weight decay on matrices only (dim >= 2).
 
-        LayerNorm gains and biases have too few parameters to overfit, and
-        shrinking them only fights the normalisation, so they are excluded.
+        LayerNorm gains and biases are excluded: too few parameters to overfit,
+        and shrinking them only fights the normalisation.
         """
         decay, no_decay = [], []
         for name, param in self.model.named_parameters():
@@ -232,13 +212,11 @@ class Trainer:
             with torch.autocast(device_type=self.device.type,
                                 dtype=self.amp_dtype, enabled=self.amp_on):
                 _, loss, _ = self.model(x, targets=y)
-            # Gradients accumulate as a sum, so each micro-batch contributes
-            # its share of the mean over the full batch.
+            # Gradients sum, so each micro-batch contributes its share of the mean.
             self.scaler.scale(loss / self.accum_steps).backward()
             total_loss += loss.item()
 
-        # Unscale before clipping, or the threshold would apply to gradients
-        # that are still multiplied by the loss scale.
+        # Unscale first, or the clip threshold applies to scaled gradients.
         self.scaler.unscale_(self.optimizer)
         grad_norm = torch.nn.utils.clip_grad_norm_(
             self.model.parameters(), float(self.cfg["grad_clip"]))
@@ -345,8 +323,7 @@ class Trainer:
                  f"validation loss {final['loss']:.4f}, "
                  f"perplexity {final['perplexity']:.2f}")
 
-        # Marker file, so a script can tell "finished" from "ran out of time"
-        # without reopening a 300 MB checkpoint to compare step counts.
+        # Marker file: tells "finished" from "ran out of time".
         marker = self.run_dir / "COMPLETED"
         if done:
             marker.write_text(
@@ -364,12 +341,7 @@ class Trainer:
         return self.run_dir / "checkpoints" / f"{tag}.pt"
 
     def save_checkpoint(self, tag: str, val_loss: Optional[float] = None) -> Path:
-        """Write a fully resumable checkpoint.
-
-        Contains everything needed to continue: weights, optimizer moments,
-        scheduler position, loss scale, step, token count, both configs and the
-        random-number states.
-        """
+        """Write a fully resumable checkpoint (see the module docstring)."""
         payload = {
             "version": CHECKPOINT_VERSION,
             "model": self.model.state_dict(),
@@ -403,18 +375,12 @@ class Trainer:
             path.unlink(missing_ok=True)
 
     def recalibrate_best(self) -> float:
-        """Re-measure the best-checkpoint threshold under the current protocol.
+        """Re-measure the best-checkpoint threshold after a resume.
 
-        `best_val_loss` is a threshold: a checkpoint is written as `best` only
-        when validation beats it, which is meaningful only while the number is
-        measured the same way. A run resumed after the evaluation set changed -
-        a different `eval_windows`, or a change in how windows are selected -
-        carries a threshold from a different measurement, and `best.pt` can then
-        sit stale for thousands of steps.
-
-        A resumed run therefore re-evaluates once, adopts that as the threshold
-        and writes `best` immediately. It costs one validation pass and keeps
-        `best` from ever being worse than `latest`.
+        `best_val_loss` is only meaningful while measured the same way. A run
+        resumed after the evaluation set changed carries a threshold from a
+        different measurement, so `best.pt` could sit stale. Re-evaluating once
+        costs one pass and keeps `best` from being worse than `latest`.
         """
         current = self.evaluate(self.val_stream, int(self.cfg["eval_windows"]))
         previous = self.state.best_val_loss
@@ -431,10 +397,7 @@ class Trainer:
         self.model.load_state_dict(blob["model"])
         self.optimizer.load_state_dict(blob["optimizer"])
         self.scheduler.load_state_dict(blob["scheduler"])
-        # The loss scaler is the one piece of state that does not carry across a
-        # precision change: a bf16 run has no scaler and saves an empty dict,
-        # which an fp16 scaler refuses to load. Starting it fresh costs only a
-        # few hundred steps of rescaling, so a run may resume at any precision.
+        # A bf16 run saves an empty scaler dict, so allow a fresh start here.
         try:
             self.scaler.load_state_dict(blob["scaler"])
         except (RuntimeError, KeyError) as exc:
@@ -448,13 +411,11 @@ class Trainer:
                  f"best validation loss {self.state.best_val_loss:.4f})")
 
     def _restore_rng(self, rng: Dict) -> None:
-        """Put the random-number generators back where they were.
+        """Restore the RNG states, best effort.
 
-        Best effort by design. A run started on a two-GPU machine and resumed on
-        a one-GPU machine has the wrong number of CUDA generator states, which
-        warrants a warning rather than a failed resume: the data order comes
-        from (seed, step), not from these generators, so training continues on
-        the right batches either way.
+        A run resumed on a different GPU count has the wrong number of CUDA
+        generator states. That warns rather than fails: data order comes from
+        (seed, step), not from these generators.
         """
         try:
             if rng.get("python"):

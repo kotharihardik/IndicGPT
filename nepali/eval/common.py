@@ -1,9 +1,8 @@
-"""Shared loading and plotting helpers for the Phase 2 evaluation scripts.
+"""Shared loading and plotting helpers for the evaluation scripts.
 
-Every evaluation script needs the same four things - a checkpoint, the model it
-describes, this language's tokenizer, and somewhere to write results - so they
-are resolved once here. Results go to the run's report directory, set by
-`reports_dir` in `configs/eval.yaml`.
+Resolves the four things every stage needs: a checkpoint, the model it
+describes, the tokenizer, and where to write. Output goes to `reports_dir` from
+configs/eval.yaml.
 """
 
 from __future__ import annotations
@@ -27,7 +26,7 @@ ROOT = lang_root(Path(__file__))
 PIPELINE = load_config(ROOT)
 LANGUAGE = PIPELINE["language_name"]
 
-#: One colour per language, reused by every figure so the report reads as a set.
+#: One colour per language, reused by every figure.
 COLOUR = {"guj": "#2c7fb8", "nep": "#d95f02"}[PIPELINE["language"]]
 
 
@@ -62,8 +61,8 @@ def load_model(checkpoint: Path, device: torch.device
                ) -> Tuple[DecoderLM, ModelConfig, Dict[str, Any]]:
     """Rebuild the model a checkpoint describes and load its weights.
 
-    The architecture comes from the checkpoint rather than the YAML, so
-    evaluating an earlier run cannot pick up a newer config by accident.
+    Architecture comes from the checkpoint, not the YAML, so evaluating an
+    earlier run cannot pick up a newer config.
     """
     blob = torch.load(checkpoint, map_location=device, weights_only=False)
     model_cfg = ModelConfig.from_dict(blob["model_config"])
@@ -82,11 +81,8 @@ def load_tokenizer():
 
 
 def add_common_args(parser) -> None:
-    """Arguments every evaluation script accepts.
-
-    The path overrides are for hosted workers, where the tokenized data is
-    read-only under one root and the run directory lives under another.
-    """
+    """Arguments every evaluation script accepts (path overrides are for
+    hosted workers, where data and runs live under different roots)."""
     parser.add_argument("--checkpoint", default=None, help="path, or 'best'/'latest'")
     parser.add_argument("--device", default="auto")
     parser.add_argument("--data-dir", default=None, help="tokenized .bin directory")

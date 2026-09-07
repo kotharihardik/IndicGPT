@@ -4,9 +4,7 @@
     python3 eval/run_eval.py --quick         # a small version, for a smoke test
     python3 eval/run_eval.py --only perplexity attention
 
-Each stage runs as its own process, so a failure in one cannot leave a
-half-written result in another and any stage can be re-run on its own. All
-output lands in the run's report directory.
+Each stage runs as its own process. Output lands in the run's report directory.
 """
 
 from __future__ import annotations
@@ -21,8 +19,7 @@ from typing import Dict, List
 HERE = Path(__file__).resolve().parent
 LANG_ROOT = HERE.parent
 
-#: Stage name -> script, in the order they should run. The causal check goes
-#: first: if the mask is broken, every number after it is meaningless.
+#: Stage name -> script, in run order. The causal check goes first.
 STAGES: Dict[str, Path] = {
     "causal_check": HERE / "causal_check.py",
     "perplexity": HERE / "perplexity.py",
@@ -80,9 +77,7 @@ def main() -> None:
         else:
             if args.checkpoint:
                 extra += ["--checkpoint", args.checkpoint]
-            # causal_check keeps its own cpu default: three of its four tests
-            # compare values for exact equality, and a fused GPU kernel that
-            # reorders a reduction could change the result.
+            # causal_check keeps its cpu default: it compares exact values.
             if name != "causal_check":
                 extra += ["--device", args.device]
             for flag in ("data_dir", "runs_dir", "run_name", "reports_dir"):

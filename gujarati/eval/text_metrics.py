@@ -1,14 +1,7 @@
-"""Generation-quality metrics, implemented here rather than imported.
+"""Generation-quality metrics.
 
-BLEU, chrF++ and ROUGE-L are all counting exercises over n-grams, so they are
-written out below. That keeps the evaluation free of extra dependencies on a
-hosted GPU worker, and it means the exact variant used is visible rather than
-hidden behind a library default.
-
-Everything is word-level or character-level on the *text*, never on tokenizer
-pieces. That matters for this project specifically: Model H and Model L have
-different vocabularies, so a piece-level score would measure the tokenizers as
-much as the models. Words and characters are the same units in both languages.
+All are word- or character-level on the decoded text, never on tokenizer
+pieces, so scores do not depend on the vocabulary.
 
     BLEU-4     corpus level, modified n-gram precision with a brevity penalty
     chrF++     character 1-6 grams plus word 1-2 grams, beta = 2
@@ -27,13 +20,6 @@ from collections import Counter
 from functools import lru_cache
 from typing import Dict, List, Sequence, Tuple
 
-#: Unicode categories that belong *inside* a word in these scripts even though
-#: they are not letters or digits:
-#:   Mn/Mc/Me  combining marks - Gujarati and Devanagari vowel signs, anusvara,
-#:             virama. A regex `\w` class does NOT match these, and splitting on
-#:             them shatters every word into consonant fragments.
-#:   Cf        format characters - the corpus deliberately keeps ZWNJ, which
-#:             blocks a conjunct and is part of the spelling.
 _WORD_CATEGORIES = frozenset(("Mn", "Mc", "Me", "Cf"))
 
 
@@ -45,13 +31,10 @@ def _is_word_char(ch: str) -> bool:
 
 
 def tokenize_words(text: str) -> List[str]:
-    """Split text into word tokens, with punctuation as separate tokens.
+    """Split text into word tokens, punctuation separated.
 
-    The standard `13a` BLEU tokenizer's behaviour extended to Unicode:
-    punctuation is detached from the words it touches, but a combining mark
-    stays with its consonant. It goes beyond `13a` in detaching the danda,
-    which `13a` does not know about and which is sentence punctuation in both
-    of these scripts exactly as a full stop is.
+    The `13a` BLEU tokenizer extended to Unicode: punctuation is detached, but
+    a combining mark stays with its consonant. The danda counts as punctuation.
     """
     tokens: List[str] = []
     buffer: List[str] = []
@@ -82,15 +65,13 @@ def ngrams(tokens: Sequence[str], n: int) -> Counter:
 
 def corpus_bleu(hypotheses: Sequence[str], references: Sequence[str],
                 max_n: int = 4) -> Dict[str, float]:
-    """Corpus-level BLEU-4 over one reference per hypothesis.
+    """Corpus-level BLEU-4, one reference per hypothesis.
 
-    Precisions are pooled across the corpus before the geometric mean, which is
-    what "corpus BLEU" means and why it is not the average of sentence BLEUs.
-
-    A zero higher-order precision is floored at `1 / (2 * total_n)` instead of
-    collapsing the score to zero. Open-ended continuations frequently share no
-    4-gram with the reference, and a hard zero would report the same 0.0 for
-    every decoding setting, hiding exactly the differences being measured.
+    Precisions are pooled across the corpus before the geometric mean (this is
+    what makes it corpus BLEU, not the average of sentence BLEUs). A zero
+    higher-order precision is floored at `1/(2*total_n)`: open-ended
+    continuations often share no 4-gram, and a hard zero would report 0.0 for
+    every decoding setting.
     """
     clipped = [0] * (max_n + 1)
     totals = [0] * (max_n + 1)
@@ -119,8 +100,7 @@ def corpus_bleu(hypotheses: Sequence[str], references: Sequence[str],
         score = 0.0
         brevity = 0.0
     else:
-        # Precision alone rewards short output, so a hypothesis shorter than
-        # its reference is penalised in proportion to how much shorter it is.
+        # Brevity penalty: precision alone would reward short output.
         brevity = 1.0 if hyp_len > ref_len else math.exp(1 - ref_len / hyp_len)
         score = brevity * math.exp(sum(math.log(p) for p in precisions) / max_n)
 
@@ -151,17 +131,13 @@ def corpus_chrf(hypotheses: Sequence[str], references: Sequence[str],
                 beta: float = 2.0) -> Dict[str, float]:
     """Corpus-level chrF++ : character n-grams plus short word n-grams.
 
-    chrF suits both languages here: they are heavily inflected, so a correct
-    stem with the wrong case ending scores zero on word-level BLEU but keeps
-    most of its character n-grams. `word_order = 0` gives plain chrF.
+    Suits both languages: they are heavily inflected, so a correct stem with
+    the wrong ending scores zero on word-level BLEU but keeps its character
+    n-grams. `word_order = 0` gives plain chrF.
 
     Following Popovic (2015), precision and recall are averaged over the n-gram
-    orders first and one F-score is computed from those averages; an F-score per
-    order, averaged, would be a different and non-standard number.
-
-    Whitespace is removed before taking character n-grams, so spacing does not
-    count as content. Beta = 2 weights recall twice as heavily as precision,
-    the published default.
+    orders first, then one F-score from those averages. Whitespace is stripped
+    before character n-grams; beta = 2 is the published default.
     """
     orders: List[Tuple[str, int]] = ([("char", n) for n in range(1, char_order + 1)]
                                      + [("word", n) for n in range(1, word_order + 1)])
@@ -179,8 +155,7 @@ def corpus_chrf(hypotheses: Sequence[str], references: Sequence[str],
             stats[(kind, n)][1] += sum(h_counts.values())
             stats[(kind, n)][2] += sum(r_counts.values())
 
-    # An order with nothing on either side carries no information and is
-    # dropped, rather than being counted as a zero that drags the mean down.
+    # Orders with nothing on either side are dropped, not counted as zero.
     precisions, recalls = [], []
     for key in orders:
         matches, hyp_total, ref_total = stats[key]
@@ -220,11 +195,10 @@ def lcs_length(a: Sequence[str], b: Sequence[str]) -> int:
 
 def corpus_rouge_l(hypotheses: Sequence[str], references: Sequence[str],
                    beta: float = 1.0) -> Dict[str, float]:
-    """ROUGE-L: LCS-based F-score, averaged over hypothesis/reference pairs.
+    """ROUGE-L: LCS-based F-score, averaged over pairs.
 
-    LCS rewards words appearing in the right order without demanding they be
-    adjacent, so it is more forgiving than BLEU about the insertions a language
-    model makes. Beta = 1 gives the plain F1 that most papers report.
+    LCS rewards the right words in the right order without demanding adjacency.
+    Beta = 1 gives the plain F1.
     """
     scores = []
     for hyp, ref in zip(hypotheses, references):
@@ -239,10 +213,9 @@ def corpus_rouge_l(hypotheses: Sequence[str], references: Sequence[str],
 
 
 def distinct_n(texts: Sequence[str], n: int) -> float:
-    """Unique n-grams over all n-grams, pooled across the whole set.
+    """Unique n-grams over all n-grams, pooled across the set.
 
-    Low Distinct-2 is the signature of a model that has collapsed onto a few
-    stock phrases; it is a property of the set of generations, not of one.
+    Low Distinct-2 means the model has collapsed onto a few stock phrases.
     """
     seen, total = set(), 0
     for text in texts:
@@ -255,8 +228,7 @@ def distinct_n(texts: Sequence[str], n: int) -> float:
 def repetition_rate(texts: Sequence[str], n: int) -> float:
     """Mean fraction of n-grams inside one generation that are repeats.
 
-    Measured per generation and then averaged, because the failure being looked
-    for - a model looping on one phrase - happens within a sample.
+    Per generation then averaged: looping happens within a sample.
     """
     rates = []
     for text in texts:
@@ -290,16 +262,10 @@ def all_metrics(hypotheses: Sequence[str], references: Sequence[str]
 # Verification
 
 
-#: Reference values produced by sacrebleu 2.6.0 on the fixtures below, recorded
-#: so the implementations can be checked anywhere without installing it:
-#:
-#:   sacrebleu.corpus_bleu(hyps, [refs], tokenize="13a").score
-#:   sacrebleu.corpus_chrf(hyps, [refs], char_order=6, word_order=W, beta=2).score
-#:
-#: BLEU agrees exactly. chrF agrees to ~1e-3, the difference being sacrebleu's
-#: epsilon floor on empty n-gram orders. The fixtures carry no punctuation on
-#: purpose: this tokenizer detaches the danda and `13a` does not, so punctuation
-#: would compare two different tokenizations rather than two metrics.
+#: Reference values from sacrebleu 2.6.0, recorded so the implementations can
+#: be checked without installing it. BLEU agrees exactly, chrF to ~1e-3. The
+#: fixtures carry no punctuation: `13a` does not detach the danda and this
+#: tokenizer does, so punctuation would compare tokenizations, not metrics.
 _FIXTURES = {
     "ascii": {
         "hyp": ["the quick brown fox jumps over the lazy dog again and again",
@@ -325,9 +291,8 @@ _FIXTURES = {
 def self_test(tolerance: float = 1e-3) -> bool:
     """Check BLEU and chrF against recorded sacrebleu values.
 
-    Also checks the two properties that make the word tokenizer correct for
-    these scripts: a combining mark never starts a new token, and punctuation
-    always does.
+    Also that a combining mark never starts a new token and punctuation always
+    does.
     """
     ok = True
     for name, case in _FIXTURES.items():

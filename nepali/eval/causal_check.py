@@ -1,21 +1,13 @@
 """Verify empirically that the model cannot see the future.
 
-The causal mask is the one part of the architecture whose failure is silent: a
-model that peeks at the next token trains normally, reports an implausibly low
-perplexity, and generates nonsense. It is therefore tested rather than assumed,
-with four independent checks.
+Four independent checks:
 
-  1. Future edit. Take a sequence, record the logits, change every token after
-     position t, and recompute. Logits at positions <= t must be bit-for-bit
-     identical, and logits after t must change - otherwise the test would pass
-     on a model that ignores its input entirely.
-  2. Prefix equality. Feeding only the first t+1 tokens must give the same
-     logits at those positions as feeding the whole sequence.
-  3. Mask shape. Every attention weight strictly above the diagonal must be
-     exactly zero, in every head of every layer.
-  4. Gradient reach. d(logit at t) / d(embedding at s) must be exactly zero for
-     every s > t. This is the strongest of the four: it tests the computational
-     graph, not just the values.
+  1. Future edit     change every token after t; logits at or before t must be
+                     identical, and logits after t must change
+  2. Prefix equality feeding only the first t+1 tokens gives the same logits
+  3. Mask shape      no attention weight above the diagonal, in any head
+  4. Gradient reach  d(logit at t)/d(embedding at s) is zero for every s > t,
+                     which tests the graph rather than one set of values
 
     python3 eval/causal_check.py
 """
@@ -43,8 +35,7 @@ def future_edit_check(model, seq_len: int, cut: int, device) -> Dict:
     generator = torch.Generator(device="cpu").manual_seed(0)
     original = torch.randint(0, vocab, (1, seq_len), generator=generator)
     edited = original.clone()
-    # Shift every future token to a different id, so no position stays the same
-    # by chance.
+    # Shift every future token, so no position stays the same by chance.
     edited[0, cut + 1:] = (edited[0, cut + 1:] + 1 + torch.randint(
         0, vocab - 1, (seq_len - cut - 1,), generator=generator)) % vocab
 
@@ -66,9 +57,7 @@ def prefix_check(model, seq_len: int, cut: int, device) -> Dict:
     full, _, _ = model(ids.to(device))
     prefix, _, _ = model(ids[:, :cut + 1].to(device))
     delta = (full[0, :cut + 1] - prefix[0]).abs().max().item()
-    # Not exactly zero: the two runs reduce over different tensor shapes, so
-    # the floating-point summation order differs. Anything at 1e-4 or below is
-    # that, not leakage - a real leak moves logits by whole units.
+    # Not exactly zero: the two runs reduce over different shapes.
     return {"max_difference": delta, "cut_position": cut,
             "passed": delta < 1e-4}
 

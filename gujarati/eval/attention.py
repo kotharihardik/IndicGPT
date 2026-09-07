@@ -1,28 +1,14 @@
-"""What the attention heads learned: heatmaps, entropy and attention distance.
+"""Attention analysis: heatmaps, entropy and attention distance.
 
-Three things are produced, all from the same forward passes:
+  heatmaps    query-by-key weights, an early and a late layer, every head
+  entropy     how spread out a head is, divided by log(keys visible) so it is
+              comparable across positions and depths
+  distance    mass-weighted mean of (query - key), so local heads separate
+              from long-range ones
 
-  heatmaps    query-by-key attention for an early layer and a late layer, every
-              head, on an example sentence in this language.
-  entropy     how spread out each head's attention is. A head that puts all its
-              mass on one key has entropy 0; one that spreads evenly over t
-              allowed keys has entropy log(t). Because the number of allowed
-              keys grows with position, the normalised form - entropy divided by
-              log(t+1) - is the comparable number across heads and models.
-  distance    how far back each head looks, as the mass-weighted mean of
-              (query position - key position). This is what separates a local
-              head, which reads the previous word or two, from a long-range head
-              that gathers from the whole prefix.
-
-Two further diagnostics are computed alongside them: `previous_token_mass`
-(attention on exactly t-1, the signature of an induction or positional head) and
-`bos_mass` (attention parked on the start token, the sink a head uses when it
-has nothing to contribute).
-
-Axis labels are token *indices*, not the pieces themselves: rendering Gujarati
-or Devanagari inside a figure needs a script font a hosted worker may not have,
-and the labels would come out as empty boxes. The pieces are listed beside the
-figures in `attention_examples.md`, indexed to match.
+Also `previous_token_mass` (attention on exactly t-1) and `bos_mass` (the
+attention sink). Heatmap axes are token indices; the pieces are listed in
+`attention_examples.md`.
 
     python3 eval/attention.py
     python3 eval/attention.py --batches 5        # quick
@@ -52,8 +38,8 @@ def head_statistics(model, stream, block_size: int, batch_size: int,
                     n_batches: int, device: torch.device) -> Dict:
     """Entropy, distance and mass diagnostics for every layer and head.
 
-    Averaged over held-out text rather than one sentence, so the numbers
-    describe the head rather than the example.
+    Averaged over held-out text, so the numbers describe the head rather than
+    one example.
     """
     n_layers, n_heads = model.cfg.n_layers, model.cfg.n_heads
     keys = ("entropy", "normalised_entropy", "distance", "normalised_distance",
@@ -66,10 +52,10 @@ def head_statistics(model, stream, block_size: int, batch_size: int,
     log_allowed = torch.log(allowed.clamp(min=1.0)).clamp(min=1e-6)
 
     def head_mean(values: torch.Tensor) -> np.ndarray:
-        """Average a (B, h, T) tensor over the batch and query positions 1..T-1.
+        """Average a (B, h, T) tensor over the batch and queries 1..T-1.
 
-        Query 0 is dropped: it can only attend to itself, so its entropy is 0
-        and its distance is 0 for every head, which would flatten the averages.
+        Query 0 is dropped: it attends only to itself, so its entropy and
+        distance are 0 in every head and would flatten the averages.
         """
         return values[:, :, 1:].mean(dim=(0, 2)).cpu().numpy()
 
@@ -127,10 +113,8 @@ def sentence_attention(model, sp, sentence: str, device: torch.device
 def plot_heatmaps(example: Dict, layer: int, path: Path, title_note: str) -> None:
     """One panel per head: query position against key position.
 
-    All heads share one colour scale so the panels can be compared, and the
-    scale is square-root rather than linear. Attention is strongly peaked - many
-    heads park a large share of their mass on the start token - and on a linear
-    scale everything except that cell renders as flat black.
+    Shared colour scale, square-root rather than linear: attention is strongly
+    peaked, and on a linear scale everything but the sink cell is flat black.
     """
     import matplotlib.colors as mcolors
 
@@ -140,8 +124,7 @@ def plot_heatmaps(example: Dict, layer: int, path: Path, title_note: str) -> Non
     cols = min(3, n_heads)
     rows = math.ceil(n_heads / cols)
 
-    # Blank out the future so the causal mask is visible as absence, not as a
-    # very dark colour that could be confused with a small weight.
+    # Blank the future to white so the mask reads as absence, not a small weight.
     future = np.triu(np.ones((seq_len, seq_len), dtype=bool), k=1)
     shown = np.where(future[None, :, :], np.nan, weights)
     cmap = plt.get_cmap("viridis").copy()

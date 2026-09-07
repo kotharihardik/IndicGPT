@@ -1,14 +1,9 @@
 """Loss curves and throughput from a run's metrics.jsonl.
 
-The trainer appends one JSON object per logged step, so this script only reads
-and draws. Nothing is recomputed, which keeps the figures and the report tables
-consistent.
-
-Two figures:
+Reads the metrics the trainer wrote and draws two figures:
 
     loss_curve.png        training and validation loss against tokens seen
-    schedule.png          learning rate and gradient norm, the two things to
-                          check first when a run misbehaves
+    schedule.png          learning rate and gradient norm against step
 
     python3 train/plot_curves.py
     python3 train/plot_curves.py --run-name gujarati-25m
@@ -104,10 +99,9 @@ def plot_schedule(rows: Dict[str, List[Dict]], path: Path) -> None:
 def summarise(rows: Dict[str, List[Dict]]) -> Dict:
     """Headline numbers about the run, for the report tables.
 
-    The step and token totals are the maximum over every row, not the last
-    training row: training rows are written every `log_interval` steps, so the
-    final partial interval never produces one and the run's true end is only
-    recorded by the closing validation row.
+    Step and token totals are the maximum over every row, not the last training
+    row: training rows are only written every `log_interval` steps, so the
+    run's true end is recorded by the closing validation row.
     """
     train, val = rows["train"], rows["validation"]
     speeds = [r["tokens_per_second"] for r in train if r.get("tokens_per_second")]
@@ -149,11 +143,7 @@ def main() -> None:
         raise SystemExit(f"{metrics} not found - train the model first")
 
     rows = read_metrics(metrics)
-    # The brief asks for training logs in the repository, but train/runs/ is
-    # gitignored because it holds ~300 MB of checkpoints. Copy the small text
-    # files into <language>/logs/pretrain/<run>/, alongside the Phase 1 logs.
-    # One directory per run, named by the config: the 12k and 16k runs write the
-    # same four filenames and would otherwise overwrite each other.
+    # train/runs/ is gitignored, so copy the logs to logs/pretrain/<run>/.
     logs = Path(cfg["logs_dir"]) / "pretrain" / cfg.get("logs_subdir", "pretrain")
     logs.mkdir(parents=True, exist_ok=True)
     for name in ("metrics.jsonl", "train.log", "config.json", "COMPLETED"):

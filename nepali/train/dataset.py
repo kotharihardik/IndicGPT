@@ -1,19 +1,11 @@
 """Reading fixed-length windows out of a tokenized split.
 
-Two access patterns, kept apart because they answer different questions:
+    BlockSampler        training: seeded shuffle over non-overlapping blocks
+    sequential_windows  evaluation: front to back, reproducible
 
-    BlockSampler        training. Cuts the stream into non-overlapping blocks
-                        and visits them in a seeded random order, so one epoch
-                        sees every token exactly once and a resumed run picks up
-                        the same order it would have followed uninterrupted.
-
-    sequential_windows  evaluation. Walks the stream front to back, so the
-                        perplexity and bits-per-byte numbers cover a defined,
-                        reproducible portion of the split rather than a sample.
-
-A window is `block_size + 1` tokens long: the first `block_size` are the input
-and the last `block_size` are the targets, which is the one-position shift the
-causal language-modelling objective needs.
+A window is `block_size + 1` tokens: the first `block_size` are the input, the
+last `block_size` the targets - the one-position shift the causal LM objective
+needs.
 """
 
 from __future__ import annotations
@@ -27,12 +19,7 @@ import torch
 
 
 class TokenStream:
-    """One tokenized split, held as a flat uint16 array.
-
-    Attributes:
-        path: The `.bin` file backing this split.
-        tokens: The token ids, either memory-mapped or read into RAM.
-    """
+    """One tokenized split, held as a flat uint16 array."""
 
     def __init__(self, path: Path, preload: bool = True) -> None:
         self.path = Path(path)
@@ -40,8 +27,7 @@ class TokenStream:
             raise FileNotFoundError(
                 f"{self.path} not found - run train/prepare_data.py first")
         mapped = np.memmap(self.path, dtype=np.uint16, mode="r")
-        # A ~1 GB training stream fits in RAM on any machine that can train on
-        # it, and random block access is much cheaper once resident.
+        # Random block access is much cheaper once the stream is resident.
         self.tokens = np.asarray(mapped) if preload else mapped
 
     def __len__(self) -> int:
@@ -49,21 +35,16 @@ class TokenStream:
         return int(self.tokens.shape[0])
 
     def windows(self, starts: np.ndarray, block_size: int) -> np.ndarray:
-        """Gather `block_size + 1` tokens from each start offset.
-
-        Returns:
-            An int64 array of shape (len(starts), block_size + 1).
-        """
+        """Gather `block_size + 1` tokens from each start: (len(starts), block_size+1)."""
         idx = starts[:, None] + np.arange(block_size + 1)[None, :]
         return self.tokens[idx].astype(np.int64)
 
 
 def to_batch(window: np.ndarray, device: torch.device
              ) -> Tuple[torch.Tensor, torch.Tensor]:
-    """Split a window array into (inputs, targets) tensors on `device`.
+    """Split a window into (inputs, targets) on `device`.
 
-    Position t of the input predicts position t of the target, which is token
-    t+1 of the original stream.
+    Position t of the input predicts target t, which is token t+1 of the stream.
     """
     data = torch.from_numpy(window)
     x, y = data[:, :-1].contiguous(), data[:, 1:].contiguous()
@@ -76,16 +57,9 @@ def to_batch(window: np.ndarray, device: torch.device
 class BlockSampler:
     """Deterministic shuffled order over non-overlapping training blocks.
 
-    The stream is cut into `n_blocks` windows of `block_size` tokens, and each
-    epoch is a fresh permutation seeded by `seed + epoch`. Three properties
-    follow:
-
-      - one epoch covers every token exactly once, unlike random-offset
-        resampling, which over-visits some spans and skips others;
-      - a run that stops and restarts continues with the same blocks in the same
-        order, because the order is a function of the seed and the step alone;
-      - two runs with the same seed see identical data, which is what makes the
-        comparison between the two languages meaningful.
+    Each epoch is a fresh permutation seeded by `seed + epoch`. So one epoch
+    covers every token exactly once, a resumed run continues on the same blocks
+    in the same order, and two runs with the same seed see identical data.
     """
 
     def __init__(self, n_tokens: int, block_size: int, batch_size: int,
@@ -124,23 +98,14 @@ def sequential_windows(stream: TokenStream, block_size: int, batch_size: int,
                        ) -> Iterator[np.ndarray]:
     """Walk the split in non-overlapping windows, front to back.
 
-    With `max_windows` unset - the default, and what every reported metric uses
-    - this covers the entire split: every token except a final remainder shorter
-    than one window is predicted exactly once. Each window starts with no left
-    context, the standard non-overlapping evaluation. A sliding window would
-    report a slightly lower perplexity by giving early positions more history;
-    this convention is cheaper, more common, and applied identically to both
-    models.
-
-    With `max_windows` set, the windows are spread evenly across the whole split
-    rather than taken from the front. Phase 1 writes manual sources first, so
-    the head of every split file is manual text with no public documents in it;
-    reading the first N windows would evaluate one register only.
+    Unset `max_windows` (what every reported metric uses) covers the whole
+    split, every token predicted once. Set, the windows are spread evenly
+    across the split rather than taken from the front: Phase 1 writes manual
+    sources first, so the head of the file is one register only.
     """
     total = (len(stream) - 1) // block_size
     if max_windows and max_windows < total:
-        # linspace, not random: the same subset every time, so two checkpoints
-        # and two languages are compared on identical text.
+        # linspace, not random: the same subset every time.
         chosen = np.linspace(0, total - 1, max_windows).astype(np.int64)
     else:
         chosen = np.arange(total, dtype=np.int64)

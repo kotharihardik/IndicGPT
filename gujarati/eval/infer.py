@@ -1,34 +1,15 @@
-"""Generate text from a trained checkpoint and read the output by hand.
-
-`eval/generate.py` scores 200 held-out prompts and writes metrics. This script
-is for looking at what the model actually writes.
+"""Generate text from a trained checkpoint, for reading by hand.
 
     python3 eval/infer.py --input eval/input.txt     # every prompt in the file
     python3 eval/infer.py --prompt "ગુજરાત સરકારે"
     python3 eval/infer.py                            # interactive; Ctrl-D quits
 
-With `--input`, each prompt in the file is answered once per temperature (0.5,
-1.0 and 1.5 by default, the same three the evaluation reports) and the result is
-written to `model_output.md` in the run's report directory as one block per
-prompt: the prompt, then its continuations. That file is overwritten each run,
-so it always matches the current prompt file.
+With `--input`, every prompt is answered once per temperature (0.5, 1.0, 1.5)
+into `model_output.md`, overwritten each run; the other modes append to
+`manual_samples.md`. With no prompt the model continues from `<s>`.
 
-The other two modes append to `manual_samples.md` in the same directory, with
-the decoding settings recorded, so a session of hand-typed prompts accumulates.
-`--no-save` prints instead of writing, and `--out` chooses the file.
-
-Read the output from the file rather than the terminal: terminals use one
-fixed-width cell per character and do not shape complex scripts, so Gujarati
-matras and Devanagari conjuncts appear misplaced on screen. The text itself is
-correct.
-
-With no prompt the model continues from `<s>`, the document-start token, so it
-writes an opening rather than continuing a fragment.
-
-Decoding settings: `--greedy` is deterministic and repeats itself, temperature
-0.5 is fluent but still repetitive, 1.0 reads best on these models, and 1.5
-drifts. `--top-k` trims the long tail that produces nonsense at high
-temperature.
+Read the output from the file, not the terminal: terminals do not shape
+complex scripts, so matras and conjuncts appear misplaced.
 """
 
 from __future__ import annotations
@@ -69,11 +50,7 @@ def generate(model, sp, prompt: str, device: torch.device, max_new_tokens: int,
 
 
 def read_prompts(path: Path) -> list:
-    """Read prompts from a text file, one per line.
-
-    Blank lines and lines starting with `#` are skipped, so the file can carry
-    notes. Everything else is taken literally, trailing punctuation included.
-    """
+    """Read prompts, one per line; blank lines and `#` comments are skipped."""
     if not path.exists():
         raise SystemExit(f"{path} not found. Put one prompt per line in it.")
     prompts = [line.strip() for line in path.read_text(encoding="utf-8").splitlines()]
@@ -110,12 +87,7 @@ def quote(text: str) -> str:
 
 
 def save(path: Path, prompt: str, texts: list, args, meta: dict) -> None:
-    """Append this prompt and its continuations to the session log.
-
-    Appended rather than overwritten, so one session reads as a series of
-    prompts. Markdown, because these are the qualitative examples the brief
-    asks for and they have to be readable alongside the metrics.
-    """
+    """Append this prompt and its continuations to the session log."""
     path.parent.mkdir(parents=True, exist_ok=True)
     if not path.exists():
         path.write_text(
@@ -139,11 +111,9 @@ def save(path: Path, prompt: str, texts: list, args, meta: dict) -> None:
 
 
 def write_answers(path: Path, rows: list, meta: dict, max_new_tokens: int) -> None:
-    """Write the prompts and their continuations as one plain readable file.
+    """Write the prompts and their continuations, one block per prompt.
 
-    One block per prompt: the prompt, then one continuation per temperature.
-    Overwritten on each run, so the file always reflects the current input.txt
-    and nothing else.
+    Overwritten each run, so it always matches the current input.txt.
     """
     path.parent.mkdir(parents=True, exist_ok=True)
     lines = [f"# {LANGUAGE} - model output", "",
@@ -197,8 +167,7 @@ def main() -> None:
     if args.seed is not None:
         torch.manual_seed(args.seed)
 
-    # Output always goes to the report directory, never beside the prompts:
-    # generated text is a report artifact and does not belong in eval/.
+    # Output goes to the report directory, not beside the prompts.
     source = Path(args.input) if args.input else None
     default_out = (Path(cfg["reports_dir"]) /
                    ("model_output.md" if source else "manual_samples.md"))
@@ -225,8 +194,7 @@ def main() -> None:
         for n, prompt in enumerate(prompts, 1):
             answers = []
             for temperature in temperatures:
-                # Re-seed per continuation so each temperature starts from the
-                # same state and the file reproduces exactly on a re-run.
+                # Re-seed per continuation so the file reproduces on a re-run.
                 if args.seed is not None:
                     torch.manual_seed(args.seed)
                 texts, _ = generate(model, sp, prompt, device,

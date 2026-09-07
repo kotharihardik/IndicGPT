@@ -6,12 +6,8 @@
     python3 train/pretrain.py --smoke                  # 20 steps, tiny model
 
 `--resume auto` is the default: a `latest.pt` in the run directory is picked
-up, otherwise a fresh run starts, so the same command is safe to re-run after a
-hosted session is cut off.
-
-Both configs, the exact parameter count, the device and the step budget are
-written to `train/runs/<name>/config.json` next to the checkpoints, so a result
-can be traced back to what produced it.
+up, otherwise a fresh run starts. Both configs, the parameter count, the device
+and the step budget are written to `train/runs/<name>/config.json`.
 """
 
 from __future__ import annotations
@@ -144,8 +140,7 @@ def main() -> None:
     device = pick_device(args.device)
     seed_everything(int(cfg["seed"]))
     if device.type == "cuda":
-        # TF32 trades a little matmul precision for speed. It affects only the
-        # fp32 fallbacks, not the fp16/bf16 autocast path.
+        # TF32: faster fp32 fallbacks, does not touch the autocast path.
         torch.backends.cuda.matmul.allow_tf32 = True
         torch.backends.cudnn.allow_tf32 = True
 
@@ -196,9 +191,7 @@ def main() -> None:
             trainer.log("no checkpoint found, starting from scratch")
 
     if trainer.state.step == 0:
-        # Starting over in a directory that already holds a history: keep the
-        # old metrics, but do not let two runs share one file, or the step axis
-        # would fold back on itself in the plots.
+        # Two runs must not share one metrics file.
         old = trainer.metrics_path
         if old.exists():
             old.replace(old.with_name(f"metrics.{int(time.time())}.jsonl"))

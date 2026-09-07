@@ -1,21 +1,10 @@
 """Turn the Phase 1 splits into flat token streams the trainer can memory-map.
 
 Each split becomes one `uint16` file: every document is encoded with this
-language's own Phase 1 tokenizer, wrapped as `<s> ... </s>`, and appended to one
-contiguous stream. Training reads fixed-length windows straight out of that
-array, so no tokenization happens on the GPU clock.
+language's tokenizer, wrapped `<s> ... </s>`, and appended to one stream.
 
-    <s>  marks a document start, so generation has a well-defined prompt.
-    </s> separates documents, so the model learns where text ends instead of
-         running one article into the next.
-
-`uint16` holds any vocabulary up to 65,536 pieces, so the training stream is
-~1 GB rather than the ~4 GB an int32 file would need. The size is checked
-against the tokenizer at startup.
-
-Alongside the streams, `meta.json` records the document, character, byte and
-token totals per split. The byte totals are the denominator of bits-per-byte, so
-they are measured here once rather than re-derived during evaluation.
+`meta.json` records documents, characters, bytes and tokens per split. The byte
+totals are the denominator of bits-per-byte.
 
     python3 train/prepare_data.py                       # all three splits
     python3 train/prepare_data.py --splits validation   # just one
@@ -45,8 +34,7 @@ LANG = PIPELINE["language"]
 
 SPLITS = ("train", "validation", "test")
 
-#: Documents handed to one worker at a time. Large enough that the SentencePiece
-#: call dominates the queue round-trip, small enough to stay off the heap.
+#: Documents handed to one worker at a time.
 CHUNK_DOCS = 1000
 
 #: Filled once per worker process by `_init_worker`.
@@ -63,11 +51,7 @@ def _init_worker(model_path: str) -> None:
 
 
 def _encode_chunk(args: Tuple[List[str], int, int]) -> Tuple[np.ndarray, Dict[str, int]]:
-    """Encode one chunk of documents into a single uint16 array.
-
-    Returns:
-        (token ids for the whole chunk, counts for the running totals).
-    """
+    """Encode one chunk of documents: (uint16 token ids, counts)."""
     texts, bos_id, eos_id = args
     encoded = _SP.encode(texts)                     # list of list[int]
     n_content = sum(len(ids) for ids in encoded)
@@ -108,8 +92,7 @@ def encode_split(split: str, src: Path, dst: Path, model_path: Path,
                  limit: int | None) -> Dict[str, int]:
     """Encode one split into `dst` and return its totals.
 
-    The stream is appended chunk by chunk, so peak memory is one chunk of
-    documents rather than the whole corpus.
+    Appended chunk by chunk, so peak memory is one chunk, not the corpus.
     """
     totals = {"docs": 0, "content_tokens": 0, "special_tokens": 0,
               "chars": 0, "bytes": 0}

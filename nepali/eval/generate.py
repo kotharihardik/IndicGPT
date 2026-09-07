@@ -1,22 +1,12 @@
 """Generation quality: continue held-out prefixes and score the continuations.
 
-The protocol is the same for every decoding setting, so the settings are the
-only thing that varies:
+Each held-out document is cut into a `prefix_tokens` prompt and a
+`continuation_tokens` reference; the model continues the prompt for the same
+length, and both sides are decoded and scored.
 
-  1. take a held-out document, encode it, and cut it into a prompt of
-     `prefix_tokens` and a reference continuation of `continuation_tokens`;
-  2. let the model continue the prompt for exactly as many tokens as the
-     reference has;
-  3. decode both sides back to text and score them.
+The reference is the decoded reference token ids, not the raw document text.
 
-The reference is the *decoded reference token ids*, not the raw document text.
-That is the fair target: it is what the model would have produced had it
-predicted perfectly, so the score measures the model rather than the tokenizer's
-round trip.
-
-Four settings are reported: greedy, and sampling at temperature 0.5, 1.0 and
-1.5. Greedy is deterministic; the sampled settings use a fixed seed so the
-numbers reproduce.
+Four settings: greedy, and sampling at 0.5, 1.0 and 1.5 with a fixed seed.
 
     python3 eval/generate.py
     python3 eval/generate.py --prompts 32 --continuation-tokens 64   # quick
@@ -46,9 +36,8 @@ def collect_prompts(cfg: Dict, split: str, sp, prefix_tokens: int,
                     continuation_tokens: int, wanted: int) -> List[Dict]:
     """Cut held-out documents into (prompt, reference) pairs.
 
-    Documents are taken at a stride through the split rather than from the
-    front: the split is written manual sources first, so the first N documents
-    would cover one register only.
+    Taken at a stride, not from the front: the split is written manual sources
+    first, so the first N documents are one register only.
     """
     path = split_file(PIPELINE["paths"]["splits"], split)
     needed = prefix_tokens + continuation_tokens
@@ -126,11 +115,7 @@ def print_table(results: Dict[str, Dict]) -> None:
 
 
 def quote(text: str) -> str:
-    """Render generated text as a markdown blockquote.
-
-    Continuations often contain paragraph breaks, which would otherwise end the
-    block and break the layout of the samples file.
-    """
+    """Render generated text as a markdown blockquote, keeping paragraph breaks."""
     body = text.strip() or "(empty)"
     return "\n".join("> " + line if line else ">" for line in body.split("\n"))
 
